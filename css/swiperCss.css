@@ -1,0 +1,60 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1110px !important;
+  height: 655px !important;
+  /* width: 100%; */
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.swiper {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 12px;
+  height: calc(100% - 2px) !important;
+}
+
+.swiper-button {
+  position: relative;
+  bottom: 400px;
+}
+
+.swiper-button-next,.swiper-button-prev{
+  color: #FFFFFF;
+}
+
+.card-body{
+background: white; 
+max-width: 540px; 
+width: calc(100% - 2px); 
+border-radius: 3px; 
+border: 1px solid rgb(219, 219, 219); 
+box-shadow: none; 
+display: block;  
+min-width: 326px; padding: 0px;
+}
