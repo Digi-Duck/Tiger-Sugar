@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 
-.container {
+#social .container {
   max-width: 1110px !important;
   height: 655px !important;
   /* width: 100%; */
@@ -23,12 +23,12 @@ body {
   margin-left: auto;
 }
 
-.swiper {
+#social .swiper {
   width: 100%;
   margin: 20px auto;
 }
 
-.swiper-slide {
+#social .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -39,16 +39,16 @@ body {
   height: calc(100% - 2px) !important;
 }
 
-.swiper-button {
+#social .swiper-button {
   position: relative;
   bottom: 400px;
 }
 
-.swiper-button-next,.swiper-button-prev{
+#social .swiper-button-next,.swiper-button-prev{
   color: #FFFFFF;
 }
 
-.card-body{
+#social .card-body{
 background: white; 
 max-width: 540px; 
 width: calc(100% - 2px); 
