@@ -13,15 +13,56 @@ body {
   padding: 0;
 }
 
+#social {
+  padding-bottom: 120px;
+  background-color: #0c1219;
+}
+
 #social .container {
   max-width: 1110px !important;
-  height: 655px !important;
+  max-height: 655px !important;
   /* width: 100%; */
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
+
+.header {
+  height: 192px;
+}
+
+#social .header .container {
+  height: 55.4px;
+  display: flex;
+  justify-content: start;
+}
+
+.title-text {
+  color: white;
+  float: right;
+}
+
+.title-text-1 {
+  width: 56px;
+  height: 26px;
+  margin-top: 7px;
+  font-size: 14px;
+}
+
+.title-text-2 {
+  width: 56px;
+  height: 14.4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.ig-icon {
+  width: 32px;
+  height: 32px;
+  margin: 4px 6px 0 0;
+}
+
 
 #social .swiper {
   width: 100%;
@@ -44,17 +85,25 @@ body {
   bottom: 400px;
 }
 
-#social .swiper-button-next,.swiper-button-prev{
+#social .swiper-button-next,
+.swiper-button-prev {
   color: #FFFFFF;
+  width: 27px !important;
 }
 
-#social .card-body{
-background: white; 
-max-width: 540px; 
-width: calc(100% - 2px); 
-border-radius: 3px; 
-border: 1px solid rgb(219, 219, 219); 
-box-shadow: none; 
-display: block;  
-min-width: 326px; padding: 0px;
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  width: 27px;
+}
+
+#social .card-body {
+  background: white;
+  max-width: 540px;
+  width: calc(100% - 2px);
+  border-radius: 3px;
+  border: 1px solid rgb(219, 219, 219);
+  box-shadow: none;
+  display: block;
+  min-width: 326px;
+  padding: 0px;
 }
