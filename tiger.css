@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inlinetext{
+    font-size: 14px;
+    font-family: "Lato", sans-serif, Microsoft JhengHei, verdana;
+    color: white;
+}
+.en-text{
+    font-size: 12px;
+    font-family: "Lato", sans-serif, Microsoft JhengHei, verdana;
+    color: white;
+}
+
+#classic .cold-drink{
+    font-size: 14.4px;
+    color: #00a199;
+    margin-right: 10px;
+}
+#classic .hot-drink{
+    font-size: 14.4px;
+    color: #e95513;
+}
+
+#classic{
+    width: 100%;
+    background-image: url(./images/background_img/about_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#classic .container{
+    max-width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#classic .title{
+    padding-top: 50px;
+    display: flex;
+}
+#classic .title img{
+    margin-top: 10px;
+    width: 32px;
+}
+#classic .logo img{
+    width: 571px;
+}
