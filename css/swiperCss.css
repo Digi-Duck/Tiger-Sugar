@@ -38,19 +38,19 @@ body {
   justify-content: start;
 }
 
-.title-text {
+#social .title-text {
   color: white;
   float: right;
 }
 
-.title-text-1 {
+#social .title-text-1 {
   width: 56px;
   height: 26px;
   margin-top: 7px;
   font-size: 14px;
 }
 
-.title-text-2 {
+#social .title-text-2 {
   width: 56px;
   height: 14.4px;
   margin-bottom: 8px;
