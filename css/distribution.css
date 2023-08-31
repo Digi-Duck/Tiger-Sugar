@@ -186,7 +186,7 @@ a {
     transform: translateX(-50%);
 }
 
-#distribution .swiper-button-next:after, .swiper-button-prev:after{
+#distribution .swiper-button-next:after,#distribution .swiper-button-prev:after{
     display: none;
 }
 

@@ -1,0 +1,77 @@
+#news {
+    background-color: #0c1219;
+}
+
+#news .container {
+    max-width: 1110px !important;
+    max-height: 655px !important;
+    /* width: 100%; */
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.swiper-slide{
+    padding: 24px;
+}
+
+.swiper-slide .card {
+    flex-direction: row;
+    background-color: transparent;
+    color: white;
+    overflow: hidden;
+    border-left: 2px solid #c19264;
+    border-right: 2px solid #774921;
+    border-bottom: 2px solid #c19264;
+    border-radius: 5px;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    background-image: linear-gradient(to right, #c19264 0%, #774921 25%, #c79664 44%, #774921 52%, #c79664 59%, #956432 77%, #956432 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.news-img{
+    width: 35%;
+    height: 15vw;
+    background-image: url('../images/news/phpT0VQXn.jpg');
+    background-size: cover;
+    margin-top: 2px;
+    background-position: center;
+}
+
+.card-body{
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.blog-name{
+    font-size: 13px;
+    padding: 10px 0 5px;
+}
+
+.card-title{
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+#news .swiper-button3 {
+    position: relative;
+    bottom: 340px;
+}
+
+.swiper-button3 .swiper-button-next {
+    position: absolute;
+    top: 100px;
+}
+
+.swiper-button3 .swiper-button-prev {
+    position: absolute;
+    top: 100px;
+    /* left: -45px; */
+}
