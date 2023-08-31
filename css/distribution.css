@@ -1,6 +1,11 @@
+
+a {
+    text-decoration:none;
+}
 #distribution {
     background-image: url('../img/bg.png');
     height: 1052px;
+    position: relative;
 }
 
 #distribution-area {
@@ -12,7 +17,7 @@
 
 #distribution .swiper-button2 {
     position: relative;
-    bottom: 370px;
+    bottom: 340px;
 }
 
 .swiper-button2 .swiper-button-next {
@@ -130,13 +135,21 @@
     top: 10px;
 }
 
-.d-f-direction-c {
+#distribution .ask-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution .d-f-direction-c {
     display: flex;
     flex-direction: column;
     color: #fff;
 }
 
-.commodity_title {
+#distribution .commodity_title {
     width: 352px;
     height: 32px;
     font-size: 20px;
@@ -145,7 +158,7 @@
     justify-content: start;
 }
 
-.commodity_title_english {
+#distribution .commodity_title_english {
     width: 352px;
     height: 42px;
     font-size: 14px;
@@ -154,10 +167,68 @@
     justify-content: start;
 }
 
-.commodity_sort{
+#distribution .commodity_sort{
     width: 352px;
     height: 32px;
     font-size: 20px;
     display: flex;
     justify-content: start;
+}
+#distribution .distribution_area_button {
+    height: 32px;
+    padding: 8px 30px;
+    font-size: 20px;
+    border: 1px solid #FFDD80;
+    color: #FFF;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#distribution .swiper-button-next:after, .swiper-button-prev:after{
+    display: none;
+}
+
+#distribution .next-prev-img{
+    width: 22px;
+    height: 37px;
+}
+
+#distribution .product_img_hover {
+    position: absolute;
+    width: 330px;
+    height: 360px;
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    display: none;
+    transition: all 1s ease;
+}
+#distribution .img-w-h-border-img:hover  .product_img_hover{
+    display: block;
+    
+}
+#distribution .ask-icon-hover{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    top: 0px;
+}
+.commodity_more_button.btn{
+width: 124px;
+height: 48px;
+display: flex;
+justify-content: center;
+align-items: center;
+outline: #ffe282 3px solid;
+color: #ffe282;
+border-radius: 5px;
+position: absolute;
+top: calc(180px - 12px);
+left: calc(165px - 62px);
+font-size: 18px;
 }
