@@ -1,19 +1,52 @@
 #news {
     background-color: #0c1219;
+    padding-bottom: 60px;
 }
 
 #news .container {
-    max-width: 1110px !important;
-    max-height: 655px !important;
+    max-width: 1140px !important;
+    max-height: 55.4px !important;
     /* width: 100%; */
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
+#news .header{
+    padding-top: 50px;
+    margin-bottom: 60px;
+}
 
 #news .swiper-slide{
     padding: 24px;
+}
+#news .title{
+height: 55.4px
+}
+
+.share-icon {
+    width: 32px;
+    height: 32px;
+    margin: 3px 2px 0 0;
+    float: left;
+}
+
+#news .title-text {
+    color: white;
+    float: left;
+}
+
+#news .title-text-1 {
+    width: 91.97px;
+    height: 26px;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+#news .title-text-2 {
+    width: 91.97px;
+    height: 14.4px;
+    font-size: 12px;
 }
 
 .swiper-slide .card {
@@ -36,11 +69,48 @@
 .news-img{
     width: 35%;
     height: 15vw;
-    background-image: url('../images/news/phpT0VQXn.jpg');
     background-size: cover;
     margin-top: 2px;
     background-position: center;
 }
+
+#news-img-1{
+    background-image: url('../images/news/phpVQk4f5.jpg');
+}
+#news-img-2{
+    background-image: url('../images/news/phprmrWFO.jpg');
+}
+#news-img-3{
+    background-image: url('../images/news/phpKEilAF.jpg');
+}
+#news-img-4{
+    background-image: url('../images/news/php64EyLq.jpg');
+}
+#news-img-5{
+    background-image: url('../images/news/phpX4diFX.jpg');
+}
+#news-img-6{
+    background-image: url('../images/news/phpMUc3mI.jpg');
+}
+#news-img-7{
+    background-image: url('../images/news/phpT0VQXn.jpg');
+}
+#news-img-8{
+    background-image: url('../images/news/phpxxcgIA.jpg');
+}
+#news-img-9{
+    background-image: url('../images/news/phpuOGcb5.jpg');
+}
+#news-img-10{
+    background-image: url('../images/news/phpZM6Iw9.jpg');
+}
+#news-img-11{
+    background-image: url('../images/news/phpJOP34C.jpg');
+}
+#news-img-12{
+    background-image: url('../images/news/phpO2v5pa.jpg');
+}
+
 
 .card-body{
     width: 65%;
@@ -65,13 +135,13 @@
     bottom: 340px;
 }
 
-.swiper-button3 .swiper-button-next {
+.swiper-button3 .swiper-button-next ,
+.swiper-button3 .swiper-button-prev  {
     position: absolute;
-    top: 100px;
+    top: 175px;
 }
 
-.swiper-button3 .swiper-button-prev {
-    position: absolute;
-    top: 100px;
-    /* left: -45px; */
+#news .swiper-button-next,
+#news .swiper-button-prev {
+  color: #FFFFFF;
 }
