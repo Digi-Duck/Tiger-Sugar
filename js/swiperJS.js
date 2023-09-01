@@ -26,5 +26,6 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-  
-document.querySelectorAll("#news .swiper-slide").style.margin="unset";
+
+let swiper_margin_unset = document.querySelectorAll("#news .swiper-slide");
+swiper_margin_unset.forEach(element => element.style.margin="unset");
