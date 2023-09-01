@@ -203,11 +203,11 @@ a {
     opacity: 0.8;
     right: 10px;
     top: 10px;
-    display: none;
-    transition: all 1s ease;
+    opacity: 0;
+    transition: 1s;
 }
 #distribution .img-w-h-border-img:hover  .product_img_hover{
-    display: block;
+    opacity: 0.8;
     
 }
 #distribution .ask-icon-hover{

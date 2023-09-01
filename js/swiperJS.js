@@ -28,4 +28,4 @@ var swiper = new Swiper(".mySwiper", {
 
 
 let swiper_margin_unset = document.querySelectorAll("#news .swiper-slide");
-swiper_margin_unset.forEach(element => element.style.margin="unset");
+swiper_margin_unset.forEach(element => element.style.margin="unset".width="unset");
