@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 #news {
     background-color: #0c1219;
     padding-bottom: 60px;
@@ -12,16 +15,18 @@
     margin-right: auto;
     margin-left: auto;
 }
-#news .header{
+
+#news .header {
     padding-top: 50px;
     margin-bottom: 60px;
 }
 
-#news .swiper-slide{
-    padding: 24px 18px 24px 24px;
-}
-#news .title{
-height: 55.4px
+/* #news .swiper-slide {
+    padding: 24px;
+} */
+
+#news .title {
+    height: 55.4px
 }
 
 .share-icon {
@@ -50,8 +55,8 @@ height: 55.4px
 }
 
 #news .swiper-slide .card {
-    width: 592px !important;
-    height: 293px !important;
+    /* width: 592px !important;
+    height: 293px !important; */
     flex-direction: row;
     background-color: transparent;
     color: white;
@@ -68,7 +73,7 @@ height: 55.4px
     justify-content: center;
 }
 
-.news-img{
+.news-img {
     width: 35%;
     height: 15vw;
     background-size: cover;
@@ -76,45 +81,56 @@ height: 55.4px
     background-position: center;
 }
 
-#news-img-1{
+#news-img-1 {
     background-image: url('../images/news/phpVQk4f5.jpg');
 }
-#news-img-2{
+
+#news-img-2 {
     background-image: url('../images/news/phprmrWFO.jpg');
 }
-#news-img-3{
+
+#news-img-3 {
     background-image: url('../images/news/phpKEilAF.jpg');
 }
-#news-img-4{
+
+#news-img-4 {
     background-image: url('../images/news/php64EyLq.jpg');
 }
-#news-img-5{
+
+#news-img-5 {
     background-image: url('../images/news/phpX4diFX.jpg');
 }
-#news-img-6{
+
+#news-img-6 {
     background-image: url('../images/news/phpMUc3mI.jpg');
 }
-#news-img-7{
+
+#news-img-7 {
     background-image: url('../images/news/phpT0VQXn.jpg');
 }
-#news-img-8{
+
+#news-img-8 {
     background-image: url('../images/news/phpxxcgIA.jpg');
 }
-#news-img-9{
+
+#news-img-9 {
     background-image: url('../images/news/phpuOGcb5.jpg');
 }
-#news-img-10{
+
+#news-img-10 {
     background-image: url('../images/news/phpZM6Iw9.jpg');
 }
-#news-img-11{
+
+#news-img-11 {
     background-image: url('../images/news/phpJOP34C.jpg');
 }
-#news-img-12{
+
+#news-img-12 {
     background-image: url('../images/news/phpO2v5pa.jpg');
 }
 
 
-#news .card-body{
+#news .card-body {
     width: 65%;
     display: flex;
     justify-content: space-around;
@@ -122,20 +138,21 @@ height: 55.4px
     padding: 20px;
 }
 
-#news .blog-name{
+#news .blog-name {
     width: 342.2px;
     height: 35.8px;
     font-size: 13px;
     padding: 10px 0 5px;
 }
 
-#news .card-title{
+#news .card-title {
     width: 342.2px;
     height: 24px;
     font-size: 15px;
     margin-bottom: 12px;
 }
-#news .card-content{
+
+#news .card-content {
     width: 342.2px;
     height: 89.59px;
 }
@@ -145,13 +162,19 @@ height: 55.4px
     bottom: 340px;
 }
 
-.swiper-button3 .swiper-button-next ,
-.swiper-button3 .swiper-button-prev  {
+.swiper-button3 .swiper-button-next,
+.swiper-button3 .swiper-button-prev {
     position: absolute;
-    top: 175px;
+    top: 190px;
 }
 
 #news .swiper-button-next,
 #news .swiper-button-prev {
-  color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+#news .content{
+    width: calc(1920px - 48px);
+    overflow: hidden;
+    margin: auto;
 }

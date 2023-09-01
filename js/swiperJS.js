@@ -18,7 +18,7 @@ var swiper = new Swiper(".mySwiper", {
 
   var swiper3 = new Swiper(".mySwiper3", {
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 48,
     loop: true,
     navigation: {
       nextEl: ".swiper-button3 .swiper-button-next",
@@ -27,9 +27,9 @@ var swiper = new Swiper(".mySwiper", {
   });
 
 
-let swiper_margin_unset = document.querySelectorAll("#news .swiper-slide");
-swiper_margin_unset.forEach(element =>{ 
-  element.style.margin="unset";
-  element.style.width="unset";
+// let swiper_margin_unset = document.querySelectorAll("#news .swiper-slide");
+// swiper_margin_unset.forEach(element =>{ 
+//   element.style.margin="unset";
+//   element.style.width="unset";
 
-});
+// });
