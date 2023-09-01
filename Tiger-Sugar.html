@@ -5,21 +5,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .v100 {
+            height: 100vh;
+            width: 100vw;
+            background-color: blanchedalmond;
+        }
+
         #about {
-        height: 100vh;
-        width: 100vw;
-        background-color: blanchedalmond;
-        background-image: ;
+            height: 100vh;
+            width: 100vw;
+            background-color: blanchedalmond;
+            background-image: url("images/background_img/about_bg.webp");
+            background-size: cover;
+            position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .black-sugar {
-            width: 100px;
-            height:150px;
-            background-color: transparent; 
+            /* width: 100%; */
+            aspect-ratio: 5;
+            background-image: url("./images/background_img/section_header.webp");
+            background-color: transparent;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
+        .container-about-us-header {}
+
+        .container-about-us-title {
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+            display: block;
+            z-index: 1;
+        }
+
+        .about-us-icon {
+            background-image: url("./images/nav/icon1-1.png");
+            background-size: contain;
+            width: 32px;
+            height: 32px;
+            float: left;
+            margin-right: 2px;
+        }
+
+        .about-us-tilte {
+            color: white;
+            float: left;
+        }
+
+        .about-us-tilte h1,
+        h2 {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .clear-fix {}
+
+        .clear-fix:after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+
+        .about-card-group-container {}
+
+        .about-card-group-text-animation-top {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+        }
+
+        .about-card-group-text-animation-botton {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+        }
+
+        .about-card-group-img {
+            width: 106px;
+        }
+
+        .about-card-group-text {
+            color: white;
+        }
+
+        .about-card-group-text h2 {
+            font-size: 20px;
+        }
+
+        .cloud-left {
+            /* display: none; */
+            width: 100%;
+            position: absolute;
+            /* left: -100px; */
+            top:0;
+            left: -95%;
+            z-index: 50;
+        }
+
+        .cloud-left img {
+            overflow: clip;
+            overflow-clip-margin: contentbox;
+        }
+
+        .cloud-right {
+            /* display: none; */
+            width: 100%;
+            position: absolute;
+            top:0;
+            right: -95%;
+            z-index: 50;
+        }
+
+        .cloud-right img {
+            overflow: clip;
+            overflow-clip-margin: contentbox;
+           
+        }
+
+        .about-us-scroll-img {
+            width: 30vw;
+            height: 300px;
+            position: absolute;
+            right: 10%;
+            bottom: 50%;
+            /* z-index: ; */
+           
+            transform: translateY(30%);
+        }
     </style>
 </head>
 
@@ -27,46 +150,132 @@
 
     <!-- 秋 header -->
     <header></header>
-    
+
     <main>
         <!-- 夫 banner -->
         <section id="banner"></section>
 
+
+        <div class="v100"></div>
         <!-- 齊 關於我們 -->
         <section id="about">
-            <img src="./images/background_img/about_bg.webp" alt="aboutBg">
-            <!-- <div class="black-sugar" data-aos="fade-down">
-                <img src="./images/background_img/section_header.webp" alt="BlackSugar">
-            </div> -->
+            <div class="container-about-us-header">
+                <div class="black-sugar" data-aos="fade-down" data-aos-duration="4000" data-aos-once="true"></div>
+                <div class="container-about-us-title">
+                    <div class="about-us-icon"></div>
+                    <div class="about-us-tilte">
+                        <h1>關於我們</h1>
+                        <h2>ABOUT</h2>
+                    </div>
+                    <div class="clear-fix"></div>
+
+                </div>
+            </div>
+
+            <div class="about-card-group-container">
+                <div class="about-card-group-text-animation-top" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+                    <div class="about-card-group-img">
+                        <img src="./images/about/icon4.png">
+                    </div>
+                    <div class="about-card-group-text">
+                        <h2>老虎堂 ｜ 虎堂初心 Original Intention</h2>
+                        <p>
+                            老虎堂是一個發源於台灣的國際連鎖甜品品牌。<br>
+                            我們的企圖心，是要讓全世界同時經由味覺和視覺品嚐到最頂級風味的台灣波霸珍珠奶茶。<br>
+                            十多年的潛心研發，老虎堂認為，甜品是最具休閒與療癒、放鬆感的食物，老虎堂並非一般的手搖茶飲，<br>
+                            我們獨創全球，是第一個「喝」的甜品。<br>
+                            老虎堂想傳遞給世人的是，台灣濃濃的人情味與源源不絕的休閒甜品創意美學。
+                        </p>
+                    </div>
+                </div>
+                <div class="about-card-group-text-animation-botton" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+                    <div class="about-card-group-img">
+                        <img src="./images/about/icon5.png">
+                    </div>
+                    <div class="about-card-group-text">
+                        <h2>老虎堂 ｜ 虎糖特色 Feature Of Product</h2>
+                        <p>
+                            世界首創「喝」的甜品，台灣波霸珍珠奶茶視覺系飲品「糖」是甜品核心要素，<br>
+                            隨著全球健康生活的趨勢，美味卻「更營養、更健康、無負擔」，已經成為全球的飲食潮流，<br>
+                            黑糖不但是台灣懷念的古早味，更有著豐富的礦物質與維生素等多種營養，<br>
+                            加上一股獨特的香氣，是一種吃過就難以忘懷的臺灣味。<br>
+                            除了口味獨特，兼顧美感與療癒系視覺的交融虎紋，更能讓人一邊喝一邊放鬆心情，<br>
+                            彷彿有一股魔力，吸引人一而再、再而三品嚐。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="cloud-left slide-in" data-aos="fade-left">
+                <img src="./images/background_img/left_cloud_bg.webp">
+            </div>
+            <div class="cloud-right" data-aos="fade-right">
+                <img src="./images/background_img/right_cloud_bg.webp">
+            </div>
+            <div class="about-us-scroll-img slide-in">
+                <img src="./images/background_img/logo_black.webp">
+            </div>
         </section>
-        
+        <!-- <div class="v100"></div> -->
+
         <!-- 佑 社群回饋 -->
         <section id="social"></section>
-        
+
         <!-- 佑 產品經銷 -->
         <section id="distribution"></section>
-        
+
         <!-- 翔 熱門經典 -->
         <section id="classic"></section>
 
         <!-- 夫 媒體露出 -->
         <section id="media"></section>
-        
+
         <!-- 佑 媒體報導 -->
         <section id="news"></section>
-        
+
         <!-- 齊 加盟專區 -->
         <section id="franchisee"></section>
 
     </main>
-    
+
+
     <!-- 秋 footer -->
     <footer></footer>
 
-    <script src="bower_components/aos/dist/aos.js"></script>
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>   
+
     <script>
-        
+        AOS.init();
+        // let animationPlayed = false;
+
+        // function blackSugarDelay(number) {
+        //     document.querySelector('.black-sugar').setAttribute('data-aos-duration', 800)
+        // }
+        // setTimeout(blackSugarDelay, 3000);
+
+
+
+        // const sliderImages = document.querySelectorAll('.slide-in');
+
+        // function checkSlide() {
+        //     sliderImages.forEach(sliderImage => {
+        //         // half way through the image
+        //         const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        //         // bottom of the image
+        //         const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        //         const isHalfShown = slideInAt > sliderImage.offsetTop;
+        //         const isNotScrolledPast = window.scrollY < imageBottom;
+        //         if (isHalfShown && isNotScrolledPast) {
+        //             sliderImage.classList.add('active');
+        //         } else {
+        //             sliderImage.classList.remove('active');
+        //         }
+        //     });
+        // }
+
+        // window.addEventListener('scroll', debounce(checkSlide));
     </script>
 </body>
 
