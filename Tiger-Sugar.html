@@ -39,6 +39,7 @@
             background-color: transparent;
             background-size: contain;
             background-repeat: no-repeat;
+            z-index: 1;
         }
 
         /* .container-about-us-header {} */
@@ -46,10 +47,10 @@
         .container-about-us-title {
             width: 100%;
             display: flex;
-            position: absolute;
+            /* position: absolute;
             left: 10%;
-            top: 10%;
-            z-index: 1;
+            top: 10%; */
+            z-index: 2;
         }
 
         .about-us-icon {
@@ -82,17 +83,18 @@
         }
 
 
-        .clear-fix:after {
+        /* .clear-fix:after {
             display: block;
             clear: both;
             content: "";
-        }
+        } */
 
 
         .about-card-group-container {
-            position: absolute;
+            /* position: absolute;
             left: 3%;
-            top: 25%;
+            top: 25%; */
+            z-index: 2;
         }
 
         .about-card-group-text-animation-top {
@@ -137,7 +139,7 @@
         }
 
         .cloud-right {
-            /* display: none; */
+            display: none;
             width: 100%;
             position: absolute;
             top: 0;
@@ -148,7 +150,6 @@
         .cloud-right img {
             overflow: clip;
             overflow-clip-margin: contentbox;
-
         }
 
         .about-us-scroll-img {
@@ -158,6 +159,15 @@
             top: 10%;
             /* z-index: ; */
             /* transform: translateY(30%); */
+        }
+
+        @media (max-width:1200px) {
+            .cloud-right {
+                display: none;
+            }
+            .cloud-left {
+                display: none;
+            }
         }
 
         /* CSS franchisee */
@@ -338,11 +348,10 @@
                     </div>
                 </div>
             </div>
-            <div class="cloud-left" data-aos="fade-left" data-aos-anchor-placement="center-left" data-aos-once="true" data-aos-offset="900"
-                data-aos-easing="ease-in-sine" data-aos-offset="1100">
+            <div class="cloud-left" data-aos="fade-left" data-aos-anchor-placement="center-left" data-aos-once="true" data-aos-easing="ease-in-sine" data-aos-offset="1100">
                 <img src="./images/background_img/left_cloud_bg.webp">
             </div>
-            <div class="cloud-right" data-aos="fade-rifht" data-aos-anchor-placement="center-rifht" data-aos-once="true" data-aos-offset="1000">
+            <div class="cloud-right" data-aos="fade-rifht" data-aos-anchor-placement="center-rifht" data-aos-once="true" data-aos-easing="ease-in-sine" data-aos-offset="1000">
                 <img src="./images/background_img/right_cloud_bg.webp">
             </div>
             <div class="about-us-scroll-img">
@@ -398,12 +407,12 @@
 
     <script>
         AOS.init();
-        let animationPlayed = false;
+        // let animationPlayed = false;
 
-        function blackSugarDelay(number) {
-            document.querySelector('.black-sugar').setAttribute('data-aos-duration', 800)
-        }
-        setTimeout(blackSugarDelay, 3000);
+        // function blackSugarDelay(number) {
+        //     document.querySelector('.black-sugar').setAttribute('data-aos-duration', 800)
+        // }
+        // setTimeout(blackSugarDelay, 3000);
 
 
 
