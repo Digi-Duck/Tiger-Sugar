@@ -21,8 +21,9 @@
         /* CSS about */
 
         #about {
-            height: calc(80vh - 76px);
+            /* height: 100vh; */
             width: 100vw;
+            padding-bottom: 120px;
             background-color: blanchedalmond;
             background-image: url("images/background_img/about_bg.webp");
             background-size: cover;
@@ -34,7 +35,7 @@
 
         .black-sugar {
             /* width: 100%; */
-            aspect-ratio: 5;
+            aspect-ratio: 23 / 4;
             background-image: url("./images/background_img/section_header.webp");
             background-color: transparent;
             background-size: contain;
@@ -42,15 +43,13 @@
             z-index: 1;
         }
 
-        /* .container-about-us-header {} */
+
 
         .container-about-us-title {
-            width: 100%;
             display: flex;
-            /* position: absolute;
-            left: 10%;
-            top: 10%; */
-            z-index: 2;
+            padding-left: 10%;
+            position: absolute;
+            top: 5%;
         }
 
         .about-us-icon {
@@ -82,19 +81,9 @@
             margin-bottom: 8px;
         }
 
-
-        /* .clear-fix:after {
-            display: block;
-            clear: both;
-            content: "";
-        } */
-
-
         .about-card-group-container {
-            /* position: absolute;
-            left: 3%;
-            top: 25%; */
-            z-index: 2;
+            margin: 80px auto 0;
+            z-index: 3;
         }
 
         .about-card-group-text-animation-top {
@@ -125,50 +114,80 @@
         }
 
         .cloud-left {
-            /* display: none; */
             width: 100%;
             position: absolute;
-            /* left: -100%; */
+            left: -100%;
             top: 0;
-            z-index: 50;
-        }
-
-        .cloud-left img {
-            overflow: clip;
-            overflow-clip-margin: contentbox;
+            z-index: 2;
         }
 
         .cloud-right {
-            display: none;
             width: 100%;
             position: absolute;
             top: 0;
             right: -100%;
-            z-index: 50;
+            z-index: 2;
         }
 
-        .cloud-right img {
-            overflow: clip;
-            overflow-clip-margin: contentbox;
+        [data-aos=fade-left] {
+            transform: translate3d(100%, 0, 0);
+        }
+
+        [data-aos=fade-right] {
+            transform: translate3d(-90%, 0, 0);
+        }
+
+        [data-aos=fade-down] {
+            transform: translate3d(0, -250px, 0);
+        }
+
+        [data-aos^=fade][data-aos^=fade] {
+            opacity: 1;
         }
 
         .about-us-scroll-img {
             width: 30vw;
             position: absolute;
-            right: 5%;
-            top: 10%;
-            /* z-index: ; */
-            /* transform: translateY(30%); */
+            right: 3%;
+            top: 5%;
         }
 
-        @media (max-width:1200px) {
+        @media screen and(max-width:1200px) {
             .cloud-right {
                 display: none;
             }
+
             .cloud-left {
                 display: none;
             }
         }
+
+        @media screen and(min-width:1200px) {
+            #about .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media screen and(min-width:992px) {
+            #about .container {
+                max-width: 960px;
+            }
+        }
+
+        @media screen and(min-width:768px) {
+            #about .container {
+                max-width: 720px;
+            }
+        }
+
+        @media screen and(min-width:576px) {
+            #about .container {
+                max-width: 540px;
+            }
+        }
+
+
+
 
         /* CSS franchisee */
 
@@ -176,26 +195,25 @@
             width: 100vw;
             height: 400px;
             padding: 50px 0 40px;
-            background-color: bisque;
             display: flex;
             flex-direction: column;
             align-items: center;
             background-image: url(./images/background_img/about_bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
             position: relative;
         }
 
-        .franchisee-container {
+        .franchisee-container-big {
             height: 100px;
             width: 100%;
-            padding: 0 15px;
+            padding: 20% 15px 0;
             margin: auto;
         }
 
         .franchisee-container-animation {
             display: flex;
-
             justify-content: center;
-
         }
 
         .join-us-img {
@@ -223,14 +241,15 @@
             margin-top: 5px;
         }
 
-
         @keyframes flashing {
             0% {
                 color: #fee483;
             }
+
             50% {
                 color: white;
             }
+
             100% {
                 color: #fee483;
             }
@@ -247,9 +266,15 @@
             animation: flashing 1.5s infinite;
         }
 
+        .container-franchisee-title {
+            width: 100%;
+            z-index: 3;
+        }
+
         .franchisee-icon {
             background-image: url("./images/nav/icon1-5.png");
             background-size: contain;
+            background-repeat: no-repeat;
             width: 32px;
             height: 32px;
             float: left;
@@ -264,6 +289,8 @@
             position: absolute;
             left: 10%;
             top: 50px;
+            display: flex;
+            flex-direction: row;
         }
 
         .franchisee-title h1,
@@ -284,6 +311,30 @@
         .franchisee-link {
             text-decoration: none;
         }
+
+        @media screen and(min-width:1200px) {
+            #franchisee .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media screen and(min-width:992px) {
+            #franchisee .container {
+                max-width: 960px;
+            }
+        }
+
+        @media screen and(min-width:768px) {
+            #franchisee .container {
+                max-width: 720px;
+            }
+        }
+
+        @media screen and(min-width:576px) {
+            #franchisee .container {
+                max-width: 540px;
+            }
+        }
     </style>
 </head>
 
@@ -300,62 +351,66 @@
         <div class="v100"></div>
         <!-- 齊 關於我們 -->
         <section id="about">
-            <div class="container-about-us-header">
-                <div class="black-sugar" data-aos="fade-down" data-aos-duration="4000" data-aos-once="true"></div>
-                <div class="container-about-us-title">
-                    <div class="about-us-icon"></div>
-                    <div class="about-us-tilte">
-                        <h1>關於我們</h1>
-                        <h2>ABOUT</h2>
+            <div class="container">
+                <div class="container-about-us-header">
+                    <div class="black-sugar" data-aos="fade-down" data-aos-duration="2000" data-aos-once="true"
+                        data-aos-delay="1000">
                     </div>
-                    <div class="clear-fix"></div>
+                    <div class="container-about-us-title">
+                        <div class="about-us-icon"></div>
+                        <div class="about-us-tilte">
+                            <h1>關於我們</h1>
+                            <h2>ABOUT</h2>
+                        </div>
+                    </div>
+                </div>
 
-                </div>
-            </div>
-
-            <div class="about-card-group-container">
-                <div class="about-card-group-text-animation-top" data-aos="fade-up"
-                    data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-                    <div class="about-card-group-img">
-                        <img src="./images/about/icon4.png">
+                <div class="about-card-group-container">
+                    <div class="about-card-group-text-animation-top" data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+                        <div class="about-card-group-img">
+                            <img src="./images/about/icon4.png">
+                        </div>
+                        <div class="about-card-group-text">
+                            <h2>老虎堂 ｜ 虎堂初心 Original Intention</h2>
+                            <p>
+                                老虎堂是一個發源於台灣的國際連鎖甜品品牌。<br>
+                                我們的企圖心，是要讓全世界同時經由味覺和視覺品嚐到最頂級風味的台灣波霸珍珠奶茶。<br>
+                                十多年的潛心研發，老虎堂認為，甜品是最具休閒與療癒、放鬆感的食物，老虎堂並非一般的手搖茶飲，<br>
+                                我們獨創全球，是第一個「喝」的甜品。<br>
+                                老虎堂想傳遞給世人的是，台灣濃濃的人情味與源源不絕的休閒甜品創意美學。
+                            </p>
+                        </div>
                     </div>
-                    <div class="about-card-group-text">
-                        <h2>老虎堂 ｜ 虎堂初心 Original Intention</h2>
-                        <p>
-                            老虎堂是一個發源於台灣的國際連鎖甜品品牌。<br>
-                            我們的企圖心，是要讓全世界同時經由味覺和視覺品嚐到最頂級風味的台灣波霸珍珠奶茶。<br>
-                            十多年的潛心研發，老虎堂認為，甜品是最具休閒與療癒、放鬆感的食物，老虎堂並非一般的手搖茶飲，<br>
-                            我們獨創全球，是第一個「喝」的甜品。<br>
-                            老虎堂想傳遞給世人的是，台灣濃濃的人情味與源源不絕的休閒甜品創意美學。
-                        </p>
-                    </div>
-                </div>
-                <div class="about-card-group-text-animation-botton" data-aos="fade-up"
-                    data-aos-anchor-placement="center-bottom" data-aos-duration="800">
-                    <div class="about-card-group-img">
-                        <img src="./images/about/icon5.png">
-                    </div>
-                    <div class="about-card-group-text">
-                        <h2>老虎堂 ｜ 虎糖特色 Feature Of Product</h2>
-                        <p>
-                            世界首創「喝」的甜品，台灣波霸珍珠奶茶視覺系飲品「糖」是甜品核心要素，<br>
-                            隨著全球健康生活的趨勢，美味卻「更營養、更健康、無負擔」，已經成為全球的飲食潮流，<br>
-                            黑糖不但是台灣懷念的古早味，更有著豐富的礦物質與維生素等多種營養，<br>
-                            加上一股獨特的香氣，是一種吃過就難以忘懷的臺灣味。<br>
-                            除了口味獨特，兼顧美感與療癒系視覺的交融虎紋，更能讓人一邊喝一邊放鬆心情，<br>
-                            彷彿有一股魔力，吸引人一而再、再而三品嚐。
-                        </p>
+                    <div class="about-card-group-text-animation-botton" data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom" data-aos-duration="800">
+                        <div class="about-card-group-img">
+                            <img src="./images/about/icon5.png">
+                        </div>
+                        <div class="about-card-group-text">
+                            <h2>老虎堂 ｜ 虎糖特色 Feature Of Product</h2>
+                            <p>
+                                世界首創「喝」的甜品，台灣波霸珍珠奶茶視覺系飲品「糖」是甜品核心要素，<br>
+                                隨著全球健康生活的趨勢，美味卻「更營養、更健康、無負擔」，已經成為全球的飲食潮流，<br>
+                                黑糖不但是台灣懷念的古早味，更有著豐富的礦物質與維生素等多種營養，<br>
+                                加上一股獨特的香氣，是一種吃過就難以忘懷的臺灣味。<br>
+                                除了口味獨特，兼顧美感與療癒系視覺的交融虎紋，更能讓人一邊喝一邊放鬆心情，<br>
+                                彷彿有一股魔力，吸引人一而再、再而三品嚐。
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="cloud-left" data-aos="fade-left" data-aos-anchor-placement="center-left" data-aos-once="true" data-aos-easing="ease-in-sine" data-aos-offset="1100">
-                <img src="./images/background_img/left_cloud_bg.webp">
-            </div>
-            <div class="cloud-right" data-aos="fade-rifht" data-aos-anchor-placement="center-rifht" data-aos-once="true" data-aos-easing="ease-in-sine" data-aos-offset="1000">
-                <img src="./images/background_img/right_cloud_bg.webp">
-            </div>
-            <div class="about-us-scroll-img">
-                <img src="./images/background_img/logo_black.webp">
+                <div class="cloud-left" data-aos="fade-left" data-aos-once="true" data-aos-duration="3000"
+                    data-aos-delay="500">
+                    <img src="./images/background_img/left_cloud_bg.webp">
+                </div>
+                <div class="cloud-right" data-aos="fade-right" data-aos-once="true" data-aos-duration="3000"
+                    data-aos-delay="500">
+                    <img src="./images/background_img/right_cloud_bg.webp">
+                </div>
+                <div class="about-us-scroll-img">
+                    <img src="./images/background_img/logo_black.webp">
+                </div>
             </div>
         </section>
         <!-- <div class="v100"></div> -->
@@ -375,23 +430,31 @@
         <!-- 佑 媒體報導 -->
         <section id="news"></section>
 
+
+        <div class="v100"></div>
         <!-- 齊 加盟專區 -->
         <section id="franchisee">
-            <div class="franchisee-container">
-                <div class="franchisee-title">
-                    <div class="franchisee-icon"></div>
-                    <h1>加盟專區</h1>
-                    <h2>FRANCHISEE</h2>
-                </div>
-                <div class="franchisee-container-animation" data-aos="zoom-in">
-                    <a href="" class="franchisee-link">
-                        <div class="join-us-img">
-                            <div class="join-us-info">
-                                <h2> <i class="bi bi-star-fill"></i>Join Our Franchise! <i class="bi bi-star-fill"></i>
-                                </h2>
-                            </div>
+            <div class="container">
+                <div class="franchisee-container-big">
+                    <div class="franchisee-title">
+                        <div class="franchisee-icon"></div>
+                        <div class="container-franchisee-title">
+                            <h1>加盟專區</h1>
+                            <h2>FRANCHISEE</h2>
                         </div>
-                    </a>
+                    </div>
+
+                    <div class="franchisee-container-animation" data-aos="zoom-in">
+                        <a href="" class="franchisee-link">
+                            <div class="join-us-img">
+                                <div class="join-us-info">
+                                    <h2> <i class="bi bi-star-fill"></i>Join Our Franchise! <i
+                                            class="bi bi-star-fill"></i>
+                                    </h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -406,7 +469,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 800,
+        });
         // let animationPlayed = false;
 
         // function blackSugarDelay(number) {
@@ -419,21 +484,25 @@
 
         const scrollImg = document.querySelector(".about-us-scroll-img");
         const aboutSection = document.querySelector("#about");
+
         let scrollPosition = 0;
         const sectionHeight = aboutSection.clientHeight;
-        const minScrollPosition = -sectionHeight * 0.3; // 30%下
-        const maxScrollPosition = sectionHeight * 0.3; // 30%上
+        const minScrollPosition = -sectionHeight * 0.1; // 控制上
+        const maxScrollPosition = sectionHeight * 0.52; // 控制下限
         const scrollSpeed = 0.5;
 
         document.addEventListener("wheel", (event) => {
             const deltaY = event.deltaY * scrollSpeed;
             scrollPosition += deltaY;
+            console.log(minScrollPosition);
+            console.log(maxScrollPosition);
             if (scrollPosition < minScrollPosition) {
                 scrollPosition = minScrollPosition;
             }
             if (scrollPosition > maxScrollPosition) {
                 scrollPosition = maxScrollPosition;
             }
+            console.log(scrollPosition);
             scrollImg.style.transform = `translateY(${scrollPosition}px)`;
             event.preventDefault();
         });
