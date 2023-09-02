@@ -1,6 +1,7 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 #news {
     background-color: #0c1219;
     padding-bottom: 60px;
@@ -173,8 +174,33 @@
     color: #FFFFFF;
 }
 
-#news .content{
+#news .content {
     width: calc(1920px - 48px);
     overflow: hidden;
     margin: auto;
+}
+
+@media(min-width:576px) {
+    #news .content {
+        width: 540px;
+    }
+}
+
+@media(min-width:768px) {
+    #news .content {
+        width: 720px;
+    }
+}
+
+@media(min-width:992px) {
+    #news .content {
+        width: 960px;
+    }
+}
+
+@media(min-width:1200px) {
+    #news .content {
+        width: 1440px;
+    }
+
 }
