@@ -10,11 +10,34 @@ a {
 }
 
 #distribution-area {
-    width: 1110px;
+    width: 454px;
     height: 1052px;
     margin: auto;
 }
 
+@media(min-width:576px) {
+    #distribution-area {
+        width: 540px;
+    }
+}
+
+@media(min-width:768px) {
+    #distribution-area {
+        width: 720px;
+    }
+}
+
+@media(min-width:992px) {
+    #distribution-area {
+        width: 960px;
+    }
+}
+
+@media(min-width:1200px) {
+    #distribution-area {
+        width: 1140px;
+    }
+}
 
 #distribution .swiper-button2 {
     position: relative;
@@ -31,25 +54,11 @@ a {
     left: -45px;
 }
 
-#distribution .header {
-    max-width: 1140px;
-    width: 100vw;
-    height: 209px;
-    margin: auto;
-    padding: 0 15px;
-}
 
-#distribution .container {
-    max-width: 1140px;
-    width: 100vw;
-    max-height: 209px !important;
-    margin: auto;
-}
 
 #distribution .card-container {
     max-width: 1140px;
     width: 65vw;
-    max-height: 209px !important;
     margin: auto;
 }
 
@@ -66,9 +75,8 @@ a {
 }
 
 #distribution .title {
-    margin-top: 100px;
+    padding: 100px 15px 0px 15px;
     margin-bottom: 68px;
-
 }
 
 #distribution .header .container {
@@ -124,7 +132,6 @@ a {
 
 #distribution .title-text {
     color: white;
-    float: right;
 }
 
 #distribution .title-text-1 {
@@ -260,33 +267,3 @@ a {
     font-size: 18px;
 }
 
-@media(min-width:481px) {
-    #distribution-area {
-        width: 454px;
-    }
-}
-
-
-@media(min-width:576px) {
-    #distribution-area {
-        width: 540px;
-    }
-}
-
-@media(min-width:768px) {
-    #distribution-area {
-        width: 720px;
-    }
-}
-
-@media(min-width:992px) {
-    #distribution-area {
-        width: 960px;
-    }
-}
-
-@media(min-width:1200px) {
-    #distribution-area {
-        width: 1140px;
-    }
-}
