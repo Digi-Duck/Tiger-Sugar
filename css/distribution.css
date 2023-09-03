@@ -43,10 +43,26 @@ a {
     max-width: 1140px;
     width: 100vw;
     max-height: 209px !important;
-    /* width: 100%; */
-    /* margin-right: auto;
-    margin-left: auto; */
     margin: auto;
+}
+
+#distribution .card-container {
+    max-width: 1140px;
+    width: 65vw;
+    max-height: 209px !important;
+    margin: auto;
+}
+
+@media screen and (min-width:900px) {
+    #distribution .card-container {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    #distribution .card-container {
+        width: 100vw;
+    }
 }
 
 #distribution .title {
@@ -271,6 +287,6 @@ a {
 
 @media(min-width:1200px) {
     #distribution-area {
-        width: 1440px;
+        width: 1140px;
     }
 }

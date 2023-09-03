@@ -25,13 +25,12 @@ var swiper2 = new Swiper(".mySwiper2", {
     prevEl: ".swiper-button2 .swiper-button-prev",
   },
   breakpoints: {
-    481: {
+    900: {
       slidesPerView: 2,
-      spaceBetween: 30,
+      spaceBetween: 20,
     },
-    1200: {
+    1300: {
       slidesPerView: 3,
-      spaceBetween: 30,
     }
   }
 });
