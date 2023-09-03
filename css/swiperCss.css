@@ -67,7 +67,7 @@ body {
 
 @media(min-width:1200px) {
   #social .container {
-    width: 1440px;
+    width: 1140px;
   }
 
   #social .card-body {
@@ -84,11 +84,9 @@ body {
 #social .container {
   max-width: 1110px;
   max-height: 655px;
-  /* width: 100%; */
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
 }
 
 #social .header {

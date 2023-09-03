@@ -36,6 +36,7 @@ a {
     width: 100vw;
     height: 209px;
     margin: auto;
+    padding: 0 15px;
 }
 
 #distribution .container {
@@ -43,8 +44,9 @@ a {
     width: 100vw;
     max-height: 209px !important;
     /* width: 100%; */
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+    margin-left: auto; */
+    margin: auto;
 }
 
 #distribution .title {
