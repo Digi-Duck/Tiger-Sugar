@@ -32,12 +32,15 @@ a {
 }
 
 #distribution .header {
-    width: 1110px;
+    max-width: 1140px;
+    width: 100vw;
     height: 209px;
+    margin: auto;
 }
 
 #distribution .container {
-    width: 1100px !important;
+    max-width: 1140px;
+    width: 100vw;
     max-height: 209px !important;
     /* width: 100%; */
     margin-right: auto;
