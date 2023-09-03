@@ -31,20 +31,20 @@ function shadow(e) {
     bgCover.style.backgroundPosition = `${50 + (xMove / 10)}% ${-5 + (yMove / 10)}%`;
 
     //第3大
-    bgLeftMilkShadow.style.backgroundPosition = `${-150 - (xMove * 1)}% ${0 + (yMove / 2)}%`;
+    bgLeftMilkShadow.style.backgroundPosition = `${-150 - (xMove * 1)}% ${-10 + (yMove / 2)}%`;
 
     //第3大
-    bgLeftDrinks.style.backgroundPosition = `${-150 - (xMove * 1)}% ${0 + (yMove / 2)}%`;
+    bgLeftDrinks.style.backgroundPosition = `${-150 - (xMove * 1)}% ${-10 + (yMove / 2)}%`;
 
     //第2大
-    bgLeftMilk.style.backgroundPosition = `${-150 - (xMove * 1.2)}% ${0 + (yMove / 1.5)}%`;
+    bgLeftMilk.style.backgroundPosition = `${-150 - (xMove * 1.2)}% ${-10 + (yMove / 1.5)}%`;
 
     //最大
-    bgLeftTiger.style.backgroundPosition = `${-150 - (xMove * 4.2)}% ${0 + (yMove * 1)}%`;
+    bgLeftTiger.style.backgroundPosition = `${-150 - (xMove * 4.2)}% ${-10 + (yMove * 1)}%`;
 
     //第3大
     bgRightMilk.style.backgroundPosition = `${200 - (xMove * 1)}% ${-30 + (yMove / 2)}%`;
 
     //第2大
-    bgRightDrinks.style.backgroundPosition = `${200 - (xMove * 1.2)}% ${20 + (yMove / 1.5)}%`;
+    bgRightDrinks.style.backgroundPosition = `${200 - (xMove * 1.2)}% ${25 + (yMove / 1.5)}%`;
 }
