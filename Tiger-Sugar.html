@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <link rel="stylesheet" href="./css/banner.css">
+
     <link rel="stylesheet" href="./css/social.css">
 
     <link rel="stylesheet" href="./css/distribution.css">
@@ -14,11 +25,8 @@
 
     <link rel="stylesheet" href="./css/news.css">
 
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/media.css">
 
-    <!-- aos css -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
@@ -27,7 +35,21 @@
 
     <main>
         <!-- 夫 banner -->
-        <section id="banner"></section>
+        <section id="banner">
+            <div class="container">
+                <div class="move-bg bg"></div>
+                <div class="move-bg bg-cover"></div>
+                <div class="move-bg bg-left-tiger"></div>
+                <div class="move-bg bg-left-milk-shadow"></div>
+                <div class="move-bg bg-left-milk"></div>
+                <div class="move-bg bg-left-drinks"></div>
+                <div class="move-bg bg-right-drinks"></div>
+                <div class="move-bg bg-right-milk"></div>
+                <div class="move-bg bg-center"></div>
+                <h1 class="banner-text">Brave As A Tiger</h1>
+                <div class="trans-cover"></div>
+            </div>
+        </section>
 
         <!-- 齊 關於我們 -->
         <section id="about"></section>
@@ -762,7 +784,54 @@
         </section>
 
         <!-- 夫 媒體露出 -->
-        <section id="media"></section>
+        <section id="media">
+            <div class="container">
+                <div class="title-flex">
+                    <div class="title-img"></div>
+                    <div class="title-text">
+                        <div class="title-text-top">媒體露出</div>
+                        <div class="title-text-bottom">MEDIA</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper mySwiper media-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <video class="video swiper-slide" autoplay loop muted id="video1">
+                            <source src="./images/media_mp4/phpwT1PCF.mp4" type="video/mp4">
+                        </video>
+                        <i class="fa-solid fa-volume-xmark volumn"></i>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <video class="video swiper-slide" autoplay loop muted id="video2">
+                            <source src="./images/media_mp4/phpEGFGi8.mp4" type="video/mp4">
+                        </video>
+                        <i class="fa-solid fa-volume-xmark volumn"></i>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <video class="video swiper-slide" autoplay loop muted id="video3">
+                            <source src="./images/media_mp4/phpqk13yA.mp4" type="video/mp4">
+                        </video>
+                        <i class="fa-solid fa-volume-xmark volumn"></i>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <video class="video swiper-slide" autoplay loop muted id="video4">
+                            <source src="./images/media_mp4/phpHdx8fZ.mp4" type="video/mp4">
+                        </video>
+                        <i class="fa-solid fa-volume-xmark volumn"></i>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next media-button-next"></div>
+                <div class="swiper-button-prev media-button-prev"></div>
+            </div>
+        </section>
+
 
         <!-- 佑 媒體報導 -->
         <section id="news">
@@ -986,6 +1055,8 @@
     </script>
 
     <script src="./js/swiperJS.js"></script>
+    <script src="./js/banner.js"></script>
+    <script src="./js/media.js"></script>
 </body>
 
 </html>
