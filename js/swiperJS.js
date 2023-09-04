@@ -25,7 +25,7 @@ var swiper2 = new Swiper("#distribution .mySwiper2", {
     prevEl: ".swiper-button2 .swiper-button-prev",
   },
   breakpoints: {
-    900: {
+    992: {
       slidesPerView: 2,
       spaceBetween: 20,
     },

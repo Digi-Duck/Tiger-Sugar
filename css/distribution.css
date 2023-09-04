@@ -42,12 +42,12 @@
 
 .swiper-button2 .swiper-button-next {
     position: absolute;
-    right: -45px;
+    right: -25px;
 }
 
 .swiper-button2 .swiper-button-prev {
     position: absolute;
-    left: -45px;
+    left: -35px;
 }
 
 
