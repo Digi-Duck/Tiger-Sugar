@@ -1,0 +1,269 @@
+a {
+    text-decoration: none;
+}
+
+#distribution {
+    background-image: url('../img/bg.png');
+    height: 1052px;
+    background-color: #0c1219;
+    position: relative;
+}
+
+#distribution-area {
+    width: 454px;
+    height: 1052px;
+    margin: auto;
+}
+
+@media(min-width:576px) {
+    #distribution-area {
+        width: 540px;
+    }
+}
+
+@media(min-width:768px) {
+    #distribution-area {
+        width: 720px;
+    }
+}
+
+@media(min-width:992px) {
+    #distribution-area {
+        width: 960px;
+    }
+}
+
+@media(min-width:1200px) {
+    #distribution-area {
+        width: 1140px;
+    }
+}
+
+#distribution .swiper-button2 {
+    position: relative;
+    bottom: 340px;
+}
+
+.swiper-button2 .swiper-button-next {
+    position: absolute;
+    right: -45px;
+}
+
+.swiper-button2 .swiper-button-prev {
+    position: absolute;
+    left: -45px;
+}
+
+
+
+#distribution .card-container {
+    max-width: 1140px;
+    width: 65vw;
+    margin: auto;
+}
+
+@media screen and (min-width:900px) {
+    #distribution .card-container {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    #distribution .card-container {
+        width: 100vw;
+    }
+}
+
+#distribution .title {
+    padding: 100px 15px 0px 15px;
+    margin-bottom: 68px;
+}
+
+#distribution .header .container {
+    height: 55.4px;
+    display: flex;
+    justify-content: start;
+}
+
+#distribution .swiper {
+    width: 100%;
+    margin: 20px auto;
+}
+
+#distribution .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 12px;
+    height: calc(100% - 2px) !important;
+}
+
+
+#distribution .swiper-button-next,
+.swiper-button-prev {
+    color: #FFFFFF;
+    width: 27px !important;
+}
+
+#distribution .card-body {
+    background: white;
+    max-width: 540px;
+    width: calc(100% - 2px);
+    border-radius: 3px;
+    border: 1px solid rgb(219, 219, 219);
+    box-shadow: none;
+    display: block;
+    min-width: 326px;
+    padding: 0px;
+}
+
+#distribution .swiper-slide {
+    background: unset;
+}
+
+.distribution-icon {
+    width: 30.05px;
+    height: 32px;
+    margin: 0 5px 0 0;
+}
+
+#distribution .title-text {
+    color: white;
+}
+
+#distribution .title-text-1 {
+    width: 56px;
+    height: 26px;
+    font-size: 14px;
+}
+
+#distribution .title-text-2 {
+    width: 56px;
+    height: 14.4px;
+    font-size: 12px;
+}
+
+#distribution .img-w-h-border-img {
+    width: 350px;
+    height: 379px;
+    background-image: url('/img/shop-img-border.png');
+    background-size: cover;
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+}
+
+#distribution .product-img {
+    width: 330px;
+    height: 360px;
+    position: absolute;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution .ask-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution .d-f-direction-c {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#distribution .commodity_title {
+    width: 352px;
+    height: 32px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: start;
+}
+
+#distribution .commodity_title_english {
+    width: 352px;
+    height: 42px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+}
+
+#distribution .commodity_sort {
+    width: 352px;
+    height: 32px;
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+}
+
+#distribution .distribution_area_button {
+    height: 45px;
+    padding: 8px 30px;
+    font-size: 20px;
+    border: 1px solid #FFDD80;
+    color: #FFF;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#distribution .swiper-button-next:after,
+#distribution .swiper-button-prev:after {
+    display: none;
+}
+
+#distribution .next-prev-img {
+    width: 22px;
+    height: 37px;
+}
+
+#distribution .product_img_hover {
+    position: absolute;
+    width: 330px;
+    height: 360px;
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+
+#distribution .img-w-h-border-img:hover .product_img_hover {
+    opacity: 0.8;
+
+}
+
+#distribution .ask-icon-hover {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    top: 0px;
+}
+
+.commodity_more_button.btn {
+    width: 124px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: #ffe282 3px solid;
+    color: #ffe282;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(180px - 12px);
+    left: calc(165px - 62px);
+    font-size: 18px;
+}
+
