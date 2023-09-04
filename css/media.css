@@ -3,6 +3,7 @@
     margin: auto;
     width: 100%;
     background-color: #0C1219;
+    padding: 0 15px;
 }
 
 @media screen and (min-width: 576px) {

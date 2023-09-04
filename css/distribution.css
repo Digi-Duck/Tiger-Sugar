@@ -6,9 +6,9 @@
 }
 
 #distribution-area {
-    width: 90%;
-    height: 1052px;
+    width: 100%;
     margin: auto;
+    padding: 0 15px;
 }
 
 @media(min-width:576px) {
@@ -116,7 +116,7 @@
 }
 
 #distribution .title {
-    padding: 100px 15px 0px 15px;
+    padding-top: 100px;
     margin-bottom: 68px;
     display: flex;
 }
