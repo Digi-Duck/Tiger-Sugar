@@ -235,13 +235,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    #classic .menu-up{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
+    #classic .menu-type{
+        width: 285px;
     }
-    #classic .gold-border{
-        max-width: 770px;
-    }
+    
 }
 
 @media (min-width: 1920px){
@@ -252,17 +249,17 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+    #classic .menu-type{
+        width: 285px;
+    }
 }
 
 #classic .color-white{
     color: white;
 }
-
-#classic .up{
-    max-height: 100px;
-    height: 100%;
+#classic .up-text{
+    height: 100px;
 }
-
-#classic .title-gap{
-    margin-bottom: 24px;
+#classic .up{
+    height: 100px;
 }
