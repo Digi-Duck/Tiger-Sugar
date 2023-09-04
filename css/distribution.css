@@ -71,7 +71,7 @@
 }
 
 #distribution .header .container {
-    height: 55.4px;
+    height: 55px;
     display: flex;
     justify-content: start;
 }
@@ -84,10 +84,6 @@
 #distribution .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0px 0px 12px;
     height: calc(100% - 2px) !important;
 }
@@ -170,30 +166,61 @@
     top: 10px;
 }
 
-#distribution .d-f-direction-c {
-    display: flex;
-    flex-direction: column;
+#distribution .direction-body {
+    width: 350px;
     color: #fff;
 }
 
-#distribution .commodity_title {
+@media (max-width:1400px) {
+
+    #distribution .direction-body {
+        margin: auto;
+    }
+}
+@media (max-width:540px) {
+
+    #distribution .img-w-h-border-img {
+        width: 100%;
+
+    }
+
+    #distribution .direction-body {
+        width: 100%;
+    }
+
+    #distribution .product-img-hover {
+        width: calc(100% - 20px);
+    }
+
+    #distribution .product-img {
+        width: calc(100% - 20px);
+    }
+}
+
+#distribution .commodity-title {
     height: 32px;
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-#distribution .commodity_title_english {
+#distribution .commodity-title-english {
     height: 42px;
     font-size: 14px;
     margin-bottom: 20px;
 }
 
-#distribution .commodity_sort {
+#distribution .commodity-sort {
     height: 32px;
     font-size: 20px;
 }
 
-#distribution .distribution_area_button {
+#distribution .commodity-title,
+#distribution .commodity-title-english,
+#distribution .commodity-sort {
+    display: flex;
+}
+
+#distribution .distribution-area-button {
     height: 45px;
     padding: 8px 30px;
     font-size: 20px;
@@ -215,7 +242,7 @@
     height: 37px;
 }
 
-#distribution .product_img_hover {
+#distribution .product-img-hover {
     position: absolute;
     width: 330px;
     height: 360px;
@@ -228,7 +255,7 @@
     transition: 1s;
 }
 
-#distribution .img-w-h-border-img:hover .product_img_hover {
+#distribution .img-w-h-border-img:hover .product-img-hover {
     opacity: 0.8;
 
 }
@@ -241,7 +268,7 @@
     top: 0px;
 }
 
-#distribution .commodity_more_button.btn {
+#distribution .commodity-more-button.btn {
     width: 124px;
     height: 48px;
     display: flex;
@@ -255,4 +282,3 @@
     left: calc(165px - 62px);
     font-size: 18px;
 }
-
