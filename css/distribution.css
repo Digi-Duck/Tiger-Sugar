@@ -177,29 +177,20 @@
 }
 
 #distribution .commodity_title {
-    width: 352px;
     height: 32px;
     font-size: 20px;
     margin-bottom: 15px;
-    display: flex;
-    justify-content: start;
 }
 
 #distribution .commodity_title_english {
-    width: 352px;
     height: 42px;
     font-size: 14px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: start;
 }
 
 #distribution .commodity_sort {
-    width: 352px;
     height: 32px;
     font-size: 20px;
-    display: flex;
-    justify-content: start;
 }
 
 #distribution .distribution_area_button {
