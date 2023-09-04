@@ -1,7 +1,3 @@
-a {
-    text-decoration: none;
-}
-
 #distribution {
     background-image: url('../img/bg.png');
     height: 1052px;
@@ -254,7 +250,7 @@ a {
     top: 0px;
 }
 
-.commodity_more_button.btn {
+#distribution .commodity_more_button.btn {
     width: 124px;
     height: 48px;
     display: flex;

@@ -1,10 +1,4 @@
- *{
-    box-sizing: border-box;
- }
- /* CSS franchisee */
-
-
- #franchisee {
+#franchisee {
     height: 400px;
     padding: 50px 0 40px;
     display: flex;
@@ -34,6 +28,7 @@
     background-image: url('../images/franchisee/logo-Graphic.png');
     background-repeat: no-repeat;
     background-size: contain;
+    overflow: hidden;
 }
 
 .join-us-img img {
@@ -51,6 +46,11 @@
     background-size: contain;
     margin-left: 130px;
     margin-top: 5px;
+    overflow: hidden;
+}
+
+.join-us-info > h2{
+    overflow: hidden;
 }
 
 @keyframes flashing {
@@ -124,15 +124,13 @@ h2 {
     text-decoration: none;
 }
 
-@media screen and (min-width:1200px) {
-    #franchisee .container {
-        max-width: 1140px;
-    }
+#franchisee .container {
+    max-width: 100%;
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width:576px) {
     #franchisee .container {
-        max-width: 960px;
+        max-width: 540px;
     }
 }
 
@@ -142,8 +140,14 @@ h2 {
     }
 }
 
-@media screen and (min-width:576px) {
+@media screen and (min-width:992px) {
     #franchisee .container {
-        max-width: 540px;
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #franchisee .container {
+        max-width: 1140px;
     }
 }
