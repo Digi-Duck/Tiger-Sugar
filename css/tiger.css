@@ -279,16 +279,16 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    
+
     #classic .menu-up {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    
+
     #classic .menu-type {
         min-width: 255px;
     }
-    
+
     #classic .container {
         max-width: 1140px;
     }
@@ -304,6 +304,7 @@
         max-width: 255px;
     }
 }
-#classic .color-white{
+
+#classic .color-white {
     color: white;
 }
