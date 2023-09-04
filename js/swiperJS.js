@@ -29,8 +29,9 @@ var swiper2 = new Swiper("#distribution .mySwiper2", {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    1300: {
+    1400: {
       slidesPerView: 3,
+      spaceBetween: 24,
     }
   }
 });
