@@ -27,7 +27,6 @@
     background-image: url('../images/franchisee/logo-Graphic.png');
     background-repeat: no-repeat;
     background-size: contain;
-    overflow: hidden;
 }
 
 .join-us-img img {
@@ -45,11 +44,6 @@
     background-size: contain;
     margin-left: 130px;
     margin-top: 5px;
-    overflow: hidden;
-}
-
-.join-us-info > h2{
-    overflow: hidden;
 }
 
 @keyframes flashing {
@@ -107,10 +101,6 @@
 .franchisee-title h2 {
     font-size: 12px;
     margin-top: 0;
-}
-
-.franchisee-link {
-    text-decoration: none;
 }
 
 #franchisee .container {
