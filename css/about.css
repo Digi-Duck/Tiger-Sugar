@@ -76,6 +76,7 @@ h2 {
     flex-direction: row;
     margin-bottom: 60px;
     padding-left: 10%;
+    margin-right: 50px;
 }
 
 .about-card-group-text-animation-botton {
@@ -83,6 +84,7 @@ h2 {
     flex-direction: row;
     margin-bottom: 60px;
     padding-left: 10%;
+    margin-right: 50px;
 }
 
 .about-card-group-img {
@@ -136,6 +138,7 @@ h2 {
     right: 3%;
     top: 5%;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 .about-us-scroll-img img {
