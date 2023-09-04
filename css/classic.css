@@ -144,10 +144,13 @@
     margin-top: 50px;
     border: 1px solid #f4dd97;
     padding: 0 20px 40px 20px;
+    max-width: 770px;
+    width: 100%;
+    margin: auto;
 }
 #classic .menu-type{
     margin-top: 40px;
-    padding: 40px;
+    padding: 40px 15px;
 }
 
 #classic .small-dot {
@@ -212,16 +215,15 @@
     background-position: center 30%;
 }
 
-@media (min-width: 1920px){
+@media (min-width: 576px){
     #classic .container{
-        max-width: 1140px;
+        min-width: 540px;
     }
-    #classic .menu-up{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    #classic .menu-type{
-        max-width: 255px;
+}
+
+@media (min-width: 992px){
+    #classic .container{
+        max-width: 960px;
     }
 }
 
@@ -237,26 +239,30 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr; 
     }
-    #classic .menu-type{
-        min-width: 255px;
+    #classic .gold-border{
+        max-width: 770px;
     }
 }
 
-@media (min-width: 992px){
+@media (min-width: 1920px){
     #classic .container{
-        max-width: 960px;
+        max-width: 1140px;
     }
-    #classic .menu-type{
-        min-width: 255px;
-    }
-}
-
-@media (min-width: 576px){
-    #classic .container{
-        min-width: 540px;
-    }
-    #classic .menu-type{
-        min-width: 255px;
+    #classic .menu-up{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
+#classic .color-white{
+    color: white;
+}
+
+#classic .up{
+    max-height: 100px;
+    height: 100%;
+}
+
+#classic .title-gap{
+    margin-bottom: 24px;
+}
