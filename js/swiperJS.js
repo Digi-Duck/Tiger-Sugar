@@ -55,10 +55,3 @@ var swiper3 = new Swiper("#news .mySwiper3", {
   }
 });
 
-
-// let swiper_margin_unset = document.querySelectorAll("#news .swiper-slide");
-// swiper_margin_unset.forEach(element =>{
-//   element.style.margin="unset";
-//   element.style.width="unset";
-
-// });
