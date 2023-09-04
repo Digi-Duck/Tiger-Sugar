@@ -1,4 +1,4 @@
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper("#social .mySwiper", {
   slidesPerView: 1,
   spaceBetween: 10,
   navigation: {
@@ -17,7 +17,7 @@ var swiper = new Swiper(".mySwiper", {
   }
 });
 
-var swiper2 = new Swiper(".mySwiper2", {
+var swiper2 = new Swiper("#distribution .mySwiper2", {
   slidesPerView: 1,
   spaceBetween: 30,
   navigation: {
@@ -35,7 +35,7 @@ var swiper2 = new Swiper(".mySwiper2", {
   }
 });
 
-var swiper3 = new Swiper(".mySwiper3", {
+var swiper3 = new Swiper("#news .mySwiper3", {
   slidesPerView: 1,
   spaceBetween: 48,
   loop: true,
