@@ -19,6 +19,7 @@
 #about .about-header{
     height: 10vh;
     margin: 0;
+     padding-bottom:10%;
 }
 
 #about .black-sugar {
@@ -36,6 +37,7 @@
     top:5%;
     z-index: 2;
 }
+
 
 #about .about-us-icon {
     background-image: url('../images/nav/icon1-1.png');
@@ -144,6 +146,14 @@ h2 {
     left: -100%;
     top: 0;
     z-index: 2;
+    /* display: none; */
+}
+[data-aos=fade-left] {
+    transform: translate3d(100%, 0, 0);
+}
+
+#about .cloud-left img {
+    width: inherit;
 }
 
 #about .cloud-right {
@@ -152,14 +162,14 @@ h2 {
     top: 0;
     right: -100%;
     z-index: 2;
+    /* display: none; */
 }
-
-[data-aos=fade-left] {
-    transform: translate3d(100%, 0, 0);
+#about .cloud-right img{
+    width: inherit;
 }
 
 [data-aos=fade-right] {
-    transform: translate3d(-70%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
 }
 
 [data-aos=fade-down] {
@@ -174,13 +184,14 @@ h2 {
     width: 30vw;
     position: absolute;
     right: 3%;
-    top: 5%;
+    top: 3%;
     z-index: 1;
 }
 
 .about-us-scroll-img img {
     z-index: inherit;
     position: absolute;
+    width: 100%;
 }
 
 @media screen and (max-width:1200px) {
