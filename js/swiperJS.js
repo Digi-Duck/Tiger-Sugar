@@ -51,7 +51,7 @@ var swiper3 = new Swiper("#news .mySwiper3", {
     },
     1200: {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 0,
     }
   }
 });
