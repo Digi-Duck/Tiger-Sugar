@@ -16,7 +16,7 @@
 }
 
 #classic .text-height {
-    line-height: 20px;
+    line-height: 25px;
 }
 
 #classic .text12 {
@@ -59,22 +59,20 @@
 
 #classic .color-gray {
     color: gray;
-    margin-top: 10px;
 }
 
 #classic .container {
     width: 100%;
-    padding: 40px;
     margin: auto;
+    padding: 40px 15px;
 }
-
 #classic .section_content {
     position: relative;
     background-size: cover;
     background-position: 100% 0;
     padding-bottom: 80px;
     z-index: 2;
-    background-image: url(./images/background_img/about_bg.png);
+    /* background-image: url(./images/background_img/about_bg.png); */
     margin-top: 0;
 }
 
@@ -115,7 +113,7 @@
 
 #classic .drink-circle {
     width: 100%;
-    height: 500%;
+    height: 450%;
     border: 1px solid #f4dd97;
     border-radius: 100% 100% 0 100%/50%;
     border-bottom: none;
@@ -132,7 +130,7 @@
 }
 
 #classic .cold-hot-info {
-    margin: 0 5%;
+    margin: 0 2%;
 }
 
 #classic .cold-drink-span {
@@ -281,10 +279,13 @@
     #classic .menu-up {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        
     }
-
-    #classic .menu-type {
-        width: 285px;
+    #classic .menu-down {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0 12%;
+        margin-top: -10%;
     }
 }
 
