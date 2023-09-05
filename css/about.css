@@ -1,7 +1,5 @@
 #about {
-    /* height: 100vh; */
     padding-bottom: 120px;
-    background-color: blanchedalmond;
     background-image: url('../images/background_img/about_bg.webp');
     background-size: cover;
     position: relative;
@@ -23,39 +21,7 @@
     margin: 0;
 }
 
-#about .title-position{
-    width: 100%;
-    margin: auto;
-    margin-top: 50px;
-    padding: 0 15px;
-}
-
-@media screen and (min-width:576px) {
-    #about .title-position {
-        max-width: 540px;
-    }
-}
-
-@media screen and (min-width:768px) {
-    #about .title-position {
-        max-width: 720px;
-    }
-}
-
-@media screen and (min-width:992px) {
-    #about .title-position {
-        max-width: 960px;
-    }
-
-}
-
-@media screen and (min-width:1200px) {
-    #about .title-position {
-        max-width: 1140px;
-    }
-}
-
-.black-sugar {
+#about .black-sugar {
     aspect-ratio: 23 / 4;
     background-image: url('../images/background_img/section_header.webp');
     background-color: transparent;
@@ -65,13 +31,13 @@
     position: relative;
 }
 
-
-.container-about-us-title {
-    position: relative;
+#about .container-about-us-title {
+    position: absolute;
+    top:5%;
     z-index: 2;
 }
 
-.about-us-icon {
+#about .about-us-icon {
     background-image: url('../images/nav/icon1-1.png');
     background-size: contain;
     width: 32px;
@@ -80,57 +46,69 @@
     margin-right: 6px;
 }
 
-.about-us-tilte {
+#about .about-us-tilte {
     color: white;
     float: left;
 }
 
-.about-us-tilte h1,
+#about .about-us-tilte h1,
 h2 {
     font-size: 14px;
     font-weight: 500;
 }
 
-.about-us-tilte h1 {
+#about .about-us-tilte h1 {
     margin-bottom: 0;
 }
 
-.about-us-tilte h2 {
+#about .about-us-tilte h2 {
     margin-top: 0px;
     margin-bottom: 8px;
 }
 
-.about-card-group-container {
+#about .about-card-group-container {
     margin: 80px 0 0;
     z-index: 3;
     position: relative;
 }
 
-.about-card-group-text-animation-top {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 60px;
-    margin-right: 50px;
-}
-
-.about-card-group-text-animation-botton {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 60px;
-    margin-right: 50px;
-}
-
-@media screen and (min-width:480px) {
+@media screen and (max-width:480px) {
     .about-card-group-text-animation-top {
-        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .about-card-group-text-animation-botton {
-        flex-direction: row;
+    .about-card-group-text-animation-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about-us-scroll-img {
+        display: none;
+    }
+    
+    .about-card-group-text {
+        margin-left:50px;
     }
 }
 
-.about-card-group-img {
+#about .about-card-group-text-animation-top {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+    margin-right: 50px;
+}
+
+#about .about-card-group-text-animation-bottom {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+    margin-right: 50px;
+}
+
+
+
+#about.about-card-group-img {
     margin: auto;
     width: 106px;
 }
@@ -139,10 +117,9 @@ h2 {
     .about-card-group-img {
         margin: unset;
     }
-
 }
 
-.about-card-group-text {
+#about .about-card-group-text {
     color: white;
 }
 
@@ -152,16 +129,16 @@ h2 {
     }
 }
 
-.about-card-group-text h2 {
+#about .about-card-group-text h2 {
     font-size: 20px;
     margin-top: 0;
 }
 
-.about-card-group-text p {
+#about .about-card-group-text p {
     font-size: 14px;
 }
 
-.cloud-left {
+#about .cloud-left {
     width: 100%;
     position: absolute;
     left: -100%;
@@ -169,7 +146,7 @@ h2 {
     z-index: 2;
 }
 
-.cloud-right {
+#about .cloud-right {
     width: 100%;
     position: absolute;
     top: 0;
@@ -182,7 +159,7 @@ h2 {
 }
 
 [data-aos=fade-right] {
-    transform: translate3d(-90%, 0, 0);
+    transform: translate3d(-70%, 0, 0);
 }
 
 [data-aos=fade-down] {
@@ -193,7 +170,7 @@ h2 {
     opacity: 1;
 }
 
-.about-us-scroll-img {
+#about .about-us-scroll-img {
     width: 30vw;
     position: absolute;
     right: 3%;
@@ -232,7 +209,6 @@ h2 {
     #about .container {
         max-width: 960px;
     }
-
 }
 
 @media screen and (min-width:1200px) {
