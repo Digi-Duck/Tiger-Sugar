@@ -144,6 +144,14 @@ h2 {
     left: -100%;
     top: 0;
     z-index: 2;
+    /* display: none; */
+}
+[data-aos=fade-left] {
+    transform: translate3d(100%, 0, 0);
+}
+
+#about .cloud-left img {
+    width: inherit;
 }
 
 #about .cloud-right {
@@ -152,14 +160,14 @@ h2 {
     top: 0;
     right: -100%;
     z-index: 2;
+    /* display: none; */
 }
-
-[data-aos=fade-left] {
-    transform: translate3d(100%, 0, 0);
+#about .cloud-right img{
+    width: inherit;
 }
 
 [data-aos=fade-right] {
-    transform: translate3d(-70%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
 }
 
 [data-aos=fade-down] {
@@ -181,6 +189,7 @@ h2 {
 .about-us-scroll-img img {
     z-index: inherit;
     position: absolute;
+    width: 100%;
 }
 
 @media screen and (max-width:1200px) {

@@ -3,6 +3,7 @@ AOS.init({
 });
 
 
+
 const scrollImg = document.querySelector(".about-us-scroll-img");
 const aboutSection = document.querySelector("#about");
 let scrollPosition = 0;
