@@ -15,6 +15,9 @@
     #distribution-area {
         width: 540px;
     }
+    .swiper-button-product .swiper-button-next {
+        right: -40px !important;
+    }
 }
 
 @media(min-width:768px) {
@@ -27,25 +30,29 @@
     #distribution-area {
         width: 960px;
     }
+
 }
 
 @media(min-width:1200px) {
     #distribution-area {
         width: 1140px;
     }
+    .swiper-button-product .swiper-button-next {
+        right: -25px !important;
+    }
 }
 
-#distribution .swiper-button2 {
+#distribution .swiper-button-product {
     position: relative;
     bottom: 340px;
 }
 
-.swiper-button2 .swiper-button-next {
+.swiper-button-product .swiper-button-next {
     position: absolute;
-    right: -25px;
+    right: -30px;
 }
 
-.swiper-button2 .swiper-button-prev {
+.swiper-button-product .swiper-button-prev {
     position: absolute;
     left: -35px;
 }
@@ -54,19 +61,19 @@
 
 #distribution .card-container {
     max-width: 1140px;
-    width: 65vw;
+    width: 65%;
     margin: auto;
 }
 
 @media screen and (min-width:900px) {
     #distribution .card-container {
-        width: 80vw;
+        width: 80%;
     }
 }
 
 @media screen and (min-width:1400px) {
     #distribution .card-container {
-        width: 100vw;
+        width: 100%;
     }
 }
 

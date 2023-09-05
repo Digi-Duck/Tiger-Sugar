@@ -1,9 +1,9 @@
-var swiper = new Swiper("#social .mySwiper", {
+var swiper = new Swiper("#social .mySwiper-social", {
   slidesPerView: 1,
   spaceBetween: 10,
   navigation: {
-    nextEl: ".swiper-button .swiper-button-next",
-    prevEl: ".swiper-button .swiper-button-prev",
+    nextEl: ".swiper-button-social .swiper-button-next",
+    prevEl: ".swiper-button-social .swiper-button-prev",
   },
   breakpoints: {
     481: {
@@ -17,12 +17,12 @@ var swiper = new Swiper("#social .mySwiper", {
   }
 });
 
-var swiper2 = new Swiper("#distribution .mySwiper2", {
+var swiperProduct = new Swiper("#distribution .mySwiper-product", {
   slidesPerView: 1,
   spaceBetween: 30,
   navigation: {
-    nextEl: ".swiper-button2 .swiper-button-next",
-    prevEl: ".swiper-button2 .swiper-button-prev",
+    nextEl: ".swiper-button-product .swiper-button-next",
+    prevEl: ".swiper-button-product .swiper-button-prev",
   },
   breakpoints: {
     992: {
@@ -31,18 +31,18 @@ var swiper2 = new Swiper("#distribution .mySwiper2", {
     },
     1400: {
       slidesPerView: 3,
-      spaceBetween: 24,
+      spaceBetween: 12,
     }
   }
 });
 
-var swiper3 = new Swiper("#news .mySwiper3", {
+var swiperNews = new Swiper("#news .mySwiper-news", {
   slidesPerView: 1,
   spaceBetween: 48,
   loop: true,
   navigation: {
-    nextEl: ".swiper-button3 .swiper-button-next",
-    prevEl: ".swiper-button3 .swiper-button-prev",
+    nextEl: ".swiper-button-news .swiper-button-next",
+    prevEl: ".swiper-button-news .swiper-button-prev",
   },
   breakpoints: {
     481: {

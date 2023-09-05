@@ -192,13 +192,13 @@
     height: 89px;
 }
 
-#news .swiper-button3 {
+#news .swiper-button-news {
     position: relative;
     bottom: 340px;
 }
 
-#news .swiper-button3 .swiper-button-next,
-#news .swiper-button3 .swiper-button-prev {
+#news .swiper-button-news .swiper-button-next,
+#news .swiper-button-news .swiper-button-prev {
     position: absolute;
     top: 190px;
 }
