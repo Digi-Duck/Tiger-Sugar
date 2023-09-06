@@ -1,6 +1,158 @@
-#distribution-confirm,
-#fillout-area{
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#distribution_container {
     background-image: url('../images/distribution-confirm/bg_extra.png');
     background-size: cover;
     width: 100%;
+}
+
+#distribution-confirm .container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 76px;
+}
+
+#distribution-confirm .title-area {
+    position: relative;
+    margin-bottom: 20px;
+    height: 430px;
+}
+
+#distribution-confirm .title {
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin: 100px 0 12px;
+}
+
+#distribution-confirm .title-img {
+    background-image: url(../images/distribution-confirm/icon/distribution.svg);
+    height: 32px;
+    width: 32px;
+    margin: 0px 4px 0px 0px;
+    background-size: cover;
+}
+
+#distribution-confirm .title-flex {
+    display: flex;
+    width: 100%;
+    padding: 50px 0px;
+}
+
+#distribution-confirm .title-text-top {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+#distribution-confirm .title-text-bottom {
+    font-size: 12px;
+    margin: 2px 0 8px 0;
+}
+
+#distribution-confirm .tiger-sugar-img {
+    display: block;
+    margin: 0 auto 20px;
+    height: 183px;
+}
+
+#distribution-confirm .distribution-check {
+    width: 258px;
+    height: 50px;
+    border: #FFFFFF 1px solid;
+    color: #FFFFFF;
+    margin: 0 auto;
+    font-size: 26px;
+    padding: 4px;
+    text-align: center;
+}
+
+#distribution-confirm .delete-all {
+    width: 125px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    outline: #ffffff 1px solid;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 13px;
+}
+
+
+
+#distribution-confirm .btn {
+    display: inline-block;
+    color: #212529;
+    text-align: center;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem;
+    font-size: 18px;
+    line-height: 1.6;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#distribution-confirm .btn:hover {
+    background-color: #FFFFFF;
+    color: #000;
+    transition: 1s;
+}
+
+#distribution-confirm .swiper {
+    width: 70%;
+    height: 35px !important;
+    margin: 10px auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#distribution-confirm .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#distribution-confirm .swiper-slide:hover {
+    border: #FFFFFF 1px solid;
+}
+
+.swiper-button-distribution_container {
+    position: relative;
+    bottom: 18px;
+}
+
+#distribution-confirm .swiper-button-next,
+#distribution-confirm .swiper-button-prev {
+    color: #FFFFFF;
+    position: absolute;
+}
+
+#distribution-confirm .swiper-button-next {
+    right: -10px;
+}
+
+#distribution-confirm .swiper-button-prev {
+    left: -1px;
+}
+
+#distribution-confirm .next-prev-img {
+    width: 8px;
+    height: 41px;
+}
+
+#distribution-confirm .swiper-button-next:after,
+#distribution-confirm .swiper-button-prev:after {
+    display: none;
 }

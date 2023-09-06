@@ -56,3 +56,13 @@ var swiperNews = new Swiper("#news .mySwiper-news", {
   }
 });
 
+var swiperDistributionContainer = new Swiper("#distribution_container .mySwiper-distribution_container", {
+  slidesPerView: 5,
+  spaceBetween: 0,
+  navigation: {
+    nextEl: ".swiper-button-distribution_container .swiper-button-next",
+    prevEl: ".swiper-button-distribution_container .swiper-button-prev",
+  },
+});
+
+

@@ -76,7 +76,7 @@
 }
 
 #social .header .container {
-  height: 55.4px;
+  padding-top: 55px;
   display: flex;
   justify-content: start;
 }
