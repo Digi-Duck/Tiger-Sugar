@@ -16,7 +16,7 @@
 }
 
 #classic .text-height {
-    line-height: 25px;
+    /* line-height: 25px; */
 }
 
 #classic .text12 {
@@ -29,11 +29,6 @@
 
 #classic .text14-4 {
     font-size: 14.4px;
-}
-
-#classic .text18 {
-    font-size: 18px;
-    color: #f4dd97;
 }
 
 #classic .text21-6 {
@@ -66,6 +61,7 @@
     margin: auto;
     padding: 40px 15px;
 }
+
 #classic .section_content {
     position: relative;
     background-size: cover;
@@ -131,6 +127,8 @@
 
 #classic .cold-hot-info {
     margin: 0 2%;
+    display: flex;
+    font-size: 14.4px;
 }
 
 #classic .cold-drink-span {
@@ -158,6 +156,7 @@
 #classic .hot-drink-info {
     margin-left: 30px;
     color: #E95513;
+    font-size: 14.4px;
 }
 
 #classic h4 {
@@ -182,6 +181,23 @@
     padding: 40px 15px;
 }
 
+#classic .menu-text {
+    font-size: 14px;
+    color: white;
+}
+
+#classic .menu-type-title {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+#classic .small-dot {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
 #classic .small-dot {
     margin-top: 6px;
 }
@@ -204,20 +220,34 @@
 
 #classic .intro-logo {
     width: 50px;
-    margin-right: 15px;
-    margin-top: 30%;
+    margin-top: 40px;
+    margin-left: -15px;
+}
+
+#classic .intro {
+    display: flex;
 }
 
 #classic .step-2 {
     margin: 50px 0;
 }
 
-#classic .parallax-1 img {
-    max-width: 576px;
+#classic .parallax-img-1 {
+    background-image: url(/media/p1.webp);
+    height: 550px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#classic .parallax-2 img {
-    max-width: 576px;
+#classic .parallax-img-2 {
+    background-image: url(/media/p2.webp);
+    height: 550px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #classic .parallax-block {
@@ -279,8 +309,9 @@
     #classic .menu-up {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        
+
     }
+
     #classic .menu-down {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -299,4 +330,42 @@
 
 #classic .up {
     height: 100px;
+    font-size: 20px;
+}
+
+#classic .menu-mid {
+    margin-top: 3%;
+    padding: 0;
+}
+
+#classic .menu-info {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+#classic .menu-info-title {
+    font-size: 18px;
+    color: #f4dd97;
+}
+
+#classic .menu-info-text {
+    font-size: 14.4px;
+    color: gray;
+    margin-top: 8px;
+    line-height: 25px;
+}
+
+#classic .how-title {
+    font-size: 21.6px;
+    color: white;
+}
+
+#classic .step-1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 80px;
+    border-bottom: 1px solid #626262;
 }
