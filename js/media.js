@@ -1,12 +1,9 @@
-
-
 var mediaSwiper = new Swiper(".media-swiper", {
     navigation: {
         nextEl: ".media-button-next",
         prevEl: ".media-button-prev",
     },
 });
-
 
 let toggleButtons = document.querySelectorAll('.volumn');
 
