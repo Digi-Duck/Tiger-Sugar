@@ -89,13 +89,12 @@
 #franchisee .franchisee-title {
     color: white;
     display: flex;
-    padding:  15px;
 }
 
 #franchisee .franchisee-title h1 {
     font-size: 14px;
     margin-bottom: 0;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 #franchisee .franchisee-title h2 {
@@ -128,5 +127,6 @@
 @media screen and (min-width:1200px) {
     #franchisee .container {
         max-width: 1140px;
+        padding: 0 15px;
     }
 }

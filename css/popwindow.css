@@ -1,0 +1,15 @@
+.pop-window-container {
+    width: 100%;
+}
+
+.pop-window-content {
+background-color: #222222;
+width: 1100px;
+
+}
+
+.pop-window-close {
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/light_closed.svg);
+}
