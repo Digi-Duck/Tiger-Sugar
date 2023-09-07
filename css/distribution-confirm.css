@@ -81,6 +81,10 @@ ul li {
     text-align: center;
 }
 
+#distribution-confirm  .title-bottom{
+    position: relative;
+}
+
 #distribution-confirm .delete-all {
     width: 125px;
     height: 40px;
@@ -91,7 +95,7 @@ ul li {
     background-color: transparent;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -126px;
 }
 
 #distribution-confirm .card-container {
@@ -124,8 +128,8 @@ ul li {
     height: 35px !important;
     margin: 10px auto;
     position: absolute;
-    left: 0;
-    bottom: -13px;
+    left: 30px;
+    bottom: -135px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -143,8 +147,8 @@ ul li {
 }
 
 #distribution-confirm .swiper-button-distribution-container {
-    position: relative;
-    bottom: 18px;
+    position: absolute;
+    bottom: -108px;
 }
 
 #distribution-confirm .swiper-button-next,
@@ -154,11 +158,11 @@ ul li {
 }
 
 #distribution-confirm .swiper-button-next {
-    right: -10px;
+    left: 800px;
 }
 
 #distribution-confirm .swiper-button-prev {
-    left: -1px;
+    left: 10px;
 }
 
 #distribution-confirm .next-prev-img {
@@ -183,12 +187,16 @@ ul li {
     margin: 22px 0 100px;
 }
 
-#distribution-confirm .page-item.disabled{
-    margin-left: 10px;
-    margin-right: 10px;
+#distribution-confirm .page-item-next{
+    margin-left: 25px;
+}
+
+#distribution-confirm .page-item-prev{
+    margin-right: 25px;
 }
 
 #distribution-confirm .page-link {
+    font-size: 12px;
     color: #FFFFFF;
 }
 
@@ -200,22 +208,21 @@ ul li {
     text-align: center;
 }
 
-#distribution-confirm .distribution_line {
+#distribution-confirm .distribution-line {
     width: 100%;
     border-top: 1px #ffffff solid;
     margin-bottom: 20px;
 }
 
-#distribution-confirm .distribution_line_down{
+#distribution-confirm .distribution-line-down{
     width: 100%;
-    border-top: 1px #ffffff solid;
-    margin-top: 15px;
+    margin-top: 35px;
     margin-bottom: 30px;
 }
 
 #distribution-confirm .direction-body {
     color: #fff;
-    margin: 30px 11px 40px 11px;
+    margin: 30px 11px 15px 11px;
 }
 
 #distribution-confirm .img-w-h-border-img {
@@ -238,8 +245,8 @@ ul li {
 
 #distribution-confirm .ask-icon {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     right: 11px;
     top: 10px;
 }
@@ -259,8 +266,8 @@ ul li {
 
 #distribution-confirm .ask-icon-hover {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     right: 0px;
     top: 0px;
 }
@@ -270,7 +277,6 @@ ul li {
     height: 32px;
     font-size: 20px;
     margin-top: 22px;
-    margin-bottom: 10px;
 }
 
 #distribution-confirm .commodity-title-english {
@@ -278,7 +284,6 @@ ul li {
     max-width: 255px;
     height: 42px;
     font-size: 14px;
-    margin-bottom: 10px;
 }
 
 #distribution-confirm .commodity-sort {
@@ -311,14 +316,6 @@ ul li {
 #distribution-confirm .img-w-h-border-img:hover .product-img-hover {
     opacity: 0.8;
 
-}
-
-#distribution-confirm .ask-icon-hover {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    right: 0px;
-    top: 0px;
 }
 
 #fillout-area .container {
