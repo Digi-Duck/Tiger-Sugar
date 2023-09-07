@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-#distribution-container {
+#distribution_container {
     background-image: url('../images/distribution-confirm/bg_extra.png');
     background-size: cover;
     width: 100%;
@@ -154,7 +154,7 @@
     border: #FFFFFF 1px solid;
 }
 
-#distribution-confirm .swiper-button-distribution-container {
+#distribution-confirm .swiper-button-distribution_container {
     position: relative;
     bottom: 18px;
 }
@@ -183,17 +183,9 @@
     display: none;
 }
 
-
-#distribution-confirm .card-container{
-    border-top: #FFFFFF 1px solid;
-    border-bottom: #FFFFFF 1px solid;
-}
-
-
 #distribution-confirm .direction-body {
     width: 350px;
     color: #fff;
-    margin-top: 50px;
 }
 
 #distribution-confirm .img-w-h-border-img {
