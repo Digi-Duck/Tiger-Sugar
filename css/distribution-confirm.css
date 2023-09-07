@@ -84,12 +84,12 @@
     bottom: 13px;
 }
 
-#distribution-confirm .card-container{
+#distribution-confirm .card-container {
     border-top: #FFFFFF 1px solid;
     border-bottom: #FFFFFF 1px solid;
 }
 
-#distribution-confirm  .direction-body{
+#distribution-confirm .direction-body {
     margin-top: 50px;
 }
 
@@ -265,4 +265,73 @@
     height: 50px;
     right: 0px;
     top: 0px;
+}
+
+#fillout-area .container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 56px;
+    background-color: lightpink;
+}
+
+#fillout-area .title {
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin: 100px 0 100px;
+}
+
+#fillout-area .title-img {
+    background-image: url(../images/distribution-confirm/icon/fillout_icon.svg);
+    height: 32px;
+    width: 32px;
+    margin: 0px 4px 0px 0px;
+    background-size: cover;
+}
+
+#fillout-area .title-flex {
+    display: flex;
+    width: 100%;
+    padding: 50px 0px;
+}
+
+#fillout-area .title-text-top {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+#fillout-area .title-text-bottom {
+    font-size: 12px;
+    margin: 2px 0 8px 0;
+}
+
+#fillout-area .basic-info-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: cornflowerblue;
+}
+
+#fillout-area .basic-info-fillout .title,
+#fillout-area .sales-fillout .title {
+    width: 265px;
+    height: 47px;
+    font-size: 26px;
+    outline: #ffe282 1px solid;
+    padding: 4px;
+    text-align: center;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+#fillout-area .sales-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: lightgoldenrodyellow;
 }
