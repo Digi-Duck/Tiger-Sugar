@@ -237,7 +237,7 @@
             <!-- 夫 資料填寫 -->
             <section id="fillout-area">
                 <div class="container">
-                    <!-- 完成 -->
+
                     <div class="title">
                         <div class="title-img"></div>
                         <div class="title-text">
@@ -245,78 +245,81 @@
                             <div class="title-text-bottom">DISTRIBUTION</div>
                         </div>
                     </div>
-                    <!-- 完成 -->
 
-                    <div class="basic-info-fillout">
+                    <div class="basic-fillout">
                         <div class="fill-title">經銷商基本資料填寫</div>
-                        <div class="fillout">
-                            <form action="">
-                                <div class="fill-input">
-                                    <div class="top-input">
+                        <div class="basic-inside-fillout">
+                            <div class="fill-input">
+                                <div class="fill-name-birthday">
 
-                                        <div class="fill-name">
-                                            <div>姓名｜Name</div>
-                                            <input type="text" placeholder="姓名">
-                                        </div>
-
-                                        <div class="fill-date">
-                                            <div>出生年月日｜Birthday</div>
-                                            <input type="date" placeholder="yyyy/月/dd">
-                                        </div>
-
+                                    <div class="fill-name">
+                                        <div class="fill-name-text">姓名｜Name</div>
+                                        <input type="text" placeholder="姓名" class="fill-name-input">
                                     </div>
 
-                                    <div>
-                                        <div>電子信箱｜Email</div>
-                                        <input type="email" placeholder="電子信箱">
-                                    </div>
-
-                                    <div>
-                                        <div>聯絡電話｜Phone</div>
-                                        <input type="number" placeholder="聯絡電話">
-                                    </div>
-
-                                    <div>
-                                        <div>聯絡地址｜Address</div>
-                                        <input type="text" placeholder="聯絡地址">
+                                    <div class="fill-birthday">
+                                        <div class="fill-birthday-text">出生年月日｜Birthday</div>
+                                        <input type="date" placeholder="yyyy/月/dd" class="fill-birthday-input">
                                     </div>
 
                                 </div>
-                            </form>
+
+                                <div class="fill-email">
+                                    <div class="fill-email-text">電子信箱｜Email</div>
+                                    <input type="email" placeholder="電子信箱" class="fill-email-input">
+                                </div>
+
+                                <div class="fill-phone">
+                                    <div class="fill-phone-text">聯絡電話｜Phone</div>
+                                    <input type="number" placeholder="聯絡電話" class="fill-phone-input">
+                                </div>
+
+                                <div class="fill-address">
+                                    <div class="fill-address-text">聯絡地址｜Address</div>
+                                    <input type="text" placeholder="聯絡地址" class="fill-address-input">
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+
                     <div class="sales-fillout">
                         <div class="fill-title">經銷商販售方式填寫</div>
-                        <div class="fillout">
-                            <form action="">
-                                <div>
+                        <div class="sales-inside-fillout">
+                            <div class="sales-white-line">
+                                <form action="">
                                     <div>
-                                        <label for="channel">經銷通路｜Sales Channel</label>
-                                        <select id="channel">
-                                            <option value="commerce" disabled selected>----請選擇</option>
-                                            <option value="commerce">網路電商 E-Commerce</option>
-                                            <option value="convenience">便利商店 Concenience Store</option>
-                                            <option value="supermarket">超市 Supermarket</option>
-                                            <option value="hypermarket">大賣店 Hypermarket</option>
-                                        </select>
-                                    </div>
+                                        <div class="fill-channel">
+                                            <label for="channel" class="fill-channel-text">經銷通路｜Sales Channel</label>
+                                            <select id="channel" class="fill-channel-input">
+                                                <option value="commerce" disabled selected>----請選擇</option>
+                                                <option value="commerce">網路電商 E-Commerce</option>
+                                                <option value="convenience">便利商店 Concenience Store</option>
+                                                <option value="supermarket">超市 Supermarket</option>
+                                                <option value="hypermarket">大賣店 Hypermarket</option>
+                                            </select>
+                                        </div>
 
-                                    <div>
-                                        <label for="country">預定經銷國家｜Distirbution Area</label>
-                                        <select id="country">
-                                            <option value="america">America</option>
-                                            <option value="california">California</option>
-                                            <option value="canada">Canada</option>
-                                            <option value="taiwan" selected>Taiwan</option>
-                                        </select>
-                                    </div>
+                                        <div class="fill-country">
+                                            <label for="country" class="fill-country-text">預定經銷國家｜Distirbution
+                                                Area</label>
+                                            <select id="country" class="fill-country-input">
+                                                <option value="america">America</option>
+                                                <option value="california">California</option>
+                                                <option value="canada">Canada</option>
+                                                <option value="taiwan" selected>Taiwan</option>
+                                            </select>
+                                        </div>
 
-                                    <div>
-                                        <div>其他｜Other</div>
-                                        <input type="text" placeholder="其他">
+                                        <div class="fill-other">
+                                            <div class="fill-other-text">其他｜Other</div>
+                                            <input type="text" placeholder="其他" class="fill-other-input">
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+                            <!-- <button type="submit" class="send-info">送出資料</button> -->
+                            <input type="submit" value="送出資料" class="send-info">
                         </div>
                     </div>
                 </div>
