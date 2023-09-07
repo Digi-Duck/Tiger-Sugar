@@ -344,12 +344,6 @@ ul li {
     background-size: cover;
 }
 
-#fillout-area .title-flex {
-    display: flex;
-    width: 100%;
-    padding: 50px 0px;
-}
-
 #fillout-area .title-text-top {
     font-size: 14px;
     margin-top: 2px;
@@ -364,13 +358,12 @@ ul li {
     width: 84%;
     margin: auto;
     display: flex;
-    align-content: start;
     margin-bottom: 30px;
     background-color: cornflowerblue;
 }
 
-#fillout-area .basic-info-fillout .title,
-#fillout-area .sales-fillout .title {
+#fillout-area .basic-info-fillout .fill-title,
+#fillout-area .sales-fillout .fill-title {
     width: 265px;
     height: 47px;
     font-size: 26px;
@@ -379,6 +372,7 @@ ul li {
     text-align: center;
     margin-right: 35px;
     margin-bottom: 35px;
+    color: white;
 }
 
 #fillout-area .sales-fillout {
@@ -388,4 +382,18 @@ ul li {
     align-content: start;
     margin-bottom: 30px;
     background-color: lightgoldenrodyellow;
+}
+
+#fillout-area form{
+    width: 100%;
+}
+
+#fillout-area .fill-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#fillout-area .top-input{
+    display: flex;
 }
