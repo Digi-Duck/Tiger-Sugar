@@ -16,7 +16,88 @@ body{
 .container{
     max-width: 1100px;
     padding: 100px 0;
+    margin: auto;
+}
+.distribution-logo-group{
+    display: flex;
 }
 .distribution-nav{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+}
+.distribution-logo-img{
+    width: 30px;
+}
+.distribution-logo-text{
+    margin-left: 10px;
+}
+.distribution-logo-text-cn{
+    color: aliceblue;
+    font-size: 14px;
+}
+.distribution-logo-text-en{
+    margin-top: 5px;
+    color: aliceblue;
+    font-size: 12px;
+}
+.select-all-btn{
+    font-size: 18px;
+    padding: 8px 24px;
+    color: aliceblue;
+    background-color: unset;
+    outline: #ffe282 1px solid;
+    border-radius: 5px 5px 5px 5px;
+}
+.select-all-btn:hover{
+    background-color: #ffe282;
+    color: black;
+    transition: color 1s, background-color 1s;
+}
+
+.swiper-and-page-group{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.swiper-and-page-group::after{
+    content: '';
+    position: absolute;
+    top: 150%;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+/* swiper */
+.swiper {
+    margin: 0% !important;
+    width: 70%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    padding: 7px 25px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* 上一頁 下一頁 */
+.page-up-and-page-down-group{
+    width: 20%;
+    height: 20px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    
 }
