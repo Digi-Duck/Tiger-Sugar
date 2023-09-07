@@ -17,6 +17,14 @@
     padding-top: 76px;
 }
 
+#fillout-area .container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 56px;
+    background-color: lightpink;
+}
+
 #distribution-confirm .title-area {
     position: relative;
     margin-bottom: 20px;
@@ -30,6 +38,13 @@
     margin: 100px 0 12px;
 }
 
+#fillout-area .title{
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin: 100px 0 100px;
+}
+
 #distribution-confirm .title-img {
     background-image: url(../images/distribution-confirm/icon/distribution.svg);
     height: 32px;
@@ -38,18 +53,29 @@
     background-size: cover;
 }
 
-#distribution-confirm .title-flex {
+#fillout-area .title-img {
+    background-image: url(../images/distribution-confirm/icon/fillout_icon.svg);
+    height: 32px;
+    width: 32px;
+    margin: 0px 4px 0px 0px;
+    background-size: cover;
+}
+
+#distribution-confirm .title-flex,
+#fillout-area .title-flex {
     display: flex;
     width: 100%;
     padding: 50px 0px;
 }
 
-#distribution-confirm .title-text-top {
+#distribution-confirm .title-text-top,
+#fillout-area .title-text-top {
     font-size: 14px;
     margin-top: 2px;
 }
 
-#distribution-confirm .title-text-bottom {
+#distribution-confirm .title-text-bottom,
+#fillout-area .title-text-bottom {
     font-size: 12px;
     margin: 2px 0 8px 0;
 }
@@ -266,4 +292,35 @@
     height: 50px;
     right: 0px;
     top: 0px;
+}
+
+
+#fillout-area .basic-info-fillout{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: cornflowerblue;
+}
+
+#fillout-area .basic-info-fillout .title,
+#fillout-area .sales-fillout .title{
+    width: 265px;
+    height: 47px;
+    font-size: 26px;
+    outline: #ffe282 1px solid;
+    padding: 4px;
+    text-align: center;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+#fillout-area .sales-fillout{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: lightgoldenrodyellow;
 }
