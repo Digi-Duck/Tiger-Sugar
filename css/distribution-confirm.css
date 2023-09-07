@@ -1,14 +1,15 @@
 * {
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #0C1219;
     margin: 0;
     padding: 0;
 }
 
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
 
 ul li {
@@ -84,7 +85,7 @@ ul li {
     text-align: center;
 }
 
-#distribution-confirm  .title-bottom{
+#distribution-confirm .title-bottom {
     position: relative;
 }
 
@@ -190,11 +191,11 @@ ul li {
     margin: 22px 0 100px;
 }
 
-#distribution-confirm .page-item-next{
+#distribution-confirm .page-item-next {
     margin-left: 25px;
 }
 
-#distribution-confirm .page-item-prev{
+#distribution-confirm .page-item-prev {
     margin-right: 25px;
 }
 
@@ -203,7 +204,7 @@ ul li {
     color: #FFFFFF;
 }
 
-#distribution-confirm .page-item.active .page-link{
+#distribution-confirm .page-item.active .page-link {
     color: #000000;
     background-color: #ffffff;
     font-size: 18px;
@@ -217,7 +218,7 @@ ul li {
     margin-bottom: 20px;
 }
 
-#distribution-confirm .distribution-line-down{
+#distribution-confirm .distribution-line-down {
     width: 100%;
     margin-top: 35px;
     margin-bottom: 30px;
@@ -326,7 +327,7 @@ ul li {
     width: 100%;
     margin: 0 auto;
     padding-top: 56px;
-    background-color: lightpink;
+    /* background-color: lightpink; */
 }
 
 #fillout-area .title {
@@ -354,15 +355,7 @@ ul li {
     margin: 2px 0 8px 0;
 }
 
-#fillout-area .basic-info-fillout {
-    width: 84%;
-    margin: auto;
-    display: flex;
-    margin-bottom: 30px;
-    background-color: cornflowerblue;
-}
-
-#fillout-area .basic-info-fillout .fill-title,
+#fillout-area .basic-fillout .fill-title,
 #fillout-area .sales-fillout .fill-title {
     width: 265px;
     height: 47px;
@@ -375,25 +368,132 @@ ul li {
     color: white;
 }
 
-#fillout-area .sales-fillout {
+#fillout-area .basic-fillout {
     width: 84%;
     margin: auto;
     display: flex;
-    align-content: start;
-    margin-bottom: 30px;
-    background-color: lightgoldenrodyellow;
+    margin-bottom: 50px;
+    /* background-color: cornflowerblue; */
 }
 
-#fillout-area form{
-    width: 100%;
+#fillout-area .basic-inside-fillout {
+    width: 70%;
+    border-bottom: 1px solid white;
 }
 
-#fillout-area .fill-input{
+#fillout-area .fill-name-birthday {
+    display: flex;
+}
+
+#fillout-area .fill-name {
+    margin: 0 24px 15px 0;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 12px);
+}
+
+#fillout-area .fill-birthday {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 12px);
+}
+
+#fillout-area .fill-email {
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-#fillout-area .top-input{
+#fillout-area .fill-phone {
+    margin-bottom: 15px;
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#fillout-area .fill-address {
+    margin-bottom: 52px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#fillout-area .sales-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    /* background-color: lightgray; */
+}
+
+#fillout-area .sales-inside-fillout {
+    width: 70%;
+    position: relative;
+}
+
+#fillout-area .sales-white-line{
+    border-bottom: 1px solid white;
+    margin-bottom: 50px;
+}
+
+#fillout-area .fill-channel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#fillout-area .fill-country {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#fillout-area .fill-other {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#fillout-area .fill-name-text,
+#fillout-area .fill-birthday-text,
+#fillout-area .fill-email-text,
+#fillout-area .fill-phone-text,
+#fillout-area .fill-address-text,
+#fillout-area .fill-channel-text,
+#fillout-area .fill-country-text,
+#fillout-area .fill-other-text {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+#fillout-area .fill-name-input,
+#fillout-area .fill-birthday-input,
+#fillout-area .fill-email-input,
+#fillout-area .fill-phone-input,
+#fillout-area .fill-address-input,
+#fillout-area .fill-channel-input,
+#fillout-area .fill-country-input,
+#fillout-area .fill-other-input {
+    padding: 6px 12px;
+    border: 0.8px solid lightgray;
+    border-radius: 5px;
+    height: 38px;
+}
+
+#fillout-area .send-info{
+    width: 90px;
+    height: 38px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    background-color: #6c757d;
+    position: absolute;
+    left: calc(50% - 45px);
 }
