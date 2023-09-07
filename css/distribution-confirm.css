@@ -4,6 +4,14 @@
     margin: 0;
 }
 
+a{
+    text-decoration:none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
 #distribution-container {
     background-image: url('../images/distribution-confirm/bg_extra.png');
     background-size: cover;
@@ -49,6 +57,8 @@
     margin-top: 2px;
 }
 
+
+
 #distribution-confirm .title-text-bottom {
     font-size: 12px;
     margin: 2px 0 8px 0;
@@ -85,8 +95,8 @@
 }
 
 #distribution-confirm .card-container {
-    border-bottom: #FFFFFF 1px solid;
     display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -161,15 +171,51 @@
     display: none;
 }
 
-#distribution-confirm  .distribution_line{
+#distribution-confirm .pagination-top {
+    display: flex;
+    justify-content: end;
+    margin: 30px 0 30px;
+}
+
+#distribution-confirm .pagination-down {
+    display: flex;
+    justify-content: end;
+    margin: 22px 0 100px;
+}
+
+#distribution-confirm .page-item.disabled{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#distribution-confirm .page-link {
+    color: #FFFFFF;
+}
+
+#distribution-confirm .page-item.active .page-link{
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding: 4px;
+    text-align: center;
+}
+
+#distribution-confirm .distribution_line {
     width: 100%;
     border-top: 1px #ffffff solid;
+    margin-bottom: 20px;
+}
+
+#distribution-confirm .distribution_line_down{
+    width: 100%;
+    border-top: 1px #ffffff solid;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 
 #distribution-confirm .direction-body {
     color: #fff;
-    margin: 50px 25px 0 0;
+    margin: 30px 11px 40px 11px;
 }
 
 #distribution-confirm .img-w-h-border-img {
@@ -220,18 +266,23 @@
 }
 
 #distribution-confirm .commodity-title {
+    font-size: 16px !important;
     height: 32px;
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-top: 22px;
+    margin-bottom: 10px;
 }
 
 #distribution-confirm .commodity-title-english {
+    font-size: 12px !important;
+    max-width: 255px;
     height: 42px;
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #distribution-confirm .commodity-sort {
+    font-size: 16px !important;
     height: 32px;
     font-size: 20px;
 }
