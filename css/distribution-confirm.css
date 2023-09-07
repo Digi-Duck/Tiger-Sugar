@@ -84,7 +84,14 @@
     bottom: 13px;
 }
 
+#distribution-confirm .card-container{
+    border-top: #FFFFFF 1px solid;
+    border-bottom: #FFFFFF 1px solid;
+}
 
+#distribution-confirm  .direction-body{
+    margin-top: 50px;
+}
 
 #distribution-confirm .btn {
     display: inline-block;
