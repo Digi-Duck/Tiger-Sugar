@@ -1,6 +1,337 @@
-#distribution-confirm,
-#fillout-area{
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#distribution-container {
     background-image: url('../images/distribution-confirm/bg_extra.png');
     background-size: cover;
     width: 100%;
+}
+
+#distribution-confirm .container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 76px;
+}
+
+#distribution-confirm .title-area {
+    position: relative;
+    margin-bottom: 20px;
+    height: 430px;
+}
+
+#distribution-confirm .title {
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin: 100px 0 12px;
+}
+
+#distribution-confirm .title-img {
+    background-image: url(../images/distribution-confirm/icon/distribution.svg);
+    height: 32px;
+    width: 32px;
+    margin: 0px 4px 0px 0px;
+    background-size: cover;
+}
+
+#distribution-confirm .title-flex {
+    display: flex;
+    width: 100%;
+    padding: 50px 0px;
+}
+
+#distribution-confirm .title-text-top {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+#distribution-confirm .title-text-bottom {
+    font-size: 12px;
+    margin: 2px 0 8px 0;
+}
+
+#distribution-confirm .tiger-sugar-img {
+    display: block;
+    margin: 0 auto 20px;
+    height: 183px;
+}
+
+#distribution-confirm .distribution-check {
+    width: 258px;
+    height: 50px;
+    border: #FFFFFF 1px solid;
+    color: #FFFFFF;
+    margin: 0 auto;
+    font-size: 26px;
+    padding: 4px;
+    text-align: center;
+}
+
+#distribution-confirm .delete-all {
+    width: 125px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    outline: #ffffff 1px solid;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 13px;
+}
+
+#distribution-confirm .card-container {
+    border-top: #FFFFFF 1px solid;
+    border-bottom: #FFFFFF 1px solid;
+}
+
+#distribution-confirm .direction-body {
+    margin-top: 50px;
+}
+
+#distribution-confirm .btn {
+    display: inline-block;
+    color: #212529;
+    text-align: center;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem;
+    font-size: 18px;
+    line-height: 1.6;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#distribution-confirm .btn:hover {
+    background-color: #FFFFFF;
+    color: #000;
+    transition: 1s;
+}
+
+#distribution-confirm .swiper {
+    width: 70%;
+    height: 35px !important;
+    margin: 10px auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#distribution-confirm .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#distribution-confirm .swiper-slide:hover {
+    border: #FFFFFF 1px solid;
+}
+
+#distribution-confirm .swiper-button-distribution-container {
+    position: relative;
+    bottom: 18px;
+}
+
+#distribution-confirm .swiper-button-next,
+#distribution-confirm .swiper-button-prev {
+    color: #FFFFFF;
+    position: absolute;
+}
+
+#distribution-confirm .swiper-button-next {
+    right: -10px;
+}
+
+#distribution-confirm .swiper-button-prev {
+    left: -1px;
+}
+
+#distribution-confirm .next-prev-img {
+    width: 8px;
+    height: 41px;
+}
+
+#distribution-confirm .swiper-button-next:after,
+#distribution-confirm .swiper-button-prev:after {
+    display: none;
+}
+
+#distribution-confirm .direction-body {
+    width: 350px;
+    color: #fff;
+}
+
+#distribution-confirm .img-w-h-border-img {
+    width: 255px;
+    height: 276px;
+    background-image: url('/img/shop-img-border.png');
+    background-size: cover;
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+}
+
+#distribution-confirm .product-img {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    position: absolute;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution-confirm .ask-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution-confirm .product-img-hover {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+
+#distribution-confirm .ask-icon-hover {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    top: 0px;
+}
+
+#distribution-confirm .commodity-title {
+    height: 32px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#distribution-confirm .commodity-title-english {
+    height: 42px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#distribution-confirm .commodity-sort {
+    height: 32px;
+    font-size: 20px;
+}
+
+#distribution-confirm .commodity-title,
+#distribution-confirm .commodity-title-english,
+#distribution-confirm .commodity-sort {
+    display: flex;
+}
+
+#distribution-confirm .commodity-more-button.btn-more {
+    width: 124px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: #ffe282 3px solid;
+    color: #ffe282;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 65px);
+    font-size: 18px;
+}
+
+#distribution-confirm .img-w-h-border-img:hover .product-img-hover {
+    opacity: 0.8;
+
+}
+
+#distribution-confirm .ask-icon-hover {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    top: 0px;
+}
+
+#fillout-area .container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 56px;
+    background-color: lightpink;
+}
+
+#fillout-area .title {
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin: 0px 0 100px;
+}
+
+#fillout-area .title-img {
+    background-image: url(../images/distribution-confirm/icon/fillout_icon.svg);
+    height: 32px;
+    width: 32px;
+    margin: 0px 4px 0px 0px;
+    background-size: cover;
+}
+
+#fillout-area .title-flex {
+    display: flex;
+    width: 100%;
+    padding: 50px 0px;
+}
+
+#fillout-area .title-text-top {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+#fillout-area .title-text-bottom {
+    font-size: 12px;
+    margin: 2px 0 8px 0;
+}
+
+#fillout-area .basic-info-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: cornflowerblue;
+}
+
+#fillout-area .basic-info-fillout .title,
+#fillout-area .sales-fillout .title {
+    width: 265px;
+    height: 47px;
+    font-size: 26px;
+    outline: #ffe282 1px solid;
+    padding: 4px;
+    text-align: center;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+#fillout-area .sales-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: lightgoldenrodyellow;
 }
