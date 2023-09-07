@@ -1,51 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/extra-distribution.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/extra-distribution.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
     <!-- nav bar -->
     <header></header>
     <!-- 內容頁 -->
     <section>
-        <div class="main">
-            <div class="container">
-                <div class="distribution-nav">
-                    <div class="distribution-logo-group">
-                        <div>
-                            <img src="/img/distribution.svg" alt="">
-                        </div>
-                    </div>
-                </div>
+      <div class="main">
+        <div class="container">
+          <!-- 產品經銷 - 全部選取按鈕 -->
+          <div class="distribution-nav">
+            <div class="distribution-logo-group">
+              <div class="distribution-logo-img">
+                <img src="/img/distribution.svg" alt="" />
+              </div>
+              <div class="distribution-logo-text">
+                <div class="distribution-logo-text-cn">產品經銷</div>
+                <div class="distribution-logo-text-en">DISTRIBUTION</div>
+              </div>
             </div>
+            <div class="select-all">
+              <button class="select-all-btn" type="button">全部選取</button>
+            </div>
+          </div>
+          <!-- 各品項與頁面數swiper -->
+          <div class="swiper-and-page-group">
+            <!-- 品項swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">全部｜All</div>
+                <div class="swiper-slide">食品｜Food</div>
+                <div class="swiper-slide">零食｜Snack</div>
+                <div class="swiper-slide">冰品｜Ice</div>
+                <div class="swiper-slide">飲品｜Drink</div>
+                <div class="swiper-slide">甜點｜dessert</div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <!-- 頁面數 -->
+            <div class="page-up-and-page-down-group">
+              <button class="page-up" type="button">上一頁</button>
+              <button class="page-1" type="button">1</button>
+              <button class="page-2" type="button">2</button>
+              <button class="page-down" type="button">下一頁</button>
+            </div>
+          </div>
+          <!-- 產品方格 -->
+          <div class="product-group">
+            <div class="product-background">
+              <div class="product">
+                <img
+                  src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                  alt="產品1"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-title">老虎芝士流心雪糕</div>
+                <div class="product-title-en">
+                  Tiger Cheese Filling Black Sugar Ice Cream Bar
+                </div>
+                <div class="product-id">冰品 | Ice</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-group">
+            <div class="product-background">
+              <div class="product">
+                <img
+                  src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                  alt="產品1"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-title">老虎芝士流心雪糕</div>
+                <div class="product-title-en">
+                  Tiger Cheese Filling Black Sugar Ice Cream Bar
+                </div>
+                <div class="product-id">冰品 | Ice</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-group">
+            <div class="product-background">
+              <div class="product">
+                <img
+                  src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                  alt="產品1"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-title">老虎芝士流心雪糕</div>
+                <div class="product-title-en">
+                  Tiger Cheese Filling Black Sugar Ice Cream Bar
+                </div>
+                <div class="product-id">冰品 | Ice</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-group">
+            <div class="product-background">
+              <div class="product">
+                <img
+                  src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                  alt="產品1"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-title">老虎芝士流心雪糕</div>
+                <div class="product-title-en">
+                  Tiger Cheese Filling Black Sugar Ice Cream Bar
+                </div>
+                <div class="product-id">冰品 | Ice</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-group">
+            <div class="product-background">
+              <div class="product">
+                <img
+                  src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                  alt="產品1"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-title">老虎芝士流心雪糕</div>
+                <div class="product-title-en">Tiger Cheese Filling Black Sugar Ice Cream Bar</div>
+                <div class="product-id">冰品 | Ice</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-group">
+            <div class="product-background">
+              <div class="product">
+                <img
+                  src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                  alt="產品1"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-title">老虎芝士流心雪糕</div>
+                <div class="product-title-en">
+                  Tiger Cheese Filling Black Sugar Ice Cream Bar
+                </div>
+                <div class="product-id">冰品 | Ice</div>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- 敏齊 -->
+    <section></section>
 
     <!-- footer -->
     <footer></footer>
-</body>
+  </body>
 </html>
