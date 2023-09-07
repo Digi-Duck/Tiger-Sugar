@@ -327,6 +327,7 @@ ul li {
     width: 100%;
     margin: 0 auto;
     padding-top: 56px;
+    padding-bottom: 500px;
     /* background-color: lightpink; */
 }
 
@@ -432,6 +433,7 @@ ul li {
 #fillout-area .sales-inside-fillout {
     width: 70%;
     position: relative;
+
 }
 
 #fillout-area .sales-white-line{
