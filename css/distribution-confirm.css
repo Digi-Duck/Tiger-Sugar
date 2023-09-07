@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-#distribution_container {
+#distribution-container {
     background-image: url('../images/distribution-confirm/bg_extra.png');
     background-size: cover;
     width: 100%;
@@ -27,7 +27,7 @@
     display: flex;
     font-size: 14px;
     color: white;
-    margin: 100px 0 12px;
+    margin: 93px 0 12px;
 }
 
 #distribution-confirm .title-img {
@@ -81,9 +81,13 @@
     background-color: transparent;
     position: absolute;
     right: 0;
-    bottom: 13px;
+    bottom: 0;
 }
 
+#distribution-confirm .card-container {
+    border-bottom: #FFFFFF 1px solid;
+    display: flex;
+}
 
 
 #distribution-confirm .btn {
@@ -111,7 +115,7 @@
     margin: 10px auto;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -13px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -128,7 +132,7 @@
     border: #FFFFFF 1px solid;
 }
 
-.swiper-button-distribution_container {
+#distribution-confirm .swiper-button-distribution-container {
     position: relative;
     bottom: 18px;
 }
@@ -155,4 +159,182 @@
 #distribution-confirm .swiper-button-next:after,
 #distribution-confirm .swiper-button-prev:after {
     display: none;
+}
+
+#distribution-confirm  .distribution_line{
+    width: 100%;
+    border-top: 1px #ffffff solid;
+    margin-bottom: 30px;
+}
+
+#distribution-confirm .direction-body {
+    color: #fff;
+    margin: 50px 25px 0 0;
+}
+
+#distribution-confirm .img-w-h-border-img {
+    width: 255px;
+    height: 276px;
+    background-image: url('/img/shop-img-border.png');
+    background-size: cover;
+    margin-bottom: 20px;
+    position: relative;
+    top: 10px;
+}
+
+#distribution-confirm .product-img {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    position: absolute;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution-confirm .ask-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 11px;
+    top: 10px;
+}
+
+#distribution-confirm .product-img-hover {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+
+#distribution-confirm .ask-icon-hover {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    top: 0px;
+}
+
+#distribution-confirm .commodity-title {
+    height: 32px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#distribution-confirm .commodity-title-english {
+    height: 42px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#distribution-confirm .commodity-sort {
+    height: 32px;
+    font-size: 20px;
+}
+
+#distribution-confirm .commodity-title,
+#distribution-confirm .commodity-title-english,
+#distribution-confirm .commodity-sort {
+    display: flex;
+}
+
+#distribution-confirm .commodity-more-button.btn-more {
+    width: 124px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: #ffe282 3px solid;
+    color: #ffe282;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 65px);
+    font-size: 18px;
+}
+
+#distribution-confirm .img-w-h-border-img:hover .product-img-hover {
+    opacity: 0.8;
+
+}
+
+#distribution-confirm .ask-icon-hover {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    top: 0px;
+}
+
+#fillout-area .container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 56px;
+    background-color: lightpink;
+}
+
+#fillout-area .title {
+    display: flex;
+    font-size: 14px;
+    color: white;
+    margin: 0px 0 100px;
+}
+
+#fillout-area .title-img {
+    background-image: url(../images/distribution-confirm/icon/fillout_icon.svg);
+    height: 32px;
+    width: 32px;
+    margin: 0px 4px 0px 0px;
+    background-size: cover;
+}
+
+#fillout-area .title-flex {
+    display: flex;
+    width: 100%;
+    padding: 50px 0px;
+}
+
+#fillout-area .title-text-top {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+#fillout-area .title-text-bottom {
+    font-size: 12px;
+    margin: 2px 0 8px 0;
+}
+
+#fillout-area .basic-info-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: cornflowerblue;
+}
+
+#fillout-area .basic-info-fillout .title,
+#fillout-area .sales-fillout .title {
+    width: 265px;
+    height: 47px;
+    font-size: 26px;
+    outline: #ffe282 1px solid;
+    padding: 4px;
+    text-align: center;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+#fillout-area .sales-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    align-content: start;
+    margin-bottom: 30px;
+    background-color: lightgoldenrodyellow;
 }
