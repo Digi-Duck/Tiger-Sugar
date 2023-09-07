@@ -27,7 +27,7 @@
     display: flex;
     font-size: 14px;
     color: white;
-    margin: 100px 0 12px;
+    margin: 93px 0 12px;
 }
 
 #distribution-confirm .title-img {
@@ -81,17 +81,14 @@
     background-color: transparent;
     position: absolute;
     right: 0;
-    bottom: 13px;
+    bottom: 0;
 }
 
 #distribution-confirm .card-container {
-    border-top: #FFFFFF 1px solid;
     border-bottom: #FFFFFF 1px solid;
+    display: flex;
 }
 
-#distribution-confirm .direction-body {
-    margin-top: 50px;
-}
 
 #distribution-confirm .btn {
     display: inline-block;
@@ -118,7 +115,7 @@
     margin: 10px auto;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -13px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -164,9 +161,15 @@
     display: none;
 }
 
+#distribution-confirm  .distribution_line{
+    width: 100%;
+    border-top: 1px #ffffff solid;
+    margin-bottom: 30px;
+}
+
 #distribution-confirm .direction-body {
-    width: 350px;
     color: #fff;
+    margin: 50px 25px 0 0;
 }
 
 #distribution-confirm .img-w-h-border-img {
