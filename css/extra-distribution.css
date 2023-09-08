@@ -70,8 +70,8 @@ body{
 
 /* swiper */
 .swiper {
-    margin: 0% !important;
-    width: 70%;
+    margin: -1% !important;
+    width: 68%;
   }
 
   .swiper-slide {
@@ -91,21 +91,22 @@ body{
     object-fit: cover;
   }
 
+  .swiper-wrapper{
+    width: 600px;
+  }
+
 /* 上一頁 下一頁 */
 .page-up-and-page-down-group{
     width: 20%;
     height: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .page-up,.page-1,.page-2,.page-down{
     background-color: unset;
     color: aliceblue;
     border: 0;
-}
-
-.page-1,.page-2:active{
-    background-color: black;
 }
 
 /* 產品方格 */
@@ -165,6 +166,24 @@ body{
     border-bottom: 1px solid white;
 }
 .page-up-and-page-down-group-buttom{
-    margin-top: 3%;
+    width: 20%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     float: right;
+    padding: 3% 0;
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+    content: '';
+    color: aliceblue;
+    font-size: unset !important;
+}
+:any-link{
+    text-decoration: none;
+    color: aliceblue;
+}
+:any-link:active{
+    background-color: aliceblue;
+    color: black;
 }
