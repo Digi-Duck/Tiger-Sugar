@@ -1,7 +1,19 @@
 * {
     box-sizing: border-box;
-    padding: 0;
+}
+
+body {
+    background-color: #0C1219;
     margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
 }
 
 #distribution-container {
@@ -49,6 +61,8 @@
     margin-top: 2px;
 }
 
+
+
 #distribution-confirm .title-text-bottom {
     font-size: 12px;
     margin: 2px 0 8px 0;
@@ -71,6 +85,10 @@
     text-align: center;
 }
 
+#distribution-confirm .title-bottom {
+    position: relative;
+}
+
 #distribution-confirm .delete-all {
     width: 125px;
     height: 40px;
@@ -81,12 +99,12 @@
     background-color: transparent;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -126px;
 }
 
 #distribution-confirm .card-container {
-    border-bottom: #FFFFFF 1px solid;
     display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -114,8 +132,8 @@
     height: 35px !important;
     margin: 10px auto;
     position: absolute;
-    left: 0;
-    bottom: -13px;
+    left: 30px;
+    bottom: -135px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -133,8 +151,8 @@
 }
 
 #distribution-confirm .swiper-button-distribution-container {
-    position: relative;
-    bottom: 18px;
+    position: absolute;
+    bottom: -108px;
 }
 
 #distribution-confirm .swiper-button-next,
@@ -144,11 +162,11 @@
 }
 
 #distribution-confirm .swiper-button-next {
-    right: -10px;
+    left: 800px;
 }
 
 #distribution-confirm .swiper-button-prev {
-    left: -1px;
+    left: 10px;
 }
 
 #distribution-confirm .next-prev-img {
@@ -161,15 +179,54 @@
     display: none;
 }
 
-#distribution-confirm  .distribution_line{
+#distribution-confirm .pagination-top {
+    display: flex;
+    justify-content: end;
+    margin: 30px 0 30px;
+}
+
+#distribution-confirm .pagination-down {
+    display: flex;
+    justify-content: end;
+    margin: 22px 0 100px;
+}
+
+#distribution-confirm .page-item-next {
+    margin-left: 25px;
+}
+
+#distribution-confirm .page-item-prev {
+    margin-right: 25px;
+}
+
+#distribution-confirm .page-link {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+#distribution-confirm .page-item.active .page-link {
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding: 4px;
+    text-align: center;
+}
+
+#distribution-confirm .distribution-line {
     width: 100%;
     border-top: 1px #ffffff solid;
+    margin-bottom: 20px;
+}
+
+#distribution-confirm .distribution-line-down {
+    width: 100%;
+    margin-top: 35px;
     margin-bottom: 30px;
 }
 
 #distribution-confirm .direction-body {
     color: #fff;
-    margin: 50px 25px 0 0;
+    margin: 30px 11px 15px 11px;
 }
 
 #distribution-confirm .img-w-h-border-img {
@@ -192,8 +249,8 @@
 
 #distribution-confirm .ask-icon {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     right: 11px;
     top: 10px;
 }
@@ -213,25 +270,28 @@
 
 #distribution-confirm .ask-icon-hover {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     right: 0px;
     top: 0px;
 }
 
 #distribution-confirm .commodity-title {
+    font-size: 16px !important;
     height: 32px;
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-top: 22px;
 }
 
 #distribution-confirm .commodity-title-english {
+    font-size: 12px !important;
+    max-width: 255px;
     height: 42px;
     font-size: 14px;
-    margin-bottom: 20px;
 }
 
 #distribution-confirm .commodity-sort {
+    font-size: 16px !important;
     height: 32px;
     font-size: 20px;
 }
@@ -262,20 +322,13 @@
 
 }
 
-#distribution-confirm .ask-icon-hover {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    right: 0px;
-    top: 0px;
-}
-
 #fillout-area .container {
     max-width: 1110px;
     width: 100%;
     margin: 0 auto;
     padding-top: 56px;
-    background-color: lightpink;
+    padding-bottom: 500px;
+    /* background-color: lightpink; */
 }
 
 #fillout-area .title {
@@ -293,12 +346,6 @@
     background-size: cover;
 }
 
-#fillout-area .title-flex {
-    display: flex;
-    width: 100%;
-    padding: 50px 0px;
-}
-
 #fillout-area .title-text-top {
     font-size: 14px;
     margin-top: 2px;
@@ -309,17 +356,8 @@
     margin: 2px 0 8px 0;
 }
 
-#fillout-area .basic-info-fillout {
-    width: 84%;
-    margin: auto;
-    display: flex;
-    align-content: start;
-    margin-bottom: 30px;
-    background-color: cornflowerblue;
-}
-
-#fillout-area .basic-info-fillout .title,
-#fillout-area .sales-fillout .title {
+#fillout-area .basic-fillout .fill-title,
+#fillout-area .sales-fillout .fill-title {
     width: 265px;
     height: 47px;
     font-size: 26px;
@@ -328,13 +366,136 @@
     text-align: center;
     margin-right: 35px;
     margin-bottom: 35px;
+    color: white;
+}
+
+#fillout-area .basic-fillout {
+    width: 84%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+    /* background-color: cornflowerblue; */
+}
+
+#fillout-area .basic-inside-fillout {
+    width: 70%;
+    border-bottom: 1px solid white;
+}
+
+#fillout-area .fill-name-birthday {
+    display: flex;
+}
+
+#fillout-area .fill-name {
+    margin: 0 24px 15px 0;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 12px);
+}
+
+#fillout-area .fill-birthday {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 12px);
+}
+
+#fillout-area .fill-email {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#fillout-area .fill-phone {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#fillout-area .fill-address {
+    margin-bottom: 52px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 #fillout-area .sales-fillout {
     width: 84%;
     margin: auto;
     display: flex;
-    align-content: start;
+    justify-content: space-between;
     margin-bottom: 30px;
-    background-color: lightgoldenrodyellow;
+    /* background-color: lightgray; */
+}
+
+#fillout-area .sales-inside-fillout {
+    width: 70%;
+    position: relative;
+
+}
+
+#fillout-area .sales-white-line{
+    border-bottom: 1px solid white;
+    margin-bottom: 50px;
+}
+
+#fillout-area .fill-channel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#fillout-area .fill-country {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#fillout-area .fill-other {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#fillout-area .fill-name-text,
+#fillout-area .fill-birthday-text,
+#fillout-area .fill-email-text,
+#fillout-area .fill-phone-text,
+#fillout-area .fill-address-text,
+#fillout-area .fill-channel-text,
+#fillout-area .fill-country-text,
+#fillout-area .fill-other-text {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+#fillout-area .fill-name-input,
+#fillout-area .fill-birthday-input,
+#fillout-area .fill-email-input,
+#fillout-area .fill-phone-input,
+#fillout-area .fill-address-input,
+#fillout-area .fill-channel-input,
+#fillout-area .fill-country-input,
+#fillout-area .fill-other-input {
+    padding: 6px 12px;
+    border: 0.8px solid lightgray;
+    border-radius: 5px;
+    height: 38px;
+}
+
+#fillout-area .send-info{
+    width: 90px;
+    height: 38px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    background-color: #6c757d;
+    position: absolute;
+    left: calc(50% - 45px);
 }

@@ -104,8 +104,12 @@ body{
     border: 0;
 }
 
+.page-1,.page-2:active{
+    background-color: black;
+}
+
 /* 產品方格 */
-.product-group{
+.prduct-grid-columns{
     margin-top: 8%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -122,17 +126,18 @@ body{
 }
 .product{
     position: relative;
-    width: 330px;
-    height: 360px;
+    width: 350px;
+    height: 380px;
 }
 .product img{
-    width: 100%;
+    width: 330px;
+    height: 360px;
     position: absolute;
     top: 10px;
     left: 10px;
 }
 .product-info{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .product-title{
     color: aliceblue;
@@ -147,4 +152,19 @@ body{
 .product-id{
     color: aliceblue;
     font-size: 20px;
+}
+.div-line{
+    position: relative;
+    margin-top: 5%;
+}
+.div-line::after{
+    content: '';
+    position: absolute;
+    top: 150%;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.page-up-and-page-down-group-buttom{
+    margin-top: 3%;
+    float: right;
 }
