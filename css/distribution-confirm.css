@@ -493,6 +493,7 @@ ul li {
     width: 90px;
     height: 38px;
     font-size: 16px;
+    border: unset;
     border-radius: 10px;
     color: white;
     background-color: #6c757d;
