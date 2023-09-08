@@ -129,11 +129,11 @@ ul li {
 
 #distribution-confirm .swiper {
     width: 70%;
-    height: 35px !important;
+    height: 35px;
     margin: 10px auto;
     position: absolute;
     left: 30px;
-    bottom: -135px;
+    bottom: -188px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -152,7 +152,7 @@ ul li {
 
 #distribution-confirm .swiper-button-distribution-container {
     position: absolute;
-    bottom: -108px;
+    bottom: -161px;
 }
 
 #distribution-confirm .swiper-button-next,
@@ -277,29 +277,20 @@ ul li {
 }
 
 #distribution-confirm .commodity-title {
-    font-size: 16px !important;
+    font-size: 16px ;
     height: 32px;
-    font-size: 20px;
     margin-top: 22px;
 }
 
 #distribution-confirm .commodity-title-english {
-    font-size: 12px !important;
+    font-size: 12px;
     max-width: 255px;
     height: 42px;
-    font-size: 14px;
 }
 
 #distribution-confirm .commodity-sort {
-    font-size: 16px !important;
+    font-size: 16px ;
     height: 32px;
-    font-size: 20px;
-}
-
-#distribution-confirm .commodity-title,
-#distribution-confirm .commodity-title-english,
-#distribution-confirm .commodity-sort {
-    display: flex;
 }
 
 #distribution-confirm .commodity-more-button.btn-more {
