@@ -1,12 +1,13 @@
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".my-swiper", {
     loop: true,
     spaceBetween: 3,
     slidesPerView: 3,
     freeMode: true,
     watchSlidesProgress: true,
+    direction: 'vertical',
 });
 
-var swiper2 = new Swiper(".mySwiper2", {
+var swiper2 = new Swiper(".my-swiper-sub", {
     loop: true,
     spaceBetween: 3,
     navigation: {
