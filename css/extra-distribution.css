@@ -117,6 +117,7 @@ body{
     grid-gap: 20px;
 }
 .product-background{
+    position: relative;
     width: 350px;
     background-image: url(/img/shop-img-border.png);
     background-repeat: no-repeat;
@@ -186,4 +187,14 @@ body{
 :any-link:active{
     background-color: aliceblue;
     color: black;
+}
+.yellow-box{
+    width: 50px;
+    position: absolute;
+    top: 2.6%;
+    left: 82.8%;
+}
+.product-img-group:hover{
+    background-color: #ffe282;
+    transition: color 1s, background-color 1s;
 }
