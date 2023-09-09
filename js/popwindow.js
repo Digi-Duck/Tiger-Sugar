@@ -19,24 +19,24 @@ var swiper2 = new Swiper(".my-swiper-sub", {
     },
 });
 
-var swiperProduct = new Swiper("#pop-window .mySwiper-product", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    navigation: {
-        nextEl: ".swiper-button-product .swiper-button-next",
-        prevEl: ".swiper-button-product .swiper-button-prev",
-    },
-    breakpoints: {
-        992: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        1400: {
-            slidesPerView: 3,
-            spaceBetween: 12,
-        }
-    }
-});
+// var swiperProduct = new Swiper("#pop-window .mySwiper-product", {
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     navigation: {
+//         nextEl: ".swiper-button-product .swiper-button-next",
+//         prevEl: ".swiper-button-product .swiper-button-prev",
+//     },
+//     breakpoints: {
+//         992: {
+//             slidesPerView: 2,
+//             spaceBetween: 20,
+//         },
+//         1400: {
+//             slidesPerView: 3,
+//             spaceBetween: 12,
+//         }
+//     }
+// });
 
 
 // let appendNumber = 3;

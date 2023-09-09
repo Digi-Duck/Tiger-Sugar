@@ -91,7 +91,7 @@
 }
 
 #pop-window .product-information-text {
-    width: 50%;
+    width: 100%;
 }
 
 #pop-window .content-text-title {
@@ -152,6 +152,8 @@
 #pop-window .listed-date {
     display: flex;
     flex-direction: row;
+    display: flex;
+    align-items: flex-end;
 }
 
 
@@ -171,6 +173,12 @@
     font-size: 20px;
 }
 
+#pop-window .net-weight {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+}
+
 #pop-window .commodity-expiration {
     margin-right: 18px;
     margin-bottom: 10px;
@@ -178,6 +186,11 @@
     color: #ffffff;
     display: flex;
     flex-direction: row;
+}
+
+#pop-window .expiration-day {
+  display: flex;
+  align-self: flex-end;
 }
 
 #pop-window .commodity-expiration-title {
@@ -193,7 +206,8 @@
     font-weight: 500;
     margin-top: 5px;
     margin-left: 10px;
-    
+    display: flex;
+    align-items: flex-end;
 }
 
 #pop-window .commodity-preservation-method {
@@ -223,7 +237,8 @@
     font-size: 12px;
     margin-left: 5px;
     margin-right: 10px;
-    vertical-align:bottom!important;
+    display: flex;
+    align-items: flex-end;
 }
 
 #pop-window .commodity-table {
@@ -305,7 +320,7 @@
     }
 }
 
-/* swiper1 */
+/* 彈跳視窗上半部swiper 左邊直的是主要 右邊是sub次要 */
 
 #pop-window .swiper {
     width: 420px;
@@ -313,7 +328,7 @@
 }
 
 #pop-window .swiper {
-    width: 100%;
+    width: 20%;
     height: 456px;
     margin-left: auto;
     margin-right: auto;
@@ -321,15 +336,17 @@
 
 
 #pop-window .my-swiper-sub {
-    height: 80%;
-    width: 100%;
+    height: 70%;
+    width: 70%;
 }
 
 #pop-window .my-swiper {
-    height: 20%;
+    height: 90%;
     box-sizing: border-box;
     padding: 10px 0;
 }
+
+
 
 #pop-window .swiper-slide {
     background-size: cover;
@@ -348,13 +365,10 @@
 
 
 #pop-window .my-swiper .swiper-slide {
-    width: 25%;
+    width: 100%;
     height: 100%;
 }
 
-#pop-window .swiper-slide-v {
-    border: 2px solid #ffe282;
-}
 
 #pop-window .my-swiper .swiper-slide-thumb-active {
     /* opacity: 1; */
@@ -399,7 +413,7 @@
 
 /* swiper 2 */
 
-#pop-window .swiper-button-product {
+/* #pop-window .swiper-button-product {
     position: relative;
     bottom: 340px;
 }
@@ -649,4 +663,4 @@
     #pop-window .product-img {
         width: calc(100% - 20px);
     }
-}
+} */
