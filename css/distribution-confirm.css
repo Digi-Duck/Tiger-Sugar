@@ -24,9 +24,15 @@ ul li {
 
 #distribution-confirm .container {
     max-width: 1110px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding-top: 76px;
+}
+
+@media screen and (min-width:1200px) {
+    #distribution-confirm .container {
+        width: 100%;
+    }
 }
 
 #distribution-confirm .title-area {
@@ -47,7 +53,8 @@ ul li {
     height: 32px;
     width: 32px;
     margin: 0px 4px 0px 0px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #distribution-confirm .title-flex {
@@ -277,7 +284,7 @@ ul li {
 }
 
 #distribution-confirm .commodity-title {
-    font-size: 16px ;
+    font-size: 16px;
     height: 32px;
     margin-top: 22px;
 }
@@ -289,7 +296,7 @@ ul li {
 }
 
 #distribution-confirm .commodity-sort {
-    font-size: 16px ;
+    font-size: 16px;
     height: 32px;
 }
 
@@ -315,11 +322,16 @@ ul li {
 
 #fillout-area .container {
     max-width: 1110px;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding-top: 56px;
     padding-bottom: 500px;
-    /* background-color: lightpink; */
+}
+
+@media screen and (min-width:1200px) {
+    #fillout-area .container {
+        width: 100%;
+    }
 }
 
 #fillout-area .title {
@@ -334,7 +346,8 @@ ul li {
     height: 32px;
     width: 32px;
     margin: 0px 4px 0px 0px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #fillout-area .title-text-top {
@@ -353,53 +366,71 @@ ul li {
     height: 47px;
     font-size: 26px;
     outline: #ffe282 1px solid;
-    padding: 4px;
+    padding: 7px 4px 1px 4px;
     text-align: center;
-    margin-right: 35px;
+    margin: auto;
     margin-bottom: 35px;
     color: white;
 }
 
 #fillout-area .basic-fillout {
-    width: 84%;
+    width: 100%;
     margin: auto;
     display: flex;
+    justify-content: space-between;
     margin-bottom: 50px;
-    /* background-color: cornflowerblue; */
+    flex-direction: column;
 }
 
+
 #fillout-area .basic-inside-fillout {
-    width: 70%;
+    width: 100%;
     border-bottom: 1px solid white;
 }
 
 #fillout-area .fill-name-birthday {
-    display: flex;
+    display: block;
+}
+
+@media screen and (min-width:813px) {
+    #fillout-area .fill-name-birthday {
+        display: flex;
+    }
 }
 
 #fillout-area .fill-name {
-    margin: 0 24px 15px 0;
+    margin: 0 0 16px 0;
     display: flex;
     flex-direction: column;
-    width: calc(50% - 12px);
+    width: 100%;
 }
 
 #fillout-area .fill-birthday {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
-    width: calc(50% - 12px);
+    width: 100%;
+}
+
+@media screen and (min-width:813px){
+    #fillout-area .fill-name {
+        margin: 0 24px 16px 0;
+        width: calc(50% - 12px);
+    }
+    #fillout-area .fill-birthday {
+        width: calc(50% - 12px);
+    }
 }
 
 #fillout-area .fill-email {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
 #fillout-area .fill-phone {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -413,21 +444,45 @@ ul li {
 }
 
 #fillout-area .sales-fillout {
-    width: 84%;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    /* background-color: lightgray; */
+    flex-direction: column;
 }
 
 #fillout-area .sales-inside-fillout {
-    width: 70%;
+    width: 100%;
     position: relative;
 
 }
 
-#fillout-area .sales-white-line{
+@media screen and (min-width:768px) {
+    #fillout-area .basic-fillout,
+    #fillout-area .sales-fillout {
+        width: 84%;
+    }
+}
+
+@media screen and (min-width:813px) {
+    #fillout-area .basic-fillout,
+    #fillout-area .sales-fillout {
+        flex-direction: row;
+    }
+
+    #fillout-area .basic-inside-fillout,
+    #fillout-area .sales-inside-fillout {
+        width: calc(100% - 300px);
+    }
+
+    #fillout-area .basic-fillout .fill-title,
+    #fillout-area .sales-fillout .fill-title {
+        margin: unset;
+    }
+}
+
+#fillout-area .sales-white-line {
     border-bottom: 1px solid white;
     margin-bottom: 50px;
 }
@@ -436,14 +491,14 @@ ul li {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 #fillout-area .fill-country {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 #fillout-area .fill-other {
@@ -461,9 +516,10 @@ ul li {
 #fillout-area .fill-channel-text,
 #fillout-area .fill-country-text,
 #fillout-area .fill-other-text {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: white;
     font-size: 14px;
+    border: none;
 }
 
 #fillout-area .fill-name-input,
@@ -480,7 +536,7 @@ ul li {
     height: 38px;
 }
 
-#fillout-area .send-info{
+#fillout-area .send-info {
     width: 90px;
     height: 38px;
     font-size: 16px;
@@ -490,4 +546,8 @@ ul li {
     background-color: #6c757d;
     position: absolute;
     left: calc(50% - 45px);
+}
+
+#fillout-area .no-border {
+    border: none;
 }
