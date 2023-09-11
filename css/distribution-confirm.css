@@ -102,7 +102,7 @@ ul li {
     background-color: transparent;
     position: absolute;
     right: 0;
-    bottom: -126px;
+    bottom: -7px;
 }
 
 #distribution-confirm .card-container {
@@ -130,13 +130,17 @@ ul li {
     transition: 1s;
 }
 
+/* #distribution-confirm .swiper.mySwiper-distribution-container{
+    padding: 0 17px;
+} */
+
 #distribution-confirm .swiper {
     width: 70%;
     height: 35px;
     margin: 10px auto;
     position: absolute;
     left: 30px;
-    bottom: -67px;
+    bottom: -73px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -185,15 +189,21 @@ ul li {
 
 #distribution-confirm .page-item-next {
     margin-left: 25px;
+    display: flex;
+    align-items: center;
 }
 
 #distribution-confirm .page-item-prev {
     margin-right: 25px;
+    display: flex;
+    align-items: center;
 }
 
 #distribution-confirm .page-link {
     font-size: 12px;
     color: #FFFFFF;
+    display: flex;
+    align-items: center;
 }
 
 #distribution-confirm .page-item.active .page-link {
