@@ -46,11 +46,14 @@ body{
     padding: 8px 24px;
     color: aliceblue;
     background-color: unset;
-    outline: #ffe282 1px solid;
+    border: #ffe282 1px solid;
+    border-width: 1px;
     border-radius: 5px 5px 5px 5px;
 }
 .select-all-btn:hover{
     background-color: #ffe282;
+    border: 0px;
+    border-radius: 0;
     color: black;
     transition: color 1s, background-color 1s;
 }
@@ -192,9 +195,40 @@ body{
     width: 50px;
     position: absolute;
     top: 2.6%;
-    left: 82.8%;
+    left: 82.9%;
 }
-.product-img-group:hover{
-    background-color: #ffe282;
-    transition: color 1s, background-color 1s;
+.yellow-box-hover{
+    width: 50px;
+    position: absolute;
+    top: 0%;
+    left: 85%;
+}
+.product-background-hover{
+    position: absolute;
+    width: 330px;
+    height: 360px;
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+.product-background-hover:hover{
+    opacity: 0.8;
+    outline: #ffe282 2px solid;
+}
+.product-background-hover-more{
+    width: 124px;
+    line-height: 48px;
+    text-align: center;
+    outline: #ffe282 3px solid;
+    border-radius: 5px;
+    color: #ffe282;
+    top: calc(50% - 24px);
+    left: calc(50% - 62PX);
+    position: absolute;
+    font-size: 18px;
+    text-decoration: none;
 }
