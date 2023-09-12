@@ -465,12 +465,12 @@
 }
 
 .tab-content > div {
-    display: none;  
+    /* display: none;   */
     background: #222222;
     color: #ffffff;
     border-bottom: 0.25rem solid #bdc3c7;
     padding: 1.618rem;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.35s;
 }
 
@@ -478,6 +478,8 @@
     display: block;
     opacity: 1;
 }
+
+.content-left {}
 
 
 
