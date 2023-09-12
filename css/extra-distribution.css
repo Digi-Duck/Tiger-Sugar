@@ -100,16 +100,29 @@ body{
 
 /* 上一頁 下一頁 */
 .page-up-and-page-down-group{
-    width: 20%;
-    height: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.page-up,.page-1,.page-2,.page-down{
+.page-up{
+    padding: 3px 0 0;
+    display: inline;
+    font-size: 12px;
+    margin: 0 20px 0 0;
+}
+.page-down{
+    font-size: 12px;
+    margin: 0 0 0 20px;
+}
+.page-up,.page-1,.page-2,.page-3,.page-4,.page-5,.page-down{
     background-color: unset;
     color: aliceblue;
     border: 0;
+}
+.page-1,.page-2,.page-3,.page-4,.page-5{
+    margin-left: 4px ;
+    padding: 3% 3% 0 0;
+    font-size: 14.4px;
 }
 
 /* 產品方格 */
