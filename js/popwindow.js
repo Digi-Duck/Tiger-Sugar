@@ -7,6 +7,7 @@ var swiper = new Swiper(".my-pop-swiper", {
     direction: 'vertical',
 });
 
+
 var swiperSub = new Swiper(".my-pop-swiper-sub", {
     loop: true,
     spaceBetween: 4,
@@ -14,37 +15,15 @@ var swiperSub = new Swiper(".my-pop-swiper-sub", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+    },
     thumbs: {
         swiper: swiper,
     },
 });
 
-
-
-// let appendNumber = 3;
-// let prependNumber = 1;
-// const swiper = new Swiper('.my-pop-swiper', {
-//     slidesPerView: 3,
-//     centeredSlides: true,
-//     spaceBetween: 30,
-//     pagination: {
-//         el: '.swiper-pagination',
-//         type: 'fraction',
-//     },
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-//     virtual: {
-//         slides: (function () {
-//             const slides = [];
-//             for (var i = 0; i < 3; i += 1) {
-//                 slides.push('Slide ' + (i + 1));
-//             }
-//             return slides;
-//         })(),
-//     },
-// });
 
 
 var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
@@ -75,7 +54,7 @@ const contentLeft = document.querySelector('.content-left');
 const contentMiddle = document.querySelector('.content-middle'); 
 const contentRight = document.querySelector('.content-right'); 
 
-contentLeft.style.display = 'block';
+    contentLeft.style.display = 'block';
 navDropDownLeft.addEventListener('click', () => {
     contentLeft.style.display = 'block';
     contentMiddle.style.display = 'none';

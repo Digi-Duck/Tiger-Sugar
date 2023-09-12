@@ -374,6 +374,20 @@
     height: 100%;
     object-fit: cover;
 }
+.swiper-pagination-fraction {
+
+    width: 50%;
+}
+
+
+.swiper-page-dec {
+    /* width: 40px; */
+    height: 30px;
+    background-color: rgb(175, 111, 111);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
 
 
 /* tab-nav switch  */
@@ -465,7 +479,7 @@
 }
 
 .tab-content > div {
-    /* display: none;   */
+    display: none;  
     background: #222222;
     color: #ffffff;
     border-bottom: 0.25rem solid #bdc3c7;
