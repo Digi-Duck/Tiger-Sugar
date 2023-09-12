@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiger Sugar 老虎堂｜虎虎生風｜黑糖專売</title>
+
+    <!-- 通用css -->
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- 專頁css -->
     <link rel="stylesheet" href="./css/distribution-confirm.css">
+    <link rel="stylesheet" href="./css/franchisee.css">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
@@ -39,15 +45,16 @@
                                     <div class="swiper-slide">食品｜Food</div>
                                     <div class="swiper-slide">甜點｜dessert</div>
                                 </div>
-                            </div>
-                            <div class="swiper-button-distribution-container">
-                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
-                                    aria-controls="swiper-wrapper-53fd5a51ba467ec1" aria-disabled="false">
-                                    <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
-                                </div>
-                                <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
-                                    aria-controls="swiper-wrapper-53fd5a51ba467ec1" aria-disabled="false">
-                                    <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
+                                <div class="swiper-button-distribution-container">
+                                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                        aria-controls="swiper-wrapper-53fd5a51ba467ec1" aria-disabled="false">
+                                        <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
+                                    </div>
+                                    <div class="swiper-button-prev" tabindex="0" role="button"
+                                        aria-label="Previous slide" aria-controls="swiper-wrapper-53fd5a51ba467ec1"
+                                        aria-disabled="false">
+                                        <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
+                                    </div>
                                 </div>
                             </div>
                             <button type="button" class="delete-all btn">全部刪除</button>
@@ -74,7 +81,7 @@
                     <div class="content-area">
                         <div class="card-container">
                             <div class="direction-body">
-                                <div class="img-w-h-border-img">
+                                <div class="img-hover">
                                     <img class="product-img"
                                         src="./images/product/1668998205a2557a7b2e94197ff767970b67041697.jpg" alt="">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="">
@@ -97,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="direction-body">
-                                <div class="img-w-h-border-img">
+                                <div class="img-hover">
                                     <img class="product-img"
                                         src="./images/product/165899031442a0e188f5033bc65bf8d78622277c4e.jpg" alt="">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="">
@@ -120,7 +127,7 @@
                                 </div>
                             </div>
                             <div class="direction-body">
-                                <div class="img-w-h-border-img">
+                                <div class="img-hover">
                                     <img class="product-img"
                                         src="./images/product/165899100742a0e188f5033bc65bf8d78622277c4e.jpg" alt="">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="">
@@ -143,7 +150,7 @@
                                 </div>
                             </div>
                             <div class="direction-body">
-                                <div class="img-w-h-border-img">
+                                <div class="img-hover">
                                     <img class="product-img"
                                         src="./images/product/1658908734cfecdb276f634854f3ef915e2e980c31.jpg" alt="">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="">
@@ -166,7 +173,7 @@
                                 </div>
                             </div>
                             <div class="direction-body">
-                                <div class="img-w-h-border-img">
+                                <div class="img-hover">
                                     <img class="product-img"
                                         src="./images/product/16589912415878a7ab84fb43402106c575658472fa.jpg" alt="">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="">
@@ -189,7 +196,7 @@
                                 </div>
                             </div>
                             <div class="direction-body">
-                                <div class="img-w-h-border-img">
+                                <div class="img-hover">
                                     <img class="product-img"
                                         src="./images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="">
@@ -250,17 +257,14 @@
                             <div class="basic-inside-fillout">
                                 <div class="fill-input">
                                     <div class="fill-name-birthday">
-
                                         <div class="fill-name">
                                             <div class="fill-name-text">姓名｜Name</div>
                                             <input type="text" placeholder="姓名" class="fill-name-input">
                                         </div>
-
                                         <div class="fill-birthday">
                                             <div class="fill-birthday-text">出生年月日｜Birthday</div>
-                                            <input type="date" placeholder="yyyy/月/dd" class="fill-birthday-input">
+                                            <input type="date" class="fill-birthday-input">
                                         </div>
-
                                     </div>
 
                                     <div class="fill-email">
@@ -285,36 +289,36 @@
                             <div class="fill-title">經銷商販售方式填寫</div>
                             <div class="sales-inside-fillout">
                                 <div class="sales-white-line">
-                                    <div>
-                                        <div class="fill-channel">
-                                            <label for="channel" class="fill-channel-text">經銷通路｜Sales Channel</label>
-                                            <select id="channel" class="fill-channel-input">
-                                                <option value="commerce" disabled selected>----請選擇</option>
-                                                <option value="commerce">網路電商 E-Commerce</option>
-                                                <option value="convenience">便利商店 Concenience Store</option>
-                                                <option value="supermarket">超市 Supermarket</option>
-                                                <option value="hypermarket">大賣店 Hypermarket</option>
-                                            </select>
-                                        </div>
 
-                                        <div class="fill-country">
-                                            <label for="country" class="fill-country-text">預定經銷國家｜Distirbution
-                                                Area</label>
-                                            <select id="country" class="fill-country-input">
-                                                <option value="america">America</option>
-                                                <option value="california">California</option>
-                                                <option value="canada">Canada</option>
-                                                <option value="taiwan" selected>Taiwan</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="fill-other">
-                                            <div class="fill-other-text">其他｜Other</div>
-                                            <input type="text" placeholder="其他" class="fill-other-input">
-                                        </div>
+                                    <div class="fill-channel">
+                                        <label for="channel" class="fill-channel-text">經銷通路｜Sales Channel</label>
+                                        <select id="channel" class="fill-channel-input">
+                                            <option disabled selected>----請選擇</option>
+                                            <option value="commerce">網路電商 E-Commerce</option>
+                                            <option value="convenience">便利商店 Concenience Store</option>
+                                            <option value="supermarket">超市 Supermarket</option>
+                                            <option value="hypermarket">大賣店 Hypermarket</option>
+                                        </select>
                                     </div>
+
+                                    <div class="fill-country">
+                                        <label for="country" class="fill-country-text">預定經銷國家｜Distirbution
+                                            Area</label>
+                                        <select id="country" class="fill-country-input">
+                                            <option value="america">America</option>
+                                            <option value="california">California</option>
+                                            <option value="canada">Canada</option>
+                                            <option value="taiwan" selected>Taiwan</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="fill-other">
+                                        <div class="fill-other-text">其他｜Other</div>
+                                        <input type="text" placeholder="其他" class="fill-other-input">
+                                    </div>
+
                                 </div>
-                                <input type="submit" value="送出資料" class="send-info">
+                                <button type="submit" class="send-info">送出資料</button>
                             </div>
                         </div>
                     </form>
@@ -322,6 +326,32 @@
             </section>
         </div>
     </main>
+
+    <!-- 齊 加盟專區 -->
+    <section id="franchisee">
+        <div class="container">
+            <div class="franchisee-title">
+                <div class="franchisee-icon"></div>
+                <div class="container-franchisee-title">
+                    <h1>加盟專區</h1>
+                    <h2>FRANCHISEE</h2>
+                </div>
+            </div>
+            <div class="franchisee-container-big">
+                <div class="franchisee-container-animation" data-aos="zoom-in">
+                    <a href="" class="franchisee-link">
+                        <div class="join-us-img">
+                            <div class="join-us-info">
+                                <h2> <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise! <i
+                                        class="bi bi-star-fill"></i>
+                                </h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer></footer>
 
     <!-- swiper js -->

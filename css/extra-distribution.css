@@ -46,11 +46,14 @@ body{
     padding: 8px 24px;
     color: aliceblue;
     background-color: unset;
-    outline: #ffe282 1px solid;
+    border: #ffe282 1px solid;
+    border-width: 1px;
     border-radius: 5px 5px 5px 5px;
 }
 .select-all-btn:hover{
     background-color: #ffe282;
+    border: 0px;
+    border-radius: 0;
     color: black;
     transition: color 1s, background-color 1s;
 }
@@ -97,16 +100,29 @@ body{
 
 /* 上一頁 下一頁 */
 .page-up-and-page-down-group{
-    width: 20%;
-    height: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.page-up,.page-1,.page-2,.page-down{
+.page-up{
+    padding: 3px 0 0;
+    display: inline;
+    font-size: 12px;
+    margin: 0 20px 0 0;
+}
+.page-down{
+    font-size: 12px;
+    margin: 0 0 0 20px;
+}
+.page-up,.page-1,.page-2,.page-3,.page-4,.page-5,.page-down{
     background-color: unset;
     color: aliceblue;
     border: 0;
+}
+.page-1,.page-2,.page-3,.page-4,.page-5{
+    margin-left: 4px ;
+    padding: 3% 3% 0 0;
+    font-size: 14.4px;
 }
 
 /* 產品方格 */
@@ -192,9 +208,40 @@ body{
     width: 50px;
     position: absolute;
     top: 2.6%;
-    left: 82.8%;
+    left: 82.9%;
 }
-.product-img-group:hover{
-    background-color: #ffe282;
-    transition: color 1s, background-color 1s;
+.yellow-box-hover{
+    width: 50px;
+    position: absolute;
+    top: 0%;
+    left: 85%;
+}
+.product-background-hover{
+    position: absolute;
+    width: 330px;
+    height: 360px;
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+.product-background-hover:hover{
+    opacity: 0.8;
+    outline: #ffe282 2px solid;
+}
+.product-background-hover-more{
+    width: 124px;
+    line-height: 48px;
+    text-align: center;
+    outline: #ffe282 3px solid;
+    border-radius: 5px;
+    color: #ffe282;
+    top: calc(50% - 24px);
+    left: calc(50% - 62PX);
+    position: absolute;
+    font-size: 18px;
+    text-decoration: none;
 }
