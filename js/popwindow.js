@@ -47,40 +47,51 @@ var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
 
 //  table選單
 
-const navDropDownLeft = document.querySelector('.drop-down-content'); 
-const navDropDownMiddle = document.querySelector('.drop-down-warn'); 
-const navDropDownRight = document.querySelector('.drop-down-video'); 
-const contentLeft = document.querySelector('.content-left'); 
-const contentMiddle = document.querySelector('.content-middle'); 
-const contentRight = document.querySelector('.content-right'); 
 
-    contentLeft.style.display = 'block';
-navDropDownLeft.addEventListener('click', () => {
-    contentLeft.style.display = 'block';
-    contentMiddle.style.display = 'none';
-    contentRight.style.display = 'none';
+document.addEventListener('DOMContentLoaded', function() {
+    const navDropDownLeft = document.querySelector('.drop-down-content'); 
+    const navDropDownMiddle = document.querySelector('.drop-down-warn'); 
+    const navDropDownRight = document.querySelector('.drop-down-video'); 
+    const contentLeft = document.querySelector('.content-left'); 
+    const contentMiddle = document.querySelector('.content-middle'); 
+    const contentRight = document.querySelector('.content-right'); 
 
-    navDropDownLeft.classList.add('active');
-    navDropDownMiddle.classList.remove('active');
-    navDropDownRight.classList.remove('active');
+    if (navDropDownLeft.checked) {
+        contentLeft.style.display = 'block';
+    } else if (navDropDownMiddle.checked) {
+        contentMiddle.style.display = 'block';
+    } else if (navDropDownRight.checked) {
+        contentRight.style.display = 'block';
+    }
+
+    navDropDownLeft.addEventListener('click', () => {
+        contentLeft.style.display = 'block';
+        contentMiddle.style.display = 'none';
+        contentRight.style.display = 'none';
+
+        navDropDownLeft.classList.add('active');
+        navDropDownMiddle.classList.remove('active');
+        navDropDownRight.classList.remove('active');
+    });
+
+    navDropDownMiddle.addEventListener('click', () => {
+        contentLeft.style.display = 'none';
+        contentMiddle.style.display = 'block';
+        contentRight.style.display = 'none';
+
+        navDropDownLeft.classList.remove('active');
+        navDropDownMiddle.classList.add('active');
+        navDropDownRight.classList.remove('active');
+    });
+
+    navDropDownRight.addEventListener('click', () => {
+        contentLeft.style.display = 'none';
+        contentMiddle.style.display = 'none';
+        contentRight.style.display = 'block';
+
+        navDropDownLeft.classList.remove('active');
+        navDropDownMiddle.classList.remove('active');
+        navDropDownRight.classList.add('active');
+    });
 });
 
-navDropDownMiddle.addEventListener('click', () => {
-    contentLeft.style.display = 'none';
-    contentMiddle.style.display = 'block';
-    contentRight.style.display = 'none';
-
-    navDropDownLeft.classList.remove('active');
-    navDropDownMiddle.classList.add('active');
-    navDropDownRight.classList.remove('active');
-});
-
-navDropDownRight.addEventListener('click', () => {
-    contentLeft.style.display = 'none';
-    contentMiddle.style.display = 'none';
-    contentRight.style.display = 'block';
-
-    navDropDownLeft.classList.remove('active');
-    navDropDownMiddle.classList.remove('active');
-    navDropDownRight.classList.add('active');
-});

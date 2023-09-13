@@ -15,7 +15,9 @@
     <div id="pop-window">
         <div class="container">
             <div class="pop-window-content">
-                <div class="pop-window-close"></div>
+                <div class="pop-window-close">
+                    <a class="close" href="#"></a>
+                </div>
                 <div class="pop-window-header">
                     <div class="pop-window-title">
                         <div class="pop-window-title-icon"></div>
@@ -27,8 +29,9 @@
                     </div>
                 </div>
                 <div class="product-information-content">
-                    <div class="product-information-swiper">
 
+                    <!-- 彈跳視窗上半部swiper -->
+                    <div class="product-information-swiper">
                         <div thumbsSlider="" class="swiper-pop-top swiper my-pop-swiper">
                             <div class="swiper-wrapper display-vertical">
                                 <div class="swiper-pop-top-slide swiper-slide">
@@ -60,8 +63,12 @@
                                     <img src="./img/sesamebun4.jpeg" />
                                 </div>
                             </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next">
+                                <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
+                            </div>
+                            <div class="swiper-button-prev">
+                                <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
+                            </div>
                             <div class="swiper-pagination swiper-page-dec"></div>
                         </div>
                     </div>
@@ -101,18 +108,14 @@
                 </div>
                 
                 
-                <!-- 商品內容 注意事項 影片 -->
-                <!-- <div class="table-navbar">
-                    <label for="tab-1" class="tab-label" id="drop-down-cotent">內容</label>
-                    <label for="tab-2" class="tab-label" id="drop-down-warn">注意事項</label>
-                    <label for="tab-3" class="tab-label" id="drop-down-video">影片</label>
-                    </div> -->
+                <!--tabNav 商品內容 注意事項 影片 -->
+                
                 <div class="tab-nav">
-                    <input type="radio" name="css-tabs"  class="tab-switch drop-down-content" checked>
+                    <input type="radio" name="css-tabs"  class="tab-switch drop-down-content" id="tab-1" checked>
                     <label for="tab-1" class="tab-label">內容</label>
-                    <input type="radio" name="css-tabs" class="tab-switch drop-down-warn">
+                    <input type="radio" name="css-tabs" class="tab-switch drop-down-warn"  id="tab-2">
                     <label for="tab-2" class="tab-label">注意事項</label>
-                    <input type="radio" name="css-tabs"  class="tab-switch drop-down-video">
+                    <input type="radio" name="css-tabs"  class="tab-switch drop-down-video"  id="tab-3">
                     <label for="tab-3" class="tab-label">影片</label>
                     <div class="tab-content">
                         <div class="content-left">
@@ -139,13 +142,15 @@
                     <!-- 彈跳視窗下半部swiper -->
 
                     <div class="bottom-pop-window-swiper">
+                        <div class="recommend-title">推薦商品</div>
+                        <div class="recommend-line"></div>
                         <!-- Swiper -->
                         <div class="card-container">
                             <div class="swiper swiper-pop-bottom pop-window-bottom-swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-pop-bottom-slide swiper-slide">
                                         <div class="direction-body">
-                                            <div class="img-w-h-border-img">
+                                            <div class="img-box-border-img">
                                                 <img class="product-img"
                                                     src="./images/product/1668998205a2557a7b2e94197ff767970b67041697.jpg"
                                                     alt="">
@@ -171,7 +176,7 @@
                                     </div>
                                     <div class="swiper-slide swiper-pop-bottom-slide">
                                         <div class="direction-body">
-                                            <div class="img-w-h-border-img">
+                                            <div class="img-box-border-img">
                                                 <img class="product-img"
                                                     src="./images/product/165899031442a0e188f5033bc65bf8d78622277c4e.jpg"
                                                     alt="">
@@ -197,7 +202,7 @@
                                     </div>
                                     <div class="swiper-slide swiper-pop-bottom-slide">
                                         <div class="direction-body">
-                                            <div class="img-w-h-border-img">
+                                            <div class="img-box-border-img">
                                                 <img class="product-img"
                                                     src="./images/product/165899100742a0e188f5033bc65bf8d78622277c4e.jpg"
                                                     alt="">
@@ -223,7 +228,7 @@
                                     </div>
                                     <div class="swiper-slide swiper-pop-bottom-slide">
                                         <div class="direction-body">
-                                            <div class="img-w-h-border-img">
+                                            <div class="img-box-border-img">
                                                 <img class="product-img"
                                                     src="./images/product/1658908734cfecdb276f634854f3ef915e2e980c31.jpg"
                                                     alt="">
@@ -249,7 +254,7 @@
                                     </div>
                                     <div class="swiper-slide swiper-pop-bottom-slide">
                                         <div class="direction-body">
-                                            <div class="img-w-h-border-img">
+                                            <div class="img-box-border-img">
                                                 <img class="product-img"
                                                     src="./images/product/16589912415878a7ab84fb43402106c575658472fa.jpg"
                                                     alt="">
@@ -275,7 +280,7 @@
                                     </div>
                                     <div class="swiper-slide swiper-pop-bottom-slide">
                                         <div class="direction-body">
-                                            <div class="img-w-h-border-img">
+                                            <div class="img-box-border-img">
                                                 <img class="product-img"
                                                     src="./images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
                                                     alt="">
