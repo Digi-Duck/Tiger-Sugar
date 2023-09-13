@@ -67,7 +67,10 @@ body {
     color: black;
     transition: color 1s, background-color 1s;
 }
-
+.all{
+    background-color: aliceblue;
+    padding: ;
+}
 .swiper-and-page-group {
     position: relative;
     display: flex;
@@ -83,8 +86,8 @@ body {
 }
 
 /* swiper */
-.swiper {
-    margin: -1% !important;
+.swiper{
+    margin-left: -1% !important;
     width: 68%;
 }
 
@@ -107,9 +110,6 @@ body {
     object-fit: cover;
 }
 
-.swiper-wrapper {
-    width: 600px;
-}
 
 /* 上一頁 下一頁 */
 .page-up-and-page-down-group {
