@@ -130,12 +130,12 @@ ul li {
     transition: 1s;
 }
 
-/* #distribution-confirm .swiper.mySwiper-distribution-container{
+#distribution-confirm .swiper.mySwiper-distribution-container{
     padding: 0 17px;
-} */
+}
 
 #distribution-confirm .swiper {
-    width: 70%;
+    width: 60%;
     height: 35px;
     margin: 10px auto;
     position: absolute;
@@ -158,11 +158,11 @@ ul li {
 }
 
 #distribution-confirm .swiper-button-next {
-    right: -8px;
+    right: -10px;
 }
 
 #distribution-confirm .swiper-button-prev {
-    left: 0px;
+    left: -10px;
 }
 
 #distribution-confirm .next-prev-img {
