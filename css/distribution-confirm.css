@@ -37,7 +37,7 @@ ul li {
 
 #distribution-confirm .title-area {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 85px;
     height: 430px;
 }
 
@@ -130,17 +130,17 @@ ul li {
     transition: 1s;
 }
 
-/* #distribution-confirm .swiper.mySwiper-distribution-container{
-    padding: 0 17px;
-} */
+#distribution-confirm .swiper.mySwiper-distribution-container{
+    padding: 0 20px;
+}
 
 #distribution-confirm .swiper {
-    width: 70%;
+    width: 65.76%;
     height: 35px;
     margin: 10px auto;
     position: absolute;
-    left: 30px;
-    bottom: -73px;
+    left: 0px;
+    bottom: -75px;
 }
 
 #distribution-confirm .swiper-slide {
@@ -158,11 +158,11 @@ ul li {
 }
 
 #distribution-confirm .swiper-button-next {
-    right: -8px;
+    right: -10px;
 }
 
 #distribution-confirm .swiper-button-prev {
-    left: 0px;
+    left: -10px;
 }
 
 #distribution-confirm .next-prev-img {
@@ -176,9 +176,12 @@ ul li {
 }
 
 #distribution-confirm .pagination-top {
+    position: absolute;
     display: flex;
     justify-content: end;
     margin: 30px 0 30px;
+    right: 0px;
+    bottom: -87px;
 }
 
 #distribution-confirm .pagination-down {
