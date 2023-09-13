@@ -135,11 +135,11 @@ ul li {
 }
 
 #distribution-confirm .swiper {
-    width: 60%;
+    width: 65%;
     height: 35px;
     margin: 10px auto;
     position: absolute;
-    left: 30px;
+    left: 0px;
     bottom: -73px;
 }
 
