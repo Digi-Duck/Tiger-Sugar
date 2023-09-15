@@ -67,10 +67,7 @@ body {
     color: black;
     transition: color 1s, background-color 1s;
 }
-.all{
-    background-color: aliceblue;
-    padding: ;
-}
+
 .swiper-and-page-group {
     position: relative;
     display: flex;
@@ -86,30 +83,6 @@ body {
 }
 
 /* swiper */
-.swiper{
-    margin-left: -1% !important;
-    width: 68%;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    
-    margin: 0 0 0 0px;
-}
-
-.swiper-slide a{
-    color: aliceblue;
-}
-
-.swiper-slide .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 /* 上一頁 下一頁 */
 .page-up-and-page-down-group {
@@ -306,3 +279,51 @@ body {
     font-size: 18px;
     text-decoration: none;
 }
+
+.commodity_area {
+    margin-left: -2%;
+    position: relative;
+    width: 68.76%;
+    padding: 0 60px;
+}
+.commodity_area .swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 0px;
+    z-index: 0;
+}
+.swiper-container .swiper-wrapper .swiper-slide.active {
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #000000;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+    width: auto;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+    margin: -1px;
+}
+.swiper-slide:hover {
+        border: #FFFFFF 1px solid;
+}
+.page-link{
+        font-size: 18px;
+        color: #ffffff;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+}
+
