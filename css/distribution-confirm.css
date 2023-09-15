@@ -170,6 +170,7 @@ ul li {
 
 @media (max-width:992px) {
     #distribution-confirm .swiper {
+        width: 100%;
         left: unset;
         right: 0px;
         bottom: -17px;

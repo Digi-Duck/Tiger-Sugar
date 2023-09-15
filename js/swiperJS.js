@@ -64,15 +64,15 @@ var swiperDistributionContainer = new Swiper("#distribution-container .mySwiper-
     prevEl: ".swiper-button-distribution-container .swiper-button-prev",
   },
   breakpoints: {
-    991: {
+    768: {
       slidesPerView: 4,
       spaceBetween: 0,
     },
-    768: {
+    415: {
       slidesPerView: 3,
       spaceBetween: 0,
     },
-    415: {
+    295: {
       slidesPerView: 2,
       spaceBetween: 0,
     },
