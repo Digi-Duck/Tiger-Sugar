@@ -83,7 +83,52 @@ body {
 }
 
 /* swiper */
-
+.content {
+    margin-left: -2%;
+    position: relative;
+    width: 68.76%;
+    padding: 0 60px;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 0px;
+    z-index: 0;
+}
+.swiper-slide.active {
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #000000;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+    width: auto;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+    margin: -1px;
+}
+.swiper-slide:hover {
+        border: #FFFFFF 1px solid;
+}
+.page-link{
+        font-size: 18px;
+        color: #ffffff;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+}
 /* 上一頁 下一頁 */
 .page-up-and-page-down-group {
     width: 28%;
@@ -122,7 +167,7 @@ body {
 .page-4,
 .page-5 {
     margin-left: 4px;
-    font-size: 14.4px;
+    font-size: 18px;
     padding: 3px;
 }
 .page-1{
@@ -210,7 +255,7 @@ body {
     justify-content: space-between;
     align-items: center;
     float: right;
-    padding: 3% 0;
+    padding: 4% 0;
 }
 
 .swiper-button-next:after,
@@ -280,50 +325,100 @@ body {
     text-decoration: none;
 }
 
-.commodity_area {
-    margin-left: -2%;
-    position: relative;
-    width: 68.76%;
-    padding: 0 60px;
+#franchisee{
+    margin-top: -1%;
 }
-.commodity_area .swiper-container {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin-left: 0px;
-    z-index: 0;
+/* RWD */
+@media (max-width:1200px) {
+    .container{
+        max-width: 886px;
+    }
+    .prduct-grid-columns{
+        max-width: 730px;
+        margin-top: 4%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .swiper-and-page-group{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+    .content{
+        margin: auto;
+        width: 100%;
+        padding: 0 -200px;
+    }
+    .page-up-and-page-down-group{
+       width: 40%;
+       margin-top: 6%;
+       margin-left: auto;
+    }
+    .swiper-and-page-group::after {
+        top: 120%;
+    }
+   
+    
 }
-.swiper-container .swiper-wrapper .swiper-slide.active {
-    font-weight: 600;
-    background-color: #ffffff;
-    color: #000000;
-}
-.swiper-container .swiper-wrapper .swiper-slide {
-    width: auto;
-    height: 35px;
-    text-align: center;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.swiper-slide {
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition-property: transform;
-    display: block;
-    margin: -1px;
-}
-.swiper-slide:hover {
-        border: #FFFFFF 1px solid;
-}
-.page-link{
-        font-size: 18px;
-        color: #ffffff;
-        background-color: transparent;
-        border: none;
-        text-decoration: none;
+@media (max-width:965px) {
+    .container{
+        max-width: 750px;
+    }
+    .prduct-grid-columns{
+        max-width: 730px;
+        margin-top: 4%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .swiper-and-page-group{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+    .content{
+        margin: auto;
+        width: 100%;
+        padding: 0 0px;
+    }
+    .page-up-and-page-down-group{
+       margin-top: 3%;
+       margin-left: auto;
+    }
 }
 
+@media (max-width:832px) {
+    .container{
+        max-width: 650px;
+    }
+    .prduct-grid-columns{
+        max-width: 240px;
+        margin-top: 4%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .swiper-and-page-group{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+    .content{
+        margin: auto;
+        width: 100%;
+        padding: 0 0px;
+    }
+    .page-up-and-page-down-group{
+       margin-top: 3%;
+       margin-left: auto;
+    }
+    
+}
