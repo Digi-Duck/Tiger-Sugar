@@ -45,14 +45,14 @@ ul li {
     display: flex;
     font-size: 14px;
     color: white;
-    margin: 93px 0 12px;
+    margin: 96px 0 12px;
 }
 
 #distribution-confirm .title-img {
     background-image: url(../images/distribution-confirm/icon/distribution.svg);
     height: 32px;
     width: 32px;
-    margin: 0px 4px 0px 0px;
+    margin: 1px 4px 0px 0px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -72,7 +72,7 @@ ul li {
 
 #distribution-confirm .title-text-bottom {
     font-size: 12px;
-    margin: 2px 0 8px 0;
+    margin: 4px 0 8px 0;
 }
 
 #distribution-confirm .tiger-sugar-img {
@@ -110,6 +110,26 @@ ul li {
     flex-wrap: wrap;
 }
 
+@media (max-width:1200px) {
+    #distribution-confirm .card-container {
+        margin: 0 auto;
+        width: calc((255px * 3) + (22px * 3));
+    }
+}
+
+@media (max-width:924px) {
+    #distribution-confirm .card-container {
+        margin: 0 auto;
+        width: calc((255px * 2) + (22px * 2));
+    }
+}
+
+@media (max-width:640px) {
+    #distribution-confirm .card-container {
+        margin: 0 auto;
+        width: calc((255px * 1) + (22px * 1));
+    }
+}
 
 #distribution-confirm .btn {
     display: inline-block;
@@ -123,6 +143,11 @@ ul li {
     border-radius: 0.25rem;
     cursor: pointer;
 }
+@media (max-width:992px){
+    #distribution-confirm .btn{
+        bottom: 50px;
+    }
+}
 
 #distribution-confirm .btn:hover {
     background-color: #FFFFFF;
@@ -130,7 +155,7 @@ ul li {
     transition: 1s;
 }
 
-#distribution-confirm .swiper.mySwiper-distribution-container{
+#distribution-confirm .swiper.mySwiper-distribution-container {
     padding: 0 20px;
 }
 
@@ -143,6 +168,15 @@ ul li {
     bottom: -75px;
 }
 
+@media (max-width:992px) {
+    #distribution-confirm .swiper {
+        width: 100%;
+        left: unset;
+        right: 0px;
+        bottom: -17px;
+    }
+}
+
 #distribution-confirm .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -151,6 +185,11 @@ ul li {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+@media (max-width:992px){
+    #distribution-confirm .swiper-slide{
+        font-size: 16px;
+    }
 }
 
 #distribution-confirm .swiper-slide:hover {
@@ -410,11 +449,12 @@ ul li {
     width: 100%;
 }
 
-@media screen and (min-width:813px){
+@media screen and (min-width:813px) {
     #fillout-area .fill-name {
         margin: 0 24px 16px 0;
         width: calc(50% - 12px);
     }
+
     #fillout-area .fill-birthday {
         width: calc(50% - 12px);
     }
@@ -457,6 +497,7 @@ ul li {
 }
 
 @media screen and (min-width:768px) {
+
     #fillout-area .basic-fillout,
     #fillout-area .sales-fillout {
         width: 84%;
@@ -464,6 +505,7 @@ ul li {
 }
 
 @media screen and (min-width:813px) {
+
     #fillout-area .basic-fillout,
     #fillout-area .sales-fillout {
         flex-direction: row;
