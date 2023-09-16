@@ -1,3 +1,12 @@
+// var swiper = new Swiper(".my-pop-swiper", {
+//     loop: true,
+//     spaceBetween: 4,
+//     slidesPerView: 4,
+//     freeMode: true,
+//     watchSlidesProgress: true,
+//     direction: 'vertical',
+// });
+
 var swiper = new Swiper(".my-pop-swiper", {
     loop: true,
     spaceBetween: 4,
@@ -6,7 +15,37 @@ var swiper = new Swiper(".my-pop-swiper", {
     watchSlidesProgress: true,
     direction: 'vertical',
 });
+// swiper main RWD
+window.addEventListener('resize', function () {
+    var windowWidth = window.innerWidth;
+    if (windowWidth <= 767 && swiper.direction !== 'horizontal') {
+        swiper.destroy();
+        swiper = new Swiper(".my-pop-swiper", {
+            loop: true,
+            spaceBetween: 4,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: 'horizontal', 
+        });
+    }
+    else if (windowWidth > 767 && swiper.direction !== 'vertical') {
+        swiper.destroy();
+        swiper = new Swiper(".my-pop-swiper", {
+            loop: true,
+            spaceBetween: 4,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: 'vertical', 
+        });
+    }
+});
 
+
+
+
+// sub swiper
 
 var swiperSub = new Swiper(".my-pop-swiper-sub", {
     loop: true,
@@ -26,6 +65,14 @@ var swiperSub = new Swiper(".my-pop-swiper-sub", {
 
 
 
+
+
+
+
+
+
+
+//下方swiper
 var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -47,14 +94,13 @@ var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
 
 //  table選單
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const navDropDownLeft = document.querySelector('.drop-down-content'); 
-    const navDropDownMiddle = document.querySelector('.drop-down-warn'); 
-    const navDropDownRight = document.querySelector('.drop-down-video'); 
-    const contentLeft = document.querySelector('.content-left'); 
-    const contentMiddle = document.querySelector('.content-middle'); 
-    const contentRight = document.querySelector('.content-right'); 
+document.addEventListener('DOMContentLoaded', function () {
+    const navDropDownLeft = document.querySelector('.drop-down-content');
+    const navDropDownMiddle = document.querySelector('.drop-down-warn');
+    const navDropDownRight = document.querySelector('.drop-down-video');
+    const contentLeft = document.querySelector('.content-left');
+    const contentMiddle = document.querySelector('.content-middle');
+    const contentRight = document.querySelector('.content-right');
 
     if (navDropDownLeft.checked) {
         contentLeft.style.display = 'block';

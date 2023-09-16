@@ -1,10 +1,17 @@
-var openPopupLink = document.querySelector("#pop-window");
-var popup = document.body;
-
-openPopupLink.addEventListener("click", function () {
-    if (popup.style.display === "none" || popup.style.display === "") {
+function openPopup(event) {
+    console.log(openPopup);
+    event.preventDefault(); 
+    var popup = document.querySelector("#pop-window .im-pop-window");
+    if (popup) {
         popup.style.display = "block";
-    } else {
+    }
+}
+
+
+function closePopup(event) {
+    event.preventDefault(); 
+    var popup = document.querySelector("#pop-window .im-pop-window");
+    if (popup) {
         popup.style.display = "none";
     }
-});
+}
