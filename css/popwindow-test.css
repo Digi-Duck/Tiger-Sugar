@@ -3,7 +3,7 @@
 }
 
 #pop-window {
-    /* display: none; */
+    display: none;
     width: 100%;
     position: relative;
     background-color: transparent;
