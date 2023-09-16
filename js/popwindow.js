@@ -19,7 +19,7 @@ var swiper = new Swiper(".my-pop-swiper", {
 window.addEventListener('resize', function () {
     var windowWidth = window.innerWidth;
     if (windowWidth <= 767 && swiper.direction !== 'horizontal') {
-        swiper.destroy();
+        swiper.beforeResize();
         swiper = new Swiper(".my-pop-swiper", {
             loop: true,
             spaceBetween: 4,
@@ -30,7 +30,7 @@ window.addEventListener('resize', function () {
         });
     }
     else if (windowWidth > 767 && swiper.direction !== 'vertical') {
-        swiper.destroy();
+        swiper.beforeResize();
         swiper = new Swiper(".my-pop-swiper", {
             loop: true,
             spaceBetween: 4,
