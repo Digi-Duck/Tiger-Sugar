@@ -121,9 +121,10 @@
     color: #ffffff;
 }
 
+/* 取消寬度設定 RWD到1200px以下時 不會導致內容被吃掉 */
 #pop-window .content-text-sort {
     font-size: 14px;
-    width: 352px;
+    /* width: 352px; */
     margin-bottom: 30px;
     color: #ffffff;
 }

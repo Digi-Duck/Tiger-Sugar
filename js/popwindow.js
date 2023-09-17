@@ -7,20 +7,22 @@
 //     direction: 'vertical',
 // });
 
+// swiper main RWD
+var firstWindowWidth = window.innerWidth;
+var initialDirection = firstWindowWidth <= 767 ? 'horizontal' : 'vertical';
 var swiper = new Swiper(".my-pop-swiper", {
     loop: true,
     spaceBetween: 4,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
-    direction: 'vertical',
+    direction: initialDirection,
 });
-// swiper main RWD
 window.addEventListener('resize', function () {
     var windowWidth = window.innerWidth;
     if (windowWidth <= 767 && swiper.direction !== 'horizontal') {
-        swiper.beforeResize();
-        swiper = new Swiper(".my-pop-swiper", {
+        swiper.destroy();
+        swiper =  new Swiper(".my-pop-swiper",{
             loop: true,
             spaceBetween: 4,
             slidesPerView: 4,
@@ -28,10 +30,11 @@ window.addEventListener('resize', function () {
             watchSlidesProgress: true,
             direction: 'horizontal', 
         });
+        swiperSub.thumbs.swiper = swiper;
     }
     else if (windowWidth > 767 && swiper.direction !== 'vertical') {
-        swiper.beforeResize();
-        swiper = new Swiper(".my-pop-swiper", {
+        swiper.destroy();
+        swiper =  new Swiper(".my-pop-swiper",{
             loop: true,
             spaceBetween: 4,
             slidesPerView: 4,
@@ -39,14 +42,11 @@ window.addEventListener('resize', function () {
             watchSlidesProgress: true,
             direction: 'vertical', 
         });
+        swiperSub.thumbs.swiper = swiper;
     }
 });
 
-
-
-
 // sub swiper
-
 var swiperSub = new Swiper(".my-pop-swiper-sub", {
     loop: true,
     spaceBetween: 4,
@@ -62,6 +62,7 @@ var swiperSub = new Swiper(".my-pop-swiper-sub", {
         swiper: swiper,
     },
 });
+
 
 
 
