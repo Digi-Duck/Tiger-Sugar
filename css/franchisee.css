@@ -89,6 +89,7 @@
 #franchisee .franchisee-title {
     color: white;
     display: flex;
+    margin-left: 15px;
 }
 
 #franchisee .franchisee-title h1 {
