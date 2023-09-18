@@ -64,15 +64,6 @@ var swiperSub = new Swiper(".my-pop-swiper-sub", {
 });
 
 
-
-
-
-
-
-
-
-
-
 //下方swiper
 var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
     slidesPerView: 1,
