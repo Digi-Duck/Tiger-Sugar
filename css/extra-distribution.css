@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-.main {
+#distribution .main {
     width: 100%;
     background-image: url(/images/background_img/bg_extra.png);
     background-repeat: no-repeat;
@@ -15,43 +15,43 @@ body {
     padding: 5%;
 }
 
-.container {
+#distribution .container {
     max-width: 1100px;
     padding: 100px 0;
     margin: auto;
 }
 
-.distribution-logo-group {
+#distribution .distribution-logo-group {
     display: flex;
 }
 
-.distribution-nav {
+#distribution .distribution-nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 100px 0;
 }
 
-.distribution-logo-img {
+#distribution .distribution-logo-img {
     width: 30px;
 }
 
-.distribution-logo-text {
+#distribution .distribution-logo-text {
     margin-left: 10px;
 }
 
-.distribution-logo-text-cn {
+#distribution .distribution-logo-text-cn {
     color: aliceblue;
     font-size: 14px;
 }
 
-.distribution-logo-text-en {
+#distribution .distribution-logo-text-en {
     margin-top: 5px;
     color: aliceblue;
     font-size: 12px;
 }
 
-.select-all-btn {
+#distribution .select-all-btn {
     font-size: 18px;
     padding: 8px 24px;
     color: aliceblue;
@@ -61,7 +61,7 @@ body {
     border-radius: 5px 5px 5px 5px;
 }
 
-.select-all-btn:hover {
+#distribution .select-all-btn:hover {
     background-color: #ffe282;
     border: 0px;
     border-radius: 0;
@@ -69,13 +69,13 @@ body {
     transition: color 1s, background-color 1s;
 }
 
-.swiper-and-page-group {
+#distribution .swiper-and-page-group {
     position: relative;
     display: flex;
     justify-content: space-between;
 }
 
-.swiper-and-page-group::after {
+#distribution .swiper-and-page-group::after {
     content: '';
     position: absolute;
     top: 180%;
@@ -84,13 +84,13 @@ body {
 }
 
 /* swiper */
-.content {
+#distribution .content {
     position: relative;
     width: 65.76%;
     padding: 0 20px;
 }
 
-.swiper-container {
+#distribution .swiper-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -98,13 +98,13 @@ body {
     z-index: 0;
 }
 
-.swiper-slide.active {
+#distribution .swiper-slide.active {
     font-weight: 600;
     background-color: #ffffff;
     color: #000000;
 }
 
-.swiper-container .swiper-wrapper .swiper-slide {
+#distribution .swiper-container .swiper-wrapper .swiper-slide {
     width: auto;
     height: 35px;
     text-align: center;
@@ -114,7 +114,7 @@ body {
     align-items: center;
 }
 
-.swiper-slide {
+#distribution .swiper-slide {
     flex-shrink: 0;
     width: 100%;
     height: 100%;
@@ -124,11 +124,11 @@ body {
     margin: -1px;
 }
 
-.swiper-slide:hover {
+#distribution .swiper-slide:hover {
     border: #FFFFFF 2px solid;
 }
 
-.page-link {
+#distribution .page-link {
     font-size: 18px;
     color: #ffffff;
     background-color: transparent;
@@ -137,62 +137,62 @@ body {
 }
 
 /* 上一頁 下一頁 */
-.page-up-and-page-down-group {
+#distribution .page-up-and-page-down-group {
     width: 28%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.page-up {
+#distribution .page-up {
     padding: 3px 0 0;
     display: inline;
     font-size: 12px;
     margin: 0 20px 0 0;
 }
 
-.page-down {
+#distribution .page-down {
     /* width: 100%; */
     font-size: 12px;
     margin: 0 0 0 20px;
 }
 
-.page-up,
-.page-1,
-.page-2,
-.page-3,
-.page-4,
-.page-5,
-.page-down {
+#distribution .page-up,
+#distribution .page-1,
+#distribution .page-2,
+#distribution .page-3,
+#distribution .page-4,
+#distribution .page-5,
+#distribution .page-down {
     color: aliceblue;
     border: 0;
 }
 
-.page-1,
-.page-2,
-.page-3,
-.page-4,
-.page-5 {
+#distribution .page-1,
+#distribution .page-2,
+#distribution .page-3,
+#distribution .page-4,
+#distribution .page-5 {
     margin-left: 4px;
     font-size: 18px;
     padding: 3px;
 }
 
-.page-1 {
+#distribution .page-1 {
     background-color: aliceblue;
     color: #000000;
 }
 
 
 /* 產品方格 */
-.prduct-grid-columns {
+#distribution .prduct-grid-columns {
     margin-top: 4%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 }
 
-.product-background {
+#distribution .product-background {
     position: relative;
     width: 350px;
     background-image: url(/img/shop-img-border.png);
@@ -200,17 +200,17 @@ body {
     background-size: cover;
 }
 
-.product-background img {
+#distribution .product-background img {
     width: 100%;
 }
 
-.product {
+#distribution .product {
     position: relative;
     width: 350px;
     height: 380px;
 }
 
-.product img {
+#distribution .product img {
     width: 330px;
     height: 360px;
     position: absolute;
@@ -218,37 +218,37 @@ body {
     left: 10px;
 }
 
-.product-group {
+#distribution .product-group {
     margin-top: 8%;
 }
 
-.product-info {
+#distribution .product-info {
     margin-top: 3%;
 }
 
-.product-title {
+#distribution .product-title {
     color: aliceblue;
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.product-title-en {
+#distribution .product-title-en {
     color: aliceblue;
     font-size: 14px;
     margin-bottom: 20px;
 }
 
-.product-id {
+#distribution .product-id {
     color: aliceblue;
     font-size: 20px;
 }
 
-.div-line {
+#distribution .div-line {
     position: relative;
     margin-top: 5%;
 }
 
-.div-line::after {
+#distribution .div-line::after {
     content: '';
     position: absolute;
     top: 150%;
@@ -256,7 +256,7 @@ body {
     border-bottom: 1px solid white;
 }
 
-.page-up-and-page-down-group-buttom {
+#distribution .page-up-and-page-down-group-buttom {
     width: 300px;
     height: 30px;
     text-align: center;
@@ -267,47 +267,47 @@ body {
     padding: 4% 0;
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
+#distribution .swiper-button-next:after,
+#distribution .swiper-button-prev:after {
     display: none;
 }
 
-.swiper-button-next img {
+#distribution .swiper-button-next img {
     position: absolute;
     right: -10px;
     width: 8px;
 }
 
-.swiper-button-prev img {
+#distribution .swiper-button-prev img {
     position: absolute;
     left: -10px;
     width: 8px;
 }
 
-:any-link {
+#distribution :any-link {
     text-decoration: none;
 }
 
-:any-link:active {
+#distribution :any-link:active {
     background-color: aliceblue;
     color: black;
 }
 
-.yellow-box {
+#distribution .yellow-box {
     width: 50px;
     position: absolute;
     top: 2.6%;
     left: 82.9%;
 }
 
-.yellow-box-hover {
+#distribution .yellow-box-hover {
     width: 50px;
     position: absolute;
     top: 0%;
     left: 85%;
 }
 
-.product-background-hover {
+#distribution .product-background-hover {
     position: absolute;
     width: 330px;
     height: 360px;
@@ -320,12 +320,12 @@ body {
     transition: 1s;
 }
 
-.product-background-hover:hover {
+#distribution .product-background-hover:hover {
     opacity: 0.8;
     outline: #ffe282 2px solid;
 }
 
-.product-background-hover-more {
+#distribution .product-background-hover-more {
     width: 124px;
     line-height: 48px;
     text-align: center;
@@ -344,7 +344,7 @@ body {
 /* RWD */
 @media (max-width:1200px) {
     
-    .prduct-grid-columns {
+    #distribution .prduct-grid-columns {
         max-width: 730px;
         margin-top: 4%;
         margin: auto;
@@ -353,25 +353,25 @@ body {
         grid-gap: 20px;
     }
 
-    .swiper-and-page-group {
+    #distribution .swiper-and-page-group {
         display: flex;
         flex-direction: column;
         margin-bottom: 5%;
     }
 
-    .content {
+    #distribution .content {
         margin: auto;
         width: 100%;
         padding: 0 20px;
     }
 
-    .page-up-and-page-down-group {
+    #distribution .page-up-and-page-down-group {
         width: auto;
         margin-top: 4%;
         margin-left: auto;
     }
 
-    .swiper-and-page-group::after {
+    #distribution .swiper-and-page-group::after {
         top: 120%;
     }
     #franchisee{
@@ -380,40 +380,40 @@ body {
 }
 @media (max-width:832px) {
 
-    .prduct-grid-columns {
+    #distribution .prduct-grid-columns {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .product-group {
+    #distribution .product-group {
         width: 140px;
         margin: auto;
         margin-top: 4%; 
     }
-    .product-background{
+    #distribution .product-background{
         width: 140px;
         height: 152px;
     }
-    .product ,.product img{
+    #distribution .product ,#distribution .product img{
         width: 132px;
         height: 144px;
         left: 2px;
         top: 2px;
     }
-    .product-background-hover{
+    #distribution .product-background-hover{
         width: 132px;
         height: 144px;
         left: 4px;
         top: 4px;
     }
-    .yellow-box{
+    #distribution .yellow-box{
         width: 40px;
         left: 96px;
         top: 4px;
     }
-    .yellow-box-hover{
+    #distribution .yellow-box-hover{
         width: 40px;
         left: 92px;
     }
-    .product-background-hover-more{
+    #distribution .product-background-hover-more{
         width: 50px;
         height: 20px;
         line-height: 20px;
@@ -422,43 +422,43 @@ body {
         left: 30%;
         top: 40%;
     }
-    .product-title,.product-title-en,.product-id{
+    #distribution .product-title,#distribution .product-title-en,#distribution .product-id{
         font-size: 14px;
         margin-top: 8%;
     }
-    .swiper-and-page-group {
+    #distribution .swiper-and-page-group {
         display: flex;
         flex-direction: column;
         margin-bottom: 5%;
     }
 
-    .content {
+    #distribution .content {
         width: 100%;
         padding: 0 20px;
     }
 
-    .page-up-and-page-down-group {
+    #distribution .page-up-and-page-down-group {
         width: auto;
         margin-top: 6%;
         margin-left: auto;
     }
 
-    .swiper-and-page-group::after {
+    #distribution .swiper-and-page-group::after {
         top: 120%;
     }
-    .page-up-and-page-down-group-buttom{
+    #distribution .page-up-and-page-down-group-buttom{
         margin-top: 10%;
         margin: auto;
         float: none;
     }
 }
 @media (max-width:768px){
-    .prduct-grid-columns {
+    #distribution .prduct-grid-columns {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 @media (max-width:510px){
-    .prduct-grid-columns {
+    #distribution .prduct-grid-columns {
         grid-template-columns: 1fr;
     }
 }
