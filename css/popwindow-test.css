@@ -2,12 +2,18 @@
     box-sizing: border-box;
 }
 
+body {
+    position: relative;
+}
+
 #pop-window {
     display: none;
     width: 100%;
-    position: relative;
+    /* position: relative; */
     background-color: transparent;
-    /* position: fixed; */
+    position: absolute;
+    z-index: 10000;
+    top:5%;
 }
 
 #pop-window .im-pop-window {

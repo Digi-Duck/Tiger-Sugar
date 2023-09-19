@@ -5,6 +5,14 @@
 //     freeMode: true,
 //     watchSlidesProgress: true,
 //     direction: 'vertical',
+//     breakpoints: {  
+//         767: {
+//             direction: 'horizontal',
+//         },
+//         768: {
+//             direction: 'hvertical',
+//         },
+//     },
 // });
 
 // swiper main RWD
