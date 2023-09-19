@@ -459,6 +459,6 @@ body {
 }
 @media (max-width:510px){
     #distribution .prduct-grid-columns {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
