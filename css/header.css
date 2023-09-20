@@ -562,6 +562,33 @@ header .header-slide-en{
   font-size: 14px;
 }
 
+header .swiper-button-next{
+  --swiper-theme-color: #FFFFFF;
+  --swiper-navigation-size: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: white;
+  right: 5%;
+  top: 40%;
+}
+
+header .swiper-button-prev{
+  --swiper-theme-color: #FFFFFF;
+  --swiper-navigation-size: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-top-color: transparent;
+  border-right-color: white;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  left: -5%;
+  top: 40%;
+}
+
+
 :any-link {
   text-decoration: none;
 }
