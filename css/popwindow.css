@@ -10,7 +10,7 @@
 }
 
 #pop-window .im-pop-window {
-    z-index: 1000;
+    z-index: 100;
 }
 
 #pop-window .container {
@@ -438,6 +438,7 @@
     height: 100%;
     background-image: url('/img/shop-img-border.png');
     background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
     background-color: #222222;
     object-fit: contain;
@@ -796,7 +797,6 @@ a {
 }
 
 /* swiper main  RWD */
-
 @media (max-width:768px) {
     #pop-window .product-information-swiper {
         flex-wrap: wrap-reverse;
@@ -810,4 +810,9 @@ a {
         align-items: center;
         overflow: hidden;
     }
+
+    /* #pop-window .swiper-pop-top-slide {
+        width: 437px;
+        height: 400px;
+    } */
 }

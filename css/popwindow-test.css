@@ -8,18 +8,19 @@ body {
 
 #pop-window {
     display: none;
-    width: 100%;
+    /* width: 100%; */
     background-color: transparent;
     position: absolute;
     z-index: 102;
     top:5%;
+    /* transition: 0.3s ease-in-out; */
 }
 
 .window-overlay{
     display: none;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 101;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -310,8 +311,12 @@ body {
     text-decoration: none;
 }
 
-
-
+/* 視窗畫面小於576px */
+@media screen and (max-width:576px) {
+    #pop-window {
+        width: 100%;
+    }
+}
 
 @media screen and (min-width:576px) {
     #pop-window .container {
@@ -326,17 +331,27 @@ body {
     #pop-window .pop-window-content {
         width: 100%;
     }
+    #pop-window {
+        left: calc(50% - 270px);
+    }
 }
 
 @media screen and (min-width:768px) {
     #pop-window .container {
         max-width: 720px;
     }
+    #pop-window {
+        left: calc(50% - 360px);
+    }
 }
 
 @media screen and (min-width:992px) {
     #pop-window .container {
         max-width: 960px;
+    }
+
+    #pop-window {
+        left: calc(50% - 480px);
     }
 }
 
@@ -355,6 +370,9 @@ body {
     }
     #pop-window .product-information-content{
         /* margin: 0 auto 50px; */
+    }
+    #pop-window {
+        left: calc(50% - 565px);
     }
 }
 
@@ -450,7 +468,6 @@ body {
     /* position: absolute; */
     /* bottom: 10px;
     left: 100px; */
-
 }
 
 .pop-sub-border-img {

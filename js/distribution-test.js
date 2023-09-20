@@ -12,11 +12,36 @@ openPopWindows.forEach(function(btn) {
     });
 });
 
+// closeBtn
 const closePopWindows = document.querySelectorAll('.pop-window-close');
 closePopWindows.forEach(function(btn) {
     btn.addEventListener('click', function (event) {
         document.querySelector('.im-pop-window').style.display ='none';
-        document.querySelector('.window-overlay').style.display = 'none';
-        console.log('event.target');
+        document.querySelector('.window-overlay').style.display ='none';
+        console.log('321');
     });
 });
+
+// ====
+const overlayClose = document.querySelector('.window-overlay');
+overlayClose.addEventListener('click',function(event) {
+    if (event.target === overlayClose) {
+        const closePop = document.querySelectorAll('.im-pop-window, .window-overlay');
+        closePop.forEach(function(element) {
+            element.style.display= 'none';
+        });
+    }
+    console.log(overlayClose);
+});
+
+// const overlayClose = document.querySelector('.pop-window-content');
+// overlayClose.addEventListener('click',function(event) {
+//     console.log(event.target);
+//     if (event.target !== overlayClose) {
+//         const closePop = document.querySelectorAll('.im-pop-window, .window-overlay');
+//         closePop.forEach(function(element) {
+//             element.style.display= 'none';
+//             console.log(777);
+//         });
+//     }
+// });
