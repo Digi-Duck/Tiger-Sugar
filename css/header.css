@@ -539,6 +539,12 @@ header .swiper-language{
   background-color: #000000;
 }
 
+header .swiper-btn-right a{
+  width: 30px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
 header .show{
   display: block;
 }

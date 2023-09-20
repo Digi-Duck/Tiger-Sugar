@@ -7,7 +7,7 @@ navToggler.addEventListener('click', function () {
 
 var swiper = new Swiper(".header-swiper-container", {
   navigation: {
-    nextEl: ".header-button-next",
-    prevEl: ".header-button-prev",
+    nextEl: ".swiper-btn-right",
+    prevEl: ".swiper-btn-left",
   },
 });
