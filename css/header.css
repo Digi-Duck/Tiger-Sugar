@@ -182,7 +182,7 @@ header .media:hover .main-menu-media-gold {
   display: block;
 }
 
-.franchisee:hover .main-menu-franchisee {
+header .franchisee:hover .main-menu-franchisee {
   display: none;
 }
 
@@ -219,6 +219,46 @@ header .mine-menu-btn {
 }
 
 /* 下拉選單CSS */
+
+header .menu-about:hover .main-menu-about {
+  display: none;
+}
+
+header .menu-about:hover .main-menu-about-gold {
+  display: block;
+}
+
+header .menu-distribution:hover .main-menu-distribution {
+  display: none;
+}
+
+header .menu-distribution:hover .main-menu-distribution-gold {
+  display: block;
+}
+
+header .menu-classic:hover .main-menu-classic {
+  display: none;
+}
+
+header .menu-classic:hover .main-menu-classic-gold {
+  display: block;
+}
+
+header .menu-media:hover .main-menu-media {
+  display: none;
+}
+
+header .menu-media:hover .main-menu-media-gold {
+  display: block;
+}
+
+header .menu-franchisee:hover .main-menu-franchisee {
+  display: none;
+}
+
+header .menu-franchisee:hover .main-menu-franchisee-gold {
+  display: block;
+}
 
 header .language-menu {
   margin-right: 39px;
@@ -341,6 +381,10 @@ header .jing-section {
   margin-right: 10px;
   margin-top: 15px;
   display: flex;
+}
+
+header .jing-section:hover {
+  border: 1px solid #ffffff;
 }
 
 header .nav-ham {
