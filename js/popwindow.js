@@ -8,9 +8,11 @@
 //     breakpoints: {  
 //         767: {
 //             direction: 'horizontal',
+//             slidesPerView: 4,
 //         },
 //         768: {
-//             direction: 'hvertical',
+//             direction: 'vertical',
+//             slidesPerView: 4,
 //         },
 //     },
 // });

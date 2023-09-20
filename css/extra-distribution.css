@@ -319,13 +319,18 @@ body {
     opacity: 0;
     transition: 1s;
 }
-
+ /* 產品方塊more btn */
 #distribution .product-background-hover button {
     background: none;
 	border: none;
 	padding: 0;
 	cursor: pointer;
 	outline: inherit;
+}
+
+#distribution .product-background-hover button:active {
+    background: aliceblue;
+    color: #000000;
 }
 
 #distribution .product-background-hover:hover {

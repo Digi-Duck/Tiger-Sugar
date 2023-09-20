@@ -431,7 +431,6 @@
     /* position: absolute; */
     /* bottom: 10px;
     left: 100px; */
-
 }
 
 .pop-sub-border-img {
@@ -452,10 +451,7 @@
     background-size: contain;
 }
 
-
-
 /* tab-nav switch  */
-
 .tab-switch {
     display: none;
 }
