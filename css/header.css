@@ -383,6 +383,10 @@ header .jing-section {
   display: flex;
 }
 
+header .jing-section:hover {
+  border: 1px solid #ffffff;
+}
+
 header .nav-ham {
   width: 100%;
   position: relative;
