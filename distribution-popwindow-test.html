@@ -24,8 +24,9 @@
   <body>
     <!-- nav bar -->
     <header></header>
+    <div class="window-overlay"></div>
     <!-- 內容頁 -->
-    <section>
+    <section id="distribution">
       <div class="main">
         <div class="container">
           <!-- 產品經銷 - 全部選取按鈕 -->
@@ -110,12 +111,12 @@
                     <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
                   </div>
                   <div class="product-background-hover open-pop-window" id="">
-                    <a href="./popwindow.html" class="yellow-box-hover"
+                    <a href="" class="yellow-box-hover"
                       ><img
                         src="/img/add_for_ask_hover.svg"
                         alt="黃色詢問框hover"
                     /></a>
-                    <a href="" class="product-background-hover-more " title="更多商品資訊按鈕">MORE</a>
+                    <button href="" class="product-background-hover-more " title="更多商品資訊按鈕">MORE</button>
                   </div>
                 </div>
               </div>
@@ -465,7 +466,7 @@
       <div class="container">
           <div class="pop-window-content">
               <div class="pop-window-close">
-                  <a class="close close-pop-window" href="#" onclick="closePopup(event)"></a>
+                  <button class="" href="#"></button>
               </div>
               <div class="pop-window-header">
                   <div class="pop-window-title">
@@ -769,7 +770,6 @@
           </div>
       </div>
   </div>
-
     <!-- pop-windowJs -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/popwindow.js"></script>

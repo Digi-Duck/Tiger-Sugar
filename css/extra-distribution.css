@@ -320,6 +320,14 @@ body {
     transition: 1s;
 }
 
+#distribution .product-background-hover button {
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
 #distribution .product-background-hover:hover {
     opacity: 0.8;
     outline: #ffe282 2px solid;
