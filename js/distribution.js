@@ -22,7 +22,6 @@ closePopWindows.forEach(function(btn) {
     });
 });
 
-// ====
 const overlayClose = document.querySelector('.window-overlay');
 overlayClose.addEventListener('click',function(event) {
     if (event.target === overlayClose) {
@@ -33,15 +32,3 @@ overlayClose.addEventListener('click',function(event) {
     }
     console.log(overlayClose);
 });
-
-// const overlayClose = document.querySelector('.pop-window-content');
-// overlayClose.addEventListener('click',function(event) {
-//     console.log(event.target);
-//     if (event.target !== overlayClose) {
-//         const closePop = document.querySelectorAll('.im-pop-window, .window-overlay');
-//         closePop.forEach(function(element) {
-//             element.style.display= 'none';
-//             console.log(777);
-//         });
-//     }
-// });

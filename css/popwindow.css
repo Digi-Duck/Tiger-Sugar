@@ -2,15 +2,26 @@
     box-sizing: border-box;
 }
 
-#pop-window {
-    /* display: none; */
-    width: 100%;
+body {
     position: relative;
-    background-color: transparent;
 }
 
-#pop-window .im-pop-window {
-    z-index: 100;
+#pop-window {
+    display: none;
+    background-color: transparent;
+    position: absolute;
+    z-index: 102;
+    top:5%;
+    transition: 0.3s ease-in-out;
+}
+
+.window-overlay{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 101;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #pop-window .container {
@@ -36,6 +47,14 @@
     position: absolute;
     right: 25px;
     top: 10px;
+}
+
+#pop-window .pop-window-close button {
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
 }
 
 #pop-window .pop-window-header {
@@ -291,8 +310,12 @@
     text-decoration: none;
 }
 
-
-
+/* 視窗畫面小於576px */
+@media screen and (max-width:576px) {
+    #pop-window {
+        width: 100%;
+    }
+}
 
 @media screen and (min-width:576px) {
     #pop-window .container {
@@ -307,17 +330,27 @@
     #pop-window .pop-window-content {
         width: 100%;
     }
+    #pop-window {
+        left: calc(50% - 270px);
+    }
 }
 
 @media screen and (min-width:768px) {
     #pop-window .container {
         max-width: 720px;
     }
+    #pop-window {
+        left: calc(50% - 360px);
+    }
 }
 
 @media screen and (min-width:992px) {
     #pop-window .container {
         max-width: 960px;
+    }
+
+    #pop-window {
+        left: calc(50% - 480px);
     }
 }
 
@@ -337,12 +370,15 @@
     #pop-window .product-information-content{
         /* margin: 0 auto 50px; */
     }
+    #pop-window {
+        left: calc(50% - 565px);
+    }
 }
 
 @media screen and (min-width:1300px) {
 
     #pop-window .pop-window-close {
-        right: -57px;
+        right: -65px;
         top: 0;
     }
 }
@@ -438,7 +474,6 @@
     height: 100%;
     background-image: url('/img/shop-img-border.png');
     background-size: contain;
-    background-repeat: no-repeat;
     position: relative;
     background-color: #222222;
     object-fit: contain;
@@ -452,7 +487,10 @@
     background-size: contain;
 }
 
+
+
 /* tab-nav switch  */
+
 .tab-switch {
     display: none;
 }
@@ -797,6 +835,7 @@ a {
 }
 
 /* swiper main  RWD */
+
 @media (max-width:768px) {
     #pop-window .product-information-swiper {
         flex-wrap: wrap-reverse;
@@ -810,9 +849,4 @@ a {
         align-items: center;
         overflow: hidden;
     }
-
-    /* #pop-window .swiper-pop-top-slide {
-        width: 437px;
-        height: 400px;
-    } */
 }

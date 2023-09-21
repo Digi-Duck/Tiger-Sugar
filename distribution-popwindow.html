@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/extra-distribution.css" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
@@ -13,12 +14,8 @@
     <!-- common css -->
     <link rel="stylesheet" href="./css/common.css" />
     <!-- bootstrap-icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/popwindow-test.css">
+    <link rel="stylesheet" href="./css/popwindow.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   </head>
   <body>
@@ -498,20 +495,29 @@
                           </div>
                       </div>
                       <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
-                          <div class="swiper-wrapper">
-                              <div class="swiper-slide swiper-pop-top-slide">
-                                  <img src="./img/sesamebun1.jpeg" />
-                              </div>
-                              <div class="swiper-slide swiper-pop-top-slide">
-                                  <img src="./img/sesamebun2.jpeg" />
-                              </div>
-                              <div class="swiper-slide swiper-pop-top-slide">
-                                  <img src="./img/sesamebun3.jpeg" />
-                              </div>
-                              <div class="swiper-slide swiper-pop-top-slide">
-                                  <img src="./img/sesamebun4.jpeg" />
+                        <div class="swiper-wrapper">
+
+                          <div class="swiper-slide swiper-pop-top-slide">
+                              <div class="pop-sub-border-img">
+                                  <img class="sub-img" src="./img/sesamebun1.jpeg" />
                               </div>
                           </div>
+                          <div class="swiper-slide swiper-pop-top-slide">
+                              <div class="pop-sub-border-img">
+                                  <img class="sub-img" src="./img/sesamebun2.jpeg" />
+                              </div>
+                          </div>
+                          <div class="swiper-slide swiper-pop-top-slide">
+                              <div class="pop-sub-border-img">
+                                  <img class="sub-img" src="./img/sesamebun3.jpeg" />
+                              </div>
+                          </div>
+                          <div class="swiper-slide swiper-pop-top-slide">
+                              <div class="pop-sub-border-img">
+                              <img class="sub-img" src="./img/sesamebun4.jpeg" />
+                              </div>
+                          </div>
+                      </div>
                           <div class="swiper-button-next">
                               <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
                           </div>
@@ -772,6 +778,6 @@
     <!-- pop-windowJs -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/popwindow.js"></script>
-    <script src="./js/distribution-test.js"></script>
+    <script src="./js/distribution.js"></script>
   </body>
 </html>

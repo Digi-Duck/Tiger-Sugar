@@ -1,0 +1,53 @@
+#authorization .background{
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/images/background_img/about_bg.png);
+    z-index: -3;
+}
+#authorization .background-wave{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/images/background_img/section_header.webp);
+    top: 0%;
+    z-index: -2;
+}
+#authorization .background-tiger-logo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(/images/background_img/logo_black.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 30%;
+    left: 0%;
+}
+#authorization .container{
+    max-width: 1100px;
+    margin: auto;
+}
+#authorization .franchisee-logo{
+    padding: 50px 0;
+    display: flex;
+}
+#authorization .franchisee-logo img{
+    width: 34px;
+}
+#authorization .franchisee-logo-cn-en{
+    display: flex;
+    flex-direction: column;
+}
+#authorization .franchisee-logo-cn{
+    color: white;
+    font-size: 10px;
+}
+#authorization .franchisee-logo-en{
+    color: white;
+    font-size: 12px;
+    margin-bottom: 0;
+    line-height: 20px;
+}
