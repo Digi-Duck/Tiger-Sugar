@@ -215,7 +215,8 @@ header .mine-menu-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 8px 10px 9px 10px;
+  margin: 18px 10px 18px 10px;
 }
 
 /* 下拉選單CSS */
@@ -537,6 +538,10 @@ header .swiper-language{
   height: 45px;
   border: 0.8px solid white;
   background-color: #000000;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #ffffff;
 }
 
 header .show{
