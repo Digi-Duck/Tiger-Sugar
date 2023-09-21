@@ -11,20 +11,16 @@
     height: 100%;
     position: absolute;
     background-repeat: no-repeat;
-    background-size: cover;
     background-image: url(/images/background_img/section_header.webp);
     top: 0%;
     z-index: -2;
 }
-#authorization .background-tiger-logo{
-    width: 100%;
-    height: 100%;
+#authorization .background-tiger-logo img{
+    width: 42vw;
     position: absolute;
-    background-image: url(/images/background_img/logo_black.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    top: 30%;
-    left: 0%;
+    top: 15%;
+    left: 50%;
+    filter:contrast(90%);
 }
 #authorization .container{
     max-width: 1100px;
@@ -36,6 +32,7 @@
 }
 #authorization .franchisee-logo img{
     width: 34px;
+    margin-right: 10px;
 }
 #authorization .franchisee-logo-cn-en{
     display: flex;
@@ -50,4 +47,77 @@
     font-size: 12px;
     margin-bottom: 0;
     line-height: 20px;
+}
+#authorization .steps-title{
+    width: 384px;
+    height: 64px;
+    border: 1px solid #f4dd97;
+    color: #f4dd97;
+    font-size: 22px;
+    line-height: 64px;
+    text-align: center;
+    margin-top: 39px;
+    margin-bottom: 58px;
+}
+#authorization .steps-title span{
+    display: inline-block;
+    margin: 0 0.5em;
+    width: auto;
+}
+#authorization .steps img{
+    width: 50px;
+}
+#authorization .steps{
+    background-color: rgba(14, 25, 32 ,0.2);
+    border: 1px dashed rgb(59, 60, 62);
+    padding: 11.5px 41px 11.5px 13px;
+    margin-bottom: 16px;
+    margin-left: 3px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#authorization .steps-group{
+    max-width: 635px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+#authorization .step1,
+#authorization .step2,
+#authorization .step3,
+#authorization .step4,
+#authorization .step5,
+#authorization .step6,
+#authorization .step7,
+#authorization .step8,
+#authorization .step9,
+#authorization .step10,
+#authorization .step11{
+    position: relative;
+    margin-right: 20px;
+}
+#authorization .step1 span,
+#authorization .step2 span,
+#authorization .step3 span,
+#authorization .step4 span,
+#authorization .step5 span,
+#authorization .step6 span,
+#authorization .step7 span,
+#authorization .step8 span,
+#authorization .step9 span,
+#authorization .step10 span,
+#authorization .step11 span{
+    color: #f4dd97;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+#authorization .steps-text{
+    color: aliceblue;
+    font-size: 18px;
+    font-family: "\5FAE\8EDF\6B63\9ED1\9AD4";
 }
