@@ -22,6 +22,7 @@
 
 <body>
     <header></header>
+    <div class="window-overlay"></div>
     <main>
         <div id="distribution-container">
             <!-- 佑 產品經銷項目確認 -->
@@ -115,7 +116,7 @@
                                     <img class="product-img"
                                         src="./images/product/165899031442a0e188f5033bc65bf8d78622277c4e.jpg" alt="商品圖片">
                                     <img class="ask-icon" src="./images/distribution-confirm/icon/delete.svg" alt="移除已加商品">
-                                    <div class="product-img-hover">
+                                    <div class="product-img-hover open-pop-window">
                                         <img class="ask-icon-hover"
                                             src="./images/distribution-confirm/icon/delete_hover.svg" alt="移除已加商品">
                                         <button href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
@@ -338,6 +339,8 @@
             </div>
         </div>
     </section>
+
+    <!-- 彈跳視窗 -->
     <div id="pop-window" class="im-pop-window">
         <div class="container">
             <div class="pop-window-content">
@@ -658,13 +661,10 @@
 
     <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<<<<<<< Updated upstream
     <script src="./js/distribution-confirm.js"></script>
-=======
+    <script src="./js/popwindow.js"></script>
      <!-- aos js -->
      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/swiperJS.js"></script>
     <script src="./js/franchisee.js"></script>
->>>>>>> Stashed changes
 </body>
 </html>
