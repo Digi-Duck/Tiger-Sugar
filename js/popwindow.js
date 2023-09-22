@@ -1,59 +1,15 @@
-// var swiper = new Swiper(".my-pop-swiper", {
-//     loop: true,
-//     spaceBetween: 4,
-//     slidesPerView: 4,
-//     freeMode: true,
-//     watchSlidesProgress: true,
-//     direction: 'vertical',
-//     breakpoints: {  
-//         767: {
-//             direction: 'horizontal',
-//             slidesPerView: 4,
-//         },
-//         768: {
-//             direction: 'vertical',
-//             slidesPerView: 4,
-//         },
-//     },
-// });
-
-// swiper main RWD
-var firstWindowWidth = window.innerWidth;
-var initialDirection = firstWindowWidth <= 767 ? 'horizontal' : 'vertical';
 var swiper = new Swiper(".my-pop-swiper", {
     loop: true,
     spaceBetween: 4,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
-    direction: initialDirection,
-});
-window.addEventListener('resize', function () {
-    var windowWidth = window.innerWidth;
-    if (windowWidth <= 767 && swiper.direction !== 'horizontal') {
-        swiper.destroy();
-        swiper =  new Swiper(".my-pop-swiper",{
-            loop: true,
-            spaceBetween: 4,
-            slidesPerView: 4,
-            freeMode: true,
-            watchSlidesProgress: true,
-            direction: 'horizontal', 
-        });
-        swiperSub.thumbs.swiper = swiper;
-    }
-    else if (windowWidth > 767 && swiper.direction !== 'vertical') {
-        swiper.destroy();
-        swiper =  new Swiper(".my-pop-swiper",{
-            loop: true,
-            spaceBetween: 4,
-            slidesPerView: 4,
-            freeMode: true,
-            watchSlidesProgress: true,
-            direction: 'vertical', 
-        });
-        swiperSub.thumbs.swiper = swiper;
-    }
+    direction: 'horizontal',
+    breakpoints: {  
+        768: {
+            direction: 'vertical',
+        },
+    },
 });
 
 // sub swiper
@@ -72,7 +28,6 @@ var swiperSub = new Swiper(".my-pop-swiper-sub", {
         swiper: swiper,
     },
 });
-
 
 //下方swiper
 var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
@@ -95,7 +50,6 @@ var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
 });
 
 //  table選單
-
 document.addEventListener('DOMContentLoaded', function () {
     const navDropDownLeft = document.querySelector('.drop-down-content');
     const navDropDownMiddle = document.querySelector('.drop-down-warn');
