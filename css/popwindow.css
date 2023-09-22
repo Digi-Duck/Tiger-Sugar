@@ -175,7 +175,6 @@ body {
 #pop-window .listed-date {
     display: flex;
     flex-direction: row;
-    display: flex;
     align-items: flex-end;
 }
 
@@ -204,7 +203,7 @@ body {
 }
 
 #pop-window .commodity-expiration {
-    margin-right: 18px;
+    margin-right: 16px;
     margin-bottom: 10px;
     font-weight: 600;
     color: #ffffff;
@@ -236,23 +235,25 @@ body {
 
 #pop-window .commodity-preservation-method {
     margin-bottom: 10px;
-    font-weight: 600;
     color: #ffffff;
     display: flex;
     flex-direction: row;
+
 }
 
 #pop-window .method-title {
-    margin-right: 18px;
     font-weight: 600;
     font-size: 20px;
     margin-right: 18px;
 }
 
 #pop-window .method-text {
-    display: flex;
+    font-weight: 400;
+    font-size: 16px;
     flex-wrap: wrap;
     align-items: baseline;
+    display: flex;
+    align-items: flex-end;
 }
 
 #pop-window .unit {
@@ -348,7 +349,6 @@ body {
     #pop-window .container {
         max-width: 960px;
     }
-
     #pop-window {
         left: calc(50% - 480px);
     }
@@ -380,6 +380,18 @@ body {
     #pop-window .pop-window-close {
         right: -63px;
         top: 0;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #pop-window .method-text {
+        align-items:center;
+    }
+    
+}
+@media screen and (max-width:1100px) {
+    #pop-window .add-for-ask-button {
+        right: 5%;
     }
 }
 
@@ -825,7 +837,7 @@ a {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        margin: 0 auto 65px;
+        margin: 0 auto 10px;
     }
 
     #pop-window .container {
@@ -848,4 +860,14 @@ a {
         align-items: center;
         overflow: hidden;
     }
+    #pop-window .add-for-ask-button {
+        width: 168px;
+        height: 30px;
+        display: block;
+        right: calc(50% - 84px);
+        bottom: 5%;
+    }
+    #pop-window .method-title {
+        margin-right: 44px;
+    }   
 }
