@@ -194,6 +194,7 @@ body {
     flex-direction: row;
     width: 80px;
     font-size: 20px;
+    margin-right: 18px;
 }
 
 #pop-window .net-weight {
@@ -242,7 +243,6 @@ body {
 }
 
 #pop-window .method-title {
-    /* width: 80px; */
     margin-right: 18px;
     font-weight: 600;
     font-size: 20px;
@@ -600,7 +600,6 @@ input[type="radio"] {
 }
 
 /* swiper 2 */
-
 a {
     text-decoration: none;
 }
@@ -836,7 +835,6 @@ a {
 }
 
 /* swiper main  RWD */
-
 @media (max-width:767px) {
     #pop-window .product-information-swiper {
         flex-wrap: wrap-reverse;
