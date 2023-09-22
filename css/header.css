@@ -27,6 +27,12 @@ header .nav-logo {
   margin: 13px 10px 0 10px;
 }
 
+@media screen and (min-width:1540px){
+  header .nav-logo {
+    margin: 13px 95px 0 10px;
+  }
+}
+
 header .nav-logo-btn {
   height: 50px;
 }
