@@ -794,3 +794,17 @@ ul li {
         width: 141px;
     }
 }
+
+ /* 產品方塊more btn */
+ #distribution-confirm .product-img-hover button {
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#distribution-confirm .product-img-hover button:active {
+    background: aliceblue;
+    color: #000000;
+}

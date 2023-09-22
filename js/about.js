@@ -1,6 +1,3 @@
-AOS.init({
-    duration: 800,
-});
 
 
 // const scrollImgInitial = document.querySelector(".about-us-scroll-img");

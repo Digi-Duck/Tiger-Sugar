@@ -22,7 +22,6 @@
 }
 
 #franchisee .join-us-img {
-    width: 400px;
     height: 100px;
     background-image: url('../images/franchisee/logo-Graphic.png');
     background-repeat: no-repeat;
@@ -38,7 +37,6 @@
     display: flex;
     flex-direction: row;
     background-image: url('../images/franchisee/logo-Text.png');
-    width: 250px;
     height: 60px;
     background-repeat: no-repeat;
     background-size: contain;
