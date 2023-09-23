@@ -1,0 +1,100 @@
+@keyframes open {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: auto;
+  }
+}
+
+@keyframes close {
+  from {
+    height: auto;
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+h3 {
+  font-size: 14pt;
+}
+
+.question-area {
+  width: 100%;
+  background-color: lightpink;
+}
+
+.click-area {
+  width: 90%;
+  margin: auto;
+  background-color: lightblue;
+  display: block;
+}
+
+.top-area {
+  width: 90%;
+  margin: auto;
+  background-color: lightslategray;
+  display: flex;
+  position: relative;
+}
+
+.border-test {
+  border: 10px green solid;
+}
+
+.down-area {
+  width: 100%;
+  border-top: 2px white solid;
+  /* display: none; */
+  height: 0;
+}
+
+#setsume1:checked+.click-area+.down-area {
+  animation: open 0.5s linear;
+  animation-fill-mode: forwards;
+  /* display: block; */
+}
+
+.plus-mark::before {
+  transition: 0.5s;
+  content: '';
+  width: 21px;
+  height: 5px;
+  background-color: #f4dd97;
+  content: '';
+  display: block;
+  height: 3.5px;
+  position: absolute;
+  top: calc(50% - 1.5px);
+  left: 10px;
+}
+
+.plus-mark::after {
+  transition: 0.5s;
+  content: '';
+  width: 21px;
+  background-color: #f4dd97;
+  content: '';
+  display: block;
+  height: 3.5px;
+  rotate: 90deg;
+  position: absolute;
+  top: calc(50% - 1.5px);
+  left: 10px;
+}
+
+#setsume1:checked+.click-area>.top-area>.plus-mark::after {
+  rotate: 180deg;
+}
+
+#setsume1:checked+.click-area>.top-area>.plus-mark::before {
+  rotate: -180deg;
+}
+
+.plus-mark+h3 {
+  margin-left: 50px;
+}
