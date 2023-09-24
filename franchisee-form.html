@@ -58,12 +58,9 @@
         <div class="form-country">
           <label for="country">預定加盟城市|Store Address</label>
           <div class="country-selector">
-            <select data-region-id="where" type="text" class="form-country-input crs-country" name="country" data-region-id="country-region"
-              data-crs-loaded="true">
-              <option></option>
+            <select data-region-id="where" class="form-country-input crs-country" name="country" data-region-id="country-region" data-default-value="Taiwan">
             </select>
-            <select id="where" type="text" class="form-country-input" name="capital" data-region-id="capital"
-              data-crs-loaded="true">
+            <select id="where" class="form-country-input" name="capital" data-region-id="capital">
             </select>
           </div>
         </div>
@@ -89,10 +86,7 @@
 
   <!-- footer -->
   <footer></footer>
-  <script src="./js/crs.js"></script>
-  <script src="./js/crs.min.js"></script>
-  <script src="./js/franchisee-form.js"></script>
-  
+  <script src="./js/crs.min.js"></script>  
 </body>
 
 </html>
