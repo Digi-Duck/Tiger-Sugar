@@ -99,10 +99,12 @@
 #common-question .inside-container .down-area{
   margin: 0 0 0 0;
   display: none;
+  height: 0;
 }
 
 #common-question #qa1:checked + .qa-area .down-area {
   display: block;
+  height: auto;
 }
 
 #common-question .inside-container .down-area::before{
