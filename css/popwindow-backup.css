@@ -9,6 +9,7 @@ body {
     width: 100%;
     position: relative;
     background-color: transparent;
+    background-color: #ffe282;
 }
 
 #pop-window .im-pop-window {
