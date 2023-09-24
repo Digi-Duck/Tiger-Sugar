@@ -158,10 +158,13 @@
 
 #common-question .inside-container .down-area {
   color: white;
-  margin: 0 0 0 0;
+  margin: 0;
   display: none;
   height: 0;
   letter-spacing: 0.1em;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s ease;
 }
 
 #common-question #qa1:checked+.qa-area .down-area,
@@ -176,6 +179,8 @@
 #common-question #qar6:checked+.qa-area .down-area {
   display: block;
   height: auto;
+  transform: scaleY(1);
+  transition: transform 0.5s ease;
 }
 
 #common-question .inside-container .down-area::before {
