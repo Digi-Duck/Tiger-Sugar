@@ -10,7 +10,7 @@
   margin-bottom: 71px;
   padding: 0px 20px;
   position: relative;
-  /* background-color: lightpink; */
+  overflow: hidden;
 }
 
 @media screen and (min-width:769px) {
@@ -19,13 +19,11 @@
   }
 }
 
-/* #common-question img{
-  width: 100%;
-  height: 100%;
+#common-question img {
   position: absolute;
   top: -9%;
   left: calc(50% - calc(429px / 2));
-} */
+}
 
 #common-question .text-fqa {
   width: 100%;
@@ -34,6 +32,8 @@
   margin-bottom: 23px;
   font-weight: bold;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
 #common-question .inside-container {
@@ -41,6 +41,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 #common-question .left-container,
@@ -55,7 +57,7 @@
   margin: 7px 8px 9px 9px;
   border: 1px solid #f4dd97;
   width: 100%;
-  padding: 12px 15px;
+  padding: 14px 14px 4px 14px;
   cursor: pointer;
   font-size: 14px;
 }
@@ -86,12 +88,13 @@
   }
 
   #common-question .qa-area {
-    padding: 38px 19px 37px 19px;
+    padding: 38px 19px 27px 19px;
   }
 }
 
 #common-question .question-area {
   width: 100%;
+  overflow: hidden;
 }
 
 #common-question .top-area {
@@ -123,6 +126,7 @@
   left: 0px;
 }
 
+/* 加號變減號效果 */
 #common-question #qa1:checked+.qa-area .top-area .mark::before,
 #common-question #qa2:checked+.qa-area .top-area .mark::before,
 #common-question #qa3:checked+.qa-area .top-area .mark::before,
@@ -136,6 +140,7 @@
   transform: rotate(-180deg);
 }
 
+/* 加號變減號效果 */
 #common-question #qa1:checked+.qa-area .top-area .mark::after,
 #common-question #qa2:checked+.qa-area .top-area .mark::after,
 #common-question #qa3:checked+.qa-area .top-area .mark::after,
@@ -159,28 +164,8 @@
 #common-question .inside-container .down-area {
   color: white;
   margin: 0;
-  display: none;
-  height: 0;
   letter-spacing: 0.1em;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.2s ease;
-}
-
-#common-question #qa1:checked+.qa-area .down-area,
-#common-question #qa2:checked+.qa-area .down-area,
-#common-question #qa3:checked+.qa-area .down-area,
-#common-question #qa4:checked+.qa-area .down-area,
-#common-question #qa5:checked+.qa-area .down-area,
-#common-question #qa6:checked+.qa-area .down-area,
-#common-question #qa7:checked+.qa-area .down-area,
-#common-question #qar2:checked+.qa-area .down-area,
-#common-question #qar4:checked+.qa-area .down-area,
-#common-question #qar6:checked+.qa-area .down-area {
-  display: block;
-  height: auto;
-  transform: scaleY(1);
-  transition: transform 0.5s ease;
+  max-height: 0;
 }
 
 #common-question .inside-container .down-area::before {
@@ -194,6 +179,7 @@
   margin: 10px 0;
 }
 
+/* 交叉排版變版效果 */
 #common-question #qa2+.qa-area,
 #common-question #qa4+.qa-area,
 #common-question #qa6+.qa-area {
@@ -218,5 +204,34 @@
   #common-question #qar4+.qa-area,
   #common-question #qar6+.qa-area {
     display: block;
+  }
+}
+
+#common-question .background .container .show {
+  max-height: 150px;
+  transition: max-height 0.5s linear;
+}
+
+#common-question .background .container .hidden {
+  max-height: 0px;
+  transition: max-height 0.5s linear;
+}
+
+#common-question .img-bg {
+  position: absolute;
+  top: 12%;
+  left: calc(50% - calc(429px / 2));
+  transform: translate(1px, 1px);
+}
+
+@media screen and (min-width:700px) {
+  #common-question .img-bg {
+    width: unset;
+  }
+}
+
+@media screen and (min-width:770px) {
+  #common-question .img-bg {
+    top: -9%;
   }
 }
