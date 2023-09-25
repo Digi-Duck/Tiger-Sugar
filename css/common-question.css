@@ -163,9 +163,22 @@
 
 #common-question .inside-container .down-area {
   color: white;
-  margin: 0;
   letter-spacing: 0.1em;
   max-height: 0;
+  transition: 0.5s;
+}
+
+#common-question #qa1:checked+.qa-area .down-area,
+#common-question #qa2:checked+.qa-area .down-area,
+#common-question #qa3:checked+.qa-area .down-area,
+#common-question #qa4:checked+.qa-area .down-area,
+#common-question #qa5:checked+.qa-area .down-area,
+#common-question #qa6:checked+.qa-area .down-area,
+#common-question #qa7:checked+.qa-area .down-area,
+#common-question #qar2:checked+.qa-area .down-area,
+#common-question #qar4:checked+.qa-area .down-area,
+#common-question #qar6:checked+.qa-area .down-area {
+  max-height: 150px;
 }
 
 #common-question .inside-container .down-area::before {
@@ -207,14 +220,9 @@
   }
 }
 
-#common-question .background .container .show {
-  max-height: 150px;
-  transition: max-height 0.5s linear;
-}
-
-#common-question .background .container .hidden {
-  max-height: 0px;
-  transition: max-height 0.5s linear;
+#common-question{
+  position: relative;
+  overflow: hidden;
 }
 
 #common-question .img-bg {
