@@ -1,782 +1,967 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/extra-distribution.css" />
-    <!-- aos cdn -->
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./css/franchisee.css" />
-    <!-- common css -->
-    <link rel="stylesheet" href="./css/common.css" />
-    <!-- bootstrap-icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/popwindow.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  </head>
-  <body>
-    <!-- nav bar -->
-    <header></header>
-    <!-- 內容頁 -->
-    <div class="window-overlay"></div>
-    <section id="distribution">
-      <div class="main">
-        <div class="container">
-          <!-- 產品經銷 - 全部選取按鈕 -->
-          <div class="distribution-nav">
-            <div class="distribution-logo-group">
-              <div class="distribution-logo-img">
-                <img src="/img/distribution.svg" alt="產品經銷logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/extra-distribution.css" />
+  <!-- aos cdn -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/franchisee.css" />
+  <!-- common css -->
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <!-- bootstrap-icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/popwindow.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- 秋 header -->
+  <header>
+    <nav>
+      <section class="nav-logo">
+        <a href="./index.html">
+          <img class="nav-logo-btn" src="./img/LOGO.png" alt="tiger-logo">
+        </a>
+      </section>
+
+      <section class="nav-main">
+        <section class="main-menu">
+          <!----------------------------- 關於我們 ------------------------------------>
+          <div class="about">
+            <a href="#about" class="about-link">
+              <div class="about-img">
+                <div class="main-menu-img">
+                  <img class="main-menu-about" src="./img/about.png" alt="about-icon">
+                  <img class="main-menu-about-gold" src="./img/about-gold.png" alt="about-icon">
+                </div>
               </div>
-              <div class="distribution-logo-text">
-                <div class="distribution-logo-text-cn">產品經銷</div>
-                <div class="distribution-logo-text-en">DISTRIBUTION</div>
+              <div class="main-menu-text">
+                <div class="text-ch">關於我們</div>
+                <div class="text-en">ABOUT</div>
               </div>
-            </div>
-            <div class="select-all">
-              <button class="select-all-btn" type="button">全部選取</button>
-            </div>
+            </a>
           </div>
-          <!-- 各品項與頁面數swiper -->
-          <div class="swiper-and-page-group">
-            <!-- 品項swiper -->
-            <div class="content">
-              <div
-                class="mySwiper swiper-container swiper-container-horizontal"
-              >
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="" title="品項分類" class="page-link">全部｜All</a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="" title="品項分類" class="page-link">零食｜Snack</a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="" title="品項分類" class="page-link">冰品｜Ice</a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="" title="品項分類" class="page-link">飲品｜Drink</a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="" title="品項分類" class="page-link">食品｜Food</a>
-                  </div>
-                  <div class="swiper-slide">
-                    <a href="" title="品項分類" class="page-link">甜點｜dessert</a>
-                  </div>
-                </div>
-                <div class="swiper-button-next">
-                  <img src="/img/commodity-next.svg" alt="下一個按鈕" />
-                </div>
-                <div class="swiper-button-prev">
-                  <img src="/img/commodity-prev.svg" alt="上一個按鈕" />
-                </div>
+          <!----------------------------- 產品經銷 ------------------------------------>
+          <div class="distribution">
+            <a href="#distribution" class="distribution-link">
+              <div class="main-menu-img">
+                <img class="main-menu-distribution" src="./img/distribution.png" alt="distribution-icon">
+                <img class="main-menu-distribution-gold" src="./img/distribution-gold.png" alt="distribution-gold-icon">
               </div>
+              <div class="main-menu-text">
+                <span class="text-ch">產品經銷</span>
+                <span class="text-en">DISTRIBUTION</span>
+              </div>
+            </a>
+          </div>
+          <!----------------------------- 熱門經典 ------------------------------------>
+          <div class="classic">
+            <a href="#classic" class="classic-link">
+              <div class="main-menu-img">
+                <img class="main-menu-classic" src="./img/classic.png" alt="classic-icon">
+                <img class="main-menu-classic-gold" src="./img/classic-gold.png" alt="classic-gold-icon">
+              </div>
+              <div class="main-menu-text">
+                <span class="text-ch">熱門經典</span>
+                <span class="text-en">CLASSIC</span>
+              </div>
+            </a>
+          </div>
+          <!----------------------------- 媒體露出 ------------------------------------>
+          <div class="media">
+            <a href="#media" class="media-link">
+              <div class="main-menu-img">
+                <img class="main-menu-media" src="./img/media.png" alt="media-icon">
+                <img class="main-menu-media-gold" src="./img/media-gold.png" alt="media-icon-icon">
+              </div>
+              <div class="main-menu-text">
+                <span class="text-ch">媒體露出</span>
+                <span class="text-en">MEDIA</span>
+              </div>
+            </a>
+          </div>
+          <!----------------------------- 加盟專區 ------------------------------------>
+          <div class="franchisee">
+            <a href="#franchisee" class="franchisee-link">
+              <div class="main-menu-img">
+                <img class="main-menu-franchisee" src="./img/franchisee.png" alt="franchisee-icon">
+                <img class="main-menu-franchisee-gold" src="./img/franchisee-gold.png" alt="franchisee-gold-icon">
+              </div>
+              <div class="main-menu-text">
+                <span class="text-ch">加盟專區</span>
+                <span class="text-en">FRANCHISEE</span>
+              </div>
+            </a>
+          </div>
+
+        </section>
+        <!----------------------------- 社群連結 ------------------------------------>
+        <section class="social-menu">
+          <div class="social-menu-main">
+            <div class="social-menu-icon">
+              <a href="https://www.facebook.com/twtigersugar/">
+                <img class="social-menu-icon-fb" src="./img/fb.png" alt="icon-fb">
+              </a>
             </div>
 
-            <!-- 頁面數 -->
-            <div class="page-up-and-page-down-group">
-              <a href="" class="page-up" title="上一個頁面">
-                <img src="/img/previous.png" alt="上一頁小圖標" />上一頁</a
-              >
-              <a href="" class="page-1" title="第一頁">1</a>
-              <a href="" class="page-2" title="第二頁">2</a>
-              <a href="" class="page-3" title="第三頁">3</a>
-              <a href="" class="page-4" title="第四頁">4</a>
-              <a href="" class="page-5" title="第五頁">5</a>
-              <a href="" class="page-down" title="下一個頁面"
-                >下一頁
-                <img src="/img/next.png" alt="下一頁小圖標" />
+            <div class="social-menu-icon">
+              <a href="https://www.instagram.com/twtigersugar/">
+                <img class="social-menu-icon-ig" src="./img/ig.png" alt="social-menu-icon-ig">
               </a>
             </div>
           </div>
-          <!-- 產品方格 -->
-          <div class="prduct-grid-columns">
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover open-pop-window" id="">
-                    <a href="" class="yellow-box-hover"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
+          <!----------------------------- 語言選擇 ------------------------------------>
+          <section class="language-menu ">
+            <div class="language-position">
+              <div class="drop-down-menu">
+                <a href="#">LANGUAGE &dtrif;</a>
+              </div>
+              <div class="drop-down-menu-sub">
+                <div class="dropdown-content-ch">
+                  <a href="https://tigersugar.com/">繁體中文</a>
                 </div>
+                <div class="dropdown-content-en">
+                  <a href="https://en.tigersugar.com/">English</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+      <!-- 測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕 -->
+      <section class="jing-section btn">
+        <img class="jing-section-btn" src="./img/nav_menu_list.png" alt="navm-enu-list">
+      </section>
+
+
+
+      <!-- 漢堡條 測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕 -->
+      <div class="container menu">
+        <div class="nav-ham">
+          <div class="mine-menu">
+            <div class="flex-mine-menu">
+              <div class="top-mine-menu">
+                <!----------------------------- 關於我們 ------------------------------------>
+                <a href="#about" id="drop-about">
+                  <div class="menu-about">
+                    <div class="about-img">
+                      <img class="main-menu-about" src="./img/about.png" alt="about-icon">
+                      <img class="main-menu-about-gold" src="./img/about-gold.png" alt="about-icon">
+                    </div>
+                    <div class="main-menu-text">
+                      <div class="main-menu-text-ch">關於我們</div>
+                      <div class="main-menu-text-en">ABOUT</div>
+                    </div>
+                  </div>
+                </a>
+                <!----------------------------- 產品經銷 ------------------------------------>
+                <a href="#distribution" id="drop-distribution">
+                  <div class="menu-distribution">
+                    <div class="distribution-img">
+                      <img class="main-menu-distribution" src="./img/distribution.png" alt="distribution-icon">
+                      <img class="main-menu-distribution-gold" src="./img/distribution-gold.png"
+                        alt="distribution-gold-icon">
+                    </div>
+                    <div class="main-menu-text">
+                      <span class="main-menu-text-ch">產品經銷</span>
+                      <span class="main-menu-text-en">DISTRIBUTION</span>
+                    </div>
+                  </div>
+                </a>
+                <!----------------------------- 熱門經典 ------------------------------------>
+                <a href="#classic" id="drop-classic">
+                  <div class="menu-classic">
+                    <div class="classic-img">
+                      <img class="main-menu-classic" src="./img/classic.png" alt="classic-icon">
+                      <img class="main-menu-classic-gold" src="./img/classic-gold.png" alt="classic-gold-icon">
+                    </div>
+                    <div class="main-menu-text">
+                      <span class="main-menu-text-ch">熱門經典</span>
+                      <span class="main-menu-text-en">CLASSIC</span>
+                    </div>
+                  </div>
+                </a>
+                <!----------------------------- 媒體露出 ------------------------------------>
+                <a href="#media" id="drop-media">
+                  <div class="menu-media">
+                    <div class="media-img">
+                      <img class="main-menu-media" src="./img/media.png" alt="media-icon">
+                      <img class="main-menu-media-gold" src="./img/media-gold.png" alt="media-icon-icon">
+                    </div>
+                    <div class="main-menu-text">
+                      <span class="main-menu-text-ch">媒體露出</span>
+                      <span class="main-menu-text-en">MEDIA</span>
+                    </div>
+                  </div>
+                </a>
+                <!----------------------------- 加盟專區 ------------------------------------>
+                <a href="#franchisee" id="drop-franchisee">
+                  <div class="menu-franchisee">
+                    <div class="franchisee-img">
+                      <img class="main-menu-franchisee" src="./img/franchisee.png" alt="franchisee-icon">
+                      <img class="main-menu-franchisee-gold" src="./img/franchisee-gold.png" alt="franchisee-gold-icon">
+                    </div>
+                    <div class="main-menu-text">
+                      <span class="main-menu-text-ch">加盟專區</span>
+                      <span class="main-menu-text-en">FRANCHISEE</span>
+                    </div>
+                  </div>
+                </a>
               </div>
 
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
-                  </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
-              </div>
-            </div>
 
-            <div class="product-group">
-              <div class="product-img-group">
-                <div class="product-background">
-                  <div class="product">
-                    <img
-                      src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                      alt="產品1"
-                    />
+              <div class="mine-menu-btn">
+                <!----------------------------- 語言選擇 ------------------------------------>
+                <div class="swiper-language">
+                  <div class="swiper mySwiper header-swiper-container">
+                    <div class="swiper-wrapper header-swiper-language">
+                      <div class="swiper-slide">
+                        <a href="" title="繁體中文">
+                          <div class="header-slide-ch">
+                            繁體中文
+                          </div>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="" title="english">
+                          <div class="header-slide-en">
+                            ENGLISH
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next header-button-next">
+                      <!-- <img src="/img/swiper-button-next.svg alt="button-next"> -->
+                    </div>
+                    <div class="swiper-button-prev header-button-prev">
+                      <!-- <img src="/img/swiper-button-prev.svg alt="button-prev"> -->
+                    </div>
                   </div>
-                  <div class="yellow-box">
-                    <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
-                  </div>
-                  <div class="product-background-hover">
-                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"
-                      ><img
-                        src="/img/add_for_ask_hover.svg"
-                        alt="黃色詢問框hover"
-                    /></a>
-                    <button class="product-background-hover-more">MORE</button>
-                  </div>
+                </div>
+                <!----------------------------- 社群連結 ------------------------------------>
+                <div class="social-menu-icon">
+                  <a href="" title="老虎堂FB">
+                    <img class="social-menu-icon-fb" src="./img/fb.png" alt="icon-fb">
+                  </a>
+                  <a href="" title="老虎堂IG">
+                    <img class="social-menu-icon-ig" src="./img/ig.png" alt="social-menu-icon-ig">
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+    </nav>
+    <!-- 秋 選單紀錄 按鈕 -->
+    <a href="./distribution-confirm.html" class="shop-cart-container" title="前往購物車">
+      <img class="shop-cart" src="./img/shop_cart_button.svg">
+      <div class="shop-cart-amount-area">
+        <img class="shop-cart-amount" src="./img/amount.svg">
+        <div class="shop-cart-number">0</div>
+      </div>
+    </a>
+
+    <!-- 秋 top 按鈕 -->
+    <div class="go-to-top-container topbtn">
+      <!-- "#"回到最上方 -->
+      <a href="#"><img class="go-to-top" src="./img/go_to_top.svg" alt="go_to_top"></a>
+    </div>
+  </header>
+
+  <!-- 內容頁 -->
+  <div class="window-overlay"></div>
+  <section id="distribution">
+    <div class="main">
+      <div class="container">
+        <!-- 產品經銷 - 全部選取按鈕 -->
+        <div class="distribution-nav">
+          <div class="distribution-logo-group">
+            <div class="distribution-logo-img">
+              <img src="/img/distribution.svg" alt="產品經銷logo" />
+            </div>
+            <div class="distribution-logo-text">
+              <div class="distribution-logo-text-cn">產品經銷</div>
+              <div class="distribution-logo-text-en">DISTRIBUTION</div>
+            </div>
+          </div>
+          <div class="select-all">
+            <button class="select-all-btn" type="button">全部選取</button>
+          </div>
+        </div>
+        <!-- 各品項與頁面數swiper -->
+        <div class="swiper-and-page-group">
+          <!-- 品項swiper -->
+          <div class="content">
+            <div class="mySwiper swiper-container swiper-container-horizontal">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="" title="品項分類" class="page-link">全部｜All</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" title="品項分類" class="page-link">零食｜Snack</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" title="品項分類" class="page-link">冰品｜Ice</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" title="品項分類" class="page-link">飲品｜Drink</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" title="品項分類" class="page-link">食品｜Food</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" title="品項分類" class="page-link">甜點｜dessert</a>
                 </div>
               </div>
-              <div class="product-info">
-                <div class="product-title">老虎芝士流心雪糕</div>
-                <div class="product-title-en">
-                  Tiger Cheese Filling Black Sugar Ice Cream Bar
-                </div>
-                <div class="product-id">冰品 | Ice</div>
+              <div class="swiper-button-next">
+                <img src="/img/commodity-next.svg" alt="下一個按鈕" />
+              </div>
+              <div class="swiper-button-prev">
+                <img src="/img/commodity-prev.svg" alt="上一個按鈕" />
               </div>
             </div>
           </div>
 
-          <!-- 下方分隔線 -->
-          <div class="div-line"></div>
-
           <!-- 頁面數 -->
-
-          <div class="page-up-and-page-down-group-buttom">
+          <div class="page-up-and-page-down-group">
             <a href="" class="page-up" title="上一個頁面">
-              <img src="/img/previous.png" alt="上一頁小圖標" />上一頁</a
-            >
+              <img src="/img/previous.png" alt="上一頁小圖標" />上一頁</a>
             <a href="" class="page-1" title="第一頁">1</a>
             <a href="" class="page-2" title="第二頁">2</a>
             <a href="" class="page-3" title="第三頁">3</a>
             <a href="" class="page-4" title="第四頁">4</a>
             <a href="" class="page-5" title="第五頁">5</a>
-            <a href="" class="page-down" title="下一個頁面"
-              >下一頁
+            <a href="" class="page-down" title="下一個頁面">下一頁
               <img src="/img/next.png" alt="下一頁小圖標" />
             </a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./js/popwindow.js"></script>
-    <script src="./js/distribution.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          320:{
-            slidesPerView: 1,
-          },
-          510: {
-            slidesPerView: 2,
-          },
-          768:{
-            slidesPerView: 3,
-          },
-          832: {
-            slidesPerView: 4,
-          },
-          1200: {
-            slidesPerView: 4,
-          },
-          1920: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    </script>
-
-    <!-- 敏齊 -->
-    <section id="franchisee">
-      <div class="container">
-        <div class="franchisee-title">
-          <div class="franchisee-icon"></div>
-          <div class="container-franchisee-title">
-            <h1>加盟專區</h1>
-            <h2>FRANCHISEE</h2>
-          </div>
-        </div>
-        <div class="franchisee-container-big">
-          <div class="franchisee-container-animation" data-aos="zoom-in">
-            <a href="./franchisee.html" class="franchisee-link" title="點擊立即加盟按鈕">
-              <div class="join-us-img">
-                <div class="join-us-info">
-                  <h2>
-                    <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise!
-                    <i class="bi bi-star-fill"></i>
-                  </h2>
+        <!-- 產品方格 -->
+        <div class="prduct-grid-columns">
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover open-pop-window" id="">
+                  <a href="" class="yellow-box-hover"><img src="/img/add_for_ask_hover.svg" alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
                 </div>
               </div>
-            </a>
+            </div>
+
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+
+          <div class="product-group">
+            <div class="product-img-group">
+              <div class="product-background">
+                <div class="product">
+                  <img src="/images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg" alt="產品1" />
+                </div>
+                <div class="yellow-box">
+                  <img src="/img/add_for_ask.svg" alt="黃色詢問框" />
+                </div>
+                <div class="product-background-hover">
+                  <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img src="/img/add_for_ask_hover.svg"
+                      alt="黃色詢問框hover" /></a>
+                  <button class="product-background-hover-more">MORE</button>
+                </div>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">老虎芝士流心雪糕</div>
+              <div class="product-title-en">
+                Tiger Cheese Filling Black Sugar Ice Cream Bar
+              </div>
+              <div class="product-id">冰品 | Ice</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 下方分隔線 -->
+        <div class="div-line"></div>
+
+        <!-- 頁面數 -->
+
+        <div class="page-up-and-page-down-group-buttom">
+          <a href="" class="page-up" title="上一個頁面">
+            <img src="/img/previous.png" alt="上一頁小圖標" />上一頁</a>
+          <a href="" class="page-1" title="第一頁">1</a>
+          <a href="" class="page-2" title="第二頁">2</a>
+          <a href="" class="page-3" title="第三頁">3</a>
+          <a href="" class="page-4" title="第四頁">4</a>
+          <a href="" class="page-5" title="第五頁">5</a>
+          <a href="" class="page-down" title="下一個頁面">下一頁
+            <img src="/img/next.png" alt="下一頁小圖標" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="./js/popwindow.js"></script>
+  <script src="./js/distribution.js"></script>
+  <script src="./js/header.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        510: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        832: {
+          slidesPerView: 4,
+        },
+        1200: {
+          slidesPerView: 4,
+        },
+        1920: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  </script>
+
+  <!-- 敏齊 -->
+  <section id="franchisee">
+    <div class="container">
+      <div class="franchisee-title">
+        <div class="franchisee-icon"></div>
+        <div class="container-franchisee-title">
+          <h1>加盟專區</h1>
+          <h2>FRANCHISEE</h2>
+        </div>
+      </div>
+      <div class="franchisee-container-big">
+        <div class="franchisee-container-animation" data-aos="zoom-in">
+          <a href="./franchisee.html" class="franchisee-link" title="點擊立即加盟按鈕">
+            <div class="join-us-img">
+              <div class="join-us-info">
+                <h2>
+                  <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise!
+                  <i class="bi bi-star-fill"></i>
+                </h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 秋 footer -->
+  <footer>
+    <p class="footer-text">Copyright © 201811 Tigersugar International Enterprise Co., Ltd.</p>
+  </footer>
+  <div id="pop-window">
+    <div class="container">
+      <div class="pop-window-content">
+        <div class="pop-window-close">
+          <button class="close" href="#"></button>
+        </div>
+        <div class="pop-window-header">
+          <div class="pop-window-title">
+            <div class="pop-window-title-icon"></div>
+            <div class="pop-window-title-text">
+              <div class="pop-window-title-text-chinese">產品介紹</div>
+              <div class="pop-window-title-text-english">PRODUCT</div>
+
+            </div>
+          </div>
+        </div>
+        <div class="product-information-content">
+
+          <!-- 彈跳視窗上半部swiper -->
+          <div class="product-information-swiper">
+            <div thumbsSlider="" class="swiper-pop-top swiper my-pop-swiper">
+              <div class="swiper-wrapper display-vertical">
+                <div class="swiper-pop-top-slide swiper-slide">
+                  <img src="./img/sesamebun1.jpeg" />
+                </div>
+
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <img src="./img/sesamebun2.jpeg" />
+                </div>
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <img src="./img/sesamebun3.jpeg" />
+                </div>
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <img src="./img/sesamebun4.jpeg" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <div class="pop-sub-border-img">
+                    <img class="sub-img" src="./img/sesamebun1.jpeg" />
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <div class="pop-sub-border-img">
+                    <img class="sub-img" src="./img/sesamebun2.jpeg" />
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <div class="pop-sub-border-img">
+                    <img class="sub-img" src="./img/sesamebun3.jpeg" />
+                  </div>
+                </div>
+                <div class="swiper-slide swiper-pop-top-slide">
+                  <div class="pop-sub-border-img">
+                    <img class="sub-img" src="./img/sesamebun4.jpeg" />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next">
+                <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
+              </div>
+              <div class="swiper-button-prev">
+                <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
+              </div>
+              <div class="swiper-pagination swiper-page-dec"></div>
+            </div>
+          </div>
+
+          <!-- 上半部右側產品介紹文字 -->
+          <div class="product-information-text">
+            <div class="content-text-title">經典黑糖麻糬包</div>
+            <div class="content-text-title-eng">Black Sugar Mochi Bun</div>
+            <div class="content-text-sort">分類：食品｜Food</div>
+            <div class="content-text-product-describe">
+              你有吃過牽絲的黑糖麻糬包嗎？
+              熱呼呼充滿奶香味的<br>包子中，噴發出濃郁黑糖香氣的麻糬，又香又Q，只吃<br>一顆完全不夠啦~
+            </div>
+            <div class="commodity-listed-date">
+              <div class="listed-date-title">上市日期</div>
+              <div class="listed-date">2022
+                <div class="unit">年</div>06
+                <div class="unit">月</div>24
+                <div class="unit">號</div>
+              </div>
+            </div>
+            <div class="commodity-weight">
+              <div class="commodity-weight-title">淨重</div>
+              <div class="net-weight">390</div>
+              <div class="unit">克</div>
+            </div>
+            <div class="commodity-expiration">
+              <div class="commodity-expiration-title">保存期限</div>
+              <div class="expiration-day">12</div>
+              <div class="unit">個月</div>
+            </div>
+            <div class="commodity-preservation-method">
+              <div class="method-title">保存方式</div>
+              <div class="method-text">1.請保存於冷凍-18℃以下，拆封後請儘早食用，以確保品質及風味。</div>
+            </div>
+            <button class="add-for-ask-button">加入詢問</button>
+          </div>
+        </div>
+
+
+        <!--tabNav 商品內容 注意事項 影片 -->
+        <div class="pop-window-lower-part">
+          <div class="tab-nav">
+            <input type="radio" name="css-tabs" class="tab-switch drop-down-content" id="tab-1" checked>
+            <label for="tab-1" class="tab-label">內容</label>
+            <input type="radio" name="css-tabs" class="tab-switch drop-down-warn" id="tab-2">
+            <label for="tab-2" class="tab-label">注意事項</label>
+            <input type="radio" name="css-tabs" class="tab-switch drop-down-video" id="tab-3">
+            <label for="tab-3" class="tab-label">影片</label>
+            <div class="tab-content">
+              <div class="content-left">
+                <p>100%使用「虎式黑糖」</p>
+                <p>調製特殊比例，讓黑糖融合麻糬的瞬間</p>
+                <p>散發濃厚黑糖的香氣，口感富有層次感，Q度彈牙適中~</p>
+                <p><br></p>
+                <p>撥開光滑外皮，裡面的是雙層內餡</p>
+                <p>黑糖麻糬包裹著白麻糬</p>
+                <p><br></p>
+                <p>翻熱後，黑糖與麻糬更融合</p>
+                <p>超級牽絲的黑糖麻糬包就誕生了，黑糖控絕對不能錯過~<br></p>
+              </div>
+              <div class="content-middle">
+                <p>●本產品含有牛奶、堅果、蛋、含麩質之穀物及其製品，不適合對其過敏體質者食用。</p>
+                <p>●本產品生產設備亦生產含甲殼類、芒果、花生、大豆、芝麻、魚類、亞硫酸鹽類、芹菜及其製品。<br></p>
+              </div>
+              <div class="content-right">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 彈跳視窗下半部swiper -->
+
+          <div class="bottom-pop-window-swiper">
+            <div class="recommend-title">推薦商品</div>
+            <div class="recommend-line"></div>
+            <!-- Swiper -->
+            <div class="card-container">
+              <div class="swiper swiper-pop-bottom pop-window-bottom-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-pop-bottom-slide swiper-slide">
+                    <div class="direction-body">
+                      <div class="img-box-border-img">
+                        <img class="product-img" src="./images/product/1668998205a2557a7b2e94197ff767970b67041697.jpg"
+                          alt="">
+                        <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
+                        <div class="product-img-hover">
+                          <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg" alt="">
+                          <a href="" class="commodity-more-button btn">
+                            MORE
+                          </a>
+                        </div>
+                      </div>
+                      <div class="commodity-title">
+                        老虎堂地瓜條
+                      </div>
+                      <div class="commodity-title-english">
+                        Tiger Sugar Sweet Potato Fries
+                      </div>
+                      <div class="commodity-sort">
+                        零食｜Snack
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-pop-bottom-slide">
+                    <div class="direction-body">
+                      <div class="img-box-border-img">
+                        <img class="product-img" src="./images/product/165899031442a0e188f5033bc65bf8d78622277c4e.jpg"
+                          alt="">
+                        <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
+                        <div class="product-img-hover">
+                          <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg" alt="">
+                          <a href="" class="commodity-more-button btn">
+                            MORE
+                          </a>
+                        </div>
+                      </div>
+                      <div class="commodity-title">
+                        經典黑糖麻糬包
+                      </div>
+                      <div class="commodity-title-english">
+                        Black Sugar Mochi Bun
+                      </div>
+                      <div class="commodity-sort">
+                        食品｜Food
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-pop-bottom-slide">
+                    <div class="direction-body">
+                      <div class="img-box-border-img">
+                        <img class="product-img" src="./images/product/165899100742a0e188f5033bc65bf8d78622277c4e.jpg"
+                          alt="">
+                        <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
+                        <div class="product-img-hover">
+                          <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg" alt="">
+                          <a href="" class="commodity-more-button btn">
+                            MORE
+                          </a>
+                        </div>
+                      </div>
+                      <div class="commodity-title">
+                        爆漿起司流心包
+                      </div>
+                      <div class="commodity-title-english">
+                        Bursting Cheese Filling Bun
+                      </div>
+                      <div class="commodity-sort">
+                        食品｜Food
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-pop-bottom-slide">
+                    <div class="direction-body">
+                      <div class="img-box-border-img">
+                        <img class="product-img" src="./images/product/1658908734cfecdb276f634854f3ef915e2e980c31.jpg"
+                          alt="">
+                        <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
+                        <div class="product-img-hover">
+                          <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg" alt="">
+                          <a href="" class="commodity-more-button btn">
+                            MORE
+                          </a>
+                        </div>
+                      </div>
+                      <div class="commodity-title">
+                        黑糖奶霜樹幹年輪
+                      </div>
+                      <div class="commodity-title-english">
+                        Black Suga Cream Trunk Baumkuchen
+                      </div>
+                      <div class="commodity-sort">
+                        甜點｜dessert
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-pop-bottom-slide">
+                    <div class="direction-body">
+                      <div class="img-box-border-img">
+                        <img class="product-img" src="./images/product/16589912415878a7ab84fb43402106c575658472fa.jpg"
+                          alt="">
+                        <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
+                        <div class="product-img-hover">
+                          <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg" alt="">
+                          <a href="" class="commodity-more-button btn">
+                            MORE
+                          </a>
+                        </div>
+                      </div>
+                      <div class="commodity-title">
+                        特濃黑糖厚奶蓋蛋糕
+                      </div>
+                      <div class="commodity-title-english">
+                        Black Sugar Cheese Foam Cake
+                      </div>
+                      <div class="commodity-sort">
+                        甜點｜dessert
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide swiper-pop-bottom-slide">
+                    <div class="direction-body">
+                      <div class="img-box-border-img">
+                        <img class="product-img" src="./images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                          alt="">
+                        <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
+                        <div class="product-img-hover">
+                          <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg" alt="">
+                          <a href="" class="commodity-more-button btn">
+                            MORE
+                          </a>
+                        </div>
+                      </div>
+                      <div class="commodity-title">
+                        老虎芝士流心雪糕
+                      </div>
+                      <div class="commodity-title-english">
+                        Tiger Cheese Filling Black Sugar Ice Cream Bar
+                      </div>
+                      <div class="commodity-sort">
+                        冰品｜Ice
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-product">
+                <div class="swiper-button-next">
+                  <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
+                </div>
+                <div class="swiper-button-prev">
+                  <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-
-
-    <!-- footer -->
-    <footer></footer>
-<div id="pop-window">
-        <div class="container">
-            <div class="pop-window-content">
-                <div class="pop-window-close">
-                    <button class="close" href="#"></button>
-                </div>
-                <div class="pop-window-header">
-                    <div class="pop-window-title">
-                        <div class="pop-window-title-icon"></div>
-                        <div class="pop-window-title-text">
-                            <div class="pop-window-title-text-chinese">產品介紹</div>
-                            <div class="pop-window-title-text-english">PRODUCT</div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product-information-content">
-
-                    <!-- 彈跳視窗上半部swiper -->
-                    <div class="product-information-swiper">
-                        <div thumbsSlider="" class="swiper-pop-top swiper my-pop-swiper">
-                            <div class="swiper-wrapper display-vertical">
-                                <div class="swiper-pop-top-slide swiper-slide">
-                                    <img src="./img/sesamebun1.jpeg" />
-                                </div>
-
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <img src="./img/sesamebun2.jpeg" />
-                                </div>
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <img src="./img/sesamebun3.jpeg" />
-                                </div>
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <img src="./img/sesamebun4.jpeg" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="./img/sesamebun1.jpeg" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="./img/sesamebun2.jpeg" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="./img/sesamebun3.jpeg" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-pop-top-slide">
-                                    <div class="pop-sub-border-img">
-                                    <img class="sub-img" src="./img/sesamebun4.jpeg" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next">
-                                <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
-                            </div>
-                            <div class="swiper-button-prev">
-                                <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
-                            </div>
-                            <div class="swiper-pagination swiper-page-dec"></div>
-                        </div>
-                    </div>
-
-                    <!-- 上半部右側產品介紹文字 -->
-                    <div class="product-information-text">
-                        <div class="content-text-title">經典黑糖麻糬包</div>
-                        <div class="content-text-title-eng">Black Sugar Mochi Bun</div>
-                        <div class="content-text-sort">分類：食品｜Food</div>
-                        <div class="content-text-product-describe">
-                            你有吃過牽絲的黑糖麻糬包嗎？
-                            熱呼呼充滿奶香味的<br>包子中，噴發出濃郁黑糖香氣的麻糬，又香又Q，只吃<br>一顆完全不夠啦~
-                        </div>
-                        <div class="commodity-listed-date">
-                            <div class="listed-date-title">上市日期</div>
-                            <div class="listed-date">2022
-                                <div class="unit">年</div>06
-                                <div class="unit">月</div>24
-                                <div class="unit">號</div>
-                            </div>
-                        </div>
-                        <div class="commodity-weight">
-                            <div class="commodity-weight-title">淨重</div>
-                            <div class="net-weight">390</div>
-                            <div class="unit">克</div>
-                        </div>
-                        <div class="commodity-expiration">
-                            <div class="commodity-expiration-title">保存期限</div>
-                            <div class="expiration-day">12</div>
-                            <div class="unit">個月</div>
-                        </div>
-                        <div class="commodity-preservation-method">
-                            <div class="method-title">保存方式</div>
-                            <div class="method-text">1.請保存於冷凍-18℃以下，拆封後請儘早食用，以確保品質及風味。</div>
-                        </div>
-                        <button class="add-for-ask-button">加入詢問</button>
-                    </div>
-                </div>
-
-
-                <!--tabNav 商品內容 注意事項 影片 -->
-                <div class="pop-window-lower-part">
-                    <div class="tab-nav">
-                        <input type="radio" name="css-tabs" class="tab-switch drop-down-content" id="tab-1" checked>
-                        <label for="tab-1" class="tab-label">內容</label>
-                        <input type="radio" name="css-tabs" class="tab-switch drop-down-warn" id="tab-2">
-                        <label for="tab-2" class="tab-label">注意事項</label>
-                        <input type="radio" name="css-tabs" class="tab-switch drop-down-video" id="tab-3">
-                        <label for="tab-3" class="tab-label">影片</label>
-                        <div class="tab-content">
-                            <div class="content-left">
-                                <p>100%使用「虎式黑糖」</p>
-                                <p>調製特殊比例，讓黑糖融合麻糬的瞬間</p>
-                                <p>散發濃厚黑糖的香氣，口感富有層次感，Q度彈牙適中~</p>
-                                <p><br></p>
-                                <p>撥開光滑外皮，裡面的是雙層內餡</p>
-                                <p>黑糖麻糬包裹著白麻糬</p>
-                                <p><br></p>
-                                <p>翻熱後，黑糖與麻糬更融合</p>
-                                <p>超級牽絲的黑糖麻糬包就誕生了，黑糖控絕對不能錯過~<br></p>
-                            </div>
-                            <div class="content-middle">
-                                <p>●本產品含有牛奶、堅果、蛋、含麩質之穀物及其製品，不適合對其過敏體質者食用。</p>
-                                <p>●本產品生產設備亦生產含甲殼類、芒果、花生、大豆、芝麻、魚類、亞硫酸鹽類、芹菜及其製品。<br></p>
-                            </div>
-                            <div class="content-right">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- 彈跳視窗下半部swiper -->
-
-                    <div class="bottom-pop-window-swiper">
-                        <div class="recommend-title">推薦商品</div>
-                        <div class="recommend-line"></div>
-                        <!-- Swiper -->
-                        <div class="card-container">
-                            <div class="swiper swiper-pop-bottom pop-window-bottom-swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-pop-bottom-slide swiper-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="./images/product/1668998205a2557a7b2e94197ff767970b67041697.jpg"
-                                                    alt="">
-                                                <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg"
-                                                        alt="">
-                                                    <a href="" class="commodity-more-button btn">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                老虎堂地瓜條
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Tiger Sugar Sweet Potato Fries
-                                            </div>
-                                            <div class="commodity-sort">
-                                                零食｜Snack
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="./images/product/165899031442a0e188f5033bc65bf8d78622277c4e.jpg"
-                                                    alt="">
-                                                <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg"
-                                                        alt="">
-                                                    <a href="" class="commodity-more-button btn">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                經典黑糖麻糬包
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Black Sugar Mochi Bun
-                                            </div>
-                                            <div class="commodity-sort">
-                                                食品｜Food
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="./images/product/165899100742a0e188f5033bc65bf8d78622277c4e.jpg"
-                                                    alt="">
-                                                <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg"
-                                                        alt="">
-                                                    <a href="" class="commodity-more-button btn">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                爆漿起司流心包
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Bursting Cheese Filling Bun
-                                            </div>
-                                            <div class="commodity-sort">
-                                                食品｜Food
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="./images/product/1658908734cfecdb276f634854f3ef915e2e980c31.jpg"
-                                                    alt="">
-                                                <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg"
-                                                        alt="">
-                                                    <a href="" class="commodity-more-button btn">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                黑糖奶霜樹幹年輪
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Black Suga Cream Trunk Baumkuchen
-                                            </div>
-                                            <div class="commodity-sort">
-                                                甜點｜dessert
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="./images/product/16589912415878a7ab84fb43402106c575658472fa.jpg"
-                                                    alt="">
-                                                <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg"
-                                                        alt="">
-                                                    <a href="" class="commodity-more-button btn">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                特濃黑糖厚奶蓋蛋糕
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Black Sugar Cheese Foam Cake
-                                            </div>
-                                            <div class="commodity-sort">
-                                                甜點｜dessert
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="./images/product/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
-                                                    alt="">
-                                                <img class="ask-icon" src="./img/add_for_ask.svg" alt="">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover" src="./img/add_for_ask_hover.svg"
-                                                        alt="">
-                                                    <a href="" class="commodity-more-button btn">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                老虎芝士流心雪糕
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                                            </div>
-                                            <div class="commodity-sort">
-                                                冰品｜Ice
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-product">
-                                <div class="swiper-button-next">
-                                    <img class="next-prev-img" src="./img/commodity-next.svg" alt="">
-                                </div>
-                                <div class="swiper-button-prev">
-                                    <img class="next-prev-img" src="./img/commodity-prev.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
