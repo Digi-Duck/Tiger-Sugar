@@ -91,15 +91,15 @@
 #franchisee-form .form-franchisee-type,
 #franchisee-form .form-country,
 #franchisee-form .form-country-city,
-#franchisee-form .form-other{
+#franchisee-form .form-other {
     display: flex;
     flex-direction: column;
-    margin:0 auto 16px auto;
+    margin: 0 auto 16px auto;
     padding: 0 15px;
     color: white;
     font-size: 14px;
     border: none;
-    max-width: 50%;
+    width: 50%;
 }
 
 #franchisee-form .form-name-input,
@@ -111,11 +111,13 @@
 #franchisee-form .form-country-input,
 #franchisee-form .form-capital-input,
 #franchisee-form .form-country-city-input,
-#franchisee-form .form-other-input{
+#franchisee-form .form-other-input {
     padding: .375rem .75rem;
     height: calc(2.25rem + 2px);
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+    color: #495057;
+    font-size: 1rem;
 }
 
 #franchisee-form .form-country-input,
@@ -132,6 +134,8 @@
 #franchisee-form label {
     display: inline-block;
     color: white;
+    font-size: 1rem;
+    margin-bottom: 8px;
 }
 
 #franchisee-form .form-robot {
@@ -204,5 +208,24 @@
 @media screen and (min-width:1200px) {
     #franchisee-form .form-container {
         max-width: 1140px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #franchisee-form .form-name,
+    #franchisee-form .form-date,
+    #franchisee-form .form-email,
+    #franchisee-form .form-phone,
+    #franchisee-form .form-address,
+    #franchisee-form .form-franchisee-type,
+    #franchisee-form .form-country,
+    #franchisee-form .form-country-city,
+    #franchisee-form .form-other {
+        width: 100%;
+    }
+    #franchisee-form .form-robot {
+        margin-left: 3%;
     }
 }
