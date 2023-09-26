@@ -16,55 +16,55 @@
 }
 
 #banner .bg-left-milk-shadow {
-    background-image: url(../images/scene_pc/bg-left-1.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-left-1.webp);
     background-size: 95%;
     background-position: -150% 0%;
 }
 
 #banner .bg-left-drinks {
-    background-image: url(../images/scene_pc/bg-left-2.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-left-2.webp);
     background-size: 95%;
     background-position: -150% 0%;
 }
 
 #banner .bg-left-milk {
-    background-image: url(../images/scene_pc/bg-left-3.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-left-3.webp);
     background-size: 95%;
     background-position: -150% 0%;
 }
 
 #banner .bg-left-tiger {
-    background-image: url(../images/scene_pc/bg-left-4.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-left-4.webp);
     background-size: 95%;
     background-position: -150% 0%;
 }
 
 #banner .bg-right-milk {
-    background-image: url(../images/scene_pc/bg-right-1.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-right-1.webp);
     background-size: 95%;
     background-position: 200% -30%;
 }
 
 #banner .bg-right-drinks {
-    background-image: url(../images/scene_pc/bg-right-2.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-right-2.webp);
     background-size: 95%;
     background-position: 200% 20%;
 }
 
 #banner .bg-center {
-    background-image: url(../images/scene_pc/bg-center.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-center.webp);
     background-size: 85%;
     background-position: 50% 50%;
 }
 
 #banner .bg-cover {
-    background-image: url(../images/scene_pc/bg-cover.webp);
+    background-image: url(../frontend-img/index-img/banner/bg-cover.webp);
     background-size: 120%;
     background-position: 50% -5%;
 }
 
 #banner .bg {
-    background-image: url(../images/scene_pc/bg.webp);
+    background-image: url(../frontend-img/index-img/banner/bg.webp);
     background-size: 120%;
     background-position: 50% -5%;
 }
