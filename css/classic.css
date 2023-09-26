@@ -13,9 +13,13 @@
     padding: 0%;
     margin: 0%;
 }
-
-#classic .df {
+#classic .title{
     display: flex;
+}
+#classic .section_contentintro-logo{
+    background-image: url(../frontend-img/index-img/classic/about_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #classic .justbet {
