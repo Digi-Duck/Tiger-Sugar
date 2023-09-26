@@ -63,32 +63,17 @@ header .text-en {
   text-decoration: none;
 }
 
+header .main-menu-about,
+header .main-menu-about-gold,
 header .main-menu-distribution,
 header .main-menu-distribution-gold,
 header .main-menu-classic,
 header .main-menu-classic-gold,
 header .main-menu-media,
-header .main-menu-media-gold {
-  width: 36px;
-}
-
-header .main-menu-about,
-header .main-menu-about-gold,
+header .main-menu-media-gold,
 header .main-menu-franchisee,
 header .main-menu-franchisee-gold {
   width: 32px;
-}
-
-
-header .about,
-header .distribution,
-header .classic,
-header .media,
-header .franchisee {
-  padding: 8px 10px 10px 9px;
-  margin-right: 21px;
-  border: 2px solid transparent;
-  color: #eef2f7;
 }
 
 header .about-link,
@@ -96,15 +81,27 @@ header .distribution-link,
 header .classic-link,
 header .media-link,
 header .franchisee-link {
+  padding: 8px 10px 10px 9px;
+  margin-right: 21px;
+  border: 2px solid transparent;
+  color: #eef2f7;
+}
+
+header .about,
+header .distribution,
+header .classic,
+header .media,
+header .franchisee {
   display: flex;
   flex-wrap: nowrap;
 }
 
-header .about:hover,
-header .distribution:hover,
-header .classic:hover,
-header .media:hover,
-header .franchisee:hover {
+header .about-link:hover,
+header .distribution-link:hover,
+header .classic-link:hover,
+header .media-link:hover,
+header .franchisee-link:hover {
+  padding: 8px 10px 13px 9px;
   flex-wrap: nowrap;
   border: 2px solid #f7dc83;
   color: #f7dc83;
@@ -143,7 +140,25 @@ header .menu-franchisee:hover {
   color: #f7dc83;
 }
 
-header .main-menu-text:hover {
+header .menu-about:hover{
+  padding-bottom: 12px;
+}
+
+header .about-link:hover .main-menu-text,
+header .distribution-link:hover .main-menu-text,
+header .classic-link:hover .main-menu-text,
+header .media-link:hover .main-menu-text,
+header .franchisee-link:hover .main-menu-text,
+header .menu-about:hover  .main-menu-text-ch,
+header .menu-about:hover  .main-menu-text-en,
+header .menu-distribution:hover .main-menu-text-ch,
+header .menu-distribution:hover .main-menu-text-en,
+header .menu-classic:hover .main-menu-text-ch,
+header .menu-classic:hover .main-menu-text-en,
+header .menu-media:hover .main-menu-text-ch,
+header .menu-media:hover .main-menu-text-en,
+header .menu-franchisee:hover .main-menu-text-ch,
+header .menu-franchisee:hover .main-menu-text-en {
   color: #f7dc83;
   text-decoration: none;
 }
@@ -156,43 +171,19 @@ header .main-menu-distribution-gold {
   display: none;
 }
 
-header .about:hover .main-menu-about {
+header .about-link:hover .main-menu-about,
+header .distribution-link:hover .main-menu-distribution,
+header .classic-link:hover .main-menu-classic,
+header .media-link:hover .main-menu-media,
+header .franchisee-link:hover .main-menu-franchisee {
   display: none;
 }
 
-header .about:hover .main-menu-about-gold {
-  display: block;
-}
-
-header .distribution:hover .main-menu-distribution {
-  display: none;
-}
-
-header .distribution:hover .main-menu-distribution-gold {
-  display: block;
-}
-
-header .classic:hover .main-menu-classic {
-  display: none;
-}
-
-header .classic:hover .main-menu-classic-gold {
-  display: block;
-}
-
-header .media:hover .main-menu-media {
-  display: none;
-}
-
-header .media:hover .main-menu-media-gold {
-  display: block;
-}
-
-header .franchisee:hover .main-menu-franchisee {
-  display: none;
-}
-
-header .franchisee:hover .main-menu-franchisee-gold {
+header .about-link:hover .main-menu-about-gold,
+header .distribution-link:hover .main-menu-distribution-gold,
+header .classic-link:hover .main-menu-classic-gold,
+header .media-link:hover .main-menu-media-gold,
+header .franchisee-link:hover .main-menu-franchisee-gold {
   display: block;
 }
 
@@ -227,42 +218,18 @@ header .mine-menu-btn {
 
 /* 下拉選單CSS */
 
-header .menu-about:hover .main-menu-about {
-  display: none;
-}
-
-header .menu-about:hover .main-menu-about-gold {
-  display: block;
-}
-
-header .menu-distribution:hover .main-menu-distribution {
-  display: none;
-}
-
-header .menu-distribution:hover .main-menu-distribution-gold {
-  display: block;
-}
-
-header .menu-classic:hover .main-menu-classic {
-  display: none;
-}
-
-header .menu-classic:hover .main-menu-classic-gold {
-  display: block;
-}
-
-header .menu-media:hover .main-menu-media {
-  display: none;
-}
-
-header .menu-media:hover .main-menu-media-gold {
-  display: block;
-}
-
+header .menu-about:hover .main-menu-about,
+header .menu-distribution:hover .main-menu-distribution,
+header .menu-classic:hover .main-menu-classic,
+header .menu-media:hover .main-menu-media,
 header .menu-franchisee:hover .main-menu-franchisee {
   display: none;
 }
 
+header .menu-about:hover .main-menu-about-gold,
+header .menu-distribution:hover .main-menu-distribution-gold,
+header .menu-classic:hover .main-menu-classic-gold,
+header .menu-media:hover .main-menu-media-gold,
 header .menu-franchisee:hover .main-menu-franchisee-gold {
   display: block;
 }
@@ -294,7 +261,6 @@ header .drop-down-menu-sub {
 
 header .language-position:hover .drop-down-menu-sub {
   display: block;
-  /* transform: translate(0, -100%); */
 }
 
 header .drop-down-menu a {
@@ -322,6 +288,7 @@ header .dropdown-content-en {
   border: 1px solid white;
   list-style: none;
   background-color: #0C1219;
+  transition: 0.3s;
 }
 
 header .dropdown-content-en {
@@ -335,11 +302,6 @@ header .dropdown-content-en a {
   text-decoration: none;
 }
 
-header .dropdown-content-ch a:hover,
-header .dropdown-content-en a:hover {
-  color: #000000;
-}
-
 header .dropdown-content-ch:hover {
   background-color: #ffe282;
   text-decoration: none;
@@ -348,6 +310,11 @@ header .dropdown-content-ch:hover {
 header .dropdown-content-en:hover {
   background-color: #ffe282;
   text-decoration: none;
+}
+
+header .dropdown-content-ch:hover a,
+header .dropdown-content-en:hover a {
+  color: #000000;
 }
 
 header .dropdown-content {
