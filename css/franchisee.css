@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../images/background_img/about_bg.png');
+    background-image: url('../frontend-img/index-img/franchisee/about_bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -23,7 +23,7 @@
 
 #franchisee .join-us-img {
     height: 100px;
-    background-image: url('../images/franchisee/logo-Graphic.png');
+    background-image: url('../frontend-img/index-img/franchisee/logo-Graphic.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -36,7 +36,7 @@
 #franchisee .join-us-info {
     display: flex;
     flex-direction: row;
-    background-image: url('../images/franchisee/logo-Text.png');
+    background-image: url('../frontend-img/index-img/franchisee/logo-Text.png');
     height: 60px;
     background-repeat: no-repeat;
     background-size: contain;
@@ -76,7 +76,7 @@
 }
 
 #franchisee .franchisee-icon {
-    background-image: url('../images/nav/icon1-5.png');
+    background-image: url('../frontend-img/index-img/franchisee/icon1-5.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 32px;
