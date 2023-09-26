@@ -3,7 +3,7 @@ a {
 }
 
 #distribution {
-    background-image: url('../img/bg.png');
+    background-image: url('../frontend-img/index-img/distribution/bg.png');
     height: 1052px;
     background-color: #0c1219;
     position: relative;
@@ -156,7 +156,7 @@ a {
 #distribution .img-w-h-border-img {
     width: 350px;
     height: 379px;
-    background-image: url('/img/shop-img-border.png');
+    background-image: url('../frontend-img/index-img/distribution/shop-img-border.png');
     background-size: cover;
     margin-bottom: 20px;
     position: relative;
