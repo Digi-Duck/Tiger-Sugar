@@ -2,6 +2,13 @@ a {
     text-decoration: none;
 }
 
+#link-distribution{
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
 #distribution {
     background-image: url('../frontend-img/index-img/distribution/bg.png');
     height: 1052px;

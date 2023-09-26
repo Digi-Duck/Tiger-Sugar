@@ -8,6 +8,13 @@
     overflow: hidden;
 }
 
+#link-about{
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
 #about .container {
     width: 100%;
     margin: auto;

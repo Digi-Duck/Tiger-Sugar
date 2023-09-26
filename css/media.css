@@ -1,3 +1,10 @@
+#link-media{
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
 #media .container {
     max-width: 1140px;
     margin: auto;

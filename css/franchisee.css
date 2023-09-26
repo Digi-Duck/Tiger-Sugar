@@ -10,6 +10,13 @@
     position: relative;
 }
 
+#link-franchisee{
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
 #franchisee .franchisee-container-big {
     width: 100%;
     margin: auto;

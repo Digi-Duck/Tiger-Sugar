@@ -2,15 +2,20 @@
     padding: 30px 0;
 }
 
+#link-classic{
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
 #classic .padding-margin {
     padding: 0%;
     margin: 0%;
 }
 
-#classic .section_contentintro-logo{
-    background-image: url(../frontend-img/index-img/classic/about_bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+#classic .df {
+    display: flex;
 }
 
 #classic .justbet {
@@ -234,7 +239,7 @@
 }
 
 #classic .parallax-img-1 {
-    background-image: url(../frontend-img/index-img/classic/p1.webp);
+    background-image: url(/media/p1.webp);
     height: 550px;
     background-attachment: fixed;
     background-position: center;
@@ -243,7 +248,7 @@
 }
 
 #classic .parallax-img-2 {
-    background-image: url(../frontend-img/index-img/classic/p2.webp);
+    background-image: url(/media/p2.webp);
     height: 550px;
     background-attachment: fixed;
     background-position: center;
