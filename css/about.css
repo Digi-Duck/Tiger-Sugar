@@ -170,15 +170,15 @@ h2 {
     width: inherit;
 }
 
-[data-aos=fade-right] {
+#about [data-aos=fade-right] {
     transform: translate3d(-100%, 0, 0);
 }
 
-[data-aos=fade-down] {
+#about [data-aos=fade-down] {
     transform: translate3d(0, -250px, 0);
 }
 
-[data-aos^=fade][data-aos^=fade] {
+#about [data-aos^=fade][data-aos^=fade] {
     opacity: 1;
 }
 
