@@ -17,7 +17,7 @@ ul li {
 }
 
 #distribution-container {
-    background-image: url('../images/distribution-confirm/bg_extra.png');
+    background-image: url('../frontend-img/distribution-confirm-img/bg_extra.png');
     background-size: cover;
     width: 100%;
 }
@@ -78,7 +78,7 @@ ul li {
 }
 
 #distribution-confirm .title-img {
-    background-image: url(../images/distribution-confirm/icon/distribution.svg);
+    background-image: url(../frontend-img/distribution-confirm-img/distribution.svg);
     height: 32px;
     width: 32px;
     margin: 1px 4px 0px 0px;
@@ -307,7 +307,7 @@ ul li {
 #distribution-confirm .img-hover {
     width: 255px;
     height: 276px;
-    background-image: url('/img/shop-img-border.png');
+    background-image: url('../frontend-img/distribution-confirm-img/shop-img-border.png');
     background-size: cover;
     margin-bottom: 20px;
     position: relative;
@@ -440,7 +440,7 @@ ul li {
 }
 
 #fillout-area .title-img {
-    background-image: url(../images/distribution-confirm/icon/fillout_icon.svg);
+    background-image: url(../frontend-img/distribution-confirm-img/fillout_icon.svg);
     height: 32px;
     width: 32px;
     margin: 0px 4px 0px 0px;
@@ -659,7 +659,7 @@ ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../images/background_img/about_bg.png');
+    background-image: url('../frontend-img/distribution-confirm-img/about_bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -679,7 +679,7 @@ ul li {
 #franchisee .join-us-img {
     width: 400px;
     height: 100px;
-    background-image: url('../images/franchisee/logo-Graphic.png');
+    background-image: url('../frontend-img/distribution-confirm-img/logo-Graphic.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -692,7 +692,7 @@ ul li {
 #franchisee .join-us-info {
     display: flex;
     flex-direction: row;
-    background-image: url('../images/franchisee/logo-Text.png');
+    background-image: url('../frontend-img/distribution-confirm-img/logo-Text.png');
     width: 250px;
     height: 60px;
     background-repeat: no-repeat;
@@ -733,7 +733,7 @@ ul li {
 }
 
 #franchisee .franchisee-icon {
-    background-image: url('../images/nav/icon1-5.png');
+    background-image: url('../frontend-img/distribution-confirm-img/icon1-5.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 32px;
