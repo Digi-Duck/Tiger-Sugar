@@ -43,7 +43,7 @@ body {
 #pop-window .pop-window-close {
     width: 80px;
     height: 80px;
-    background-image: url(../frontend-img/distribution-popwindow-img/pop-window/light_closed.svg);
+    background-image: url(../frontend-img/distribution-img/pop-window/light_closed.svg);
     position: absolute;
     right: 25px;
     top: 10px;
@@ -71,7 +71,7 @@ body {
     width: 32px;
     height: 32px;
     margin-right: 5px;
-    background-image: url(../frontend-img/distribution-popwindow-img/pop-window/distribution.svg);
+    background-image: url(../frontend-img/distribution-img/pop-window/distribution.svg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -461,7 +461,7 @@ body {
     position: absolute;
     left: 325px;
     font-size: 12px;
-    background-image: url('../frontend-img/distribution-popwindow-img/pop-window/pagnation_bg.png');
+    background-image: url('../frontend-img/distribution-img/pop-window/pagnation_bg.png');
     background-size: cover;
     padding-top: 5px;
 }
@@ -483,7 +483,7 @@ body {
 #pop-window .pop-sub-border-img {
     width: 100%;
     height: 100%;
-    background-image: url('../frontend-img/distribution-popwindow-img/pop-window/shop-img-border.png');
+    background-image: url('../frontend-img/distribution-img/pop-window/shop-img-border.png');
     background-size: contain;
     position: relative;
     background-color: #222222;
@@ -685,7 +685,7 @@ a {
 #pop-window .img-box-border-img {
     width: 293px;
     height: 318px;
-    background-image: url('../frontend-img/distribution-popwindow-img/pop-window/shop-img-border.png');
+    background-image: url('../frontend-img/distribution-img/pop-window/shop-img-border.png');
     background-size: contain;
     margin-bottom: 20px;
     position: relative;
