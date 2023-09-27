@@ -9,7 +9,7 @@ body {
 
 #distribution .main {
     width: 100%;
-    background-image: url(/images/background_img/bg_extra.png);
+    background-image: url(../frontend-img/distribution-popwindow-img/distribution/bg_extra.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5%;
@@ -195,7 +195,7 @@ body {
 #distribution .product-background {
     position: relative;
     width: 350px;
-    background-image: url(/img/shop-img-border.png);
+    background-image: url(../frontend-img/distribution-popwindow-img/distribution/shop-img-border.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
