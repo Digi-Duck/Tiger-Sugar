@@ -1,6 +1,6 @@
 #about {
     padding-bottom: 120px;
-    background-image: url('../images/background_img/about_bg.webp');
+    background-image: url('../frontend-img/index-img/about/about_bg.png');
     background-size: cover;
     position: relative;
     background-position: center;
@@ -31,7 +31,7 @@
 
 #about .black-sugar {
     aspect-ratio: 23 / 4;
-    background-image: url('../images/background_img/section_header.webp');
+    background-image: url('../frontend-img/index-img/about/section_header.webp');
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 
 
 #about .about-us-icon {
-    background-image: url('../images/nav/icon1-1.png');
+    background-image: url('../frontend-img/index-img/about/icon1-1.png');
     background-size: contain;
     width: 32px;
     height: 32px;
