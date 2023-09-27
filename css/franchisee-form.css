@@ -5,7 +5,7 @@
 #franchisee-form {
     /* height: calc(100vh - 109px); */
     width: 100%;
-    background-image: url(/images/background_img/about_bg.png);
+    background-image: url(../frontend-img/franchisee-form-img/about_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 50px 0;
@@ -30,7 +30,7 @@
     display: block;
     height: 183px;
     margin: 0 auto 50px auto;
-    background-image: url(/img/join-us-logo.png);
+    background-image: url(../frontend-img/franchisee-form-img/join-us-logo.png);
     background-repeat: no-repeat;
     background-size: contain;
     align-self: self-start;
