@@ -4,7 +4,7 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(/images/background_img/about_bg.png);
+    background-image: url(../frontend-img/franchisee-img/about_bg.png);
     z-index: -3;
 }
 
@@ -14,7 +14,7 @@
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-image: url(/images/background_img/section_header.webp);
+    background-image: url(../frontend-img/franchisee-img/section_header.webp);
     top: 0%;
     z-index: -2;
 }

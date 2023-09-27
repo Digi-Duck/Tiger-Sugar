@@ -3,7 +3,7 @@ body footer {
     padding: 10px 0;
     color: #ffffff;
     background-color: #0c1219;
-    background-image: url(/images/background_img/about_bg.png);
+    background-image: url(../frontend-img/franchisee-img/about_bg.png);
     text-align: center;
     font-size: 10px;
 }
