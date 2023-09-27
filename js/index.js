@@ -51,8 +51,6 @@ function shadow(e) {
 }
 
 
-
-
 // about
 const scrollImg = document.querySelector(".about-us-scroll-img");
 const aboutSection = document.querySelector("#about");
@@ -76,8 +74,6 @@ document.addEventListener("wheel", (event) => {
 });
 
 
-
-
 // social
 var swiper = new Swiper("#social .mySwiper-social", {
   slidesPerView: 1,
@@ -99,8 +95,6 @@ var swiper = new Swiper("#social .mySwiper-social", {
 });
 
 
-
-
 // distribution
 var swiperProduct = new Swiper("#distribution .mySwiper-product", {
   slidesPerView: 1,
@@ -120,8 +114,6 @@ var swiperProduct = new Swiper("#distribution .mySwiper-product", {
     }
   }
 });
-
-
 
 
 // media
@@ -155,8 +147,6 @@ toggleButtons.forEach(element => {
 });
 
 
-
-
 // news
 var swiperNews = new Swiper("#news .mySwiper-news", {
   slidesPerView: 1,
@@ -177,8 +167,6 @@ var swiperNews = new Swiper("#news .mySwiper-news", {
     }
   }
 });
-
-
 
 
 // franchisee

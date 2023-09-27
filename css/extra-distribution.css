@@ -1,10 +1,17 @@
 * {
     box-sizing: border-box;
+    font-family: Microsoft JhengHei;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 body {
-    padding: 0;
+    background-color: #0C1219;
     margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 #distribution .main {
@@ -319,13 +326,14 @@ body {
     opacity: 0;
     transition: 1s;
 }
- /* 產品方塊more btn */
+
+/* 產品方塊more btn */
 #distribution .product-background-hover button {
     background: none;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-	outline: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
 }
 
 #distribution .product-background-hover button:active {
@@ -351,12 +359,14 @@ body {
     font-size: 18px;
     text-decoration: none;
 }
-#franchisee{
+
+#franchisee {
     margin-top: -1%;
 }
+
 /* RWD */
 @media (max-width:1200px) {
-    
+
     #distribution .prduct-grid-columns {
         max-width: 730px;
         margin-top: 4%;
@@ -387,46 +397,56 @@ body {
     #distribution .swiper-and-page-group::after {
         top: 120%;
     }
-    #franchisee{
+
+    #franchisee {
         margin-top: -1%;
     }
 }
+
 @media (max-width:832px) {
 
     #distribution .prduct-grid-columns {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
     #distribution .product-group {
         width: 140px;
         margin: auto;
-        margin-top: 4%; 
+        margin-top: 4%;
     }
-    #distribution .product-background{
+
+    #distribution .product-background {
         width: 140px;
         height: 152px;
     }
-    #distribution .product ,#distribution .product img{
+
+    #distribution .product,
+    #distribution .product img {
         width: 132px;
         height: 144px;
         left: 2px;
         top: 2px;
     }
-    #distribution .product-background-hover{
+
+    #distribution .product-background-hover {
         width: 132px;
         height: 144px;
         left: 4px;
         top: 4px;
     }
-    #distribution .yellow-box{
+
+    #distribution .yellow-box {
         width: 40px;
         left: 96px;
         top: 4px;
     }
-    #distribution .yellow-box-hover{
+
+    #distribution .yellow-box-hover {
         width: 40px;
         left: 92px;
     }
-    #distribution .product-background-hover-more{
+
+    #distribution .product-background-hover-more {
         width: 50px;
         height: 20px;
         line-height: 20px;
@@ -435,10 +455,14 @@ body {
         left: 30%;
         top: 40%;
     }
-    #distribution .product-title,#distribution .product-title-en,#distribution .product-id{
+
+    #distribution .product-title,
+    #distribution .product-title-en,
+    #distribution .product-id {
         font-size: 14px;
         margin-top: 8%;
     }
+
     #distribution .swiper-and-page-group {
         display: flex;
         flex-direction: column;
@@ -459,19 +483,166 @@ body {
     #distribution .swiper-and-page-group::after {
         top: 120%;
     }
-    #distribution .page-up-and-page-down-group-buttom{
+
+    #distribution .page-up-and-page-down-group-buttom {
         margin-top: 10%;
         margin: auto;
         float: none;
     }
 }
-@media (max-width:768px){
+
+@media (max-width:768px) {
     #distribution .prduct-grid-columns {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
-@media (max-width:510px){
+
+@media (max-width:510px) {
     #distribution .prduct-grid-columns {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+#franchisee {
+    height: 400px;
+    padding: 50px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../frontend-img/index-img/franchisee/about_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#link-franchisee {
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
+#franchisee .franchisee-container-big {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+}
+
+#franchisee .franchisee-container-animation {
+    display: flex;
+    justify-content: center;
+}
+
+#franchisee .join-us-img {
+    height: 100px;
+    background-image: url('../frontend-img/index-img/franchisee/logo-Graphic.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#franchisee .join-us-img img {
+    width: 100px;
+    height: 100px;
+}
+
+#franchisee .join-us-info {
+    display: flex;
+    flex-direction: row;
+    background-image: url('../frontend-img/index-img/franchisee/logo-Text.png');
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 130px;
+    margin-top: 5px;
+}
+
+@keyframes flashing {
+    0% {
+        color: #fee483;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: #fee483;
+    }
+}
+
+#franchisee .join-us-info h2 {
+    margin-top: 75px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fee483;
+    font-weight: 400;
+    -webkit-animation: flashing 1.5s infinite;
+    animation: flashing 1.5s infinite;
+}
+
+#franchisee .container-franchisee-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#franchisee .franchisee-icon {
+    background-image: url('../frontend-img/index-img/franchisee/icon1-5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+}
+
+#franchisee .franchisee-title {
+    color: white;
+    display: flex;
+}
+
+#franchisee .franchisee-title h1 {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 7px;
+}
+
+#franchisee .franchisee-title h2 {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+#franchisee .container {
+    width: 100%;
+}
+
+@media screen and (min-width:576px) {
+    #franchisee .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    #franchisee .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #franchisee .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #franchisee .container {
+        max-width: 1140px;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #franchisee .franchisee-title {
+        margin-left: 15px;
     }
 }

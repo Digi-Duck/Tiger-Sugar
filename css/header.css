@@ -557,7 +557,7 @@ header .swiper-button-prev{
   border-right-color: white;
   border-bottom-color: transparent;
   border-left-color: transparent;
-  left: -5%;
+  left: 5%;
   top: 40%;
 }
 
