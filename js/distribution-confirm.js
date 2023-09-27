@@ -56,3 +56,7 @@ overlayClose.addEventListener('click',function(event) {
   }
   console.log(overlayClose);
 });
+
+AOS.init({
+  duration: 800,
+});
