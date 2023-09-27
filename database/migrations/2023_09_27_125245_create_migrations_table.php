@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('migrations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->int('franchise_id')->nullable()->default('')->comment('國家選擇');
-            $table->string('area_name',255)->nullable()->default('')->comment('區域名稱');
-            $table->int('sort')->nullable()->default('')->comment('權重');
+            $table->string('migration',255)->comment('各次遷移');
+            $table->int('batch')->comment('遷移批次');
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('migrations');
     }
 };

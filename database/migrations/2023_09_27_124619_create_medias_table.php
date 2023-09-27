@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('medias', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->int('franchise_id')->nullable()->default('')->comment('國家選擇');
-            $table->string('area_name',255)->nullable()->default('')->comment('區域名稱');
-            $table->int('sort')->nullable()->default('')->comment('權重');
+            $table->string('link',255)->default('')->comment('社群連結');
+            $table->string('name',255)->nullable()->default('')->comment('社群名稱');
+            $table->int('sort')->nullable()->default(1)->comment('社群種類');
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('medias');
     }
 };
