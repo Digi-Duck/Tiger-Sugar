@@ -28,7 +28,7 @@
     <header>
         <nav>
             <section class="nav-logo">
-                <a href="./index.html" title="前往首頁">
+                <a href={{ route('front.index') }} title="前往首頁">
                     <img class="nav-logo-btn" src="./frontend-img/header-img/LOGO.png" alt="tiger-logo">
                 </a>
             </section>
@@ -36,7 +36,7 @@
             <section class="nav-main">
                 <section class="main-menu">
                     <!----------------------------- 關於我們 ------------------------------------>
-                    <a href="./index.html#link-about" class="about-link" title="前往首頁的關於我們">
+                    <a href={{ route('front.index.about') }} class="about-link" title="前往首頁的關於我們">
                         <button type="button" class="blade-button">
                             <div class="about">
                                 <div class="about-img">
@@ -55,7 +55,7 @@
                         </button>
                     </a>
                     <!----------------------------- 產品經銷 ------------------------------------>
-                    <a href="./distribution.html" class="distribution-link" title="前往產品經銷頁">
+                    <a href={{ route('front.distribution') }} class="distribution-link" title="前往產品經銷頁">
                         <button type="button" class="blade-button">
                             <div class="distribution">
                                 <div class="main-menu-img">
@@ -72,7 +72,7 @@
                         </button>
                     </a>
                     <!----------------------------- 熱門經典 ------------------------------------>
-                    <a href="./index.html#link-classic" class="classic-link" title="前往首頁的熱門經典">
+                    <a href={{ route('front.index.classic') }} class="classic-link" title="前往首頁的熱門經典">
                         <button type="button" class="blade-button">
                             <div class="classic">
                                 <div class="main-menu-img">
@@ -89,7 +89,7 @@
                         </button>
                     </a>
                     <!----------------------------- 媒體露出 ------------------------------------>
-                    <a href="./index.html#link-media" class="media-link" title="前往首頁的媒體露出">
+                    <a href={{ route('front.index.media') }} class="media-link" title="前往首頁的媒體露出">
                         <button type="button" class="blade-button">
                             <div class="media">
                                 <div class="main-menu-img">
@@ -105,7 +105,7 @@
                         </button>
                     </a>
                     <!----------------------------- 加盟專區 ------------------------------------>
-                    <a href="./franchisee.html" class="franchisee-link" title="前往加盟專區頁">
+                    <a href={{ route('front.franchisee') }} class="franchisee-link" title="前往加盟專區頁">
                         <button type="button" class="blade-button">
                             <div class="franchisee">
                                 <div class="main-menu-img">
@@ -171,7 +171,7 @@
                         <div class="flex-mine-menu">
                             <div class="top-mine-menu">
                                 <!----------------------------- 關於我們 ------------------------------------>
-                                <a href="./index.html#link-about" id="drop-about" title="前往首頁的關於我們">
+                                <a href={{ route('front.index.about') }} id="drop-about" title="前往首頁的關於我們">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-about">
                                             <div class="about-img">
@@ -188,7 +188,7 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 產品經銷 ------------------------------------>
-                                <a href="./distribution.html" id="drop-distribution" title="前往產品經銷頁">
+                                <a href={{ route('front.distribution') }} id="drop-distribution" title="前往產品經銷頁">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-distribution">
                                             <div class="distribution-img">
@@ -207,7 +207,7 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 熱門經典 ------------------------------------>
-                                <a href="./index.html#link-classic" id="drop-classic" title="前往首頁的熱門經典">
+                                <a href={{ route('front.index.classic') }} id="drop-classic" title="前往首頁的熱門經典">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-classic">
                                             <div class="classic-img">
@@ -225,7 +225,7 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 媒體露出 ------------------------------------>
-                                <a href="./index.html#link-media" id="drop-media" title="前往首頁的媒體露出">
+                                <a href={{ route('front.index.media') }} id="drop-media" title="前往首頁的媒體露出">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-media">
                                             <div class="media-img">
@@ -242,7 +242,7 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 加盟專區 ------------------------------------>
-                                <a href="./franchisee.html" id="drop-franchisee" title="前往加盟專區頁">
+                                <a href={{ route('front.franchisee') }} id="drop-franchisee" title="前往加盟專區頁">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-franchisee">
                                             <div class="franchisee-img">
