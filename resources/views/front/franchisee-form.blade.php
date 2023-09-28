@@ -290,7 +290,7 @@
         <!-- 秋 top 按鈕 -->
         <div class="go-to-top-container topbtn">
             <!-- "#"回到最上方 -->
-            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg" alt="go_to_top"></a>
+            <a href="#" title="回到最上方"><img class="go-to-top" src="{{ asset('./frontend-img/header-img/go_to_top.svg') }}" alt="go_to_top"></a>
         </div>
     </header>
 

@@ -344,7 +344,7 @@
                     <div class="about-card-group-text-animation-top" data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom" data-aos-duration="800">
                         <div class="about-card-group-img">
-                            <img src="./frontend-img/index-img/about/icon4.png" alt="關於我們心logo">
+                            <img src="{{ asset('./frontend-img/index-img/about/icon4.png') }}" alt="關於我們心logo">
                         </div>
                         <div class="about-card-group-text">
                             <h2>老虎堂 ｜ 虎堂初心 Original Intention</h2>
@@ -360,7 +360,7 @@
                     <div class="about-card-group-text-animation-bottom" data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom" data-aos-duration="800">
                         <div class="about-card-group-img">
-                            <img src="./frontend-img/index-img/about/icon5.png" alt="關於我們杯子logo">
+                            <img src="{{ asset('./frontend-img/index-img/about/icon5.png') }}" alt="關於我們杯子logo">
                         </div>
                         <div class="about-card-group-text">
                             <h2>老虎堂 ｜ 虎糖特色 Feature Of Product</h2>
@@ -378,14 +378,14 @@
             </div>
             <picture class="cloud-left" data-aos="fade-left" data-aos-once="true" data-aos-duration="3000"
                 data-aos-delay="500" data-aos-offset="600">
-                <img src="./frontend-img/index-img/about/left_cloud_bg.webp" alt="雲彩背景左">
+                <img src="{{ asset('./frontend-img/index-img/about/left_cloud_bg.webp') }}" alt="雲彩背景左">
             </picture>
             <picture class="cloud-right" data-aos="fade-right" data-aos-once="true" data-aos-duration="3000"
                 data-aos-delay="500" data-aos-offset="600">
-                <img src="./frontend-img/index-img/about/right_cloud_bg.webp" alt="雲彩背景右">
+                <img src="{{ asset('./frontend-img/index-img/about/right_cloud_bg.webp') }}" alt="雲彩背景右">
             </picture>
             <picture class="about-us-scroll-img">
-                <img src="./frontend-img/index-img/about/logo_black.webp" alt="老虎堂背景">
+                <img src="{{ asset('./frontend-img/index-img/about/logo_black.webp') }}" alt="老虎堂背景">
             </picture>
         </section>
 
@@ -394,7 +394,7 @@
             <div class="header">
                 <div class="container">
                     <div class="title">
-                        <img class="ig-icon" src="./frontend-img/index-img/social/ig.png" alt="ig-icon">
+                        <img class="ig-icon" src="{{ asset('./frontend-img/index-img/social/ig.png') }}" alt="ig-icon">
                         <div class="title-text">
                             <div class="title-text-1">社群回饋</div>
                             <div class="title-text-2">SOCIAL</div>
@@ -452,7 +452,7 @@
             <div id="link-distribution"></div>
             <div id="distribution-area">
                 <div class="title">
-                    <img class="distribution-icon" src="./frontend-img/index-img/distribution/distribution.svg"
+                    <img class="distribution-icon" src="{{ asset('./frontend-img/index-img/distribution/distribution.svg') }}"
                         alt="ig-icon">
                     <div class="title-text">
                         <div class="title-text-1">產品經銷</div>
@@ -647,11 +647,11 @@
                     </div>
                     <div class="swiper-button-product">
                         <div class="swiper-button-next">
-                            <img class="next-prev-img" src="./frontend-img/index-img/distribution/commodity-next.svg"
+                            <img class="next-prev-img" src="{{ asset('./frontend-img/index-img/distribution/commodity-next.svg') }}"
                                 alt="swiper下一個按鈕">
                         </div>
                         <div class="swiper-button-prev">
-                            <img class="next-prev-img" src="./frontend-img/index-img/distribution/commodity-prev.svg"
+                            <img class="next-prev-img" src="{{ asset('./frontend-img/index-img/distribution/commodity-prev.svg') }}"
                                 alt="swiper上一個按鈕">
                         </div>
                     </div>
@@ -669,7 +669,7 @@
                     <div class="container">
                         <div class="title">
                             <div class="title-icon">
-                                <img src="./frontend-img/index-img/classic/icon1-3.png" alt="產品圖片">
+                                <img src="{{ asset('./frontend-img/index-img/classic/icon1-3.png') }}" alt="產品圖片">
                             </div>
                             <div class="title-name">
                                 <h2 class="menu-text">熱門經典</h2>
@@ -679,10 +679,10 @@
                     </div>
                     <div class="menu-logo-group">
                         <img data-aos="fade-up" class="menu-logo"
-                            src="./frontend-img/index-img/classic/menu-logo.png" alt="menu-logo">
+                            src="{{ asset('./frontend-img/index-img/classic/menu-logo.png') }}" alt="menu-logo">
                         <div class="menu-logo-group">
                             <img data-aos="fade-up" class="menu-drink"
-                                src="./frontend-img/index-img/classic/menu-drink.png" alt="熱門經典-飲品">
+                                src="{{ asset('./frontend-img/index-img/classic/menu-drink.png') }}" alt="熱門經典-飲品">
                             <div data-aos="fade-up" class="drink-shape">
                                 <div class="drink-circle"></div>
                             </div>
@@ -1066,7 +1066,7 @@
 
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="./frontend-img/index-img/classic/icon.png"
+                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1077,7 +1077,7 @@
                             </div>
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="./frontend-img/index-img/classic/icon.png"
+                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1089,7 +1089,7 @@
                             </div>
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="./frontend-img/index-img/classic/icon.png"
+                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1099,7 +1099,7 @@
                             </div>
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="./frontend-img/index-img/classic/icon.png"
+                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1191,7 +1191,7 @@
             <div class="header">
                 <div class="container">
                     <div class="title">
-                        <img class="share-icon" src="./frontend-img/index-img/news/icon1-2.png" alt="ig-icon">
+                        <img class="share-icon" src="{{ asset('./frontend-img/index-img/news/icon1-2.png') }}" alt="ig-icon">
                         <div class="title-text">
                             <div class="title-text-1">媒體報導</div>
                             <div class="title-text-2">News & Blogger</div>

@@ -315,7 +315,7 @@
                 <div class="container">
                     <div class="title-area">
                         <div class="tiger-sugar-img-area">
-                            <img class="tiger-sugar-img" src="./frontend-img/distribution-confirm-img/join_us.png"
+                            <img class="tiger-sugar-img" src="{{ asset('./frontend-img/distribution-confirm-img/join_us.png') }}"
                                 alt="老虎堂logo">
                         </div>
                         <div class="distribution-check">商品經銷項目確認</div>
@@ -333,14 +333,14 @@
                                     <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
                                         aria-controls="swiper-wrapper-53fd5a51ba467ec1" aria-disabled="false">
                                         <img class="next-prev-img"
-                                            src="./frontend-img/distribution-confirm-img/commodity-next.svg"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/commodity-next.svg') }}"
                                             alt="下一區品項按鈕">
                                     </div>
                                     <div class="swiper-button-prev" tabindex="0" role="button"
                                         aria-label="Previous slide" aria-controls="swiper-wrapper-53fd5a51ba467ec1"
                                         aria-disabled="false">
                                         <img class="next-prev-img"
-                                            src="./frontend-img/distribution-confirm-img/commodity-prev.svg"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/commodity-prev.svg') }}"
                                             alt="上一區品項按鈕">
                                     </div>
                                 </div>
@@ -350,7 +350,7 @@
                             <ul class="pagination-top">
                                 <li class="page-item-prev">
                                     <a class="page-link" href="" title="前往上一頁購物車列表">
-                                        <img src="./frontend-img/distribution-confirm-img/previous.png" alt="上一頁按鈕">
+                                        <img src="{{ asset('./frontend-img/distribution-confirm-img/previous.png') }}" alt="上一頁按鈕">
                                         上一頁
                                     </a>
                                 </li>
@@ -360,7 +360,7 @@
                                 <li class="page-item-next">
                                     <a class="page-link" href="" title="前往下一頁購物車列表">
                                         下一頁
-                                        <img src="./frontend-img/distribution-confirm-img/next.png" alt="下一頁按鈕">
+                                        <img src="{{ asset('./frontend-img/distribution-confirm-img/next.png') }}" alt="下一頁按鈕">
                                     </a>
                                 </li>
                             </ul>
@@ -404,9 +404,9 @@
                                     <div class="product-img-hover open-pop-window">
                                         <img class="ask-icon-hover"
                                             src="./frontend-img/distribution-confirm-img/delete_hover.svg" alt="移除已加商品">
-                                        <button href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
+                                        <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
                                             MORE
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="commodity-title">

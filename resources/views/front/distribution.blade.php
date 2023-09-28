@@ -308,7 +308,7 @@
                 <div class="distribution-nav">
                     <div class="distribution-logo-group">
                         <div class="distribution-logo-img">
-                            <img src="./frontend-img/distribution-img/distribution/distribution.png"
+                            <img src="{{ asset('./frontend-img/distribution-img/distribution/distribution.png') }}"
                                 alt="產品經銷logo" />
                         </div>
                         <div class="distribution-logo-text">
@@ -346,11 +346,11 @@
                                 </div>
                             </div>
                             <div class="swiper-button-next">
-                                <img src="./frontend-img/distribution-img/distribution/commodity-next.svg"
+                                <img src="{{ asset('./frontend-img/distribution-img/distribution/commodity-next.svg') }}"
                                     alt="下一個按鈕" />
                             </div>
                             <div class="swiper-button-prev">
-                                <img src="./frontend-img/distribution-img/distribution/commodity-prev.svg"
+                                <img src="{{ asset('./frontend-img/distribution-img/distribution/commodity-prev.svg') }}"
                                     alt="上一個按鈕" />
                             </div>
                         </div>
@@ -359,7 +359,7 @@
                     <!-- 頁面數 -->
                     <div class="page-up-and-page-down-group">
                         <a href="" class="page-up" title="上一個頁面">
-                            <img src="./frontend-img/distribution-img/distribution/previous.png"
+                            <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
                                 alt="上一頁小圖標" />上一頁</a>
                         <a href="" class="page-1" title="第一頁">1</a>
                         <a href="" class="page-2" title="第二頁">2</a>
@@ -367,7 +367,7 @@
                         <a href="" class="page-4" title="第四頁">4</a>
                         <a href="" class="page-5" title="第五頁">5</a>
                         <a href="" class="page-down" title="下一個頁面">下一頁
-                            <img src="./frontend-img/distribution-img/distribution/next.png" alt="下一頁小圖標" />
+                            <img src="{{ asset('./frontend-img/distribution-img/distribution/next.png') }}" alt="下一頁小圖標" />
                         </a>
                     </div>
                 </div>
@@ -627,7 +627,7 @@
 
                 <div class="page-up-and-page-down-group-buttom">
                     <a href="" class="page-up" title="上一個頁面">
-                        <img src="./frontend-img/distribution-img/distribution/previous.png"
+                        <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
                             alt="上一頁小圖標" />上一頁</a>
                     <a href="" class="page-1" title="第一頁">1</a>
                     <a href="" class="page-2" title="第二頁">2</a>
@@ -635,7 +635,7 @@
                     <a href="" class="page-4" title="第四頁">4</a>
                     <a href="" class="page-5" title="第五頁">5</a>
                     <a href="" class="page-down" title="下一個頁面">下一頁
-                        <img src="./frontend-img/distribution-img/distribution/next.png" alt="下一頁小圖標" />
+                        <img src="{{ asset('./frontend-img/distribution-img/distribution/next.png')}}" alt="下一頁小圖標" />
                     </a>
                 </div>
             </div>
@@ -740,12 +740,12 @@
                             </div>
                             <div class="swiper-button-next">
                                 <img class="next-prev-img"
-                                    src="./frontend-img/distribution-img/pop-window/commodity-next.svg"
+                                    src="{{ asset('./frontend-img/distribution-img/pop-window/commodity-next.svg') }}"
                                     alt="下一個圖片">
                             </div>
                             <div class="swiper-button-prev">
                                 <img class="next-prev-img"
-                                    src="./frontend-img/distribution-img/pop-window/commodity-prev.svg"
+                                    src="{{ asset('./frontend-img/distribution-img/pop-window/commodity-prev.svg') }}"
                                     alt="上一個圖片">
                             </div>
                             <div class="swiper-pagination swiper-page-dec"></div>
@@ -1006,12 +1006,12 @@
                             <div class="swiper-button-product">
                                 <div class="swiper-button-next">
                                     <img class="next-prev-img"
-                                        src="./frontend-img/distribution-img/pop-window/commodity-next.svg"
+                                        src="{{ asset('./frontend-img/distribution-img/pop-window/commodity-next.svg') }}"
                                         alt="下一張圖片">
                                 </div>
                                 <div class="swiper-button-prev">
                                     <img class="next-prev-img"
-                                        src="./frontend-img/distribution-img/pop-window/commodity-prev.svg"
+                                        src="{{ asset('./frontend-img/distribution-img/pop-window/commodity-prev.svg') }}"
                                         alt="上一張圖片">
                                 </div>
                             </div>

@@ -297,7 +297,7 @@
             <div class="background">
                 <div class="background-wave">
                     <div class="background-tiger-logo">
-                        <img src="./frontend-img/franchisee-img/logo_black.webp" alt="老虎堂logo">
+                        <img src="{{ asset('./frontend-img/franchisee-img/logo_black.webp') }}" alt="老虎堂logo">
                     </div>
                 </div>
                 <!-- 主要區域 -->
@@ -305,7 +305,7 @@
                     <!-- 加盟專區中英文logo -->
                     <div class="franchisee-logo">
                         <div class="franchisee-logo-img">
-                            <img src="./frontend-img/franchisee-img/franchisee.png" alt="加盟專區Logo">
+                            <img src="{{ asset('./frontend-img/franchisee-img/franchisee.png') }}" alt="加盟專區Logo">
                         </div>
                         <div class="franchisee-logo-cn-en">
                             <h1 class="franchisee-logo-cn">加盟專區</h1>
@@ -325,77 +325,77 @@
                     <div class="steps-group">
                         <div class="steps">
                             <div class="step1">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>1</span>
                             </div>
                             <div class="steps-text">線上填寫申請資料</div>
                         </div>
                         <div class="steps">
                             <div class="step2">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>2</span>
                             </div>
                             <div class="steps-text">合作夥伴資格初審</div>
                         </div>
                         <div class="steps">
                             <div class="step3">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>3</span>
                             </div>
                             <div class="steps-text">合作方案洽談與達成共識[安排雙方首次會面]</div>
                         </div>
                         <div class="steps">
                             <div class="step4">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>4</span>
                             </div>
                             <div class="steps-text">合作夥伴資格複審與合約討論[安排雙方二次會面]</div>
                         </div>
                         <div class="steps">
                             <div class="step5">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>5</span>
                             </div>
                             <div class="steps-text">簽訂正式合約</div>
                         </div>
                         <div class="steps">
                             <div class="step6">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>6</span>
                             </div>
                             <div class="steps-text">品牌授權金匯款完成</div>
                         </div>
                         <div class="steps">
                             <div class="step7">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>7</span>
                             </div>
                             <div class="steps-text">Know-how技術轉移、立地條件評估與建議</div>
                         </div>
                         <div class="steps">
                             <div class="step8">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>8</span>
                             </div>
                             <div class="steps-text">整體規劃、施工建議、訓練考核</div>
                         </div>
                         <div class="steps">
                             <div class="step9">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>9</span>
                             </div>
                             <div class="steps-text">試營運</div>
                         </div>
                         <div class="steps">
                             <div class="step10">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>10</span>
                             </div>
                             <div class="steps-text">正式開幕</div>
                         </div>
                         <div class="steps">
                             <div class="step11">
-                                <img src="./frontend-img/franchisee-img/circle.png" alt="步驟外框">
+                                <img src="{{ asset('./frontend-img/franchisee-img/circle.png') }}" alt="步驟外框">
                                 <span>11</span>
                             </div>
                             <div class="steps-text">永續經營</div>
@@ -567,7 +567,7 @@
 
                     </div>
                 </div>
-                <img src="./frontend-img/franchisee-img/logo_black.webp" alt="老虎堂背景圖片" class="img-bg">
+                <img src="{{ asset('./frontend-img/franchisee-img/logo_black.webp') }}" alt="老虎堂背景圖片" class="img-bg">
             </div>
 
         </section>
@@ -575,7 +575,7 @@
 
     <!-- 秋 前言說明 -->
     <footer>
-        <img class="footer-logo" src="./frontend-img/franchisee-img/join-us-logo.png" alt="join-us-logo">
+        <img class="footer-logo" src="{{ asset('./frontend-img/franchisee-img/join-us-logo.png') }}" alt="join-us-logo">
         <div class="footer-container">
 
             <div class="store-explain">
