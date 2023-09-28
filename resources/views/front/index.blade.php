@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tiger Sugar 老虎堂｜虎虎生風｜黑糖專売</title>
     <link rel="bookmark" href="./frontend-img/website-title-img/favicon.ico">
-    
+
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    
+
     <!-- bootstrap-icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+
     <!-- aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    
+
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+
     <!-- 各分頁css -->
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="{{ asset('./css/index.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
 </head>
 
 <body>
@@ -120,7 +122,8 @@
                     <div class="social-menu-main">
                         <div class="social-menu-icon">
                             <a href="https://www.facebook.com/twtigersugar/" title="facebook連結">
-                                <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png" alt="icon-fb">
+                                <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png"
+                                    alt="icon-fb">
                             </a>
                         </div>
 
@@ -296,7 +299,8 @@
         <!-- 秋 top 按鈕 -->
         <div class="go-to-top-container topbtn">
             <!-- "#"回到最上方 -->
-            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg" alt="go_to_top"></a>
+            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg"
+                    alt="go_to_top"></a>
         </div>
     </header>
 
@@ -466,7 +470,8 @@
                                             src="./frontend-img/index-img/distribution/1668998205a2557a7b2e94197ff767970b67041697.jpg"
                                             alt="產品圖片">
                                         <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg" alt="黃色加入以詢問">
+                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                            alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
@@ -495,7 +500,8 @@
                                             src="./frontend-img/index-img/distribution/165899031442a0e188f5033bc65bf8d78622277c4e.jpg"
                                             alt="產品圖片">
                                         <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg" alt="黃色加入以詢問">
+                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                            alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
@@ -524,7 +530,8 @@
                                             src="./frontend-img/index-img/distribution/165899100742a0e188f5033bc65bf8d78622277c4e.jpg"
                                             alt="產品圖片">
                                         <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg" alt="黃色加入以詢問">
+                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                            alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
@@ -553,7 +560,8 @@
                                             src="./frontend-img/index-img/distribution/1658908734cfecdb276f634854f3ef915e2e980c31.jpg"
                                             alt="產品圖片">
                                         <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg" alt="黃色加入以詢問">
+                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                            alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
@@ -582,7 +590,8 @@
                                             src="./frontend-img/index-img/distribution/16589912415878a7ab84fb43402106c575658472fa.jpg"
                                             alt="產品圖片">
                                         <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg" alt="黃色加入以詢問">
+                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                            alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
@@ -611,7 +620,8 @@
                                             src="./frontend-img/index-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
                                             alt="產品圖片">
                                         <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg" alt="黃色加入以詢問">
+                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                            alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
@@ -668,8 +678,8 @@
                         </div>
                     </div>
                     <div class="menu-logo-group">
-                        <img data-aos="fade-up" class="menu-logo" src="./frontend-img/index-img/classic/menu-logo.png"
-                            alt="menu-logo">
+                        <img data-aos="fade-up" class="menu-logo"
+                            src="./frontend-img/index-img/classic/menu-logo.png" alt="menu-logo">
                         <div class="menu-logo-group">
                             <img data-aos="fade-up" class="menu-drink"
                                 src="./frontend-img/index-img/classic/menu-drink.png" alt="熱門經典-飲品">
@@ -683,7 +693,8 @@
                         <div data-aos="fade-up" class="cold-hot-info">
                             <div class="cold-drink-info" data-aos="fade-up"><span class="cold-drink-span"></span>冷飲
                             </div>
-                            <div class="hot-drink-info" data-aos="fade-up"><span class="hot-drink-span"></span>熱飲</div>
+                            <div class="hot-drink-info" data-aos="fade-up"><span class="hot-drink-span"></span>熱飲
+                            </div>
                         </div>
                         <div class="menu-up">
                             <div data-aos="fade-up" data-aos-delay="0">
@@ -1295,7 +1306,8 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a target="_blank" href="https://fairylolita.com/tigersugar-taoyuan" title="fairylolita部落格">
+                            <a target="_blank" href="https://fairylolita.com/tigersugar-taoyuan"
+                                title="fairylolita部落格">
                                 <div class="outer-card">
                                     <div class="card">
                                         <div id="news-img-7" class="news-img">
@@ -1378,7 +1390,8 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a target="_blank" href="https://kel8257.pixnet.net/blog/post/355514156" title="痞客邦部落格">
+                            <a target="_blank" href="https://kel8257.pixnet.net/blog/post/355514156"
+                                title="痞客邦部落格">
                                 <div class="outer-card">
                                     <div class="card">
                                         <div id="news-img-12" class="news-img">
@@ -1447,8 +1460,8 @@
     <!-- ajax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
-    <script src="./js/index.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="{{ asset('./js/index.js') }}"></script>
+    <script src="{{ asset('./js/header.js') }}"></script>
 </body>
 
 </html>

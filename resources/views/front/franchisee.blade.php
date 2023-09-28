@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <!-- 各分頁css -->
-    <!-- 9/20 新加盟專區css (之後另行命名) -->
-    <link rel="stylesheet" href="./css/franchisee.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="{{ asset('./css/franchisee.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
 </head>
 
 <body>
@@ -612,7 +611,7 @@
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <script src="./js/header.js"></script>
+    <script src="{{ asset('./js/header.js') }}"></script>
 </body>
 
 </html>

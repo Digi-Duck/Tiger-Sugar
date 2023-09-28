@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tiger Sugar 老虎堂｜虎虎生風｜黑糖專売</title>
     <link rel="bookmark" href="./frontend-img/website-title-img/favicon.ico">
-    
+
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
     <!-- 各分頁css -->
-    <link rel="stylesheet" href="./css/franchisee-form.css" />
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="{{ asset('./css/franchisee-form.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
 </head>
 
 <body>
@@ -372,8 +372,8 @@
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <script src="./js/crs.min.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="{{ asset('./js/crs.min.js') }}"></script>
+    <script src="{{ asset('./js/header.js') }}"></script>
 </body>
 
 </html>

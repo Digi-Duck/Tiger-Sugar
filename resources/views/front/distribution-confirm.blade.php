@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <!-- 各分頁css -->
-    <link rel="stylesheet" href="./css/distribution-confirm.css">
-    <link rel="stylesheet" href="./css/popwindow.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="{{ asset('./css/distribution-confirm.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/popwindow.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
 </head>
 
 <body>
@@ -986,9 +986,9 @@
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <script src="./js/distribution-confirm.js"></script>
-    <script src="./js/popwindow.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="{{ asset('./js/distribution-confirm.js') }}"></script>
+    <script src="{{ asset('./js/popwindow.js') }}"></script>
+    <script src="{{ asset('./js/header.js') }}"></script>
 
 </body>
 
