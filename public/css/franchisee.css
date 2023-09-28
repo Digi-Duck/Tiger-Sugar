@@ -1,0 +1,556 @@
+/* 共同css */
+*{
+    box-sizing: border-box;
+    font-family: Microsoft JhengHei;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: #0C1219;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#authorization .background {
+    width: 100%;
+    min-height: 1479px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../frontend-img/franchisee-img/about_bg.png);
+    z-index: -3;
+}
+
+#authorization .background-wave {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../frontend-img/franchisee-img/section_header.webp);
+    top: 0%;
+    z-index: -2;
+}
+
+#authorization .background-tiger-logo img {
+    width: 42vw;
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    filter: contrast(85%);
+}
+
+#authorization .tiger-main-logo {
+    margin-top: 5%;
+}
+
+#authorization .container {
+    padding: 5%;
+    max-width: 65%;
+    margin: auto;
+}
+
+#authorization .franchisee-logo {
+    margin-bottom: 80px;
+    display: flex;
+}
+
+#authorization .franchisee-logo img {
+    width: 34px;
+    margin-right: 10px;
+}
+
+#authorization .franchisee-logo-cn-en {
+    display: flex;
+    flex-direction: column;
+}
+
+#authorization .franchisee-logo-cn {
+    color: white;
+    font-size: 10px;
+    margin: 0;
+}
+
+#authorization .franchisee-logo-en {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 0;
+    line-height: 20px;
+}
+
+#authorization .steps-title {
+    width: 384px;
+    height: 64px;
+    border: 1px solid #f4dd97;
+    color: #f4dd97;
+    font-size: 22px;
+    line-height: 64px;
+    text-align: center;
+    margin-top: 39px;
+    margin-bottom: 58px;
+}
+
+#authorization .steps-title span {
+    display: inline-block;
+    margin: 0 0.5em;
+    width: auto;
+}
+
+#authorization .steps img {
+    width: 50px;
+}
+
+#authorization .steps {
+    background-color: rgba(14, 25, 32, 0.2);
+    border: 1px dashed rgb(59, 60, 62);
+    padding: 11.5px 41px 11.5px 13px;
+    margin-bottom: 16px;
+    margin-left: 3px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#authorization .steps-group {
+    max-width: 635px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#authorization .step1,
+#authorization .step2,
+#authorization .step3,
+#authorization .step4,
+#authorization .step5,
+#authorization .step6,
+#authorization .step7,
+#authorization .step8,
+#authorization .step9,
+#authorization .step10,
+#authorization .step11 {
+    position: relative;
+    margin-right: 20px;
+}
+
+#authorization .step1 span,
+#authorization .step2 span,
+#authorization .step3 span,
+#authorization .step4 span,
+#authorization .step5 span,
+#authorization .step6 span,
+#authorization .step7 span,
+#authorization .step8 span,
+#authorization .step9 span,
+#authorization .step10 span,
+#authorization .step11 span {
+    color: #f4dd97;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#authorization .steps-text {
+    color: aliceblue;
+    font-size: 18px;
+    font-family: "\5FAE\8EDF\6B63\9ED1\9AD4";
+}
+
+@media (max-width:890px) {
+    #authorization .container {
+        min-width: 100%;
+        margin: unset;
+    }
+}
+@media (max-width:775px) {
+    #authorization .background-wave{
+        background-size: 250%;
+        background-position: top left;
+    }
+}
+@media (max-width:420px) {
+    #authorization .container {
+        padding: 0 10px;
+    }
+    #authorization .franchisee-logo{
+        
+    }
+    #authorization .tiger-main-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #authorization .tiger-main-logo img {
+        width: 240px;
+        height: 64px;
+        margin: auto;
+    }
+    #authorization .steps-title {
+        width: 100%;
+    }
+}
+
+/* add footer css */
+body footer {
+    width: 100%;
+    padding: 10px 0;
+    color: #ffffff;
+    background-color: #0c1219;
+    background-image: url(../frontend-img/franchisee-img/about_bg.png);
+    text-align: center;
+    font-size: 10px;
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 40px 196px;
+}
+
+footer .button{
+    width: 131px;
+    height: 43px;
+    border: 1px solid #f4dd97;
+    text-align: center;
+    line-height: 43px;
+    font-size: 20px;
+    margin-top: 3px;
+    color: #ffffff;
+}
+
+footer .store-explain{
+    max-width: 850px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 2% 0;
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+footer .footer-container .store-explain::before {
+    content: "";
+    position: absolute;
+    content: "";
+    height: 1px;
+    top: 0px;
+    left: -5%;
+    background: rgb(129, 129, 129);
+    width: 110%;
+}
+
+body footer .footer-container .store-explain::after {
+    content: "";
+    position: absolute;
+    content: "";
+    height: 1px;
+    top: 100%;
+    left: -5%;
+    background: rgb(129, 129, 129);
+    width: 110%;
+}
+
+footer .open-store{
+    color: #f4dd97;
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 2%;
+}
+
+footer .footer-logo{
+    width: 333px;
+    height: 245px;
+    margin-top: 54px;
+    padding-right: 2px;
+}
+
+footer .explain-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+
+footer .white-word{
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+    padding-left: 5px;
+}
+
+footer .preface{
+    display: flex;
+}
+
+
+@media (max-width: 375px) {
+    footer .footer-logo{
+        width: 239px;
+        height: 178px;
+    }
+    
+}
+
+/* add css common-question*/
+
+#common-question .background {
+    width: 100%;
+    background-color: #0C1219;
+  }
+  
+  #common-question .container {
+    max-width: 986px;
+    margin: auto;
+    margin-top: 78px;
+    margin-bottom: 71px;
+    padding: 0px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  @media screen and (min-width:769px) {
+    #common-question .container {
+      padding: 0px 22px;
+    }
+  }
+  
+  #common-question img {
+    position: absolute;
+    top: -9%;
+    left: calc(50% - calc(429px / 2));
+  }
+  
+  #common-question .text-fqa {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 23px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    z-index: 2;
+  }
+  
+  #common-question .inside-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #common-question .left-container,
+  #common-question .right-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #common-question .qa-area {
+    margin: 7px 8px 9px 9px;
+    border: 1px solid #f4dd97;
+    width: 100%;
+    padding: 14px 14px 4px 14px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  @media screen and (min-width:700px) {
+    #common-question .inside-container {
+      flex-direction: row;
+      align-items: unset;
+    }
+  
+    #common-question .left-container,
+    #common-question .right-container {
+      width: 361px;
+    }
+  
+    #common-question .qa-area {
+      width: calc(100% - 17px);
+      padding: 37px 4px 37px 18px;
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (min-width:770px) {
+  
+    #common-question .left-container,
+    #common-question .right-container {
+      width: calc(calc(100% / 2) - 17px);
+    }
+  
+    #common-question .qa-area {
+      padding: 38px 19px 27px 19px;
+    }
+  }
+  
+  #common-question .question-area {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #common-question .top-area {
+    position: relative;
+  }
+  
+  #common-question .mark::before {
+    transition: 0.5s;
+    content: '';
+    width: 21px;
+    background-color: #f4dd97;
+    display: block;
+    height: 3.5px;
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: 0px;
+  }
+  
+  #common-question .mark::after {
+    transition: 0.5s;
+    content: '';
+    width: 21px;
+    background-color: #f4dd97;
+    display: block;
+    height: 3.5px;
+    transform: rotate(90deg);
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: 0px;
+  }
+  
+  /* 加號變減號效果 */
+  #common-question #qa1:checked+.qa-area .top-area .mark::before,
+  #common-question #qa2:checked+.qa-area .top-area .mark::before,
+  #common-question #qa3:checked+.qa-area .top-area .mark::before,
+  #common-question #qa4:checked+.qa-area .top-area .mark::before,
+  #common-question #qa5:checked+.qa-area .top-area .mark::before,
+  #common-question #qa6:checked+.qa-area .top-area .mark::before,
+  #common-question #qa7:checked+.qa-area .top-area .mark::before,
+  #common-question #qar2:checked+.qa-area .top-area .mark::before,
+  #common-question #qar4:checked+.qa-area .top-area .mark::before,
+  #common-question #qar6:checked+.qa-area .top-area .mark::before {
+    transform: rotate(-180deg);
+  }
+  
+  /* 加號變減號效果 */
+  #common-question #qa1:checked+.qa-area .top-area .mark::after,
+  #common-question #qa2:checked+.qa-area .top-area .mark::after,
+  #common-question #qa3:checked+.qa-area .top-area .mark::after,
+  #common-question #qa4:checked+.qa-area .top-area .mark::after,
+  #common-question #qa5:checked+.qa-area .top-area .mark::after,
+  #common-question #qa6:checked+.qa-area .top-area .mark::after,
+  #common-question #qa7:checked+.qa-area .top-area .mark::after,
+  #common-question #qar2:checked+.qa-area .top-area .mark::after,
+  #common-question #qar4:checked+.qa-area .top-area .mark::after,
+  #common-question #qar6:checked+.qa-area .top-area .mark::after {
+    transform: rotate(180deg);
+  }
+  
+  #common-question .title-text {
+    font-family: "\5FAE\8EDF\6B63\9ED1\9AD4";
+    color: #ffffff;
+    margin: 0 0 0 40px;
+    letter-spacing: 0.1em;
+  }
+  
+  #common-question .inside-container .down-area {
+    color: white;
+    letter-spacing: 0.1em;
+    max-height: 0;
+    transition: 0.5s;
+  }
+  
+  #common-question #qa1:checked+.qa-area .down-area,
+  #common-question #qa2:checked+.qa-area .down-area,
+  #common-question #qa3:checked+.qa-area .down-area,
+  #common-question #qa4:checked+.qa-area .down-area,
+  #common-question #qa5:checked+.qa-area .down-area,
+  #common-question #qa6:checked+.qa-area .down-area,
+  #common-question #qa7:checked+.qa-area .down-area,
+  #common-question #qar2:checked+.qa-area .down-area,
+  #common-question #qar4:checked+.qa-area .down-area,
+  #common-question #qar6:checked+.qa-area .down-area {
+    max-height: 150px;
+  }
+  
+  #common-question .inside-container .down-area::before {
+    content: "";
+    height: 1px;
+    top: -10px;
+    left: 0%;
+    background: rgb(129, 129, 129);
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+  }
+  
+  /* 交叉排版變版效果 */
+  #common-question #qa2+.qa-area,
+  #common-question #qa4+.qa-area,
+  #common-question #qa6+.qa-area {
+    display: block;
+  }
+  
+  #common-question #qar2+.qa-area,
+  #common-question #qar4+.qa-area,
+  #common-question #qar6+.qa-area {
+    display: none;
+  }
+  
+  @media screen and (min-width:700px) {
+  
+    #common-question #qa2+.qa-area,
+    #common-question #qa4+.qa-area,
+    #common-question #qa6+.qa-area {
+      display: none;
+    }
+  
+    #common-question #qar2+.qa-area,
+    #common-question #qar4+.qa-area,
+    #common-question #qar6+.qa-area {
+      display: block;
+    }
+  }
+  
+  #common-question{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #common-question .img-bg {
+    position: absolute;
+    top: 12%;
+    left: calc(50% - calc(429px / 2));
+    transform: translate(1px, 1px);
+  }
+  
+  @media screen and (min-width:700px) {
+    #common-question .img-bg {
+      width: unset;
+    }
+  }
+  
+  @media screen and (min-width:770px) {
+    #common-question .img-bg {
+      top: -9%;
+    }
+  }
