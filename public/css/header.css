@@ -1,3 +1,18 @@
+.blade-button{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.drop-blade-button{
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -35,21 +50,6 @@ header .nav-logo {
 
 header .nav-logo-btn {
     height: 50px;
-}
-
-header .blade-button{
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-}
-
-header .drop-blade-button{
-    width: 100%;
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
 }
 
 header .main-menu {
