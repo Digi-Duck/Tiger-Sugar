@@ -33,88 +33,101 @@
                 <section class="main-menu">
                     <!----------------------------- 關於我們 ------------------------------------>
                     <a href="./index.html#link-about" class="about-link" title="前往首頁的關於我們">
-                        <div class="about">
-                            <div class="about-img">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-about" src="./frontend-img/header-img/about.png"
-                                        alt="about-icon">
-                                    <img class="main-menu-about-gold" src="./frontend-img/header-img/about-gold.png"
-                                        alt="about-icon">
+                        <button type="button" class="blade-button">
+                            <div class="about">
+                                <div class="about-img">
+                                    <div class="main-menu-img">
+                                        <img class="main-menu-about" src="./frontend-img/header-img/about.png"
+                                            alt="about-icon">
+                                        <img class="main-menu-about-gold" src="./frontend-img/header-img/about-gold.png"
+                                            alt="about-icon">
+                                    </div>
+                                </div>
+                                <div class="main-menu-text">
+                                    <div class="text-ch">關於我們</div>
+                                    <div class="text-en">ABOUT</div>
                                 </div>
                             </div>
-                            <div class="main-menu-text">
-                                <div class="text-ch">關於我們</div>
-                                <div class="text-en">ABOUT</div>
-                            </div>
-                        </div>
+                        </button>
                     </a>
                     <!----------------------------- 產品經銷 ------------------------------------>
                     <a href="./distribution.html" class="distribution-link" title="前往產品經銷頁">
-                        <div class="distribution">
-                            <div class="main-menu-img">
-                                <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
-                                    alt="distribution-icon">
-                                <img class="main-menu-distribution-gold"
-                                    src="./frontend-img/header-img/distribution-gold.png" alt="distribution-gold-icon">
+                        <button type="button" class="blade-button">
+                            <div class="distribution">
+                                <div class="main-menu-img">
+                                    <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
+                                        alt="distribution-icon">
+                                    <img class="main-menu-distribution-gold"
+                                        src="./frontend-img/header-img/distribution-gold.png"
+                                        alt="distribution-gold-icon">
+                                </div>
+                                <div class="main-menu-text">
+                                    <span class="text-ch">產品經銷</span>
+                                    <span class="text-en">DISTRIBUTION</span>
+                                </div>
                             </div>
-                            <div class="main-menu-text">
-                                <span class="text-ch">產品經銷</span>
-                                <span class="text-en">DISTRIBUTION</span>
-                            </div>
-                        </div>
+                        </button>
                     </a>
                     <!----------------------------- 熱門經典 ------------------------------------>
                     <a href="./index.html#link-classic" class="classic-link" title="前往首頁的熱門經典">
-                        <div class="classic">
-                            <div class="main-menu-img">
-                                <img class="main-menu-classic" src="./frontend-img/header-img/classic.png"
-                                    alt="classic-icon">
-                                <img class="main-menu-classic-gold" src="./frontend-img/header-img/classic-gold.png"
-                                    alt="classic-gold-icon">
+                        <button type="button" class="blade-button">
+                            <div class="classic">
+                                <div class="main-menu-img">
+                                    <img class="main-menu-classic" src="./frontend-img/header-img/classic.png"
+                                        alt="classic-icon">
+                                    <img class="main-menu-classic-gold" src="./frontend-img/header-img/classic-gold.png"
+                                        alt="classic-gold-icon">
+                                </div>
+                                <div class="main-menu-text">
+                                    <span class="text-ch">熱門經典</span>
+                                    <span class="text-en">CLASSIC</span>
+                                </div>
                             </div>
-                            <div class="main-menu-text">
-                                <span class="text-ch">熱門經典</span>
-                                <span class="text-en">CLASSIC</span>
-                            </div>
-                        </div>
+                        </button>
                     </a>
                     <!----------------------------- 媒體露出 ------------------------------------>
                     <a href="./index.html#link-media" class="media-link" title="前往首頁的媒體露出">
-                        <div class="media">
-                            <div class="main-menu-img">
-                                <img class="main-menu-media" src="./frontend-img/header-img/media.png" alt="media-icon">
-                                <img class="main-menu-media-gold" src="./frontend-img/header-img/media-gold.png"
-                                    alt="media-icon-icon">
+                        <button type="button" class="blade-button">
+                            <div class="media">
+                                <div class="main-menu-img">
+                                    <img class="main-menu-media" src="./frontend-img/header-img/media.png"
+                                        alt="media-icon">
+                                    <img class="main-menu-media-gold" src="./frontend-img/header-img/media-gold.png"
+                                        alt="media-icon-icon">
+                                </div>
+                                <div class="main-menu-text">
+                                    <span class="text-ch">媒體露出</span>
+                                    <span class="text-en">MEDIA</span>
+                                </div>
                             </div>
-                            <div class="main-menu-text">
-                                <span class="text-ch">媒體露出</span>
-                                <span class="text-en">MEDIA</span>
-                            </div>
-                        </div>
+                        </button>
                     </a>
                     <!----------------------------- 加盟專區 ------------------------------------>
                     <a href="./franchisee.html" class="franchisee-link" title="前往加盟專區頁">
-                        <div class="franchisee">
-                            <div class="main-menu-img">
-                                <img class="main-menu-franchisee" src="./frontend-img/header-img/franchisee.png"
-                                    alt="franchisee-icon">
-                                <img class="main-menu-franchisee-gold"
-                                    src="./frontend-img/header-img/franchisee-gold.png" alt="franchisee-gold-icon">
+                        <button type="button" class="blade-button">
+                            <div class="franchisee">
+                                <div class="main-menu-img">
+                                    <img class="main-menu-franchisee" src="./frontend-img/header-img/franchisee.png"
+                                        alt="franchisee-icon">
+                                    <img class="main-menu-franchisee-gold"
+                                        src="./frontend-img/header-img/franchisee-gold.png"
+                                        alt="franchisee-gold-icon">
+                                </div>
+                                <div class="main-menu-text">
+                                    <span class="text-ch">加盟專區</span>
+                                    <span class="text-en">FRANCHISEE</span>
+                                </div>
                             </div>
-                            <div class="main-menu-text">
-                                <span class="text-ch">加盟專區</span>
-                                <span class="text-en">FRANCHISEE</span>
-                            </div>
-                        </div>
+                        </button>
                     </a>
-
                 </section>
                 <!----------------------------- 社群連結 ------------------------------------>
                 <section class="social-menu">
                     <div class="social-menu-main">
                         <div class="social-menu-icon">
                             <a href="https://www.facebook.com/twtigersugar/" title="facebook連結">
-                                <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png" alt="icon-fb">
+                                <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png"
+                                    alt="icon-fb">
                             </a>
                         </div>
 
@@ -158,82 +171,94 @@
                             <div class="top-mine-menu">
                                 <!----------------------------- 關於我們 ------------------------------------>
                                 <a href="#link-about" id="drop-about" title="前往首頁的關於我們">
-                                    <div class="menu-about">
-                                        <div class="about-img">
-                                            <img class="main-menu-about" src="./frontend-img/header-img/about.png"
-                                                alt="about-icon">
-                                            <img class="main-menu-about-gold"
-                                                src="./frontend-img/header-img/about-gold.png" alt="about-icon">
+                                    <button type="button" class="drop-blade-button">
+                                        <div class="menu-about">
+                                            <div class="about-img">
+                                                <img class="main-menu-about" src="./frontend-img/header-img/about.png"
+                                                    alt="about-icon">
+                                                <img class="main-menu-about-gold"
+                                                    src="./frontend-img/header-img/about-gold.png" alt="about-icon">
+                                            </div>
+                                            <div class="main-menu-text">
+                                                <div class="main-menu-text-ch">關於我們</div>
+                                                <div class="main-menu-text-en">ABOUT</div>
+                                            </div>
                                         </div>
-                                        <div class="main-menu-text">
-                                            <div class="main-menu-text-ch">關於我們</div>
-                                            <div class="main-menu-text-en">ABOUT</div>
-                                        </div>
-                                    </div>
+                                    </button>
                                 </a>
                                 <!----------------------------- 產品經銷 ------------------------------------>
-                                <a href="./distribution.html" id="drop-distribution" title="前往首頁的銷">
-頁                                    <div class="menu-distribution">
-                                        <div class="distribution-img">
-                                            <img class="main-menu-distribution"
-                                                src="./frontend-img/header-img/distribution.png"
-                                                alt="distribution-icon">
-                                            <img class="main-menu-distribution-gold"
-                                                src="./frontend-img/header-img/distribution-gold.png"
-                                                alt="distribution-gold-icon">
+                                <a href="./distribution.html" id="drop-distribution" title="前往產品經銷頁">
+                                    <button type="button" class="drop-blade-button">
+                                        <div class="menu-distribution">
+                                            <div class="distribution-img">
+                                                <img class="main-menu-distribution"
+                                                    src="./frontend-img/header-img/distribution.png"
+                                                    alt="distribution-icon">
+                                                <img class="main-menu-distribution-gold"
+                                                    src="./frontend-img/header-img/distribution-gold.png"
+                                                    alt="distribution-gold-icon">
+                                            </div>
+                                            <div class="main-menu-text">
+                                                <span class="main-menu-text-ch">產品經銷</span>
+                                                <span class="main-menu-text-en">DISTRIBUTION</span>
+                                            </div>
                                         </div>
-                                        <div class="main-menu-text">
-                                            <span class="main-menu-text-ch">產品經銷</span>
-                                            <span class="main-menu-text-en">DISTRIBUTION</span>
-                                        </div>
-                                    </div>
+                                    </button>
                                 </a>
                                 <!----------------------------- 熱門經典 ------------------------------------>
                                 <a href="#link-classic" id="drop-classic" title="前往首頁的熱門經典">
-                                    <div class="menu-classic">
-                                        <div class="classic-img">
-                                            <img class="main-menu-classic" src="./frontend-img/header-img/classic.png"
-                                                alt="classic-icon">
-                                            <img class="main-menu-classic-gold"
-                                                src="./frontend-img/header-img/classic-gold.png"
-                                                alt="classic-gold-icon">
+                                    <button type="button" class="drop-blade-button">
+                                        <div class="menu-classic">
+                                            <div class="classic-img">
+                                                <img class="main-menu-classic"
+                                                    src="./frontend-img/header-img/classic.png" alt="classic-icon">
+                                                <img class="main-menu-classic-gold"
+                                                    src="./frontend-img/header-img/classic-gold.png"
+                                                    alt="classic-gold-icon">
+                                            </div>
+                                            <div class="main-menu-text">
+                                                <span class="main-menu-text-ch">熱門經典</span>
+                                                <span class="main-menu-text-en">CLASSIC</span>
+                                            </div>
                                         </div>
-                                        <div class="main-menu-text">
-                                            <span class="main-menu-text-ch">熱門經典</span>
-                                            <span class="main-menu-text-en">CLASSIC</span>
-                                        </div>
-                                    </div>
+                                    </button>
                                 </a>
                                 <!----------------------------- 媒體露出 ------------------------------------>
                                 <a href="#link-media" id="drop-media" title="前往首頁的媒體露出">
-                                    <div class="menu-media">
-                                        <div class="media-img">
-                                            <img class="main-menu-media" src="./frontend-img/header-img/media.png"
-                                                alt="media-icon">
-                                            <img class="main-menu-media-gold"
-                                                src="./frontend-img/header-img/media-gold.png" alt="media-icon-icon">
+                                    <button type="button" class="drop-blade-button">
+                                        <div class="menu-media">
+                                            <div class="media-img">
+                                                <img class="main-menu-media" src="./frontend-img/header-img/media.png"
+                                                    alt="media-icon">
+                                                <img class="main-menu-media-gold"
+                                                    src="./frontend-img/header-img/media-gold.png"
+                                                    alt="media-icon-icon">
+                                            </div>
+                                            <div class="main-menu-text">
+                                                <span class="main-menu-text-ch">媒體露出</span>
+                                                <span class="main-menu-text-en">MEDIA</span>
+                                            </div>
                                         </div>
-                                        <div class="main-menu-text">
-                                            <span class="main-menu-text-ch">媒體露出</span>
-                                            <span class="main-menu-text-en">MEDIA</span>
-                                        </div>
-                                    </div>
+                                    </button>
                                 </a>
                                 <!----------------------------- 加盟專區 ------------------------------------>
-                                <a href="./franchisee.html" id="drop-franchisee" title="前往首頁的區">
-頁                                    <div class="menu-franchisee">
-                                        <div class="franchisee-img">
-                                            <img class="main-menu-franchisee"
-                                                src="./frontend-img/header-img/franchisee.png" alt="franchisee-icon">
-                                            <img class="main-menu-franchisee-gold"
-                                                src="./frontend-img/header-img/franchisee-gold.png"
-                                                alt="franchisee-gold-icon">
+                                <a href="./franchisee.html" id="drop-franchisee" title="前往加盟專區頁">
+                                    <button type="button" class="drop-blade-button">
+                                        <div class="menu-franchisee">
+                                            <div class="franchisee-img">
+                                                <img class="main-menu-franchisee"
+                                                    src="./frontend-img/header-img/franchisee.png"
+                                                    alt="franchisee-icon">
+                                                <img class="main-menu-franchisee-gold"
+                                                    src="./frontend-img/header-img/franchisee-gold.png"
+                                                    alt="franchisee-gold-icon">
+                                            </div>
+                                            <div class="main-menu-text">
+                                                <span class="main-menu-text-ch">加盟專區</span>
+                                                <span class="main-menu-text-en">FRANCHISEE</span>
+                                            </div>
                                         </div>
-                                        <div class="main-menu-text">
-                                            <span class="main-menu-text-ch">加盟專區</span>
-                                            <span class="main-menu-text-en">FRANCHISEE</span>
-                                        </div>
-                                    </div>
+                                    </button>
                                 </a>
                             </div>
 
@@ -290,7 +315,8 @@
         <!-- 秋 top 按鈕 -->
         <div class="go-to-top-container topbtn">
             <!-- "#"回到最上方 -->
-            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg" alt="go_to_top"></a>
+            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg"
+                    alt="go_to_top"></a>
         </div>
     </header>
 
@@ -301,8 +327,8 @@
                 <div class="form-logo"></div>
                 <h1 class="form-title">加盟主資料填寫</h1>
                 <div class="form-link">
-                    <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSeDtvkV21syrYQjA_i8sY6DXGPsv2jMaMrzEXa2McmbmcVchg/viewform" title="台灣加盟主專用">★
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDtvkV21syrYQjA_i8sY6DXGPsv2jMaMrzEXa2McmbmcVchg/viewform"
+                        title="台灣加盟主專用">★
                         台灣加盟請點此 Taiwan Franchise Store ★</a>
                 </div>
             </div>
@@ -329,7 +355,8 @@
                 </div>
                 <div class="form-franchisee-type">
                     <label for="franchisee_type">加盟方式｜franchisee type</label>
-                    <select id="franchisee_type" type="text" class="form-franchisee-type-input" name="franchisee_type">
+                    <select id="franchisee_type" type="text" class="form-franchisee-type-input"
+                        name="franchisee_type">
                         <option value disable selected>--請選擇--</option>
                         <option value="總代理">總代理 - General Agent</option>
                         <option value="加盟">加盟 - Franchise Store</option>
