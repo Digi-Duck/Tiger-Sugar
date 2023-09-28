@@ -66,7 +66,8 @@
                                     <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
                                         alt="distribution-icon">
                                     <img class="main-menu-distribution-gold"
-                                        src="./frontend-img/header-img/distribution-gold.png" alt="distribution-gold-icon">
+                                        src="./frontend-img/header-img/distribution-gold.png"
+                                        alt="distribution-gold-icon">
                                 </div>
                                 <div class="main-menu-text">
                                     <span class="text-ch">產品經銷</span>
@@ -97,7 +98,8 @@
                         <button type="button" class="blade-button">
                             <div class="media">
                                 <div class="main-menu-img">
-                                    <img class="main-menu-media" src="./frontend-img/header-img/media.png" alt="media-icon">
+                                    <img class="main-menu-media" src="./frontend-img/header-img/media.png"
+                                        alt="media-icon">
                                     <img class="main-menu-media-gold" src="./frontend-img/header-img/media-gold.png"
                                         alt="media-icon-icon">
                                 </div>
@@ -193,7 +195,8 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 產品經銷 ------------------------------------>
-                                <a href={{ route('front.index.distribution') }} id="drop-distribution" title="前往首頁的產品經銷">
+                                <a href={{ route('front.index.distribution') }} id="drop-distribution"
+                                    title="前往首頁的產品經銷">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-distribution">
                                             <div class="distribution-img">
@@ -216,8 +219,8 @@
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-classic">
                                             <div class="classic-img">
-                                                <img class="main-menu-classic" src="./frontend-img/header-img/classic.png"
-                                                    alt="classic-icon">
+                                                <img class="main-menu-classic"
+                                                    src="./frontend-img/header-img/classic.png" alt="classic-icon">
                                                 <img class="main-menu-classic-gold"
                                                     src="./frontend-img/header-img/classic-gold.png"
                                                     alt="classic-gold-icon">
@@ -237,7 +240,8 @@
                                                 <img class="main-menu-media" src="./frontend-img/header-img/media.png"
                                                     alt="media-icon">
                                                 <img class="main-menu-media-gold"
-                                                    src="./frontend-img/header-img/media-gold.png" alt="media-icon-icon">
+                                                    src="./frontend-img/header-img/media-gold.png"
+                                                    alt="media-icon-icon">
                                             </div>
                                             <div class="main-menu-text">
                                                 <span class="main-menu-text-ch">媒體露出</span>
@@ -252,7 +256,8 @@
                                         <div class="menu-franchisee">
                                             <div class="franchisee-img">
                                                 <img class="main-menu-franchisee"
-                                                    src="./frontend-img/header-img/franchisee.png" alt="franchisee-icon">
+                                                    src="./frontend-img/header-img/franchisee.png"
+                                                    alt="franchisee-icon">
                                                 <img class="main-menu-franchisee-gold"
                                                     src="./frontend-img/header-img/franchisee-gold.png"
                                                     alt="franchisee-gold-icon">
@@ -308,12 +313,14 @@
                     </div>
         </nav>
         <!-- 秋 選單紀錄 按鈕 -->
-        <a href="./distribution-confirm.html" class="shop-cart-container" title="前往購物車">
-            <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
-            <div class="shop-cart-amount-area">
-                <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
-                <div class="shop-cart-number">0</div>
-            </div>
+        <a href={{ route('front.distribution_confirm') }} class="shop-cart-container" title="前往購物車">
+            <button type="button" class="blade-button">
+                <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
+                <div class="shop-cart-amount-area">
+                    <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
+                    <div class="shop-cart-number">0</div>
+                </div>
+            </button>
         </a>
 
         <!-- 秋 top 按鈕 -->
@@ -414,7 +421,8 @@
             <div class="header">
                 <div class="container">
                     <div class="title">
-                        <img class="ig-icon" src="{{ asset('./frontend-img/index-img/social/ig.png') }}" alt="ig-icon">
+                        <img class="ig-icon" src="{{ asset('./frontend-img/index-img/social/ig.png') }}"
+                            alt="ig-icon">
                         <div class="title-text">
                             <div class="title-text-1">社群回饋</div>
                             <div class="title-text-2">SOCIAL</div>
@@ -472,8 +480,8 @@
             <div id="link-distribution"></div>
             <div id="distribution-area">
                 <div class="title">
-                    <img class="distribution-icon" src="{{ asset('./frontend-img/index-img/distribution/distribution.svg') }}"
-                        alt="ig-icon">
+                    <img class="distribution-icon"
+                        src="{{ asset('./frontend-img/index-img/distribution/distribution.svg') }}" alt="ig-icon">
                     <div class="title-text">
                         <div class="title-text-1">產品經銷</div>
                         <div class="title-text-2">DISTRIBUTION</div>
@@ -496,9 +504,11 @@
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href="./distribution.html" class="commodity-more-button btn"
-                                                title="更多商品">
+                                            <a href={{ route('front.distribution') }}
+                                                class="commodity-more-button btn" title="更多商品">
                                                 MORE
+                                                <button type="button" class="blade-button">
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -526,9 +536,11 @@
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href="./distribution.html" class="commodity-more-button btn"
-                                                title="更多商品">
+                                            <a href={{ route('front.distribution') }}
+                                                class="commodity-more-button btn" title="更多商品">
                                                 MORE
+                                                <button type="button" class="blade-button">
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -556,9 +568,11 @@
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href="./distribution.html" class="commodity-more-button btn"
-                                                title="更多商品">
+                                            <a href={{ route('front.distribution') }}
+                                                class="commodity-more-button btn" title="更多商品">
                                                 MORE
+                                                <button type="button" class="blade-button">
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -586,9 +600,11 @@
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href="./distribution.html" class="commodity-more-button btn"
-                                                title="更多商品">
+                                            <a href={{ route('front.distribution') }}
+                                                class="commodity-more-button btn" title="更多商品">
                                                 MORE
+                                                <button type="button" class="blade-button">
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -616,9 +632,11 @@
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href="./distribution.html" class="commodity-more-button btn"
-                                                title="更多商品">
+                                            <a href={{ route('front.distribution') }}
+                                                class="commodity-more-button btn" title="更多商品">
                                                 MORE
+                                                <button type="button" class="blade-button">
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -646,9 +664,11 @@
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href="./distribution.html" class="commodity-more-button btn"
-                                                title="更多商品">
+                                            <a href={{ route('front.distribution') }}
+                                                class="commodity-more-button btn" title="更多商品">
                                                 MORE
+                                                <button type="button" class="blade-button">
+                                                </button>
                                             </a>
                                         </div>
                                     </div>
@@ -667,15 +687,21 @@
                     </div>
                     <div class="swiper-button-product">
                         <div class="swiper-button-next">
-                            <img class="next-prev-img" src="{{ asset('./frontend-img/index-img/distribution/commodity-next.svg') }}"
+                            <img class="next-prev-img"
+                                src="{{ asset('./frontend-img/index-img/distribution/commodity-next.svg') }}"
                                 alt="swiper下一個按鈕">
                         </div>
                         <div class="swiper-button-prev">
-                            <img class="next-prev-img" src="{{ asset('./frontend-img/index-img/distribution/commodity-prev.svg') }}"
+                            <img class="next-prev-img"
+                                src="{{ asset('./frontend-img/index-img/distribution/commodity-prev.svg') }}"
                                 alt="swiper上一個按鈕">
                         </div>
                     </div>
-                    <a href="./distribution.html" class="distribution-area-button" title="更多商品">更多商品</a>
+                    <a href={{ route('front.distribution') }} class="distribution-area-button" title="更多商品">
+                        更多商品
+                        <button type="button" class="blade-button">
+                        </button>
+                    </a>
                 </div>
             </div>
             </div>
@@ -689,7 +715,8 @@
                     <div class="container">
                         <div class="title">
                             <div class="title-icon">
-                                <img src="{{ asset('./frontend-img/index-img/classic/icon1-3.png') }}" alt="產品圖片">
+                                <img src="{{ asset('./frontend-img/index-img/classic/icon1-3.png') }}"
+                                    alt="產品圖片">
                             </div>
                             <div class="title-name">
                                 <h2 class="menu-text">熱門經典</h2>
@@ -1086,7 +1113,8 @@
 
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
+                                    <img class="intro-logo"
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1097,7 +1125,8 @@
                             </div>
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
+                                    <img class="intro-logo"
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1109,7 +1138,8 @@
                             </div>
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
+                                    <img class="intro-logo"
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1119,7 +1149,8 @@
                             </div>
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
-                                    <img class="intro-logo" src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
+                                    <img class="intro-logo"
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
                                         alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
@@ -1211,7 +1242,8 @@
             <div class="header">
                 <div class="container">
                     <div class="title">
-                        <img class="share-icon" src="{{ asset('./frontend-img/index-img/news/icon1-2.png') }}" alt="ig-icon">
+                        <img class="share-icon" src="{{ asset('./frontend-img/index-img/news/icon1-2.png') }}"
+                            alt="ig-icon">
                         <div class="title-text">
                             <div class="title-text-1">媒體報導</div>
                             <div class="title-text-2">News & Blogger</div>
@@ -1451,14 +1483,16 @@
                 </div>
                 <div class="franchisee-container-big">
                     <div class="franchisee-container-animation" data-aos="zoom-in">
-                        <a href="./franchisee.html" class="franchisee-link" title="加盟專區連結">
-                            <div class="join-us-img">
-                                <div class="join-us-info">
-                                    <h2> <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise! <i
-                                            class="bi bi-star-fill"></i>
-                                    </h2>
+                        <a href={{ route('front.franchisee') }} class="franchisee-link" title="加盟專區連結">
+                            <button type="button" class="blade-button">
+                                <div class="join-us-img">
+                                    <div class="join-us-info">
+                                        <h2> <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise! <i
+                                                class="bi bi-star-fill"></i>
+                                        </h2>
+                                    </div>
                                 </div>
-                            </div>
+                            </button>
                         </a>
                     </div>
                 </div>

@@ -295,19 +295,19 @@
                     </div>
         </nav>
         <!-- 秋 選單紀錄 按鈕 -->
-        <a href="./distribution-confirm.html" class="shop-cart-container" title="前往購物車">
+        {{-- <a href="./distribution-confirm.html" class="shop-cart-container" title="前往購物車">
             <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
             <div class="shop-cart-amount-area">
                 <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
                 <div class="shop-cart-number">0</div>
             </div>
-        </a>
+        </a> --}}
 
         <!-- 秋 top 按鈕 -->
-        <div class="go-to-top-container topbtn">
+        {{-- <div class="go-to-top-container topbtn">
             <!-- "#"回到最上方 -->
             <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg" alt="go_to_top"></a>
-        </div>
+        </div> --}}
     </header>
 
     <main>
@@ -622,8 +622,10 @@
                     </div>
                 </div>
             </div>
-            <a href="./franchisee-form.html" title="前往加盟表單頁">
-                <div class="button">開始申請</div>
+            <a href={{ route('front.franchisee_form') }} title="前往加盟表單頁">
+                <button type="button" class="blade-button">
+                    <div class="button">開始申請</div>
+                </button>
             </a>
         </div>
     </footer>

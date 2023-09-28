@@ -303,12 +303,14 @@
                     </div>
         </nav>
         <!-- 秋 選單紀錄 按鈕 -->
-        <a href="./distribution-confirm.html" class="shop-cart-container" title="前往購物車">
-            <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
-            <div class="shop-cart-amount-area">
-                <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
-                <div class="shop-cart-number">0</div>
-            </div>
+        <a href={{ route('front.distribution_confirm') }} class="shop-cart-container" title="前往購物車">
+            <button type="button" class="blade-button">
+                <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
+                <div class="shop-cart-amount-area">
+                    <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
+                    <div class="shop-cart-number">0</div>
+                </div>
+            </button>
         </a>
 
         <!-- 秋 top 按鈕 -->
@@ -636,14 +638,16 @@
             </div>
             <div class="franchisee-container-big">
                 <div class="franchisee-container-animation" data-aos="zoom-in">
-                    <a href="./franchisee-form.html" class="franchisee-link" title="前往加盟頁">
-                        <div class="join-us-img">
-                            <div class="join-us-info">
-                                <h2> <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise! <i
-                                        class="bi bi-star-fill"></i>
-                                </h2>
+                    <a href={{ route('front.franchisee_form') }} class="franchisee-link" title="前往加盟頁">
+                        <button type="button" class="blade-button">
+                            <div class="join-us-img">
+                                <div class="join-us-info">
+                                    <h2> <i class="bi bi-star-fill"></i>&nbspJoin Our Franchise! <i
+                                            class="bi bi-star-fill"></i>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </button>
                     </a>
                 </div>
             </div>
