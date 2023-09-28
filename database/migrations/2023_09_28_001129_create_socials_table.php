@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('type',255)->nullable()->default('embed')->comment('權重');
-            $table->int('sort',11)->default(1)->comment('社群回饋代稱');
+            $table->integer('sort')->default(1)->comment('社群回饋代稱');
             $table->string('embed_name',255)->nullable()->default(null)->comment('嵌入碼');
             $table->longText('embed_link')->nullable()->comment('使用者Icon');
             $table->string('user_icon',255)->nullable()->default(NULL)->comment('使用者Icon');

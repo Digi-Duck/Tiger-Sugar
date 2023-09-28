@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title',255)->nullable()->default(NULL)->comment('標題');
             $table->longText('content')->nullable()->default(NULL)->comment('內文');
-            $table->string('title',255)->nullable()->default(NULL)->comment('英文標題');
+            $table->string('english_title',255)->nullable()->default(NULL)->comment('英文標題');
             $table->longText('english_content')->nullable()->default(NULL)->comment('內文(英)');
     });
 }

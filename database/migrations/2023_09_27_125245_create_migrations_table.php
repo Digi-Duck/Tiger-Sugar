@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('migration',255)->comment('各次遷移');
-            $table->int('batch',11)->comment('遷移批次');
+            $table->integer('batch')->comment('遷移批次');
         });
     }
 

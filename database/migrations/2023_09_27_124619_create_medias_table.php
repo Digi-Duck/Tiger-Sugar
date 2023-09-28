@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('link',255)->default('')->comment('社群連結');
             $table->string('name',255)->nullable()->default(NULL)->comment('社群名稱');
-            $table->int('sort',11)->nullable()->default(1)->comment('社群種類');
+            $table->integer('sort')->nullable()->default(1)->comment('社群種類');
         });
     }
 

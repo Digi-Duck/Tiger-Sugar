@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->int('contry_id',11)->nullable()->default(NULL)->comment('國家');
-            $table->int('contry_id',11)->nullable()->default(NULL)->comment('城市');
+            $table->smallInteger('contry_id')->nullable()->comment('國家');
+            $table->integer('contry_id')->nullable()->default(NULL)->comment('城市');
             $table->string('name',255)->nullable()->default(NULL)->comment('店名');
             $table->string('address',255)->default('')->comment('地址');
             $table->string('phone',255)->nullable()->default(NULL)->comment('電話');
-            $table->int('sort',11)->default(0)->comment('權重');
+            $table->integer('sort')->default(1)->comment('權重');
         });
     }
 

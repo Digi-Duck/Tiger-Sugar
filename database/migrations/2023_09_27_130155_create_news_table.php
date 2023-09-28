@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title',255)->nullable()->default(NULL)->comment('標題');
             $table->longText('info')->nullable()->default(NULL)->comment('內容');
-            $table->int('sort',11)->nullable()->default(NULL)->comment('權重');
+            $table->integer('sort')->nullable()->default(1)->comment('權重');
         });
     }
 

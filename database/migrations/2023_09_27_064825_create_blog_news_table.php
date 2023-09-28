@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title',255)->nullable()->default('')->comment('文章標題');
             $table->string('info',255)->nullable()->default('')->comment('文章簡述');
             $table->string('date',191)->nullable()->default('')->comment('發表日期');
-            $table->string('sort',255)->nullable()->default('')->comment('權重');
+            $table->integer('sort')->nullable()->default(1)->comment('權重');
             $table->string('link',255)->nullable()->default('')->comment('文章連結');
         });
     }
