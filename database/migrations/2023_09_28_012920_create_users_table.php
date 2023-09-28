@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('medias', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('link',255)->default('')->comment('社群連結');
-            $table->string('name',255)->nullable()->default('')->comment('社群名稱');
-            $table->int('sort')->nullable()->default(1)->comment('權重');
+            $table->string('name',255)->default('')->comment('名稱');
+            $table->string('email',255)->default('')->comment('Email');
+            $table->string('password',255)->default('')->comment('密碼');
+            $table->string('remember_token',100)->nullable()->default('')->comment('記住我');
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('medias');
+        Schema::dropIfExists('users');
     }
 };
