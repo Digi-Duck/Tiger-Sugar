@@ -14,15 +14,16 @@ return new class extends Migration
         Schema::create('rfqs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name',50)->nullable()->default('')->comment('名稱');
-            $table->string('birthday',50)->nullable()->default('')->comment('出生年月日');
-            $table->string('email',50)->nullable()->default('')->comment('email');
-            $table->string('phone',50)->nullable()->default('')->comment('電話');
-            $table->string('address',255)->nullable()->default('')->comment('地址');
-            $table->string('channel',255)->nullable()->default('')->comment('頻道');
-            $table->string('city',50)->nullable()->default('')->comment('城市');
-            $table->string('other',255)->nullable()->default('')->comment('其他');
-            $table->string('products_id',50)->nullable()->default('')->comment('商品id');
+            $table->string('name',50)->nullable()->default(NULL)->comment('報價名稱');
+            $table->string('birthday',50)->nullable()->default(NULL)->comment('報價日期');
+            $table->string('email',50)->nullable()->default(NULL)->comment('Email');
+            $table->string('phone',50)->nullable()->default(NULL)->comment('電話');
+            $table->string('address',255)->nullable()->default(NULL)->comment('地址');
+            $table->string('channel',255)->nullable()->default(NULL)->comment('頻道');
+            $table->string('city',50)->nullable()->default(NULL)->comment('城市');
+            $table->string('other',255)->nullable()->default(NULL)->comment('其他');
+            $table->string('products_id',50)->nullable()->default(NULL)->comment('商品名稱');
+            $table->softDeletes();
         });
     }
 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('address',255)->nullable()->default('')->comment('聯絡地址');
             $table->string('store_address',255)->nullable()->default('')->comment('預定城市地址');
             $table->string('other',255)->nullable()->default('')->comment('其他');
+            $table->softDeletes();
         });
     }
 

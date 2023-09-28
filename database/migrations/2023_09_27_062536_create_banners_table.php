@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image_alt',255)->nullable()->default('')->comment('圖片替代文字(alt)');
             $table->string('pc_video_url',255)->nullable()->default('')->comment('設定影片連結');
             $table->string('mb_video_url',255)->nullable()->default('')->comment('設定影片連結(手機版)');
-            $table->int('sort',255)->nullable()->default('')->comment('權重');
+            $table->int('sort',11)->nullable()->default('')->comment('權重');
             $table->string('link_url',255)->nullable()->default('')->comment('圖片連結');
             $table->string('link_target',255)->nullable()->default('')->comment('另開新視窗');
         });

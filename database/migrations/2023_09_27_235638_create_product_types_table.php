@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('product_types', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('tw_name',255)->default('')->comment('中文名稱');
-            $table->string('en_name',255)->default('')->comment('英文名稱');
-            $table->int('sort')->default(1)->comment('權重');
+            $table->string('tw_name',255)->default('')->comment('商品種類 (中)');
+            $table->string('en_name',255)->default('')->comment('商品種類 (英)');
+            $table->int('sort',11)->default(1)->comment('權重');
         });
     }
 

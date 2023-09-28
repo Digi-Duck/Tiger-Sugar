@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title',45)->comment('標題');
-            $table->string('en_title',45)->nullable()->default('')->comment('英文標題');
+            $table->string('en_title',45)->nullable()->default(NULL)->comment('英文標題');
             $table->string('link',45)->comment('官方網站連結');
             $table->string('hide',45)->default(0)->comment('隱藏');
         });

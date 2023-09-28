@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('drink_ens', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->int('type_id')->default('')->comment('類別');
+            $table->int('type_id',11)->default('')->comment('類別');
             $table->string('drink_name',255)->default('')->comment('飲品名稱');
-            $table->int('cold')->nullable()->default(0)->comment('冷飲');
-            $table->int('hot')->nullable()->default(0)->comment('熱飲');
-            $table->int('sort')->default(0)->comment('權重');
+            $table->int('cold',11)->nullable()->default(0)->comment('冷飲');
+            $table->int('hot',11)->nullable()->default(0)->comment('熱飲');
+            $table->int('sort',11)->default(1)->comment('權重');
         });
     }
 

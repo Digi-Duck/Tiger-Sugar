@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('imgs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('img_url',255)->nullable()->default('')->comment('圖片連結');
+            $table->string('img_url',255)->nullable()->default(NULL)->comment('圖片連結');
         });
     }
 

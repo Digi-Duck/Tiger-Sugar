@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('seos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name',191)->nullable()->default('')->comment('名稱');
-            $table->string('title',191)->nullable()->default('')->comment('標題');
-            $table->string('keyword',191)->nullable()->default('')->comment('關鍵字');
-            $table->string('description',191)->nullable()->default('')->comment('描述');
+            $table->string('name',191)->nullable()->default(NULL)->comment('搜尋名稱');
+            $table->string('title',191)->nullable()->default(NULL)->comment('主旨');
+            $table->string('keyword',191)->nullable()->default(NULL)->comment('關鍵字');
+            $table->string('description',191)->nullable()->default(NULL)->comment('描述');
         });
     }
 

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('blog_news', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('main_photo',255)->nullable()->default('')->comment('上傳代表圖片');

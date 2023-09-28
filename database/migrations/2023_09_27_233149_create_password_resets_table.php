@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('email',255)->comment('Email');
-            $table->string('token',255)->comment('token');
+            $table->string('token',255)->comment('token/密碼令牌');
         });
     }
 

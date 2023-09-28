@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name',255)->default('')->comment('名稱');
-            $table->string('email',255)->default('')->comment('Email');
-            $table->string('password',255)->default('')->comment('密碼');
-            $table->string('remember_token',100)->nullable()->default('')->comment('記住我');
+            $table->string('name',255)->comment('使用者名稱');
+            $table->string('email',255)->comment('email');
+            $table->string('password',255)->comment('密碼');
+            $table->string('remember_token',100)->nullable()->default(NULL)->comment('使用者代號');
         });
     }
 

@@ -14,22 +14,22 @@ return new class extends Migration
         Schema::create('socials', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('type',255)->nullable()->default('embed')->comment('embed or custom');
-            $table->int('sort')->default(1)->comment('權重');
-            $table->string('embed_name',255)->nullable()->default('')->comment('嵌入名稱');
-            $table->longText('embed_link',255)->nullable()->comment('嵌入連結');
-            $table->string('user_icon',255)->nullable()->default('')->comment('使用者icon');
-            $table->string('user_name',255)->nullable()->default('')->comment('使用者名稱');
-            $table->string('user_account',255)->nullable()->default('')->comment('使用者帳號');
-            $table->string('socail_icon',255)->nullable()->default('')->comment('社群icon');
-            $table->string('socail_icon_color',255)->nullable()->default('')->comment('社群icon顏色');
-            $table->string('link_title',255)->nullable()->default('')->comment('連結標題');
-            $table->string('link_href',255)->nullable()->default('')->comment('連結href');
-            $table->string('link_target',255)->nullable()->default('')->comment('連結目標');
-            $table->longText('socail_info',255)->nullable()->comment('社群副標題');
-            $table->string('post_date',255)->nullable()->default('')->comment('發布日期');
-            $table->string('user_photo',255)->nullable()->default('')->comment('使用者照片');
-            $table->string('main_photo',255)->nullable()->default('')->comment('主要照片');
+            $table->string('type',255)->nullable()->default('embed')->comment('權重');
+            $table->int('sort',11)->default(1)->comment('社群回饋代稱');
+            $table->string('embed_name',255)->nullable()->default(null)->comment('嵌入碼');
+            $table->longText('embed_link')->nullable()->comment('使用者Icon');
+            $table->string('user_icon',255)->nullable()->default(NULL)->comment('使用者Icon');
+            $table->string('user_name',255)->nullable()->default(NULL)->comment('使用者名稱');
+            $table->string('user_account',255)->nullable()->default(NULL)->comment('使用者帳號');
+            $table->string('socail_icon',255)->nullable()->default(NULL)->comment('社群icon');
+            $table->string('socail_icon_color',255)->nullable()->default(NULL)->comment('社群icon顏色');
+            $table->string('link_title',255)->nullable()->default(NULL)->comment('連結名稱');
+            $table->string('link_href',255)->nullable()->default(NULL)->comment('超連結網址');
+            $table->string('link_target',255)->nullable()->default(NULL)->comment('是否新開視窗');
+            $table->longText('socail_info')->nullable()->comment('內容');
+            $table->string('post_date',255)->nullable()->default(NULL)->comment('發布日期');
+            $table->string('user_photo',255)->nullable()->default(NULL)->comment('使用者圖片');
+            $table->string('main_photo',255)->nullable()->default(NULL)->comment('主要圖片');
         });
     }
 

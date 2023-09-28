@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('type_name',255)->default('')->comment('類型名稱');
-            $table->string('type_info',255)->nullable()->default('')->comment('副標題');
-            $table->int('sort')->default(1)->comment('權重');
+            $table->string('type_info',255)->nullable()->default(NULL)->comment('副標題');
+            $table->int('sort',11)->default(1)->comment('權重');
         });
     }
 

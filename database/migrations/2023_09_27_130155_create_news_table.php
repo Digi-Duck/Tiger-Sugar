@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('title',255)->nullable()->default('')->comment('標題');
-            $table->longText('info')->nullable()->comment('副標題');
-            $table->int('sort')->nullable()->default('')->comment('權重');
+            $table->string('title',255)->nullable()->default(NULL)->comment('標題');
+            $table->longText('info')->nullable()->default(NULL)->comment('內容');
+            $table->int('sort',11)->nullable()->default(NULL)->comment('權重');
         });
     }
 
