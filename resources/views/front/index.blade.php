@@ -1,336 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.frontend-template')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiger Sugar 老虎堂｜虎虎生風｜黑糖專売</title>
-    <link rel="bookmark" href="./frontend-img/website-title-img/favicon.ico">
-
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-    <!-- bootstrap-icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <!-- aos -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+@section('css')
     <!-- 各分頁css -->
     <link rel="stylesheet" href="{{ asset('./css/index.css') }}">
-
     <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
-
     <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
-</head>
+@endsection
 
-<body>
-    <!-- 秋 header -->
-    <header>
-        <nav>
-            <section class="nav-logo">
-                <a href={{ route('front.index') }} title="前往首頁">
-                    <img class="nav-logo-btn" src="./frontend-img/header-img/LOGO.png" alt="tiger-logo">
-                </a>
-            </section>
-
-            <section class="nav-main">
-                <section class="main-menu">
-                    <!----------------------------- 關於我們 ------------------------------------>
-                    <a href={{ route('front.index.about') }} class="about-link" title="前往首頁的關於我們">
-                        <button type="button" class="blade-button">
-                            <div class="about">
-                                <div class="about-img">
-                                    <div class="main-menu-img">
-                                        <img class="main-menu-about" src="./frontend-img/header-img/about.png"
-                                            alt="about-icon">
-                                        <img class="main-menu-about-gold" src="./frontend-img/header-img/about-gold.png"
-                                            alt="about-icon">
-                                    </div>
-                                </div>
-                                <div class="main-menu-text">
-                                    <div class="text-ch">關於我們</div>
-                                    <div class="text-en">ABOUT</div>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-                    <!----------------------------- 產品經銷 ------------------------------------>
-                    <a href={{ route('front.index.distribution') }} class="distribution-link" title="前往首頁的產品經銷">
-                        <button type="button" class="blade-button">
-                            <div class="distribution">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
-                                        alt="distribution-icon">
-                                    <img class="main-menu-distribution-gold"
-                                        src="./frontend-img/header-img/distribution-gold.png"
-                                        alt="distribution-gold-icon">
-                                </div>
-                                <div class="main-menu-text">
-                                    <span class="text-ch">產品經銷</span>
-                                    <span class="text-en">DISTRIBUTION</span>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-                    <!----------------------------- 熱門經典 ------------------------------------>
-                    <a href={{ route('front.index.classic') }} class="classic-link" title="前往首頁的熱門經典">
-                        <button type="button" class="blade-button">
-                            <div class="classic">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-classic" src="./frontend-img/header-img/classic.png"
-                                        alt="classic-icon">
-                                    <img class="main-menu-classic-gold" src="./frontend-img/header-img/classic-gold.png"
-                                        alt="classic-gold-icon">
-                                </div>
-                                <div class="main-menu-text">
-                                    <span class="text-ch">熱門經典</span>
-                                    <span class="text-en">CLASSIC</span>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-                    <!----------------------------- 媒體露出 ------------------------------------>
-                    <a href={{ route('front.index.media') }} class="media-link" title="前往首頁的媒體露出">
-                        <button type="button" class="blade-button">
-                            <div class="media">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-media" src="./frontend-img/header-img/media.png"
-                                        alt="media-icon">
-                                    <img class="main-menu-media-gold" src="./frontend-img/header-img/media-gold.png"
-                                        alt="media-icon-icon">
-                                </div>
-                                <div class="main-menu-text">
-                                    <span class="text-ch">媒體露出</span>
-                                    <span class="text-en">MEDIA</span>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-                    <!----------------------------- 加盟專區 ------------------------------------>
-                    <a href={{ route('front.index.franchisee') }} class="franchisee-link" title="前往首頁的加盟專區">
-                        <button type="button" class="blade-button">
-                            <div class="franchisee">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-franchisee" src="./frontend-img/header-img/franchisee.png"
-                                        alt="franchisee-icon">
-                                    <img class="main-menu-franchisee-gold"
-                                        src="./frontend-img/header-img/franchisee-gold.png" alt="franchisee-gold-icon">
-                                </div>
-                                <div class="main-menu-text">
-                                    <span class="text-ch">加盟專區</span>
-                                    <span class="text-en">FRANCHISEE</span>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-
-                </section>
-                <!----------------------------- 社群連結 ------------------------------------>
-                <section class="social-menu">
-                    <div class="social-menu-main">
-                        <div class="social-menu-icon">
-                            <a href="https://www.facebook.com/twtigersugar/" title="facebook連結">
-                                <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png"
-                                    alt="icon-fb">
-                            </a>
-                        </div>
-
-                        <div class="social-menu-icon">
-                            <a href="https://www.instagram.com/twtigersugar/" title="instagram連結">
-                                <img class="social-menu-icon-ig" src="./frontend-img/header-img/ig.png"
-                                    alt="social-menu-icon-ig">
-                            </a>
-                        </div>
-                    </div>
-                    <!----------------------------- 語言選擇 ------------------------------------>
-                    <section class="language-menu ">
-                        <div class="language-position">
-                            <div class="drop-down-menu">
-                                <a href="#" title="語言切換">LANGUAGE &dtrif;</a>
-                            </div>
-                            <div class="drop-down-menu-sub">
-                                <div class="dropdown-content-ch">
-                                    <a href="https://tigersugar.com/" title="選擇中文">繁體中文</a>
-                                </div>
-                                <div class="dropdown-content-en">
-                                    <a href="https://en.tigersugar.com/" title="select on English">English</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-            </section>
-            <!-- 測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕 -->
-            <section class="jing-section btn">
-                <img class="jing-section-btn" src="./frontend-img/header-img/nav_menu_list.png" alt="navm-enu-list">
-            </section>
-
-
-
-            <!-- 漢堡條 測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕 -->
-            <div class="container menu">
-                <div class="nav-ham">
-                    <div class="mine-menu">
-                        <div class="flex-mine-menu">
-                            <div class="top-mine-menu">
-                                <!----------------------------- 關於我們 ------------------------------------>
-                                <a href={{ route('front.index.about') }} id="drop-about" title="前往首頁的關於我們">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-about">
-                                            <div class="about-img">
-                                                <img class="main-menu-about" src="./frontend-img/header-img/about.png"
-                                                    alt="about-icon">
-                                                <img class="main-menu-about-gold"
-                                                    src="./frontend-img/header-img/about-gold.png" alt="about-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <div class="main-menu-text-ch">關於我們</div>
-                                                <div class="main-menu-text-en">ABOUT</div>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </a>
-                                <!----------------------------- 產品經銷 ------------------------------------>
-                                <a href={{ route('front.index.distribution') }} id="drop-distribution"
-                                    title="前往首頁的產品經銷">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-distribution">
-                                            <div class="distribution-img">
-                                                <img class="main-menu-distribution"
-                                                    src="./frontend-img/header-img/distribution.png"
-                                                    alt="distribution-icon">
-                                                <img class="main-menu-distribution-gold"
-                                                    src="./frontend-img/header-img/distribution-gold.png"
-                                                    alt="distribution-gold-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <span class="main-menu-text-ch">產品經銷</span>
-                                                <span class="main-menu-text-en">DISTRIBUTION</span>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </a>
-                                <!----------------------------- 熱門經典 ------------------------------------>
-                                <a href={{ route('front.index.classic') }} id="drop-classic" title="前往首頁的熱門經典">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-classic">
-                                            <div class="classic-img">
-                                                <img class="main-menu-classic"
-                                                    src="./frontend-img/header-img/classic.png" alt="classic-icon">
-                                                <img class="main-menu-classic-gold"
-                                                    src="./frontend-img/header-img/classic-gold.png"
-                                                    alt="classic-gold-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <span class="main-menu-text-ch">熱門經典</span>
-                                                <span class="main-menu-text-en">CLASSIC</span>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </a>
-                                <!----------------------------- 媒體露出 ------------------------------------>
-                                <a href={{ route('front.index.media') }} id="drop-media" title="前往首頁的媒體露出">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-media">
-                                            <div class="media-img">
-                                                <img class="main-menu-media" src="./frontend-img/header-img/media.png"
-                                                    alt="media-icon">
-                                                <img class="main-menu-media-gold"
-                                                    src="./frontend-img/header-img/media-gold.png"
-                                                    alt="media-icon-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <span class="main-menu-text-ch">媒體露出</span>
-                                                <span class="main-menu-text-en">MEDIA</span>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </a>
-                                <!----------------------------- 加盟專區 ------------------------------------>
-                                <a href={{ route('front.index.franchisee') }} id="drop-franchisee" title="前往首頁的加盟專區">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-franchisee">
-                                            <div class="franchisee-img">
-                                                <img class="main-menu-franchisee"
-                                                    src="./frontend-img/header-img/franchisee.png"
-                                                    alt="franchisee-icon">
-                                                <img class="main-menu-franchisee-gold"
-                                                    src="./frontend-img/header-img/franchisee-gold.png"
-                                                    alt="franchisee-gold-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <span class="main-menu-text-ch">加盟專區</span>
-                                                <span class="main-menu-text-en">FRANCHISEE</span>
-                                            </div>
-                                        </div>
-                                    </button>
-                                </a>
-                            </div>
-
-
-                            <div class="mine-menu-btn">
-                                <!----------------------------- 語言選擇 ------------------------------------>
-                                <div class="swiper-language">
-                                    <div class="swiper mySwiper header-swiper-container">
-                                        <div class="swiper-wrapper header-swiper-language">
-                                            <div class="swiper-slide">
-                                                <a href="" title="繁體中文" title="選擇中文">
-                                                    <div class="header-slide-ch">
-                                                        繁體中文
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="" title="english" title="select on English">
-                                                    <div class="header-slide-en">
-                                                        ENGLISH
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-button-next header-button-next"></div>
-                                        <div class="swiper-button-prev header-button-prev"></div>
-                                    </div>
-                                </div>
-                                <!----------------------------- 社群連結 ------------------------------------>
-                                <div class="social-menu-icon">
-                                    <a href="https://www.facebook.com/twtigersugar/" title="老虎堂FB">
-                                        <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png"
-                                            alt="icon-fb">
-                                    </a>
-                                    <a href="https://www.instagram.com/twtigersugar/" title="老虎堂IG">
-                                        <img class="social-menu-icon-ig" src="./frontend-img/header-img/ig.png"
-                                            alt="social-menu-icon-ig">
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-        </nav>
-        <!-- 秋 選單紀錄 按鈕 -->
-        <a href={{ route('front.distribution_confirm') }} class="shop-cart-container" title="前往購物車">
-            <button type="button" class="blade-button">
-                <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
-                <div class="shop-cart-amount-area">
-                    <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
-                    <div class="shop-cart-number">0</div>
-                </div>
-            </button>
-        </a>
-
-        <!-- 秋 top 按鈕 -->
-        <div class="go-to-top-container topbtn">
-            <!-- "#"回到最上方 -->
-            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg"
-                    alt="go_to_top"></a>
-        </div>
-    </header>
-
+@section('main')
     <main>
         <!-- 夫 banner -->
         <section id="banner">
@@ -421,8 +98,7 @@
             <div class="header">
                 <div class="container">
                     <div class="title">
-                        <img class="ig-icon" src="{{ asset('./frontend-img/index-img/social/ig.png') }}"
-                            alt="ig-icon">
+                        <img class="ig-icon" src="{{ asset('./frontend-img/index-img/social/ig.png') }}" alt="ig-icon">
                         <div class="title-text">
                             <div class="title-text-1">社群回饋</div>
                             <div class="title-text-2">SOCIAL</div>
@@ -497,15 +173,14 @@
                                         <img class="product-img"
                                             src="./frontend-img/index-img/distribution/1668998205a2557a7b2e94197ff767970b67041697.jpg"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }}
-                                                class="commodity-more-button btn" title="更多商品">
+                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                                title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
                                                 </button>
@@ -529,15 +204,14 @@
                                         <img class="product-img"
                                             src="./frontend-img/index-img/distribution/165899031442a0e188f5033bc65bf8d78622277c4e.jpg"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }}
-                                                class="commodity-more-button btn" title="更多商品">
+                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                                title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
                                                 </button>
@@ -561,15 +235,14 @@
                                         <img class="product-img"
                                             src="./frontend-img/index-img/distribution/165899100742a0e188f5033bc65bf8d78622277c4e.jpg"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }}
-                                                class="commodity-more-button btn" title="更多商品">
+                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                                title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
                                                 </button>
@@ -593,15 +266,14 @@
                                         <img class="product-img"
                                             src="./frontend-img/index-img/distribution/1658908734cfecdb276f634854f3ef915e2e980c31.jpg"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }}
-                                                class="commodity-more-button btn" title="更多商品">
+                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                                title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
                                                 </button>
@@ -625,15 +297,14 @@
                                         <img class="product-img"
                                             src="./frontend-img/index-img/distribution/16589912415878a7ab84fb43402106c575658472fa.jpg"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }}
-                                                class="commodity-more-button btn" title="更多商品">
+                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                                title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
                                                 </button>
@@ -657,15 +328,14 @@
                                         <img class="product-img"
                                             src="./frontend-img/index-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
                                                 src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }}
-                                                class="commodity-more-button btn" title="更多商品">
+                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                                title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
                                                 </button>
@@ -715,8 +385,7 @@
                     <div class="container">
                         <div class="title">
                             <div class="title-icon">
-                                <img src="{{ asset('./frontend-img/index-img/classic/icon1-3.png') }}"
-                                    alt="產品圖片">
+                                <img src="{{ asset('./frontend-img/index-img/classic/icon1-3.png') }}" alt="產品圖片">
                             </div>
                             <div class="title-name">
                                 <h2 class="menu-text">熱門經典</h2>
@@ -1114,8 +783,7 @@
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
                                     <img class="intro-logo"
-                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
-                                        alt="menu_icon">
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}" alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
                                     <div class="menu-info-title">鮮奶取代奶精</div>
@@ -1126,8 +794,7 @@
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
                                     <img class="intro-logo"
-                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
-                                        alt="menu_icon">
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}" alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
                                     <div class="menu-info-title">現煮波霸超Q彈</div>
@@ -1139,8 +806,7 @@
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
                                     <img class="intro-logo"
-                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
-                                        alt="menu_icon">
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}" alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
                                     <div class="menu-info-title">黑糖波霸多層次</div>
@@ -1150,8 +816,7 @@
                             <div data-aos="fade-up" class="intro">
                                 <div class="icon-section">
                                     <img class="intro-logo"
-                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}"
-                                        alt="menu_icon">
+                                        src="{{ asset('./frontend-img/index-img/classic/icon.png') }}" alt="menu_icon">
                                 </div>
                                 <div class="menu-info">
                                     <div class="menu-info-title">虎式黑糖超濃郁</div>
@@ -1358,8 +1023,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a target="_blank" href="https://fairylolita.com/tigersugar-taoyuan"
-                                title="fairylolita部落格">
+                            <a target="_blank" href="https://fairylolita.com/tigersugar-taoyuan" title="fairylolita部落格">
                                 <div class="outer-card">
                                     <div class="card">
                                         <div id="news-img-7" class="news-img">
@@ -1442,8 +1106,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a target="_blank" href="https://kel8257.pixnet.net/blog/post/355514156"
-                                title="痞客邦部落格">
+                            <a target="_blank" href="https://kel8257.pixnet.net/blog/post/355514156" title="痞客邦部落格">
                                 <div class="outer-card">
                                     <div class="card">
                                         <div id="news-img-12" class="news-img">
@@ -1499,23 +1162,10 @@
             </div>
         </section>
     </main>
+@endsection
 
-    <!-- 秋 footer -->
-    <footer>
-        <p class="footer-text">Copyright © 201811 Tigersugar International Enterprise Co., Ltd.</p>
-    </footer>
-
-    <!-- aos -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <!-- ajax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-
+@section('js')
     <script src="{{ asset('./js/index.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
-</body>
+@endsection
 
-</html>

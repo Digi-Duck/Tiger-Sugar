@@ -54,22 +54,25 @@
                         </button>
                     </a>
                     <!----------------------------- 產品經銷 ------------------------------------>
-                    <a href={{ route('front.distribution') }} class="distribution-link" title="前往產品經銷頁">
-                        <button type="button" class="blade-button">
-                            <div class="distribution">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
-                                        alt="distribution-icon">
-                                    <img class="main-menu-distribution-gold"
-                                        src="./frontend-img/header-img/distribution-gold.png"
-                                        alt="distribution-gold-icon">
-                                </div>
-                                <div class="main-menu-text">
-                                    <span class="text-ch">產品經銷</span>
-                                    <span class="text-en">DISTRIBUTION</span>
-                                </div>
+                    @if (Route::is('front.index'))
+                        <a href={{ route('front.index.distribution') }} class="distribution-link" title="前往首頁的產品經銷">
+                        @else
+                            <a href={{ route('front.distribution') }} class="distribution-link" title="前往產品經銷頁">
+                    @endif
+                    <button type="button" class="blade-button">
+                        <div class="distribution">
+                            <div class="main-menu-img">
+                                <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
+                                    alt="distribution-icon">
+                                <img class="main-menu-distribution-gold"
+                                    src="./frontend-img/header-img/distribution-gold.png" alt="distribution-gold-icon">
                             </div>
-                        </button>
+                            <div class="main-menu-text">
+                                <span class="text-ch">產品經銷</span>
+                                <span class="text-en">DISTRIBUTION</span>
+                            </div>
+                        </div>
+                    </button>
                     </a>
                     <!----------------------------- 熱門經典 ------------------------------------>
                     <a href={{ route('front.index.classic') }} class="classic-link" title="前往首頁的熱門經典">
@@ -106,21 +109,25 @@
                         </button>
                     </a>
                     <!----------------------------- 加盟專區 ------------------------------------>
-                    <a href={{ route('front.franchisee') }} class="franchisee-link" title="前往加盟專區頁">
-                        <button type="button" class="blade-button">
-                            <div class="franchisee">
-                                <div class="main-menu-img">
-                                    <img class="main-menu-franchisee" src="./frontend-img/header-img/franchisee.png"
-                                        alt="franchisee-icon">
-                                    <img class="main-menu-franchisee-gold"
-                                        src="./frontend-img/header-img/franchisee-gold.png" alt="franchisee-gold-icon">
-                                </div>
-                                <div class="main-menu-text">
-                                    <span class="text-ch">加盟專區</span>
-                                    <span class="text-en">FRANCHISEE</span>
-                                </div>
+                    @if (Route::is('front.index'))
+                        <a href={{ route('front.index.franchisee') }} class="franchisee-link" title="前往首頁的加盟專區">
+                        @else
+                            <a href={{ route('front.franchisee') }} class="franchisee-link" title="前往加盟專區頁">
+                    @endif
+                    <button type="button" class="blade-button">
+                        <div class="franchisee">
+                            <div class="main-menu-img">
+                                <img class="main-menu-franchisee" src="./frontend-img/header-img/franchisee.png"
+                                    alt="franchisee-icon">
+                                <img class="main-menu-franchisee-gold"
+                                    src="./frontend-img/header-img/franchisee-gold.png" alt="franchisee-gold-icon">
                             </div>
-                        </button>
+                            <div class="main-menu-text">
+                                <span class="text-ch">加盟專區</span>
+                                <span class="text-en">FRANCHISEE</span>
+                            </div>
+                        </div>
+                    </button>
                     </a>
 
                 </section>
@@ -190,23 +197,27 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 產品經銷 ------------------------------------>
-                                <a href={{ route('front.distribution') }} id="drop-distribution" title="前往產品經銷頁">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-distribution">
-                                            <div class="distribution-img">
-                                                <img class="main-menu-distribution"
-                                                    src="./frontend-img/header-img/distribution.png"
-                                                    alt="distribution-icon">
-                                                <img class="main-menu-distribution-gold"
-                                                    src="./frontend-img/header-img/distribution-gold.png"
-                                                    alt="distribution-gold-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <span class="main-menu-text-ch">產品經銷</span>
-                                                <span class="main-menu-text-en">DISTRIBUTION</span>
-                                            </div>
+                                @if (Route::is('front.index'))
+                                    <a href={{ route('front.index.distribution') }} class="distribution-link" title="前往首頁的產品經銷">
+                                    @else
+                                        <a href={{ route('front.distribution') }} class="distribution-link" title="前往產品經銷頁">
+                                @endif
+                                <button type="button" class="drop-blade-button">
+                                    <div class="menu-distribution">
+                                        <div class="distribution-img">
+                                            <img class="main-menu-distribution"
+                                                src="./frontend-img/header-img/distribution.png"
+                                                alt="distribution-icon">
+                                            <img class="main-menu-distribution-gold"
+                                                src="./frontend-img/header-img/distribution-gold.png"
+                                                alt="distribution-gold-icon">
                                         </div>
-                                    </button>
+                                        <div class="main-menu-text">
+                                            <span class="main-menu-text-ch">產品經銷</span>
+                                            <span class="main-menu-text-en">DISTRIBUTION</span>
+                                        </div>
+                                    </div>
+                                </button>
                                 </a>
                                 <!----------------------------- 熱門經典 ------------------------------------>
                                 <a href={{ route('front.index.classic') }} id="drop-classic" title="前往首頁的熱門經典">
@@ -245,23 +256,26 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 加盟專區 ------------------------------------>
-                                <a href={{ route('front.franchisee') }} id="drop-franchisee" title="前往加盟專區頁">
-                                    <button type="button" class="drop-blade-button">
-                                        <div class="menu-franchisee">
-                                            <div class="franchisee-img">
-                                                <img class="main-menu-franchisee"
-                                                    src="./frontend-img/header-img/franchisee.png"
-                                                    alt="franchisee-icon">
-                                                <img class="main-menu-franchisee-gold"
-                                                    src="./frontend-img/header-img/franchisee-gold.png"
-                                                    alt="franchisee-gold-icon">
-                                            </div>
-                                            <div class="main-menu-text">
-                                                <span class="main-menu-text-ch">加盟專區</span>
-                                                <span class="main-menu-text-en">FRANCHISEE</span>
-                                            </div>
+                                @if (Route::is('front.index'))
+                                    <a href={{ route('front.index.franchisee') }} class="franchisee-link" title="前往首頁的加盟專區">
+                                    @else
+                                        <a href={{ route('front.franchisee') }} class="franchisee-link" title="前往加盟專區頁">
+                                @endif
+                                <button type="button" class="drop-blade-button">
+                                    <div class="menu-franchisee">
+                                        <div class="franchisee-img">
+                                            <img class="main-menu-franchisee"
+                                                src="./frontend-img/header-img/franchisee.png" alt="franchisee-icon">
+                                            <img class="main-menu-franchisee-gold"
+                                                src="./frontend-img/header-img/franchisee-gold.png"
+                                                alt="franchisee-gold-icon">
                                         </div>
-                                    </button>
+                                        <div class="main-menu-text">
+                                            <span class="main-menu-text-ch">加盟專區</span>
+                                            <span class="main-menu-text-en">FRANCHISEE</span>
+                                        </div>
+                                    </div>
+                                </button>
                                 </a>
                             </div>
 
