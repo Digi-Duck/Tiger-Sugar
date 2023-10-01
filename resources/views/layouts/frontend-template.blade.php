@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tiger Sugar 老虎堂｜虎虎生風｜黑糖專売</title>
-    <link rel="bookmark" href="./frontend-img/website-title-img/favicon.ico">
+    <link rel="bookmark" href={{ asset('./frontend-img/website-title-img/favicon.ico') }}>
 
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -28,7 +28,7 @@
         <nav>
             <section class="nav-logo">
                 <a href="{{ route('front.index') }}" title="前往首頁">
-                    <img class="nav-logo-btn" src="./frontend-img/header-img/LOGO.png" alt="tiger-logo">
+                    <img class="nav-logo-btn" src={{ asset('./frontend-img/header-img/LOGO.png') }} alt="tiger-logo">
                 </a>
             </section>
 
@@ -40,9 +40,10 @@
                             <div class="about">
                                 <div class="about-img">
                                     <div class="main-menu-img">
-                                        <img class="main-menu-about" src="./frontend-img/header-img/about.png"
-                                            alt="about-icon">
-                                        <img class="main-menu-about-gold" src="./frontend-img/header-img/about-gold.png"
+                                        <img class="main-menu-about"
+                                            src={{ asset('./frontend-img/header-img/about.png') }} alt="about-icon">
+                                        <img class="main-menu-about-gold"
+                                            src={{ asset('./frontend-img/header-img/about-gold.png') }}
                                             alt="about-icon">
                                     </div>
                                 </div>
@@ -62,10 +63,12 @@
                     <button type="button" class="blade-button">
                         <div class="distribution">
                             <div class="main-menu-img">
-                                <img class="main-menu-distribution" src="./frontend-img/header-img/distribution.png"
+                                <img class="main-menu-distribution"
+                                    src={{ asset('./frontend-img/header-img/distribution.png') }}
                                     alt="distribution-icon">
                                 <img class="main-menu-distribution-gold"
-                                    src="./frontend-img/header-img/distribution-gold.png" alt="distribution-gold-icon">
+                                    src={{ asset('./frontend-img/header-img/distribution-gold.png') }}
+                                    alt="distribution-gold-icon">
                             </div>
                             <div class="main-menu-text">
                                 <span class="text-ch">產品經銷</span>
@@ -79,9 +82,10 @@
                         <button type="button" class="blade-button">
                             <div class="classic">
                                 <div class="main-menu-img">
-                                    <img class="main-menu-classic" src="./frontend-img/header-img/classic.png"
-                                        alt="classic-icon">
-                                    <img class="main-menu-classic-gold" src="./frontend-img/header-img/classic-gold.png"
+                                    <img class="main-menu-classic"
+                                        src={{ asset('./frontend-img/header-img/classic.png') }} alt="classic-icon">
+                                    <img class="main-menu-classic-gold"
+                                        src={{ asset('./frontend-img/header-img/classic-gold.png') }}
                                         alt="classic-gold-icon">
                                 </div>
                                 <div class="main-menu-text">
@@ -96,9 +100,10 @@
                         <button type="button" class="blade-button">
                             <div class="media">
                                 <div class="main-menu-img">
-                                    <img class="main-menu-media" src="./frontend-img/header-img/media.png"
+                                    <img class="main-menu-media" src={{ asset('./frontend-img/header-img/media.png') }}
                                         alt="media-icon">
-                                    <img class="main-menu-media-gold" src="./frontend-img/header-img/media-gold.png"
+                                    <img class="main-menu-media-gold"
+                                        src={{ asset('./frontend-img/header-img/media-gold.png') }}
                                         alt="media-icon-icon">
                                 </div>
                                 <div class="main-menu-text">
@@ -117,10 +122,11 @@
                     <button type="button" class="blade-button">
                         <div class="franchisee">
                             <div class="main-menu-img">
-                                <img class="main-menu-franchisee" src="./frontend-img/header-img/franchisee.png"
-                                    alt="franchisee-icon">
+                                <img class="main-menu-franchisee"
+                                    src={{ asset('./frontend-img/header-img/franchisee.png') }} alt="franchisee-icon">
                                 <img class="main-menu-franchisee-gold"
-                                    src="./frontend-img/header-img/franchisee-gold.png" alt="franchisee-gold-icon">
+                                    src={{ asset('./frontend-img/header-img/franchisee-gold.png') }}
+                                    alt="franchisee-gold-icon">
                             </div>
                             <div class="main-menu-text">
                                 <span class="text-ch">加盟專區</span>
@@ -136,14 +142,14 @@
                     <div class="social-menu-main">
                         <div class="social-menu-icon">
                             <a href="https://www.facebook.com/twtigersugar/" title="facebook連結">
-                                <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png"
+                                <img class="social-menu-icon-fb" src={{ asset('./frontend-img/header-img/fb.png') }}
                                     alt="icon-fb">
                             </a>
                         </div>
 
                         <div class="social-menu-icon">
                             <a href="https://www.instagram.com/twtigersugar/" title="instagram連結">
-                                <img class="social-menu-icon-ig" src="./frontend-img/header-img/ig.png"
+                                <img class="social-menu-icon-ig" src={{ asset('./frontend-img/header-img/ig.png') }}
                                     alt="social-menu-icon-ig">
                             </a>
                         </div>
@@ -168,7 +174,8 @@
             </section>
             <!-- 測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕測試toggle按鈕 -->
             <section class="jing-section btn">
-                <img class="jing-section-btn" src="./frontend-img/header-img/nav_menu_list.png" alt="navm-enu-list">
+                <img class="jing-section-btn" src={{ asset('./frontend-img/header-img/nav_menu_list.png') }}
+                    alt="navm-enu-list">
             </section>
 
 
@@ -184,10 +191,12 @@
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-about">
                                             <div class="about-img">
-                                                <img class="main-menu-about" src="./frontend-img/header-img/about.png"
+                                                <img class="main-menu-about"
+                                                    src={{ asset('./frontend-img/header-img/about.png') }}
                                                     alt="about-icon">
                                                 <img class="main-menu-about-gold"
-                                                    src="./frontend-img/header-img/about-gold.png" alt="about-icon">
+                                                    src={{ asset('./frontend-img/header-img/about-gold.png') }}
+                                                    alt="about-icon">
                                             </div>
                                             <div class="main-menu-text">
                                                 <div class="main-menu-text-ch">關於我們</div>
@@ -198,18 +207,20 @@
                                 </a>
                                 <!----------------------------- 產品經銷 ------------------------------------>
                                 @if (Route::is('front.index'))
-                                    <a href={{ route('front.index.distribution') }} class="distribution-link" title="前往首頁的產品經銷">
+                                    <a href={{ route('front.index.distribution') }} class="distribution-link"
+                                        title="前往首頁的產品經銷">
                                     @else
-                                        <a href={{ route('front.distribution') }} class="distribution-link" title="前往產品經銷頁">
+                                        <a href={{ route('front.distribution') }} class="distribution-link"
+                                            title="前往產品經銷頁">
                                 @endif
                                 <button type="button" class="drop-blade-button">
                                     <div class="menu-distribution">
                                         <div class="distribution-img">
                                             <img class="main-menu-distribution"
-                                                src="./frontend-img/header-img/distribution.png"
+                                                src={{ asset('./frontend-img/header-img/distribution.png') }}
                                                 alt="distribution-icon">
                                             <img class="main-menu-distribution-gold"
-                                                src="./frontend-img/header-img/distribution-gold.png"
+                                                src={{ asset('./frontend-img/header-img/distribution-gold.png') }}
                                                 alt="distribution-gold-icon">
                                         </div>
                                         <div class="main-menu-text">
@@ -225,9 +236,10 @@
                                         <div class="menu-classic">
                                             <div class="classic-img">
                                                 <img class="main-menu-classic"
-                                                    src="./frontend-img/header-img/classic.png" alt="classic-icon">
+                                                    src={{ asset('./frontend-img/header-img/classic.png') }}
+                                                    alt="classic-icon">
                                                 <img class="main-menu-classic-gold"
-                                                    src="./frontend-img/header-img/classic-gold.png"
+                                                    src={{ asset('./frontend-img/header-img/classic-gold.png') }}
                                                     alt="classic-gold-icon">
                                             </div>
                                             <div class="main-menu-text">
@@ -242,10 +254,11 @@
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-media">
                                             <div class="media-img">
-                                                <img class="main-menu-media" src="./frontend-img/header-img/media.png"
+                                                <img class="main-menu-media"
+                                                    src={{ asset('./frontend-img/header-img/media.png') }}
                                                     alt="media-icon">
                                                 <img class="main-menu-media-gold"
-                                                    src="./frontend-img/header-img/media-gold.png"
+                                                    src={{ asset('./frontend-img/header-img/media-gold.png') }}
                                                     alt="media-icon-icon">
                                             </div>
                                             <div class="main-menu-text">
@@ -257,17 +270,20 @@
                                 </a>
                                 <!----------------------------- 加盟專區 ------------------------------------>
                                 @if (Route::is('front.index'))
-                                    <a href={{ route('front.index.franchisee') }} class="franchisee-link" title="前往首頁的加盟專區">
+                                    <a href={{ route('front.index.franchisee') }} class="franchisee-link"
+                                        title="前往首頁的加盟專區">
                                     @else
-                                        <a href={{ route('front.franchisee') }} class="franchisee-link" title="前往加盟專區頁">
+                                        <a href={{ route('front.franchisee') }} class="franchisee-link"
+                                            title="前往加盟專區頁">
                                 @endif
                                 <button type="button" class="drop-blade-button">
                                     <div class="menu-franchisee">
                                         <div class="franchisee-img">
                                             <img class="main-menu-franchisee"
-                                                src="./frontend-img/header-img/franchisee.png" alt="franchisee-icon">
+                                                src={{ asset('./frontend-img/header-img/franchisee.png') }}
+                                                alt="franchisee-icon">
                                             <img class="main-menu-franchisee-gold"
-                                                src="./frontend-img/header-img/franchisee-gold.png"
+                                                src={{ asset('./frontend-img/header-img/franchisee-gold.png') }}
                                                 alt="franchisee-gold-icon">
                                         </div>
                                         <div class="main-menu-text">
@@ -307,11 +323,12 @@
                                 <!----------------------------- 社群連結 ------------------------------------>
                                 <div class="social-menu-icon">
                                     <a href="https://www.facebook.com/twtigersugar/" title="老虎堂FB">
-                                        <img class="social-menu-icon-fb" src="./frontend-img/header-img/fb.png"
-                                            alt="icon-fb">
+                                        <img class="social-menu-icon-fb"
+                                            src={{ asset('./frontend-img/header-img/fb.png') }} alt="icon-fb">
                                     </a>
                                     <a href="https://www.instagram.com/twtigersugar/" title="老虎堂IG">
-                                        <img class="social-menu-icon-ig" src="./frontend-img/header-img/ig.png"
+                                        <img class="social-menu-icon-ig"
+                                            src={{ asset('./frontend-img/header-img/ig.png') }}
                                             alt="social-menu-icon-ig">
                                     </a>
                                 </div>
@@ -323,9 +340,11 @@
         <!-- 秋 選單紀錄 按鈕 -->
         <a href={{ route('front.distribution_confirm') }} class="shop-cart-container" title="前往購物車">
             <button type="button" class="blade-button">
-                <img class="shop-cart" src="./frontend-img/header-img/shop_cart_button.svg" alt="前往購物車">
+                <img class="shop-cart" src={{ asset('./frontend-img/header-img/shop_cart_button.svg') }}
+                    alt="前往購物車">
                 <div class="shop-cart-amount-area">
-                    <img class="shop-cart-amount" src="./frontend-img/header-img/amount.svg" alt="前往購物車">
+                    <img class="shop-cart-amount" src={{ asset('./frontend-img/header-img/amount.svg') }}
+                        alt="前往購物車">
                     <div class="shop-cart-number">0</div>
                 </div>
             </button>
@@ -334,8 +353,8 @@
         <!-- 秋 top 按鈕 -->
         <div class="go-to-top-container topbtn">
             <!-- "#"回到最上方 -->
-            <a href="#" title="回到最上方"><img class="go-to-top" src="./frontend-img/header-img/go_to_top.svg"
-                    alt="go_to_top"></a>
+            <a href="#" title="回到最上方"><img class="go-to-top"
+                    src={{ asset('./frontend-img/header-img/go_to_top.svg') }} alt="go_to_top"></a>
         </div>
     </header>
 
