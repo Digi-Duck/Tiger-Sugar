@@ -171,13 +171,13 @@
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="./frontend-img/index-img/distribution/1668998205a2557a7b2e94197ff767970b67041697.jpg"
+                                            src="{{asset('./frontend-img/index-img/distribution/1668998205a2557a7b2e94197ff767970b67041697.jpg')}}"
                                             alt="產品圖片">
-                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="{{asset('./frontend-img/index-img/distribution/add_for_ask.svg')}}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
-                                                src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
+                                                src="{{asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg')}}"
                                                 alt="黃色加入以詢問">
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
@@ -202,13 +202,13 @@
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="./frontend-img/index-img/distribution/165899031442a0e188f5033bc65bf8d78622277c4e.jpg"
+                                            src="{{asset('./frontend-img/index-img/distribution/165899031442a0e188f5033bc65bf8d78622277c4e.jpg')}}"
                                             alt="產品圖片">
-                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="{{asset('./frontend-img/index-img/distribution/add_for_ask.svg')}}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
-                                                src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
+                                                src="{{asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg')}}"
                                                 alt="黃色加入以詢問">
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
@@ -233,13 +233,13 @@
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="./frontend-img/index-img/distribution/165899100742a0e188f5033bc65bf8d78622277c4e.jpg"
+                                            src="{{asset('./frontend-img/index-img/distribution/165899100742a0e188f5033bc65bf8d78622277c4e.jpg')}}"
                                             alt="產品圖片">
-                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="{{asset('./frontend-img/index-img/distribution/add_for_ask.svg')}}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
-                                                src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
+                                                src="{{asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg')}}"
                                                 alt="黃色加入以詢問">
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
@@ -264,13 +264,13 @@
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="./frontend-img/index-img/distribution/1658908734cfecdb276f634854f3ef915e2e980c31.jpg"
+                                            src="{{asset('./frontend-img/index-img/distribution/1658908734cfecdb276f634854f3ef915e2e980c31.jpg')}}"
                                             alt="產品圖片">
-                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="{{asset('./frontend-img/index-img/distribution/add_for_ask.svg')}}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
-                                                src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
+                                                src="{{asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg')}}"
                                                 alt="黃色加入以詢問">
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
@@ -295,13 +295,13 @@
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="./frontend-img/index-img/distribution/16589912415878a7ab84fb43402106c575658472fa.jpg"
+                                            src="{{asset('./frontend-img/index-img/distribution/16589912415878a7ab84fb43402106c575658472fa.jpg')}}"
                                             alt="產品圖片">
-                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="{{asset('./frontend-img/index-img/distribution/add_for_ask.svg')}}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
-                                                src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
+                                                src="{{asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg')}}"
                                                 alt="黃色加入以詢問">
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
@@ -326,13 +326,13 @@
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="./frontend-img/index-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg"
+                                            src="{{asset('./frontend-img/index-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg')}}"
                                             alt="產品圖片">
-                                        <img class="ask-icon" src="./frontend-img/index-img/distribution/add_for_ask.svg"
+                                        <img class="ask-icon" src="{{asset('./frontend-img/index-img/distribution/add_for_ask.svg')}}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <img class="ask-icon-hover"
-                                                src="./frontend-img/index-img/distribution/add_for_ask_hover.svg"
+                                                src="{{asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg')}}"
                                                 alt="黃色加入以詢問">
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
@@ -874,25 +874,25 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <video class="video swiper-slide" autoplay loop muted id="video-real-case">
-                            <source src="./frontend-img/index-img/media/phpwT1PCF.mp4" type="video/mp4">
+                            <source src="{{asset('./frontend-img/index-img/media/phpwT1PCF.mp4')}}" type="video/mp4">
                         </video>
                         <i class="fa-solid fa-volume-xmark volumn"></i>
                     </div>
                     <div class="swiper-slide">
                         <video class="video swiper-slide" autoplay loop muted id="video-state-of-qatar">
-                            <source src="./frontend-img/index-img/media/phpEGFGi8.mp4" type="video/mp4">
+                            <source src="{{asset('./frontend-img/index-img/media/phpEGFGi8.mp4')}}" type="video/mp4">
                         </video>
                         <i class="fa-solid fa-volume-xmark volumn"></i>
                     </div>
                     <div class="swiper-slide">
                         <video class="video swiper-slide" autoplay loop muted id="video-panama">
-                            <source src="./frontend-img/index-img/media/phpqk13yA.mp4" type="video/mp4">
+                            <source src="{{asset('./frontend-img/index-img/media/phpqk13yA.mp4')}}" type="video/mp4">
                         </video>
                         <i class="fa-solid fa-volume-xmark volumn"></i>
                     </div>
                     <div class="swiper-slide">
                         <video class="video swiper-slide" autoplay loop muted id="video-animation">
-                            <source src="./frontend-img/index-img/media/phpHdx8fZ.mp4" type="video/mp4">
+                            <source src="{{asset('./frontend-img/index-img/media/phpHdx8fZ.mp4')}}" type="video/mp4">
                         </video>
                         <i class="fa-solid fa-volume-xmark volumn"></i>
                     </div>
