@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Continent extends Model
 {
-    protected $table = 'continent';
+    protected $table = 'continents';
     protected $fillable = [
         'continent_tw',
         'continent_en'

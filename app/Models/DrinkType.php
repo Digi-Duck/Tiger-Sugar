@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DrinkType extends Model
 {
-    protected $table = 'drink_type';
+    protected $table = 'drink_types';
     protected $fillable = [
         'type_name',
         'type_info',

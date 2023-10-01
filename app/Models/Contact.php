@@ -9,7 +9,7 @@ class Contact extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'contact';
+    protected $table = 'contacts';
 
     protected $dates = ['deleted_at'];
 

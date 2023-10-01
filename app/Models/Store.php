@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $table = 'store';
+    protected $table = 'stores';
     protected $fillavle = [
         'franchise_id',
         'name',

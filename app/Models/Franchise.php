@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Franchise extends Model
 {
-    protected $table = 'franchise';
+    protected $table = 'franchises';
     protected $fillable = [
         'country_name',
         'continent_id',

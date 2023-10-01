@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DrinkEn extends Model
 {
-    protected $table = 'drink_en';
+    protected $table = 'drinks_en';
     protected $fillable = [
         'type_id',
         'drink_name',
