@@ -31,7 +31,8 @@
                     </div>
                     <!-- 老虎堂logo -->
                     <div class="tiger-main-logo">
-                        <img src="./frontend-img/franchisee-img/logo-Join Our Franchise!.svg" alt="老虎堂加入我們Logo">
+                        <img src="{{ asset('./frontend-img/franchisee-img/logo-Join Our Franchise!.svg') }}"
+                            alt="老虎堂加入我們Logo">
                     </div>
                     <div class="steps-title">
                         <span>授</span>
