@@ -22,11 +22,11 @@ class City extends Model
 
     public function Country()
     {
-        return $this->belongsTo(country::class, 'country_id');
+        return $this->belongsTo(Country::class, 'country_id');
     }
 
     public function Shops()
     {
-        return $this->hasMany(shops::class, 'city_id')->ordeerBy('sort','asc');
+        return $this->hasMany(Shops::class, 'city_id')->ordeerBy('sort','asc');
     }
 }
