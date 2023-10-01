@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('sort')->default(1)->comment('權重');
             $table->string('title_zh')->comment('中文商品名稱');
-            $table->string('title_zh')->comment('中文商品名稱');
+            $table->string('title_en')->comment('英文商品名稱');
             $table->integer('title_id')->comment('商品種類代號');
             $table->string('info')->comment('商品介紹');
             $table->string('img')->comment('圖片路徑');
