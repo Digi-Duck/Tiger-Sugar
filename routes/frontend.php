@@ -11,8 +11,8 @@ Route::get('/franchisee', [FrontController::class, 'franchisee'])->name('front.f
 Route::get('/franchisee-form', [FrontController::class, 'franchiseeForm'])->name('front.franchisee_form'); //加盟表單頁
 
 //header跳轉到首頁各section的路由
-Route::get('#link-about', [FrontController::class, 'indexToAbout'])->name('front.index.about'); //首頁的關於我們section
-Route::get('#link-distribution', [FrontController::class, 'indexToDistribution'])->name('front.index.distribution'); //首頁的產品經銷section
-Route::get('#link-classic', [FrontController::class, 'indexToClassic'])->name('front.index.classic'); //首頁的熱門經典section
-Route::get('#link-media', [FrontController::class, 'indexToMedia'])->name('front.index.media'); //首頁的媒體露出section
-Route::get('#link-franchisee', [FrontController::class, 'indexToFranchisee'])->name('front.index.franchisee'); //首頁的加盟專區section
+Route::get('#link-about')->name('front.index.about'); //首頁的關於我們section
+Route::get('#link-distribution')->name('front.index.distribution'); //首頁的產品經銷section
+Route::get('#link-classic')->name('front.index.classic'); //首頁的熱門經典section
+Route::get('#link-media')->name('front.index.media'); //首頁的媒體露出section
+Route::get('#link-franchisee')->name('front.index.franchisee'); //首頁的加盟專區section
