@@ -1,11 +1,11 @@
-header .blade-button{
+.blade-button{
     background-color: transparent;
     border: 0;
     padding: 0;
     cursor: pointer;
 }
 
-header .drop-blade-button{
+.drop-blade-button{
     width: 100%;
     background-color: transparent;
     border: 0;
