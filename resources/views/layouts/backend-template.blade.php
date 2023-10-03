@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class="flex w-[100%]">
         <nav class="bg-[#0C1219] flex flex-col h-[100vh]">
             <a href="{{ route('front.index') }}">
