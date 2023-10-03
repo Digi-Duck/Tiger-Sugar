@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Banner;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -11,7 +11,7 @@ class BannerController extends Controller
     function __construct()
     {
         $this->redirect = '/admin';
-        $this->index = 'admin.banner.index';
+        $this->index = 'backend.banner.index';
         $this->create = 'admin.banner.create';
         $this->edit = 'admin.banner.edit';
     }
