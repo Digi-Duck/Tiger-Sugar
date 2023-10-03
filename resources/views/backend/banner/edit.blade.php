@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
 @section('css')
 
 @endsection
 
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
