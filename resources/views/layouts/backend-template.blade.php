@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    @yield('css')
 </head>
 
 <body>
 
     <div class="flex w-[100%]">
         <nav class="bg-[#0C1219] flex flex-col h-[100vh]">
-            <a href="{{ route('front.index') }}">
+            <a href="{{ route('back.index') }}">
                 <button type="button">
                     <img src="{{ asset('./frontend-img/header-img/LOGO.png') }}" alt=""
                         class="h-[50px] mx-[10px] mt-[13px]">
@@ -119,12 +120,14 @@
         </nav>
         <div class="flex flex-col flex-1 relative">
             <div class="relative z-[1] w-[100%] h-[100vh]">
+                <div class="w-[100%] h-[76px] bg-[#0C1219]"></div>
                 @yield('main')
             </div>
             <img src="{{ asset('./frontend-img/index-img/about/about_bg.png') }}" alt=""
                 class="w-[100%] h-[100vh] absolute z-0">
         </div>
     </div>
+    @yield('js')
 </body>
 
 </html>
