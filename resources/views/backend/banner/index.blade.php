@@ -2,7 +2,10 @@
 
 @section('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<<<<<<< Updated upstream
     {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> --}}
+=======
+>>>>>>> Stashed changes
 @endsection
 
 @section('main')
@@ -14,7 +17,11 @@
                         廣告橫幅管理
                     </h4>
                     <div class="card-body">
+<<<<<<< Updated upstream
                         <a class="btn btn-success" href="{{route('back.banner.create')}}">新增</a>
+=======
+                        <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
+>>>>>>> Stashed changes
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
@@ -64,7 +71,7 @@
 @section('js')
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('#table').DataTable({
