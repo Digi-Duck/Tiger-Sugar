@@ -147,7 +147,7 @@
                             <h2>修改密碼</h2>
                         </button>
                     </a>
-                    <form method="post" action="{{ route('logout') }}">
+                    <form method="post" action="{{ route('logout') }}" class="logout">
                         @csrf
                         <button type="submit">
                             <h2>登出</h2>

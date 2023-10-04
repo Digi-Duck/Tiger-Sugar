@@ -14,6 +14,7 @@ body{
     font-size: 20px;
     color: white;
     font-family: Microsoft JhengHei;
+    text-align: center;
 }
 
 #backend button{
@@ -162,8 +163,7 @@ body{
 }
 
 #backend .user-info,
-#backend .change-password,
-#backend .logout{
+#backend .change-password{
     border: 0.8px white solid;
     margin-right: 20px;
     padding: 14px 8px;
@@ -187,11 +187,21 @@ body{
     z-index: 2;
 }
 #backend .logout{
+    border: 0.8px white solid;
     width: 163px;
     position: absolute;
     top: 110px;
     left: 0;
     z-index: 2;
+}
+
+#backend .change-password>button{
+    width: 100%;
+}
+
+#backend .logout>button{
+    width: 100%;
+    padding: 14px 8px;
 }
 
 #backend .right-down-area{
