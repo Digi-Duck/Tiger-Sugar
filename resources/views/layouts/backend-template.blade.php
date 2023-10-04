@@ -140,18 +140,19 @@
                 <div class="user-area">
                     <input type="checkbox" id="checkbox" hidden>
                     <label for="checkbox" class="user-info">
-                        <h2>您好，使用者 <i class="bi bi-caret-down"></i></h2>
+                        <h2>您好，{{ Auth::user()->name }} <i class="bi bi-caret-down"></i></h2>
                     </label>
                     <a href="" title="修改密碼" class="change-password">
                         <button>
                             <h2>修改密碼</h2>
                         </button>
                     </a>
-                    <a href="" title="登出" class="logout">
-                        <button>
+                    <form method="post" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit">
                             <h2>登出</h2>
                         </button>
-                    </a>
+                    </form>
                 </div>
             </div>
             <div class="right-down-area">
