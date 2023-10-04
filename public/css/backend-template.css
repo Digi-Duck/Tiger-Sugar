@@ -1,0 +1,209 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#backend {
+    width: 100%;
+    display: flex;
+}
+
+#backend h2{
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    font-family: Microsoft JhengHei;
+}
+
+#backend button{
+    border: 0;
+    background-color: transparent;
+}
+
+#backend nav{
+    background-color: #0C1219;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#backend .logo{
+    height: 50px;
+    margin: 13px 10px 0 10px;
+}
+
+#backend .buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 100%;
+}
+
+#backend .single-button{
+    border: 0.8px transparent solid;
+    margin: 0 6px;
+    padding: 16px 0;
+}
+
+#backend .single-button:hover{
+    border-color: #f7dc83;
+}
+
+#backend .group-left-buttons{
+    border: 0.8px transparent solid;
+    margin: 0 6px;
+    padding: 16px 0;
+    position: relative;
+}
+
+#backend .group-left-buttons:hover{
+    border-color: #f7dc83;
+}
+
+#backend .group-right-buttons-area{
+    width: 100%;
+    height: 100%;
+    background-color: #0c1219;
+    top: 0;
+    left: 101%;
+    z-index: 2;
+    display: none;
+    position: absolute;
+}
+
+#backend .group-right-buttons{
+    width: 100%;
+    border: 0.8px transparent solid;
+}
+
+#backend .group-right-buttons:hover{
+    border-color: #f7dc83;
+}
+
+#backend .group-right-buttons-text{
+    width: 100%;
+    background-color: #0c1219;
+    padding: 16px 0;
+    color: white;
+    font-family: Microsoft JhengHei;
+    font-size: 20px;
+}
+
+#backend #news:hover h2,
+#backend #banner:hover h2,
+#backend #social:hover h2,
+#backend #place:hover h2,
+#backend #country:hover h2,
+#backend #city:hover h2,
+#backend #shop:hover h2,
+#backend #menu-ch:hover h2,
+#backend #drink-type:hover h2,
+#backend #drink:hover h2,
+#backend #menu-en:hover h2,
+#backend #drink-type-en:hover h2,
+#backend #drink-en:hover h2,
+#backend #media:hover h2,
+#backend #contact:hover h2,
+#backend #distribution:hover h2,
+#backend #blog-news:hover h2,
+#backend #product-manage:hover h2,
+#backend #product-type:hover h2,
+#backend #product:hover h2,
+#backend #franchise-explain:hover h2{
+    color: #f7dc83;
+}
+
+#backend #place:hover .group-right-buttons-area,
+#backend #menu-ch:hover .group-right-buttons-area,
+#backend #menu-en:hover .group-right-buttons-area,
+#backend #product-manage:hover .group-right-buttons-area{
+    display: block;
+}
+
+#backend #country:hover .group-right-buttons-text,
+#backend #city:hover .group-right-buttons-text,
+#backend #shop:hover .group-right-buttons-text,
+#backend #drink-type:hover .group-right-buttons-text,
+#backend #drink:hover .group-right-buttons-text,
+#backend #drink-type-en:hover .group-right-buttons-text,
+#backend #drink-en:hover .group-right-buttons-text,
+#backend #product-type:hover .group-right-buttons-text,
+#backend #product:hover .group-right-buttons-text{
+    color: #f7dc83;
+}
+
+#backend .right-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+
+#backend .right-top-area{
+    width: 100%;
+    height: 76px;
+    background-color: #0c1219;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#backend .back-to-front{
+    border: 0.8px white solid;
+    margin-right: 20px;
+    padding: 12px 8px;
+}
+
+#backend .user-area{
+    position: relative;
+}
+
+#backend .user-info,
+#backend .user-name,
+#backend .logout{
+    border: 0.8px white solid;
+    margin-right: 20px;
+    padding: 14px 8px;
+}
+
+#backend .user-name,
+#backend .logout{
+    display: none;
+}
+
+#backend #checkbox:checked~.user-name,
+#backend #checkbox:checked~.logout{
+    display: block;
+}
+
+#backend .user-name{
+    width: 163px;
+    position: absolute;
+    top: 55px;
+    left: 0;
+}
+#backend .logout{
+    width: 163px;
+    position: absolute;
+    top: 110px;
+    left: 0;
+}
+
+#backend .right-down-area{
+    width: 100%;
+    height: calc(100vh - 76px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+#backend .right-down-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+}
