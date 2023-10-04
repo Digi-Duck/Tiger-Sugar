@@ -12,14 +12,18 @@
                     <div class="card-body">
                         <form method="POST" action="/admin/social/store" enctype="multipart/form-data">
                             @csrf
-                            <input hidden class="form-control" name="type" id="social_type" value="embed" required>
+                            <input class="form-control" name="type" id="social_type" value="embed" required>
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">嵌入方式上稿</a>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
+                                        aria-selected="true">嵌入方式上稿</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">客製化方式上稿</a>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile"
+                                        aria-selected="false">客製化方式上稿</a>
                                 </li>
                             </ul>
 
@@ -140,13 +144,19 @@
 
 @section('js')
     <script>
-        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
-            console.log($(e.target).attr('id'));
-
-            if($(e.target).attr('id') == 'pills-profile-tab'){
-                document.querySelector("#social_type").setAttribute('value','custom');
-            }else{
-                document.querySelector("#social_type").setAttribute('value','embed');
+        let embed = document.querySelector('#pills-home-tab');
+        let custom = document.querySelector('#pills-profile-tab');
+        let type = document.querySelector('#social_type');
+        embed.addEventListener('click', function() {
+            if (type.value === 'custom') {
+                type.value = 'embed'
+                console.log(type.value);
+            }
+        })
+        custom.addEventListener('click', function() {
+            if (type.value === 'embed') {
+                type.value = 'custom'
+                console.log(type.value);
             }
         })
     </script>

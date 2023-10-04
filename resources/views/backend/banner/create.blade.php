@@ -16,16 +16,6 @@
                             @csrf
                             <input class="form-control" name="type" id="banner_type" value="圖片" required hidden>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
-
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">圖片</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">影片</a>
-                                </li> --}}
-
-
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
