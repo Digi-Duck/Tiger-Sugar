@@ -6,6 +6,7 @@ use App\Models\Banner;
 use Illuminate\Support\Facades\Route;
 
 // 後端路由
+Route::middleware('auth')->group(function () {
 Route::get('/back',[BackController::class, 'index'])->name('back.index'); //後臺首頁
 Route::get('/back/reset/',[BackController::class, 'reset'])->name('back.reset');
 Route::post('/back/reset/store/{id}',[BackController::class, 'reset_store'])->name('back.reset.store');
@@ -27,3 +28,4 @@ Route::post('/back/banner/delete/{id}',[BannerController::class, 'delete'])->nam
 // Route::get('/back/banner/',function () {
 //     return view('/backend/banner/index');
 // })->name('back.bannindex');
+});
