@@ -44,7 +44,7 @@ body{
 #backend .single-button{
     border: 0.8px transparent solid;
     margin: 0 6px;
-    padding: 16px 0;
+    padding: 8px 0;
 }
 
 #backend .single-button:hover{
@@ -54,7 +54,7 @@ body{
 #backend .group-left-buttons{
     border: 0.8px transparent solid;
     margin: 0 6px;
-    padding: 16px 0;
+    padding: 8px 0;
     position: relative;
 }
 
@@ -65,7 +65,6 @@ body{
 #backend .group-right-buttons-area{
     width: 100%;
     height: 100%;
-    background-color: #0c1219;
     top: 0;
     left: 101%;
     z-index: 2;
@@ -198,7 +197,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
 }
 
 #backend .right-down-bg{
