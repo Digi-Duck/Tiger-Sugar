@@ -1,10 +1,5 @@
-@extends('layouts.app')
-
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
-@endsection
-
-@section('content')
+@extends('layouts.backend-template')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -49,9 +44,6 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#table').DataTable({

@@ -21,7 +21,7 @@
                 </button>
             </a>
             <div class="buttons">
-                <a href="" id="news" class="single-button" title="前往最新消息設定頁">
+                <a href="{{ route('back.news.index') }}" id="news" class="single-button" title="前往最新消息設定頁">
                     <button class="backend-buttons">
                         <h2>最新消息</h2>
                     </button>
