@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Services\FileService;
 
-
-
+use function PHPSTORM_META\type;
 
 class BannerController extends Controller
 {
@@ -33,38 +32,39 @@ class BannerController extends Controller
     public function store(Request $request)
     {
 
+    $type = $request -> type;
 
-        // if ($request->pc_image_url != '')  {
+    if ($type == '圖片') {
+        $request->validate([
+            'pc_image_url' => 'image',
+            'mb_image_url' => 'image',
+        ]);
+    } elseif ($type == '影片') {
+        $request->validate([
+            'pc_video_url' => 'url',
+            'mb_video_url' => 'url',
+        ]);
+    }
+
+        // if (
+        //     $request->hasFile('pc_image_url') && $request->hasFile('mb_image_url')
+        // ) {
         //     $request->validate([
         //         'pc_image_url' => 'image',
         //         'mb_image_url' => 'image',
         //     ]);
         // }
-
-        if (
-            $request->has('pc_image_url') && $request->input('pc_image_url') != '' &&
-            $request->has('mb_image_url') && $request->input('mb_image_url') != ''
-        ) {
-            $request->validate([
-                'pc_image_url' => 'image',
-                'mb_image_url' => 'image',
-            ]);
-        }
-        if (
-            $request->has('pc_video_url') && $request->input('pc_video_url') != '' &&
-            $request->has('mb_video_url') && $request->input('mb_video_url') != ''
-        ) {
-            $request->validate([
-                'pc_video_url' => 'url',
-                'mb_video_url' => 'url',
-            ]);
-        }
+        // if (
+        //     $request->hasFile('pc_image_url') && $request->hasFile('mb_image_url')
+        // ) {
+        //     $request->validate([
+        //         'pc_video_url' => 'url',
+        //         'mb_video_url' => 'url',
+        //     ]);
+        // }
 
 
-
-
-
-
+        
         // $new_record = new Banner();
         // $new_record -> type = $request->type;
 

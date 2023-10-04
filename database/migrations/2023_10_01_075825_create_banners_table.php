@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->default('1')->comment('圖片或影片');
+            $table->string('type')->default('圖片')->comment('圖片或影片');
             $table->string('pc_image_url')->nullable()->comment('電腦版圖片url');
             $table->string('mb_image_url')->nullable()->comment('手機版圖片url');
             $table->string('image_alt')->nullable()->comment('圖片替代文字');

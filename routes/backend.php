@@ -20,15 +20,7 @@ Route::post('/back/banner/store',[BannerController::class, 'store'])->name('back
 Route::get('/back/banner/edit/{id}',[BannerController::class, 'edit'])->name('back.banner.edit');
 Route::post('/back/banner/update/{id}',[BannerController::class, 'update'])->name('back.banner.update');
 Route::post('/back/banner/delete/{id}',[BannerController::class, 'delete'])->name('back.banner.delete');
-// Route::get('/back/banner/',function () {
-//     return view('/backend/banner/create');
-// })->name('back.banner');
-// Route::post('/back/banner/',function () {
-//     return view('/backend/banner/edit');
-// })->name('back.banner');
-// Route::get('/back/banner/',function () {
-//     return view('/backend/banner/index');
-// })->name('back.bannindex');
+
 
 Route::get('/back/social/index',[SocialController::class,'index'])->name('back.social.index');
 Route::get('/back/social/edit',[SocialController::class,'edit'])->name('back.social.edit');
