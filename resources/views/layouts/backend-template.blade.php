@@ -168,7 +168,7 @@
                 </div>
             </div>
             <div class="right-down-area">
-                @section('main')
+                @yield('main')
                     <img src="{{ asset('frontend-img/index-img/about/about_bg.png') }}" alt="背景圖片"
                         class="right-down-bg">
                 </div>
