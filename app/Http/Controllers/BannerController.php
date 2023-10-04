@@ -31,71 +31,35 @@ class BannerController extends Controller
 
     public function store(Request $request)
     {
+        $type = $request->type;
 
-    $type = $request -> type;
-
-    if ($type == '圖片') {
-        $request->validate([
-            'pc_image_url' => 'image',
-            'mb_image_url' => 'image',
-        ]);
-    } elseif ($type == '影片') {
-        $request->validate([
-            'pc_video_url' => 'url',
-            'mb_video_url' => 'url',
-        ]);
-    }
-
-        // if (
-        //     $request->hasFile('pc_image_url') && $request->hasFile('mb_image_url')
-        // ) {
-        //     $request->validate([
-        //         'pc_image_url' => 'image',
-        //         'mb_image_url' => 'image',
-        //     ]);
-        // }
-        // if (
-        //     $request->hasFile('pc_image_url') && $request->hasFile('mb_image_url')
-        // ) {
-        //     $request->validate([
-        //         'pc_video_url' => 'url',
-        //         'mb_video_url' => 'url',
-        //     ]);
-        // }
+        if ($type == '圖片') {
+            $request->validate([
+                'pc_image_url' => 'image',
+                'mb_image_url' => 'image',
+            ]);
+        } elseif ($type == '影片') {
+            $request->validate([
+                'pc_video_url' => 'url',
+                'mb_video_url' => 'url',
+            ]);
+        }
 
 
-        
-        // $new_record = new Banner();
-        // $new_record -> type = $request->type;
+        $new_record = new Banner();
+        $new_record -> type = $request->type;
 
-        // if($request->pc_video_url !=''){
-        //     $pc_video_url = $request->pc_video_url;
-        //     parse_str( parse_url( $pc_video_url, PHP_URL_QUERY ), $url_para);
-        //     $new_record -> pc_video_url = $url_para['v'];
-        // }
+        if($request->pc_video_url !=''){
+            $pc_video_url = $request->pc_video_url;
+            parse_str( parse_url( $pc_video_url, PHP_URL_QUERY ), $url_para);
+            $new_record -> pc_video_url = $url_para['v'];
+        }
 
-        // if($request->mb_video_url !=''){
-        //     $mb_video_url = $request->mb_video_url;
-        //     parse_str( parse_url( $mb_video_url, PHP_URL_QUERY ), $url_para1);
-        //     $new_record -> mb_video_url = $url_para1['v'];
-        // }
-
-        // $new_record -> image_alt = $request->image_alt;
-        // $new_record -> link_url = $request->link_url;
-        // $new_record -> link_target = $request->link_target;
-        // $new_record -> sort = $request->sort;
-        // if($request->hasFile('pc_image_url')){
-        //     $new_record->pc_image_url = $this->upload_file($request->file('pc_image_url'));
-        // }
-        // if($request->hasFile('mb_image_url')){
-        //     $new_record->mb_image_url = $this->upload_file($request->file('mb_image_url'));
-        // }
-
-        // $new_record -> save();
-        // return redirect('/admin/banner')->with('message','新增成功!');
-
-
-
+        if($request->mb_video_url !=''){
+            $mb_video_url = $request->mb_video_url;
+            parse_str( parse_url( $mb_video_url, PHP_URL_QUERY ), $url_para1);
+            $new_record -> mb_video_url = $url_para1['v'];
+        }
 
         // dd($request->file('pc_image_url'));
         $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
@@ -113,7 +77,6 @@ class BannerController extends Controller
             'mb_video_url' => $request->mb_video_url,
             'sort' => $request->sort,
         ]);
-        //產品更新功能
         return redirect(route('back.banner.index'))->with('message', '新增成功!');
     }
 
