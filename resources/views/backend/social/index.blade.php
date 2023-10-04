@@ -1,10 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
-@endsection
-
-@section('content')
+3
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -13,7 +10,7 @@
                         社群回饋管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/social/create">新增</a>
+                        <a class="btn btn-success" href="{{route('back.social.create')}}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
@@ -55,7 +52,6 @@
 @section('js')
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#table').DataTable({
