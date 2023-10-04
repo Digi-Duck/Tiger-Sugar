@@ -75,6 +75,7 @@ body{
 #backend .group-right-buttons{
     width: 100%;
     border: 0.8px transparent solid;
+    padding: 0;
 }
 
 #backend .group-right-buttons:hover{
@@ -82,9 +83,10 @@ body{
 }
 
 #backend .group-right-buttons-text{
+    border: 0.8px transparent solid;
     width: 100%;
     background-color: #0c1219;
-    padding: 16px 0;
+    padding: 4px 0;
     color: white;
     font-family: Microsoft JhengHei;
     font-size: 20px;
@@ -160,34 +162,36 @@ body{
 }
 
 #backend .user-info,
-#backend .user-name,
+#backend .change-password,
 #backend .logout{
     border: 0.8px white solid;
     margin-right: 20px;
     padding: 14px 8px;
 }
 
-#backend .user-name,
+#backend .change-password,
 #backend .logout{
     display: none;
 }
 
-#backend #checkbox:checked~.user-name,
+#backend #checkbox:checked~.change-password,
 #backend #checkbox:checked~.logout{
     display: block;
 }
 
-#backend .user-name{
+#backend .change-password{
     width: 163px;
     position: absolute;
     top: 55px;
     left: 0;
+    z-index: 2;
 }
 #backend .logout{
     width: 163px;
     position: absolute;
     top: 110px;
     left: 0;
+    z-index: 2;
 }
 
 #backend .right-down-area{

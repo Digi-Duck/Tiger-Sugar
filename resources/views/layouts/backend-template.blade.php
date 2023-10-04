@@ -142,7 +142,11 @@
                     <label for="checkbox" class="user-info">
                         <h2>您好，使用者 <i class="bi bi-caret-down"></i></h2>
                     </label>
-                    <h2 class="user-name">使用者</h2>
+                    <a href="" title="修改密碼" class="change-password">
+                        <button>
+                            <h2>修改密碼</h2>
+                        </button>
+                    </a>
                     <a href="" title="登出" class="logout">
                         <button>
                             <h2>登出</h2>
