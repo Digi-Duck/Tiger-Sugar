@@ -16,7 +16,6 @@
                         <form method="POST" action="{{route('back.banner.store')}}" enctype="multipart/form-data">
                             @csrf
                             <input hidden class="form-control" name="type" id="banner_type" value="圖片" required>
-
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">圖片</a>
@@ -33,14 +32,14 @@
                                     <div class="form-group row">
                                         <label for="pc_image_url" class="col-2 col-form-label">上傳圖片</label>
                                         <div class="col-10">
-                                            <input type="file" class="form-control-file" id="pc_image_url" name="pc_image_url">
+                                            <input type="file" class="form-control-file" id="pc_image_url" name="pc_image_url" required>
                                         </div>
                                         <div class="col-12"><p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p></div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="mb_image_url" class="col-2 col-form-label">上傳圖片(手機版)</label>
                                         <div class="col-10">
-                                            <input type="file" class="form-control-file" id="mb_image_url" name="mb_image_url">
+                                            <input type="file" class="form-control-file" id="mb_image_url" name="mb_image_url" required>
                                         </div>
                                         <div class="col-12"><p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p></div>
                                     </div>
