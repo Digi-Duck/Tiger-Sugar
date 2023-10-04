@@ -132,13 +132,8 @@
 
         <div class="right-container">
             <div class="right-top-area">
-<<<<<<< Updated upstream
-                <a href="" title="回老虎堂前台" class="back-to-front">
-                    <button class="backend-buttons">
-=======
                 <a href="{{ route('front.index') }}" title="回老虎堂前台" class="back-to-front">
-                    <button>
->>>>>>> Stashed changes
+                    <button class="backend-buttons">
                         <h2>回老虎堂前台</h2>
                     </button>
                 </a>
@@ -147,13 +142,8 @@
                     <label for="checkbox" class="user-info">
                         <h2>您好，{{ Auth::user()->name }} <i class="bi bi-caret-down"></i></h2>
                     </label>
-<<<<<<< Updated upstream
-                    <a href="" title="修改密碼" class="change-password">
-                        <button class="backend-buttons">
-=======
                     <a href="{{ route('back.reset') }}" title="修改密碼" class="change-password">
-                        <button>
->>>>>>> Stashed changes
+                        <button class="backend-buttons">
                             <h2>修改密碼</h2>
                         </button>
                     </a>
