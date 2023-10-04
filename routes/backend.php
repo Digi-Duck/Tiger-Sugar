@@ -29,12 +29,9 @@ Route::post('/back/banner/delete/{id}',[BannerController::class, 'delete'])->nam
 // Route::get('/back/banner/',function () {
 //     return view('/backend/banner/index');
 // })->name('back.bannindex');
-<<<<<<< Updated upstream
-});
-=======
 
 Route::get('/back/social/index',[SocialController::class,'index'])->name('back.social.index');
 Route::get('/back/social/edit',[SocialController::class,'edit'])->name('back.social.edit');
 Route::get('/back/social/create',[SocialController::class,'create'])->name('back.social.create');
 
->>>>>>> Stashed changes
+});
