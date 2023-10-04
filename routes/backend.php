@@ -14,7 +14,7 @@ Route::post('/back/reset/store/{id}',[BackController::class, 'reset_store'])->na
 //banner路由
 Route::get('/back/banner/index',[BannerController::class, 'index'])->name('back.banner.index');
 Route::get('/back/banner/create',[BannerController::class, 'create'])->name('back.banner.create');
-Route::post('/back/banner/store/{id}',[BannerController::class, 'store'])->name('back.banner.store');
+Route::post('/back/banner/store',[BannerController::class, 'store'])->name('back.banner.store');
 Route::get('/back/banner/edit/{id}',[BannerController::class, 'edit'])->name('back.banner.edit');
 Route::post('/back/banner/update/{id}',[BannerController::class, 'update'])->name('back.banner.update');
 Route::post('/back/banner/delete/{id}',[BannerController::class, 'delete'])->name('back.banner.delete');

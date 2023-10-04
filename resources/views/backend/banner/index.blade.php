@@ -14,7 +14,7 @@
                         廣告橫幅管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/banner/create">新增</a>
+                        <a class="btn btn-success" href="{{route('back.banner.create')}}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
