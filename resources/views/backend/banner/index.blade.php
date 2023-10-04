@@ -44,7 +44,7 @@
                                     <td>{{$list->sort}}</td>
                                     <td>
                                         @if($list->id != 1 )<a class="btn btn-sm btn-success" href="{{route('back.banner.edit', ['id' =>$list->id])}}">編輯</a> @endif
-                                        @if($list->id != 1 ) <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button> @endif
+                                        @if($list->id != 1 ) <button class="btn btn-sm btn-danger" type="submit" data-listid="{{$list->id}}">刪除</button> @endif
 
                                         <form class="delete-form" action="/admin/banner/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
                                             @csrf
