@@ -6,10 +6,16 @@ use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Services\FileService;
 
 
 class BannerController extends Controller
 {
+
+    public function __construct(protected FileService $fileService)
+    {
+    }
+
 
     public function index()
     {
@@ -55,12 +61,15 @@ class BannerController extends Controller
 
 
 
-        $pcimg = Storage::putFile('public/upload', $request->file('pc_image_url'));
-        $mbimg = Storage::putFile('public/upload', $request->file('mb_image_url'));
+
+        // dd($request->file('pc_image_url'));
+        $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'),'banner-pcimg');
+        $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'),'banner-mbimg');
+                // dd($pcimg);
         Banner::create([
             'type' => $request->type,
-            'pc_imgae_url' => str_replace('public', 'storage', $pcimg),
-            'mb_image_url' =>str_replace('public', 'storage', $mbimg),
+            'pc_image_url' =>$pcimg,
+            'mb_imgage_url' =>$mbimg,
             'image_alt' => $request->image_alt,
             'link_url' =>$request->link_url,
             'link_target' => $request->link_target,
