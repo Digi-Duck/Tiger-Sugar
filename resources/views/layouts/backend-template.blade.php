@@ -6,13 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<<<<<<< Updated upstream
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('./css/backend-template.css') }}">
-=======
-    @vite('resources/css/app.css')
->>>>>>> Stashed changes
     @yield('css')
 </head>
 
@@ -133,19 +129,6 @@
                 </a>
             </div>
         </nav>
-<<<<<<< Updated upstream
-=======
-        <div class="flex flex-col flex-1 relative">
-            <div class="relative z-[1] w-[100%] h-[100vh]">
-                @yield('main')
-            </div>
-            <img src="{{ asset('./frontend-img/index-img/about/about_bg.png') }}" alt=""
-                class="w-[100%] h-[100vh] absolute z-0">
-        </div>
-    </div>
-    @yield('js')
-</body>
->>>>>>> Stashed changes
 
         <div class="right-container">
             <div class="right-top-area">
