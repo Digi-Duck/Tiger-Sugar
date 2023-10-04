@@ -17,7 +17,7 @@ body{
     text-align: center;
 }
 
-#backend button{
+#backend .backend-buttons{
     border: 0;
     background-color: transparent;
 }
