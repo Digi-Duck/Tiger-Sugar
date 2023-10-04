@@ -30,10 +30,11 @@ class BackController extends Controller
     public function reset_store(Request $request,$id)
     {
         $request->validate([
-            'password' => 'required|min:8',
+            'password' => 'required|confirmed|min:8',
         ], [
             'name.required' => '必填',
             'name.min' => '密碼長度過短',
+            'password.confirmed' => '二次驗證密碼不一致',
         ]);
         $edit_user = User::find($id);
         $edit_user->update([
