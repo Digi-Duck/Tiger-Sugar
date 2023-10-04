@@ -2,10 +2,7 @@
 
 @section('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<<<<<<< Updated upstream
     {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/> --}}
-=======
->>>>>>> Stashed changes
 @endsection
 
 @section('main')
@@ -17,11 +14,7 @@
                         廣告橫幅管理
                     </h4>
                     <div class="card-body">
-<<<<<<< Updated upstream
                         <a class="btn btn-success" href="{{route('back.banner.create')}}">新增</a>
-=======
-                        <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
->>>>>>> Stashed changes
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
