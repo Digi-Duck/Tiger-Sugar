@@ -69,43 +69,6 @@ class BannerController extends Controller
         //     return redirect('/admin/banner')->with('message','新增成功!');
         // }
 
-        // //edit
-        // public function edit($id)
-        // {
-        //     $info = Banner::find($id);
-        //     return view('backend/banner/edit',compact('info','id'));
-        // }
-
-        // public function update(Request $request,$id)
-        // {
-        //     $banner= Banner::find($id);
-        //     $banner -> type = $request->type;
-        //     if($request->pc_video_url !=''){
-        //         $pc_video_url = $request->pc_video_url;
-        //         parse_str( parse_url( $pc_video_url, PHP_URL_QUERY ), $url_para);
-        //         $banner -> pc_video_url = $url_para['v'];
-        //     }
-
-        //     if($request->mb_video_url !=''){
-        //         $mb_video_url = $request->mb_video_url;
-        //         parse_str( parse_url( $mb_video_url, PHP_URL_QUERY ), $url_para1);
-        //         $banner -> mb_video_url = $url_para1['v'];
-        //     }
-        //     $banner -> image_alt = $request->image_alt;
-        //     $banner -> link_url = $request->link_url;
-        //     $banner -> link_target = $request->link_target;
-        //     $banner -> sort = $request->sort;
-
-        //     if($request->hasFile('pc_image_url')){
-        //         $this->delete_file($banner->pc_image_url);
-        //         $banner->pc_image_url = $this->upload_file($request->file('pc_image_url'));
-        //     }
-        //     if($request->hasFile('mb_image_url')){
-        //         $this->delete_file($banner->mb_image_url);
-        //         $banner->mb_image_url = $this->upload_file($request->file('mb_image_url'));
-        //     }
-
-        //     $banner -> save();
 
         $pcimg = Storage::putFile('public/upload', $request->file('pc_image_url'));
         $mbimg = Storage::putFile('public/upload', $request->file('mb_image_url'));
@@ -130,11 +93,61 @@ class BannerController extends Controller
     //     $new_record = new Banner();
     //     $new_record -> type = $request->type;
 
+<<<<<<< Updated upstream
     //     if($request->pc_video_url !=''){
     //         $pc_video_url = $request->pc_video_url;
     //         parse_str( parse_url( $pc_video_url, PHP_URL_QUERY ), $url_para);
     //         $new_record -> pc_video_url = $url_para['v'];
     //     }
+=======
+ //edit
+ public function edit($id)
+ {
+     $info = Banner::find($id);
+     return view('backend/banner/edit',compact('info','id'));
+ }
+
+ public function update(Request $request,$id)
+ {
+     $banner= Banner::find($id);
+     $banner -> type = $request->type;
+     if($request->pc_video_url !=''){
+         $pc_video_url = $request->pc_video_url;
+         parse_str( parse_url( $pc_video_url, PHP_URL_QUERY ), $url_para);
+         $banner -> pc_video_url = $url_para['v'];
+     }
+
+     if($request->mb_video_url !=''){
+         $mb_video_url = $request->mb_video_url;
+         parse_str( parse_url( $mb_video_url, PHP_URL_QUERY ), $url_para1);
+         $banner -> mb_video_url = $url_para1['v'];
+     }
+     $banner -> image_alt = $request->image_alt;
+     $banner -> link_url = $request->link_url;
+     $banner -> link_target = $request->link_target;
+     $banner -> sort = $request->sort;
+
+     if($request->hasFile('pc_image_url')){
+         $this->delete_file($banner->pc_image_url);
+         $banner->pc_image_url = $this->upload_file($request->file('pc_image_url'));
+     }
+     if($request->hasFile('mb_image_url')){
+         $this->delete_file($banner->mb_image_url);
+         $banner->mb_image_url = $this->upload_file($request->file('mb_image_url'));
+     }
+
+     $banner -> save();
+
+    }
+
+
+    public function delete($id)
+    {
+        $banner = Banner::find($id);
+        $this->delete_file($banner->pc_video_url);
+        $this->delete_file($banner->pc_video_url);
+        $banner->delete();
+>>>>>>> Stashed changes
 
     //     if($request->mb_video_url !=''){
     //         $mb_video_url = $request->mb_video_url;
