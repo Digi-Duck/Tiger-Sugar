@@ -1,6 +1,5 @@
 @extends('layouts.backend-template')
 
-3
 @section('main')
     <div class="container">
         <div class="row">

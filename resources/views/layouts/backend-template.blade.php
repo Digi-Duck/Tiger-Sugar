@@ -26,12 +26,12 @@
                         <h2>最新消息</h2>
                     </button>
                 </a>
-                <a href="" id="banner" class="single-button" title="前往廣告橫幅設定頁">
+                <a href="{{ route('back.banner.index') }}" id="banner" class="single-button" title="前往廣告橫幅設定頁">
                     <button class="backend-buttons">
                         <h2>廣告橫幅</h2>
                     </button>
                 </a>
-                <a href="" id="social" class="single-button" title="前往廣告橫幅設定頁">
+                <a href="{{ route('back.social.index') }}" id="social" class="single-button" title="前往廣告橫幅設定頁">
                     <button class="backend-buttons">
                         <h2>社群回饋</h2>
                     </button>
