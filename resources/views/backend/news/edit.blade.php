@@ -32,6 +32,9 @@
                             </div>
 
                             <hr>
+                            <a href="{{ route('back.news.index') }}">
+                                <button type="button" class="btn btn-primary d-block mx-auto">返回</button>
+                            </a>
                             <button type="submit" class="btn btn-primary d-block mx-auto">更新</button>
                         </form>
                     </div>

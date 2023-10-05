@@ -33,5 +33,5 @@ Route::get('news/create',[NewsController::class, 'create'])->name('back.news.cre
 Route::post('news/store',[NewsController::class, 'store'])->name('back.news.store');
 Route::get('news/edit/{id}',[NewsController::class, 'edit'])->name('back.news.edit');
 Route::post('news/update/{id}',[NewsController::class, 'update'])->name('back.news.update');
-Route::post('news/delete/{id}',[NewsController::class, 'delete'])->name('back.news.delete');
+Route::delete('news/delete/{id}',[NewsController::class, 'delete'])->name('back.news.delete');
 });
