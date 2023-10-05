@@ -13,7 +13,7 @@
                         廣告橫幅管理-編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action=/admin/banner/update/{{$id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('back.banner.update',['id'=> $info->id])}}" enctype="multipart/form-data">
                             @csrf
                             <input hidden class="form-control" name="type" id="banner_type" value="{{$info->type}}" required>
 

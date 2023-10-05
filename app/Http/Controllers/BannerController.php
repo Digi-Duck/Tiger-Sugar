@@ -32,50 +32,80 @@ class BannerController extends Controller
     //store
     public function store(Request $request)
     {
-        $type = $request->type;
+        // $new_record = Banner::create([
+        //     'type'=>$request->type,
+        // ]);
+        $banner = Banner::create([
+            'type' => $request->type,
+            // 'pc_image_url' => $pcimg,
+            // 'mb_imgage_url' => $mbimg,
+            'image_alt' => $request->image_alt,
+            'link_url' => $request->link_url,
+            'link_target' => $request->link_target,
+            // 'pc_video_url' => $request->pc_video_url,
+            // 'mb_video_url' => $request->mb_video_url,
+            'sort' => $request->sort,
+        ]);
+
+        // $new_record = new Banner();
+        // $new_record->type = $request->type;
+
+       $type = $request->type;
 
         if ($type == '圖片') {
             $request->validate([
                 'pc_image_url' => 'image',
                 'mb_image_url' => 'image',
             ]);
-        } elseif ($type == '影片') {
-            $request->validate([
-                'pc_video_url' => 'url',
-                'mb_video_url' => 'url',
+
+            $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
+            $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
+            $banner->update([
+                'pc_image_url' => $pcimg,
+                'mb_imgage_url' => $mbimg,
             ]);
         }
 
 
-        $new_record = new Banner();
-        $new_record->type = $request->type;
-
-        if ($request->pc_video_url != '') {
+        if ($type == '影片') {
+            $request->validate([
+                'pc_video_url' => 'url',
+                'mb_video_url' => 'url',
+            ]);
+            // PC
             $pc_video_url = $request->pc_video_url;
             parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
-            $new_record->pc_video_url = $url_para['v'];
-        }
-
-        if ($request->mb_video_url != '') {
+            // MB
             $mb_video_url = $request->mb_video_url;
             parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
-            $new_record->mb_video_url = $url_para1['v'];
+
+            $banner->update([
+                'pc_video_url' => $url_para['v'],
+                'mb_video_url' => $url_para1['v'],
+            ]);
         }
 
-        $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
-        $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
 
-        Banner::create([
-            'type' => $request->type,
-            'pc_image_url' => $pcimg,
-            'mb_imgage_url' => $mbimg,
-            'image_alt' => $request->image_alt,
-            'link_url' => $request->link_url,
-            'link_target' => $request->link_target,
-            'pc_video_url' => $request->pc_video_url,
-            'mb_video_url' => $request->mb_video_url,
-            'sort' => $request->sort,
-        ]);
+
+        // $new_record->type = $request->type;
+
+        // if ($request->pc_video_url != '') {
+        //     $pc_video_url = $request->pc_video_url;
+        //     parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
+        //     $new_record->pc_video_url = $url_para['v'];
+        // }
+
+        // if ($request->mb_video_url != '') {
+        //     $mb_video_url = $request->mb_video_url;
+        //     parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
+        //     $new_record->mb_video_url = $url_para1['v'];
+        // }
+
+        // $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
+        // $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
+
+
+        // dd($request->all());
         return redirect(route('back.banner.index'))->with('message', '新增成功!');
     }
 
@@ -90,32 +120,79 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         $banner = Banner::find($id);
-        // $banner->type = $request->type;
+        $banner->update([
+            'type' => $request->type,
+            'image_alt' => $request->image_alt,
+            'link_url' => $request->link_url,
+            'link_target' => $request->link_target,
+            'sort' => $request->sort,
+        ]);
 
-        if ($request->file('pc_image_url','mb_image_url')) {
+        $type = $request->type;
+
+        if ($type == '圖片') {
+            $request->validate([
+                'pc_image_url' => 'image',
+                'mb_image_url' => 'image',
+            ]);
             $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
             $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
-            $this->fileService->deleteUpload($request->file('pc_image_url'), 'banner-pcimg');
-            $this->fileService->deleteUpload($request->file('mb_image_url'), 'banner-mbimg');
             $banner->update([
-                'type' => $request->type,
                 'pc_image_url' => $pcimg,
                 'mb_imgage_url' => $mbimg,
-                'image_alt' => $request->image_alt,
-                'link_url' => $request->link_url,
-                'link_target' => $request->link_target,
-                'pc_video_url' => $request->pc_video_url,
-                'mb_video_url' => $request->mb_video_url,
-                'sort' => $request->sort,
-            ]);
-        } else {
-            $banner->update([
-                'name' => $request->name,
-                'price' => $request->price,
-                'status' => $request->status,
-                'desc' => $request->desc,
             ]);
         }
+
+        if ($type == '影片') {
+            $request->validate([
+                'pc_video_url' => 'url',
+                'mb_video_url' => 'url',
+            ]);
+            // PC
+            $pc_video_url = $request->pc_video_url;
+            parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
+            // MB
+            $mb_video_url = $request->mb_video_url;
+            parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
+
+            $banner->update([
+                'pc_video_url' => $url_para['v'],
+                'mb_video_url' => $url_para1['v'],
+            ]);
+        }
+
+
+
+
+        // if ($request->file('pc_image_url','mb_image_url')) {
+        //     $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
+        //     $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
+        //     $this->fileService->deleteUpload($request->file('pc_image_url'), 'banner-pcimg');
+        //     $this->fileService->deleteUpload($request->file('mb_image_url'), 'banner-mbimg');
+        //     $banner->update([
+        //         'type' => $request->type,
+        //         'pc_image_url' => $pcimg,
+        //         'mb_imgage_url' => $mbimg,
+        //         'image_alt' => $request->image_alt,
+        //         'link_url' => $request->link_url,
+        //         'link_target' => $request->link_target,
+        //         'pc_video_url' => $request->pc_video_url,
+        //         'mb_video_url' => $request->mb_video_url,
+        //         'sort' => $request->sort,
+        //     ]);
+        // } else {
+        //     $banner->update([
+        //         'type' => $request->type,
+        //         'image_alt' => $request->image_alt,
+        //         'link_url' => $request->link_url,
+        //         'link_target' => $request->link_target,
+        //         'pc_video_url' => $request->pc_video_url,
+        //         'mb_video_url' => $request->mb_video_url,
+        //         'sort' => $request->sort,
+        //     ]);
+        // }
+
+
         // if($request->pc_video_url !=''){
         //     $pc_video_url = $request->pc_video_url;
         //     parse_str( parse_url( $pc_video_url, PHP_URL_QUERY ), $url_para);
@@ -143,7 +220,7 @@ class BannerController extends Controller
 
         // $banner -> save();
 
-        // return redirect('/admin/banner')->with('message','更新成功!');
+        return redirect(route('back.banner.index'))->with('message','更新成功!');
     }
 
     //delete
