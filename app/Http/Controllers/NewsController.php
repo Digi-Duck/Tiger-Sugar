@@ -61,10 +61,11 @@ class NewsController extends Controller
         return redirect(route('back.news.index'))->with('message','更新成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $News = News::find($id);
         $News->delete();
-        return redirect(route('back.news.index'));
+        return 'success';
     }
 }
