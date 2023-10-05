@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -12,7 +9,7 @@
                         最新消息-編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/news/update/{{$list->id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.news.update',['id' => $list->id]) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="title" class="col-2 col-form-label">標題</label>

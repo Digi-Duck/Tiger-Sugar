@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
 @section('css')
 @endsection
 
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -12,7 +12,7 @@
                         最新消息管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/news/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.news.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">

@@ -7,13 +7,6 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->redirect = '/admin';
-    //     $this->index = 'admin.news.index';
-    //     $this->create = 'admin.news.create';
-    //     $this->edit = 'admin.news.edit';
-    // }
 
     public function index()
     {
@@ -21,42 +14,57 @@ class NewsController extends Controller
         return view('backend.news.index',compact('lists'));
     }
 
-    // public function create()
-    // {
-    //     return view($this->create);
-    // }
+    public function create()
+    {
+        return view('backend.news.create');
+    }
 
-    // public function store(Request $request)
-    // {
-    //     $new_record = new News();
-    //     $new_record -> title  = $request->title;
-    //     $new_record -> info  = $request->info;
-    //     $new_record -> sort  = $request->sort;
-    //     $new_record -> save();
-    //     return redirect('/admin/news')->with('message','新增成功!');
-    // }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'info' => 'required',
+            'sort' => 'required|max:11',
+        ],[
 
-    // public function edit($id)
-    // {
-    //     $list = News::find($id);
-    //     return view($this->edit,compact('list'));
-    // }
+        ]);
+        News::create([
+            'title' => $request->title,
+            'info' => $request->info,
+            'sort' => $request->sort,
+        ]);
 
-    // public function update(Request $request,$id)
-    // {
-    //     $News = News::find($id);
-    //     $News -> title  = $request->title;
-    //     $News -> info  = $request->info;
-    //     $News -> sort  = $request->sort;
+        return redirect(route('back.news.index'))->with('message','新增成功!');
+    }
 
-    //     $News -> save();
-    //     return redirect('/admin/news')->with('message','更新成功!');
-    // }
+    public function edit(Request $request, $id)
+    {
+        $list = News::find($id);
+        return view('backend.news.edit',compact('list'));
+    }
 
-    // public function delete($id)
-    // {
-    //     $News = News::find($id);
-    //     $News->delete();
-    //     return redirect('/admin/news')->with('message','刪除成功!');
-    // }
+    public function update(Request $request,$id)
+    {
+        $News = News::find($id);
+        $request->validate([
+            'title' => 'required|max:255',
+            'info' => 'required',
+            'sort' => 'required|max:11',
+        ],[
+
+        ]);
+        $News->update([
+            'title' => $request->title,
+            'info' => $request->info,
+            'sort' => $request->sort,
+        ]);
+        return redirect(route('back.news.index'))->with('message','更新成功!');
+    }
+
+    public function delete($id)
+    {
+        $News = News::find($id);
+        $News->delete();
+        return redirect(route('back.news.index'));
+    }
 }
