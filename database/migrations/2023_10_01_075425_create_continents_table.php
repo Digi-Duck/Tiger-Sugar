@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('continents', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('ontinent_tw')->comment('洲中文名字');
+            $table->string('continent_tw')->comment('洲中文名字');
             $table->string('continent_en')->comment('洲英文名字');
         });
     }

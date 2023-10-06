@@ -25,7 +25,7 @@
                         <hr>
                         <div class="d-flex justify-content-between">
                             <div>
-                                <form action="{{ route('back.banner.index')}}" method="post">
+                                <form action="{{ route('back.banner.index')}}" method="post" id="page-numbers">
                                     @csrf
                                     @method('get')
                                     <select id="page-select" onchange="changePages()">
@@ -115,9 +115,11 @@
         //     }
         // });
         function changePages(){
-            let pageSelect = document.querySelector('#page-select')
-            let pagenNumber = pageSelect.selectIndex;
-
+            let pageSelect = document.querySelector('#page-select');
+            let pageNumbers = document.querySelector('#page-numbers');
+            console.log(pageSelect.value);
+            // document.forms["myform"].submit();
+            pageNumbers.submit();
         }
     </script>
 @endsection
