@@ -22,6 +22,7 @@ class BannerController extends Controller
     {
         $lists = Banner::all();
         return view('backend.banner.index', compact('lists'));
+        $lists = $lists->paginate(5);
     }
 
     public function create()
@@ -51,7 +52,7 @@ class BannerController extends Controller
             $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
             $banner->update([
                 'pc_image_url' => $pcimg,
-                'mb_imgage_url' => $mbimg,
+                'mb_image_url' => $mbimg,
             ]);
         }
 
