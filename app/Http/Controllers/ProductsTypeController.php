@@ -2,69 +2,84 @@
 
 namespace App\Http\Controllers;
 
-use App\Products;
-use App\ProductsType;
+use App\Models\Products;
+use App\Models\ProductsType;
 use Illuminate\Http\Request;
 
 class ProductsTypeController extends Controller
 {
-    function __construct()
-    {
-        $this->redirect = '/admin';
-        $this->index = 'admin.products_type.index';
-        $this->create = 'admin.products_type.create';
-        $this->edit = 'admin.products_type.edit';
-    }
+    // function __construct()
+    // {
+    //     $this->redirect = '/admin';
+    //     $this->index = 'admin.products_type.index';
+    //     $this->create = 'admin.products_type.create';
+    //     $this->edit = 'admin.products_type.edit';
+    // }
 
     public function index()
     {
         $lists = ProductsType::all();
-        return view($this->index, compact('lists'));
+        return view('backend.products_type.index', compact('lists'));
     }
 
     public function create()
     {
-        return view($this->create);
+        return view('backend.products_type.create');
     }
 
     public function store(Request $request)
     {
-        $new_record = new ProductsType();
-        $new_record -> tw_name = $request->tw_name;
-        $new_record -> en_name = $request->en_name;
-        $new_record -> sort  = $request->sort;
-        $new_record -> save();
-        return redirect('/admin/products_type')->with('message','新增成功!');
+
+        $request->validate([
+            'sort' => 'required|max:11',
+            'tw_name' => 'required|max:255',
+            'en_name' => 'required|max:255',
+        ]);
+
+        ProductsType::create([
+            'sort' => $request->sort,
+            'tw_name' => $request->tw_name,
+            'en_name' => $request->en_name,
+        ]);
+
+        return redirect(route('back.products_type.index'))->with('message','新增成功!');
     }
 
     public function edit($id)
     {
         $list = ProductsType::find($id);
-        return view($this->edit,compact('list','id'));
+        return view('backend.products_type.edit',compact('list','id'));
     }
 
     public function update(Request $request,$id)
     {
-        $new_record = ProductsType::find($id);
-        $new_record -> tw_name = $request->tw_name;
-        $new_record -> en_name = $request->en_name;
-        $new_record -> sort  = $request->sort;
-        $new_record -> save();
+        $request->validate([
+            'sort' => 'required|max:11',
+            'tw_name' => 'required|max:255',
+            'en_name' => 'required|max:255',
+        ]);
 
-        return redirect('/admin/products_type')->with('message','更新成功!');
+        $product = ProductsType::find($id);
+        $product->update([
+            'sort' => $request->sort,
+            'tw_name' => $request->tw_name,
+            'en_name' => $request->en_name,
+        ]);
+
+        return redirect(route('back.products_type.index'))->with('message','更新成功!');
     }
 
     public function delete($id)
     {
         $DrinkType = ProductsType::find($id);
-        
-        $hasType = Products::where("type_id",$id)->count();
+
+        $hasType = Products::where('type_id',$id)->count();
         if($hasType)
-            return redirect('/admin/products_type')->with('message','目前'.$DrinkType->tw_name.'類型尚有'.$hasType.'個產品，請先刪除產品或更換產品類型');
+            return redirect(route('back.products_type.index'))->with('message','目前'.$DrinkType->tw_name.'類型尚有'.$hasType.'個產品，請先刪除產品或更換產品類型');
         else{
             $DrinkType->delete();
-            return redirect('/admin/products_type')->with('message','刪除成功!');
+            return redirect(route('back.products_type.index'))->with('message','刪除成功!');
         }
-        
+
     }
 }

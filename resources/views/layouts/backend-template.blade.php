@@ -109,7 +109,7 @@
                 <div id="product-manage" class="group-left-buttons">
                     <h2>商品管理</h2>
                     <div class="group-right-buttons-area">
-                        <a href="" id="product-type" title="前往商品類型管理設定頁">
+                        <a href="{{ route('back.products_type.index') }}" id="product-type" title="前往商品類型管理設定頁">
                             <button class="group-right-buttons backend-button">
                                 <div class="group-right-buttons-text">商品類型管理</div>
                             </button>

@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template ')
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
-@endsection
-
-@section('content')
+@section('main')
     @if(Session::has('message'))
     @endif
     <div class="container">
@@ -15,7 +11,7 @@
                         商品類型管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/products_type/create">新增</a>
+                        <a class="btn btn-success" href="{{ route('back.products_type.create') }}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
@@ -35,7 +31,7 @@
                                     <td>{{$list->en_name}}</td>
                                     <td>{{$list->sort}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/products_type/edit/{{$list->id}}">編輯</a>
+                                        <a class="btn btn-sm btn-success" href="{{ route('back.products_type.edit',['id' =>$list->id]) }}">編輯</a>
                                         <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                         <form class="delete-form" action="/admin/products_type/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
                                             @csrf

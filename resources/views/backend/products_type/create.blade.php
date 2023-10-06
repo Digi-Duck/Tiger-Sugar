@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -12,7 +9,7 @@
                         商品類型管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/products_type/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.products_type.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">

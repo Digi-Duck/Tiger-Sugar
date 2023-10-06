@@ -9,9 +9,9 @@ class ProductsType extends Model
     protected $table = 'product_types';
     protected $fillable = [
         'id',
+        'sort',
         'tw_name',
         'en_name',
-        'sort'
     ];
     public $timestamps = false;
 

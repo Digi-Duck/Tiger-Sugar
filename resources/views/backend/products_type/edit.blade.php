@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -12,7 +9,7 @@
                         商品類型管理-編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/products_type/update/{{$list->id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.products_type.update',['id' => $list->id]) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
