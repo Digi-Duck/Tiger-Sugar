@@ -17,7 +17,7 @@
                                     <input class="form-control" id="title" name="title" value="{{$list->title}}" required>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group row mt-2">
                                 <label for="info" class="col-2 col-form-label">內容</label>
                                 <div class="col-10">
                                     <textarea class="summernote" name="info" id="description" cols="30" rows="10">{{$list->info}}</textarea>
@@ -32,10 +32,12 @@
                             </div>
 
                             <hr>
-                            <a href="{{ route('back.news.index') }}">
-                                <button type="button" class="btn btn-primary d-block mx-auto">返回</button>
-                            </a>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">更新</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.news.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">更新</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -45,16 +47,4 @@
 @endsection
 
 @section('js')
-    <script>
-        $(document).ready(function() {
-            $('.summernote').summernote({
-                height: 300,
-                popover: {
-                    image: [],
-                    link: [],
-                    air: []
-                }
-            })
-        });
-    </script>
 @endsection
