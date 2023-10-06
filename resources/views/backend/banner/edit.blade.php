@@ -39,7 +39,7 @@
                                     <div class="form-group row">
                                         <label for="pc_image_url" class="col-2 col-form-label">更新圖片</label>
                                         <div class="col-10">
-                                            <input type="file" class="form-control-file" id="pc_image_url" name="pc_image_url">
+                                            <input type="file" class="form-control-file" id="pc_image_url" name="pc_image_url" required>
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -57,7 +57,7 @@
                                     <div class="form-group row">
                                         <label for="mb_image_url" class="col-2 col-form-label">更新圖片(手機版)</label>
                                         <div class="col-10">
-                                            <input type="file" class="form-control-file" id="mb_image_url" name="mb_image_url">
+                                            <input type="file" class="form-control-file" id="mb_image_url" name="mb_image_url" required>
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">

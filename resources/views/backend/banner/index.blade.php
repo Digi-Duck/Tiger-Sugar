@@ -44,7 +44,6 @@
                                         <td>
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.banner.edit', ['id' => $list->id]) }}">編輯</a>
-
                                             @if ($list->id != 1)
                                                 <form action="{{ route('back.banner.delete', ['id' => $list->id]) }}"
                                                     method="POST">
@@ -53,10 +52,6 @@
                                                         data-listid="{{ $list->id }}">刪除</button>
                                                 </form>
                                             @endif
-                                            {{-- <form class="delete-form" action="/admin/banner/delete/{{ $list->id }}"
-                                                method="POST" style="display: none;" data-listid="{{ $list->id }}">
-                                                @csrf
-                                            </form> --}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -76,13 +71,13 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <script>
-        $(document).ready(function() {
-            $('#table').DataTable({
-                "order": [
-                    [3, 'asc']
-                ]
-            });
-        });
+        // $(document).ready(function() {
+        //     $('#table').DataTable({
+        //         "order": [
+        //             [3, 'asc']
+        //         ]
+        //     });
+        // });
         // $('.btn-danger').click(function() {
         //     var listid = $(this).data("listid");
         //     if (confirm('確定要刪除此Banner？')) {
