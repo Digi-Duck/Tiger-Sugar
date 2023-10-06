@@ -94,5 +94,5 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // franchise_explain常見問題管理
     Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
     Route::get('franchise_explain/create', [FranchiseExplainController::class, 'create'])->name('back.franchise_explain.create');
-    Route::get('franchise_explain/store', [FranchiseExplainController::class, 'store'])->name('back.franchise_explain.store');
+    Route::post('franchise_explain/store', [FranchiseExplainController::class, 'store'])->name('back.franchise_explain.store');
 });

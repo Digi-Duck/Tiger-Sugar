@@ -26,12 +26,20 @@ class FranchiseExplainController extends Controller
 
     // 後台form表單上傳
     public function store(Request $request){
-        $new_record = new FranchiseExplain();
-        $new_record -> title = $request->title;
-        $new_record -> content  = $request->content;
-        $new_record -> english_title  = $request->english_title;
-        $new_record -> english_content  = $request->english_content;
-        $new_record -> save();
+
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'english_title' => 'required|max:255',
+            'english_content' => 'required',
+        ]);
+
+        FranchiseExplain::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'english_title' => $request->english_title,
+            'english_content' => $request->english_content,
+        ]);
         return redirect(route('back.franchise_explain.index'))->with('message','新增成功!');
     }
     // public function delete($id){
