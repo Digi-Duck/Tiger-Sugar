@@ -17,7 +17,12 @@
                         商品管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/products/store" enctype="multipart/form-data">
+                        @if ($errors->all())
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first() }}</strong>
+                            </span>
+                        @endif
+                        <form method="POST" action="{{ route('back.products.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="container overflow-y-auto height-for-container">
                                 <div class="form-group row">
@@ -102,7 +107,7 @@
                                 <div class="form-group row">
                                     <label for="img" class="col-2 col-form-label">主要圖片</label>
                                     <div class="col-10">
-                                        <input type="file" class="form-control" id="img" name="img"
+                                        <input type="file" class="form-control" id="img" name="img" accept="image/*"
                                             required>
                                     </div>
                                     <div class="col-12">

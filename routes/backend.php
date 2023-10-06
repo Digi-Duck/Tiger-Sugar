@@ -98,6 +98,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // 商品管理 （商品管理）
     Route::get('products/index', [ProductsController::class, 'index'])->name('back.products.index');
     Route::get('products/create', [ProductsController::class, 'create'])->name('back.products.create');
+    Route::post('products/store', [ProductsController::class, 'store'])->name('back.products.store');
 
     // franchise_explain常見問題管理
     Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
