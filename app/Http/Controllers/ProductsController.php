@@ -51,7 +51,7 @@ class ProductsController extends Controller
             'title_zh.required' => '商品名稱（中）必填',
             'title_zh.max' => '商品名稱(中)最多只能輸入255個字',
             'title_en.required' => '商品名稱（英）必填',
-            'title_en.max' => '商品名稱（英）最多只能輸入255個字',
+            'title_en.max' => '商品名稱(英)最多只能輸入255個字',
             'type_id.required' => '分類必填',
             'type_id.max' => '分類最多只能輸入11個字',
             'info.required' => '商品簡介必填',
@@ -96,45 +96,52 @@ class ProductsController extends Controller
         return redirect(route('back.products.index'))->with('message', '新增成功!');
     }
 
-    // public function edit($id)
-    // {
-    //     $list = Products::find($id);
-    //     $types = ProductsType::all();
-    //     return view($this->edit, compact('list', 'id', 'types'));
-    // }
+    public function edit($id)
+    {
+        $list = Products::find($id);
+        $types = ProductsType::all();
+        return view('backend.products.edit', compact('list', 'id', 'types'));
+    }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $product = Products::find($id);
+    public function update(Request $request, $id)
+    {
+        $product = Products::find($id);
 
-    //     $requestData = $request->all();
-    //     //有新的主要圖
-    //     if($request->hasFile('img')){
-    //         $old_product_img = $product->img;
-    //         if (file_exists(public_path() . $old_product_img)) {
-    //             File::delete(public_path() . $old_product_img);
-    //         }
-    //         $requestData['img'] =  $this->fileUpload($request->file('img'), 'product_imgs');
-    //     }
 
-    //     //多個檔案
-    //     if ($request->hasFile('imgs')) {
-    //         $files = $request->file('imgs');
-    //         foreach ($files as $file) {
-    //             //上傳圖片
-    //             $path = $this->fileUpload($file, 'product_imgs');
-    //             //新增資料進DB
-    //             $product_img = new ProductsImgs;
-    //             $product_img->product_id = $product->id;
-    //             $product_img->img_url = $path;
-    //             $product_img->save();
-    //         }
-    //     }
+        $product->update([
+            'sort' => $request->sort,
+            'title_zh' => $request->title_zh,
+            'title_en' => $request->title_en,
+            'type_id' => $request->type_id,
+            'info' => $request->info,
+            'launch_date' => $request->launch_date,
+            'weight' => $request->weight,
+            'shelf_life' => $request->shelf_life,
+            'preserve' => $request->preserve,
+            'content' => $request->content,
+            'video' => $request->video,
+        ]);
 
-    //     $product->update($requestData);
-
-    //     return redirect('/admin/products')->with('message', '更新成功!');
-    // }
+        if ($request->hasFile('img')) {
+            $img = $this->fileService->imgUpload($request->file('img'), 'products-img');
+            $product->update([
+            'img' => $img,
+            ]);
+        }
+        if ($request->hasFile('imgs')){
+            foreach ($product->ProductsImgs ?? [] as $value) {
+                $this->fileService->deleteUpload($value->img_url);
+                $value->delete();
+            }
+            foreach ($request->imgs ?? [] as $value) {
+                ProductsImgs::create([
+                    'img_url' => $this->fileService->imgUpload($value, 'products-imgs'),
+                    'product_id' => $id,
+                ]);
+            }
+        }
+        return redirect(route('back.products.index'))->with('message', '更新成功!');
+    }
 
     // public function delete($id)
     // {

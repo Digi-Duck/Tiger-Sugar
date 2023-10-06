@@ -99,6 +99,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::get('products/index', [ProductsController::class, 'index'])->name('back.products.index');
     Route::get('products/create', [ProductsController::class, 'create'])->name('back.products.create');
     Route::post('products/store', [ProductsController::class, 'store'])->name('back.products.store');
+    Route::get('products/edit/{id}', [ProductsController::class, 'edit'])->name('back.products.edit');
+    Route::post('products/update/{id}', [ProductsController::class, 'update'])->name('back.products.update');
 
     // franchise_explain常見問題管理
     Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');

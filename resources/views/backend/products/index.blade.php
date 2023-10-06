@@ -29,7 +29,7 @@
                                     <td><img src="{{$list->img}}" alt="" width="200"></td>
                                     <td>{{$list->sort}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/products/edit/{{$list->id}}">編輯</a>
+                                        <a class="btn btn-sm btn-success" href="{{ route('back.products.edit', ['id' => $list->id]) }}">編輯</a>
                                         <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                         <form class="delete-form" action="/admin/products/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
                                             @csrf
