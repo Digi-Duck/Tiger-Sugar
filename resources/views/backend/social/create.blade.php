@@ -10,7 +10,7 @@
                         社群回饋管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/social/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.social.store')}}" enctype="multipart/form-data">
                             @csrf
                             <input class="form-control" name="type" id="social_type" value="embed" required>
 

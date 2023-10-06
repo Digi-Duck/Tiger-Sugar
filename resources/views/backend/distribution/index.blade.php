@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css">
-@endsection
 
-@section('content')
+
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -61,7 +57,7 @@
         </div>
     </div>
 
-    <form id="clear-distribution-form" action="{{ route('clear_distribution') }}" method="POST" style="display: none;">
+    <form id="clear-distribution-form" action="" method="POST" style="display: none;">
         @csrf
     </form>
 @endsection

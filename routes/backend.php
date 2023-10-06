@@ -3,6 +3,7 @@
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SocialController;
 use App\Models\Banner;
@@ -24,6 +25,19 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::delete('/delete', [NewsController::class, 'delete'])->name('back.news.delete');
     });
 
+    // social社群回饋
+    Route::prefix('/social')->group(function () {
+        Route::get('/index', [SocialController::class, 'index'])->name('back.social.index');
+        Route::get('/edit', [SocialController::class, 'edit'])->name('back.social.edit');
+        Route::get('/create', [SocialController::class, 'create'])->name('back.social.create');
+    });
+
+    // social社群回饋
+    Route::post('/back/social/store', [SocialController::class, 'store'])->name('back.social.store');
+    Route::get('/back/social/edit/{id}', [SocialController::class, 'edit'])->name('back.social.edit');
+    Route::post('/back/social/update/{id}', [SocialController::class, 'update'])->name('back.social.update');
+    Route::post('/back/social/delete/{id}', [SocialController::class, 'delete'])->name('back.social.delete');
+
     // banner廣告橫幅
     Route::prefix('/banner')->group(function () {
         Route::get('/index', [BannerController::class, 'index'])->name('back.banner.index');
@@ -34,12 +48,6 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/delete/{id}', [BannerController::class, 'delete'])->name('back.banner.delete');
     });
 
-    // social社群回饋
-    Route::prefix('/social')->group(function () {
-        Route::get('/index', [SocialController::class, 'index'])->name('back.social.index');
-        Route::get('/edit', [SocialController::class, 'edit'])->name('back.social.edit');
-        Route::get('/create', [SocialController::class, 'create'])->name('back.social.create');
-    });
 
     // area據點管理-洲 設定  此葉面不確定有沒有用，晚點處理
     // Route::prefix('/area')->group(function () {
@@ -85,4 +93,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // 常見問題管理
 
 
+
+
+    // distribution 經銷來信
+    Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 });
