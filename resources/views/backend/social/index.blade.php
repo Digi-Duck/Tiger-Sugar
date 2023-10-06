@@ -9,7 +9,7 @@
                         社群回饋管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="{{route('back.social.create_page')}}">新增</a>
+                        <a class="btn btn-success" href="{{route('back.social.create')}}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
