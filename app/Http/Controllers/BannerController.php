@@ -20,9 +20,19 @@ class BannerController extends Controller
 
     public function index(Request $request)
     {
-        $lists = Banner::all();
-        return view('backend.banner.index', compact('lists'));
+        $lists = Banner::query();
+
+        $keyword = $request->keyword;
+
+        if ($request->filled('keyword')){
+            $lists->where('image_alt',$keyword);
+        }
+        // $lists = $lists->get();
         $lists = $lists->paginate(5);
+        // dd($lists);
+
+        // $lists = Banner::all();
+        return view('backend.banner.index', compact('lists','keyword'));
     }
 
     public function create()

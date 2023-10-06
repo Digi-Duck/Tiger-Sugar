@@ -44,6 +44,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{-- @dd($lists) --}}
                                 @foreach ($lists as $list)
                                     <tr>
                                         <td>{{ $list->type }}</td>
