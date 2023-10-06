@@ -118,7 +118,7 @@
                                     <label for="imgs" class="col-2 col-form-label">其他圖片(多張)</label>
                                     <div class="col-10">
                                         <input type="file" class="form-control" id="imgs" name="imgs[]"
-                                            multiple>
+                                            multiple accept="image/*">
                                     </div>
                                     <div class="col-12">
                                         <p class="text-danger">*注意：建議尺寸：400 * 435 (px)</p>

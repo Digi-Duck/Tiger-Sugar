@@ -66,7 +66,6 @@ class ProductsController extends Controller
             'content.required' => '內容必填',
             'video.required' => '影片必填',
         ]);
-        dd($request->content);
         $products = Products::create([
             'sort' => $request->sort,
             'title_zh' => $request->title_zh,
@@ -86,19 +85,13 @@ class ProductsController extends Controller
             'img' => $img,
         ]);
 
-        // //多個檔案
-        // if ($request->hasFile('imgs')) {
-        //     $files = $request->file('imgs');
-        //     foreach ($files as $file) {
-        //         //上傳圖片
-        //         $path = $this->fileUpload($file, 'product_imgs');
-        //         //新增資料進DB
-        //         $product_img = new ProductsImgs;
-        //         $product_img->product_id = $new_product->id;
-        //         $product_img->img_url = $path;
-        //         $product_img->save();
-        //     }
-        // }
+        //多個檔案
+        foreach ($request->imgs ?? [] as $value) {
+            ProductsImgs::create([
+                'img_url' => $this->fileService->imgUpload($value, 'products-imgs'),
+                'product_id' => $products->id,
+            ]);
+        }
 
         return redirect(route('back.products.index'))->with('message', '新增成功!');
     }
