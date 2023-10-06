@@ -10,7 +10,7 @@
                         社群回饋管理-編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/social/update/{{$id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.social.edit')}}" enctype="multipart/form-data">
                             @csrf
                             <input hidden class="form-control" name="type" id="social_type" value="{{$info->type}}" required>
 

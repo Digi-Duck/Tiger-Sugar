@@ -31,7 +31,7 @@
                                     </td>
                                     <td>{{$list->sort}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/social/edit/{{$list->id}}">編輯</a>
+                                        <a class="btn btn-sm btn-success" href="/back/social/edit/{{$list->id}}">編輯</a>
                                         <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                         <form class="delete-form" action="/admin/social/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
                                             @csrf
