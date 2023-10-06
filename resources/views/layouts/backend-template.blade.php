@@ -96,7 +96,8 @@
                         <h2>加盟來信</h2>
                     </button>
                 </a>
-                <a href="{{ route('back.distribution.index') }}" id="distribution" class="single-button" title="前往經銷來信輸出頁">
+                <a href="{{ route('back.distribution.index') }}" id="distribution" class="single-button"
+                    title="前往經銷來信輸出頁">
                     <button class="backend-buttons">
                         <h2>經銷來信</h2>
                     </button>
@@ -122,7 +123,8 @@
                     </div>
                 </div>
 
-                <a href="{{ route('back.franchise_explain.index') }}" id="franchise-explain" class="single-button" title="前往常見問題管理設定頁">
+                <a href="{{ route('back.franchise_explain.index') }}" id="franchise-explain" class="single-button"
+                    title="前往常見問題管理設定頁">
                     <button class="backend-buttons">
                         <h2>常見問題管理</h2>
                     </button>
@@ -157,15 +159,14 @@
             </div>
             <div class="right-down-area">
                 @yield('main')
-                    <img src="{{ asset('frontend-img/index-img/about/about_bg.png') }}" alt="背景圖片"
-                        class="right-down-bg">
-                </div>
+                <img src="{{ asset('frontend-img/index-img/about/about_bg.png') }}" alt="背景圖片"
+                    class="right-down-bg">
             </div>
         </div>
-        </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        @yield('js')
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    @yield('js')
+</body>
 
-    </html>
+</html>
