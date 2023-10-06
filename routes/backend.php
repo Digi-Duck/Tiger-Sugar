@@ -6,6 +6,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\FranchiseExplainController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductsTypeController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
@@ -88,12 +89,15 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // 媒體報導
 
 
-    // 商品管理
+    // 商品管理 （商品類型管理）
     Route::get('products_type/index', [ProductsTypeController::class, 'index'])->name('back.products_type.index');
     Route::get('products_type/create', [ProductsTypeController::class, 'create'])->name('back.products_type.create');
     Route::post('products_type/store', [ProductsTypeController::class, 'store'])->name('back.products_type.store');
     Route::get('products_type/edit/{id}', [ProductsTypeController::class, 'edit'])->name('back.products_type.edit');
     Route::post('products_type/update/{id}', [ProductsTypeController::class, 'update'])->name('back.products_type.update');
+    // 商品管理 （商品管理）
+    Route::get('products/index', [ProductsController::class, 'index'])->name('back.products.index');
+    Route::get('products/create', [ProductsController::class, 'create'])->name('back.products.create');
 
     // franchise_explain常見問題管理
     Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');

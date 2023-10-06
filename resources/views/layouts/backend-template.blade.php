@@ -114,7 +114,7 @@
                                 <div class="group-right-buttons-text">商品類型管理</div>
                             </button>
                         </a>
-                        <a href="" id="product" title="前往商品管理設定頁">
+                        <a href="{{ route('back.products.index') }}" id="product" title="前往商品管理設定頁">
                             <button class="group-right-buttons backend-button">
                                 <div class="group-right-buttons-text">商品管理</div>
                             </button>
