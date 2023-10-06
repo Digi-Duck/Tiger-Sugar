@@ -26,6 +26,10 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::get('social/index', [SocialController::class, 'index'])->name('back.social.index');
     Route::get('social/edit', [SocialController::class, 'edit'])->name('back.social.edit');
     Route::get('social/create', [SocialController::class, 'create'])->name('back.social.create');
+    Route::post('/back/social/store', [SocialController::class, 'store'])->name('back.social.store');
+    Route::get('/back/social/edit/{id}', [SocialController::class, 'edit'])->name('back.social.edit');
+    Route::post('/back/social/update/{id}', [SocialController::class, 'update'])->name('back.social.update');
+    Route::post('/back/social/delete/{id}', [SocialController::class, 'delete'])->name('back.social.delete');
 
     // banner廣告橫幅
     Route::get('banner/index', [BannerController::class, 'index'])->name('back.banner.index');
