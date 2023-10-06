@@ -10,7 +10,7 @@
                         社群回饋管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/social/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.social.store')}}" enctype="multipart/form-data">
                             @csrf
                             <input class="form-control" name="type" id="social_type" value="embed" required>
 
@@ -20,10 +20,15 @@
                                         data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
                                         aria-selected="true">嵌入方式上稿</a>
                                 </li>
+<<<<<<< Updated upstream
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile"
                                         aria-selected="false">客製化方式上稿</a>
+=======
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="{#pills-profile}" role="tab" aria-controls="pills-profile" aria-selected="false">客製化方式上稿</a>
+>>>>>>> Stashed changes
                                 </li>
                             </ul>
 
