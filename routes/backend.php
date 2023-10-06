@@ -3,6 +3,7 @@
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DistributionController;
+use App\Http\Controllers\FranchiseExplainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SocialController;
 use App\Models\Banner;
@@ -44,4 +45,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
 
     // distribution 經銷來信
     Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
+
+    // franchise_explain常見問題管理
+    Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
+    Route::get('franchise_explain/create', [FranchiseExplainController::class, 'create'])->name('back.franchise_explain.create');
 });

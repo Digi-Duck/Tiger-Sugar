@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <a href="" id="franchise-explain" class="single-button" title="前往常見問題管理設定頁">
+                <a href="{{ route('back.franchise_explain.index') }}" id="franchise-explain" class="single-button" title="前往常見問題管理設定頁">
                     <button class="backend-buttons">
                         <h2>常見問題管理</h2>
                     </button>
