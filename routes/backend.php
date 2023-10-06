@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SocialController;
 use App\Models\Banner;
@@ -35,4 +36,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::post('banner/delete/{id}', [BannerController::class, 'delete'])->name('back.banner.delete');
 
 
+
+
+    // distribution 經銷來信
+    Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 });
