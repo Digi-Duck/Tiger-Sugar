@@ -50,7 +50,7 @@ class BannerController extends Controller
         // $new_record = new Banner();
         // $new_record->type = $request->type;
 
-       $type = $request->type;
+        $type = $request->type;
 
         if ($type == '圖片') {
             $request->validate([
@@ -220,18 +220,18 @@ class BannerController extends Controller
 
         // $banner -> save();
 
-        return redirect(route('back.banner.index'))->with('message','更新成功!');
+        return redirect(route('back.banner.index'))->with('message', '更新成功!');
     }
 
     //delete
-    public function delete($id)
+    public function delete(Request $request,$id)
     {
         $banner = Banner::find($id);
-        $this->delete_file($banner->pc_video_url);
-        $this->delete_file($banner->pc_video_url);
+        $this->fileService->deleteUpload($banner->pc_image_url);
+        $this->fileService->deleteUpload($banner->mb_image_url);
         $banner->delete();
-
-        return redirect('/admin/banner')->with('message', '刪除成功!');
+        // dd($id);
+        return redirect(route('back.banner.index'))->with('message', '刪除成功!');
     }
 
 
@@ -252,10 +252,4 @@ class BannerController extends Controller
     //     return $url;
     // }
 
-
-    //刪除檔案
-    public function delete_file($path)
-    {
-        File::delete(public_path() . $path);
-    }
 }
