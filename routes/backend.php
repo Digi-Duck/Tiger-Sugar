@@ -82,8 +82,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // 加盟來信
 
 
-    // 經銷來信
-
+    // distribution 經銷來信
+    Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 
     // 媒體報導
 
@@ -91,15 +91,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // 商品管理
 
 
-    // 常見問題管理
-
-
-
-
-    // distribution 經銷來信
-    Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
-
     // franchise_explain常見問題管理
     Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
     Route::get('franchise_explain/create', [FranchiseExplainController::class, 'create'])->name('back.franchise_explain.create');
+    Route::get('franchise_explain/store', [FranchiseExplainController::class, 'store'])->name('back.franchise_explain.store');
 });

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
     <link rel="stylesheet" href="{{ asset('css/franchiseeExplain.css') }}">
@@ -6,7 +6,7 @@
 @endsection
 
 
-@section('content')
+@section('main')
 <div class="container" style="padding:0px;">
     <div class="row">
         <div class="col-sm-12">
@@ -15,7 +15,7 @@
                     常見問題管理
                 </h4>
                 <div class="card-body">
-                    <form method="POST" action="/admin/franchise_explain/store" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('back.franchise_explain.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="title" class="col-2 col-form-label">標題</label>

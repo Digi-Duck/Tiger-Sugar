@@ -21,19 +21,19 @@ class FranchiseExplainController extends Controller
     }
 
     public function create(){
-        return view('backend.fran');
+        return view('backend.franchise_explain.create');
     }
 
-    // // 後台form表單上傳
-    // public function store(Request $request){
-    //     $new_record = new FranchiseExplain();
-    //     $new_record -> title = $request->title;
-    //     $new_record -> content  = $request->content;
-    //     $new_record -> english_title  = $request->english_title;
-    //     $new_record -> english_content  = $request->english_content;
-    //     $new_record -> save();
-    //     return redirect('/admin/franchise_explain')->with('message','新增成功!');
-    // }
+    // 後台form表單上傳
+    public function store(Request $request){
+        $new_record = new FranchiseExplain();
+        $new_record -> title = $request->title;
+        $new_record -> content  = $request->content;
+        $new_record -> english_title  = $request->english_title;
+        $new_record -> english_content  = $request->english_content;
+        $new_record -> save();
+        return redirect(route('back.franchise_explain.index'))->with('message','新增成功!');
+    }
     // public function delete($id){
     //     DB::table('franchise_explains')->where('id','=',$id)->delete();
     //     return redirect('/admin/franchise_explain')->with('message','刪除成功!');
