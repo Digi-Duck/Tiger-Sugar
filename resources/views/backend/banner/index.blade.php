@@ -12,12 +12,27 @@
                         廣告橫幅管理
                     </h4>
                     <div class="card-body">
-                        <form action="" method="GET" class="d-flex column-gap-3" role="search">
-                            <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述" aria-label="Search"></input>
-                            <button class="btn btn-success flex-shrink-0" type="submit">搜尋</button>
-                        </form>
+
                         <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
                         <hr>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <form action="">
+                                    <select>
+                                        <option>5頁</option>
+                                        <option selected>10頁</option>
+                                        <option>15頁</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="" method="GET" class="d-flex column-gap-3" role="search">
+                                    @csrf
+                                    <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述" aria-label="Search">
+                                    <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
+                                </form>
+                            </div>
+                        </div>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
