@@ -44,7 +44,7 @@ class BannerController extends Controller
             'link_target' => $request->link_target,
             'sort' => $request->sort,
         ]);
-
+        dd($request->all());
         $type = $request->type;
 
         if ($type == '圖片') {
