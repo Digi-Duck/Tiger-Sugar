@@ -98,6 +98,12 @@
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>
                                         </div>
+                                        <div class="form-group row">
+                                            <label for="image_alt" class="col-2 col-form-label">影片替代文字(alt)</label>
+                                            <div class="col-10">
+                                                <input type="text" class="form-control" id="image_alt" name="image_alt">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

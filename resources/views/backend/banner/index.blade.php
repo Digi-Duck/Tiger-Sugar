@@ -77,6 +77,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{$lists->links()}}
                     </div>
                 </div>
             </div>
@@ -108,7 +109,7 @@
         function changePages(){
             let pageSelect = document.querySelector('#page-select')
             let pagenNumber = pageSelect.selectIndex;
-            
+
         }
     </script>
 @endsection
