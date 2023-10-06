@@ -1,6 +1,15 @@
 @extends('layouts.backend-template')
 
 @section('css')
+    <style>
+        .pagination {
+            justify-content: center;
+        }
+        #backend .banner-nav-style nav{
+            height: 0;
+            background-color:white;
+        }
+    </style>
 @endsection
 
 @section('main')
@@ -8,11 +17,10 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-                    <h4 class="card-header">
+                    <h4 class="card-header ">
                         廣告橫幅管理
                     </h4>
-                    <div class="card-body">
-
+                    <div class="card-body banner-nav-style">
                         <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
                         <hr>
                         <div class="d-flex justify-content-between">
@@ -29,7 +37,7 @@
                                 </form>
                             </div>
                             <div>
-                                <form action="" method="GET" class="d-flex column-gap-3" role="search">
+                                <form action="{{ route('back.banner.index')}}" method="GET" class="d-flex column-gap-3" role="search">
                                     @csrf
                                     <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述" aria-label="Search" value="{{$keyword}}">
                                     <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
