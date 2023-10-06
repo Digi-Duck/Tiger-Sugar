@@ -96,7 +96,7 @@
                         <h2>加盟來信</h2>
                     </button>
                 </a>
-                <a href="" id="distribution" class="single-button" title="前往經銷來信輸出頁">
+                <a href="{{ route('back.distribution.index') }}" id="distribution" class="single-button" title="前往經銷來信輸出頁">
                     <button class="backend-buttons">
                         <h2>經銷來信</h2>
                     </button>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <a href="" id="franchise-explain" class="single-button" title="前往常見問題管理設定頁">
+                <a href="{{ route('back.franchise_explain.index') }}" id="franchise-explain" class="single-button" title="前往常見問題管理設定頁">
                     <button class="backend-buttons">
                         <h2>常見問題管理</h2>
                     </button>

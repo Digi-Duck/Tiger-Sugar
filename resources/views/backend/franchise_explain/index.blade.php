@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
     <link rel="stylesheet" href="{{ asset('css/franchiseeExplain.css') }}">
@@ -6,7 +6,7 @@
 @endsection
 {{-- <link rel="stylesheet" href="{{ asset('css/franchiseeExplain.css') }}"> --}}
 
-@section('content')
+@section('main')
 <div class="container" style="padding:0px;">
     <div class="row">
         <div class="col-sm-12">
@@ -15,7 +15,7 @@
                     常見問題管理
                 </h4>
                 <div class="card-body">
-                    <a class="btn btn-success" href="/admin/franchise_explain/create">新增</a>
+                    <a class="btn btn-success" href="{{ route('back.franchise_explain.create') }}">新增</a>
                     <span>最多顯示20個常見問題</span>
                     <hr>
                     <table id="table" class="table table-bordered table-striped table-hover">
