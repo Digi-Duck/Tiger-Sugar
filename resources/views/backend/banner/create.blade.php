@@ -126,15 +126,27 @@
         let img = document.querySelector('#pills-home-tab');
         let mov = document.querySelector('#pills-profile-tab');
         let type = document.querySelector('#banner_type');
+        let pcImage = document.querySelector('#pc_image_url');
+        let mbImage = document.querySelector('#mb_image_url');
+        let pcVideo = document.querySelector('#pc_video_url');
+        let mbVideo = document.querySelector('#mb_video_url');
         img.addEventListener('click', function() {
             if (type.value === '影片') {
-                type.value = '圖片'
+                type.value = '圖片';
+                pcImage.setAttribute('required','required');
+                mbImage.setAttribute('required','required');
+                pcVideo.removeAttribute('required');
+                mbVideo.removeAttribute('required');
                 console.log(type.value);
             }
         })
         mov.addEventListener('click', function() {
             if (type.value === '圖片') {
-                type.value = '影片'
+                type.value = '影片';
+                pcImage.removeAttribute('required');
+                mbImage.removeAttribute('required');
+                pcVideo.setAttribute('required','required');
+                mbVideo.setAttribute('required','required');
                 console.log(type.value);
             }
         })

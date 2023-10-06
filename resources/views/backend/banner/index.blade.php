@@ -17,11 +17,14 @@
                         <hr>
                         <div class="d-flex justify-content-between">
                             <div>
-                                <form action="">
-                                    <select>
-                                        <option>5頁</option>
-                                        <option selected>10頁</option>
-                                        <option>15頁</option>
+                                <form action="{{ route('back.banner.index')}}" method="post">
+                                    @csrf
+                                    @method('get')
+                                    <select id="page-select" onchange="changePages()">
+                                        <option value="10" selected>10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
                                     </select>
                                 </form>
                             </div>
@@ -105,5 +108,10 @@
         //         $('.delete-form[data-listid="' + listid + '"]').submit();
         //     }
         // });
+        function changePages(){
+            let pageSelect = document.querySelector('#page-select')
+            let pagenNumber = pageSelect.selectIndex;
+            
+        }
     </script>
 @endsection
