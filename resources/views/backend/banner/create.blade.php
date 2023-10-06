@@ -103,7 +103,6 @@
                             </div>
 
                             <hr>
-
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">

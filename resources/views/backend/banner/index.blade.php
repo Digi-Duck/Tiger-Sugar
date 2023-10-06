@@ -31,7 +31,7 @@
                             <div>
                                 <form action="" method="GET" class="d-flex column-gap-3" role="search">
                                     @csrf
-                                    <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述" aria-label="Search">
+                                    <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述" aria-label="Search" value="{{$keyword}}">
                                     <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
                                 </form>
                             </div>
@@ -47,7 +47,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @dd($lists) --}}
                                 @foreach ($lists as $list)
                                     <tr>
                                         <td>{{ $list->type }}</td>
@@ -67,14 +66,12 @@
                                         <td>
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.banner.edit', ['id' => $list->id]) }}">編輯</a>
-                                            @if ($list->id != 1)
                                                 <form action="{{ route('back.banner.delete', ['id' => $list->id]) }}"
                                                     method="POST">
                                                     @csrf
                                                     <button class="btn btn-sm btn-danger" type="submit"
                                                         data-listid="{{ $list->id }}">刪除</button>
                                                 </form>
-                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
