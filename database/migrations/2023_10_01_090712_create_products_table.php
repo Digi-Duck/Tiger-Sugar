@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title_en')->comment('英文商品名稱');
             $table->integer('type_id')->comment('商品種類代號');
             $table->string('info')->comment('商品介紹');
-            $table->string('img')->comment('圖片路徑');
+            $table->string('img')->nullable()->comment('圖片路徑');
             $table->date('launch_date')->comment('上架日期');
             $table->bigInteger('weight')->comment('商品淨重(克)');
             $table->smallInteger('shelf_life')->comment('保存期限(月)');

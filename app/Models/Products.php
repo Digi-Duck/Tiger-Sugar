@@ -19,6 +19,7 @@ class Products extends Model
         'weight',
         'shelf_life',
         'preserve',
+        'content',
         'notes',
         'video'
     ];

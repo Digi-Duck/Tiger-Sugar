@@ -66,13 +66,14 @@ class ProductsController extends Controller
             'content.required' => '內容必填',
             'video.required' => '影片必填',
         ]);
-
+        dd($request->content);
         $products = Products::create([
             'sort' => $request->sort,
             'title_zh' => $request->title_zh,
             'title_en' => $request->title_en,
             'type_id' => $request->type_id,
             'info' => $request->info,
+            'img' => $request->img,
             'launch_date' => $request->launch_date,
             'weight' => $request->weight,
             'shelf_life' => $request->shelf_life,
