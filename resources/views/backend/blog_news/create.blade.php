@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -12,7 +9,7 @@
                         媒體報導管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/blog_news/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.blog_new.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>
@@ -42,7 +39,7 @@
                             <div class="form-group row">
                                 <label for="main_photo" class="col-2 col-form-label">上傳代表圖片</label>
                                 <div class="col-10">
-                                    <input type="file" class="form-control-file" id="main_photo" name="main_photo" required>
+                                    <input type="file" class="form-control-file" id="main_photo" name="main_photo" accept="image/*" required>
                                 </div>
                                 <div class="col-12">
                                     {{--<p class="text-danger">*注意：建議尺寸：525 * 200 (px)</p>--}}

@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -13,7 +9,7 @@
                         媒體報導管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/blog_news/create">新增</a>
+                        <a class="btn btn-success" href="{{ route('back.blog_new.create') }}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>

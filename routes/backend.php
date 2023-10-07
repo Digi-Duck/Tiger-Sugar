@@ -3,6 +3,7 @@
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BlogNewsController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\DrinkTypeController;
@@ -111,7 +112,11 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 
     // 媒體報導
-
+    Route::prefix('/blog_news')->group(function () {
+        Route::get('index', [BlogNewsController::class, 'index'])->name('back.blog_new.index');
+        Route::get('create', [BlogNewsController::class, 'create'])->name('back.blog_new.create');
+        Route::post('store', [BlogNewsController::class, 'store'])->name('back.blog_new.store');
+    });
 
     // 商品管理 （商品類型管理）
     Route::prefix('/products_type')->group(function () {
