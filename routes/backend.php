@@ -12,8 +12,6 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductsTypeController;
 use App\Http\Controllers\SocialController;
-use App\Models\Drink;
-use App\Models\Media;
 use Illuminate\Support\Facades\Route;
 
 // 後端路由
@@ -106,28 +104,36 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 
     // 媒體報導
-    Route::get('media/index', [MediaController::class, 'index'])->name('back.media.index');
-    Route::get('media/create', [MediaController::class, 'create'])->name('back.media.create');
-    Route::post('media/store', [MediaController::class, 'store'])->name('back.media.store');
-    Route::get('media/edit/{id}', [MediaController::class, 'edit'])->name('back.media.edit');
-    Route::post('media/update/{id}', [MediaController::class, 'update'])->name('back.media.update');
+    Route::prefix('/media')->group(function () {
+        Route::get('index', [MediaController::class, 'index'])->name('back.media.index');
+        Route::get('create', [MediaController::class, 'create'])->name('back.media.create');
+        Route::post('store', [MediaController::class, 'store'])->name('back.media.store');
+        Route::get('edit/{id}', [MediaController::class, 'edit'])->name('back.media.edit');
+        Route::post('update/{id}', [MediaController::class, 'update'])->name('back.media.update');
+    });
 
     // 商品管理 （商品類型管理）
-    Route::get('products_type/index', [ProductsTypeController::class, 'index'])->name('back.products_type.index');
-    Route::get('products_type/create', [ProductsTypeController::class, 'create'])->name('back.products_type.create');
-    Route::post('products_type/store', [ProductsTypeController::class, 'store'])->name('back.products_type.store');
-    Route::get('products_type/edit/{id}', [ProductsTypeController::class, 'edit'])->name('back.products_type.edit');
-    Route::post('products_type/update/{id}', [ProductsTypeController::class, 'update'])->name('back.products_type.update');
+    Route::prefix('/products_type')->group(function () {
+        Route::get('index', [ProductsTypeController::class, 'index'])->name('back.products_type.index');
+        Route::get('create', [ProductsTypeController::class, 'create'])->name('back.products_type.create');
+        Route::post('store', [ProductsTypeController::class, 'store'])->name('back.products_type.store');
+        Route::get('edit/{id}', [ProductsTypeController::class, 'edit'])->name('back.products_type.edit');
+        Route::post('update/{id}', [ProductsTypeController::class, 'update'])->name('back.products_type.update');
+    });
 
     // 商品管理 （商品管理）
-    Route::get('products/index', [ProductsController::class, 'index'])->name('back.products.index');
-    Route::get('products/create', [ProductsController::class, 'create'])->name('back.products.create');
-    Route::post('products/store', [ProductsController::class, 'store'])->name('back.products.store');
-    Route::get('products/edit/{id}', [ProductsController::class, 'edit'])->name('back.products.edit');
-    Route::post('products/update/{id}', [ProductsController::class, 'update'])->name('back.products.update');
+    Route::prefix('/products')->group(function () {
+        Route::get('index', [ProductsController::class, 'index'])->name('back.products.index');
+        Route::get('create', [ProductsController::class, 'create'])->name('back.products.create');
+        Route::post('store', [ProductsController::class, 'store'])->name('back.products.store');
+        Route::get('edit/{id}', [ProductsController::class, 'edit'])->name('back.products.edit');
+        Route::post('update/{id}', [ProductsController::class, 'update'])->name('back.products.update');
+    });
 
     // franchise_explain常見問題管理
-    Route::get('franchise_explain/index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
-    Route::get('franchise_explain/create', [FranchiseExplainController::class, 'create'])->name('back.franchise_explain.create');
-    Route::post('franchise_explain/store', [FranchiseExplainController::class, 'store'])->name('back.franchise_explain.store');
+    Route::prefix('/franchise_explain')->group(function () {
+        Route::get('index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
+        Route::get('create', [FranchiseExplainController::class, 'create'])->name('back.franchise_explain.create');
+        Route::post('store', [FranchiseExplainController::class, 'store'])->name('back.franchise_explain.store');
+    });
 });

@@ -89,12 +89,12 @@
                 <div id="menu-ch" class="group-btns">
                     <h2 class="backend-h2 group-btn-text">菜單管理(中)</h2>
                     <div class="btn-list">
-                        <a href="" id="drink-type" title="前往飲品類型設定頁">
+                        <a href="{{ route('back.drink_type.index') }}" id="drink-type" title="前往飲品類型設定頁">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">飲品類型管理</div>
                             </button>
                         </a>
-                        <a href="" id="drink" title="前往飲品設定頁">
+                        <a href="{{ route('back.drink.index') }}" id="drink" title="前往飲品設定頁">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">飲品管理</div>
                             </button>
