@@ -95,6 +95,13 @@ Route::middleware('auth')->prefix('/back')->group(function () {
 
 
     // 媒體露出
+    Route::prefix('/media')->group(function () {
+        Route::get('index', [MediaController::class, 'index'])->name('back.media.index');
+        Route::get('create', [MediaController::class, 'create'])->name('back.media.create');
+        Route::post('store', [MediaController::class, 'store'])->name('back.media.store');
+        Route::get('edit/{id}', [MediaController::class, 'edit'])->name('back.media.edit');
+        Route::post('update/{id}', [MediaController::class, 'update'])->name('back.media.update');
+    });
 
 
     // 加盟來信
@@ -104,13 +111,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 
     // 媒體報導
-    Route::prefix('/media')->group(function () {
-        Route::get('index', [MediaController::class, 'index'])->name('back.media.index');
-        Route::get('create', [MediaController::class, 'create'])->name('back.media.create');
-        Route::post('store', [MediaController::class, 'store'])->name('back.media.store');
-        Route::get('edit/{id}', [MediaController::class, 'edit'])->name('back.media.edit');
-        Route::post('update/{id}', [MediaController::class, 'update'])->name('back.media.update');
-    });
+
 
     // 商品管理 （商品類型管理）
     Route::prefix('/products_type')->group(function () {
