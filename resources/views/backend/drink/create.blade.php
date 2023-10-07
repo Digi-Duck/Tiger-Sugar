@@ -12,7 +12,7 @@
                         飲品管理(中)-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/drink/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('back.drink.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="type_id" class="col-2 col-form-label">類別</label>

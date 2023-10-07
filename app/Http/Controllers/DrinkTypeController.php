@@ -2,29 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\DrinkType;
+use App\Models\DrinkType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class DrinkTypeController extends Controller
 {
-    function __construct()
-    {
-        $this->redirect = '/admin';
-        $this->index = 'admin.drink_type.index';
-        $this->create = 'admin.drink_type.create';
-        $this->edit = 'admin.drink_type.edit';
-    }
 
     public function index()
     {
         $lists = DrinkType::all();
-        return view($this->index,compact('lists'));
+        return view('backend.drink_type.index',compact('lists'));
     }
 
     public function create()
     {
-        return view($this->create);
+        return view('backend.drink_type.create');
     }
 
     public function store(Request $request)
@@ -34,13 +27,13 @@ class DrinkTypeController extends Controller
         $new_record -> type_info  = $request->type_info;
         $new_record -> sort  = $request->sort;
         $new_record -> save();
-        return redirect('/admin/drink_type')->with('message','新增成功!');
+        return redirect('backend.drink_type.index')->with('message','新增成功!');
     }
 
     public function edit($id)
     {
         $list = DrinkType::find($id);
-        return view($this->edit,compact('list','id'));
+        return view('backend.drink_type.edit',compact('list','id'));
     }
 
     public function update(Request $request,$id)
@@ -51,14 +44,14 @@ class DrinkTypeController extends Controller
         $DrinkType -> sort  = $request->sort;
         $DrinkType -> save();
 
-        return redirect('/admin/drink_type')->with('message','更新成功!');
+        return redirect('backend.drink_type.index')->with('message','更新成功!');
     }
 
     public function delete($id)
     {
         $DrinkType = DrinkType::find($id);
         $DrinkType->delete();
-        return redirect('/admin/drink_type')->with('message','刪除成功!');
+        return redirect('backend.drink_type.index')->with('message','刪除成功!');
     }
 
     //上傳檔案

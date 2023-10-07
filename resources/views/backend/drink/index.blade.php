@@ -54,17 +54,17 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#table').DataTable({
-                "order": [[2,'asc']]
-            });
-        } );
-        $('.btn-danger').click(function(){
-            var listid = $(this).data("listid");
-            if (confirm('確定要刪除此飲品？')){
-                event.preventDefault();
-                $('.delete-form[data-listid="' + listid + '"]').submit();
-            }
-        });
+        // $(document).ready(function() {
+        //     $('#table').DataTable({
+        //         "order": [[2,'asc']]
+        //     });
+        // } );
+        // $('.btn-danger').click(function(){
+        //     var listid = $(this).data("listid");
+        //     if (confirm('確定要刪除此飲品？')){
+        //         event.preventDefault();
+        //         $('.delete-form[data-listid="' + listid + '"]').submit();
+        //     }
+        // });
     </script>
 @endsection
