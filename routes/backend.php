@@ -4,11 +4,13 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DistributionController;
+use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\FranchiseExplainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductsTypeController;
 use App\Http\Controllers\SocialController;
+use App\Models\Drink;
 use Illuminate\Support\Facades\Route;
 
 // 後端路由
@@ -69,7 +71,14 @@ Route::middleware('auth')->prefix('/back')->group(function () {
 
 
     // 菜單管理(中)-飲品管理
-
+    Route::prefix('/drink')->group(function () {
+        Route::get('/index', [DrinkController::class, 'index'])->name('back.drink.index');
+        Route::get('/create', [DrinkController::class, 'create'])->name('back.drink.create');
+        Route::post('/store', [DrinkController::class, 'store'])->name('back.drink.store');
+        Route::get('/edit/{id}', [DrinkController::class, 'edit'])->name('back.drink.edit');
+        Route::post('/update/{id}', [DrinkController::class, 'update'])->name('back.drink.update');
+        Route::post('/delete/{id}', [DrinkController::class, 'delete'])->name('back.drink.delete');
+    });
 
     // 菜單管理(英)-飲品類型管理
 
