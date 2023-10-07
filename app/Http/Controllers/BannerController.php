@@ -26,6 +26,7 @@ class BannerController extends Controller
         if ($request->filled('keyword')){
             $lists->where('image_alt','like',"%{$keyword}%");
         }
+        $lists->orderBy('sort', 'asc');
         $lists = $lists->paginate(5);
         return view('backend.banner.index', compact('lists','keyword'));
     }
@@ -44,7 +45,6 @@ class BannerController extends Controller
             'link_target' => $request->link_target,
             'sort' => $request->sort,
         ]);
-        dd($request->all());
         $type = $request->type;
 
         if ($type == '圖片') {
@@ -79,8 +79,6 @@ class BannerController extends Controller
                 'mb_video_url' => $url_para1['v'],
             ]);
         }
-
-
         return redirect(route('back.banner.index'))->with('message', '新增成功!');
     }
 

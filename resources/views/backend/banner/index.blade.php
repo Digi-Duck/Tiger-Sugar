@@ -5,9 +5,10 @@
         .pagination {
             justify-content: center;
         }
-        #backend .banner-nav-style nav{
+
+        #backend .banner-nav-style nav {
             height: 0;
-            background-color:white;
+            background-color: white;
         }
     </style>
 @endsection
@@ -25,21 +26,17 @@
                         <hr>
                         <div class="d-flex justify-content-between">
                             <div>
-                                <form action="{{ route('back.banner.index')}}" method="post" id="page-numbers">
+                                <form action="{{ route('back.banner.index') }}" method="GET"
+                                    id="page-numbers role="search">
                                     @csrf
-                                    @method('get')
                                     <select id="page-select" onchange="changePages()">
                                         <option value="10" selected>10</option>
                                         <option value="25">25</option>
                                         <option value="50">50</option>
                                         <option value="100">100</option>
                                     </select>
-                                </form>
-                            </div>
-                            <div>
-                                <form action="{{ route('back.banner.index')}}" method="GET" class="d-flex column-gap-3" role="search">
-                                    @csrf
-                                    <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述" aria-label="Search" value="{{$keyword}}">
+                                    <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述"
+                                        aria-label="Search" value="{{ $keyword }}">
                                     <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
                                 </form>
                             </div>
@@ -67,25 +64,24 @@
                                                     src="https://youtube.com/embed/{{ $list->pc_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1">
                                                 </iframe>
                                             @endif
-
                                         </td>
                                         <td>{{ $list->image_alt }}</td>
                                         <td>{{ $list->sort }}</td>
                                         <td>
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.banner.edit', ['id' => $list->id]) }}">編輯</a>
-                                                <form action="{{ route('back.banner.delete', ['id' => $list->id]) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <button class="btn btn-sm btn-danger" type="submit"
-                                                        data-listid="{{ $list->id }}">刪除</button>
-                                                </form>
+                                            <form action="{{ route('back.banner.delete', ['id' => $list->id]) }}"
+                                                method="POST">
+                                                @csrf
+                                                <button class="btn btn-sm btn-danger" type="submit"
+                                                    data-listid="{{ $list->id }}">刪除</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$lists->links()}}
+                        {{ $lists->links()}}
                     </div>
                 </div>
             </div>
@@ -114,7 +110,7 @@
         //         $('.delete-form[data-listid="' + listid + '"]').submit();
         //     }
         // });
-        function changePages(){
+        function changePages() {
             let pageSelect = document.querySelector('#page-select');
             let pageNumbers = document.querySelector('#page-numbers');
             console.log(pageSelect.value);
