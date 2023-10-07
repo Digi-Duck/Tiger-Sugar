@@ -6,11 +6,13 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\FranchiseExplainController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductsTypeController;
 use App\Http\Controllers\SocialController;
 use App\Models\Drink;
+use App\Models\Media;
 use Illuminate\Support\Facades\Route;
 
 // 後端路由
@@ -96,7 +98,11 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
 
     // 媒體報導
-
+    Route::get('media/index', [MediaController::class, 'index'])->name('back.media.index');
+    Route::get('media/create', [MediaController::class, 'create'])->name('back.media.create');
+    Route::post('media/store', [MediaController::class, 'store'])->name('back.media.store');
+    Route::get('media/edit/{id}', [MediaController::class, 'edit'])->name('back.media.edit');
+    Route::post('media/update/{id}', [MediaController::class, 'update'])->name('back.media.update');
 
     // 商品管理 （商品類型管理）
     Route::get('products_type/index', [ProductsTypeController::class, 'index'])->name('back.products_type.index');
@@ -104,6 +110,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::post('products_type/store', [ProductsTypeController::class, 'store'])->name('back.products_type.store');
     Route::get('products_type/edit/{id}', [ProductsTypeController::class, 'edit'])->name('back.products_type.edit');
     Route::post('products_type/update/{id}', [ProductsTypeController::class, 'update'])->name('back.products_type.update');
+
     // 商品管理 （商品管理）
     Route::get('products/index', [ProductsController::class, 'index'])->name('back.products.index');
     Route::get('products/create', [ProductsController::class, 'create'])->name('back.products.create');

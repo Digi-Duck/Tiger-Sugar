@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -13,7 +10,7 @@
                     </h4>
 
                     <div class="card-body">
-                        <form method="POST" action="/admin/media/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.media.store') }}" enctype="multipart/form-data">
                             @csrf
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item">
@@ -27,18 +24,18 @@
                                     <div class="form-group row">
                                         <label for="name" class="col-2 col-form-label" style="text-align: center">影片名字</label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" id="pc_video_url" name="name">
+                                            <input type="text" class="form-control" id="pc_video_url" name="name" required>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group row">
                                         <p class="col-2" style="margin-top:35px;text-align: center">上傳影片</p>
                                         <div class="col-10" style="max-width: 300px;margin-top:30px">
-                                            <input type="file" id="customFile" name="video_file" accept="video/mp4,video/x-m4v,video/*">
+                                            <input type="file" id="customFile" name="video_file" accept="video/mp4,video/x-m4v,video/*" required>
                                         </div>
                                     </div>
                                 </div>
-                            
+
                                     <div class="form-group row">
                                         <label for="sort" class="col-2 col-form-label" style="text-align: center">權重</label>
                                         <div class="col-10">

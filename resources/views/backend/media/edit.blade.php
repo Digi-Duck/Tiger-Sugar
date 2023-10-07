@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -13,7 +9,7 @@
                         媒體露出 - 編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/media/update/{{$id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.media.update', ['id' => $id]) }}" enctype="multipart/form-data">
                             @csrf
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -27,7 +23,7 @@
                                 <label for="name" class="col-2 col-form-label" style="text-align: center">影片名字</label>
 
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="pc_video_url" name="name" value="{{$info->name}}">
+                                    <input type="text" class="form-control" id="pc_video_url" name="name" value="{{$info->name}}" required>
                                 </div>
                             </div>
 

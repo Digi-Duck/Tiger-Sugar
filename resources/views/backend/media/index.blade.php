@@ -1,20 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
-            
+
             <div class="col-sm-12">
                 <div class="card">
                     <h4 class="card-header">
                         媒體露出
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/media/create">新增</a>
+                        <a class="btn btn-success" href="{{ route('back.media.create') }}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                         <thead>
@@ -25,7 +21,7 @@
                             <th width="130">功能</th>
                         </tr>
                         </thead>
-                        
+
                         <tbody>
                             @foreach($mediaes as $media)
                                 <tr>
@@ -37,13 +33,13 @@
                                     </td>
                                     <td>{{$media->sort}}</td>
                                     <td>
-                                       <a class="btn btn-sm btn-success" href="/admin/media/edit/{{$media->id}}">編輯</a>
+                                       <a class="btn btn-sm btn-success" href="{{ route('back.media.edit', ['id' => $media->id]) }}">編輯</a>
                                         @if($media->id != 1 ) <button class="btn btn-sm btn-danger" data-listid="{{$media->id}}">刪除</button> @endif
                                         <form class="delete-form" action="/admin/media/delete/{{$media->id}}" method="POST" style="display: none;" data-listid="{{$media->id}}">
                                             @csrf
                                         </form>
                                     </td>
-                                </tr> 
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
