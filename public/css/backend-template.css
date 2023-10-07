@@ -1,221 +1,279 @@
-body{
+body,html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-#backend {
+#backend{
     width: 100%;
-    display: flex;
-}
-
-#backend h2{
-    margin: 0;
-    font-size: 20px;
-    color: white;
-    font-family: Microsoft JhengHei;
-    text-align: center;
-}
-
-#backend .backend-buttons{
-    border: 0;
-    background-color: transparent;
-}
-
-#backend nav{
-    background-color: #0C1219;
-    display: flex;
-    flex-direction: column;
     height: 100vh;
 }
 
-#backend .logo{
-    height: 50px;
-    margin: 13px 10px 0 10px;
-}
-
-#backend .buttons{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    height: 100%;
-}
-
-#backend .single-button{
-    border: 0.8px transparent solid;
-    margin: 0 6px;
-    padding: 8px 0;
-}
-
-#backend .single-button:hover{
-    border-color: #f7dc83;
-}
-
-#backend .group-left-buttons{
-    border: 0.8px transparent solid;
-    margin: 0 6px;
-    padding: 8px 0;
-    position: relative;
-}
-
-#backend .group-left-buttons:hover{
-    border-color: #f7dc83;
-}
-
-#backend .group-right-buttons-area{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 101%;
-    z-index: 2;
-    display: none;
-    position: absolute;
-}
-
-#backend .group-right-buttons{
-    width: 100%;
-    border: 0.8px transparent solid;
+.backend-btn{
+    background-color: transparent;
+    border: 0;
     padding: 0;
 }
 
-#backend .group-right-buttons:hover{
-    border-color: #f7dc83;
-}
-
-#backend .group-right-buttons-text{
-    border: 0.8px transparent solid;
-    width: 100%;
-    background-color: #0c1219;
-    padding: 4px 0;
+.backend-h2,
+.sub-text{
     color: white;
-    font-family: Microsoft JhengHei;
-    font-size: 20px;
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
 }
 
-#backend #news:hover h2,
-#backend #banner:hover h2,
-#backend #social:hover h2,
-#backend #place:hover h2,
-#backend #country:hover h2,
-#backend #city:hover h2,
-#backend #shop:hover h2,
-#backend #menu-ch:hover h2,
-#backend #drink-type:hover h2,
-#backend #drink:hover h2,
-#backend #menu-en:hover h2,
-#backend #drink-type-en:hover h2,
-#backend #drink-en:hover h2,
-#backend #media:hover h2,
-#backend #contact:hover h2,
-#backend #distribution:hover h2,
-#backend #blog-news:hover h2,
-#backend #product-manage:hover h2,
-#backend #product-type:hover h2,
-#backend #product:hover h2,
-#backend #franchise-explain:hover h2{
-    color: #f7dc83;
+.sub-text{
+    background-color: #0C1219;
 }
 
-#backend #place:hover .group-right-buttons-area,
-#backend #menu-ch:hover .group-right-buttons-area,
-#backend #menu-en:hover .group-right-buttons-area,
-#backend #product-manage:hover .group-right-buttons-area{
-    display: block;
-}
-
-#backend #country:hover .group-right-buttons-text,
-#backend #city:hover .group-right-buttons-text,
-#backend #shop:hover .group-right-buttons-text,
-#backend #drink-type:hover .group-right-buttons-text,
-#backend #drink:hover .group-right-buttons-text,
-#backend #drink-type-en:hover .group-right-buttons-text,
-#backend #drink-en:hover .group-right-buttons-text,
-#backend #product-type:hover .group-right-buttons-text,
-#backend #product:hover .group-right-buttons-text{
-    color: #f7dc83;
-}
-
-#backend .right-container{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    position: relative;
-}
-
-#backend .right-top-area{
-    width: 100%;
+.backend-top-area{
     height: 76px;
-    background-color: #0c1219;
+    width: 100%;
+    background-color: #0C1219;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
 }
 
-#backend .back-to-front{
-    border: 0.8px white solid;
-    margin-right: 20px;
-    padding: 12px 8px;
+.backend-top-right-area{
+    display: flex;
 }
 
-#backend .user-area{
+.backend-logo{
+    height: 50px;
+    margin-left: 10px;
+}
+
+.frontend-btn{
+    border: 0.8px solid white;
+    padding: 4px 3px;
+    margin-right: 10px;
+}
+
+.frontend-btn:hover{
+    border-color: #f7dc83;
+}
+
+.frontend-btn:hover>h2{
+    color: #f7dc83;
+}
+
+.user-btn{
+    border: 0.8px solid white;
+    padding: 4px 3px;
+}
+
+.user-btn:hover{
+    border-color: #f7dc83;
+}
+
+.user-btn:hover>h2{
+    color: #f7dc83;
+}
+
+.backend-user-container{
     position: relative;
+    z-index: 2;
 }
 
-#backend .user-info,
-#backend .change-password{
+.backend-password{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 100%;
+    padding:4px 3px;
     border: 0.8px white solid;
-    margin-right: 20px;
-    padding: 14px 8px;
 }
 
-#backend .change-password,
-#backend .logout{
+.backend-password:hover{
+    border-color: #f7dc83;
+}
+
+.backend-password:hover .change-password-btn>h2{
+    color: #f7dc83;
+}
+
+.change-password-btn{
+    width: 100%;
+    text-align: center;
+}
+
+.backend-logout{
+    position: absolute;
+    left: 0;
+    top: 63px;
+    width: 100%;
+    padding: 4px 3px;
+    border: 0.8px white solid;
+}
+
+.backend-logout:hover{
+    border-color: #f7dc83;
+}
+
+.backend-logout:hover .logout-btn>h2{
+    color: #f7dc83;
+}
+
+.backend-password,
+.backend-logout{
     display: none;
 }
 
-#backend #checkbox:checked~.change-password,
-#backend #checkbox:checked~.logout{
+.logout-btn{
+    width: 100%;
+    text-align: center;
+}
+
+
+#checkbox:checked+.user-btn{
+    border-color: #f7dc83;
+}
+
+#checkbox:checked+.user-btn>h2{
+    color: #f7dc83;
+}
+
+#checkbox:checked~.backend-password,
+#checkbox:checked~.backend-logout{
     display: block;
 }
 
-#backend .change-password{
-    width: 163px;
-    position: absolute;
-    top: 55px;
-    left: 0;
-    z-index: 2;
-}
-#backend .logout{
-    border: 0.8px white solid;
-    width: 163px;
-    position: absolute;
-    top: 110px;
-    left: 0;
-    z-index: 2;
+.backend-top-right-area{
+    margin-right: 10px;
 }
 
-#backend .change-password>button{
+.backend-down-area{
+    height: calc(100% - 76px);
     width: 100%;
+    display: flex;
 }
 
-#backend .logout>button{
-    width: 100%;
-    padding: 14px 8px;
+.backend-down-left-area{
+    height: 100%;
+    width: 170px;
+    background-color: #0C1219;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-#backend .right-down-area{
-    width: 100%;
-    height: calc(100vh - 76px);
+.backend-down-right-area{
+    height: 100%;
+    flex: 1;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#backend .right-down-bg{
+.single-btn{
+    padding: 4px 0;
+    border: 0.8px transparent solid;
+    width: 150px;
+    text-align: center;
+}
+
+.backend-down-left-area #news:hover,
+.backend-down-left-area #banner:hover,
+.backend-down-left-area #social:hover,
+.backend-down-left-area #media:hover,
+.backend-down-left-area #contact:hover,
+.backend-down-left-area #distribution:hover,
+.backend-down-left-area #blog-news:hover,
+.backend-down-left-area #franchise-explain:hover{
+    border-color: #f7dc83;
+}
+
+.backend-down-left-area #news:hover h2,
+.backend-down-left-area #banner:hover h2,
+.backend-down-left-area #social:hover h2,
+.backend-down-left-area #media:hover h2,
+.backend-down-left-area #contact:hover h2,
+.backend-down-left-area #distribution:hover h2,
+.backend-down-left-area #blog-news:hover h2,
+.backend-down-left-area #franchise-explain:hover h2{
+    color: #f7dc83;
+}
+
+.group-btn-text{
+    text-align: center;
+    padding: 4px;
+    border: 0.8px transparent solid;
+    width: 150px;
+}
+
+.backend-down-left-area #place:hover .group-btn-text,
+.backend-down-left-area #menu-ch:hover .group-btn-text,
+.backend-down-left-area #menu-en:hover .group-btn-text,
+.backend-down-left-area #product-manage:hover .group-btn-text{
+    border-color: #f7dc83;
+}
+
+.backend-down-left-area #place:hover>h2,
+.backend-down-left-area #menu-ch:hover>h2,
+.backend-down-left-area #menu-en:hover>h2,
+.backend-down-left-area #product-manage:hover>h2{
+    color: #f7dc83;
+}
+
+.group-btns{
+    position: relative;
+}
+
+.btn-list{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    width: 150px;
+    display: none;
+    z-index: 2;
+    border: 0.8px #f7dc83 solid;
+}
+
+#place:hover .btn-list,
+#menu-ch:hover .btn-list,
+#menu-en:hover .btn-list,
+#product-manage:hover .btn-list{
+    display: block;
+}
+
+.btn-list>a{
+    width: 100%;
+    padding: 4px 0;
+}
+
+#country:hover .sub-text,
+#city:hover .sub-text,
+#shop:hover .sub-text,
+#drink-type:hover .sub-text,
+#drink:hover .sub-text,
+#drink-type-en:hover .sub-text,
+#drink-en:hover .sub-text,
+#product-type:hover .sub-text,
+#product:hover .sub-text{
+    color: #f7dc83;
+}
+
+.btn-list>a>button{
+    width: 100%;
+}
+
+.backend-bg{
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: -2;
+    z-index: -1;
+}
+
+.backend-container{
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
