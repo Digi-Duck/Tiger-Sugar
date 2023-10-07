@@ -5,6 +5,7 @@ use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\DrinkTypeController;
 use App\Http\Controllers\FranchiseExplainController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\NewsController;
@@ -70,7 +71,14 @@ Route::middleware('auth')->prefix('/back')->group(function () {
 
 
     // 菜單管理(中)-飲品類型管理
-
+    Route::prefix('/drink_type')->group(function () {
+        Route::get('/index', [DrinkTypeController::class, 'index'])->name('back.drink_type.index');
+        Route::get('/create', [DrinkTypeController::class, 'create'])->name('back.drink_type.create');
+        Route::post('/store', [DrinkTypeController::class, 'store'])->name('back.drink_type.store');
+        Route::get('/edit/{id}', [DrinkTypeController::class, 'edit'])->name('back.drink_type.edit');
+        Route::post('/update/{id}', [DrinkTypeController::class, 'update'])->name('back.drink_type.update');
+        Route::post('/delete/{id}', [DrinkTypeController::class, 'delete'])->name('back.drink_type.delete');
+    });
 
     // 菜單管理(中)-飲品管理
     Route::prefix('/drink')->group(function () {

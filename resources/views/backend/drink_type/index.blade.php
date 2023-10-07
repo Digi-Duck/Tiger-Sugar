@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 @endsection
 
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -13,7 +13,7 @@
                         飲品類型管理(中)
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/drink_type/create">新增飲品類型</a>
+                        <a class="btn btn-success" href="{{route('back.drink_type.create')}}">新增飲品類型</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
