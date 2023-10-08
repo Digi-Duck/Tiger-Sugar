@@ -5,8 +5,8 @@
         .pagination {
             justify-content: center;
         }
-        
-        .max-height-for-container{
+
+        .max-height-for-container {
             max-height: 550px
         }
     </style>
@@ -28,11 +28,28 @@
                             @csrf
                             <div>
                                 <span>請選擇顯示幾筆資料：</span>
-                                <select id="page-select" onchange="changePages()">
-                                    <option value="10" selected>10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
+                                <select id="page-select" onchange="changePages()" name="page_numbers">
+                                    @if ($page_numbers == 10)
+                                        <option value="10" selected>10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    @elseif ($page_numbers == 25)
+                                        <option value="10">10</option>
+                                        <option value="25" selected>25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    @elseif ($page_numbers == 50)
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50" selected>50</option>
+                                        <option value="100">100</option>
+                                    @else
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100" selected>100</option>
+                                    @endif
                                 </select>
                                 <span>筆</span>
                             </div>
@@ -43,7 +60,7 @@
                                 <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
                             </div>
                         </form>
-                        <table id="table" class="table table-bordered table-striped table-hover" >
+                        <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>類型</th>

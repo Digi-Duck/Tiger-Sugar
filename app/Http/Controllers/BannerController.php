@@ -22,13 +22,14 @@ class BannerController extends Controller
     {
         $lists = Banner::query();
         $keyword = $request->keyword ?? '';
+        $page_numbers=$request->page_numbers;
 
         if ($request->filled('keyword')){
             $lists->where('image_alt','like',"%{$keyword}%");
         }
         $lists->orderBy('sort', 'asc');
-        $lists = $lists->paginate(5);
-        return view('backend.banner.index', compact('lists','keyword'));
+        $lists = $lists->paginate($page_numbers);
+        return view('backend.banner.index', compact('lists','keyword','page_numbers'));
     }
 
     public function create()
