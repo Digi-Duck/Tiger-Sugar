@@ -29,9 +29,9 @@
                                     <td>{{$list->type_name}}</td>
                                     <td>{{$list->sort}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/drink_type/edit/{{$list->id}}">編輯</a>
-                                        <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
-                                        <form class="delete-form" action="/admin/drink_type/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
+                                        <a class="btn btn-sm btn-success" href="{{route('back.drink_type.edit',['id' => $list->id])}}">編輯</a>
+                                        <form class="delete-form" action="{{route('back.drink_type.delete',['id' => $list->id])}}" method="POST"  data-listid="{{$list->id}}">
+                                            <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                             @csrf
                                         </form>
                                     </td>
@@ -51,17 +51,17 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#table').DataTable({
-                "order": [[1,'asc']]
-            });
-        } );
-        $('.btn-danger').click(function(){
-            var listid = $(this).data("listid");
-            if (confirm('確定要刪除此飲品類型？')){
-                event.preventDefault();
-                $('.delete-form[data-listid="' + listid + '"]').submit();
-            }
-        });
+        // $(document).ready(function() {
+        //     $('#table').DataTable({
+        //         "order": [[1,'asc']]
+        //     });
+        // } );
+        // $('.btn-danger').click(function(){
+        //     var listid = $(this).data("listid");
+        //     if (confirm('確定要刪除此飲品類型？')){
+        //         event.preventDefault();
+        //         $('.delete-form[data-listid="' + listid + '"]').submit();
+        //     }
+        // });
     </script>
 @endsection
