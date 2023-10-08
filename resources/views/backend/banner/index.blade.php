@@ -5,10 +5,9 @@
         .pagination {
             justify-content: center;
         }
-
-        #backend .banner-nav-style nav {
-            height: 0;
-            background-color: white;
+        
+        .max-height-for-container{
+            max-height: 550px
         }
     </style>
 @endsection
@@ -21,27 +20,30 @@
                     <h4 class="card-header ">
                         廣告橫幅管理
                     </h4>
-                    <div class="card-body banner-nav-style">
+                    <div class="card-body banner-nav-style container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
                         <hr>
-                        <div class="d-flex justify-content-between">
+                        <form action="{{ route('back.banner.index') }}" method="GET" id="page-numbers" role="search"
+                            class="d-flex justify-content-between align-items-center mb-3">
+                            @csrf
                             <div>
-                                <form action="{{ route('back.banner.index') }}" method="GET"
-                                    id="page-numbers role="search">
-                                    @csrf
-                                    <select id="page-select" onchange="changePages()">
-                                        <option value="10" selected>10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                    <input class="form-control mb-3" name="keyword" type="text" placeholder="搜尋名稱或描述"
-                                        aria-label="Search" value="{{ $keyword }}">
-                                    <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
-                                </form>
+                                <span>請選擇顯示幾筆資料：</span>
+                                <select id="page-select" onchange="changePages()">
+                                    <option value="10" selected>10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <span>筆</span>
                             </div>
-                        </div>
-                        <table id="table" class="table table-bordered table-striped table-hover">
+
+                            <div class="d-flex justify-between">
+                                <input class="form-control" name="keyword" type="text" placeholder="搜尋名稱或描述"
+                                    aria-label="Search" value="{{ $keyword }}">
+                                <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
+                            </div>
+                        </form>
+                        <table id="table" class="table table-bordered table-striped table-hover" >
                             <thead>
                                 <tr>
                                     <th>類型</th>
@@ -51,7 +53,7 @@
                                     <th width="80">功能</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="">
                                 @foreach ($lists as $list)
                                     <tr>
                                         <td>{{ $list->type }}</td>
@@ -81,7 +83,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $lists->links()}}
+                        {{ $lists->links() }}
                     </div>
                 </div>
             </div>
@@ -114,7 +116,6 @@
             let pageSelect = document.querySelector('#page-select');
             let pageNumbers = document.querySelector('#page-numbers');
             console.log(pageSelect.value);
-            // document.forms["myform"].submit();
             pageNumbers.submit();
         }
     </script>

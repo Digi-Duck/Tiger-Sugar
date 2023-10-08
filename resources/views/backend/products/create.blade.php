@@ -2,7 +2,7 @@
 
 @section('css')
     <style>
-        .height-for-container {
+        .max-height-for-container {
             max-height: 440px;
         }
     </style>
@@ -24,7 +24,7 @@
                         @endif
                         <form method="POST" action="{{ route('back.products.store') }}" enctype="multipart/form-data">
                             @csrf
-                            <div class="container overflow-y-auto height-for-container">
+                            <div class="container overflow-y-auto max-height-for-container">
                                 <div class="form-group row">
                                     <label for="sort" class="col-2 col-form-label">權重</label>
                                     <div class="col-10">
