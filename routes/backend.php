@@ -90,10 +90,24 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     });
 
     // 菜單管理(英)-飲品類型管理
-
+    Route::prefix('/drink_type_en')->group(function () {
+        Route::get('/index', [DrinkTypeEnController::class, 'index'])->name('back.drink_type_en.index');
+        Route::get('/create', [DrinkTypeEnController::class, 'create'])->name('back.drink_type_en.create');
+        Route::post('/store', [DrinkTypeEnController::class, 'store'])->name('back.drink_type_en.store');
+        Route::get('/edit/{id}', [DrinkTypeEnController::class, 'edit'])->name('back.drink_type_en.edit');
+        Route::post('/update/{id}', [DrinkTypeEnController::class, 'update'])->name('back.drink_type_en.update');
+        Route::post('/delete/{id}', [DrinkTypeEnController::class, 'delete'])->name('back.drink_type_en.delete');
+    });
 
     // 菜單管理(英)-飲品管理
-
+    Route::prefix('/drink_en')->group(function () {
+        Route::get('/index', [DrinkEnController::class, 'index'])->name('back.drink_en.index');
+        Route::get('/create', [DrinkEnController::class, 'create'])->name('back.drink_en.create');
+        Route::post('/store', [DrinkEnController::class, 'store'])->name('back.drink_en.store');
+        Route::get('/edit/{id}', [DrinkEnController::class, 'edit'])->name('back.drink_en.edit');
+        Route::post('/update/{id}', [DrinkEnController::class, 'update'])->name('back.drink_en.update');
+        Route::post('/delete/{id}', [DrinkEnController::class, 'delete'])->name('back.drink_en.delete');
+    });
 
     // 媒體露出
     Route::prefix('/media')->group(function () {

@@ -11,13 +11,12 @@ class DrinkController extends Controller
 
     public function index(Request $request)
     {
-        $lists = Drink::all();
+        $lists = Drink::all()->sortBy('sort');
         return view('backend.drink.index',compact('lists'));
     }
 
     public function create()
     {
-        $types = Drink::all();
         return view('backend.drink.create',compact('types'));
     }
 
