@@ -22,17 +22,14 @@
                             @csrf
                             <input hidden class="form-control" name="type" id="banner_type" value="{{ $info->type }}"
                                 required>
-
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link  @if ($info->type == '圖片') active @endif" id="pills-home-tab"
-                                        data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="pills-home-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-home"  role="tab" aria-controls="pills-home"
                                         aria-selected="true">圖片</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @if ($info->type == '影片') active @endif"
-                                        id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                                        aria-controls="pills-profile" aria-selected="false">影片</a>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">影片</a>
                                 </li>
                             </ul>
 
@@ -159,11 +156,31 @@
 
 @section('js')
     <script>
-        $('a[data-toggle="pill"]').on('shown.bs.tab', function(e) {
-            if ($(e.target).attr('id') == 'pills-home-tab') {
-                document.querySelector("#banner_type").setAttribute('value', '圖片');
-            } else {
-                document.querySelector("#banner_type").setAttribute('value', '影片');
+        let img = document.querySelector('#pills-home-tab');
+        let mov = document.querySelector('#pills-profile-tab');
+        let type = document.querySelector('#banner_type');
+        let pcImage = document.querySelector('#pc_image_url');
+        let mbImage = document.querySelector('#mb_image_url');
+        let pcVideo = document.querySelector('#pc_video_url');
+        let mbVideo = document.querySelector('#mb_video_url');
+        img.addEventListener('click', function() {
+            if (type.value === '影片') {
+                type.value = '圖片';
+                pcImage.setAttribute('required', 'required');
+                mbImage.setAttribute('required', 'required');
+                pcVideo.removeAttribute('required');
+                mbVideo.removeAttribute('required');
+                console.log(type.value);
+            }
+        })
+        mov.addEventListener('click', function() {
+            if (type.value === '圖片') {
+                type.value = '影片';
+                pcImage.removeAttribute('required');
+                mbImage.removeAttribute('required');
+                pcVideo.setAttribute('required', 'required');
+                mbVideo.setAttribute('required', 'required');
+                console.log(type.value);
             }
         })
     </script>

@@ -51,7 +51,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [BannerController::class, 'store'])->name('back.banner.store');
         Route::get('/edit/{id}', [BannerController::class, 'edit'])->name('back.banner.edit');
         Route::post('/update/{id}', [BannerController::class, 'update'])->name('back.banner.update');
-        Route::post('/delete/{id}', [BannerController::class, 'delete'])->name('back.banner.delete');
+        Route::delete('/delete', [BannerController::class, 'delete'])->name('back.banner.delete');
     });
 
 
@@ -130,6 +130,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::get('index', [BlogNewsController::class, 'index'])->name('back.blog_new.index');
         Route::get('create', [BlogNewsController::class, 'create'])->name('back.blog_new.create');
         Route::post('store', [BlogNewsController::class, 'store'])->name('back.blog_new.store');
+        Route::get('edit/{id}', [BlogNewsController::class, 'edit'])->name('back.blog_new.edit');
+        Route::post('update/{id}', [BlogNewsController::class, 'update'])->name('back.blog_new.update');
     });
 
     // 商品管理 （商品類型管理）

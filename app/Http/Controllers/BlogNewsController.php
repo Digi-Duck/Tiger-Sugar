@@ -42,37 +42,49 @@ class BlogNewsController extends Controller
             'title' => $request->title,
             'info' => $request->info,
             'main_photo' => '',
+            'date' => '2023-10-07',
             'sort' => $request->sort,
         ]);
-        $img = $this->fileService->imgUpload($request->file('img'), 'products-img');
+        $img = $this->fileService->imgUpload($request->file('main_photo'), 'blog_news');
         $BlogNews->update([
             'main_photo' => $img,
         ]);
         return redirect(route('back.blog_new.index'))->with('message','新增成功!');
     }
 
-    // public function edit($id)
-    // {
-    //     $list = BlogNews::find($id);
-    //     return view($this->edit,compact('list'));
-    // }
+    public function edit($id)
+    {
+        $list = BlogNews::find($id);
+        return view('backend.blog_news.edit',compact('list'));
+    }
 
-    // public function update(Request $request,$id)
-    // {
-    //     $BlogNews = BlogNews::find($id);
-    //     $BlogNews -> title  = $request->title;
-    //     $BlogNews -> info  = $request->info;
-    //     $BlogNews -> author  = $request->author;
-    //     $BlogNews -> link  = $request->link;
-    //     $BlogNews -> sort  = $request->sort;
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'author' => 'required|max:255',
+            'link' => 'required|max:255',
+            'title' => 'required|max:255',
+            'main_photo' => 'required',
+            'sort' => 'required',
+        ]);
+        $BlogNews = BlogNews::find($id);
+        $BlogNews->update([
+            'author' => $request->author,
+            'link' => $request->link,
+            'title' => $request->title,
+            'info' => $request->info,
+            'sort' => $request->sort,
+        ]);
 
-    //     if($request->hasFile('main_photo')){
-    //         $this->delete_file($BlogNews->main_photo);
-    //         $BlogNews->main_photo = $this->upload_file($request->file('main_photo'));
-    //     }
-    //     $BlogNews -> save();
-    //     return redirect('/admin/blog_news')->with('message','更新成功!');
-    // }
+        if($request->hasFile('main_photo')){
+            $img = $this->fileService->imgUpload($request->file('main_photo'), 'blog_news');
+            $BlogNews->update([
+                'main_photo' => $img,
+            ]);
+        }
+
+        return redirect(route('back.blog_new.index'))->with('message','更新成功!');
+    }
 
     // public function delete($id)
     // {

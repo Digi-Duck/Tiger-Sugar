@@ -1,18 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <h4 class="card-header">
-                        媒體報導管理-新增
+                        媒體報導管理-編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/blog_news/update/{{$list->id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.blog_new.update', ['id' => $list->id]) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>
