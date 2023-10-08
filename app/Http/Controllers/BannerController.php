@@ -137,12 +137,13 @@ class BannerController extends Controller
         return redirect(route('back.banner.index'))->with('message', '更新成功!');
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Request $request)
     {
-        $banner = Banner::find($id);
-        $this->fileService->deleteUpload($banner->pc_image_url);
-        $this->fileService->deleteUpload($banner->mb_image_url);
-        $banner->delete();
-        return redirect(route('back.banner.index'))->with('message', '刪除成功!');
+        $id = $request->id;
+        $Banner = Banner::find($id);
+        $this->fileService->deleteUpload($Banner->pc_image_url);
+        $this->fileService->deleteUpload($Banner->mb_image_url);
+        $Banner->delete();
+        return 'success';
     }
 }

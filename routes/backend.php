@@ -51,7 +51,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [BannerController::class, 'store'])->name('back.banner.store');
         Route::get('/edit/{id}', [BannerController::class, 'edit'])->name('back.banner.edit');
         Route::post('/update/{id}', [BannerController::class, 'update'])->name('back.banner.update');
-        Route::post('/delete/{id}', [BannerController::class, 'delete'])->name('back.banner.delete');
+        Route::delete('/delete', [BannerController::class, 'delete'])->name('back.banner.delete');
     });
 
 
