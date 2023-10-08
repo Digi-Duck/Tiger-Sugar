@@ -60,6 +60,7 @@ body,html{
 }
 
 .user-btn{
+    background-color: #0C1219;
     border: 0.8px solid white;
     padding: 4px 3px;
 }
@@ -106,6 +107,7 @@ body,html{
     width: 100%;
     padding: 4px 3px;
     border: 0.8px white solid;
+    background-color: #0C1219;
 }
 
 .backend-logout:hover{

@@ -132,8 +132,8 @@
         img.addEventListener('click', function() {
             if (type.value === '影片') {
                 type.value = '圖片';
-                pcImage.setAttribute('required','required');
-                mbImage.setAttribute('required','required');
+                pcImage.setAttribute('required', 'required');
+                mbImage.setAttribute('required', 'required');
                 pcVideo.removeAttribute('required');
                 mbVideo.removeAttribute('required');
                 console.log(type.value);
@@ -144,8 +144,8 @@
                 type.value = '影片';
                 pcImage.removeAttribute('required');
                 mbImage.removeAttribute('required');
-                pcVideo.setAttribute('required','required');
-                mbVideo.setAttribute('required','required');
+                pcVideo.setAttribute('required', 'required');
+                mbVideo.setAttribute('required', 'required');
                 console.log(type.value);
             }
         })
