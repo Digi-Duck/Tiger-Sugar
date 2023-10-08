@@ -22,14 +22,15 @@ class BannerController extends Controller
     {
         $lists = Banner::query();
         $keyword = $request->keyword ?? '';
-        $page_numbers=$request->page_numbers;
+        $page_numbers = $request->page_numbers;
 
-        if ($request->filled('keyword')){
-            $lists->where('image_alt','like',"%{$keyword}%");
+        if ($request->filled('keyword')) {
+            $lists->where('image_alt', 'like', "%{$keyword}%");
         }
         $lists->orderBy('sort', 'asc');
         $lists = $lists->paginate($page_numbers);
-        return view('backend.banner.index', compact('lists','keyword','page_numbers'));
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.banner.index', compact('lists', 'keyword', 'page_numbers'));
     }
 
     public function create()
@@ -136,7 +137,7 @@ class BannerController extends Controller
         return redirect(route('back.banner.index'))->with('message', '更新成功!');
     }
 
-    public function delete(Request $request,$id)
+    public function delete(Request $request, $id)
     {
         $banner = Banner::find($id);
         $this->fileService->deleteUpload($banner->pc_image_url);

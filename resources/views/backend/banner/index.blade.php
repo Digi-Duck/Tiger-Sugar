@@ -115,20 +115,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <script>
-        // $(document).ready(function() {
-        //     $('#table').DataTable({
-        //         "order": [
-        //             [3, 'asc']
-        //         ]
-        //     });
-        // });
-        // $('.btn-danger').click(function() {
-        //     var listid = $(this).data("listid");
-        //     if (confirm('確定要刪除此Banner？')) {
-        //         event.preventDefault();
-        //         $('.delete-form[data-listid="' + listid + '"]').submit();
-        //     }
-        // });
         function changePages() {
             let pageSelect = document.querySelector('#page-select');
             let pageNumbers = document.querySelector('#page-numbers');
