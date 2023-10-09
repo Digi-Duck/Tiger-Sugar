@@ -162,5 +162,6 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::get('index', [FranchiseExplainController::class, 'index'])->name('back.franchise_explain.index');
         Route::get('create', [FranchiseExplainController::class, 'create'])->name('back.franchise_explain.create');
         Route::post('store', [FranchiseExplainController::class, 'store'])->name('back.franchise_explain.store');
+        Route::delete('store', [FranchiseExplainController::class, 'delete'])->name('back.franchise_explain.delete');
     });
 });

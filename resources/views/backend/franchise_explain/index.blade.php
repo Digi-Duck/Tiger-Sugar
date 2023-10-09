@@ -44,8 +44,9 @@
                                     <td>
                                         <div class="scrollable-content">{{$list->english_content}}</div>
                                     </td>
-                                    <td class="middle">
-                                        <a class="delete-icon" onclick="delete_alert()" href="/admin/franchise_explain/delete/{{$list->id}}"></a>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteData('{{ $list->id }}','{{ $list->title }}')">刪除</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -61,25 +62,72 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function() {
             $('#table').DataTable({
                 "order": [[3,'asc']]
             });
         } );
-        function delete_alert(){
-            var result = confirm("確定要刪除嗎? 刪除後無法還原，只能重新新增!");
-            if (result) {
-                // 如果用戶按下了“確定”按鈕
-                console.log("用戶已確認刪除操作。");
-                // 在這裡執行您需要的代碼，例如發送 AJAX 請求以刪除項目
-            } else {
-                // 如果用戶按下了“取消”按鈕
-                console.log("用戶已取消刪除操作。");
-                // 用來停止a標籤觸發效果
-                event.preventDefault();
-            }
-        }
+        // function delete_alert(){
+        //     var result = confirm("確定要刪除嗎? 刪除後無法還原，只能重新新增!");
+        //     if (result) {
+        //         // 如果用戶按下了“確定”按鈕
+        //         console.log("用戶已確認刪除操作。");
+        //         // 在這裡執行您需要的代碼，例如發送 AJAX 請求以刪除項目
+        //     } else {
+        //         // 如果用戶按下了“取消”按鈕
+        //         console.log("用戶已取消刪除操作。");
+        //         // 用來停止a標籤觸發效果
+        //         event.preventDefault();
+        //     }
+        // }
 
+
+        function deleteData(id, title) {
+            console.log(id);
+
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'delete');
+            formData.append('id', id);
+
+            Swal.fire({
+                title: `確認要刪除資料嗎?`,
+                showDenyButton: true,
+                confirmButtonText: '取消',
+                denyButtonText: '刪除',
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                    fetch('{{ route('back.franchise_explain.delete') }}', {
+                        method: 'post',
+                        body: formData,
+                    }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '刪除成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '刪除失敗',
+                                text: '查無資料',
+                            });
+                        }
+                    });
+                }
+            });
+        }
     </script>
 @endsection

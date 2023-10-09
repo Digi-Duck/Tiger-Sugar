@@ -46,4 +46,12 @@ class FranchiseExplainController extends Controller
     //     DB::table('franchise_explains')->where('id','=',$id)->delete();
     //     return redirect('/admin/franchise_explain')->with('message','刪除成功!');
     // }
+
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $FranchiseExplain = FranchiseExplain::find($id);
+        $FranchiseExplain->delete();
+        return 'success';
+    }
 }
