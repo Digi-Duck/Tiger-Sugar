@@ -104,12 +104,12 @@
                 <div id="menu-en" class="group-btns">
                     <h2 class="backend-h2 group-btn-text">菜單管理(英)</h2>
                     <div class="btn-list">
-                        <a href="" id="drink-type-en" title="前往飲品類型設定頁英文版">
+                        <a href="{{ route('back.drink_type_en.index') }}" id="drink-type-en" title="前往飲品類型設定頁英文版">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">飲品類型管理</div>
                             </button>
                         </a>
-                        <a href="" id="drink-en" title="前往飲品設定頁英文版">
+                        <a href="{{ route('back.drink_en.index') }}" id="drink-en" title="前往飲品設定頁英文版">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">飲品管理</div>
                             </button>

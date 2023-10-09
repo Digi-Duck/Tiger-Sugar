@@ -147,6 +147,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('store', [ProductsTypeController::class, 'store'])->name('back.products_type.store');
         Route::get('edit/{id}', [ProductsTypeController::class, 'edit'])->name('back.products_type.edit');
         Route::post('update/{id}', [ProductsTypeController::class, 'update'])->name('back.products_type.update');
+        Route::delete('delete', [ProductsTypeController::class, 'delete'])->name('back.products_type.delete');
     });
 
     // 商品管理 （商品管理）

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use App\Models\ProductsType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class ProductsTypeController extends Controller
 {
@@ -69,17 +70,16 @@ class ProductsTypeController extends Controller
         return redirect(route('back.products_type.index'))->with('message','更新成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $DrinkType = ProductsType::find($id);
-
+        $id = $request->id;
+        $ProductsType = ProductsType::find($id);
         $hasType = Products::where('type_id',$id)->count();
         if($hasType)
-            return redirect(route('back.products_type.index'))->with('message','目前'.$DrinkType->tw_name.'類型尚有'.$hasType.'個產品，請先刪除產品或更換產品類型');
+            return '';
         else{
-            $DrinkType->delete();
-            return redirect(route('back.products_type.index'))->with('message','刪除成功!');
+            $ProductsType->delete();
+            return 'success';
         }
-
     }
 }
