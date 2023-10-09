@@ -94,29 +94,4 @@ class BlogNewsController extends Controller
         $BlogNews->delete();
         return 'success';
     }
-
-    // //上傳檔案
-    // public function upload_file($file){
-    //     $allowed_extensions =["png", "jpg", "gif", "PNG", "JPG", "GIF","jpeg","JPEG"];
-    //     if ($file->getClientOriginalExtension() &&
-    //         !in_array($file->getClientOriginalExtension(), $allowed_extensions))
-    //     {
-    //         return redirect()->back()->with('message','僅接受.jpg, .png, .gif, .jepg格式檔案!');
-    //     }
-    //     $extension = $file->getClientOriginalExtension();
-    //     $destinationPath = public_path() . '/summernote_upload/';
-    //     $original_filename = $file->getClientOriginalName();
-
-    //     $filename = $file->getFilename() . '.' . $extension;
-    //     $url = '/summernote_upload/' . $filename;
-
-    //     $file->move($destinationPath, $filename);
-
-    //     return $url;
-    // }
-
-    // //刪除檔案
-    // public function delete_file($path){
-    //     File::delete(public_path().$path);
-    // }
 }
