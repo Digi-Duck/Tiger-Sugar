@@ -31,7 +31,6 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'sort' => 'required|max:11',
             'title_zh' => 'required|max:255',
@@ -143,34 +142,40 @@ class ProductsController extends Controller
         return redirect(route('back.products.index'))->with('message', '更新成功!');
     }
 
-    // public function delete($id)
-    // {
-    //     $product = Products::find($id);
-    //     $product_imgs = ProductsImgs::where('product_id', $id)->get();
-    //     foreach ($product_imgs as $product_img) {
-    //         $old_product_img = $product_img->img_url;
-    //         if (file_exists(public_path() . $old_product_img)) {
-    //             File::delete(public_path() . $old_product_img);
-    //         }
-    //         $product_img->delete();
-    //     }
-    //     $product->delete();
+    public function delete(Request $request)
+    {
 
-    //     return redirect('/admin/products')->with('message', '刪除成功!');
-    // }
+        $id = $request->id;
+        $product_imgs = ProductsImgs::where('product_id', $id)->get();
+        foreach ($product_imgs as $product_img) {
+            $old_product_img = $product_img->img_url;
+            if (file_exists(public_path() . $old_product_img)) {
+                File::delete(public_path() . $old_product_img);
+            }
+            $product_img->delete();
+        }
+        $Products = Products::find($id);
+        $Products->delete();
+        return 'success';
+
+
+
+
+
+    }
     // //刪除圖片deleteImg
 
-    // public function deleteImg(Request $request)
-    // {
-    //     $product_img = ProductsImgs::find($request->id);
-    //     $old_product_img = $product_img->img_url;
-    //     if (file_exists(public_path() . $old_product_img)) {
-    //         File::delete(public_path() . $old_product_img);
-    //     }
-    //     $product_img->delete();
+    public function deleteImg(Request $request)
+    {
+        $product_img = ProductsImgs::find($request->id);
+        $old_product_img = $product_img->img_url;
+        if (file_exists(public_path() . $old_product_img)) {
+            File::delete(public_path() . $old_product_img);
+        }
+        $product_img->delete();
 
-    //     return "success";
-    // }
+        return "success";
+    }
 
     // //上傳檔案
     // private function fileUpload($file, $dir)

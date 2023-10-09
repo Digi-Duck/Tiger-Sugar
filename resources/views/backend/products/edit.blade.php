@@ -16,7 +16,8 @@
                         商品管理-編輯
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('back.products.update', ['id' => $list->id]) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.products.update', ['id' => $list->id]) }}"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="container overflow-y-auto height-for-container">
                                 <div class="form-group row">
@@ -118,7 +119,8 @@
                                 <div class="form-group row">
                                     <label for="img" class="col-2 col-form-label">主要圖片(重新上傳)</label>
                                     <div class="col-10">
-                                        <input type="file" class="form-control" id="img" name="img" accept="image/*" vlaue>
+                                        <input type="file" class="form-control" id="img" name="img"
+                                            accept="image/*" vlaue>
                                     </div>
                                     <div class="col-12">
                                         <p class="text-danger">*注意：建議尺寸：400 * 435 (px)</p>
@@ -130,8 +132,8 @@
                                     <div class="col-10 row">
                                         @foreach ($list->productsImgs as $img)
                                             <div class="imgs_area mx-2 mb-2">
-                                                <div class="del_btn bg-danger text-white" data-id="{{ $img->id }}">X
-                                                </div>
+                                                <button type="button" class="btn btn-sm btn-danger"
+                                                    onclick="deleteData('{{ $img->id }}')">刪除</button>
                                                 <img src="{{ $img->img_url }}" alt="" width="200">
                                             </div>
                                         @endforeach
@@ -140,8 +142,8 @@
                                 <div class="form-group row">
                                     <label for="imgs" class="col-2 col-form-label">其他圖片(新增圖片)</label>
                                     <div class="col-10">
-                                        <input type="file" class="form-control" id="imgs" name="imgs[]"accept="image/*"
-                                            multiple>
+                                        <input type="file" class="form-control" id="imgs"
+                                            name="imgs[]"accept="image/*" multiple>
                                     </div>
                                     <div class="col-12">
                                         <p class="text-danger">*注意：建議尺寸：400 * 435 (px)</p>
@@ -159,6 +161,8 @@
 @endsection
 
 @section('js')
+    {{-- sweet alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function() {
             $('.summernote').summernote({
@@ -171,23 +175,65 @@
             })
         });
 
-        $('.del_btn').click(function() {
-            var yes = confirm('你確定刪除這張圖片嗎？');
-            if (yes) {
-                var id = $(this).attr("data-id");
-                axios.post('/admin/delProductsImage', {
-                        id: id
-                    })
-                    .then((res) => {
-                        alert('刪除成功');
-                        $(this).parent().remove();
-                    })
-                    .catch((error) => {
-                        alert('刪除失敗');
-                    })
-            } else {
+        // $('.del_btn').click(function() {
+        //     var yes = confirm('你確定刪除這張圖片嗎？');
+        //     if (yes) {
+        //         var id = $(this).attr("data-id");
+        //         axios.post('/admin/delProductsImage', {
+        //                 id: id
+        //             })
+        //             .then((res) => {
+        //                 alert('刪除成功');
+        //                 $(this).parent().remove();
+        //             })
+        //             .catch((error) => {
+        //                 alert('刪除失敗');
+        //             })
+        //     } else {
 
-            }
-        });
+        //     }
+        // });
+
+        function deleteData(id) {
+            console.log(id);
+
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'delete');
+            formData.append('id', id);
+
+            Swal.fire({
+                title: `確認要刪除這張圖片嗎?`,
+                showDenyButton: true,
+                confirmButtonText: '取消',
+                denyButtonText: '刪除',
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                    fetch('{{ route('back.products_img.delete') }}', {
+                        method: 'post',
+                        body: formData,
+                    }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '刪除成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '刪除失敗',
+                                text: '查無資料',
+                            });
+                        }
+                    });
+                }
+            });
+        }
     </script>
 @endsection

@@ -157,6 +157,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('store', [ProductsController::class, 'store'])->name('back.products.store');
         Route::get('edit/{id}', [ProductsController::class, 'edit'])->name('back.products.edit');
         Route::post('update/{id}', [ProductsController::class, 'update'])->name('back.products.update');
+        Route::delete('delete', [ProductsController::class, 'delete'])->name('back.products.delete');
+        Route::delete('delete_img', [ProductsController::class, 'deleteImg'])->name('back.products_img.delete');
     });
 
     // franchise_explain常見問題管理
