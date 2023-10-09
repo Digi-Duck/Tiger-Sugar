@@ -78,17 +78,17 @@ class MediaController extends Controller
         return redirect(route('back.media.index'))->with('message', '更新成功!');
     }
 
-    // public function delete($id)
-    // {
-    //     $media = Media::find($id);
-    //     $this->delete_file($media->link);
-    //     $this->delete_file($media->link);
-    //     $media->delete();
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $Media = Media::find($id);
+        $this->fileService->deleteUpload($Media->link);
+        $Media->delete();
 
-    //     return redirect('/admin/media')->with('message','刪除成功!');
-    // }
+        return 'success';
+    }
 
-    //  //上傳檔案
+     //上傳檔案
     //  public function upload_video($file){
     //     $allowed_extensions =["mp4", "MP4"];
     //     if ($file->getClientOriginalExtension() &&

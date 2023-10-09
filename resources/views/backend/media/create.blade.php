@@ -55,11 +55,4 @@
 @endsection
 
 @section('js')
-    <script>
-        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
-            if($(e.target).attr('id') == 'pills-home-tab'){
-                document.querySelector("#media_name").setAttribute('value','影片');
-            }
-        })
-    </script>
 @endsection

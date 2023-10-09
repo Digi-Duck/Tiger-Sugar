@@ -117,6 +117,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('store', [MediaController::class, 'store'])->name('back.media.store');
         Route::get('edit/{id}', [MediaController::class, 'edit'])->name('back.media.edit');
         Route::post('update/{id}', [MediaController::class, 'update'])->name('back.media.update');
+        Route::delete('delete', [MediaController::class, 'delete'])->name('back.media.delete');
     });
 
 
