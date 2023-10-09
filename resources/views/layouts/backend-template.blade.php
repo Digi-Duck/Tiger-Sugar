@@ -121,7 +121,7 @@
                         <h2 class="backend-h2">媒體露出</h2>
                     </button>
                 </a>
-                <a href="" id="contact" class="single-btn" title="前往加盟來信輸出頁">
+                <a href="{{ route('back.contact.index') }}" id="contact" class="single-btn" title="前往加盟來信輸出頁">
                     <button type="button" class="backend-btn">
                         <h2 class="backend-h2">加盟來信</h2>
                     </button>

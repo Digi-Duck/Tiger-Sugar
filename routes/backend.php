@@ -4,6 +4,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogNewsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\DrinkTypeController;
@@ -120,7 +121,10 @@ Route::middleware('auth')->prefix('/back')->group(function () {
 
 
     // 加盟來信
-
+    Route::prefix('/contact')->group(function () {
+        Route::get('index', [ContactController::class, 'index'])->name('back.contact.index');
+        Route::get('show/{id}', [ContactController::class, 'show'])->name('back.contact.show');
+    });
 
     // distribution 經銷來信
     Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');

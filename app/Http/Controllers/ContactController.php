@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -10,13 +10,13 @@ class ContactController extends Controller
     public function index()
     {
         $lists = Contact::all();
-        return view('admin.contact.index',compact('lists'));
+        return view('backend.contact.index',compact('lists'));
     }
 
     public function show($id)
     {
         $contact_info = Contact::find($id);
-        return view('admin.contact.show',compact('contact_info'));
+        return view('backend.contact.show',compact('contact_info'));
     }
 
     public function delete($id)
@@ -24,7 +24,7 @@ class ContactController extends Controller
         $Contact = Contact::find($id);
         $Contact->delete();
 
-        return redirect('/admin/contact')->with('message','刪除成功!');
+        return redirect(route('back.contact.index'))->with('message','刪除成功!');
     }
 
     public function delete_all(Request $request)

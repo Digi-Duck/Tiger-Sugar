@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.backend-template')
 
-@section('css')
-@endsection
-
-@section('content')
+@section('main')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -72,7 +69,7 @@
                             <hr>
                         </form>
 
-                        <a href="/admin/contact" class="btn btn-primary d-block col-2 mx-auto">回到上一頁</a>
+                        <a href="{{ route('back.contact.index') }}" class="btn btn-primary d-block col-2 mx-auto">回到上一頁</a>
                     </div>
                 </div>
             </div>
