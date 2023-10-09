@@ -9,7 +9,7 @@
                         媒體報導管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('back.blog_new.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.blog_news.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>

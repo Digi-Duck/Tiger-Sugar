@@ -131,11 +131,12 @@ Route::middleware('auth')->prefix('/back')->group(function () {
 
     // 媒體報導
     Route::prefix('/blog_news')->group(function () {
-        Route::get('index', [BlogNewsController::class, 'index'])->name('back.blog_new.index');
-        Route::get('create', [BlogNewsController::class, 'create'])->name('back.blog_new.create');
-        Route::post('store', [BlogNewsController::class, 'store'])->name('back.blog_new.store');
-        Route::get('edit/{id}', [BlogNewsController::class, 'edit'])->name('back.blog_new.edit');
-        Route::post('update/{id}', [BlogNewsController::class, 'update'])->name('back.blog_new.update');
+        Route::get('index', [BlogNewsController::class, 'index'])->name('back.blog_news.index');
+        Route::get('create', [BlogNewsController::class, 'create'])->name('back.blog_news.create');
+        Route::post('store', [BlogNewsController::class, 'store'])->name('back.blog_news.store');
+        Route::get('edit/{id}', [BlogNewsController::class, 'edit'])->name('back.blog_news.edit');
+        Route::post('update/{id}', [BlogNewsController::class, 'update'])->name('back.blog_news.update');
+        Route::delete('delete/', [BlogNewsController::class, 'delete'])->name('back.blog_news.delete');
     });
 
     // 商品管理 （商品類型管理）

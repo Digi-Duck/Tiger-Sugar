@@ -49,7 +49,7 @@ class BlogNewsController extends Controller
         $BlogNews->update([
             'main_photo' => $img,
         ]);
-        return redirect(route('back.blog_new.index'))->with('message','新增成功!');
+        return redirect(route('back.blog_news.index'))->with('message','新增成功!');
     }
 
     public function edit($id)
@@ -83,16 +83,17 @@ class BlogNewsController extends Controller
             ]);
         }
 
-        return redirect(route('back.blog_new.index'))->with('message','更新成功!');
+        return redirect(route('back.blog_news.index'))->with('message','更新成功!');
     }
 
-    // public function delete($id)
-    // {
-    //     $BlogNews = BlogNews::find($id);
-    //     $this->delete_file($BlogNews->main_photo);
-    //     $BlogNews->delete();
-    //     return redirect('/admin/blog_news')->with('message','刪除成功!');
-    // }
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $BlogNews = BlogNews::find($id);
+        $this->fileService->deleteUpload($BlogNews->main_photo);
+        $BlogNews->delete();
+        return 'success';
+    }
 
     // //上傳檔案
     // public function upload_file($file){

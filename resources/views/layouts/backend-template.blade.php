@@ -132,7 +132,7 @@
                         <h2 class="backend-h2">經銷來信</h2>
                     </button>
                 </a>
-                <a href="{{ route('back.blog_new.index') }}" id="blog-news" class="single-btn" title="前往媒體報導設定頁">
+                <a href="{{ route('back.blog_news.index') }}" id="blog-news" class="single-btn" title="前往媒體報導設定頁">
                     <button type="button" class="backend-btn">
                         <h2 class="backend-h2">媒體報導</h2>
                     </button>
