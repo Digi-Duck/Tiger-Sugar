@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Drink;
+use App\Models\DrinkType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -17,7 +18,7 @@ class DrinkController extends Controller
 
     public function create()
     {
-        $types = Drink::all();
+        $types = DrinkType::all();
         return view('backend.drink.create',compact('types'));
     }
 
