@@ -14,7 +14,7 @@ class DrinkType extends Model
     ];
     public $timestamps = false;
 
-    public function drinks()
+    public function Drink()
     {
         return $this->hasMany(Drink::class, 'type_id')->orderBy('sort', 'asc');
     }

@@ -16,7 +16,7 @@ class Drink extends Model
     ];
     public $timestamps = false;
 
-    public function drinkType()
+    public function DrinkType()
     {
         return $this->belongsTo(DrinkType::class, 'type_id');
     }
