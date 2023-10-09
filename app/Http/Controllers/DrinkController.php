@@ -17,6 +17,7 @@ class DrinkController extends Controller
 
     public function create()
     {
+        $types = Drink::all();
         return view('backend.drink.create',compact('types'));
     }
 
