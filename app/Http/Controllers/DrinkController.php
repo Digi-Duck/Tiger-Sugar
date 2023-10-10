@@ -31,12 +31,12 @@ class DrinkController extends Controller
             'hot' => $request->hot,
             'sort' => $request->sort,
         ]);
-        return redirect('backend.drink.index')->with('message','新增成功!');
+        return redirect(route('back.drink.index'))->with('message','新增成功!');
     }
 
     public function edit($id)
     {
-        $list = Drink::find($id);
+        $lists = Drink::find($id);
         $types = Drink::all();
         return view('backend.drink.edit',compact('list','id','types'));
     }

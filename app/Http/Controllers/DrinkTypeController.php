@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DrinkType;
+use App\Models\Drink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -22,7 +23,14 @@ class DrinkTypeController extends Controller
 
     public function store(Request $request)
     {
-        $DrinkType = DrinkType::create([
+
+        $request->validate([
+            'type_name' => 'required|max:255',
+            'type_info' => 'required|max:255',
+            'sort' => 'required|max:11',
+        ]);
+
+         DrinkType::create([
             'type_name' => $request->type_name,
             'type_info' => $request->type_info,
             'sort' => $request->sort,
@@ -38,8 +46,13 @@ class DrinkTypeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $DrinkType = DrinkType::find($id);
-        $DrinkType::create([
+        $request->validate([
+            'type_name' => 'required|max:255',
+            'type_info' => 'required|max:255',
+            'sort' => 'required|max:11',
+        ]);
+        $drink = DrinkType::find($id);
+        $drink->update([
             'type_name' => $request->type_name,
             'type_info' => $request->type_info,
             'sort' => $request->sort,

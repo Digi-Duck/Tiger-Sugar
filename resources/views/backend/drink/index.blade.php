@@ -29,7 +29,6 @@
                                 <tr>
                                     <td>{{$list->type->type_name}}</td>
                                     <td>{{$list->drink_name}}</td>
-
                                     <td>{{$list->sort}}</td>
                                     <td>
                                         <a class="btn btn-sm btn-success" href="/admin/drink/edit/{{$list->id}}">編輯</a>
