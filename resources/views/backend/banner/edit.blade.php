@@ -3,7 +3,7 @@
 @section('css')
     <style>
         .max-height-for-container {
-            max-height: 40vh;
+            max-height: 500px;
         }
     </style>
 @endsection
