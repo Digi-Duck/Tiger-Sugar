@@ -24,7 +24,7 @@ class DrinkController extends Controller
 
     public function store(Request $request)
     {
-        $drink = Drink::create([
+         Drink::create([
             'type_id' => $request->type_id,
             'drink_name' => $request->drink_name,
             'cold' => $request->cold,
@@ -38,18 +38,20 @@ class DrinkController extends Controller
     {
         $lists = Drink::find($id);
         $types = Drink::all();
-        return view('backend.drink.edit',compact('list','id','types'));
+        return view('backend.drink.edit',compact('lists','id','types'));
     }
 
     public function update(Request $request,$id)
     {
-        $Drink = Drink::find($id);
-        $Drink -> type_id = $request->type_id;
-        $Drink -> drink_name  = $request->drink_name;
-        $Drink -> cold  = $request->cold;
-        $Drink -> hot  = $request->hot;
-        $Drink -> sort  = $request->sort;
-        $Drink -> save();
+        $drink = Drink::find($id);
+        $drink->update([
+            'type_id' => $request->type_id,
+            'drink_name' => $request->drink_name,
+            'cold' => $request->cold,
+            'hot' => $request->hot,
+            'sort' => $request->sort,
+        ]);
+        // dd($drink);
 
         return redirect(route('back.drink.index'))->with('message','更新成功!');
     }
