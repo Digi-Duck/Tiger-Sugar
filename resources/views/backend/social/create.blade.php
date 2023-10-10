@@ -1,11 +1,15 @@
 @extends('layouts.backend-template')
 
 @section('css')
-<style>
-.cursor-p{
-    cursor: pointer;
-}
-</style>
+    <style>
+        .max-height-for-container {
+            max-height: 700px
+        }
+
+        .cursor-p {
+            cursor: pointer;
+        }
+    </style>
 @endsection
 
 @section('main')
@@ -16,10 +20,10 @@
                     <h4 class="card-header">
                         社群回饋管理-新增
                     </h4>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('back.social.store')}}" enctype="multipart/form-data">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
+                        <form method="POST" action="{{ route('back.social.store') }}" enctype="multipart/form-data">
                             @csrf
-                            <input class="form-control" name="type" id="social_type" value="embed" required>
+                            <input hidden class="form-control" name="type" id="social_type" value="embed" required>
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -37,8 +41,9 @@
                             <hr>
 
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                    {{--嵌入碼上稿方式--}}
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    {{-- 嵌入碼上稿方式 --}}
                                     <div class="form-group row">
                                         <label for="embed_name" class="col-2 col-form-label">社群回饋代稱</label>
                                         <div class="col-10">
@@ -53,21 +58,28 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                    {{--客製化上稿方式--}}
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+                                    {{-- 客製化上稿方式 --}}
                                     <div class="form-group row">
                                         <label for="user_photo" class="col-2 col-form-label">使用者Icon</label>
                                         <div class="col-10">
-                                            <input type="file" class="form-control-file" id="user_photo" name="user_photo">
+                                            <input type="file" class="form-control-file" id="user_photo"
+                                                name="user_photo">
                                         </div>
-                                        <div class="col-12"><p class="text-danger">*建議尺寸：30 * 30 (px)</p></div>
+                                        <div class="col-12">
+                                            <p class="text-danger">*建議尺寸：30 * 30 (px)</p>
+                                        </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="main_photo" class="col-2 col-form-label">主要圖片</label>
                                         <div class="col-10">
-                                            <input type="file" class="form-control-file" id="main_photo" name="main_photo">
+                                            <input type="file" class="form-control-file" id="main_photo"
+                                                name="main_photo">
                                         </div>
-                                        <div class="col-12"><p class="text-danger">*建議尺寸：350 * 350 (px)</p></div>
+                                        <div class="col-12">
+                                            <p class="text-danger">*建議尺寸：350 * 350 (px)</p>
+                                        </div>
                                     </div>
                                     <hr>
                                     <div class="form-group row">
@@ -83,16 +95,22 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="social_icon" class="col-2 col-form-label">社群Icon <a target="_blank" href="https://fontawesome.com/icons?d=gallery&m=free"><i class="fas fa-info-circle"></i></a></label>
+                                        <label for="social_icon" class="col-2 col-form-label">社群Icon <a target="_blank"
+                                                href="https://fontawesome.com/icons?d=gallery&m=free"><i
+                                                    class="fas fa-info-circle"></i></a></label>
                                         <div class="col-10">
-                                            <input class="form-control" id="social_icon" name="social_icon" placeholder='<i class="fab fa-weibo"></i>'>
-                                            <small class="text-danger">* We are using font awesome icon in this field,please click left info button goto font awesome website, and copy icons html code.</small>
+                                            <input class="form-control" id="social_icon" name="social_icon"
+                                                placeholder='<i class="fab fa-weibo"></i>'>
+                                            <small class="text-danger">* We are using font awesome icon in this
+                                                field,please click left info button goto font awesome website, and copy
+                                                icons html code.</small>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="social_icon_color" class="col-2 col-form-label">社群Icon顏色</label>
                                         <div class="col-10">
-                                            <input type="color" class="form-control" id="social_icon_color" name="social_icon_color">
+                                            <input type="color" class="form-control" id="social_icon_color"
+                                                name="social_icon_color">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -110,7 +128,8 @@
                                     <div class="form-group row">
                                         <label for="link_url" class="col-2 col-form-label">是否新開視窗</label>
                                         <div class="col-10" style="padding-left: 35px">
-                                            <input class="form-check-input" type="checkbox" value="link_target" name="link_target" id="link_target">
+                                            <input class="form-check-input" type="checkbox" value="link_target"
+                                                name="link_target" id="link_target">
                                             <label class="form-check-label" for="link_target">
                                                 Pop-out window
                                             </label>
@@ -136,7 +155,8 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="0" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                        value="0" min="0" max="999">
                                 </div>
                             </div>
                             <hr>

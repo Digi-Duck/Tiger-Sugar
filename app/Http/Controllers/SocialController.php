@@ -9,22 +9,41 @@ use App\Services\FileService;
 
 class SocialController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->redirect = '/admin';
-    //     $this->index = 'admin.social.index';
-    //     $this->create = 'admin.social.create';
-    //     $this->edit = 'admin.social.edit';
-    // }
-
     public function __construct(protected FileService $fileService)
     {
     }
 
-    public function index()
+    // public function index()
+    // {
+    //     $lists = Social::all();
+    //     return view('backend.social.index', compact('lists'));
+    // }
+
+    public function index(Request $request)
     {
-        $lists = Social::all();
-        return view('backend.social.index', compact('lists'));
+        $lists = Social::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('embed_name', 'like', "%{$keyword}%")
+                ->orwhere('user_name', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.social.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
     public function create()
