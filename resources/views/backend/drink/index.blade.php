@@ -27,7 +27,7 @@
                             <tbody>
                             @foreach($lists as $list)
                                 <tr>
-                                    <td>{{$list->type->type_name}}</td>
+                                    <td>{{$list->type_name}}</td>
                                     <td>{{$list->drink_name}}</td>
 
                                     <td>{{$list->sort}}</td>
