@@ -24,6 +24,7 @@ class BannerController extends Controller
         $keyword = $request->keyword ?? '';
         $page_numbers = $request->page_numbers;
         $page = $request->page;
+        $count = $lists->count();
 
         if ($request->filled('keyword')) {
             $lists->where('image_alt', 'like', "%{$keyword}%");
@@ -39,7 +40,7 @@ class BannerController extends Controller
         $lists->orderBy('sort', 'asc');
         $lists = $lists->paginate($page_numbers);
         $lists->appends(compact('lists', 'keyword', 'page_numbers'));
-        return view('backend.banner.index', compact('lists', 'keyword', 'page_numbers', 'page'));
+        return view('backend.banner.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
     public function create()

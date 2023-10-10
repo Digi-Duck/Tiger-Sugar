@@ -102,14 +102,14 @@
 
                         {{-- 複製這邊  正在顯示幾筆資料+頁籤 --}}
                         <div class="d-flex justify-content-between align-items-center">
-                            @if ($lists->count() == 0)
+                            @if ($count == 0)
                                 <div>目前尚無資料</div>
-                            @elseif ($lists->count() <= $page_numbers)
-                                <div>正在顯示{{$lists->count()}}筆資料中，第1筆到第{{$lists->count()}}筆資料</div>
-                            @elseif ($lists->count() > $page_numbers*$page)
-                                <div>正在顯示{{$lists->count()}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
+                            @elseif ($count <= $page_numbers)
+                                <div>正在顯示{{$count}}筆資料中，第1筆到第{{$count}}筆資料</div>
+                            @elseif ($count > $page_numbers*$page)
+                                <div>正在顯示{{$count}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
                             @else
-                                <div>正在顯示{{$lists->count()}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$lists->count()}}筆資料</div>
+                                <div>正在顯示{{$count}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$count}}筆資料</div>
                             @endif
                             <div>
                                 {{ $lists->links() }}
