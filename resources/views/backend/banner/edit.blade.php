@@ -24,18 +24,21 @@
                                 required>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="pills-home-tab"
-                                        data-bs-toggle="pill" data-bs-target="#pills-home"  role="tab" aria-controls="pills-home"
+                                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
                                         aria-selected="true">圖片</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">影片</a>
+                                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile"
+                                        aria-selected="false">影片</a>
                                 </li>
                             </ul>
 
                             <hr>
 
-                            <div class="tab-content container overflow-y-auto max-height-for-container" id="pills-tabContent">
+                            <div class="tab-content container overflow-y-auto max-height-for-container"
+                                id="pills-tabContent">
                                 <div class="tab-pane fade @if ($info->type == '圖片') show active @endif"
                                     id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                     <div class="form-group row">
@@ -142,10 +145,13 @@
                                         value="{{ $info->sort }}" min="0" max="999">
                                 </div>
                             </div>
-
                             <hr>
-
-                            <button type="submit" class="btn btn-primary d-block mx-auto">修改</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.banner.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">修改</button>
+                            </div>
                         </form>
                     </div>
                 </div>
