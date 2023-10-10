@@ -12,17 +12,31 @@ class MediaController extends Controller
     public function __construct(protected FileService $fileService)
     {
     }
-    // function __construct()
-    // {
-    //     $this->redirect = '/admin';
-    //     $this->index = 'admin.media.index';
-    //     $this->create = 'admin.media.create';
-    //     $this->edit = 'admin.media.edit';
-    // }
-    public function index()
+
+    public function index(Request $request)
     {
-        $mediaes = Media::orderBy('sort', 'desc')->get();
-        return view('backend.media.index', compact('mediaes'));
+        $lists = Media::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('name', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.media.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
     public function create()
