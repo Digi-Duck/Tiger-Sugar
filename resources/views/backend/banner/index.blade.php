@@ -23,6 +23,8 @@
                     <div class="card-body banner-nav-style container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
                         <hr>
+
+                        {{-- 複製這邊 選擇幾頁+模糊搜尋 --}}
                         <form action="{{ route('back.banner.index') }}" method="GET" id="page-numbers" role="search"
                             class="d-flex justify-content-between align-items-center mb-3">
                             @csrf
@@ -53,13 +55,14 @@
                                 </select>
                                 <span>筆</span>
                             </div>
-
                             <div class="d-flex justify-between">
-                                <input class="form-control" name="keyword" type="text" placeholder="搜尋名稱或描述"
+                                <input class="form-control me-2" name="keyword" type="text" placeholder="搜尋名稱或描述"
                                     aria-label="Search" value="{{ $keyword }}">
                                 <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
                             </div>
                         </form>
+                        {{-- 複製到這邊就好 controller記得加東西 --}}
+
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
@@ -70,7 +73,7 @@
                                     <th width="80">功能</th>
                                 </tr>
                             </thead>
-                            <tbody class="">
+                            <tbody>
                                 @foreach ($lists as $list)
                                     <tr>
                                         <td>{{ $list->type }}</td>
@@ -96,18 +99,23 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        {{-- 複製這邊  正在顯示幾筆資料+頁籤 --}}
                         <div class="d-flex justify-content-between align-items-center">
-                            @if ($list->count() <= $page_numbers)
-                                <div>正在顯示{{$list->count()}}筆資料中，第1筆到第{{$list->count()}}筆資料</div>
-                            @elseif ($list->count() > $page_numbers*$page)
-                                <div>正在顯示{{$list->count()}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
+                            @if ($count == 0)
+                                <div>目前尚無資料</div>
+                            @elseif ($count <= $page_numbers)
+                                <div>正在顯示{{$count}}筆資料中，第1筆到第{{$count}}筆資料</div>
+                            @elseif ($count > $page_numbers*$page)
+                                <div>正在顯示{{$count}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
                             @else
-                                <div>正在顯示{{$list->count()}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$list->count()}}筆資料</div>
+                                <div>正在顯示{{$count}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$count}}筆資料</div>
                             @endif
                             <div>
                                 {{ $lists->links() }}
                             </div>
                         </div>
+                        {{-- 複製到這邊就好 controller記得加東西 --}}
 
                     </div>
                 </div>

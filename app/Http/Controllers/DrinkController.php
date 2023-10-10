@@ -12,7 +12,7 @@ class DrinkController extends Controller
 
     public function index(Request $request)
     {
-        $lists = Drink::all()->sortBy('sort');
+        $lists = Drink::orderBy('sort','desc')->get();
         return view('backend.drink.index',compact('lists'));
     }
 
@@ -51,7 +51,7 @@ class DrinkController extends Controller
         $Drink -> sort  = $request->sort;
         $Drink -> save();
 
-        return redirect('backend.drink.index')->with('message','更新成功!');
+        return redirect(route('back.drink.index'))->with('message','更新成功!');
     }
 
     public function delete($id)
@@ -59,6 +59,6 @@ class DrinkController extends Controller
         $Drink = Drink::find($id);
         $this->delete_file($Drink->image_ur);
         $Drink->delete();
-        return redirect('backend.drink.index')->with('message','刪除成功!');
+        return redirect(route('back.drink.index'))->with('message','刪除成功!');
     }
 }
