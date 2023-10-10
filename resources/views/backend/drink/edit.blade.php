@@ -19,7 +19,7 @@
                                 <div class="col-10">
                                     <select class="form-control" name="type_id" id="type_id" required>
                                         @foreach($types as $type)
-                                            <option @if($lists->type_id == $type->id) selected @endif value="{{$type->id}}">{{$type->drinktype->type_name}}</option>
+                                            <option @if($lists->type_id == $type->id) selected @endif value="{{$type->id}}">{{$type->type_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
