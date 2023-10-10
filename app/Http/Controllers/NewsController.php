@@ -17,7 +17,9 @@ class NewsController extends Controller
         $count = $lists->count();
 
         if ($request->filled('keyword')) {
-            $lists->where('info', 'like', "%{$keyword}%");
+            $lists->where('title', 'like', "%{$keyword}%")
+                ->orwhere('info', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
         }
 
         if ($page_numbers == null) {
@@ -30,7 +32,7 @@ class NewsController extends Controller
         $lists->orderBy('sort', 'asc');
         $lists = $lists->paginate($page_numbers);
         $lists->appends(compact('lists', 'keyword', 'page_numbers'));
-        return view('backend.news.index',compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
+        return view('backend.news.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
     public function create()
@@ -61,16 +63,16 @@ class NewsController extends Controller
             'sort' => $request->sort,
         ]);
 
-        return redirect(route('back.news.index'))->with('message','新增成功!');
+        return redirect(route('back.news.index'))->with('message', '新增成功!');
     }
 
     public function edit(Request $request, $id)
     {
         $list = News::find($id);
-        return view('backend.news.edit',compact('list'));
+        return view('backend.news.edit', compact('list'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $News = News::find($id);
         $request->validate([
@@ -89,7 +91,7 @@ class NewsController extends Controller
             'info' => $request->info,
             'sort' => $request->sort,
         ]);
-        return redirect(route('back.news.index'))->with('message','更新成功!');
+        return redirect(route('back.news.index'))->with('message', '更新成功!');
     }
 
     public function delete(Request $request)

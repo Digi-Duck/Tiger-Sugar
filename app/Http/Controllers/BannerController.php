@@ -27,7 +27,8 @@ class BannerController extends Controller
         $count = $lists->count();
 
         if ($request->filled('keyword')) {
-            $lists->where('image_alt', 'like', "%{$keyword}%");
+            $lists->where('image_alt', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
         }
 
         if ($page_numbers == null) {

@@ -2,12 +2,8 @@
 
 @section('css')
     <style>
-        .pagination {
-            justify-content: center;
-        }
-
         .max-height-for-container {
-            max-height: 550px
+            max-height: 700px
         }
     </style>
 @endsection
@@ -20,7 +16,7 @@
                     <h4 class="card-header ">
                         廣告橫幅管理
                     </h4>
-                    <div class="card-body banner-nav-style container overflow-y-auto max-height-for-container">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.banner.create') }}">新增</a>
                         <hr>
 

@@ -6,26 +6,46 @@ use Illuminate\Http\Request;
 use App\Models\FranchiseExplain;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+
 class FranchiseExplainController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->redirect = '/admin';
-    //     $this->index = 'admin.franchise_explain.index';
-    //     $this->create = 'admin.franchise_explain.create';
-    //     $this->edit = 'admin.franchise_explain.edit';
-    // }
-    public function index(){
-        $lists = FranchiseExplain::all();
-        return view('backend.franchise_explain.index',compact('lists'));
+
+    public function index(Request $request)
+    {
+        $lists = FranchiseExplain::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('title', 'like', "%{$keyword}%")
+                ->orwhere('content', 'like', "%{$keyword}%")
+                ->orwhere('english_title', 'like', "%{$keyword}%")
+                ->orwhere('english_content', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.franchise_explain.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('backend.franchise_explain.create');
     }
 
     // 後台form表單上傳
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $request->validate([
             'title' => 'required|max:255',
@@ -40,7 +60,7 @@ class FranchiseExplainController extends Controller
             'english_title' => $request->english_title,
             'english_content' => $request->english_content,
         ]);
-        return redirect(route('back.franchise_explain.index'))->with('message','新增成功!');
+        return redirect(route('back.franchise_explain.index'))->with('message', '新增成功!');
     }
     // public function delete($id){
     //     DB::table('franchise_explains')->where('id','=',$id)->delete();
