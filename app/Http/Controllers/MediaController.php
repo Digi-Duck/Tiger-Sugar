@@ -40,6 +40,7 @@ class MediaController extends Controller
         $value = Media::create([
             'name' => $request->name,
             'link' => '',
+            'sort' => $request->sort,
         ]);
         if ($request->hasFile('video_file')) {
             $video = $this->fileService->imgUpload($request->file('video_file'), 'media-video');
@@ -66,6 +67,7 @@ class MediaController extends Controller
         $value = Media::find($id);
         $value->update([
             'name' => $request->name,
+            'sort' => $request->sort,
         ]);
 
         if ($request->hasFile('video_file')) {
