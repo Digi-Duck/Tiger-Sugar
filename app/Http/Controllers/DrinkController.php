@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\File;
 class DrinkController extends Controller
 {
 
-    public function index(Request $request)
+    public function index()
     {
-        $lists = Drink::orderBy('sort','desc')->get();
+        $lists = Drink::all()->sortBy('sort');
         return view('backend.drink.index',compact('lists'));
     }
 
