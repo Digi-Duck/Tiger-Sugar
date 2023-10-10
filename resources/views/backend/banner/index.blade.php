@@ -29,26 +29,26 @@
                             <div>
                                 <span>請選擇顯示幾筆資料：</span>
                                 <select id="page-select" onchange="changePages()" name="page_numbers">
-                                    @if ($page_numbers == 10)
-                                        <option value="10" selected>10</option>
+                                    @if ($page_numbers == 100)
+                                        <option value="10">10</option>
                                         <option value="25">25</option>
                                         <option value="50">50</option>
+                                        <option value="100" selected>100</option>
+                                    @elseif ($page_numbers == 50)
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50" selected>50</option>
                                         <option value="100">100</option>
                                     @elseif ($page_numbers == 25)
                                         <option value="10">10</option>
                                         <option value="25" selected>25</option>
                                         <option value="50">50</option>
                                         <option value="100">100</option>
-                                    @elseif ($page_numbers == 50)
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50" selected>50</option>
-                                        <option value="100">100</option>
                                     @else
-                                        <option value="10">10</option>
+                                        <option value="10" selected>10</option>
                                         <option value="25">25</option>
                                         <option value="50">50</option>
-                                        <option value="100" selected>100</option>
+                                        <option value="100">100</option>
                                     @endif
                                 </select>
                                 <span>筆</span>
@@ -89,13 +89,26 @@
                                         <td>
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.banner.edit', ['id' => $list->id]) }}">編輯</a>
-                                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteData('{{ $list->id }}')">刪除</button>
+                                            <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteData('{{ $list->id }}')">刪除</button>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $lists->links() }}
+                        <div class="d-flex justify-content-between align-items-center">
+                            @if ($list->count() <= $page_numbers)
+                                <div>正在顯示{{$list->count()}}筆資料中，第1筆到第{{$list->count()}}筆資料</div>
+                            @elseif ($list->count() > $page_numbers*$page)
+                                <div>正在顯示{{$list->count()}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
+                            @else
+                                <div>正在顯示{{$list->count()}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$list->count()}}筆資料</div>
+                            @endif
+                            <div>
+                                {{ $lists->links() }}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
