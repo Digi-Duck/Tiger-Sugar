@@ -1,8 +1,9 @@
 @extends('layouts.backend-template')
+
 @section('css')
     <style>
-        .height-for-container {
-            max-height: 440px;
+        .max-height-for-container {
+            max-height: 600px;
         }
     </style>
 @endsection
@@ -19,7 +20,7 @@
                         <form method="POST" action="{{ route('back.products.update', ['id' => $list->id]) }}"
                             enctype="multipart/form-data">
                             @csrf
-                            <div class="container overflow-y-auto height-for-container">
+                            <div class="container overflow-y-auto max-height-for-container">
                                 <div class="form-group row">
                                     <label for="sort" class="col-2 col-form-label">權重</label>
                                     <div class="col-10">
@@ -151,7 +152,12 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">更新</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.products.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">修改</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -161,39 +167,8 @@
 @endsection
 
 @section('js')
-    {{-- sweet alert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(document).ready(function() {
-            $('.summernote').summernote({
-                height: 300,
-                popover: {
-                    image: [],
-                    link: [],
-                    air: []
-                }
-            })
-        });
-
-        // $('.del_btn').click(function() {
-        //     var yes = confirm('你確定刪除這張圖片嗎？');
-        //     if (yes) {
-        //         var id = $(this).attr("data-id");
-        //         axios.post('/admin/delProductsImage', {
-        //                 id: id
-        //             })
-        //             .then((res) => {
-        //                 alert('刪除成功');
-        //                 $(this).parent().remove();
-        //             })
-        //             .catch((error) => {
-        //                 alert('刪除失敗');
-        //             })
-        //     } else {
-
-        //     }
-        // });
-
         function deleteData(id) {
             console.log(id);
 
