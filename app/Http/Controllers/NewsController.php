@@ -8,10 +8,29 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $lists = News::all();
-        return view('backend.news.index',compact('lists'));
+        $lists = News::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('info', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.news.index',compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
     public function create()
