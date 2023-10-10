@@ -11,6 +11,11 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.news.update',['id' => $list->id]) }}" enctype="multipart/form-data">
                             @csrf
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             <div class="form-group row">
                                 <label for="title" class="col-2 col-form-label">標題</label>
                                 <div class="col-10">
@@ -20,14 +25,14 @@
                             <div class="form-group row mt-2">
                                 <label for="info" class="col-2 col-form-label">內容</label>
                                 <div class="col-10">
-                                    <textarea class="summernote" name="info" id="description" cols="30" rows="10">{{$list->info}}</textarea>
+                                    <textarea class="summernote" name="info" id="description" cols="30" rows="10" required>{{$list->info}} </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort"  required value="{{$list->sort}}" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" value="{{$list->sort}}" min="0" max="999" required>
                                 </div>
                             </div>
 

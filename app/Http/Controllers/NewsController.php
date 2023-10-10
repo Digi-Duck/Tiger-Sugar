@@ -40,12 +40,20 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+        $request->session()->put('title', $request->title);
+        $request->session()->put('info', $request->info);
+        $request->session()->put('sort', $request->sort);
+
         $request->validate([
             'title' => 'required|max:255',
             'info' => 'required',
             'sort' => 'required|max:11',
         ],[
-
+            'title.required' => '標題必填',
+            'title.max' => '標題不能超過255個字',
+            'info.required' => '內容必填',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
         ]);
         News::create([
             'title' => $request->title,
@@ -70,7 +78,11 @@ class NewsController extends Controller
             'info' => 'required',
             'sort' => 'required|max:11',
         ],[
-
+            'title.required' => '標題必填',
+            'title.max' => '標題不能超過255個字',
+            'info.required' => '內容必填',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
         ]);
         $News->update([
             'title' => $request->title,

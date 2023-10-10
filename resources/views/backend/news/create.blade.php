@@ -14,23 +14,28 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.news.store') }}" enctype="multipart/form-data">
                             @csrf
-
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             <div class="form-group row">
                                 <label for="title" class="col-2 col-form-label">標題</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="title" name="title" required>
+                                    <input class="form-control" id="title" name="title" value="{{ old('title',$title ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="form-group row mt-2">
                                 <label for="info" class="col-2 col-form-label">內容</label>
                                 <div class="col-10">
-                                    <textarea class="summernote" name="info" id="description" cols="30" rows="10"></textarea>
+                                    <textarea class="summernote" name="info" id="description" cols="30" rows="10" value="{{ old('info',$info ?? '') }}" required></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="0" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" value="{{ old('sort',$sort ?? '') }}" required
+                                        value="0" min="0" max="999">
                                 </div>
                             </div>
 
