@@ -1,4 +1,13 @@
 @extends('layouts.backend-template')
+
+@section('css')
+    <style>
+        .max-height-for-container {
+            max-height: 550px
+        }
+    </style>
+@endsection
+
 @section('main')
     <div class="container">
         <div class="row">
@@ -7,9 +16,10 @@
                     <h4 class="card-header">
                         最新消息管理
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.news.create') }}">新增</a>
                         <hr>
+
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>

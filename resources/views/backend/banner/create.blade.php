@@ -111,12 +111,16 @@
                                 </div>
                             </div>
                             <hr>
+
+                            {{-- 複製這邊  返回鍵的設定 --}}
                             <div class="d-flex justify-content-evenly">
                                 <a href="{{ route('back.banner.index') }}">
                                     <button type="button" class="btn btn-primary d-block">返回</button>
                                 </a>
                                 <button type="submit" class="btn btn-primary d-block">新增</button>
                             </div>
+                            {{-- 複製到這就好 路由記得改 --}}
+
                         </form>
                     </div>
                 </div>
