@@ -96,7 +96,6 @@
                                                 onclick="deleteData('{{ $list->id }}')">刪除</button>
                                         </td>
                                     </tr>
-                                    @dump($list->acount())
                                 @endforeach
                             </tbody>
                         </table>
