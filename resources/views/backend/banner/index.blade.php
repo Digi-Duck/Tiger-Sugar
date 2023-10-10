@@ -73,7 +73,7 @@
                                     <th width="80">功能</th>
                                 </tr>
                             </thead>
-                            <tbody class="">
+                            <tbody>
                                 @foreach ($lists as $list)
                                     <tr>
                                         <td>{{ $list->type }}</td>
@@ -96,24 +96,27 @@
                                                 onclick="deleteData('{{ $list->id }}')">刪除</button>
                                         </td>
                                     </tr>
+                                    @dump($list->acount())
                                 @endforeach
                             </tbody>
                         </table>
 
                         {{-- 複製這邊  正在顯示幾筆資料+頁籤 --}}
                         <div class="d-flex justify-content-between align-items-center">
-                            @if ($list->count() <= $page_numbers)
-                                <div>正在顯示{{$list->count()}}筆資料中，第1筆到第{{$list->count()}}筆資料</div>
-                            @elseif ($list->count() > $page_numbers*$page)
-                                <div>正在顯示{{$list->count()}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
+                            @if ($lists->count() == 0)
+                                <div>目前尚無資料</div>
+                            @elseif ($lists->count() <= $page_numbers)
+                                <div>正在顯示{{$lists->count()}}筆資料中，第1筆到第{{$lists->count()}}筆資料</div>
+                            @elseif ($lists->count() > $page_numbers*$page)
+                                <div>正在顯示{{$lists->count()}}筆資料中，第{{($page_numbers*($page-1))+1}}筆到第{{$page_numbers*$page}}筆資料</div>
                             @else
-                                <div>正在顯示{{$list->count()}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$list->count()}}筆資料</div>
+                                <div>正在顯示{{$lists->count()}}筆資料中，第{{( $page_numbers*($page-1))+1}}筆到第{{$lists->count()}}筆資料</div>
                             @endif
                             <div>
                                 {{ $lists->links() }}
                             </div>
                         </div>
-                        {{-- 複製到這邊就好 --}}
+                        {{-- 複製到這邊就好 controller記得加東西 --}}
 
                     </div>
                 </div>
