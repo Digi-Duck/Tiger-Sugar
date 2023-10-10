@@ -36,7 +36,7 @@ class DrinkController extends Controller
 
     public function edit($id)
     {
-        $list = Drink::find($id);
+        $lists = Drink::find($id);
         $types = Drink::all();
         return view('backend.drink.edit',compact('list','id','types'));
     }

@@ -20,8 +20,9 @@
                                     <select class="form-control" name="type_id" id="type_id" required>
                                         @foreach($types as $type)
                                             <option value="{{$type->id}}">{{$type->type_name}}</option>
-                                        @endforeach
+                                            @endforeach
                                     </select>
+                                    {{-- @dd($types) --}}
                                 </div>
                             </div>
                             <div class="form-group row">
