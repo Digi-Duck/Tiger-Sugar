@@ -74,7 +74,6 @@ class NewsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $News = News::find($id);
         $request->validate([
             'title' => 'required|max:255',
             'info' => 'required',
@@ -86,6 +85,9 @@ class NewsController extends Controller
             'sort.required' => '權重必填',
             'sort.max' => '權重不能超過11個字',
         ]);
+
+        $News = News::find($id);
+
         $News->update([
             'title' => $request->title,
             'info' => $request->info,

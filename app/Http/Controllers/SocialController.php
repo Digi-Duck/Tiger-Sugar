@@ -94,43 +94,46 @@ class SocialController extends Controller
     public function edit($id)
     {
         $info = Social::find($id);
-        return view('back/social/edit', compact('info', 'id'));
+        return view('backend/social/edit', compact('info', 'id'));
     }
 
     public function update(Request $request, $id)
     {
-        $social = Social::find($id)([
-            'type' => $request->type,
-            'sort' => $request->sort,
-            'embed_name' => $request->embed_name,
-            'embed_link' => $request->embed_link,
-            'user_icon' => $request->user_icon,
-            'user_name' => $request->user_name,
-            'user_account' => $request->user_account,
-            'social_icon' => $request->social_icon,
-            'social_icon_color' => $request->social_icon_color,
-            'link-title' => $request->link_title,
-            'link-href' => $request->link_href,
-            'link-target' => $request->link_target,
-            'social_info' => $request->social_info,
-            'post_date' => $request->post_date,
+
+        $request->validate([
+            'embed_name' => 'required|max:255',
+            'embed_link' => 'required',
+            'sort' => 'required|max:11',
+        ],[
+            'embed_name.required' => '標題必填',
+            'embed_name.max' => '標題不能超過255個字',
+            'embed_link.required' => '內容必填',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
         ]);
 
-        $type = $request->type;
+        $social = Social::find($id);
 
-        if ($type == '圖片') {
-            $request->validate([
-                'user_photo' => 'image',
-                'main_photo' => 'image',
-            ]);
+        $social->update([
+            'embed_name' => $request->embed_name,
+            'embed_link' => $request->embed_link,
+            'sort' => $request->sort,
+        ]);
+        // $type = $request->type;
 
-            $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
-            $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
-            $social->update([
-                'user_photo' => $userimg,
-                'main_photo' => $mainimg,
-            ]);
-        }
+        // if ($type == '圖片') {
+        //     $request->validate([
+        //         'user_photo' => 'image',
+        //         'main_photo' => 'image',
+        //     ]);
+
+        //     $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+        //     $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+        //     $social->update([
+        //         'user_photo' => $userimg,
+        //         'main_photo' => $mainimg,
+        //     ]);
+        // }
 
         return redirect('back/social/index')->with('message', '新增成功!');
     }

@@ -35,15 +35,14 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // social社群回饋
     Route::prefix('/social')->group(function () {
         Route::get('/index', [SocialController::class, 'index'])->name('back.social.index');
-        Route::get('/edit', [SocialController::class, 'edit'])->name('back.social.edit');
         Route::get('/create', [SocialController::class, 'create'])->name('back.social.create');
+        Route::post('/store', [SocialController::class, 'store'])->name('back.social.store');
+        Route::get('/edit/{id}', [SocialController::class, 'edit'])->name('back.social.edit');
+        Route::post('/update/{id}', [SocialController::class, 'update'])->name('back.social.update');
+        Route::post('/delete/{id}', [SocialController::class, 'delete'])->name('back.social.delete');
     });
 
     // social社群回饋
-    Route::post('/back/social/store', [SocialController::class, 'store'])->name('back.social.store');
-    Route::get('/back/social/edit/{id}', [SocialController::class, 'edit'])->name('back.social.edit');
-    Route::post('/back/social/update/{id}', [SocialController::class, 'update'])->name('back.social.update');
-    Route::post('/back/social/delete/{id}', [SocialController::class, 'delete'])->name('back.social.delete');
 
     // banner廣告橫幅
     Route::prefix('/banner')->group(function () {
