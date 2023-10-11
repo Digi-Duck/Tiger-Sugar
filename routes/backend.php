@@ -42,8 +42,6 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/delete/{id}', [SocialController::class, 'delete'])->name('back.social.delete');
     });
 
-    // social社群回饋
-
     // banner廣告橫幅
     Route::prefix('/banner')->group(function () {
         Route::get('/index', [BannerController::class, 'index'])->name('back.banner.index');
