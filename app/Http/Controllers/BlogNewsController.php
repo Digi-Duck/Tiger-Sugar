@@ -14,11 +14,39 @@ class BlogNewsController extends Controller
     {
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $lists = BlogNews::all();
-        return view('backend.blog_news.index',compact('lists'));
+        $lists = BlogNews::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('author', 'like', "%{$keyword}%")
+                ->orwhere('title', 'like', "%{$keyword}%")
+                ->orwhere('info', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.blog_news.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
+
+    // public function index()
+    // {
+    //     $lists = BlogNews::all();
+    //     return view('backend.blog_news.index',compact('lists'));
+    // }
 
     public function create()
     {

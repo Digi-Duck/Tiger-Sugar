@@ -49,12 +49,17 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="0" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" required value="{{ old('sort',$sort ?? '1') }}" min="0" max="999">
                                 </div>
                             </div>
 
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">新增</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.blog_news.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">新增</button>
+                            </div>
                         </form>
                     </div>
                 </div>
