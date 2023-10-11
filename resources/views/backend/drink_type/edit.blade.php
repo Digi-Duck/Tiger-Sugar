@@ -34,7 +34,12 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">修改</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.drink_type.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">修改</button>
+                            </div>
                         </form>
                     </div>
                 </div>
