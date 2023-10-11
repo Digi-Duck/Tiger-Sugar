@@ -929,6 +929,7 @@
             <div class="content">
                 <div class="swiper mySwiper-news">
                     <div class="swiper-wrapper">
+                        @foreach ( as )
                         <div class="swiper-slide">
                             <a target="_blank" href="https://www.popdaily.com.tw/food/962274" title="波波黛莉夏季新推連結">
                                 <div class="outer-card">
@@ -945,6 +946,7 @@
                                 </div>
                             </a>
                         </div>
+                        @endforeach
                         <div class="swiper-slide">
                             <a target="_blank" href="https://www.popdaily.com.tw/food/837759" title="波波黛莉麻糬瀑布連結">
                                 <div class="outer-card">
