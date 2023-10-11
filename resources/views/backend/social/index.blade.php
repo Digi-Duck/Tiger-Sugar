@@ -78,7 +78,7 @@
                                         <td>{{ $list->sort }}</td>
                                         <td>
                                             <a class="btn btn-sm btn-success"
-                                                href="/back/social/edit/{{ $list->id }}">編輯</a>
+                                                href="{{ route('back.social.edit', ['id' => $list->id]) }}">編輯</a>
                                             <button class="btn btn-sm btn-danger"
                                                 data-listid="{{ $list->id }}">刪除</button>
                                             <form class="delete-form" action="/admin/social/delete/{{ $list->id }}"
