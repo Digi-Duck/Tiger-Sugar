@@ -179,15 +179,6 @@
 
 @section('js')
     <script>
-        // $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
-        //     console.log($(e.target).attr('id'));
-
-        //     if($(e.target).attr('id') == 'pills-profile-tab'){
-        //         document.querySelector("#social_type").setAttribute('value','custom');
-        //     }else{
-        //         document.querySelector("#social_type").setAttribute('value','embed');
-        //     }
-        // })
         let embed = document.querySelector('#pills-home-tab');
         let custom = document.querySelector('#pills-profile-tab');
         let type = document.querySelector('#social_type');
