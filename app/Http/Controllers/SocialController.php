@@ -13,12 +13,6 @@ class SocialController extends Controller
     {
     }
 
-    // public function index()
-    // {
-    //     $lists = Social::all();
-    //     return view('backend.social.index', compact('lists'));
-    // }
-
     public function index(Request $request)
     {
         $lists = Social::query();
@@ -138,17 +132,14 @@ class SocialController extends Controller
         return redirect('back/social/index')->with('message', '新增成功!');
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Request $request)
     {
-        $social = Social::find($id);
-
-        // Assuming that the deleteUpload method deletes the file
-        $this->fileService->deleteUpload($social->user_photo);
-        $this->fileService->deleteUpload($social->main_photo);
-
-        $social->delete();
-
-        return redirect('/back/social/index')->with('message', '刪除成功!');
+        $id = $request->id;
+        $Social = Social::find($id);
+        $this->fileService->deleteUpload($Social->user_photo);
+        $this->fileService->deleteUpload($Social->main_photo);
+        $Social->delete();
+        return 'success';
     }
 
     //上傳檔案

@@ -28,7 +28,7 @@
                                 <div class="form-group row">
                                     <label for="sort" class="col-2 col-form-label">權重</label>
                                     <div class="col-10">
-                                        <input type="number" class="form-control" id="sort" name="sort" required>
+                                        <input type="number" value="{{ old('sort',$sort ?? '1') }}" class="form-control" id="sort" name="sort" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
