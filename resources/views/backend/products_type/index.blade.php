@@ -1,5 +1,13 @@
 @extends('layouts.backend-template ')
 
+@section('css')
+    <style>
+        .max-height-for-container {
+            max-height: 700px
+        }
+    </style>
+@endsection
+
 @section('main')
     @if (Session::has('message'))
     @endif
@@ -10,7 +18,7 @@
                     <h4 class="card-header">
                         商品類型管理
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.products_type.create') }}">新增</a>
                         <hr>
 
