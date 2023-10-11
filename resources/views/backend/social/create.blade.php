@@ -27,8 +27,7 @@
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active cursor-p" id="pills-home-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
+                                    <a class="nav-link active cursor-p" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
                                         aria-selected="true">嵌入方式上稿</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
@@ -160,7 +159,12 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">新增</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.social.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">新增</button>
+                            </div>
                         </form>
                     </div>
                 </div>

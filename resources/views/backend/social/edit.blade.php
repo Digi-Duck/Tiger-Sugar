@@ -1,5 +1,16 @@
 @extends('layouts.backend-template')
 
+@section('css')
+    <style>
+        .max-height-for-container {
+            max-height: 700px
+        }
+
+        .cursor-p {
+            cursor: pointer;
+        }
+    </style>
+@endsection
 
 @section('main')
     <div class="container">
@@ -9,17 +20,17 @@
                     <h4 class="card-header">
                         社群回饋管理-編輯
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.social.update', ['id' => $id])}}" enctype="multipart/form-data">
                             @csrf
                             <input hidden class="form-control" name="type" id="social_type" value="{{$info->type}}" required>
 
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link @if($info->type =='embed') active @endif" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">嵌入方式上稿</a>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active cursor-p" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">嵌入方式上稿</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link @if($info->type =='custom') active @endif" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">客製化方式上稿</a>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link cursor-p" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">客製化方式上稿</a>
                                 </li>
                             </ul>
 
@@ -152,7 +163,12 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">更新並上傳圖片</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.social.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">更新並上傳圖片</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -163,13 +179,19 @@
 
 @section('js')
     <script>
-        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
-            console.log($(e.target).attr('id'));
-
-            if($(e.target).attr('id') == 'pills-profile-tab'){
-                document.querySelector("#social_type").setAttribute('value','custom');
-            }else{
-                document.querySelector("#social_type").setAttribute('value','embed');
+        let embed = document.querySelector('#pills-home-tab');
+        let custom = document.querySelector('#pills-profile-tab');
+        let type = document.querySelector('#social_type');
+        embed.addEventListener('click', function() {
+            if (type.value === 'custom') {
+                type.value = 'embed'
+                console.log(type.value);
+            }
+        })
+        custom.addEventListener('click', function() {
+            if (type.value === 'embed') {
+                type.value = 'custom'
+                console.log(type.value);
             }
         })
     </script>
