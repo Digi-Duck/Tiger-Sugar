@@ -57,7 +57,6 @@ class DrinkController extends Controller
     public function delete($id)
     {
         $Drink = Drink::find($id);
-        // $this->delete_file($Drink->image_ur);
         $Drink->delete();
         return redirect(route('back.drink.index'))->with('message', '刪除成功!');
     }

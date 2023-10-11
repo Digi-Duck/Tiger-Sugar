@@ -2,87 +2,66 @@
 
 namespace App\Http\Controllers;
 
-use App\DrinkTypeEn;
+use App\Models\DrinkTypeEn;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class DrinkTypeEnController extends Controller
 {
-    function __construct()
-    {
-        $this->redirect = '/admin';
-        $this->index = 'admin.drink_type_en.index';
-        $this->create = 'admin.drink_type_en.create';
-        $this->edit = 'admin.drink_type_en.edit';
-    }
 
-    public function index()
+    public function index(Request $request)
     {
-        $lists = DrinkTypeEn::all();
-        return view($this->index,compact('lists'));
+        $lists = DrinkTypeEn::all()->sortBy('sort');
+        return view('backend.drink_type_en.index',compact('lists'));
     }
 
     public function create()
     {
-        return view($this->create);
+        return view('backend.drink_type_en.create');
     }
 
     public function store(Request $request)
     {
-        $new_record = new DrinkTypeEn();
-        $new_record -> type_name = $request->type_name;
-        $new_record -> type_info  = $request->type_info;
-        $new_record -> sort  = $request->sort;
-        $new_record -> save();
-        return redirect('/admin/drink_type_en')->with('message','新增成功!');
+        $request->validate([
+            'type_name' => 'required|max:255',
+            'type_info' => 'required|max:255',
+            'sort' => 'required|max:11',
+        ]);
+
+         DrinkTypeEn::create([
+            'type_name' => $request->type_name,
+            'type_info' => $request->type_info,
+            'sort' => $request->sort,
+        ]);
+        return redirect(route('back.drink_type_en.index'))->with('message', '新增成功!');
     }
 
     public function edit($id)
     {
         $list = DrinkTypeEn::find($id);
-        return view($this->edit,compact('list','id'));
+        return view('backend.drink_type_en.edit',compact('list','id'));
     }
 
     public function update(Request $request,$id)
     {
-        $DrinkType = DrinkTypeEn::find($id);
-        $DrinkType -> type_name = $request->type_name;
-        $DrinkType -> type_info  = $request->type_info;
-        $DrinkType -> sort  = $request->sort;
-        $DrinkType -> save();
-
-        return redirect('/admin/drink_type_en')->with('message','更新成功!');
+        $request->validate([
+            'type_name' => 'required|max:255',
+            'type_info' => 'required|max:255',
+            'sort' => 'required|max:11',
+        ]);
+        $drink = DrinkTypeEn::find($id);
+        $drink->update([
+            'type_name' => $request->type_name,
+            'type_info' => $request->type_info,
+            'sort' => $request->sort,
+        ]);
+        return redirect(route('back.drink_type_en.index'))->with('message', '更新成功!');
     }
 
     public function delete($id)
     {
         $DrinkType = DrinkTypeEn::find($id);
         $DrinkType->delete();
-        return redirect('/admin/drink_type_en')->with('message','刪除成功!');
-    }
-
-    //上傳檔案
-    public function upload_file($file){
-        $allowed_extensions =["png", "jpg", "gif", "PNG", "JPG", "GIF","jpeg","JPEG"];
-        if ($file->getClientOriginalExtension() &&
-            !in_array($file->getClientOriginalExtension(), $allowed_extensions))
-        {
-            return redirect()->back()->with('message','僅接受.jpg, .png, .gif, .jepg格式檔案!');
-        }
-        $extension = $file->getClientOriginalExtension();
-        $destinationPath = public_path() . '/summernote_upload/';
-        $original_filename = $file->getClientOriginalName();
-
-        $filename = $file->getFilename() . '.' . $extension;
-        $url = '/summernote_upload/' . $filename;
-
-        $file->move($destinationPath, $filename);
-
-        return $url;
-    }
-
-    //刪除檔案
-    public function delete_file($path){
-        File::delete(public_path().$path);
+        return redirect(route('back.drink_type_en.index'))->with('message','刪除成功!');
     }
 }
