@@ -52,6 +52,13 @@ class FranchiseExplainController extends Controller
             'content' => 'required',
             'english_title' => 'required|max:255',
             'english_content' => 'required',
+        ],[
+            'title.required' => '標題必填',
+            'title.max' => '標題字數不可超過255個字',
+            'content.required' => '內文必填',
+            'english_title.required' => '標題（英）必填',
+            'english_title.max' => '標題（英）字數不可超過255個字',
+            'english_content' => '內文（英）必填',
         ]);
 
         FranchiseExplain::create([

@@ -17,7 +17,6 @@ class BannerController extends Controller
     {
     }
 
-
     public function index(Request $request)
     {
         $lists = Banner::query();

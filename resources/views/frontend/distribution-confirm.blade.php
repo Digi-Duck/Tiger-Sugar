@@ -90,8 +90,10 @@
                                     <img class="ask-icon" src="{{asset('./frontend-img/distribution-confirm-img/delete.svg')}}"
                                         alt="移除已加商品">
                                     <div class="product-img-hover">
-                                        <img class="ask-icon-hover"
-                                            src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                        <a href="" class="cursor-p">
+                                            <img class="ask-icon-hover"
+                                                src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                        </a>
                                         <a href="" class="commodity-more-button btn-more" title="獲取獲取商品規格資訊">
                                             MORE
                                         </a>

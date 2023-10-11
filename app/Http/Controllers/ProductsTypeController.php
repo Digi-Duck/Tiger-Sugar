@@ -9,19 +9,38 @@ use Illuminate\Support\Facades\Redis;
 
 class ProductsTypeController extends Controller
 {
-    // function __construct()
-    // {
-    //     $this->redirect = '/admin';
-    //     $this->index = 'admin.products_type.index';
-    //     $this->create = 'admin.products_type.create';
-    //     $this->edit = 'admin.products_type.edit';
-    // }
-
-    public function index()
+    public function index(Request $request)
     {
-        $lists = ProductsType::all();
-        return view('backend.products_type.index', compact('lists'));
+        $lists = ProductsType::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('tw_name', 'like', "%{$keyword}%")
+                ->orwhere('en_name', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.products_type.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
+
+    // public function index()
+    // {
+    //     $lists = ProductsType::all();
+    //     return view('backend.products_type.index', compact('lists'));
+    // }
 
     public function create()
     {

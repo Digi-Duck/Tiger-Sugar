@@ -41,10 +41,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [SocialController::class, 'store'])->name('back.social.store');
         Route::get('/edit/{id}', [SocialController::class, 'edit'])->name('back.social.edit');
         Route::post('/update/{id}', [SocialController::class, 'update'])->name('back.social.update');
-        Route::post('/delete/{id}', [SocialController::class, 'delete'])->name('back.social.delete');
+        Route::delete('/delete', [SocialController::class, 'delete'])->name('back.social.delete');
     });
-
-    // social社群回饋
 
     // banner廣告橫幅
     Route::prefix('/banner')->group(function () {

@@ -39,7 +39,7 @@
                                     <div class="form-group row">
                                         <label for="sort" class="col-2 col-form-label" style="text-align: center">權重</label>
                                         <div class="col-10">
-                                            <input type="number" class="form-control" id="sort" name="sort" required value="0" min="0" max="999">
+                                            <input type="number" class="form-control" id="sort" name="sort" required value="{{ old('sort',$sort ?? '1') }}" min="0" max="999">
                                         </div>
                                     </div>
                             </div>
