@@ -5,6 +5,8 @@ use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogNewsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\DrinkEnController;
@@ -16,6 +18,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductsTypeController;
 use App\Http\Controllers\SocialController;
+use App\Models\City;
 use Illuminate\Support\Facades\Route;
 
 // 後端路由
@@ -61,13 +64,34 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     // });
 
     // 據點管理-國家管理
-
+    Route::prefix('/country')->group(function () {
+        Route::get('/index', [CountryController::class, 'index'])->name('back.country.index');
+        Route::get('/create', [CountryController::class, 'create'])->name('back.country.create');
+        Route::post('/store', [CountryController::class, 'store'])->name('back.country.store');
+        Route::get('/edit/{id}', [CountryController::class, 'edit'])->name('back.country.edit');
+        Route::post('/update/{id}', [CountryController::class, 'update'])->name('back.country.update');
+        Route::delete('/delete', [CountryController::class, 'delete'])->name('back.country.delete');
+    });
 
     // 據點管理-城市管理
-
+    Route::prefix('/city')->group(function () {
+        Route::get('/index', [CityController::class, 'index'])->name('back.city.index');
+        Route::get('/create', [CityController::class, 'create'])->name('back.city.create');
+        Route::post('/store', [CityController::class, 'store'])->name('back.city.store');
+        Route::get('/edit/{id}', [CityController::class, 'edit'])->name('back.city.edit');
+        Route::post('/update/{id}', [CityController::class, 'update'])->name('back.city.update');
+        Route::delete('/delete', [CityController::class, 'delete'])->name('back.city.delete');
+    });
 
     // 據點管理-店鋪管理
-
+    Route::prefix('/shop')->group(function () {
+        Route::get('/index', [ShopController::class, 'index'])->name('back.shop.index');
+        Route::get('/create', [ShopController::class, 'create'])->name('back.shop.create');
+        Route::post('/store', [ShopController::class, 'store'])->name('back.shop.store');
+        Route::get('/edit/{id}', [ShopController::class, 'edit'])->name('back.shop.edit');
+        Route::post('/update/{id}', [ShopController::class, 'update'])->name('back.shop.update');
+        Route::delete('/delete', [ShopController::class, 'delete'])->name('back.shop.delete');
+    });
 
     // 菜單管理(中)-飲品類型管理
     Route::prefix('/drink_type')->group(function () {
