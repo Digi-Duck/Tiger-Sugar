@@ -20,7 +20,7 @@
                         <a class="btn btn-success" href="{{ route('back.social.create') }}">新增</a>
                         <hr>
 
-                        <form action="{{ route('back.banner.index') }}" method="GET" id="page-numbers" role="search"
+                        <form action="{{ route('back.social.index') }}" method="GET" id="page-numbers" role="search"
                             class="d-flex justify-content-between align-items-center mb-3">
                             @csrf
                             <div>
