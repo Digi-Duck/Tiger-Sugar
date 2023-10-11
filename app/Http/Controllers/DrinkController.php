@@ -51,15 +51,13 @@ class DrinkController extends Controller
             'hot' => $request->hot,
             'sort' => $request->sort,
         ]);
-        // dd($drink);
-
         return redirect(route('back.drink.index'))->with('message', '更新成功!');
     }
 
     public function delete($id)
     {
         $Drink = Drink::find($id);
-        $this->delete_file($Drink->image_ur);
+        // $this->delete_file($Drink->image_ur);
         $Drink->delete();
         return redirect(route('back.drink.index'))->with('message', '刪除成功!');
     }
