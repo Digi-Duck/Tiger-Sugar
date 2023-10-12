@@ -110,7 +110,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [DrinkController::class, 'store'])->name('back.drink.store');
         Route::get('/edit/{id}', [DrinkController::class, 'edit'])->name('back.drink.edit');
         Route::post('/update/{id}', [DrinkController::class, 'update'])->name('back.drink.update');
-        Route::post('/delete/{id}', [DrinkController::class, 'delete'])->name('back.drink.delete');
+        Route::delete('/delete', [DrinkController::class, 'delete'])->name('back.drink.delete');
     });
 
     // 菜單管理(英)-飲品類型管理
