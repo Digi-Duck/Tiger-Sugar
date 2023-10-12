@@ -7,9 +7,13 @@ use App\Models\Shop;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Services\FileService;
 
 class CityController extends Controller
 {
+    public function __construct(protected FileService $fileService)
+    {
+    }
 
     public function index()
     {
@@ -25,54 +29,62 @@ class CityController extends Controller
 
     public function store(Request $request)
     {
-        $new_record = new City();
-        $new_record ->country_id  = $request->country_id;
-        $new_record ->city_name  = $request->city_name;
-        $new_record ->city_name_en  = $request->city_name_en;
-        if($request->hasFile('city_photo')){
-            $new_record ->city_photo = $this->upload_file($request->file('city_photo'));
-        }
-        $new_record ->sort  = $request->sort;
-        $new_record ->link  = $request->link;
-        $new_record ->fb_link  = $request->fb_link;
-        $new_record ->ig_link  = $request->ig_link;
-        $new_record ->weibo_link  = $request->weibo_link;
-        $new_record ->save();
-        return redirect(route('back.city.index'))->with('message','新增成功!');
+        $city = City::create([
+            'country_id' => $request->country_id,
+            'city_name' => $request->city_name,
+            'city_name_en' => $request->city_name_en,
+            'link' => $request->link,
+            'fb_link' => $request->fb_link,
+            'ig_link' => $request->ig_link,
+            'weibo_link' => $request->weibo_link,
+            'sort' => $request->sort,
+        ]);
+
+        $img = $this->fileService->imgUpload($request->file('city_photo'), 'city-img');
+        $city->update([
+            'city_photo' => $img,
+        ]);
+
+        return redirect(route('back.city.index'))->with('message', '新增成功!');
     }
 
     public function edit($id)
     {
         $types = Country::all();
         $list = City::find($id);
-        return view($this->edit,compact('list','types'));
+        return view('backend.city.edit',compact('list','types'));
     }
 
     public function update(Request $request,$id)
     {
-        $City = City::find($id);
-        $City ->country_id  = $request->country_id;
-        $City ->city_name  = $request->city_name;
-        $City ->city_name_en  = $request->city_name_en;
-        if($request->hasFile('city_photo')){
-            $this->delete_file($City->city_photo);
-            $City->city_photo = $this->upload_file($request->file('city_photo'));
+        $city = City::find($id);
+        $city->update([
+            'country_id' => $request->country_id,
+            'city_name' => $request->city_name,
+            'city_name_en' => $request->city_name_en,
+            'link' => $request->link,
+            'fb_link' => $request->fb_link,
+            'ig_link' => $request->ig_link,
+            'weibo_link' => $request->weibo_link,
+            'sort' => $request->sort,
+        ]);
+
+        if ($request->hasFile('city_photo')) {
+            $img = $this->fileService->imgUpload($request->file('city_photo'), 'city-img');
+            $city->update([
+            'city_photo' => $img,
+            ]);
         }
-        $City ->sort  = $request->sort;
-        $City ->link  = $request->link;
-        $City ->fb_link  = $request->fb_link;
-        $City ->ig_link  = $request->ig_link;
-        $City ->weibo_link  = $request->weibo_link;
-        $City -> save();
         return redirect(route('back.city.index'))->with('message','更新成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $hasShop = Shop::where('city_id',$id)->count();
         $City = City::find($id);
         if(!$hasShop){
-            $this->delete_file($City->city_photo);
+            $this->fileService->deleteUpload($City->city_photo);
             $City->delete();
             return redirect(route('back.city.index'))->with('message','刪除成功!');
         }

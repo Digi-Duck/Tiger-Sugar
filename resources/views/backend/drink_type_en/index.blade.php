@@ -1,7 +1,11 @@
 @extends('layouts.backend-template')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+    <style>
+        .max-height-for-container {
+            max-height: 700px
+        }
+    </style>
 @endsection
 
 @section('main')
@@ -12,16 +16,54 @@
                     <h4 class="card-header">
                         飲品類型管理(英)
                     </h4>
-                    <div class="card-body">
-                        <a class="btn btn-success" href="{{route('back.drink_type_en.create')}}">新增飲品類型</a>
+                    <div class="card-body container overflow-y-auto max-height-for-container">
+                        <a class="btn btn-success" href="{{ route('back.drink_type_en.create') }}">新增飲品類型</a>
                         <hr>
+
+                        <form action="{{ route('back.drink_type_en.index') }}" method="GET" id="page-numbers" role="search"
+                            class="d-flex justify-content-between align-items-center mb-3">
+                            @csrf
+                            <div>
+                                <span>請選擇顯示幾筆資料：</span>
+                                <select id="page-select" onchange="changePages()" name="page_numbers">
+                                    @if ($page_numbers == 100)
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100" selected>100</option>
+                                    @elseif ($page_numbers == 50)
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50" selected>50</option>
+                                        <option value="100">100</option>
+                                    @elseif ($page_numbers == 25)
+                                        <option value="10">10</option>
+                                        <option value="25" selected>25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    @else
+                                        <option value="10" selected>10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    @endif
+                                </select>
+                                <span>筆</span>
+                            </div>
+                            <div class="d-flex justify-between">
+                                <input class="form-control me-2" name="keyword" type="text" placeholder="搜尋名稱或描述"
+                                    aria-label="Search" value="{{ $keyword }}">
+                                <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
+                            </div>
+                        </form>
+
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
-                            <tr>
-                                <th>飲品類型</th>
-                                <th>權重</th>
-                                <th width="80">功能</th>
-                            </tr>
+                                <tr>
+                                    <th>飲品類型</th>
+                                    <th>權重</th>
+                                    <th width="80">功能</th>
+                                </tr>
                             </thead>
                             <tbody>
                             @foreach($lists as $list)
@@ -37,6 +79,26 @@
                             @endforeach
                             </tbody>
                         </table>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            @if ($count == 0)
+                                <div>目前尚無資料</div>
+                            @elseif ($count <= $page_numbers)
+                                <div>正在顯示{{ $count }}筆資料中，第1筆到第{{ $count }}筆資料</div>
+                            @elseif ($count > $page_numbers * $page)
+                                <div>
+                                    正在顯示{{ $count }}筆資料中，第{{ $page_numbers * ($page - 1) + 1 }}筆到第{{ $page_numbers * $page }}筆資料
+                                </div>
+                            @else
+                                <div>
+                                    正在顯示{{ $count }}筆資料中，第{{ $page_numbers * ($page - 1) + 1 }}筆到第{{ $count }}筆資料
+                                </div>
+                            @endif
+                            <div>
+                                {{ $lists->links() }}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -45,29 +107,8 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-
     <script>
-        // $(document).ready(function() {
-        //     $('#table').DataTable({
-        //         "order": [[1,'asc']]
-        //     });
-        // } );
-        // $('.btn-danger').click(function(){
-        //     var listid = $(this).data("listid");
-        //     if (confirm('確定要刪除此飲品類型？')){
-        //         event.preventDefault();
-        //         $('.delete-form[data-listid="' + listid + '"]').submit();
-        //     }
-        // });
         function deleteData(id) {
             console.log(id);
 

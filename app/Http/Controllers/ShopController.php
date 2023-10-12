@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Services\FileService;
 
 class ShopController extends Controller
 {
@@ -14,29 +15,28 @@ class ShopController extends Controller
     {
         $lists = Shop::all();
 
-        return view('backend.city.index',compact('lists'));
+        return view('backend.shop.index',compact('lists'));
     }
 
     public function create()
     {
-        $countries = Country::with('city')->get();
+        $countries = Country::with('city', 'city.shops')->get();
 
-        return view('backend.city.create',compact('countries'));
+        return view('backend.shop.create',compact('countries'));
     }
 
     public function store(Request $request)
     {
-        $new_record = new Shop();
-        $new_record ->city_id = $request->city_id;
-        $city= City::where('id',$request->city_id)->first();
-        $new_record ->country_id = $city->country_id;;
-        $new_record ->name  = $request->shop_name;
-        $new_record ->address  = $request->address;
-        $new_record ->phone  = $request->phone;
-        $new_record ->sort  = $request->sort;
-        $new_record -> save();
-
-        return redirect('/admin/shop')->with('message','新增成功!');
+        $city = City::find($request->city_id);
+         Shop::create([
+            'city_id' => $request->city_id,
+            'country_id' => $city->country_id,
+            'name' => $request->shop_name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'sort' => $request->sort,
+        ]);
+        return redirect(route('back.shop.index'))->with('message', '新增成功!');
     }
 
     public function edit($id)
@@ -44,29 +44,29 @@ class ShopController extends Controller
         $list = Shop::find($id);
         $countries = Country::with('city')->get();
 
-        return view($this->edit,compact('list','id','countries'));
+        return view('backend.shop.edit',compact('list','id','countries'));
     }
 
     public function update(Request $request,$id)
     {
-        $Shop = Shop::find($id);
-        $Shop ->city_id = $request->city_id;
-        $city= City::where('id',$request->city_id)->first();
-        $Shop ->country_id = $city->country_id;;
-        $Shop ->name  = $request->shop_name;
-        $Shop ->address  = $request->address;
-        $Shop ->phone  = $request->phone;
-        $Shop ->sort  = $request->sort;
-        $Shop ->save();
-
-        return redirect('/admin/shop')->with('message','更新成功!');
+        $shop = Shop::find($id);
+        $city = City::find($request->city_id);
+        $shop->update([
+            'city_id' => $request->city_id,
+            'country_id' => $city->country_id,
+            'name' => $request->shop_name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'sort' => $request->sort,
+        ]);
+        return redirect(route('back.shop.index'))->with('message', '新增成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $shop = Shop::find($id);
         $shop->delete();
-
-        return redirect('/admin/shop')->with('message','刪除成功!');
+        return redirect(route('back.shop.index'))->with('message','刪除成功!');
     }
 }

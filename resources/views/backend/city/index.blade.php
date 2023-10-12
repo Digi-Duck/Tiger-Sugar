@@ -13,7 +13,7 @@
                         全球據點管理-城市列表
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/city/create">新增</a>
+                        <a class="btn btn-success" href="{{route('back.city.create')}}">新增</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
@@ -36,8 +36,8 @@
                                     <td>{{$list->sort}}</td>
                                     <td>
                                         <a class="btn btn-sm btn-success" href="{{ route('back.city.edit', ['id' => $list->id]) }}">編輯</a>
-                                        <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                         <form class="delete-form" action="{{ route('back.city.delete', ['id' => $list->id]) }}" method="POST"  data-listid="{{$list->id}}">
+                                            <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                             @csrf
                                         </form>
                                     </td>
