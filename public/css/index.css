@@ -5,6 +5,9 @@
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+p {
+    color: white;
+}
 .cursor-p{
     cursor: pointer;
 }

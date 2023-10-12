@@ -421,228 +421,39 @@
                             </div>
                         </div>
                         <div class="menu-up">
-                            <div data-aos="fade-up" data-aos-delay="0">
+                            @foreach ($drink_types as $drink_type)
+                            <div data-aos="fade-up" data-aos-delay="{{ $loop->index*300 }}">
                                 <div class="menu-type">
                                     <div class="up">
-                                        <h4 class="color-white">全球首創虎紋系列</h4>
+                                        <h4 class="color-white">{{ $drink_type->type_name }}</h4>
+                                        @if ($drink_type->type_info != '')
+                                        <p>{{ $drink_type->type_info }}</p>
+                                        @endif
                                     </div>
                                     <div class="ul-group">
                                         <ul class="gold-border">
+                                            @foreach ($drink_type->drink as $drink)
                                             <li>
                                                 <div class="menu-type-title">
-                                                    <div class="menu-text">虎虎生風厚鮮奶｜含奶霜 (波霸+珍珠)</div>
+                                                    <div class="menu-text">{{ $drink->drink_name }}</div>
                                                     <div class="small-dot">
+                                                        @if ($drink->cold == '1')
                                                         <div class="cold"></div>
+                                                        @endif
+                                                        @if ($drink->hot == '1')
                                                         <div class="hot"></div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑糖波霸厚鮮奶 | 含奶霜</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                        <div class="hot"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑糖珍珠厚鮮奶｜含奶霜</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                        <div class="hot"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">老虎凍厚鮮奶｜含奶霜(波霸+珍珠+老虎凍)</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑糖布丁波霸厚鮮奶｜(波霸+布丁)</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                        <div class="hot"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">相思厚鮮奶</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                        <div class="hot"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">相思波霸厚鮮奶｜(波霸+紅豆)</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                        <div class="hot"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div data-aos="fade-up" data-aos-delay="300">
-                                <div class="menu-type">
-                                    <div class="title-gap">
-                                        <div class="up">
-                                            <h4 class="color-white">日式麻糬波波系列</h4>
-                                        </div>
-                                    </div>
-                                    <div class="down">
-                                        <ul class="gold-border">
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑糖麻糬波波</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">麻糬波波復刻紅茶厚拿鐵</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">芝士麻糬黑糖波波</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">紅豆麻糬波波</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-aos="fade-up" data-aos-delay="600">
-                                <div class="menu-type">
-                                    <div class="up">
-                                        <h4 class="color-white">老虎芝士奶霜系列</h4>
-                                    </div>
-                                    <div class="down">
-                                        <ul class="gold-border">
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">老虎芝士黑金米香烏龍</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">老虎芝士復刻春光紅茶</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">老虎芝士黑糖波霸鮮奶</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">老虎芝士醇綠茶／紅茶</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-aos="fade-up" data-aos-delay="900">
-                                <div class="menu-type">
-                                    <div class="up">
-                                        <h4 class="color-white">鮮果系列</h4>
-                                    </div>
-                                    <div class="down">
-                                        <ul class="gold-border">
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑糖凍檸茶</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑糖凍檸烏龍茶</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">百香雙喜</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">黑葉荔枝QQ紅</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">芒果烏龍</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="menu-type-title">
-                                                    <div class="menu-text">楊枝甘露</div>
-                                                    <div class="small-dot">
-                                                        <div class="cold"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
-                        <div class="menu-down">
+                        {{-- <div class="menu-down">
                             <div data-aos="fade-up" data-aos-delay="200">
                                 <div class="menu-type">
                                     <div class="up">
@@ -785,7 +596,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="menu-mid">
 
                             <div data-aos="fade-up" class="intro">
@@ -888,24 +699,6 @@
                         <i class="fa-solid fa-volume-xmark volumn"></i>
                     </div>
                     @endforeach
-                    <div class="swiper-slide">
-                        <video class="video swiper-slide" autoplay loop muted id="video-state-of-qatar">
-                            <source src="{{ asset('./frontend-img/index-img/media/phpEGFGi8.mp4') }}" type="video/mp4">
-                        </video>
-                        <i class="fa-solid fa-volume-xmark volumn"></i>
-                    </div>
-                    <div class="swiper-slide">
-                        <video class="video swiper-slide" autoplay loop muted id="video-panama">
-                            <source src="{{ asset('./frontend-img/index-img/media/phpqk13yA.mp4') }}" type="video/mp4">
-                        </video>
-                        <i class="fa-solid fa-volume-xmark volumn"></i>
-                    </div>
-                    <div class="swiper-slide">
-                        <video class="video swiper-slide" autoplay loop muted id="video-animation">
-                            <source src="{{ asset('./frontend-img/index-img/media/phpHdx8fZ.mp4') }}" type="video/mp4">
-                        </video>
-                        <i class="fa-solid fa-volume-xmark volumn"></i>
-                    </div>
                 </div>
                 <div class="swiper-button-next media-button-next"></div>
                 <div class="swiper-button-prev media-button-prev"></div>
