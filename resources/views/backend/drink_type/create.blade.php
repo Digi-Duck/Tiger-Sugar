@@ -23,7 +23,7 @@
                             <div class="form-group row">
                                 <label for="type_info" class="col-2 col-form-label">副標題</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="type_info" name="type_info" required>
+                                    <input class="form-control" id="type_info" name="type_info">
                                 </div>
                             </div>
 
