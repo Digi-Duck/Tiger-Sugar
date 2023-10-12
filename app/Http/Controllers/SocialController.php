@@ -65,37 +65,45 @@ class SocialController extends Controller
             'social_info' => $request->social_info,
             'post_date' => $request->post_date,
         ]);
-        $type = $request->type;
 
-        if ($type == 'embed') {
-            $request->validate([
-                'user_photo' => 'image',
-                'main_photo' => 'image',
-            ]);
+        $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+        $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+        $social->update([
+            'user_photo' => $userimg,
+            'main_photo' => $mainimg,
+        ]);
 
-            $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
-            $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
-            $social->update([
-                'user_photo' => $userimg,
-                'main_photo' => $mainimg,
-            ]);
-        }
+        // $type = $request->type;
 
-        if ($type == 'custom') {
-            $request->validate([
-                'user_photo' => 'image',
-                'main_photo' => 'image',
-            ]);
+        // if ($type == 'embed') {
+        //     // $request->validate([
+        //     //     'user_photo' => 'image',
+        //     //     'main_photo' => 'image',
+        //     // ]);
 
-            $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
-            $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
-            $social->update([
-                'user_photo' => $userimg,
-                'main_photo' => $mainimg,
-            ]);
-        }
+        //     $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+        //     $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+        //     $social->update([
+        //         'user_photo' => $userimg,
+        //         'main_photo' => $mainimg,
+        //     ]);
+        // }
 
-        return redirect('back/social/index')->with('message', '新增成功!');
+        // if ($type == 'custom') {
+        //     // $request->validate([
+        //     //     'user_photo' => 'image',
+        //     //     'main_photo' => 'image',
+        //     // ]);
+
+        //     $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+        //     $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+        //     $social->update([
+        //         'user_photo' => $userimg,
+        //         'main_photo' => $mainimg,
+        //     ]);
+        // }
+
+        return redirect(route('back.social.index'))->with('message', '新增成功!');
     }
 
     public function edit($id)

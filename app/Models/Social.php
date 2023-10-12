@@ -21,7 +21,9 @@ class Social extends Model
         'link_href',
         'link_target',
         'social_info',
-        'post_date'
+        'post_date',
+        'user_photo',
+        'main_photo'
     ];
     public $timestamps = false;
 }

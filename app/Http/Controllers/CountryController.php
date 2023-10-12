@@ -31,6 +31,7 @@ class CountryController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $country = Country::create([
             'continent_id' => $request->continent_id,
             'country_name' => $request->country_name,
