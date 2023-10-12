@@ -18,7 +18,7 @@ class DrinkTypeEnController extends Controller
         $count = $lists->count();
 
         if ($request->filled('keyword')) {
-            $lists->where('image_alt', 'like', "%{$keyword}%")
+            $lists->where('type_name', 'like', "%{$keyword}%")
                 ->orwhere('sort', 'like', "%{$keyword}%");
         }
 
