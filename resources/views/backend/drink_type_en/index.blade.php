@@ -30,10 +30,8 @@
                                     <td>{{$list->sort}}</td>
                                     <td>
                                         <a class="btn btn-sm btn-success" href="{{route('back.drink_type_en.edit',['id' => $list->id])}}">編輯</a>
-                                        <form class="delete-form" action="{{route('back.drink_type_en.delete',['id' => $list->id])}}" method="POST" data-listid="{{$list->id}}">
-                                            <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
-                                            @csrf
-                                        </form>
+                                        <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteData('{{ $list->id }}')">刪除</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -50,6 +48,13 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
     <script>
         // $(document).ready(function() {
         //     $('#table').DataTable({
@@ -63,5 +68,53 @@
         //         $('.delete-form[data-listid="' + listid + '"]').submit();
         //     }
         // });
+        function deleteData(id) {
+            console.log(id);
+
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'delete');
+            formData.append('id', id);
+
+            Swal.fire({
+                title: `確認要刪除資料嗎?`,
+                showDenyButton: true,
+                confirmButtonText: '取消',
+                denyButtonText: '刪除',
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                    fetch('{{ route('back.drink_type_en.delete') }}', {
+                        method: 'post',
+                        body: formData,
+                    }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '刪除成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '刪除失敗',
+                                text: '查無資料',
+                            });
+                        }
+                    });
+                }
+            });
+        }
+
+        // function changePages() {
+        //     let pageSelect = document.querySelector('#page-select');
+        //     let pageNumbers = document.querySelector('#page-numbers');
+        //     console.log(pageSelect.value);
+        //     pageNumbers.submit();
+        // }
     </script>
 @endsection

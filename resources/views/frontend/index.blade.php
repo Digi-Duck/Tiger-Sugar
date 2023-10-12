@@ -194,20 +194,18 @@
                                         <img class="product-img"
                                             src="{{ $product->img }}"
                                             alt="產品圖片">
-                                        <img class="ask-icon"
+                                        <img class="ask-icon" data-product="{{ $product->id }}"
                                             src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                             alt="黃色加入以詢問">
                                         <div class="product-img-hover">
                                             <a href="" class="cursor-p">
-                                                <img class="ask-icon-hover"
+                                                <img class="ask-icon-hover" data-product="{{ $product->id }}"
                                                     src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                     alt="黃色加入以詢問">
                                             </a>
                                             <a href={{ route('front.distribution') }} class="commodity-more-button btn"
                                                 title="更多商品">
                                                 MORE
-                                                <button type="button" class="blade-button">
-                                                </button>
                                             </a>
                                         </div>
                                     </div>

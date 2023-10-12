@@ -58,10 +58,11 @@ class DrinkTypeEnController extends Controller
         return redirect(route('back.drink_type_en.index'))->with('message', '更新成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $DrinkType = DrinkTypeEn::find($id);
         $DrinkType->delete();
-        return redirect(route('back.drink_type_en.index'))->with('message','刪除成功!');
+        return 'success';
     }
 }
