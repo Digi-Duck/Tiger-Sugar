@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">更新</button>
+                            <button type="submit" class="btn btn-primary d-block mx-auto">送出修改</button>
                         </form>
                     </div>
                 </div>

@@ -42,7 +42,7 @@
                             <div class="form-group row">
                                 <label for="country_photo" class="col-2 col-form-label">上傳代表圖片</label>
                                 <div class="col-10">
-                                    <input type="file" class="form-control-file" id="country_photo" name="country_photo" required>
+                                    <input type="file" class="form-control-file" id="country_photo" name="country_photo" accept="image/*" required>
                                 </div>
                                 <div class="col-12"><p class="text-danger">*注意：建議尺寸：525 * 200 (px)</p></div>
                             </div>
