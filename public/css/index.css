@@ -5,6 +5,9 @@
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
+p {
+    color: white;
+}
 .cursor-p{
     cursor: pointer;
 }
@@ -20,6 +23,36 @@ a {
 }
 
 /* banner CSS */
+
+#banner .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+#banner .swiper-slide {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+#banner .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 48vw;
+    object-fit:cover;
+  }
+#banner .swiper-slide iframe {
+    display: block;
+    width: 100%;
+    height: 48vw;
+    object-fit: cover;
+  }
 #banner .container {
     position: relative;
     width: 100%;
@@ -1362,9 +1395,6 @@ h2 {
     }
 }
 
-#news-img-1 {
-    background-image: url('../frontend-img/index-img/news/phpVQk4f5.jpg');
-}
 
 #news-img-2 {
     background-image: url('../frontend-img/index-img/news/phprmrWFO.jpg');

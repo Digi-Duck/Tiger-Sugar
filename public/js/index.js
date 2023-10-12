@@ -50,6 +50,14 @@ function shadow(e) {
   bgRightDrinks.style.backgroundPosition = `${200 - (xMove * 1.2)}% ${25 + (yMove / 1.5)}%`;
 }
 
+//banner
+    var swiper = new Swiper(".banner-swiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+    });
 
 // about
 const scrollImg = document.querySelector(".about-us-scroll-img");
