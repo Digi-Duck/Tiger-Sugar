@@ -75,13 +75,8 @@
                                         <td>
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.drink_en.edit', ['id' => $list->id]) }}">編輯</a>
-                                            <form class="delete-form"
-                                                action="{{ route('back.drink_en.delete', ['id' => $list->id]) }}"
-                                                method="POST" data-listid="{{ $list->id }}">
-                                                <button class="btn btn-sm btn-danger"
-                                                    data-listid="{{ $list->id }}">刪除</button>
-                                                @csrf
-                                            </form>
+                                            <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteData('{{ $list->id }}')">刪除</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -129,7 +124,7 @@
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isDenied) {
-                    fetch('{{ route('back.banner.delete') }}', {
+                    fetch('{{ route('back.drink_en.delete') }}', {
                         method: 'post',
                         body: formData,
                     }).then((res) => {

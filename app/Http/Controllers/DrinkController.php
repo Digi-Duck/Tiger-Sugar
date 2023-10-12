@@ -38,12 +38,6 @@ class DrinkController extends Controller
         return view('backend.drink.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
-    // public function index()
-    // {
-    //     $lists = Drink::all()->sortBy('sort');
-    //     return view('backend.drink.index', compact('lists'));
-    // }
-
     public function create()
     {
         $types = DrinkType::all();
