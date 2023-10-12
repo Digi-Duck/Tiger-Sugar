@@ -2,34 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\City;
-use App\Country;
-use App\Shop;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class ShopController extends Controller
 {
-    function __construct()
-    {
-        $this->redirect = '/admin';
-        $this->index = 'admin.shop.index';
-        $this->create = 'admin.shop.create';
-        $this->edit = 'admin.shop.edit';
-    }
-
     public function index()
     {
         $lists = Shop::all();
 
-        return view($this->index,compact('lists'));
+        return view('backend.city.index',compact('lists'));
     }
 
     public function create()
     {
         $countries = Country::with('city')->get();
 
-        return view($this->create,compact('countries'));
+        return view('backend.city.create',compact('countries'));
     }
 
     public function store(Request $request)

@@ -35,9 +35,9 @@
                                     <td>{{$list->shops_count}}</td>
                                     <td>{{$list->sort}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/city/edit/{{$list->id}}">編輯</a>
+                                        <a class="btn btn-sm btn-success" href="{{ route('back.city.edit', ['id' => $list->id]) }}">編輯</a>
                                         <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
-                                        <form class="delete-form" action="/admin/city/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
+                                        <form class="delete-form" action="{{ route('back.city.delete', ['id' => $list->id]) }}" method="POST"  data-listid="{{$list->id}}">
                                             @csrf
                                         </form>
                                     </td>
@@ -57,18 +57,18 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#table').DataTable({
-                order:[[4,"asc"]]
-            });
-        } );
-        $('.btn-danger').click(function(){
-            var listid = $(this).data("listid");
-            if (confirm('確定要刪除此區域？')){
-                event.preventDefault();
-                $('.delete-form[data-listid="' + listid + '"]').submit();
-            }
-        });
+        // $(document).ready(function() {
+        //     $('#table').DataTable({
+        //         order:[[4,"asc"]]
+        //     });
+        // } );
+        // $('.btn-danger').click(function(){
+        //     var listid = $(this).data("listid");
+        //     if (confirm('確定要刪除此區域？')){
+        //         event.preventDefault();
+        //         $('.delete-form[data-listid="' + listid + '"]').submit();
+        //     }
+        // });
     </script>
 @endsection
 

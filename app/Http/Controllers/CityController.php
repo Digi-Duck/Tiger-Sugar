@@ -2,32 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\City;
-use App\Shop;
-use App\Country;
+use App\Models\City;
+use App\Models\Shop;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class CityController extends Controller
 {
-    function __construct()
-    {
-        $this->redirect = '/admin';
-        $this->index = 'admin.city.index';
-        $this->create = 'admin.city.create';
-        $this->edit = 'admin.city.edit';
-    }
 
     public function index()
     {
         $lists = City::withCount('shops')->get();
-        return view($this->index,compact('lists'));
+        return view('backend.city.index',compact('lists'));
     }
 
     public function create()
     {
         $types = Country::all();
-        return view($this->create,compact('types'));
+        return view('backend.city.create',compact('types'));
     }
 
     public function store(Request $request)
@@ -45,7 +38,7 @@ class CityController extends Controller
         $new_record ->ig_link  = $request->ig_link;
         $new_record ->weibo_link  = $request->weibo_link;
         $new_record ->save();
-        return redirect('/admin/city')->with('message','新增成功!');
+        return redirect(route('back.city.index'))->with('message','新增成功!');
     }
 
     public function edit($id)
@@ -71,7 +64,7 @@ class CityController extends Controller
         $City ->ig_link  = $request->ig_link;
         $City ->weibo_link  = $request->weibo_link;
         $City -> save();
-        return redirect('/admin/city')->with('message','更新成功!');
+        return redirect(route('back.city.index'))->with('message','更新成功!');
     }
 
     public function delete($id)
@@ -81,35 +74,10 @@ class CityController extends Controller
         if(!$hasShop){
             $this->delete_file($City->city_photo);
             $City->delete();
-            return redirect('/admin/city')->with('message','刪除成功!');
+            return redirect(route('back.city.index'))->with('message','刪除成功!');
         }
         else{
-            return redirect('/admin/city')->with('message','目前'.$City->city_name.'尚有'.$hasShop.'個店鋪，請先刪除相關店鋪');
+            return redirect(route('back.city.index'))->with('message','目前'.$City->city_name.'尚有'.$hasShop.'個店鋪，請先刪除相關店鋪');
         }
-    }
-    
-    //上傳檔案
-    public function upload_file($file){
-        $allowed_extensions =["png", "jpg", "gif", "PNG", "JPG", "GIF","jpeg","JPEG"];
-        if ($file->getClientOriginalExtension() &&
-            !in_array($file->getClientOriginalExtension(), $allowed_extensions))
-        {
-            return redirect()->back()->with('message','僅接受.jpg, .png, .gif, .jepg格式檔案!');
-        }
-        $extension = $file->getClientOriginalExtension();
-        $destinationPath = public_path() . '/summernote_upload/';
-        $original_filename = $file->getClientOriginalName();
-
-        $filename = $file->getFilename() . '.' . $extension;
-        $url = '/summernote_upload/' . $filename;
-
-        $file->move($destinationPath, $filename);
-
-        return $url;
-    }
-
-    //刪除檔案
-    public function delete_file($path){
-        File::delete(public_path().$path);
     }
 }
