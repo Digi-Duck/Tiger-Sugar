@@ -69,17 +69,17 @@
                 <div id="place" class="group-btns">
                     <h2 class="backend-h2 group-btn-text">全球據點管理</h2>
                     <div class="btn-list">
-                        <a href="" id="country" title="前往全國據點設定頁">
+                        <a href="{{ route('back.country.index') }}" id="country" title="前往全國據點設定頁">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">國家管理</div>
                             </button>
                         </a>
-                        <a href="" id="city" title="前往城市據點設定頁">
+                        <a href="{{ route('back.city.index') }}" id="city" title="前往城市據點設定頁">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">城市管理</div>
                             </button>
                         </a>
-                        <a href="" id="shop" title="前往商店據點設定頁">
+                        <a href="{{ route('back.shop.index') }}" id="shop" title="前往商店據點設定頁">
                             <button type="button" class="backend-btn">
                                 <div class="sub-text">店鋪管理</div>
                             </button>
