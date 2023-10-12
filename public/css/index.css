@@ -1085,7 +1085,7 @@ h2 {
 #classic .menu-type {
     margin-top: 40px;
     padding: 40px 15px;
-    width: 255px;
+    max-width: 770px;
     margin: auto;
 }
 
@@ -1229,6 +1229,12 @@ h2 {
         margin-right: -15px;
         margin-left: -15px;
         justify-content: center;
+    }
+
+    #classic .menu-type {
+        margin-top: 40px;
+        padding: 40px 15px;
+        min-width: 255px;
     }
 }
 
