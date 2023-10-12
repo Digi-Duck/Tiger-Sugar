@@ -8,7 +8,8 @@
 p {
     color: white;
 }
-.cursor-p{
+
+.cursor-p {
     cursor: pointer;
 }
 
@@ -27,7 +28,7 @@ a {
 #banner .swiper {
     width: 100%;
     height: 100%;
-  }
+}
 
 #banner .swiper-slide {
     width: 100%;
@@ -39,20 +40,22 @@ a {
     justify-content: center;
     align-items: center;
 
-  }
+}
 
 #banner .swiper-slide img {
     display: block;
     width: 100%;
     height: 48vw;
-    object-fit:cover;
-  }
+    object-fit: cover;
+}
+
 #banner .swiper-slide iframe {
     display: block;
     width: 100%;
     height: 48vw;
     object-fit: cover;
-  }
+}
+
 #banner .container {
     position: relative;
     width: 100%;
@@ -1075,7 +1078,6 @@ h2 {
     margin-top: 50px;
     border: 1px solid #f4dd97;
     padding: 0 20px 40px 20px;
-    max-width: 770px;
     width: 100%;
     margin: auto;
 }
@@ -1083,6 +1085,8 @@ h2 {
 #classic .menu-type {
     margin-top: 40px;
     padding: 40px 15px;
+    width: 255px;
+    margin: auto;
 }
 
 #classic .menu-text {
@@ -1095,6 +1099,14 @@ h2 {
     margin-top: 40px;
     justify-content: space-between;
 }
+
+#classic .menu-type-text {
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+}
+
 
 #classic .small-dot {
     display: flex;
@@ -1203,6 +1215,7 @@ h2 {
     #classic .container {
         max-width: 960px;
     }
+
 }
 
 @media (min-width: 1200px) {
@@ -1211,18 +1224,14 @@ h2 {
     }
 
     #classic .menu-up {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-
-    }
-
-    #classic .menu-down {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 0 12%;
-        margin-top: -10%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        justify-content: center;
     }
 }
+
 
 #classic .color-white {
     color: white;
