@@ -26,8 +26,13 @@ class ProductsController extends Controller
         $count = $lists->count();
 
         if ($request->filled('keyword')) {
-            $lists->where('image_alt', 'like', "%{$keyword}%")
-                ->orwhere('sort', 'like', "%{$keyword}%");
+            $lists->where('title_zh', 'like', "%{$keyword}%")
+                ->orwhere('title_en', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%")
+                ->orWhereHas('ProductsType', function ($query) use ($keyword) {
+                    $query->where('tw_name', 'like', "%{$keyword}%")
+                        ->orwhere('en_name', 'like', "%{$keyword}%");
+                });
         }
 
         if ($page_numbers == null) {
@@ -64,7 +69,7 @@ class ProductsController extends Controller
             'preserve' => 'required',
             'content' => 'required',
             'video' => 'required',
-        ],[
+        ], [
             'sort.required' => '權重必填',
             'sort.max' => '權重最多只能輸入11個數字',
             'title_zh.required' => '商品名稱（中）必填',
@@ -144,10 +149,10 @@ class ProductsController extends Controller
         if ($request->hasFile('img')) {
             $img = $this->fileService->imgUpload($request->file('img'), 'products-img');
             $product->update([
-            'img' => $img,
+                'img' => $img,
             ]);
         }
-        if ($request->hasFile('imgs')){
+        if ($request->hasFile('imgs')) {
             foreach ($product->ProductsImgs ?? [] as $value) {
                 $this->fileService->deleteUpload($value->img_url);
                 $value->delete();
@@ -177,11 +182,6 @@ class ProductsController extends Controller
         $Products = Products::find($id);
         $Products->delete();
         return 'success';
-
-
-
-
-
     }
     // //刪除圖片deleteImg
 
