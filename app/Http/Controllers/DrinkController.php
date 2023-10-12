@@ -9,12 +9,38 @@ use Illuminate\Support\Facades\File;
 
 class DrinkController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
-        $lists = Drink::all()->sortBy('sort');
-        return view('backend.drink.index', compact('lists'));
+        $lists = Drink::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('drink_name', 'like', "%{$keyword}%")
+                ->orwhere('type_id', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.drink.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
+
+    // public function index()
+    // {
+    //     $lists = Drink::all()->sortBy('sort');
+    //     return view('backend.drink.index', compact('lists'));
+    // }
 
     public function create()
     {
@@ -54,10 +80,11 @@ class DrinkController extends Controller
         return redirect(route('back.drink.index'))->with('message', '更新成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $Drink = Drink::find($id);
         $Drink->delete();
-        return redirect(route('back.drink.index'))->with('message', '刪除成功!');
+        return 'success';
     }
 }
