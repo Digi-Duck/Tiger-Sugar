@@ -12,7 +12,7 @@
                         全球據點管理-編輯國家
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/country/update/{{$id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.country.update',['id' =>$info->id]) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="continent_id" class="col-2 col-form-label">洲</label>
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">編輯</button>
+                            <button type="submit" class="btn btn-primary d-block mx-auto">送出修改</button>
                         </form>
                     </div>
                 </div>

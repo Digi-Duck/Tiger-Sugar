@@ -17,38 +17,11 @@ class ProductsController extends Controller
     {
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $lists = Products::query();
-        $keyword = $request->keyword ?? '';
-        $page_numbers = $request->page_numbers;
-        $page = $request->page;
-        $count = $lists->count();
-
-        if ($request->filled('keyword')) {
-            $lists->where('title_zh', 'like', "%{$keyword}%")
-                ->orwhere('title_en', 'like', "%{$keyword}%")
-                ->orwhere('sort', 'like', "%{$keyword}%");
-        }
-
-        if ($page_numbers == null) {
-            $page_numbers = 10;
-        }
-
-        if ($page == null) {
-            $page = 1;
-        }
-        $lists->orderBy('sort', 'asc');
-        $lists = $lists->paginate($page_numbers);
-        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
-        return view('backend.products.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
+        $lists = Products::orderBy('sort','desc')->get();
+        return view('backend.products.index', compact('lists'));
     }
-
-    // public function index()
-    // {
-    //     $lists = Products::orderBy('sort','desc')->get();
-    //     return view('backend.products.index', compact('lists'));
-    // }
 
     public function create()
     {

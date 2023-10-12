@@ -11,19 +11,39 @@
     <main>
         <!-- 夫 banner -->
         <section id="banner">
-            <div class="container">
-                <div class="move-bg bg"></div>
-                <div class="move-bg bg-cover"></div>
-                <div class="move-bg bg-left-tiger"></div>
-                <div class="move-bg bg-left-milk-shadow"></div>
-                <div class="move-bg bg-left-milk"></div>
-                <div class="move-bg bg-left-drinks"></div>
-                <div class="move-bg bg-right-drinks"></div>
-                <div class="move-bg bg-right-milk"></div>
-                <div class="move-bg bg-center"></div>
-                <h2 class="banner-text">Brave As A Tiger</h2>
-                <div class="trans-cover"></div>
-            </div>
+            <div class="swiper mySwiper banner-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="container">
+                        <div class="move-bg bg"></div>
+                        <div class="move-bg bg-cover"></div>
+                        <div class="move-bg bg-left-tiger"></div>
+                        <div class="move-bg bg-left-milk-shadow"></div>
+                        <div class="move-bg bg-left-milk"></div>
+                        <div class="move-bg bg-left-drinks"></div>
+                        <div class="move-bg bg-right-drinks"></div>
+                        <div class="move-bg bg-right-milk"></div>
+                        <div class="move-bg bg-center"></div>
+                        <h2 class="banner-text">Brave As A Tiger</h2>
+                        <div class="trans-cover"></div>
+                    </div>
+                  </div>
+                  {{-- for each 用 --}}
+                  <div class="swiper-slide">
+                    {{-- <img src="{{ asset('frontend-img/distribution-img/pop-window/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}" alt=""> --}}
+                  </div>
+                  <div class="swiper-slide">
+                    {{-- <iframe src="{{ asset('frontend-img/index-img/media/phpEGFGi8.mp4') }}" frameborder="0"></iframe> --}}
+                  </div>
+                  <div class="swiper-slide">
+                    {{-- <iframe src="https://www.youtube.com/embed/eHAyE76wog0?si=i8xewDu9a9DXQu2J" title="YouTube video player" frameborder="0"></iframe> --}}
+                  </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+
         </section>
 
         <!-- 齊 關於我們 -->
