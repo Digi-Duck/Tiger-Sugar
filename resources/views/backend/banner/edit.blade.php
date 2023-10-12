@@ -152,7 +152,7 @@
                                 <a href="{{ route('back.banner.index') }}">
                                     <button type="button" class="btn btn-primary d-block">返回</button>
                                 </a>
-                                <button type="submit" class="btn btn-primary d-block">修改</button>
+                                <button type="submit" class="btn btn-primary d-block">送出修改</button>
                             </div>
                             {{-- 複製到這就好 路由記得改 --}}
 

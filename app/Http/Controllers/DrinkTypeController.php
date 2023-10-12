@@ -45,7 +45,7 @@ class DrinkTypeController extends Controller
 
         $request->validate([
             'type_name' => 'required|max:255',
-            'type_info' => 'required|max:255',
+            'type_info' => 'max:255',
             'sort' => 'required|max:11',
         ]);
 
@@ -67,7 +67,7 @@ class DrinkTypeController extends Controller
     {
         $request->validate([
             'type_name' => 'required|max:255',
-            'type_info' => 'required|max:255',
+            'type_info' => 'max:255',
             'sort' => 'required|max:11',
         ]);
         $drink = DrinkType::find($id);
