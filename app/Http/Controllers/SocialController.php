@@ -47,7 +47,8 @@ class SocialController extends Controller
 
     public function store(Request $request)
     {
-
+        // dump($request->user_icon);
+        // dd($request->all());
         $social = Social::create([
             'type' => $request->type,
             'sort' => $request->sort,
@@ -58,17 +59,29 @@ class SocialController extends Controller
             'user_account' => $request->user_account,
             'social_icon' => $request->social_icon,
             'social_icon_color' => $request->social_icon_color,
-            'link-title' => $request->link_title,
-            'link-href' => $request->link_href,
-            'link-target' => $request->link_target,
+            'link_title' => $request->link_title,
+            'link_href' => $request->link_href,
+            'link_target' => $request->link_target,
             'social_info' => $request->social_info,
             'post_date' => $request->post_date,
         ]);
-
-
         $type = $request->type;
 
-        if ($type == '圖片') {
+        if ($type == 'embed') {
+            $request->validate([
+                'user_photo' => 'image',
+                'main_photo' => 'image',
+            ]);
+
+            $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+            $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+            $social->update([
+                'user_photo' => $userimg,
+                'main_photo' => $mainimg,
+            ]);
+        }
+
+        if ($type == 'custom') {
             $request->validate([
                 'user_photo' => 'image',
                 'main_photo' => 'image',
