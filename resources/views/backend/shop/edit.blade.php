@@ -12,7 +12,7 @@
                         店舖管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="/admin/shop/update/{{$list->id}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('back.shop.update',['id'=>$list->id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="city_id" class="col-2 col-form-label">國家</label>

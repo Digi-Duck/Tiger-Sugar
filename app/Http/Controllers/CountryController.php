@@ -59,7 +59,6 @@ class CountryController extends Controller
 
     public function update(Request $request,$id)
     {
-        // dd($request->file('country_photo', 'country-img'));
         $country = Country::find($id);
         $country->update([
             'continent_id' => $request->continent_id,

@@ -27,6 +27,6 @@ class City extends Model
 
     public function Shops()
     {
-        return $this->hasMany(Shops::class, 'city_id')->ordeerBy('sort','asc');
+        return $this->hasMany(Shop::class, 'city_id')->orderBy('sort','asc');
     }
 }

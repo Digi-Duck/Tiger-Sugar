@@ -13,7 +13,7 @@
                         店舖管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="/admin/shop/create">新增店舖</a>
+                        <a class="btn btn-success" href="{{route('back.shop.create')}}">新增店舖</a>
                         <hr>
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
@@ -37,9 +37,9 @@
                                     <td>{{$list->phone}}</td>
                                     <td>{{$list->sort}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/shop/edit/{{$list->id}}">編輯</a>
-                                        <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
-                                        <form class="delete-form" action="/admin/shop/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
+                                        <a class="btn btn-sm btn-success" href="{{route('back.shop.edit',['id'=>$list->id])}}">編輯</a>
+                                        <form class="delete-form" action="{{route('back.shop.delete',['id'=>$list->id])}}" method="POST" data-listid="{{$list->id}}">
+                                            <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                             @csrf
                                         </form>
                                     </td>

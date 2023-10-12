@@ -27,7 +27,7 @@ class Country extends Model
     }
     public function City()
     {
-        return $this->hasMany(City::class, 'country_id')->with('shop')->orderBy('sort','asc');
+        return $this->hasMany(City::class, 'country_id')->orderBy('sort','asc');
     }
     public function Shops()
     {
