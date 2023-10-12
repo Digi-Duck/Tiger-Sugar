@@ -24,3 +24,5 @@ yarn-error.log
 /public/upload/media-video
 /public/upload/blog_news
 /public/upload/country-img
+/public/upload/social-mainimg
+/public/upload/social-userimg
