@@ -120,7 +120,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [DrinkTypeEnController::class, 'store'])->name('back.drink_type_en.store');
         Route::get('/edit/{id}', [DrinkTypeEnController::class, 'edit'])->name('back.drink_type_en.edit');
         Route::post('/update/{id}', [DrinkTypeEnController::class, 'update'])->name('back.drink_type_en.update');
-        Route::post('/delete/{id}', [DrinkTypeEnController::class, 'delete'])->name('back.drink_type_en.delete');
+        Route::delete('/delete', [DrinkTypeEnController::class, 'delete'])->name('back.drink_type_en.delete');
     });
 
     // 菜單管理(英)-飲品管理
@@ -130,7 +130,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [DrinkEnController::class, 'store'])->name('back.drink_en.store');
         Route::get('/edit/{id}', [DrinkEnController::class, 'edit'])->name('back.drink_en.edit');
         Route::post('/update/{id}', [DrinkEnController::class, 'update'])->name('back.drink_en.update');
-        Route::post('/delete/{id}', [DrinkEnController::class, 'delete'])->name('back.drink_en.delete');
+        Route::delete('/delete', [DrinkEnController::class, 'delete'])->name('back.drink_en.delete');
     });
 
     // 媒體露出

@@ -9,10 +9,33 @@ use Illuminate\Support\Facades\File;
 
 class DrinkEnController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $lists = DrinkEn::all()->sortBy('sort');
-        return view('backend.drink_en.index', compact('lists'));
+        $lists = DrinkEn::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('drink_name', 'like', "%{$keyword}%")
+                ->orWhere('sort', 'like', "%{$keyword}%")
+                ->orWhereHas('DrinkTypeEn', function ($query) use ($keyword) {
+                    $query->where('type_name', 'like', "%{$keyword}%");
+                });
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.drink_en.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
     public function create()
@@ -41,7 +64,7 @@ class DrinkEnController extends Controller
         return view('backend.drink_en.edit', compact('lists', 'id', 'types'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $drink = DrinkEn::find($id);
         $drink->update([
@@ -54,10 +77,11 @@ class DrinkEnController extends Controller
         return redirect(route('back.drink_en.index'))->with('message', '更新成功!');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $Drink = DrinkEn::find($id);
-        $Drink->delete();
-        return redirect(route('back.drink_en.index'))->with('message', '刪除成功!');
+        $id = $request->id;
+        $DrinkEn = DrinkEn::find($id);
+        $DrinkEn->delete();
+        return 'success';
     }
 }
