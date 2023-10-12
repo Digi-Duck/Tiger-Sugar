@@ -19,8 +19,10 @@ class DrinkController extends Controller
 
         if ($request->filled('keyword')) {
             $lists->where('drink_name', 'like', "%{$keyword}%")
-                ->orwhere('type_id', 'like', "%{$keyword}%")
-                ->orwhere('sort', 'like', "%{$keyword}%");
+                ->orWhere('sort', 'like', "%{$keyword}%")
+                ->orWhereHas('DrinkType', function($query) use($keyword) {
+                    $query->where('type_name', 'like', "%{$keyword}%");
+                });
         }
 
         if ($page_numbers == null) {

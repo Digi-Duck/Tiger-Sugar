@@ -13,7 +13,7 @@
                     </h4>
 
                     <div class="card-body">
-                        <form method="POST" action="/admin/country/store" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.country.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="continent_id" class="col-2 col-form-label">洲</label>

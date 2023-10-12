@@ -187,11 +187,12 @@
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
+                            @foreach ($products as $product)
                             <div class="swiper-slide">
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
                                         <img class="product-img"
-                                            src="{{ asset('./frontend-img/index-img/distribution/1668998205a2557a7b2e94197ff767970b67041697.jpg') }}"
+                                            src="{{ $product->img }}"
                                             alt="產品圖片">
                                         <img class="ask-icon"
                                             src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
@@ -211,16 +212,17 @@
                                         </div>
                                     </div>
                                     <div class="commodity-title">
-                                        老虎堂地瓜條
+                                        {{ $product->title_zh }}
                                     </div>
                                     <div class="commodity-title-english">
-                                        Tiger Sugar Sweet Potato Fries
+                                        {{ $product->title_en }}
                                     </div>
                                     <div class="commodity-sort">
-                                        零食｜Snack
+                                        {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                             <div class="swiper-slide">
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
