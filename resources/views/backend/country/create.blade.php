@@ -19,8 +19,9 @@
                                 <label for="continent_id" class="col-2 col-form-label">洲</label>
                                 <div class="col-10">
                                     <select class="form-control" name="continent_id" id="continent_id" required>
-                                        @foreach($continents as $continent)
-                                            <option value="{{$continent->id}}">{{$continent->continent_tw}}({{$continent->continent_en}})</option>
+                                        @foreach ($continents as $continent)
+                                            <option value="{{ $continent->id }}">
+                                                {{ $continent->continent_tw }}({{ $continent->continent_en }})</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -42,9 +43,12 @@
                             <div class="form-group row">
                                 <label for="country_photo" class="col-2 col-form-label">上傳代表圖片</label>
                                 <div class="col-10">
-                                    <input type="file" class="form-control-file" id="country_photo" name="country_photo" accept="image/*" required>
+                                    <input type="file" class="form-control-file" id="country_photo" name="country_photo"
+                                        accept="image/*" required>
                                 </div>
-                                <div class="col-12"><p class="text-danger">*注意：建議尺寸：525 * 200 (px)</p></div>
+                                <div class="col-12">
+                                    <p class="text-danger">*注意：建議尺寸：525 * 200 (px)</p>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -78,11 +82,17 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="0" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                        value="0" min="0" max="999">
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">新增</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.country.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">新增</button>
+                            </div>
                         </form>
                     </div>
                 </div>
