@@ -1,0 +1,647 @@
+* {
+    box-sizing: border-box;
+    font-family: Microsoft JhengHei;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0C1219;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#distribution .main {
+    width: 100%;
+    background-image: url(../frontend-img/distribution-img/distribution/bg_extra.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5%;
+}
+
+#distribution .container {
+    max-width: 1100px;
+    padding: 100px 0;
+    margin: auto;
+}
+
+#distribution .distribution-logo-group {
+    display: flex;
+}
+
+#distribution .distribution-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+}
+
+#distribution .distribution-logo-img {
+    width: 30px;
+}
+
+#distribution .distribution-logo-text {
+    margin-left: 10px;
+}
+
+#distribution .distribution-logo-text-cn {
+    color: aliceblue;
+    font-size: 14px;
+}
+
+#distribution .distribution-logo-text-en {
+    margin-top: 5px;
+    color: aliceblue;
+    font-size: 12px;
+}
+
+#distribution .select-all-btn {
+    font-size: 18px;
+    padding: 8px 24px;
+    color: aliceblue;
+    background-color: unset;
+    border: #ffe282 1px solid;
+    border-width: 1px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#distribution .select-all-btn:hover {
+    background-color: #ffe282;
+    border: 0px;
+    border-radius: 0;
+    color: black;
+    transition: color 1s, background-color 1s;
+}
+
+#distribution .swiper-and-page-group {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#distribution .swiper-and-page-group::after {
+    content: '';
+    position: absolute;
+    top: 180%;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+/* swiper */
+#distribution .content {
+    position: relative;
+    width: 65.76%;
+    padding: 0 20px;
+}
+
+#distribution .swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 0px;
+    z-index: 0;
+}
+
+#distribution .swiper-slide.active {
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#distribution .swiper-container .swiper-wrapper .swiper-slide {
+    width: auto;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#distribution .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+    margin: -1px;
+}
+
+#distribution .swiper-slide:hover {
+    border: #FFFFFF 2px solid;
+}
+
+#distribution .page-link {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+}
+
+/* 上一頁 下一頁 */
+#distribution .page-up-and-page-down-group {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#distribution .page-up {
+    padding: 3px 0 0;
+    display: inline;
+    font-size: 16px;
+    margin: 0 20px 0 0;
+}
+
+#distribution .page-down {
+    font-size: 16px;
+    margin: 0 0 0 20px;
+}
+
+#distribution .page-up,
+#distribution .page-1,
+#distribution .page-2,
+#distribution .page-3,
+#distribution .page-4,
+#distribution .page-5,
+#distribution .page-down {
+    color: aliceblue;
+    border: 0;
+}
+
+#distribution .page-1,
+#distribution .page-2,
+#distribution .page-3,
+#distribution .page-4,
+#distribution .page-5 {
+    margin-left: 4px;
+    font-size: 18px;
+    padding: 3px;
+}
+
+#distribution .page-1 {
+    background-color: aliceblue;
+    color: #000000;
+}
+
+
+/* 產品方格 */
+#distribution .prduct-grid-columns {
+    margin-top: 4%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#distribution .product-background {
+    position: relative;
+    width: 350px;
+    background-image: url(../frontend-img/distribution-img/distribution/shop-img-border.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#distribution .product-background img {
+    width: 100%;
+}
+
+#distribution .product {
+    position: relative;
+    width: 350px;
+    height: 380px;
+}
+
+#distribution .product img {
+    width: 330px;
+    height: 360px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#distribution .product-group {
+    margin-top: 8%;
+}
+
+#distribution .product-info {
+    margin-top: 3%;
+}
+
+#distribution .product-title {
+    color: aliceblue;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#distribution .product-title-en {
+    color: aliceblue;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#distribution .product-id {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#distribution .div-line {
+    position: relative;
+    margin-top: 5%;
+}
+
+#distribution .div-line::after {
+    content: '';
+    position: absolute;
+    top: 150%;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+#distribution .page-up-and-page-down-group-buttom {
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: right;
+    padding: 4% 0;
+}
+
+#distribution .swiper-button-next:after,
+#distribution .swiper-button-prev:after {
+    display: none;
+}
+
+#distribution .swiper-button-next img {
+    position: absolute;
+    right: -10px;
+    width: 8px;
+}
+
+#distribution .swiper-button-prev img {
+    position: absolute;
+    left: -10px;
+    width: 8px;
+}
+
+#distribution :any-link {
+    text-decoration: none;
+}
+
+#distribution :any-link:active {
+    background-color: aliceblue;
+    color: black;
+}
+
+#distribution .yellow-box {
+    width: 50px;
+    position: absolute;
+    top: 2.6%;
+    left: 82.9%;
+}
+
+#distribution .yellow-box-hover {
+    width: 50px;
+    position: absolute;
+    top: 0%;
+    left: 85%;
+}
+
+#distribution .product-background-hover {
+    position: absolute;
+    width: 330px;
+    height: 360px;
+    outline: #ffe282 2px solid;
+    background-color: #000000;
+    opacity: 0.8;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+
+/* 產品方塊more btn */
+#distribution .product-background-hover button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+#distribution .product-background-hover button:active {
+    background: aliceblue;
+    color: #000000;
+}
+
+#distribution .product-background-hover:hover {
+    opacity: 0.8;
+    outline: #ffe282 2px solid;
+}
+
+#distribution .product-background-hover-more {
+    width: 124px;
+    line-height: 48px;
+    text-align: center;
+    outline: #ffe282 3px solid;
+    border-radius: 5px;
+    color: #ffe282;
+    top: calc(50% - 24px);
+    left: calc(50% - 62PX);
+    position: absolute;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#franchisee {
+    margin-top: -1%;
+}
+
+/* RWD */
+@media (max-width:1200px) {
+
+    #distribution .prduct-grid-columns {
+        max-width: 730px;
+        margin-top: 4%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    #distribution .swiper-and-page-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+
+    #distribution .content {
+        margin: auto;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    #distribution .page-up-and-page-down-group {
+        width: auto;
+        margin-top: 4%;
+        margin-left: auto;
+    }
+
+    #distribution .swiper-and-page-group::after {
+        top: 120%;
+    }
+
+    #franchisee {
+        margin-top: -1%;
+    }
+}
+
+@media (max-width:832px) {
+
+    #distribution .prduct-grid-columns {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #distribution .product-group {
+        width: 140px;
+        margin: auto;
+        margin-top: 4%;
+    }
+
+    #distribution .product-background {
+        width: 140px;
+        height: 152px;
+    }
+
+    #distribution .product,
+    #distribution .product img {
+        width: 132px;
+        height: 144px;
+        left: 2px;
+        top: 2px;
+    }
+
+    #distribution .product-background-hover {
+        width: 132px;
+        height: 144px;
+        left: 4px;
+        top: 4px;
+    }
+
+    #distribution .yellow-box {
+        width: 40px;
+        left: 96px;
+        top: 4px;
+    }
+
+    #distribution .yellow-box-hover {
+        width: 40px;
+        left: 92px;
+    }
+
+    #distribution .product-background-hover-more {
+        width: 50px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        outline: #ffe282 1px solid;
+        left: 30%;
+        top: 40%;
+    }
+
+    #distribution .product-title,
+    #distribution .product-title-en,
+    #distribution .product-id {
+        font-size: 14px;
+        margin-top: 8%;
+    }
+
+    #distribution .swiper-and-page-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+    }
+
+    #distribution .content {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    #distribution .page-up-and-page-down-group {
+        width: auto;
+        margin-top: 6%;
+        margin-left: auto;
+    }
+
+    #distribution .swiper-and-page-group::after {
+        top: 120%;
+    }
+
+    #distribution .page-up-and-page-down-group-buttom {
+        margin-top: 10%;
+        margin: auto;
+        float: none;
+    }
+}
+
+@media (max-width:768px) {
+    #distribution .prduct-grid-columns {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width:510px) {
+    #distribution .prduct-grid-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#franchisee {
+    height: 400px;
+    padding: 50px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../frontend-img/index-img/franchisee/about_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#link-franchisee {
+    position: absolute;
+    transform: translateY(-100%);
+    width: 1px;
+    height: 76px;
+}
+
+#franchisee .franchisee-container-big {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+}
+
+#franchisee .franchisee-container-animation {
+    display: flex;
+    justify-content: center;
+}
+
+#franchisee .join-us-img {
+    height: 100px;
+    background-image: url('../frontend-img/index-img/franchisee/logo-Graphic.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#franchisee .join-us-img img {
+    width: 100px;
+    height: 100px;
+}
+
+#franchisee .join-us-info {
+    display: flex;
+    flex-direction: row;
+    background-image: url('../frontend-img/index-img/franchisee/logo-Text.png');
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 130px;
+    margin-top: 5px;
+}
+
+@keyframes flashing {
+    0% {
+        color: #fee483;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: #fee483;
+    }
+}
+
+#franchisee .join-us-info h2 {
+    margin-top: 75px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fee483;
+    font-weight: 400;
+    -webkit-animation: flashing 1.5s infinite;
+    animation: flashing 1.5s infinite;
+}
+
+#franchisee .container-franchisee-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#franchisee .franchisee-icon {
+    background-image: url('../frontend-img/index-img/franchisee/icon1-5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+}
+
+#franchisee .franchisee-title {
+    color: white;
+    display: flex;
+}
+
+#franchisee .franchisee-title h1 {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 7px;
+}
+
+#franchisee .franchisee-title h2 {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+#franchisee .container {
+    width: 100%;
+}
+
+@media screen and (min-width:576px) {
+    #franchisee .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    #franchisee .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #franchisee .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #franchisee .container {
+        max-width: 1140px;
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #franchisee .franchisee-title {
+        margin-left: 15px;
+    }
+}
