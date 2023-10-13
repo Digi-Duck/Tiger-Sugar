@@ -51,11 +51,6 @@
 
         <div class="backend-down-area">
             <div class="backend-down-left-area">
-                <a href="{{ route('back.news.index') }}" id="news" class="single-btn" title="前往最新消息設定頁">
-                    <button type="button" class="backend-btn">
-                        <h2 class="backend-h2">最新消息</h2>
-                    </button>
-                </a>
                 <a href="{{ route('back.banner.index') }}" id="banner" class="single-btn" title="前往廣告橫幅設定頁">
                     <button type="button" class="backend-btn">
                         <h2 class="backend-h2">廣告橫幅</h2>

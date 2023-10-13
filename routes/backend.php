@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AreaController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BlogNewsController;
@@ -57,12 +56,6 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/update/{id}', [BannerController::class, 'update'])->name('back.banner.update');
         Route::delete('/delete', [BannerController::class, 'delete'])->name('back.banner.delete');
     });
-
-
-    // area據點管理-洲 設定  此葉面不確定有沒有用，晚點處理
-    // Route::prefix('/area')->group(function () {
-    //     Route::get('/index', [AreaController::class, 'index'])->name('back.area.index');
-    // });
 
     // 據點管理-國家管理
     Route::prefix('/country')->group(function () {
