@@ -68,6 +68,7 @@ class ProductsController extends Controller
             'shelf_life' => 'required|max:6',
             'preserve' => 'required',
             'content' => 'required',
+            'notes' => 'required',
             'video' => 'required',
         ], [
             'sort.required' => '權重必填',
@@ -88,6 +89,7 @@ class ProductsController extends Controller
             'shelf_life.max' => '保存期限最多只能輸入6個字',
             'preserve.required' => '保存方式必填',
             'content.required' => '內容必填',
+            'notes.required' => '注意事項必填',
             'video.required' => '影片必填',
         ]);
         $products = Products::create([
@@ -102,6 +104,7 @@ class ProductsController extends Controller
             'shelf_life' => $request->shelf_life,
             'preserve' => $request->preserve,
             'content' => $request->content,
+            'notes' => $request->notes,
             'video' => $request->video,
         ]);
         $img = $this->fileService->imgUpload($request->file('img'), 'products-img');
