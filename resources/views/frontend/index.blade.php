@@ -137,35 +137,24 @@
                                         data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe></div>
                             @else
                                 <div class="swiper-slide">
-                                    <div class="card-background">
-                                        <div class="post-userinfo">
-                                            <div class="float-left">
-                                                <img class="post-division" src='{{ $single_social->user_photo }}'>
-                                                <img src="" alt="">
+                                    <div class="iframe-card">
+                                        <div class="iframe-header">
+                                            <div class="iframe-left-user-info">
+                                                <img class="iframe-user-icon" src="" alt="">
+                                                <div class="-frame-user-names">
+                                                    <div class="iframe-user-name-top"></div>
+                                                    <div class="iframe-user-name-down"></div>
+                                                </div>
                                             </div>
-                                            <div class="float-left">
-                                                <span class="user-name">{{ $single_social->user_name }}</span>
-                                                <span class="user-name2">{{ $single_social->user_account }}</span>
-                                            </div>
-                                            <div class="float-right"
-                                                style="color:{{ $single_social->social_icon_color }}">
-                                                {!! $single_social->social_icon !!}
-                                            </div>
-                                            <div class="clearfix"></div>
+                                            <div class="iframe-social-icon"></div>
                                         </div>
-                                        {{-- <div class="card-img" src='{{ $single_social->main_photo }}'> --}}
-                                        <div class="px-3">
-                                            <div class="post-link">
-                                                <a href="{{ $single_social->link_href }}">{{ $single_social->link_title }}</a>
+                                        <img class="iframe-main-photo">
+                                        <div class="iframe-down-content">
+                                            <div class="iframe-link-name">
+                                                <a href="" class="iframe-link-detail">連結名稱</a>
                                             </div>
-                                        </div>
-                                        <div class="px-3">
-                                            <div class="post-text">
-                                                {{ $single_social->social_info }}
-                                            </div>
-                                        </div>
-                                        <div class="px-3">
-                                            <div class="post-date">{{ $single_social->post_date }}</div>
+                                            <div class="iframe-content">連結內文</div>
+                                            <div class="iframe-update">上架時間</div>
                                         </div>
                                     </div>
                                 </div>

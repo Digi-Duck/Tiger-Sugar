@@ -584,163 +584,81 @@ h2 {
 
 }
 
-
-/* 客製化部分 */
-
-/* #social .swiper-button-next::after,
-#social .swiper-button-prev::after {
-  display: none;
-} */
-
-#social .swiper-button-next,
-#social .swiper-container-rtl .swiper-button-prev {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+#social .iframe-card{
+    width: 350px;
 }
 
-#social .swiper-button-prev,
-#social .swiper-container-rtl .swiper-button-next {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+#social .iframe-header{
+    width: 100%;
+    padding: 10px 10px 8px 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-#social .header {
-  height: 10vw;
+#social .iframe-left-user-info{
+    display: flex;
+    justify-content: space-between;
 }
 
-#social .header .section_header {
-  width: 100%;
-  position: absolute;
-  top: -25%;
+#social .iframe-user-icon{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: cover;
 }
 
-#social .header .title {
-  position: relative;
-  z-index: 1;
-  top: 50px;
+#social .iframe-user-names{
+    display: flex;
+    flex-direction: column;
 }
 
-#social .header .title-icon {
-  float: left;
-  margin-right: 2px;
+#social .iframe-user-name-top,
+#social .iframe-user-name-down{
+    font-size: 12px;
+    font-family: Microsoft JhengHei;
 }
 
-#social .header .title-icon img {
-  width: 32px;
-  margin-top: 4px;
-  margin-right: 6px;
+#social .iframe-social-icon{
+    max-height: 30px;
 }
 
-#social .header .title-name {
-  float: left;
+#social .iframe-main-photo{
+    width: 100%;
+    height: 350px;
+    background-position: center;
+    background-size: cover;
 }
 
-#social .header .title-name h1 {
-  color: white;
-  margin-top: 7px;
-  font-size: 14px;
-  margin-bottom: 0;
-  line-height: 26px;
+#social .iframe-down-content{
+    padding: 0 16px;
 }
 
-#social .header .title-name h2 {
-  color: white;
-  font-size: 12px;
+#social .iframe-link-name{
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#social .swiper-container {
-  width: 100%;
-  height: 100%;
+#social .iframe-link-detail{
+    width: 100%;
+    color: #3897F0;
+    font-size: 14.4px;
 }
 
-@media (max-width: 480px) {
-  #social .swiper-container {
-    margin-top: 100px;
-    padding: 0 40px;
-  }
+#social .iframe-content{
+    width: 100%;
+    color: black;
+    font-size: 14.4px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.soc#social-card iframe {
-  min-width: 100% !important;
-  width: 100% !important;
+#social .iframe-update{
+    width: 100%;
+    color: #999999;
+    font-size: 14.4px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-#social .card-img {
-  width: 100%;
-  height: 350px;
-  background-size: cover;
-  background-position: center;
-}
-
-#social .post-userinfo {
-  padding: 10px 10px 8px 10px;
-  font-size: 18px;
-}
-
-#social .post-userinfo i {
-  margin-top: 10px;
-  margin-right: 8px;
-}
-
-#social .post-userinfo .post-division {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  margin-right: 10px;
-}
-
-#social .post-userinfo a:hover {
-  color: black;
-}
-
-#social .post-userinfo a:visited {
-  color: black;
-}
-
-#social .post-userinfo .user-name:nth-child(1) {
-  font-weight: 900;
-  margin-top: 2px;
-}
-
-#social .post-userinfo .user-name {
-  display: block;
-  font-size: 12px;
-  line-height: 15px;
-}
-
-#social .post-userinfo .user-name2 {
-  display: block;
-  font-size: 12px;
-  line-height: 15px;
-}
-
-#social .post-link {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  color: #3897f0;
-  font-weight: 700;
-}
-
-#social .post-text {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#social .post-date {
-  padding: 10px 0;
-  color: #999;
-}
-#social .float-left {
-  float: left !important;
-}
-#social .px-3 {
-  padding-right: 1rem !important;
-}
-
-
 /* social CSS結束 */
 
 
