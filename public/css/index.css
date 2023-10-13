@@ -181,6 +181,35 @@ a {
         opacity: 0;
     }
 }
+#banner .swiper-slide .banner-pc-img{
+    display: block;
+}
+#banner .swiper-slide .banner-mb-img{
+    display: none;
+}
+@media (max-width:576px){
+    #banner .swiper-slide .banner-pc-img{
+        display: none;
+    }
+    #banner .swiper-slide .banner-mb-img{
+        display: block;
+    }
+}
+
+#banner .swiper-slide .banner-pc-vedio{
+    display: block;
+}
+#banner .swiper-slide .banner-mb-vedio{
+    display: none;
+}
+@media (max-width:576px){
+    #banner .swiper-slide .banner-pc-vedio{
+        display: none;
+    }
+    #banner .swiper-slide .banner-mb-vedio{
+        display: block;
+    }
+}
 
 /* banner CSS結束 */
 
