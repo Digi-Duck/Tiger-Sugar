@@ -114,10 +114,9 @@ class BannerController extends Controller
                 'type' => $request->type,
                 'sort' => $request->sort,
             ]);
-
             $banner->update([
-                'pc_video_url' => $pc_video_url,
-                'mb_video_url' => $mb_video_url,
+                'pc_video_url' => $url_para['v'],
+                'mb_video_url' => $url_para1['v'],
             ]);
         }
         return redirect(route('back.banner.index'))->with('message', '新增成功!');
@@ -168,8 +167,8 @@ class BannerController extends Controller
             parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
 
             $banner->update([
-                'pc_video_url' => $pc_video_url,
-                'mb_video_url' => $mb_video_url,
+                'pc_video_url' => $url_para['v'],
+                'mb_video_url' => $url_para1['v'],
             ]);
         }
 

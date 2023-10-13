@@ -14,6 +14,11 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.banner.store') }}" enctype="multipart/form-data">
                             @csrf
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             <input hidden class="form-control" name="type" id="banner_type" value="圖片" required>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -37,7 +42,7 @@
                                         <label for="pc_image_url" class="col-2 col-form-label">上傳圖片</label>
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="pc_image_url"
-                                                name="pc_image_url" accept="image/*" value="{{ old('pc_image_url',$pc_image_url ?? '') }}" required>
+                                                name="pc_image_url" accept="image/*" required>
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -107,7 +112,7 @@
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
                                     <input type="number" class="form-control" id="sort" name="sort" required
-                                    value="{{ old('sort',$sort ?? '1') }}" min="0" max="999">
+                                        value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
                                 </div>
                             </div>
                             <hr>
