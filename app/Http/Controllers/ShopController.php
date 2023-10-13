@@ -11,11 +11,45 @@ use App\Services\FileService;
 
 class ShopController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $lists = Shop::all();
+        $lists = Shop::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
 
-        return view('backend.shop.index',compact('lists'));
+        if ($request->filled('keyword')) {
+            $lists->where('name', 'like', "%{$keyword}%")
+                ->orWhere('address', 'like', "%{$keyword}%")
+                ->orWhere('phone', 'like', "%{$keyword}%")
+                ->orWhere('sort', 'like', "%{$keyword}%")
+                ->orWhereHas('Country', function ($query) use ($keyword) {
+                    $query->where('country_name', 'like', "%{$keyword}%");
+                })
+                ->orWhereHas('City', function ($query) use ($keyword) {
+                    $query->where('city_name', 'like', "%{$keyword}%");
+                }
+            );
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.shop.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
+
+
+
+        // $lists = Shop::all();
+
+        // return view('backend.shop.index',compact('lists'));
     }
 
     public function create()
@@ -67,6 +101,6 @@ class ShopController extends Controller
         $id = $request->id;
         $shop = Shop::find($id);
         $shop->delete();
-        return redirect(route('back.shop.index'))->with('message','刪除成功!');
+        return 'success';
     }
 }

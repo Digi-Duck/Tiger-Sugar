@@ -84,7 +84,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [ShopController::class, 'store'])->name('back.shop.store');
         Route::get('/edit/{id}', [ShopController::class, 'edit'])->name('back.shop.edit');
         Route::post('/update/{id}', [ShopController::class, 'update'])->name('back.shop.update');
-        Route::post('/delete', [ShopController::class, 'delete'])->name('back.shop.delete');
+        Route::delete('/delete', [ShopController::class, 'delete'])->name('back.shop.delete');
     });
 
     // 菜單管理(中)-飲品類型管理
