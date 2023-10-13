@@ -74,7 +74,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [CityController::class, 'store'])->name('back.city.store');
         Route::get('/edit/{id}', [CityController::class, 'edit'])->name('back.city.edit');
         Route::post('/update/{id}', [CityController::class, 'update'])->name('back.city.update');
-        Route::post('/delete', [CityController::class, 'delete'])->name('back.city.delete');
+        Route::delete('/delete', [CityController::class, 'delete'])->name('back.city.delete');
     });
 
     // 據點管理-店鋪管理
