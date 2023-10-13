@@ -66,12 +66,28 @@ class SocialController extends Controller
             'post_date' => $request->post_date,
         ]);
 
-        $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
-        $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
-        $social->update([
-            'user_photo' => $userimg,
-            'main_photo' => $mainimg,
-        ]);
+        $type = $request->type;
+
+        if ($type == 'custom') {
+            $request->validate([
+                'user_photo' => 'image',
+                'main_photo' => 'image',
+            ]);
+
+            $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+            $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+            $social->update([
+                'user_photo' => $userimg,
+                'main_photo' => $mainimg,
+            ]);
+        }
+
+        // $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+        // $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+        // $social->update([
+        //     'user_photo' => $userimg,
+        //     'main_photo' => $mainimg,
+        // ]);
 
         // $type = $request->type;
 
@@ -89,19 +105,7 @@ class SocialController extends Controller
         //     ]);
         // }
 
-        // if ($type == 'custom') {
-        //     // $request->validate([
-        //     //     'user_photo' => 'image',
-        //     //     'main_photo' => 'image',
-        //     // ]);
 
-        //     $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
-        //     $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
-        //     $social->update([
-        //         'user_photo' => $userimg,
-        //         'main_photo' => $mainimg,
-        //     ]);
-        // }
 
         return redirect(route('back.social.index'))->with('message', '新增成功!');
     }
