@@ -14,11 +14,6 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.banner.store') }}" enctype="multipart/form-data">
                             @csrf
-                            @foreach ($errors->all() as $error)
-                                <div class="alert alert-danger" role="alert">
-                                    {{ $error }}
-                                </div>
-                            @endforeach
                             <input hidden class="form-control" name="type" id="banner_type" value="圖片" required>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -40,9 +35,14 @@
                                     aria-labelledby="pills-home-tab">
                                     <div class="form-group row">
                                         <label for="pc_image_url" class="col-2 col-form-label">上傳圖片</label>
-                                        <div class="col-10">
+                                        <div class="col-10 d-flex flex-row">
                                             <input type="file" class="form-control-file" id="pc_image_url"
                                                 name="pc_image_url" accept="image/*" required>
+                                            @foreach ($errors->get('pc_image_url') as $error)
+                                                <div class="alert alert-danger w-50 text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -50,9 +50,14 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="mb_image_url" class="col-2 col-form-label">上傳圖片(手機版)</label>
-                                        <div class="col-10">
+                                        <div class="col-10 d-flex flex-row">
                                             <input type="file" class="form-control-file" id="mb_image_url"
                                                 name="mb_image_url" accept="image/*" required>
+                                            @foreach ($errors->get('mb_image_url') as $error)
+                                                <div class="alert alert-danger w-50 text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>
@@ -62,6 +67,11 @@
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt">
+                                            @foreach ($errors->get('image_alt') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -84,10 +94,16 @@
                                 <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                                     aria-labelledby="pills-profile-tab">
                                     <div class="form-group row">
-                                        <label for="pc_video_url" class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
+                                        <label for="pc_video_url"
+                                        class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
-                                                name="pc_video_url">
+                                                name="pc_video_url" value="{{ old('pc_video_url',$pc_video_url ?? '') }}">
+                                            @foreach ($errors->get('pc_video_url') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -98,7 +114,12 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
-                                                name="mb_video_url">
+                                                name="mb_video_url" value="{{ old('mb_video_url',$mb_video_url ?? '') }}">
+                                            @foreach ($errors->get('mb_video_url') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>
@@ -125,7 +146,6 @@
                                 <button type="submit" class="btn btn-primary d-block">新增</button>
                             </div>
                             {{-- 複製到這就好 路由記得改 --}}
-
                         </form>
                     </div>
                 </div>
@@ -150,7 +170,6 @@
                 mbImage.setAttribute('required', 'required');
                 pcVideo.removeAttribute('required');
                 mbVideo.removeAttribute('required');
-                console.log(type.value);
             }
         })
         mov.addEventListener('click', function() {
@@ -160,8 +179,12 @@
                 mbImage.removeAttribute('required');
                 pcVideo.setAttribute('required', 'required');
                 mbVideo.setAttribute('required', 'required');
-                console.log(type.value);
             }
         })
     </script>
+    @if (session('type') === 'video')
+    <script>
+        mov.click();
+    </script>
+    @endif
 @endsection
