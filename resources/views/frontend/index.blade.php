@@ -28,17 +28,26 @@
                             <div class="trans-cover"></div>
                         </div>
                     </div>
-                    {{-- for each 用 --}}
-                    <div class="swiper-slide">
-                        {{-- <img src="{{ asset('frontend-img/distribution-img/pop-window/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}" alt=""> --}}
-                    </div>
-                    <div class="swiper-slide">
-                        {{-- <iframe src="{{ asset('frontend-img/index-img/media/phpEGFGi8.mp4') }}" frameborder="0"></iframe> --}}
-                    </div>
-                    <div class="swiper-slide">
-                        {{-- <iframe src="https://www.youtube.com/embed/eHAyE76wog0?si=i8xewDu9a9DXQu2J" title="YouTube video player" frameborder="0"></iframe> --}}
-                    </div>
-
+                    @foreach ($banners as $banner)
+                        <div class="swiper-slide">
+                            @if ($banner->type == '圖片')
+                                @if ($banner->link_url != '')
+                                    <a href="{{ $banner->link_url }}">
+                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}" alt="{{ $banner->image_alt }}">
+                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}" alt="{{ $banner->image_alt }}">
+                                    </a>
+                                @else
+                                    <div>
+                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}" alt="{{ $banner->image_alt }}">
+                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}" alt="{{ $banner->image_alt }}">
+                                    </div>
+                                @endif
+                            @elseif ($banner->type == '影片')
+                            <iframe class="banner-pc-vedio" src="https://youtube.com/embed/{{ $banner->pc_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1"> alt="{{ $banner->pc_video_url }}" frameborder="0"></iframe>
+                            <iframe class="banner-mb-vedio" src="https://youtube.com/embed/{{ $banner->mb_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1"> alt="{{ $banner->mb_video_url }}" frameborder="0"></iframe>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -132,18 +141,22 @@
                     <div class="swiper-wrapper">
                         @foreach ($social as $single_social)
                             @if ($single_social->type == 'embed')
-                                <div class="swiper-slide"><iframe class="card-body" src="{{ $single_social->embed_link }}"
-                                        allowtransparency="true" allowfullscreen="true" frameborder="0"
+                                <div class="swiper-slide"><iframe class="card-body"
+                                        src="{{ $single_social->embed_link }}" allowtransparency="true"
+                                        allowfullscreen="true" frameborder="0"
                                         data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe></div>
                             @else
                                 <div class="swiper-slide">
                                     <div class="iframe-card">
                                         <div class="iframe-header">
                                             <div class="iframe-left-user-info">
-                                                <img class="iframe-user-icon" src="{{ $single_social->user_photo }}" alt="">
+                                                <img class="iframe-user-icon" src="{{ $single_social->user_photo }}"
+                                                    alt="">
                                                 <div class="iframe-user-names">
-                                                    <div class="iframe-user-name-top">{{ $single_social->user_name }}</div>
-                                                    <div class="iframe-user-name-down">{{ $single_social->user_account }}</div>
+                                                    <div class="iframe-user-name-top">{{ $single_social->user_name }}
+                                                    </div>
+                                                    <div class="iframe-user-name-down">{{ $single_social->user_account }}
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="iframe-social-icon">{{ $single_social->social_icon }}</div>
@@ -151,7 +164,8 @@
                                         <img class="iframe-main-photo" src="{{ $single_social->main_photo }}">
                                         <div class="iframe-down-content">
                                             <div class="iframe-link-name">
-                                                <a href="" class="iframe-link-detail">{{ $single_social->link_title }}</a>
+                                                <a href=""
+                                                    class="iframe-link-detail">{{ $single_social->link_title }}</a>
                                             </div>
                                             <div class="iframe-content">{{ $single_social->social_info }}</div>
                                             <div class="iframe-update">{{ $single_social->post_date }}</div>

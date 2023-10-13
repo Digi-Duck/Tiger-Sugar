@@ -74,7 +74,7 @@
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.drink_type.edit', ['id' => $list->id]) }}">編輯</a>
                                             <button type="button" class="btn btn-sm btn-danger"
-                                                onclick="deleteData('{{ $list->id }}')">刪除</button>
+                                                onclick="deleteData('{{ $list->id }}', '{{ $list->type_name }}')">刪除</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -110,7 +110,7 @@
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        function deleteData(id) {
+        function deleteData(id, type_name) {
             console.log(id);
 
             const formData = new FormData();
@@ -144,7 +144,7 @@
                             Swal.fire({
                                 icon: 'error',
                                 title: '刪除失敗',
-                                text: '查無資料',
+                                text: `目前${type_name}類型尚有產品存在，請先刪除產品或更換產品類型`,
                             });
                         }
                     });

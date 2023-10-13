@@ -83,10 +83,12 @@ class DrinkTypeController extends Controller
     {
         $id = $request->id;
         $DrinkType = DrinkType::find($id);
-        $DrinkType->delete();
-        return 'success';
-        // $DrinkType = DrinkType::find($id);
-        // $DrinkType->delete();
-        // return redirect(route('back.drink_type.index'))->with('message', '刪除成功!');
+        $hasType = Drink::where('type_name',$id)->count();
+        if($hasType)
+            return '';
+        else{
+            $DrinkType->delete();
+            return 'success';
+        }
     }
 }

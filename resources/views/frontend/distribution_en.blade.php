@@ -2,7 +2,7 @@
 
 @section('css')
     <!-- 各分頁css -->
-    <link rel="stylesheet" href="{{ asset('./css/distribution.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/distribution_en.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/popwindow.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">

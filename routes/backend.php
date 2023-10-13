@@ -64,7 +64,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::post('/store', [CountryController::class, 'store'])->name('back.country.store');
         Route::get('/edit/{id}', [CountryController::class, 'edit'])->name('back.country.edit');
         Route::post('/update/{id}', [CountryController::class, 'update'])->name('back.country.update');
-        Route::post('/delete', [CountryController::class, 'delete'])->name('back.country.delete');
+        Route::delete('/delete', [CountryController::class, 'delete'])->name('back.country.delete');
     });
 
     // 據點管理-城市管理

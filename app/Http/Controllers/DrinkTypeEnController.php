@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DrinkEn;
 use App\Models\DrinkTypeEn;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -81,8 +82,13 @@ class DrinkTypeEnController extends Controller
     public function delete(Request $request)
     {
         $id = $request->id;
-        $DrinkTypeEn = DrinkTypeEn::find($id);
-        $DrinkTypeEn->delete();
-        return 'success';
+        $DrinkType = DrinkTypeEn::find($id);
+        $hasType = DrinkEn::where('type_name',$id)->count();
+        if($hasType)
+            return '';
+        else{
+            $DrinkType->delete();
+            return 'success';
+        }
     }
 }
