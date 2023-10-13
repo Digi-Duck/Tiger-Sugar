@@ -94,6 +94,7 @@ class BannerController extends Controller
 
 
         if ($type == '影片') {
+            $request->session()->flash('type', 'video');
             $request->validate([
                 'pc_video_url' => 'required|url',
                 'mb_video_url' => 'required|url',
