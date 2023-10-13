@@ -140,8 +140,8 @@
                                     <div class="card-background">
                                         <div class="post-userinfo">
                                             <div class="float-left">
-                                                <span class="post-division"
-                                                    style="background-image: url('{{ $single_social->user_photo }}')"></span>
+                                                <img class="post-division" src='{{ $single_social->user_photo }}'>
+                                                <img src="" alt="">
                                             </div>
                                             <div class="float-left">
                                                 <span class="user-name">{{ $single_social->user_name }}</span>
@@ -153,8 +153,7 @@
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="card-img"
-                                            style="background-image:url('{{ $single_social->main_photo }}');"></div>
+                                        {{-- <div class="card-img" src='{{ $single_social->main_photo }}'> --}}
                                         <div class="px-3">
                                             <div class="post-link">
                                                 <a href="{{ $single_social->link_href }}">{{ $single_social->link_title }}</a>
