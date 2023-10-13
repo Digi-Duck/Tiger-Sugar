@@ -52,45 +52,37 @@ class BannerController extends Controller
     {
         $request->validate([
             'sort' => 'required|max:11',
-            'type' => 'required|max:255',
-            'image_alt' => 'required|max:255',
-            'pc_video_url' => 'max:255',
-            'mb_video_url' => 'required|max:255',
-            'link_url' => 'required|max:255',
-            'link_target' => 'required|max:255',
-        ],[
+        ], [
             'sort.required' => '權重必填',
             'sort.max' => '權重最多只能輸入11個數字',
-            'type.required' => '類型名稱必填',
-            'type.max' => '類型名稱最多只能輸入255個字',
-            'pc_image_url' => 'required|max:255',
-            'mb_image_url' => 'required|max:255',
-            'image_alt' => 'required|max:255',
-            'pc_video_url' => 'requiredmax:255',
-            'mb_video_url' => 'required|max:255',
-            'link_url' => 'required|max:255',
-            'link_target' => 'required|max:255',
-
         ]);
 
-        $banner = Banner::create([
-            'type' => $request->type,
-            'image_alt' => $request->image_alt,
-            'link_url' => $request->link_url,
-            'link_target' => $request->link_target,
-            'sort' => $request->sort,
-        ]);
         $type = $request->type;
 
         if ($type == '圖片') {
             $request->validate([
                 'pc_image_url' => 'required|image',
                 'mb_image_url' => 'required|image',
-            ],[
+                'type' => 'required|max:255',
+                'image_alt' => 'required|max:255',
+                'link_url' => 'max:255',
+            ], [
                 'pc_image_url.required' => '上傳圖片必填',
                 'pc_image_url.image' => '上傳圖片必須為圖片格式',
-                'mb_image_url.required' => '上傳圖片必填',
+                'mb_image_url.required' => '上傳圖片（手機版）必填',
                 'mb_image_url.image' => '上傳圖片（手機版）欄位必須為圖片格式',
+                'type.required' => '類型名稱必填',
+                'type.max' => '類型名稱最多只能輸入255個字',
+                'image_alt.required' => '圖片替代文字為必填',
+                'image_alt.max' => '圖片替代文字最多只能輸入255個字',
+                'link_url.max' => '圖片連結最多只能輸入255個字',
+            ]);
+            $banner = Banner::create([
+                'type' => $request->type,
+                'image_alt' => $request->image_alt,
+                'link_url' => $request->link_url,
+                'link_target' => $request->link_target,
+                'sort' => $request->sort,
             ]);
             $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
             $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
@@ -100,18 +92,28 @@ class BannerController extends Controller
             ]);
         }
 
+
         if ($type == '影片') {
             $request->validate([
                 'pc_video_url' => 'required|url',
                 'mb_video_url' => 'required|url',
+            ], [
+                'pc_video_url.required' => '設定影片連結必填',
+                'pc_video_url.url' => '設定影片必須為網址',
+                'mb_video_url.required' => '設定影片連結（手機版）必填',
+                'mb_video_url.url' => '設定影片（手機版）欄位必須為網址',
             ]);
-
             // PC
             $pc_video_url = $request->pc_video_url;
             parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
             // MB
             $mb_video_url = $request->mb_video_url;
             parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
+
+            $banner = Banner::create([
+                'type' => $request->type,
+                'sort' => $request->sort,
+            ]);
 
             $banner->update([
                 'pc_video_url' => $pc_video_url,
