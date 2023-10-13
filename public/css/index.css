@@ -587,53 +587,53 @@ h2 {
 
 /* 客製化部分 */
 
-/* .social .swiper-button-next::after,
-.social .swiper-button-prev::after {
+/* #social .swiper-button-next::after,
+#social .swiper-button-prev::after {
   display: none;
 } */
 
-.social .swiper-button-next,
-.social .swiper-container-rtl .swiper-button-prev {
+#social .swiper-button-next,
+#social .swiper-container-rtl .swiper-button-prev {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
 
-.social .swiper-button-prev,
-.social .swiper-container-rtl .swiper-button-next {
+#social .swiper-button-prev,
+#social .swiper-container-rtl .swiper-button-next {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
 
-.social .header {
+#social .header {
   height: 10vw;
 }
 
-.social .header .section_header {
+#social .header .section_header {
   width: 100%;
   position: absolute;
   top: -25%;
 }
 
-.social .header .title {
+#social .header .title {
   position: relative;
   z-index: 1;
   top: 50px;
 }
 
-.social .header .title-icon {
+#social .header .title-icon {
   float: left;
   margin-right: 2px;
 }
 
-.social .header .title-icon img {
+#social .header .title-icon img {
   width: 32px;
   margin-top: 4px;
   margin-right: 6px;
 }
 
-.social .header .title-name {
+#social .header .title-name {
   float: left;
 }
 
-.social .header .title-name h1 {
+#social .header .title-name h1 {
   color: white;
   margin-top: 7px;
   font-size: 14px;
@@ -641,52 +641,46 @@ h2 {
   line-height: 26px;
 }
 
-.social .header .title-name h2 {
+#social .header .title-name h2 {
   color: white;
   font-size: 12px;
 }
 
-.social .swiper-container {
+#social .swiper-container {
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 480px) {
-  .social .swiper-container {
+  #social .swiper-container {
     margin-top: 100px;
     padding: 0 40px;
   }
 }
 
-.soc.social-card iframe {
+.soc#social-card iframe {
   min-width: 100% !important;
   width: 100% !important;
 }
 
-.social .card-background {
-  padding: 0px 1px 0px 1px;
-  border-radius: 5px;
-  background-color: white;
-}
-
-.social .card-background .card-img {
+#social .card-img {
   width: 100%;
   height: 350px;
   background-size: cover;
   background-position: center;
 }
 
-.social .card-background .post-userinfo {
+#social .post-userinfo {
   padding: 10px 10px 8px 10px;
   font-size: 18px;
 }
 
-.social .card-background .post-userinfo i {
+#social .post-userinfo i {
   margin-top: 10px;
   margin-right: 8px;
 }
 
-.social .card-background .post-userinfo .post-division {
+#social .post-userinfo .post-division {
   width: 30px;
   height: 30px;
   display: inline-block;
@@ -698,51 +692,51 @@ h2 {
   margin-right: 10px;
 }
 
-.social .card-background .post-userinfo a:hover {
+#social .post-userinfo a:hover {
   color: black;
 }
 
-.social .card-background .post-userinfo a:visited {
+#social .post-userinfo a:visited {
   color: black;
 }
 
-.social .card-background .post-userinfo .user-name:nth-child(1) {
+#social .post-userinfo .user-name:nth-child(1) {
   font-weight: 900;
   margin-top: 2px;
 }
 
-.social .card-background .post-userinfo .user-name {
+#social .post-userinfo .user-name {
   display: block;
   font-size: 12px;
   line-height: 15px;
 }
 
-.social .card-background .post-userinfo .user-name2 {
+#social .post-userinfo .user-name2 {
   display: block;
   font-size: 12px;
   line-height: 15px;
 }
 
-.social .card-background .post-link {
+#social .post-link {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   color: #3897f0;
   font-weight: 700;
 }
 
-.social .card-background .post-text {
+#social .post-text {
   padding: 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.social .card-background .post-date {
+#social .post-date {
   padding: 10px 0;
   color: #999;
 }
-.social .float-left {
+#social .float-left {
   float: left !important;
 }
-.social .px-3 {
+#social .px-3 {
   padding-right: 1rem !important;
 }
 
