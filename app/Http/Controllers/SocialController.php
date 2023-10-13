@@ -119,23 +119,24 @@ class SocialController extends Controller
     public function update(Request $request, $id)
     {
 
-        $request->validate([
-            'embed_name' => 'required|max:255',
-            'embed_link' => 'required',
-            'sort' => 'required|max:11',
-        ],[
-            'embed_name.required' => '標題必填',
-            'embed_name.max' => '標題不能超過255個字',
-            'embed_link.required' => '內容必填',
-            'sort.required' => '權重必填',
-            'sort.max' => '權重不能超過11個字',
-        ]);
+        // $request->validate([
+        //     'embed_name' => 'required|max:255',
+        //     'embed_link' => 'required',
+        //     'sort' => 'required|max:11',
+        // ],[
+        //     'embed_name.required' => '標題必填',
+        //     'embed_name.max' => '標題不能超過255個字',
+        //     'embed_link.required' => '內容必填',
+        //     'sort.required' => '權重必填',
+        //     'sort.max' => '權重不能超過11個字',
+        // ]);
 
         $social = Social::find($id);
 
         $social->update([
             'embed_name' => $request->embed_name,
             'embed_link' => $request->embed_link,
+            'post_date' => $request->post_date,
             'sort' => $request->sort,
         ]);
         // $type = $request->type;

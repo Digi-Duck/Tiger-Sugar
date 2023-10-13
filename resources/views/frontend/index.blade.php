@@ -140,21 +140,21 @@
                                     <div class="iframe-card">
                                         <div class="iframe-header">
                                             <div class="iframe-left-user-info">
-                                                <img class="iframe-user-icon" src="" alt="">
-                                                <div class="-frame-user-names">
-                                                    <div class="iframe-user-name-top"></div>
-                                                    <div class="iframe-user-name-down"></div>
+                                                <img class="iframe-user-icon" src="{{ $single_social->user_photo }}" alt="">
+                                                <div class="iframe-user-names">
+                                                    <div class="iframe-user-name-top">{{ $single_social->user_name }}</div>
+                                                    <div class="iframe-user-name-down">{{ $single_social->user_account }}</div>
                                                 </div>
                                             </div>
-                                            <div class="iframe-social-icon"></div>
+                                            <div class="iframe-social-icon">{{ $single_social->social_icon }}</div>
                                         </div>
-                                        <img class="iframe-main-photo">
+                                        <img class="iframe-main-photo" src="{{ $single_social->main_photo }}">
                                         <div class="iframe-down-content">
                                             <div class="iframe-link-name">
-                                                <a href="" class="iframe-link-detail">連結名稱</a>
+                                                <a href="" class="iframe-link-detail">{{ $single_social->link_title }}</a>
                                             </div>
-                                            <div class="iframe-content">連結內文</div>
-                                            <div class="iframe-update">上架時間</div>
+                                            <div class="iframe-content">{{ $single_social->social_info }}</div>
+                                            <div class="iframe-update">{{ $single_social->post_date }}</div>
                                         </div>
                                     </div>
                                 </div>

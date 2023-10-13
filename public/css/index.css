@@ -610,6 +610,7 @@ h2 {
 #social .iframe-user-names{
     display: flex;
     flex-direction: column;
+    margin-left: 5px;
 }
 
 #social .iframe-user-name-top,
