@@ -1,4 +1,4 @@
-@extends('layouts.frontend-template')
+@extends('layouts.frontend-en-template')
 
 @section('css')
     <!-- 各分頁css -->
