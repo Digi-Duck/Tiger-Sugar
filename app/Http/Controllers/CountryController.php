@@ -106,7 +106,7 @@ class CountryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'continent_id' => 'exists:continent_id',
+            'continent_id' => 'exists:continents,id',
             'country_name' => 'required|max:255',
             'country_en_name' => 'required|max:255',
             'link' => 'max:255',
@@ -115,6 +115,7 @@ class CountryController extends Controller
             'weibo_link' => 'max:255',
             'sort' => '權重不能超過11個字',
         ],[
+            'continent_id.exists' => '洲不存在',
             'country_name.required' => '國家名稱必填',
             'country_name.max' => '國家名稱不能超過255個字',
             'country_en_name.required' => '國家英文名稱必填',
