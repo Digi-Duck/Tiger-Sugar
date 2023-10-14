@@ -27,7 +27,7 @@
     <header>
         <nav>
             <section class="nav-logo">
-                <a href="{{ route('front.index') }}" title="前往首頁">
+                <a href="{{ route('front.index.en') }}" title="前往首頁">
                     <img class="nav-logo-btn" src="{{ asset('./frontend-img/header-img/LOGO.png') }}" alt="tiger-logo">
                 </a>
             </section>
@@ -35,7 +35,7 @@
             <section class="nav-main">
                 <section class="main-menu">
                     <!----------------------------- 關於我們 ------------------------------------>
-                    <a href={{ route('front.index.about') }} class="about-link" title="前往首頁的關於我們">
+                    <a href={{ route('front.index.about.en') }} class="about-link" title="前往首頁的關於我們">
                         <button type="button" class="blade-button">
                             <div class="about">
                                 <div class="about-img">

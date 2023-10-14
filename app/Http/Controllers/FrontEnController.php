@@ -16,4 +16,20 @@ class FrontEnController extends Controller
         return view('frontend_en.index_en');
         // ,compact('blognews','medias', 'drink_types', 'products', 'social', 'banners')
     }
+
+    public function distribution() {
+        return view('frontend_en.distribution_en');
+    }
+
+    public function distributionConfirm() {
+        return view('frontend_en.distribution-confirm_en');
+    }
+
+    public function franchisee() {
+        return view('frontend_en.franchisee_en');
+    }
+
+    public function franchiseeForm() {
+        return view('frontend_en.franchisee-form_en');
+    }
 }
