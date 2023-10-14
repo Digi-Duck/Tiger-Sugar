@@ -12,7 +12,7 @@
                         店舖管理
                     </h4>
                     <div class="card-body">
-                        <a class="btn btn-success" href="{{route('back.shop.create')}}">新增店舖</a>
+                        <a class="btn btn-success" href="{{ route('back.shop.create') }}">新增店舖</a>
                         <hr>
 
                         <form action="{{ route('back.shop.index') }}" method="GET" id="page-numbers" role="search"
@@ -54,32 +54,33 @@
 
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
-                            <tr>
-                                <th width="120">國家</th>
-                                <th width="120">城市</th>
-                                <th width="100">店家名稱</th>
-                                <th>地址</th>
-                                <th width="100">電話</th>
-                                <th width="100">權重</th>
-                                <th width="120">功能</th>
-                            </tr>
+                                <tr>
+                                    <th width="120">國家</th>
+                                    <th width="120">城市</th>
+                                    <th width="100">店家名稱</th>
+                                    <th>地址</th>
+                                    <th width="100">電話</th>
+                                    <th width="100">權重</th>
+                                    <th width="120">功能</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach($lists as $list)
-                                <tr>
-                                    <td>{{$list->country->country_name}}</td>
-                                    <td>{{$list->city->city_name}}</td>
-                                    <td>{{$list->name}}</td>
-                                    <td>{{$list->address}}</td>
-                                    <td>{{$list->phone}}</td>
-                                    <td>{{$list->sort}}</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-success" href="{{route('back.shop.edit',['id'=>$list->id])}}">編輯</a>
-                                        <button type="button" class="btn btn-sm btn-danger"
+                                @foreach ($lists as $list)
+                                    <tr>
+                                        <td>{{ $list->country->country_name }}</td>
+                                        <td>{{ $list->city->city_name }}</td>
+                                        <td>{{ $list->name }}</td>
+                                        <td>{{ $list->address }}</td>
+                                        <td>{{ $list->phone }}</td>
+                                        <td>{{ $list->sort }}</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-success"
+                                                href="{{ route('back.shop.edit', ['id' => $list->id]) }}">編輯</a>
+                                            <button type="button" class="btn btn-sm btn-danger"
                                                 onclick="deleteData('{{ $list->id }}')">刪除</button>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
 
@@ -110,54 +111,55 @@
 @endsection
 
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    function deleteData(id) {
-        console.log(id);
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function deleteData(id) {
+            console.log(id);
 
-        const formData = new FormData();
-        formData.append('_token', '{{ csrf_token() }}');
-        formData.append('_method', 'delete');
-        formData.append('id', id);
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'delete');
+            formData.append('id', id);
 
-        Swal.fire({
-            title: `確認要刪除資料嗎?`,
-            showDenyButton: true,
-            confirmButtonText: '取消',
-            denyButtonText: '刪除',
-        }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isDenied) {
-                fetch('{{ route('back.shop.delete') }}', {
-                    method: 'post',
-                    body: formData,
-                }).then((res) => {
-                    return res.text();
-                }).then((data) => {
-                    console.log(data);
-                    if (data == 'success') {
-                        Swal.fire({
-                            icon: 'success',
-                            title: '刪除成功',
-                        }).then((res) => {
-                            location.reload();
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: '刪除失敗',
-                            text: '查無資料',
-                        });
-                    }
-                });
-            }
-        });
-    }
+            Swal.fire({
+                title: `確認要刪除資料嗎?`,
+                showDenyButton: true,
+                confirmButtonText: '取消',
+                denyButtonText: '刪除',
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                    fetch('{{ route('back.shop.delete') }}', {
+                        method: 'post',
+                        body: formData,
+                    }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '刪除成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '刪除失敗',
+                                text: '查無資料',
+                            });
+                        }
+                    });
+                }
+            });
+        }
 
-    function changePages() {
-        let pageSelect = document.querySelector('#page-select');
-        let pageNumbers = document.querySelector('#page-numbers');
-        console.log(pageSelect.value);
-        pageNumbers.submit();
-    }
+        function changePages() {
+            let pageSelect = document.querySelector('#page-select');
+            let pageNumbers = document.querySelector('#page-numbers');
+            console.log(pageSelect.value);
+            pageNumbers.submit();
+        }
+    </script>
 @endsection
