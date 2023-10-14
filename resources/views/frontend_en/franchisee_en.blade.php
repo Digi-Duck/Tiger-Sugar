@@ -362,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <a href={{ route('front.franchisee_form') }} title="前往加盟表單頁">
+            <a href={{ route('front.franchisee_form.en') }} title="前往加盟表單頁">
                 <button type="button" class="blade-button">
                     <div class="button">Start Application</div>
                 </button>
