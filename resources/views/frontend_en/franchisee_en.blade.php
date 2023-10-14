@@ -1,4 +1,4 @@
-@extends('layouts.frontend-template')
+@extends('layouts.frontend-en-template')
 
 @section('css')
     <!-- 各分頁css -->
@@ -189,7 +189,7 @@
                                         “Region’s Master franchise” is based on the unit of city/region, the exclusive
                                         distributor has an exclusive right of management and must have its own management
                                         team and open a certain number of stores in the region. The authorized operation
-                                        licensing period is "five years"
+                                        licensing period is "five years".
                                     </div>
                                 </div>
                             </label>
@@ -362,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <a href={{ route('front.franchisee_form') }} title="前往加盟表單頁">
+            <a href={{ route('front.franchisee_form.en') }} title="前往加盟表單頁">
                 <button type="button" class="blade-button">
                     <div class="button">Start Application</div>
                 </button>

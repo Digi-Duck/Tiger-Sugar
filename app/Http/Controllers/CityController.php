@@ -111,20 +111,14 @@ class CityController extends Controller
     {
         $id = $request->id;
         $City = City::find($id);
-        $this->fileService->deleteUpload($City->city_photo);
-        $City->delete();
-        return 'success';
 
-
-        // $id = $request->id;
-        // $hasShop = Shop::where('city_id', $id)->count();
-        // $City = City::find($id);
-        // if (!$hasShop) {
-        //     $this->fileService->deleteUpload($City->city_photo);
-        //     $City->delete();
-        //     return redirect(route('back.city.index'))->with('message', '刪除成功!');
-        // } else {
-        //     return redirect(route('back.city.index'))->with('message', '目前' . $City->city_name . '尚有' . $hasShop . '個店鋪，請先刪除相關店鋪');
-        // }
+        $hasType = City::where('city_id', $id)->count();
+        if ($hasType)
+            return '';
+        else {
+            $this->fileService->deleteUpload($City->city_photo);
+            $City->delete();
+            return 'success';
+        }
     }
 }

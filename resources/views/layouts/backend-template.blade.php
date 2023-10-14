@@ -46,9 +46,6 @@
             </div>
         </div>
 
-
-
-
         <div class="backend-down-area">
             <div class="backend-down-left-area">
                 <a href="{{ route('back.banner.index') }}" id="banner" class="single-btn" title="前往廣告橫幅設定頁">

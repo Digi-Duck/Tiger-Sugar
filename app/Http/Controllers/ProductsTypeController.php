@@ -36,12 +36,6 @@ class ProductsTypeController extends Controller
         return view('backend.products_type.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
-    // public function index()
-    // {
-    //     $lists = ProductsType::all();
-    //     return view('backend.products_type.index', compact('lists'));
-    // }
-
     public function create()
     {
         return view('backend.products_type.create');

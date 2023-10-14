@@ -1,4 +1,4 @@
-@extends('layouts.frontend-template')
+@extends('layouts.frontend-en-template')
 
 @section('css')
     <!-- 各分頁css -->
@@ -129,7 +129,7 @@
             </div>
             <div class="container">
                 <!-- Swiper -->
-                <div class="swiper mySwiper-social">
+                {{-- <div class="swiper mySwiper-social">
                     <div class="swiper-wrapper">
                         @foreach ($social as $single_social)
                             @if ($single_social->type == 'embed')
@@ -202,7 +202,7 @@
                                 allowtransparency="true" allowfullscreen="true" frameborder="0"
                                 data-instgrm-payload-id="instagram-media-payload-7" scrolling="no"></iframe></div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="swiper-button-social">
                 <div class="swiper-button-next"></div>
@@ -226,7 +226,7 @@
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
-                            @foreach ($products as $product)
+                            {{-- @foreach ($products as $product)
                                 <div class="swiper-slide">
                                     <div class="direction-body">
                                         <div class="img-w-h-border-img">
@@ -257,7 +257,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                             <div class="swiper-slide">
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
@@ -271,7 +271,7 @@
                                             <img class="ask-icon-hover"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
                                                 title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
@@ -303,7 +303,7 @@
                                             <img class="ask-icon-hover"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
                                                 title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
@@ -335,7 +335,7 @@
                                             <img class="ask-icon-hover"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
                                                 title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
@@ -367,7 +367,7 @@
                                             <img class="ask-icon-hover"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
                                                 title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
@@ -399,7 +399,7 @@
                                             <img class="ask-icon-hover"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution') }} class="commodity-more-button btn"
+                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
                                                 title="更多商品">
                                                 MORE
                                                 <button type="button" class="blade-button">
@@ -432,7 +432,7 @@
                                 alt="swiper上一個按鈕">
                         </div>
                     </div>
-                    <a href={{ route('front.distribution') }} class="distribution-area-button" title="更多商品">
+                    <a href={{ route('front.distribution.en') }} class="distribution-area-button" title="更多商品">
                         More
                         <button type="button" class="blade-button">
                         </button>
@@ -478,7 +478,7 @@
                             </div>
                         </div>
                         <div class="menu-up">
-                            @foreach ($drink_types as $drink_type)
+                            {{-- @foreach ($drink_types as $drink_type)
                                 <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 300 }}">
                                     <div class="menu-type">
                                         <div class="up">
@@ -508,7 +508,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                         <div class="menu-mid">
 
@@ -591,14 +591,14 @@
             </div>
             <div class="swiper mySwiper media-swiper">
                 <div class="swiper-wrapper">
-                    @foreach ($medias as $media)
+                    {{-- @foreach ($medias as $media)
                         <div class="swiper-slide">
                             <video class="video swiper-slide" autoplay loop muted id="video-real-case">
                                 <source src="{{ $media->link }}" type="video/mp4">
                             </video>
                             <i class="fa-solid fa-volume-xmark volumn"></i>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
                 <div class="swiper-button-next media-button-next"></div>
                 <div class="swiper-button-prev media-button-prev"></div>
@@ -623,7 +623,7 @@
             <div class="content">
                 <div class="swiper mySwiper-news">
                     <div class="swiper-wrapper">
-                        @foreach ($blognews as $blognew)
+                        {{-- @foreach ($blognews as $blognew)
                             <div class="swiper-slide">
                                 <a target="_blank" href="{{ $blognew->link }}" title="波波黛莉夏季新推連結">
                                     <div class="outer-card">
@@ -638,7 +638,7 @@
                                     </div>
                                 </a>
                             </div>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
             </div>
@@ -662,7 +662,7 @@
                 </div>
                 <div class="franchisee-container-big">
                     <div class="franchisee-container-animation" data-aos="zoom-in">
-                        <a href={{ route('front.franchisee') }} class="franchisee-link" title="加盟專區連結">
+                        <a href={{ route('front.franchisee.en') }} class="franchisee-link" title="加盟專區連結">
                             <button type="button" class="blade-button">
                                 <div class="join-us-img">
                                     <div class="join-us-info">

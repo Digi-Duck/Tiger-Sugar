@@ -153,13 +153,13 @@ body,html{
 }
 
 .backend-down-left-area{
+    padding-top: 10px;
     height: 100%;
     width: 170px;
     background-color: #0C1219;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 .backend-down-right-area{
@@ -176,6 +176,7 @@ body,html{
     border: 0.8px transparent solid;
     width: 150px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .backend-down-left-area #news:hover,
@@ -222,6 +223,7 @@ body,html{
 }
 
 .group-btns{
+    margin-bottom: 20px;
     position: relative;
 }
 

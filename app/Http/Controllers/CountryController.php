@@ -109,20 +109,14 @@ class CountryController extends Controller
     {
         $id = $request->id;
         $Country = Country::find($id);
-        $this->fileService->deleteUpload($Country->country_photo);
-        $Country->delete();
-        return 'success';
 
-        // $id = $request->id;
-        // $hasCity = City::where('country_id', $id)->count();
-        // $country = Country::find($id);
-        // if (!$hasCity) {
-        //     $this->fileService->deleteUpload($country->country_photo);
-        //     $country->delete();
-        //     return redirect(route('back.country.index'))->with('message', '刪除成功!');
-        // } else {
-
-        //     return redirect(route('back.country.index'))->with('message', '目前' . $country->country_name . '尚有' . $hasCity . '個城市，請先刪除相關城市');
-        // }
+        $hasType = City::where('country_id', $id)->count();
+        if ($hasType)
+            return '';
+        else {
+            $this->fileService->deleteUpload($Country->country_photo);
+            $Country->delete();
+            return 'success';
+        }
     }
 }
