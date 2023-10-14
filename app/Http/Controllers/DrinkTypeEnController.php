@@ -47,6 +47,11 @@ class DrinkTypeEnController extends Controller
             'type_name' => 'required|max:255',
             'type_info' => 'max:255',
             'sort' => 'required|max:11',
+        ],[
+            'type_name.required' => '類型名稱必填',
+            'type_name.max' => '類型名稱不能超過255個字',
+            'type_info' => '副標題不能超過255個字',
+            'sort' => '權重不能超過11個字',
         ]);
 
         DrinkTypeEn::create([
@@ -69,7 +74,13 @@ class DrinkTypeEnController extends Controller
             'type_name' => 'required|max:255',
             'type_info' => 'max:255',
             'sort' => 'required|max:11',
+        ],[
+            'type_name.required' => '類型名稱必填',
+            'type_name.max' => '類型名稱不能超過255個字',
+            'type_info' => '副標題不能超過255個字',
+            'sort' => '權重不能超過11個字',
         ]);
+        
         $drink = DrinkTypeEn::find($id);
         $drink->update([
             'type_name' => $request->type_name,

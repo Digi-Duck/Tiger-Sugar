@@ -13,6 +13,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.drink_type.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="type_name" class="col-2 col-form-label">類型名稱</label>
@@ -30,7 +35,8 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="{{ old('sort',$sort ?? '1') }}" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                        value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
                                 </div>
                             </div>
                             <hr>
