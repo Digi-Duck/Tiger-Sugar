@@ -83,6 +83,11 @@
                                         <label for="link_url" class="col-2 col-form-label">圖片連結</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="link_url" name="link_url">
+                                            @foreach ($errors->get('link_url') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">

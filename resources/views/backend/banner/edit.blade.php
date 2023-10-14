@@ -28,14 +28,14 @@
                                 required>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                 <li class="nav-item cursor-p" role="presentation">
-                                    <a class="nav-link @if ($info->type == '圖片') active @endif" id="pills-home-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
-                                        aria-selected="true">圖片</a>
+                                    <a class="nav-link @if ($info->type == '圖片') active @endif" id="pills-home-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-home" role="tab"
+                                        aria-controls="pills-home" aria-selected="true">圖片</a>
                                 </li>
                                 <li class="nav-item cursor-p" role="presentation">
-                                    <a class="nav-link @if ($info->type == '影片') active @endif" id="pills-profile-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile"
-                                        aria-selected="false">影片</a>
+                                    <a class="nav-link @if ($info->type == '影片') active @endif"
+                                        id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                                        role="tab" aria-controls="pills-profile" aria-selected="false">影片</a>
                                 </li>
                             </ul>
 
@@ -56,6 +56,11 @@
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="pc_image_url"
                                                 name="pc_image_url" accept="image/*">
+                                            @foreach ($errors->get('pc_image_url') as $error)
+                                                <div class="alert alert-danger w-50 text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -76,6 +81,11 @@
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="mb_image_url"
                                                 name="mb_image_url" accept="image/*">
+                                            @foreach ($errors->get('mb_image_url') as $error)
+                                                <div class="alert alert-danger w-50 text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -89,7 +99,12 @@
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
-                                                value="{{ $info->image_alt }}">
+                                                value="{{ $info->image_alt }}" required>
+                                            @foreach ($errors->get('image_alt') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -97,6 +112,11 @@
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="link_url" name="link_url"
                                                 value="{{ $info->link_url }}">
+                                            @foreach ($errors->get('link_url') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -120,6 +140,11 @@
                                             <input type="text" class="form-control" id="pc_video_url"
                                                 name="pc_video_url"
                                                 value="https://www.youtube.com/watch?v={{ $info->pc_video_url }}">
+                                            @foreach ($errors->get('pc_video_url') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -132,6 +157,11 @@
                                             <input type="text" class="form-control" id="mb_video_url"
                                                 name="mb_video_url"
                                                 value="https://www.youtube.com/watch?v={{ $info->mb_video_url }}">
+                                            @foreach ($errors->get('mb_video_url') as $error)
+                                                <div class="alert alert-danger text-center" role="alert">
+                                                    {{ $error }}
+                                                </div>
+                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>

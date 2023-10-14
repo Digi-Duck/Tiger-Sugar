@@ -131,6 +131,12 @@ class BannerController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'sort' => 'required|max:11',
+        ], [
+            'sort.required' => '權重必填',
+            'sort.max' => '權重最多只能輸入11個數字',
+        ]);
         $banner = Banner::find($id);
         $banner->update([
             'type' => $request->type,
@@ -146,30 +152,53 @@ class BannerController extends Controller
             $request->validate([
                 'pc_image_url' => 'image',
                 'mb_image_url' => 'image',
-            ],[
-
+                'type' => 'required|max:255',
+                'image_alt' => 'required|max:255',
+                'link_url' => 'max:255',
+            ], [
+                'pc_image_url.image' => '上傳圖片必須為圖片格式',
+                'mb_image_url.image' => '上傳圖片（手機版）欄位必須為圖片格式',
+                'type.required' => '類型名稱必填',
+                'type.max' => '類型名稱最多只能輸入255個字',
+                'image_alt.required' => '圖片替代文字為必填',
+                'image_alt.max' => '圖片替代文字最多只能輸入255個字',
+                'link_url.max' => '圖片連結最多只能輸入255個字',
             ]);
 
-            if ($request->pc_image_url){
+            if ($request->pc_image_url) {
+                $request->validate([
+                    'pc_image_url' => 'image',
+                ], [
+                    'pc_image_url.image' => '上傳圖片必須為圖片格式',
+                ]);
                 $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
                 $banner->update([
                     'pc_image_url' => $pcimg,
                 ]);
             }
 
-            if ($request->mb_image_url){
+            if ($request->mb_image_url) {
+                $request->validate([
+                    'mb_image_url' => 'image',
+                ], [
+                    'mb_image_url.image' => '上傳圖片（手機版）欄位必須為圖片格式',
+                ]);
                 $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
                 $banner->update([
                     'mb_imgage_url' => $mbimg,
                 ]);
             }
-
         }
 
         if ($type == '影片') {
             $request->validate([
-                'pc_video_url' => 'url',
-                'mb_video_url' => 'url',
+                'pc_video_url' => 'required|url',
+                'mb_video_url' => 'required|url',
+            ], [
+                'pc_video_url.required' => '設定影片連結必填',
+                'pc_video_url.url' => '設定影片必須為網址',
+                'mb_video_url.required' => '設定影片連結（手機版）必填',
+                'mb_video_url.url' => '設定影片（手機版）欄位必須為網址',
             ]);
             // PC
             $pc_video_url = $request->pc_video_url;
