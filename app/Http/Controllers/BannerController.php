@@ -149,12 +149,21 @@ class BannerController extends Controller
             ],[
 
             ]);
-            $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
-            $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
-            $banner->update([
-                'pc_image_url' => $pcimg,
-                'mb_imgage_url' => $mbimg,
-            ]);
+
+            if ($request->pc_image_url){
+                $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
+                $banner->update([
+                    'pc_image_url' => $pcimg,
+                ]);
+            }
+
+            if ($request->mb_image_url){
+                $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');
+                $banner->update([
+                    'mb_imgage_url' => $mbimg,
+                ]);
+            }
+
         }
 
         if ($type == '影片') {
