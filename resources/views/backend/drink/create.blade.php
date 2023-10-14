@@ -87,6 +87,7 @@
             console.log(formChecked.length);
 
             cold.removeAttribute('required');
+            cold.setCustomValidity('請至少勾選其一品項');
             if (formChecked.length == 0) {
                 cold.setAttribute('required', 'true');
             }
