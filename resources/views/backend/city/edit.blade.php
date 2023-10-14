@@ -92,7 +92,12 @@
                             </div>
 
                             <hr>
-                            <button type="submit" class="btn btn-primary d-block mx-auto">更新</button>
+                            <div class="d-flex justify-content-evenly">
+                                <a href="{{ route('back.city.index') }}">
+                                    <button type="button" class="btn btn-primary d-block">返回</button>
+                                </a>
+                                <button type="submit" class="btn btn-primary d-block">送出修改</button>
+                            </div>
                         </form>
                     </div>
                 </div>

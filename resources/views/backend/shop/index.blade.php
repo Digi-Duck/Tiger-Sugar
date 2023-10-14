@@ -1,7 +1,6 @@
 @extends('layouts.backend-template')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 @endsection
 
 @section('main')
@@ -15,16 +14,54 @@
                     <div class="card-body">
                         <a class="btn btn-success" href="{{route('back.shop.create')}}">新增店舖</a>
                         <hr>
+
+                        <form action="{{ route('back.shop.index') }}" method="GET" id="page-numbers" role="search"
+                            class="d-flex justify-content-between align-items-center mb-3">
+                            @csrf
+                            <div>
+                                <span>請選擇顯示幾筆資料：</span>
+                                <select id="page-select" onchange="changePages()" name="page_numbers">
+                                    @if ($page_numbers == 100)
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100" selected>100</option>
+                                    @elseif ($page_numbers == 50)
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50" selected>50</option>
+                                        <option value="100">100</option>
+                                    @elseif ($page_numbers == 25)
+                                        <option value="10">10</option>
+                                        <option value="25" selected>25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    @else
+                                        <option value="10" selected>10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    @endif
+                                </select>
+                                <span>筆</span>
+                            </div>
+                            <div class="d-flex justify-between">
+                                <input class="form-control me-2" name="keyword" type="text" placeholder="搜尋名稱或描述"
+                                    aria-label="Search" value="{{ $keyword }}">
+                                <button class="btn btn-success flex-shrink-0 py-0" type="submit">搜尋</button>
+                            </div>
+                        </form>
+
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
                             <tr>
-                                <th width="40">國家</th>
-                                <th width="40">城市</th>
-                                <th width="60">店家名稱</th>
+                                <th width="120">國家</th>
+                                <th width="120">城市</th>
+                                <th width="100">店家名稱</th>
                                 <th>地址</th>
                                 <th width="100">電話</th>
-                                <th width="40">權重</th>
-                                <th width="80">功能</th>
+                                <th width="100">權重</th>
+                                <th width="120">功能</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,15 +75,33 @@
                                     <td>{{$list->sort}}</td>
                                     <td>
                                         <a class="btn btn-sm btn-success" href="{{route('back.shop.edit',['id'=>$list->id])}}">編輯</a>
-                                        <form class="delete-form" action="{{route('back.shop.delete',['id'=>$list->id])}}" method="POST" data-listid="{{$list->id}}">
-                                            <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
-                                            @csrf
-                                        </form>
+                                        <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteData('{{ $list->id }}')">刪除</button>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            @if ($count == 0)
+                                <div>目前尚無資料</div>
+                            @elseif ($count <= $page_numbers)
+                                <div>正在顯示{{ $count }}筆資料中，第1筆到第{{ $count }}筆資料</div>
+                            @elseif ($count > $page_numbers * $page)
+                                <div>
+                                    正在顯示{{ $count }}筆資料中，第{{ $page_numbers * ($page - 1) + 1 }}筆到第{{ $page_numbers * $page }}筆資料
+                                </div>
+                            @else
+                                <div>
+                                    正在顯示{{ $count }}筆資料中，第{{ $page_numbers * ($page - 1) + 1 }}筆到第{{ $count }}筆資料
+                                </div>
+                            @endif
+                            <div>
+                                {{ $lists->links() }}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -55,21 +110,54 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#table').DataTable({
-                "order": [[5,'asc']]
-            });
-        } );
-        $('.btn-danger').click(function(){
-            var listid = $(this).data("listid");
-            if (confirm('確定要刪除此店舖？')){
-                event.preventDefault();
-                $('.delete-form[data-listid="' + listid + '"]').submit();
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteData(id) {
+        console.log(id);
+
+        const formData = new FormData();
+        formData.append('_token', '{{ csrf_token() }}');
+        formData.append('_method', 'delete');
+        formData.append('id', id);
+
+        Swal.fire({
+            title: `確認要刪除資料嗎?`,
+            showDenyButton: true,
+            confirmButtonText: '取消',
+            denyButtonText: '刪除',
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isDenied) {
+                fetch('{{ route('back.shop.delete') }}', {
+                    method: 'post',
+                    body: formData,
+                }).then((res) => {
+                    return res.text();
+                }).then((data) => {
+                    console.log(data);
+                    if (data == 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: '刪除成功',
+                        }).then((res) => {
+                            location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: '刪除失敗',
+                            text: '查無資料',
+                        });
+                    }
+                });
             }
         });
-    </script>
+    }
+
+    function changePages() {
+        let pageSelect = document.querySelector('#page-select');
+        let pageNumbers = document.querySelector('#page-numbers');
+        console.log(pageSelect.value);
+        pageNumbers.submit();
+    }
 @endsection

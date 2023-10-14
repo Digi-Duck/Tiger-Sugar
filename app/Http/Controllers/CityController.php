@@ -15,16 +15,45 @@ class CityController extends Controller
     {
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $lists = City::withCount('shops')->get();
-        return view('backend.city.index',compact('lists'));
+        $lists = City::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('city_name', 'like', "%{$keyword}%")
+                ->orwhere('city_name_en', 'like', "%{$keyword}%")
+                ->orwhere('sort', 'like', "%{$keyword}%")
+                ->orWhereHas('Country', function ($query) use ($keyword) {
+                    $query->where('country_name', 'like', "%{$keyword}%")
+                        ->orwhere('country_en_name', 'like', "%{$keyword}%");
+                });
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('sort', 'asc');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.city.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
+
+
+        // $lists = City::withCount('shops')->get();
+        // return view('backend.city.index',compact('lists'));
     }
 
     public function create()
     {
         $types = Country::all();
-        return view('backend.city.create',compact('types'));
+        return view('backend.city.create', compact('types'));
     }
 
     public function store(Request $request)
@@ -52,10 +81,10 @@ class CityController extends Controller
     {
         $types = Country::all();
         $list = City::find($id);
-        return view('backend.city.edit',compact('list','types'));
+        return view('backend.city.edit', compact('list', 'types'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $city = City::find($id);
         $city->update([
@@ -72,24 +101,30 @@ class CityController extends Controller
         if ($request->hasFile('city_photo')) {
             $img = $this->fileService->imgUpload($request->file('city_photo'), 'city-img');
             $city->update([
-            'city_photo' => $img,
+                'city_photo' => $img,
             ]);
         }
-        return redirect(route('back.city.index'))->with('message','更新成功!');
+        return redirect(route('back.city.index'))->with('message', '更新成功!');
     }
 
     public function delete(Request $request)
     {
         $id = $request->id;
-        $hasShop = Shop::where('city_id',$id)->count();
         $City = City::find($id);
-        if(!$hasShop){
-            $this->fileService->deleteUpload($City->city_photo);
-            $City->delete();
-            return redirect(route('back.city.index'))->with('message','刪除成功!');
-        }
-        else{
-            return redirect(route('back.city.index'))->with('message','目前'.$City->city_name.'尚有'.$hasShop.'個店鋪，請先刪除相關店鋪');
-        }
+        $this->fileService->deleteUpload($City->city_photo);
+        $City->delete();
+        return 'success';
+
+
+        // $id = $request->id;
+        // $hasShop = Shop::where('city_id', $id)->count();
+        // $City = City::find($id);
+        // if (!$hasShop) {
+        //     $this->fileService->deleteUpload($City->city_photo);
+        //     $City->delete();
+        //     return redirect(route('back.city.index'))->with('message', '刪除成功!');
+        // } else {
+        //     return redirect(route('back.city.index'))->with('message', '目前' . $City->city_name . '尚有' . $hasShop . '個店鋪，請先刪除相關店鋪');
+        // }
     }
 }

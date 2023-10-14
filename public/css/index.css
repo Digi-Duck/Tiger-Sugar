@@ -325,6 +325,7 @@ h2 {
     flex-direction: row;
     margin-bottom: 60px;
     margin-right: 50px;
+    line-height: 26px;
 }
 
 #about .about-card-group-text-animation-bottom {
@@ -332,6 +333,7 @@ h2 {
     flex-direction: row;
     margin-bottom: 60px;
     margin-right: 50px;
+    line-height: 26px;
 }
 
 #about.about-card-group-img {
