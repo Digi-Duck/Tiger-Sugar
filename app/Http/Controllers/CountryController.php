@@ -109,10 +109,15 @@ class CountryController extends Controller
     {
         $id = $request->id;
         $Country = Country::find($id);
-        $this->fileService->deleteUpload($Country->country_photo);
-        $Country->delete();
-        return 'success';
 
+        $hasType = City::where('country_id', $id)->count();
+        if ($hasType)
+            return '';
+        else {
+            $this->fileService->deleteUpload($Country->country_photo);
+            $Country->delete();
+            return 'success';
+        }
         // $id = $request->id;
         // $hasCity = City::where('country_id', $id)->count();
         // $country = Country::find($id);
