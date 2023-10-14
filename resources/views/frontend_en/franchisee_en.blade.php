@@ -189,7 +189,7 @@
                                         “Region’s Master franchise” is based on the unit of city/region, the exclusive
                                         distributor has an exclusive right of management and must have its own management
                                         team and open a certain number of stores in the region. The authorized operation
-                                        licensing period is "five years"
+                                        licensing period is "five years".
                                     </div>
                                 </div>
                             </label>
