@@ -60,6 +60,7 @@ class CityController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'country_id' => 'exists:countries,id',
             'city_name' => 'required|max:255',
             'city_name_en' => 'required|max:255',
             'link' => 'max:255',
@@ -69,6 +70,7 @@ class CityController extends Controller
             'sort' => 'required|max:11',
             'city_photo'=> 'required|image',
         ],[
+            'country_id.exists' => '國家不存在',
             'city_name.required' => '城市名稱必填',
             'city_name.max' => '城市名稱不能超過255個字',
             'city_name_en.required' => '城市名稱（英）必填',
@@ -109,9 +111,30 @@ class CityController extends Controller
 
     public function update(Request $request, $id)
     {
-
+        $request->validate([
+            'country_id' => 'exists:countries,id',
+            'city_name' => 'required|max:255',
+            'city_name_en' => 'required|max:255',
+            'link' => 'max:255',
+            'fb_link' => 'max:255',
+            'ig_link' => 'max:255',
+            'weibo_link' => 'max:255',
+            'sort' => 'required|max:11',
+            'city_photo'=> 'image',
+        ],[
+            'country_id.exists' => '國家不存在',
+            'city_name.required' => '城市名稱必填',
+            'city_name.max' => '城市名稱不能超過255個字',
+            'city_name_en.required' => '城市名稱（英）必填',
+            'city_name_en.max' => '城市名稱（英）不能超過255個字',
+            'link' => '官方網站連結字數不能超過255個字',
+            'fb_link' => 'fb連結字數不能超過255個字',
+            'ig_link' => 'ig連結字數不能超過255個字',
+            'weibo_link' => '微博連結字數不能超過255個字',
+            'sort' => '權重不能超過11個字',
+            'city_photo' => '上傳圖片必填',
+        ]);
         $city = City::find($id);
-        
         $city->update([
             'country_id' => $request->country_id,
             'city_name' => $request->city_name,
@@ -137,7 +160,7 @@ class CityController extends Controller
         $id = $request->id;
         $City = City::find($id);
 
-        $hasType = City::where('city_id', $id)->count();
+        $hasType = Shop::where('city_id', $id)->count();
         if ($hasType)
             return '';
         else {

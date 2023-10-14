@@ -61,6 +61,23 @@ class ShopController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'city_id' => 'exists:cities,id',
+            'shop_name' => 'required|max:255',
+            'address' => 'required|max:255',
+            'phone' => 'max:255',
+            'sort' => 'required|max:11',
+        ],[
+            'city_id.exists' => '程式不存在',
+            'shop_name.required' => '店名必填',
+            'shop_name.max' => '店名不能超過255個字',
+            'address.required' => '地址必填',
+            'address.max' => '地址不能超過255個字',
+            'phone.required' => '電話必填',
+            'phone.max' => '電話不能超過255個字',
+            'sort' => '權重不能超過11個字',
+        ]);
+
         $city = City::find($request->city_id);
          Shop::create([
             'city_id' => $request->city_id,
@@ -83,6 +100,23 @@ class ShopController extends Controller
 
     public function update(Request $request,$id)
     {
+        $request->validate([
+            'city_id' => 'exists:cities,id',
+            'shop_name' => 'required|max:255',
+            'address' => 'required|max:255',
+            'phone' => 'max:255',
+            'sort' => 'required|max:11',
+        ],[
+            'city_id.exists' => '程式不存在',
+            'shop_name.required' => '店名必填',
+            'shop_name.max' => '店名不能超過255個字',
+            'address.required' => '地址必填',
+            'address.max' => '地址不能超過255個字',
+            'phone.required' => '電話必填',
+            'phone.max' => '電話不能超過255個字',
+            'sort' => '權重不能超過11個字',
+        ]);
+
         $shop = Shop::find($id);
         $city = City::find($request->city_id);
         $shop->update([
