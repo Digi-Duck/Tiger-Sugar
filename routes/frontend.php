@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\FrontEnController;
 use Illuminate\Support\Facades\Route;
 
 // 前端路由
@@ -16,3 +17,8 @@ Route::get('#link-distribution')->name('front.index.distribution'); //首頁的�
 Route::get('#link-classic')->name('front.index.classic'); //首頁的熱門經典section
 Route::get('#link-media')->name('front.index.media'); //首頁的媒體露出section
 Route::get('#link-franchisee')->name('front.index.franchisee'); //首頁的加盟專區section
+
+Route::prefix('/en')->group(function () {
+    Route::get('/', [FrontEnController::class, 'index'])->name('front.index.en'); //英文版首頁
+    Route::get('/distribution', [FrontEnController::class, 'distribution'])->name('front.distribution.en'); //英文版產品經銷頁
+});

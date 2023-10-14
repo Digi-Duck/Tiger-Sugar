@@ -129,7 +129,7 @@
             </div>
             <div class="container">
                 <!-- Swiper -->
-                <div class="swiper mySwiper-social">
+                {{-- <div class="swiper mySwiper-social">
                     <div class="swiper-wrapper">
                         @foreach ($social as $single_social)
                             @if ($single_social->type == 'embed')
@@ -202,7 +202,7 @@
                                 allowtransparency="true" allowfullscreen="true" frameborder="0"
                                 data-instgrm-payload-id="instagram-media-payload-7" scrolling="no"></iframe></div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="swiper-button-social">
                 <div class="swiper-button-next"></div>
@@ -226,7 +226,7 @@
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
-                            @foreach ($products as $product)
+                            {{-- @foreach ($products as $product)
                                 <div class="swiper-slide">
                                     <div class="direction-body">
                                         <div class="img-w-h-border-img">
@@ -257,7 +257,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                             <div class="swiper-slide">
                                 <div class="direction-body">
                                     <div class="img-w-h-border-img">
@@ -478,7 +478,7 @@
                             </div>
                         </div>
                         <div class="menu-up">
-                            @foreach ($drink_types as $drink_type)
+                            {{-- @foreach ($drink_types as $drink_type)
                                 <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 300 }}">
                                     <div class="menu-type">
                                         <div class="up">
@@ -508,7 +508,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                         <div class="menu-mid">
 
@@ -591,14 +591,14 @@
             </div>
             <div class="swiper mySwiper media-swiper">
                 <div class="swiper-wrapper">
-                    @foreach ($medias as $media)
+                    {{-- @foreach ($medias as $media)
                         <div class="swiper-slide">
                             <video class="video swiper-slide" autoplay loop muted id="video-real-case">
                                 <source src="{{ $media->link }}" type="video/mp4">
                             </video>
                             <i class="fa-solid fa-volume-xmark volumn"></i>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
                 <div class="swiper-button-next media-button-next"></div>
                 <div class="swiper-button-prev media-button-prev"></div>
@@ -623,7 +623,7 @@
             <div class="content">
                 <div class="swiper mySwiper-news">
                     <div class="swiper-wrapper">
-                        @foreach ($blognews as $blognew)
+                        {{-- @foreach ($blognews as $blognew)
                             <div class="swiper-slide">
                                 <a target="_blank" href="{{ $blognew->link }}" title="波波黛莉夏季新推連結">
                                     <div class="outer-card">
@@ -638,7 +638,7 @@
                                     </div>
                                 </a>
                             </div>
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
             </div>
