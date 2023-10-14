@@ -46,14 +46,14 @@
                                     <div class="form-group row">
                                         <label for="embed_name" class="col-2 col-form-label">社群回饋代稱</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="embed_name" name="embed_name">
+                                            <input class="form-control" id="embed_name" name="embed_name" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="embed_link" class="col-2 col-form-label">嵌入碼</label>
                                         <div class="col-10">
-                                            <textarea class="form-control" rows="3" id="embed_link" name="embed_link"></textarea>
+                                            <textarea class="form-control" rows="3" id="embed_link" name="embed_link" required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -178,16 +178,38 @@
         let embed = document.querySelector('#pills-home-tab');
         let custom = document.querySelector('#pills-profile-tab');
         let type = document.querySelector('#social_type');
+        let embedName = document.querySelector('#embed_name');
+        let embedLink = document.querySelector('#embed_link');
+        let userPhoto = document.querySelector('#user_photo');
+        let mainPhoto = document.querySelector('#main_photo');
+        let userName = document.querySelector('#user_name');
+        let userAccount = document.querySelector('#user_account');
+        let socialInfo = document.querySelector('#social_info');
+        let postDate = document.querySelector('#post_date');
         embed.addEventListener('click', function() {
             if (type.value === 'custom') {
                 type.value = 'embed'
-                console.log(type.value);
+                embedName.setAttribute('required', 'true');
+                embedLink.setAttribute('required', 'true');
+                userPhoto.removeAttribute('required');
+                mainPhoto.removeAttribute('required');
+                userName.removeAttribute('required');
+                userAccount.removeAttribute('required');
+                socialInfo.removeAttribute('required');
+                postDate.removeAttribute('required');
             }
         })
         custom.addEventListener('click', function() {
             if (type.value === 'embed') {
                 type.value = 'custom'
-                console.log(type.value);
+                embedName.removeAttribute('required');
+                embedLink.removeAttribute('required');
+                userPhoto.setAttribute('required', 'true');
+                mainPhoto.setAttribute('required', 'true');
+                userName.setAttribute('required', 'true');
+                userAccount.setAttribute('required', 'true');
+                socialInfo.setAttribute('required', 'true');
+                postDate.setAttribute('required', 'true');
             }
         })
     </script>
