@@ -55,10 +55,10 @@
                         </button>
                     </a>
                     <!----------------------------- 產品經銷 ------------------------------------>
-                    @if (Route::is('front.index'))
-                        <a href={{ route('front.index.distribution') }} class="distribution-link" title="前往首頁的產品經銷">
+                    @if (Route::is('front.index.en'))
+                        <a href={{ route('front.index.distribution.en') }} class="distribution-link" title="前往首頁的產品經銷">
                         @else
-                            <a href={{ route('front.distribution') }} class="distribution-link" title="前往產品經銷頁">
+                            <a href={{ route('front.distribution.en') }} class="distribution-link" title="前往產品經銷頁">
                     @endif
                     <button type="button" class="blade-button">
                         <div class="distribution">
@@ -78,7 +78,7 @@
                     </button>
                     </a>
                     <!----------------------------- 熱門經典 ------------------------------------>
-                    <a href={{ route('front.index.classic') }} class="classic-link" title="前往首頁的熱門經典">
+                    <a href={{ route('front.index.classic.en') }} class="classic-link" title="前往首頁的熱門經典">
                         <button type="button" class="blade-button">
                             <div class="classic">
                                 <div class="main-menu-img">
@@ -96,7 +96,7 @@
                         </button>
                     </a>
                     <!----------------------------- 媒體露出 ------------------------------------>
-                    <a href={{ route('front.index.media') }} class="media-link" title="前往首頁的媒體露出">
+                    <a href={{ route('front.index.media.en') }} class="media-link" title="前往首頁的媒體露出">
                         <button type="button" class="blade-button">
                             <div class="media">
                                 <div class="main-menu-img">
@@ -114,10 +114,10 @@
                         </button>
                     </a>
                     <!----------------------------- 加盟專區 ------------------------------------>
-                    @if (Route::is('front.index'))
-                        <a href={{ route('front.index.franchisee') }} class="franchisee-link" title="前往首頁的加盟專區">
+                    @if (Route::is('front.index.en'))
+                        <a href={{ route('front.index.franchisee.en') }} class="franchisee-link" title="前往首頁的加盟專區">
                         @else
-                            <a href={{ route('front.franchisee') }} class="franchisee-link" title="前往加盟專區頁">
+                            <a href={{ route('front.franchisee.en') }} class="franchisee-link" title="前往加盟專區頁">
                     @endif
                     <button type="button" class="blade-button">
                         <div class="franchisee">
@@ -187,7 +187,7 @@
                         <div class="flex-mine-menu">
                             <div class="top-mine-menu">
                                 <!----------------------------- 關於我們 ------------------------------------>
-                                <a href="{{ route('front.index.about') }}" id="drop-about" title="前往首頁的關於我們">
+                                <a href="{{ route('front.index.about.en') }}" id="drop-about" title="前往首頁的關於我們">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-about">
                                             <div class="about-img">
@@ -206,10 +206,10 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 產品經銷 ------------------------------------>
-                                @if (Route::is('front.index'))
-                                    <a href={{ route('front.index.distribution') }} title="前往首頁的產品經銷">
+                                @if (Route::is('front.index.en'))
+                                    <a href={{ route('front.index.distribution.en') }} title="前往首頁的產品經銷">
                                     @else
-                                        <a href={{ route('front.distribution') }} title="前往產品經銷頁">
+                                        <a href={{ route('front.distribution.en') }} title="前往產品經銷頁">
                                 @endif
                                 <button type="button" class="drop-blade-button">
                                     <div class="menu-distribution">
@@ -229,7 +229,7 @@
                                 </button>
                                 </a>
                                 <!----------------------------- 熱門經典 ------------------------------------>
-                                <a href={{ route('front.index.classic') }} id="drop-classic" title="前往首頁的熱門經典">
+                                <a href={{ route('front.index.classic.en') }} id="drop-classic" title="前往首頁的熱門經典">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-classic">
                                             <div class="classic-img">
@@ -248,7 +248,7 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 媒體露出 ------------------------------------>
-                                <a href={{ route('front.index.media') }} id="drop-media" title="前往首頁的媒體露出">
+                                <a href={{ route('front.index.media.en') }} id="drop-media" title="前往首頁的媒體露出">
                                     <button type="button" class="drop-blade-button">
                                         <div class="menu-media">
                                             <div class="media-img">
@@ -267,10 +267,10 @@
                                     </button>
                                 </a>
                                 <!----------------------------- 加盟專區 ------------------------------------>
-                                @if (Route::is('front.index'))
-                                    <a href={{ route('front.index.franchisee') }} title="前往首頁的加盟專區">
+                                @if (Route::is('front.index.en'))
+                                    <a href={{ route('front.index.franchisee.en') }} title="前往首頁的加盟專區">
                                     @else
-                                        <a href={{ route('front.franchisee') }} title="前往加盟專區頁">
+                                        <a href={{ route('front.franchisee.en') }} title="前往加盟專區頁">
                                 @endif
                                 <button type="button" class="drop-blade-button">
                                     <div class="menu-franchisee">
@@ -334,7 +334,7 @@
                     </div>
         </nav>
         <!-- 秋 選單紀錄 按鈕 -->
-        <a href={{ route('front.distribution_confirm') }} class="shop-cart-container" title="前往購物車">
+        <a href={{ route('front.distribution_confirm.en') }} class="shop-cart-container" title="前往購物車">
             <button type="button" class="blade-button">
                 <img class="shop-cart" src="{{ asset('./frontend-img/header-img/shop_cart_button.svg') }}"
                     alt="前往購物車">
