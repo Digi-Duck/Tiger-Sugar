@@ -55,7 +55,7 @@
                                         <label for="pc_image_url" class="col-2 col-form-label">更新圖片</label>
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="pc_image_url"
-                                                name="pc_image_url" accept="image/*" required>
+                                                name="pc_image_url" accept="image/*">
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -75,7 +75,7 @@
                                         <label for="mb_image_url" class="col-2 col-form-label">更新圖片(手機版)</label>
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="mb_image_url"
-                                                name="mb_image_url" accept="image/*" required>
+                                                name="mb_image_url" accept="image/*">
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -173,8 +173,6 @@
         let img = document.querySelector('#pills-home-tab');
         let mov = document.querySelector('#pills-profile-tab');
         let type = document.querySelector('#banner_type');
-        let pcImage = document.querySelector('#pc_image_url');
-        let mbImage = document.querySelector('#mb_image_url');
         let imageAlt = document.querySelector('#image_alt')
         let pcVideo = document.querySelector('#pc_video_url');
         let mbVideo = document.querySelector('#mb_video_url');
@@ -182,8 +180,6 @@
             if (type.value === '影片') {
                 type.value = '圖片';
                 imageAlt.setAttribute('required', 'true');
-                pcImage.setAttribute('required', 'true');
-                mbImage.setAttribute('required', 'true');
                 pcVideo.removeAttribute('required');
                 mbVideo.removeAttribute('required');
             }
@@ -192,8 +188,6 @@
             if (type.value === '圖片') {
                 type.value = '影片';
                 imageAlt.removeAttribute('required');
-                pcImage.removeAttribute('required');
-                mbImage.removeAttribute('required');
                 pcVideo.setAttribute('required', 'true');
                 mbVideo.setAttribute('required', 'true');
             }
