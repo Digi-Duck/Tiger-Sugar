@@ -146,6 +146,8 @@ class BannerController extends Controller
             $request->validate([
                 'pc_image_url' => 'image',
                 'mb_image_url' => 'image',
+            ],[
+
             ]);
             $pcimg = $this->fileService->imgUpload($request->file('pc_image_url'), 'banner-pcimg');
             $mbimg = $this->fileService->imgUpload($request->file('mb_image_url'), 'banner-mbimg');

@@ -79,7 +79,6 @@
         let createBtn = document.querySelector('#create-btn');
         let drinkForm = document.querySelector('#drink_form');
         let cold = document.querySelector('#cold');
-        // const tempInputs = document.querySelectorAll('.temp input');
 
         createBtn.addEventListener('click', function() {
             let formChecked = document.querySelectorAll('.form-check-input:checked');
@@ -90,16 +89,9 @@
             cold.setCustomValidity('請至少勾選其一品項');
             if (formChecked.length == 0) {
                 cold.setAttribute('required', 'true');
+            } else{
+                drinkForm.submit();
             }
-            // const tempInput = document.querySelectorAll('.temp input:checked');
-            // event.preventDefault();
-
-            console.log(drinkForm.reportValidity());
-            // drinkForm.submit();
-            // console.log(tempInput.length);
-            // if tempInput.length == 0 {
-
-            // }
 
         });
     </script>
