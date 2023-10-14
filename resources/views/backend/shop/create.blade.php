@@ -12,16 +12,21 @@
                         店舖管理-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="{{route('back.shop.store')}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.shop.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="city_id" class="col-2 col-form-label">國家</label>
                                 <div class="col-10">
                                     <select class="form-control" name="city_id" id="city_id" required>
-                                        @foreach($countries as $country)
-                                            <optgroup label="{{$country->country_name}}">
-                                                @foreach($country->city as $city)
-                                                    <option value="{{$city->id}}">{{$city->city_name}}</option>
+                                        @foreach ($countries as $country)
+                                            <optgroup label="{{ $country->country_name }}">
+                                                @foreach ($country->city as $city)
+                                                    <option value="{{ $city->id }}">{{ $city->city_name }}</option>
                                                 @endforeach
                                             </optgroup>
                                         @endforeach
@@ -50,7 +55,8 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                        value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
                                 </div>
                             </div>
                             <hr>

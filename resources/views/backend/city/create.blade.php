@@ -13,13 +13,18 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.city.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="country_id" class="col-2 col-form-label">國家</label>
                                 <div class="col-10">
                                     <select class="form-control" name="country_id" id="country_id" required>
-                                        @foreach($types as $type)
-                                            <option value="{{$type->id}}">{{$type->country_name}}</option>
+                                        @foreach ($types as $type)
+                                            <option value="{{ $type->id }}">{{ $type->country_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -39,7 +44,8 @@
                             <div class="form-group row">
                                 <label for="city_photo" class="col-2 col-form-label">上傳代表圖片</label>
                                 <div class="col-10">
-                                    <input type="file" class="form-control-file" id="city_photo" name="city_photo" accept="image/*">
+                                    <input type="file" class="form-control-file" id="city_photo" name="city_photo"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-12">
                                     <p class="text-danger">
@@ -79,7 +85,8 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                        value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
                                 </div>
                             </div>
 

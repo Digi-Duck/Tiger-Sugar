@@ -14,6 +14,11 @@
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.country.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="continent_id" class="col-2 col-form-label">洲</label>

@@ -56,6 +56,27 @@ class CountryController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'continent_id' => 'exists:continents,id',
+            'country_name' => 'required|max:255',
+            'country_en_name' => 'required|max:255',
+            'link' => 'max:255',
+            'fb_link' => 'max:255',
+            'ig_link' => 'max:255',
+            'weibo_link' => 'max:255',
+            'sort' => 'required|max:11',
+        ],[
+            'continent_id.exists' => '洲不存在',
+            'country_name.required' => '國家名稱必填',
+            'country_name.max' => '國家名稱不能超過255個字',
+            'country_en_name.required' => '國家英文名稱必填',
+            'country_en_name.max' => '國家英文名稱不能超過255個字',
+            'link' => '官方網站連結字數不能超過255個字',
+            'fb_link' => 'fb連結字數不能超過255個字',
+            'ig_link' => 'ig連結字數不能超過255個字',
+            'weibo_link' => '微博連結字數不能超過255個字',
+            'sort' => '權重不能超過11個字',
+        ]);
         $country = Country::create([
             'continent_id' => $request->continent_id,
             'country_name' => $request->country_name,
@@ -84,6 +105,27 @@ class CountryController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'continent_id' => 'exists:continent_id',
+            'country_name' => 'required|max:255',
+            'country_en_name' => 'required|max:255',
+            'link' => 'max:255',
+            'fb_link' => 'max:255',
+            'ig_link' => 'max:255',
+            'weibo_link' => 'max:255',
+            'sort' => '權重不能超過11個字',
+        ],[
+            'country_name.required' => '國家名稱必填',
+            'country_name.max' => '國家名稱不能超過255個字',
+            'country_en_name.required' => '國家英文名稱必填',
+            'country_en_name.max' => '國家英文名稱不能超過255個字',
+            'link' => '官方網站連結字數不能超過255個字',
+            'fb_link' => 'fb連結字數不能超過255個字',
+            'ig_link' => 'ig連結字數不能超過255個字',
+            'weibo_link' => '微博連結字數不能超過255個字',
+            'sort' => '權重不能超過11個字',
+        ]);
+
         $country = Country::find($id);
         $country->update([
             'continent_id' => $request->continent_id,
