@@ -2,7 +2,7 @@
 
 @section('css')
     <style>
-    .cursor-p {
+        .cursor-p {
             cursor: pointer;
         }
     </style>
@@ -70,7 +70,8 @@
                                     <div class="form-group row">
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt)</label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" id="image_alt" name="image_alt">
+                                            <input type="text" class="form-control" id="image_alt" name="image_alt"
+                                                required>
                                             @foreach ($errors->get('image_alt') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
@@ -99,10 +100,10 @@
                                     aria-labelledby="pills-profile-tab">
                                     <div class="form-group row">
                                         <label for="pc_video_url"
-                                        class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
+                                            class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
-                                                name="pc_video_url" value="{{ old('pc_video_url',$pc_video_url ?? '') }}">
+                                                name="pc_video_url" value="{{ old('pc_video_url', $pc_video_url ?? '') }}">
                                             @foreach ($errors->get('pc_video_url') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
@@ -118,7 +119,7 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
-                                                name="mb_video_url" value="{{ old('mb_video_url',$mb_video_url ?? '') }}">
+                                                name="mb_video_url" value="{{ old('mb_video_url', $mb_video_url ?? '') }}">
                                             @foreach ($errors->get('mb_video_url') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
@@ -165,11 +166,13 @@
         let type = document.querySelector('#banner_type');
         let pcImage = document.querySelector('#pc_image_url');
         let mbImage = document.querySelector('#mb_image_url');
+        let imageAlt = document.querySelector('#image_alt')
         let pcVideo = document.querySelector('#pc_video_url');
         let mbVideo = document.querySelector('#mb_video_url');
         img.addEventListener('click', function() {
             if (type.value === '影片') {
                 type.value = '圖片';
+                imageAlt.setAttribute('required', 'required');
                 pcImage.setAttribute('required', 'required');
                 mbImage.setAttribute('required', 'required');
                 pcVideo.removeAttribute('required');
@@ -179,6 +182,7 @@
         mov.addEventListener('click', function() {
             if (type.value === '圖片') {
                 type.value = '影片';
+                imageAlt.removeAttribute('required');
                 pcImage.removeAttribute('required');
                 mbImage.removeAttribute('required');
                 pcVideo.setAttribute('required', 'required');
@@ -187,8 +191,8 @@
         })
     </script>
     @if (session('type') === 'video')
-    <script>
-        mov.click();
-    </script>
+        <script>
+            mov.click();
+        </script>
     @endif
 @endsection
