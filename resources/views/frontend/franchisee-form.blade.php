@@ -20,7 +20,8 @@
                         台灣加盟請點此 Taiwan Franchise Store ★</a>
                 </div>
             </div>
-            <div class="form main">
+            <form class="form main" action="{{route('front.franchisee_form.store')}}" method="POST">
+                @csrf
                 <div class="form-name">
                     <label for="user_name">姓名｜Name</label>
                     <input id="user_name" type="text" class="form-name-input" name="user_name">
@@ -72,9 +73,9 @@
                 </div>
                 <div class="just-line"></div>
                 <div class="send-data">
-                    <button type="button" class="form-btn">送出資料</button>
+                    <button type="submit" class="form-btn">送出資料</button>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
 @endsection

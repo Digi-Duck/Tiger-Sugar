@@ -10,7 +10,7 @@ Route::get('/distribution', [FrontController::class, 'distribution'])->name('fro
 Route::get('/distribution-confirm', [FrontController::class, 'distributionConfirm'])->name('front.distribution_confirm'); //經銷確認頁
 Route::get('/franchisee', [FrontController::class, 'franchisee'])->name('front.franchisee'); //加盟說明頁
 Route::get('/franchisee-form', [FrontController::class, 'franchiseeForm'])->name('front.franchisee_form'); //加盟表單頁
-
+Route::post('/franchisee-form',[FrontController::class,'franchiseeFormStore'])->name('front.franchisee_form.store');
 //header跳轉到首頁各section的路由
 Route::get('#link-about')->name('front.index.about'); //首頁的關於我們section
 Route::get('#link-distribution')->name('front.index.distribution'); //首頁的產品經銷section

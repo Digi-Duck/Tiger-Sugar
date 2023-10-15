@@ -84,6 +84,7 @@
                 </div>
                 <!-- 產品方格 -->
                 <div class="prduct-grid-columns">
+                    
                     <div class="product-group">
                         <div class="product-img-group">
                             <div class="product-background">
@@ -112,7 +113,7 @@
                             <div class="product-id">冰品 | Ice</div>
                         </div>
                     </div>
-                    <div class="product-group">
+                    {{-- <div class="product-group">
                         <div class="product-img-group">
                             <div class="product-background">
                                 <div class="product">
@@ -327,7 +328,7 @@
                             </div>
                             <div class="product-id">冰品 | Ice</div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!-- 下方分隔線 -->
