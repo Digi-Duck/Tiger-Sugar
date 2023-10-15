@@ -48,15 +48,14 @@ class DrinkController extends Controller
     {
         $request->validate([
             'type_id' => 'exists:drink_types,id',
-            // 'type_id' => 'required',
             'drink_name' => 'required|max:255',
             'sort' => 'required|max:11',
         ],[
             'type_id.exists' => '類別不存在',
-            // 'type_id.required' => '類別必填',
             'type_name.required' => '飲品名稱必填',
             'type_name.max' => '類型名稱不能超過255個字',
-            'sort' => '權重不能超過11個字',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
         ]);
 
         Drink::create([
@@ -80,15 +79,14 @@ class DrinkController extends Controller
     {
         $request->validate([
             'type_id' => 'exists:drink_types,id',
-            // 'type_id' => 'required',
             'drink_name' => 'required|max:255',
             'sort' => 'required|max:11',
         ],[
             'type_id.exists' => '類別不存在',
-            // 'type_id.required' => '類別必填',
             'type_name.required' => '飲品名稱必填',
             'type_name.max' => '類型名稱不能超過255個字',
-            'sort' => '權重不能超過11個字',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
         ]);
 
         $drink = Drink::find($id);

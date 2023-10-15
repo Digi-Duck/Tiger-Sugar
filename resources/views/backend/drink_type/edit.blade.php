@@ -13,6 +13,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{route('back.drink_type.update',['id'=> $info->id])}}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="type_name" class="col-2 col-form-label">類型名稱</label>

@@ -12,7 +12,7 @@
                         飲品管理(英)-新增
                     </h4>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('back.drink_en.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('back.drink_en.store') }}" enctype="multipart/form-data" id="drink-form">
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">
                                     {{ $error }}
@@ -40,12 +40,12 @@
                                 <div class="col-10">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="cold" name="cold"
-                                            value="1" checked>
+                                            value="1">
                                         <label class="form-check-label" for="cold">冷飲</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="hot" name="hot"
-                                            value="1" checked>
+                                            value="2">
                                         <label class="form-check-label" for="hot">熱飲</label>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                 <a href="{{ route('back.drink_en.index') }}">
                                     <button type="button" class="btn btn-primary d-block">返回</button>
                                 </a>
-                                <button type="submit" class="btn btn-primary d-block">新增</button>
+                                <button id="create-btn" type="button" class="btn btn-primary d-block">新增</button>
                             </div>
                         </form>
                     </div>
@@ -74,4 +74,25 @@
 @endsection
 
 @section('js')
+    <script>
+        let createBtn = document.querySelector('#create-btn');
+        let drinkForm = document.querySelector('#drink-form');
+        let cold = document.querySelector('#cold');
+
+        createBtn.addEventListener('click', function() {
+            let formChecked = document.querySelectorAll('.form-check-input:checked');
+            console.log(formChecked);
+            console.log(formChecked.length);
+
+            cold.removeAttribute('required');
+            cold.setCustomValidity('請至少勾選其一溫度');
+            if (formChecked.length == 0) {
+                cold.setAttribute('required', 'true');
+                drinkForm.reportValidity();
+            } else {
+                drinkForm.submit();
+            }
+
+        });
+    </script>
 @endsection

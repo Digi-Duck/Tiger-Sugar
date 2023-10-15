@@ -13,7 +13,7 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.drink.store') }}" enctype="multipart/form-data"
-                            id="drink_form">
+                            id="drink-form">
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">
                                     {{ $error }}
@@ -77,7 +77,7 @@
 @section('js')
     <script>
         let createBtn = document.querySelector('#create-btn');
-        let drinkForm = document.querySelector('#drink_form');
+        let drinkForm = document.querySelector('#drink-form');
         let cold = document.querySelector('#cold');
 
         createBtn.addEventListener('click', function() {
@@ -86,10 +86,11 @@
             console.log(formChecked.length);
 
             cold.removeAttribute('required');
-            cold.setCustomValidity('請至少勾選其一品項');
+            cold.setCustomValidity('請至少勾選其一溫度');
             if (formChecked.length == 0) {
                 cold.setAttribute('required', 'true');
-            } else{
+                drinkForm.reportValidity();
+            } else {
                 drinkForm.submit();
             }
 
