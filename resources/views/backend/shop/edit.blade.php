@@ -13,6 +13,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{route('back.shop.update',['id'=>$list->id])}}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="city_id" class="col-2 col-form-label">國家</label>
@@ -31,7 +36,7 @@
                             <div class="form-group row">
                                 <label for="shop_name" class="col-2 col-form-label">店名</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="shop_name" name="shop_name" value="{{$list->name}}">
+                                    <input type="text" class="form-control" id="shop_name" name="shop_name" value="{{$list->name}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -44,7 +49,7 @@
                             <div class="form-group row">
                                 <label for="phone" class="col-2 col-form-label">電話</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="phone" name="phone" value="{{$list->phone}}">
+                                    <input type="text" class="form-control" id="phone" name="phone" value="{{$list->phone}}" required>
                                 </div>
                             </div>
 

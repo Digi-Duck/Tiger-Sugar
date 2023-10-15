@@ -13,6 +13,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{route('back.city.update',['id'=>$list->id])}}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="country_id" class="col-2 col-form-label">國家</label>

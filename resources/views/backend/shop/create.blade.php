@@ -36,7 +36,7 @@
                             <div class="form-group row">
                                 <label for="shop_name" class="col-2 col-form-label">店名</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="shop_name" name="shop_name">
+                                    <input type="text" class="form-control" id="shop_name" name="shop_name" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -49,7 +49,7 @@
                             <div class="form-group row">
                                 <label for="phone" class="col-2 col-form-label">電話</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="phone" name="phone">
+                                    <input type="text" class="form-control" id="phone" name="phone" required>
                                 </div>
                             </div>
                             <div class="form-group row">

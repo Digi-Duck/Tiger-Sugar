@@ -17,6 +17,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.banner.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <input hidden class="form-control" name="type" id="banner_type" value="圖片" required>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -42,11 +47,6 @@
                                         <div class="col-10 d-flex flex-row">
                                             <input type="file" class="form-control-file" id="pc_image_url"
                                                 name="pc_image_url" accept="image/*" required>
-                                            @foreach ($errors->get('pc_image_url') as $error)
-                                                <div class="alert alert-danger w-50 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -57,11 +57,6 @@
                                         <div class="col-10 d-flex flex-row">
                                             <input type="file" class="form-control-file" id="mb_image_url"
                                                 name="mb_image_url" accept="image/*" required>
-                                            @foreach ($errors->get('mb_image_url') as $error)
-                                                <div class="alert alert-danger w-50 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>
@@ -72,22 +67,12 @@
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
                                                 required>
-                                            @foreach ($errors->get('image_alt') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="link_url" class="col-2 col-form-label">圖片連結</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="link_url" name="link_url">
-                                            @foreach ($errors->get('link_url') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -110,11 +95,6 @@
                                             <input type="text" class="form-control" id="pc_video_url"
                                                 name="pc_video_url"
                                                 value="{{ old('pc_video_url', $pc_video_url ?? '') }}">
-                                            @foreach ($errors->get('pc_video_url') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -127,11 +107,6 @@
                                             <input type="text" class="form-control" id="mb_video_url"
                                                 name="mb_video_url"
                                                 value="{{ old('mb_video_url', $mb_video_url ?? '') }}">
-                                            @foreach ($errors->get('mb_video_url') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>

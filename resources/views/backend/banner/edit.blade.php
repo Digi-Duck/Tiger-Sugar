@@ -23,6 +23,11 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.banner.update', ['id' => $info->id]) }}"
                             enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <input hidden class="form-control" name="type" id="banner_type" value="{{ $info->type }}"
                                 required>
@@ -56,11 +61,6 @@
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="pc_image_url"
                                                 name="pc_image_url" accept="image/*">
-                                            @foreach ($errors->get('pc_image_url') as $error)
-                                                <div class="alert alert-danger w-50 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -81,11 +81,6 @@
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="mb_image_url"
                                                 name="mb_image_url" accept="image/*">
-                                            @foreach ($errors->get('mb_image_url') as $error)
-                                                <div class="alert alert-danger w-50 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -101,11 +96,6 @@
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
                                                 value="{{ $info->image_alt }}"
                                                 @if ($info->type == '圖片') required @endif>
-                                            @foreach ($errors->get('image_alt') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -113,11 +103,6 @@
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="link_url" name="link_url"
                                                 value="{{ $info->link_url }}">
-                                            @foreach ($errors->get('link_url') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -142,11 +127,6 @@
                                                 name="pc_video_url"
                                                 value="https://www.youtube.com/watch?v={{ $info->pc_video_url }}"
                                                 @if ($info->type == '影片') required @endif>
-                                            @foreach ($errors->get('pc_video_url') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：1920 * 907 (px)</p>
@@ -160,11 +140,6 @@
                                                 name="mb_video_url"
                                                 value="https://www.youtube.com/watch?v={{ $info->mb_video_url }}"
                                                 @if ($info->type == '影片') required @endif>
-                                            @foreach ($errors->get('mb_video_url') as $error)
-                                                <div class="alert alert-danger text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*注意：建議尺寸：420 * 640 (px)</p>

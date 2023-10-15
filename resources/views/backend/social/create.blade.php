@@ -22,6 +22,11 @@
                     </h4>
                     <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.social.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <input hidden class="form-control" name="type" id="social_type" value="embed" required>
 
@@ -48,11 +53,6 @@
                                         <label for="embed_name" class="col-2 col-form-label">社群回饋代稱</label>
                                         <div class="col-10">
                                             <input class="form-control" id="embed_name" name="embed_name" required>
-                                            @foreach ($errors->get('embed_name') as $error)
-                                                <div class="alert alert-danger w-100 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
 
@@ -60,11 +60,6 @@
                                         <label for="embed_link" class="col-2 col-form-label">嵌入碼</label>
                                         <div class="col-10">
                                             <textarea class="form-control" rows="3" id="embed_link" name="embed_link" required></textarea>
-                                            @foreach ($errors->get('embed_link') as $error)
-                                                <div class="alert alert-danger w-100 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -76,11 +71,6 @@
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="user_photo"
                                                 name="user_photo">
-                                            @foreach ($errors->get('user_photo') as $error)
-                                                <div class="alert alert-danger w-50 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*建議尺寸：30 * 30 (px)</p>
@@ -91,11 +81,6 @@
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="main_photo"
                                                 name="main_photo">
-                                            @foreach ($errors->get('main_photo') as $error)
-                                                <div class="alert alert-danger w-50 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">*建議尺寸：350 * 350 (px)</p>
@@ -106,11 +91,6 @@
                                         <label for="user_name" class="col-2 col-form-label">使用者名稱</label>
                                         <div class="col-10">
                                             <input class="form-control" id="user_name" name="user_name">
-                                            @foreach ($errors->get('user_name') as $error)
-                                                <div class="alert alert-danger w-100 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -148,11 +128,6 @@
                                         <label for="link_href" class="col-2 col-form-label">超連結網址</label>
                                         <div class="col-10">
                                             <input class="form-control" id="link_href" name="link_href">
-                                            @foreach ($errors->get('link_href') as $error)
-                                                <div class="alert alert-danger w-100 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -169,22 +144,12 @@
                                         <label for="social_info" class="col-2 col-form-label">內容</label>
                                         <div class="col-10">
                                             <input class="form-control" id="social_info" name="social_info">
-                                            @foreach ($errors->get('social_info') as $error)
-                                                <div class="alert alert-danger w-100 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="post_date" class="col-2 col-form-label">發布日期</label>
                                         <div class="col-10">
                                             <input type="date" class="form-control" id="post_date" name="post_date">
-                                            @foreach ($errors->get('post_date') as $error)
-                                                <div class="alert alert-danger w-100 text-center" role="alert">
-                                                    {{ $error }}
-                                                </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -197,11 +162,6 @@
                                 <div class="col-10">
                                     <input type="number" class="form-control" id="sort" name="sort" required
                                         value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
-                                    @foreach ($errors->get('sort') as $error)
-                                        <div class="alert alert-danger w-100 text-center" role="alert">
-                                            {{ $error }}
-                                        </div>
-                                    @endforeach
                                 </div>
                             </div>
                             <hr>

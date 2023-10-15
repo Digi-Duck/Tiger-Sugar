@@ -68,7 +68,7 @@ class CityController extends Controller
             'ig_link' => 'max:255',
             'weibo_link' => 'max:255',
             'sort' => 'required|max:11',
-            'city_photo'=> 'required|image',
+            'city_photo'=> 'image',
         ],[
             'country_id.exists' => '國家不存在',
             'city_name.required' => '城市名稱必填',
@@ -80,7 +80,7 @@ class CityController extends Controller
             'ig_link' => 'ig連結字數不能超過255個字',
             'weibo_link' => '微博連結字數不能超過255個字',
             'sort' => '權重不能超過11個字',
-            'city_photo' => '上傳圖片必填',
+            'city_photo' => '代表圖片上傳格式須為圖片',
         ]);
 
         $city = City::create([
@@ -132,7 +132,7 @@ class CityController extends Controller
             'ig_link' => 'ig連結字數不能超過255個字',
             'weibo_link' => '微博連結字數不能超過255個字',
             'sort' => '權重不能超過11個字',
-            'city_photo' => '上傳圖片必填',
+            'city_photo' => '代表圖片上傳格式需為圖片',
         ]);
         $city = City::find($id);
         $city->update([
