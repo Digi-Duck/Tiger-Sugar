@@ -1,6 +1,11 @@
 @extends('layouts.backend-template')
 
 @section('css')
+    <style>
+        .max-height-for-container {
+            max-height: calc(90vh - 76px)
+        }
+    </style>
 @endsection
 
 @section('main')
@@ -11,7 +16,7 @@
                     <h4 class="card-header">
                         全球據點管理-國家列表
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.country.create') }}">新增國家</a>
                         <hr>
 

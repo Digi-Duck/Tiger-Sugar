@@ -113,7 +113,7 @@ class CountryController extends Controller
             'fb_link' => 'max:255',
             'ig_link' => 'max:255',
             'weibo_link' => 'max:255',
-            'sort' => '權重不能超過11個字',
+            'sort' => 'required|max:11',
         ],[
             'continent_id.exists' => '洲不存在',
             'country_name.required' => '國家名稱必填',
