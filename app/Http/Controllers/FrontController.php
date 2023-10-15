@@ -25,9 +25,8 @@ class FrontController extends Controller
 
     public function distribution()
     {
-        $products = Products::with('ProdocutType','ProductImgs')->orderBy('sort','asc')->get();
-        dd($products);
-        return view('frontend.distribution');
+        $products = Products::with('ProductsType','ProductsImgs')->orderBy('sort','asc')->get();
+        return view('frontend.distribution',compact('products'));
     }
 
     public function distributionConfirm()

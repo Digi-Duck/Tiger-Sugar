@@ -23,6 +23,11 @@
                             </span>
                         @endif
                         <form method="POST" action="{{ route('back.products.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger" role="alert">
+                                {{ $error }}
+                            </div>
+                        @endforeach
                             @csrf
                             <div class="container overflow-y-auto max-height-for-container">
                                 <div class="form-group row">
@@ -101,7 +106,7 @@
                                 <div class="form-group row">
                                     <label for="video" class="col-2 col-form-label">影片連結</label>
                                     <div class="col-10">
-                                        <input type="text" class="form-control" id="video" name="video">
+                                        <input type="text" class="form-control" id="video" name="video" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">

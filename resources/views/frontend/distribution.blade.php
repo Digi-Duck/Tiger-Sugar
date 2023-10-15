@@ -84,8 +84,38 @@
                 </div>
                 <!-- 產品方格 -->
                 <div class="prduct-grid-columns">
-                    
+                    @foreach ($products as $product )
                     <div class="product-group">
+                        <div class="product-img-group">
+                            <div class="product-background">
+                                <div class="product">
+                                    <img src="{{ $product->img }}"
+                                        alt="產品1" />
+                                </div>
+                                <div class="yellow-box">
+                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
+                                        alt="黃色詢問框" />
+                                </div>
+                                <div class="product-background-hover open-pop-window" id="">
+                                    <a href="" class="yellow-box-hover" title="更多商品"><img
+                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
+                                            alt="黃色詢問框hover" /></a>
+                                    <button class="product-background-hover-more">MORE</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-title">{{$product->title_zh}}</div>
+                            <div class="product-title-en">
+                                {{$product->title_en}}
+                            </div>
+                            <div class="product-id">{{$product->ProductsType->tw_name}}|{{$product->ProductsType->en_name}}</div>
+                        </div>
+                    </div>
+                    {{-- @dump($product) --}}
+                    @endforeach
+                    {{-- <div class="product-group">
                         <div class="product-img-group">
                             <div class="product-background">
                                 <div class="product">
@@ -112,7 +142,7 @@
                             </div>
                             <div class="product-id">冰品 | Ice</div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="product-group">
                         <div class="product-img-group">
                             <div class="product-background">
