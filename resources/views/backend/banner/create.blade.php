@@ -108,7 +108,8 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
-                                                name="pc_video_url" value="{{ old('pc_video_url', $pc_video_url ?? '') }}">
+                                                name="pc_video_url"
+                                                value="{{ old('pc_video_url', $pc_video_url ?? '') }}">
                                             @foreach ($errors->get('pc_video_url') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
@@ -124,7 +125,8 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
-                                                name="mb_video_url" value="{{ old('mb_video_url', $mb_video_url ?? '') }}">
+                                                name="mb_video_url"
+                                                value="{{ old('mb_video_url', $mb_video_url ?? '') }}">
                                             @foreach ($errors->get('mb_video_url') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}

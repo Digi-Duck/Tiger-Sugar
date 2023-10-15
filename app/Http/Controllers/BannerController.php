@@ -100,25 +100,27 @@ class BannerController extends Controller
                 'mb_video_url' => 'required|url',
             ], [
                 'pc_video_url.required' => '設定影片連結必填',
-                'pc_video_url.url' => '設定影片必須為網址',
+                'pc_video_url.url' => '設定影片欄位必須為網址',
                 'mb_video_url.required' => '設定影片連結（手機版）必填',
                 'mb_video_url.url' => '設定影片（手機版）欄位必須為網址',
             ]);
             // PC
-            $pc_video_url = $request->pc_video_url;
-            parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
-            // MB
-            $mb_video_url = $request->mb_video_url;
-            parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
+            // $pc_video_url = $request->pc_video_url;
+            // parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
+            // // MB
+            // $mb_video_url = $request->mb_video_url;
+            // parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
 
             $banner = Banner::create([
                 'type' => $request->type,
                 'sort' => $request->sort,
+                'pc_video_url' => $request->pc_video_url,
+                'mb_video_url' => $request->mb_video_url,
             ]);
-            $banner->update([
-                'pc_video_url' => $url_para['v'],
-                'mb_video_url' => $url_para1['v'],
-            ]);
+            // $banner->update([
+            //     'pc_video_url' => $url_para['v'],
+            //     'mb_video_url' => $url_para1['v'],
+            // ]);
         }
         return redirect(route('back.banner.index'))->with('message', '新增成功!');
     }
@@ -200,17 +202,20 @@ class BannerController extends Controller
                 'mb_video_url.required' => '設定影片連結（手機版）必填',
                 'mb_video_url.url' => '設定影片（手機版）欄位必須為網址',
             ]);
-            // PC
-            $pc_video_url = $request->pc_video_url;
-            parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
-            // MB
-            $mb_video_url = $request->mb_video_url;
-            parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
-
+            // // PC
+            // $pc_video_url = $request->pc_video_url;
+            // parse_str(parse_url($pc_video_url, PHP_URL_QUERY), $url_para);
+            // // MB
+            // $mb_video_url = $request->mb_video_url;
+            // parse_str(parse_url($mb_video_url, PHP_URL_QUERY), $url_para1);
             $banner->update([
-                'pc_video_url' => $url_para['v'],
-                'mb_video_url' => $url_para1['v'],
+                'pc_video_url' => $request->pc_video_url,
+                'mb_video_url' => $request->mb_video_url,
             ]);
+            // $banner->update([
+            //     'pc_video_url' => $url_para['v'],
+            //     'mb_video_url' => $url_para1['v'],
+            // ]);
         }
 
         return redirect(route('back.banner.index'))->with('message', '更新成功!');

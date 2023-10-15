@@ -47,8 +47,48 @@ class SocialController extends Controller
 
     public function store(Request $request)
     {
-        // dump($request->user_icon);
-        // dd($request->all());
+        $request->validate([
+            'sort' => 'required|max:11',
+        ],[
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
+        ]);
+
+        if ($request->type === 'embed'){
+            $request->validate([
+                'embed_name' => 'required|max:255',
+                'embed_link' => 'required',
+            ],[
+                'embed_name.required' => '社群回饋代稱必填',
+                'embed_name.max' => '社群回饋代稱不能超過255個字',
+                'embed_link.required' => '嵌入碼必填',
+                'sort.required' => '權重必填',
+                'sort.max' => '權重不能超過11個字',
+            ]);
+        };
+
+        if ($request->type === 'custom') {
+            $request->session()->flash('type', 'custom_create');
+            $request->validate([
+                'user_photo' => 'required|image',
+                'main_photo' => 'required|image',
+                'user_name' => 'required',
+                'link_href' => 'url',
+                'social_info' => 'required|max:255',
+                'post_date' => 'required',
+            ],[
+                'user_photo.required' => '使用者Icon必填',
+                'user_photo.image' => '使用者Icon欄位必須為圖片格式',
+                'main_photo.required' => '主要圖片必填',
+                'main_photo.image' => '主要圖片欄位必須為圖片格式',
+                'user_name.required' => '使用者名稱必填',
+                'link_href.url' => '超連結網址欄為必須為網址',
+                'social_info.required' => '內容必填',
+                'social_info.max' => '內容最多只能輸入255個字',
+                'post_date.required' => '發布日期必填',
+            ]);
+        };
+
         $social = Social::create([
             'type' => $request->type,
             'sort' => $request->sort,
@@ -69,11 +109,6 @@ class SocialController extends Controller
         $type = $request->type;
 
         if ($type == 'custom') {
-            $request->validate([
-                'user_photo' => 'image',
-                'main_photo' => 'image',
-            ]);
-
             $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
             $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
             $social->update([
@@ -92,43 +127,80 @@ class SocialController extends Controller
 
     public function update(Request $request, $id)
     {
-
-        // $request->validate([
-        //     'embed_name' => 'required|max:255',
-        //     'embed_link' => 'required',
-        //     'sort' => 'required|max:11',
-        // ],[
-        //     'embed_name.required' => '標題必填',
-        //     'embed_name.max' => '標題不能超過255個字',
-        //     'embed_link.required' => '內容必填',
-        //     'sort.required' => '權重必填',
-        //     'sort.max' => '權重不能超過11個字',
-        // ]);
+        if ($request->type == 'embed') {
+        }elseif ($request->type == 'custom') {
+        }
 
         $social = Social::find($id);
 
+        $request->validate([
+            'sort' => 'required|max:11',
+        ],[
+            'sort.required' => '權重必填',
+            'sort.max' => '權重不能超過11個字',
+        ]);
+
         $social->update([
-            'embed_name' => $request->embed_name,
-            'embed_link' => $request->embed_link,
-            'post_date' => $request->post_date,
             'sort' => $request->sort,
         ]);
-        // $type = $request->type;
 
-        // if ($type == '圖片') {
-        //     $request->validate([
-        //         'user_photo' => 'image',
-        //         'main_photo' => 'image',
-        //     ]);
+        if ($request->type === 'embed'){
+            $request->session()->flash('type', 'embed_edit');
+            $request->validate([
+                'embed_name' => 'required|max:255',
+                'embed_link' => 'required',
+            ],[
+                'embed_name.required' => '社群回饋代稱必填',
+                'embed_name.max' => '社群回饋代稱不能超過255個字',
+                'embed_link.required' => '嵌入碼必填',
+                'sort.required' => '權重必填',
+                'sort.max' => '權重不能超過11個字',
+            ]);
+            $social->update([
+                'embed_name' => $request->embed_name,
+                'embed_link' => $request->embed_link,
+            ]);
+        };
 
-        //     $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
-        //     $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
-        //     $social->update([
-        //         'user_photo' => $userimg,
-        //         'main_photo' => $mainimg,
-        //     ]);
-        // }
+        if ($request->type === 'custom') {
+            $request->session()->flash('type', 'custom_edit');
+            $request->validate([
+                'user_photo' => 'image',
+                'main_photo' => 'image',
+                'user_name' => 'required',
+                'link_href' => 'url',
+                'social_info' => 'required|max:255',
+                'post_date' => 'required',
+            ],[
+                'user_photo.image' => '使用者Icon欄位必須為圖片格式',
+                'main_photo.image' => '主要圖片欄位必須為圖片格式',
+                'user_name.required' => '使用者名稱必填',
+                'link_href.url' => '超連結網址欄為必須為網址',
+                'social_info.required' => '內容必填',
+                'social_info.max' => '內容最多只能輸入255個字',
+                'post_date.required' => '發布日期必填',
+            ]);
+            $social->update([
+                'user_name' => $request->user_name,
+                'link_href' => $request->link_href,
+                'social_info' => $request->social_info,
+                'post_date' => $request->post_date,
+            ]);
 
+            if ($request->user_photo) {
+                $userimg = $this->fileService->imgUpload($request->file('user_photo'), 'social-userimg');
+                $social->update([
+                    'user_photo' => $userimg,
+                ]);
+            };
+
+            if ($request->main_photo) {
+                $mainimg = $this->fileService->imgUpload($request->file('main_photo'), 'social-mainimg');
+                $social->update([
+                    'main_photo' => $mainimg,
+                ]);
+            };
+        }
         return redirect('back/social/index')->with('message', '新增成功!');
     }
 
@@ -141,24 +213,4 @@ class SocialController extends Controller
         $Social->delete();
         return 'success';
     }
-
-    //上傳檔案
-    // public function upload_file($file){
-    //     $allowed_extensions =["png", "jpg", "gif", "PNG", "JPG", "GIF","jpeg","JPEG"];
-    //     if ($file->getClientOriginalExtension() &&
-    //         !in_array($file->getClientOriginalExtension(), $allowed_extensions))
-    //     {
-    //         return redirect()->back()->with('message','僅接受.jpg, .png, .gif, .jepg格式檔案!');
-    //     }
-    //     $extension = $file->getClientOriginalExtension();
-    //     $destinationPath = public_path() . '/summernote_upload/';
-    //     $original_filename = $file->getClientOriginalName();
-
-    //     $filename = $file->getFilename() . '.' . $extension;
-    //     $url = '/summernote_upload/' . $filename;
-
-    //     $file->move($destinationPath, $filename);
-
-    //     return $url;
-    // }
 }

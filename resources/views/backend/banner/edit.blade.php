@@ -99,7 +99,8 @@
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
-                                                value="{{ $info->image_alt }}" required>
+                                                value="{{ $info->image_alt }}"
+                                                @if ($info->type == '圖片') required @endif>
                                             @foreach ($errors->get('image_alt') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
@@ -139,7 +140,8 @@
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
                                                 name="pc_video_url"
-                                                value="https://www.youtube.com/watch?v={{ $info->pc_video_url }}">
+                                                value="https://www.youtube.com/watch?v={{ $info->pc_video_url }}"
+                                                @if ($info->type == '影片') required @endif>
                                             @foreach ($errors->get('pc_video_url') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
@@ -156,7 +158,8 @@
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
                                                 name="mb_video_url"
-                                                value="https://www.youtube.com/watch?v={{ $info->mb_video_url }}">
+                                                value="https://www.youtube.com/watch?v={{ $info->mb_video_url }}"
+                                                @if ($info->type == '影片') required @endif>
                                             @foreach ($errors->get('mb_video_url') as $error)
                                                 <div class="alert alert-danger text-center" role="alert">
                                                     {{ $error }}
