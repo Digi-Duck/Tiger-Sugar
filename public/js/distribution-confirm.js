@@ -32,7 +32,6 @@ openPopWindows.forEach(function(btn) {
   btn.addEventListener('click', function (event) {
       document.querySelector('.im-pop-window').style.display ='block';
       document.querySelector('.window-overlay').style.display = 'block';
-      console.log('123');
   });
 });
 
@@ -42,7 +41,6 @@ closePopWindows.forEach(function(btn) {
   btn.addEventListener('click', function (event) {
       document.querySelector('.im-pop-window').style.display ='none';
       document.querySelector('.window-overlay').style.display ='none';
-      console.log('321');
   });
 });
 
