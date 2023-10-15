@@ -48,6 +48,13 @@ class ProductsTypeController extends Controller
             'sort' => 'required|max:11',
             'tw_name' => 'required|max:255',
             'en_name' => 'required|max:255',
+        ],[
+            'sort.required' => '權重必填',
+            'sort.max' => '權重最多11個字',
+            'tw_name.required' => '商品種類(中)必填',
+            'tw_name.max' => '商品種類(中)最多255個字',
+            'en_name.required' => '商品種類(英)必填',
+            'en_name.max' => '商品種類(英)最多255個字',
         ]);
 
         ProductsType::create([
@@ -71,6 +78,13 @@ class ProductsTypeController extends Controller
             'sort' => 'required|max:11',
             'tw_name' => 'required|max:255',
             'en_name' => 'required|max:255',
+        ],[
+            'sort.required' => '權重必填',
+            'sort.max' => '權重最多11個字',
+            'tw_name.required' => '商品種類(中)必填',
+            'tw_name.max' => '商品種類(中)最多255個字',
+            'en_name.required' => '商品種類(英)必填',
+            'en_name.max' => '商品種類(英)最多255個字',
         ]);
 
         $product = ProductsType::find($id);

@@ -42,12 +42,6 @@ class BlogNewsController extends Controller
         return view('backend.blog_news.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
     }
 
-    // public function index()
-    // {
-    //     $lists = BlogNews::all();
-    //     return view('backend.blog_news.index',compact('lists'));
-    // }
-
     public function create()
     {
         return view('backend.blog_news.create');
@@ -60,8 +54,21 @@ class BlogNewsController extends Controller
             'author' => 'required|max:255',
             'link' => 'required|max:255',
             'title' => 'required|max:255',
-            'main_photo' => 'required',
-            'sort' => 'required',
+            'info' => 'required',
+            'main_photo' => 'required|image',
+            'sort' => 'required|max:255',
+        ],[
+            'author.required' => '來源出處必填',
+            'author.max' => '來源出處最多255個字',
+            'link.required' => '文章連結必填',
+            'link.max' => '文章連結最多255個字',
+            'title.required' => '文章標題必填',
+            'title.max' => '文章標題最多255個字',
+            'info.required' => '文章簡述必填',
+            'main_photo.required' => '代表圖片必傳',
+            'main_photo.image' => '代表圖片必須為圖片格式',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重最多255個字',
         ]);
 
         $BlogNews = BlogNews::create([
@@ -92,8 +99,20 @@ class BlogNewsController extends Controller
             'author' => 'required|max:255',
             'link' => 'required|max:255',
             'title' => 'required|max:255',
-            'main_photo' => 'required',
-            'sort' => 'required',
+            'info' => 'required',
+            'main_photo' => 'image',
+            'sort' => 'required|max:255',
+        ],[
+            'author.required' => '來源出處必填',
+            'author.max' => '來源出處最多255個字',
+            'link.required' => '文章連結必填',
+            'link.max' => '文章連結最多255個字',
+            'title.required' => '文章標題必填',
+            'title.max' => '文章標題最多255個字',
+            'info.required' => '文章簡述必填',
+            'main_photo.image' => '代表圖片必須為圖片格式',
+            'sort.required' => '權重必填',
+            'sort.max' => '權重最多255個字',
         ]);
         $BlogNews = BlogNews::find($id);
         $BlogNews->update([

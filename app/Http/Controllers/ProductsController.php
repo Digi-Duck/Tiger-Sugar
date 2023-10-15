@@ -60,9 +60,9 @@ class ProductsController extends Controller
             'sort' => 'required|max:11',
             'title_zh' => 'required|max:255',
             'title_en' => 'required|max:255',
-            'type_id' => 'required|max:11',
+            'type_id' => 'required|max:255',
             'info' => 'required|max:255',
-            'img' => 'required',
+            'img' => 'required|image',
             'launch_date' => 'required',
             'weight' => 'required|max:20',
             'shelf_life' => 'required|max:6',
@@ -78,10 +78,11 @@ class ProductsController extends Controller
             'title_en.required' => '商品名稱（英）必填',
             'title_en.max' => '商品名稱(英)最多只能輸入255個字',
             'type_id.required' => '分類必填',
-            'type_id.max' => '分類最多只能輸入11個字',
+            'type_id.max' => '分類最多只能輸入255個字',
             'info.required' => '商品簡介必填',
             'info.max' => '商品簡介最多只能輸入255個字',
             'img.required' => '照片必填',
+            'img.image' => '照片必須為圖片格式',
             'launch_date.required' => '上市日期必填',
             'weight.required' => '淨重必填',
             'weight.max' => '淨重最多只能輸入20個字',
@@ -132,6 +133,43 @@ class ProductsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'sort' => 'required|max:11',
+            'title_zh' => 'required|max:255',
+            'title_en' => 'required|max:255',
+            'type_id' => 'required|max:255',
+            'info' => 'required|max:255',
+            'img' => 'image',
+            'launch_date' => 'required',
+            'weight' => 'required|max:20',
+            'shelf_life' => 'required|max:6',
+            'preserve' => 'required',
+            'content' => 'required',
+            'notes' => 'required',
+            'video' => 'required',
+        ], [
+            'sort.required' => '權重必填',
+            'sort.max' => '權重最多只能輸入11個數字',
+            'title_zh.required' => '商品名稱（中）必填',
+            'title_zh.max' => '商品名稱(中)最多只能輸入255個字',
+            'title_en.required' => '商品名稱（英）必填',
+            'title_en.max' => '商品名稱(英)最多只能輸入255個字',
+            'type_id.required' => '分類必填',
+            'type_id.max' => '分類最多只能輸入255個字',
+            'info.required' => '商品簡介必填',
+            'info.max' => '商品簡介最多只能輸入255個字',
+            'img.image' => '照片必須為圖片格式',
+            'launch_date.required' => '上市日期必填',
+            'weight.required' => '淨重必填',
+            'weight.max' => '淨重最多只能輸入20個字',
+            'shelf_life.required' => '保存期限必填',
+            'shelf_life.max' => '保存期限最多只能輸入6個字',
+            'preserve.required' => '保存方式必填',
+            'content.required' => '內容必填',
+            'notes.required' => '注意事項必填',
+            'video.required' => '影片必填',
+        ]);
+
         $product = Products::find($id);
 
 

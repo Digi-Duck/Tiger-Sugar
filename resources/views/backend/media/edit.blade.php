@@ -10,14 +10,12 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.media.update', ['id' => $id]) }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
-
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">影片</a>
-                                </li>
-                            </ul>
-                            <hr>
 
                             <div class="form-group row">
                                 <label for="name" class="col-2 col-form-label" style="text-align: center">影片名字</label>

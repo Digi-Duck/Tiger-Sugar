@@ -10,6 +10,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.blog_news.store') }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>
@@ -32,7 +37,7 @@
                             <div class="form-group row">
                                 <label for="info" class="col-2 col-form-label">文章簡述</label>
                                 <div class="col-10">
-                                    <textarea  class="form-control" id="info" name="info"></textarea>
+                                    <textarea  class="form-control" id="info" name="info" required></textarea>
                                 </div>
                             </div>
 

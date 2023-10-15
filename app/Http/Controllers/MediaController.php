@@ -49,6 +49,12 @@ class MediaController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'video_file' => 'required',
+            'sort' => 'required',
+        ],[
+            'name.required' => '影片名字必填',
+            'name.max' => '影片名字不能超過255個字',
+            'video_file.required' => '影片檔案必傳',
+            'sort.required' => '權重必填',
         ]);
 
         $value = Media::create([
@@ -76,6 +82,11 @@ class MediaController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
+            'sort' => 'required',
+        ],[
+            'name.required' => '影片名字必填',
+            'name.max' => '影片名字不能超過255個字',
+            'sort.required' => '權重必填',
         ]);
 
         $value = Media::find($id);

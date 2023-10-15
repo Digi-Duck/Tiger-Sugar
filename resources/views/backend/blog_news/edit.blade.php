@@ -10,6 +10,11 @@
                     </h4>
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.blog_news.update', ['id' => $list->id]) }}" enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>

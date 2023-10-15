@@ -19,6 +19,11 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('back.products.update', ['id' => $list->id]) }}"
                             enctype="multipart/form-data">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
                             @csrf
                             <div class="container overflow-y-auto max-height-for-container">
                                 <div class="form-group row">
