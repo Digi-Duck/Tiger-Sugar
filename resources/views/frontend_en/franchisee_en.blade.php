@@ -137,191 +137,54 @@
                         <!-- 左邊aka手機版 -->
                         <div class="left-container">
                             <!-- 老虎堂合作夥伴 QA1 -->
-                            <input type="checkbox" id="qa1" hidden>
-                            <label for="qa1" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">How do I become a partner of Tiger Sugar?
+                            @foreach ($franchise_explains as $list)
+                                @if ($list->sequence % 2 == 1)
+                                    <input type="checkbox" id="qa{{ $list->sequence }}" hidden>
+                                    <label for="qa{{ $list->sequence }}" class="qa-area">
+                                        <div class="question-area">
+                                            <div class="top-area">
+                                                <div class="mark"></div>
+                                                <div class="title-text">{{ $list->title }}?</div>
+                                            </div>
+                                            <div class="down-area">
+                                                {{ $list->content }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="down-area">
-                                        Thank you very much for your support and
-                                        interest in Tiger Sugar
-                                        We are looking forward to collaborating with
-                                        partners worldwide and promoting Tiger Sugar
-                                        all over the world.
-                                        In order to provide you with further
-                                        information, please fill out the "Applicant
-                                        information form" online and our staff will
-                                        contact you.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 授權方式與期間 QA2 -->
-                            <input type="checkbox" id="qa2" hidden>
-                            <label for="qa2" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">What if I cannot click on the region where I wish to open a
-                                            store</div>
-                                    </div>
-                                    <div class="down-area">
-                                        If you are unable to select the city or region you wish to open your store, meaning
-                                        that the region already has an exclusive distributor and there is no distributor and
-                                        franchise vacancy available.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 開店申請表格 QA3 -->
-                            <input type="checkbox" id="qa3" hidden>
-                            <label for="qa3" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">What is the method and duration of the Region's Master
-                                            franchise?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        “Region’s Master franchise” is based on the unit of city/region, the exclusive
-                                        distributor has an exclusive right of management and must have its own management
-                                        team and open a certain number of stores in the region. The authorized operation
-                                        licensing period is "five years".
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 原料 QA4 -->
-                            <input type="checkbox" id="qa4" hidden>
-                            <label for="qa4" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">Qualification of the distributor?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        1.Possess a high level of enthusiasm towards the catering industry, with previous
-                                        restaurant experience preferred.
-                                        2.Be aligned with the management philosophy of Tiger Sugar.
-                                        3.Ability to operate and manage
-                                        4.Possess an in-house management team (marketing, operation, finance, etc.)
-                                        Knowledge of managing the region and familiar with competitive brands.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 經營區域 QA5 -->
-                            <input type="checkbox" id="qa5" hidden>
-                            <label for="qa5" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">After I submit my store opening application form, how long
-                                            does it take for someone to contact me?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        After submitting the complete Applicant information form, the preliminary assessment
-                                        takes about 3~5 working days, after which the operator will contact and assist you.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 代理商資格 QA6 -->
-                            <input type="checkbox" id="qa6" hidden>
-                            <label for="qa6" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">How much is it to be the exclusive distributor in the
-                                            region?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        We will conduct an assessment based on the economic development level and average
-                                        per capita consumption of the region, thereby stipulating a set agency fee for each
-                                        region.
-                                        Please fill out the "Applicant basic information". After the preliminary distributor
-                                        qualification assessment, we will start the quotation process.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 代理金額 QA7 -->
-                            <input type="checkbox" id="qa7" hidden>
-                            <label for="qa7" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">Raw material supply and procurement?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        In addition to fresh dairy products, which can be purchased locally, in order to
-                                        maintain stable quality and ensure the consistency of products in each store, all
-                                        partners need to order key technical raw materials from Tiger sugar headquarters.
-                                    </div>
-                                </div>
-                            </label>
+                                    </label>
+                                @else
+                                    <input type="checkbox" id="qa2" hidden>
+                                    <label for="qa{{ $list->sequence }}" class="qa-area">
+                                        <div class="question-area">
+                                            <div class="top-area">
+                                                <div class="mark"></div>
+                                                <div class="title-text">{{ $list->title }}</div>
+                                            </div>
+                                            <div class="down-area">
+                                                {{ $list->content }}
+                                            </div>
+                                        </div>
+                                    </label>
+                                @endif
+                            @endforeach
                         </div>
 
                         <!-- 右邊aka電腦版 -->
                         <div class="right-container">
-
                             <!-- 授權方式與期間 QA2 -->
-                            <input type="checkbox" id="qar2" hidden>
-                            <label for="qar2" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">What if I cannot click on the region where I wish to open a
-                                            store</div>
+                            @foreach ($evenItems as $list)
+                                <input type="checkbox" id="qar{{ $list->sequence }}" hidden>
+                                <label for="qar{{ $list->sequence }}" class="qa-area">
+                                    <div class="question-area">
+                                        <div class="top-area">
+                                            <div class="mark"></div>
+                                            <div class="title-text">{{ $list->title }}</div>
+                                        </div>
+                                        <div class="down-area">
+                                            {{ $list->content }}
+                                        </div>
                                     </div>
-                                    <div class="down-area">
-                                        If you are unable to select the city or region you wish to open your store, meaning
-                                        that the region already has an exclusive distributor and there is no distributor and
-                                        franchise vacancy available.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 原料 QA4 -->
-                            <input type="checkbox" id="qar4" hidden>
-                            <label for="qar4" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">Qualification of the distributor?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        1.Possess a high level of enthusiasm towards the catering industry, with previous
-                                        restaurant experience preferred.
-                                        2.Be aligned with the management philosophy of Tiger Sugar.
-                                        3.Ability to operate and manage
-                                        4.Possess an in-house management team (marketing, operation, finance, etc.)
-                                        Knowledge of managing the region and familiar with competitive brands.
-                                    </div>
-                                </div>
-                            </label>
-
-                            <!-- 代理商資格 QA6 -->
-                            <input type="checkbox" id="qar6" hidden>
-                            <label for="qar6" class="qa-area">
-                                <div class="question-area">
-                                    <div class="top-area">
-                                        <div class="mark"></div>
-                                        <div class="title-text">How much is it to be the exclusive distributor in the
-                                            region?</div>
-                                    </div>
-                                    <div class="down-area">
-                                        We will conduct an assessment based on the economic development level and average
-                                        per capita consumption of the region, thereby stipulating a set agency fee for each
-                                        region.
-                                        Please fill out the "Applicant basic information". After the preliminary distributor
-                                        qualification assessment, we will start the quotation process.
-                                    </div>
-                                </div>
-                            </label>
+                                </label>
+                            @endforeach
 
                         </div>
 

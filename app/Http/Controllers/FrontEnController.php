@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FranchiseExplain;
 use Illuminate\Http\Request;
 
 class FrontEnController extends Controller
@@ -26,7 +27,23 @@ class FrontEnController extends Controller
     }
 
     public function franchisee() {
-        return view('frontend_en.franchisee_en');
+        $franchise_explains = FranchiseExplain::orderBy('id')->get();
+        $item = 1;
+        foreach ($franchise_explains as $value) {
+            $value->sequence = $item;
+            $item++;
+        };
+        $oddItems = [];
+        $evenItems = [];
+
+        foreach ($franchise_explains as $item) {
+            if ($item->sequence % 2 == 1) {
+                $oddItems[] = $item;
+            } else {
+                $evenItems[] = $item;
+            }
+        }
+        return view('frontend_en.franchisee_en', compact('franchise_explains', 'oddItems', 'evenItems'));
     }
 
     public function franchiseeForm() {
