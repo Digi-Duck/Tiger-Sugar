@@ -43,7 +43,7 @@
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                     aria-labelledby="pills-home-tab">
                                     <div class="form-group row">
-                                        <label for="pc_image_url" class="col-2 col-form-label">上傳圖片</label>
+                                        <label for="pc_image_url" class="col-2 col-form-label">上傳圖片 <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10 d-flex flex-row">
                                             <input type="file" class="form-control-file" id="pc_image_url"
                                                 name="pc_image_url" accept="image/*" required>
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="mb_image_url" class="col-2 col-form-label">上傳圖片(手機版)</label>
+                                        <label for="mb_image_url" class="col-2 col-form-label">上傳圖片(手機版) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10 d-flex flex-row">
                                             <input type="file" class="form-control-file" id="mb_image_url"
                                                 name="mb_image_url" accept="image/*" required>
@@ -63,20 +63,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt)</label>
+                                        <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
                                                 required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="link_url" class="col-2 col-form-label">圖片連結</label>
+                                        <label for="link_url" class="col-2 col-form-label">圖片連結 <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="link_url" name="link_url">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="link_url" class="col-2 col-form-label">另開視窗</label>
+                                        <label for="link_url" class="col-2 col-form-label">另開視窗 </label>
                                         <div class="col-10" style="padding-left: 35px">
                                             <input class="form-check-input" type="checkbox" value="link_target"
                                                 name="link_target" id="link_target">
@@ -90,7 +90,7 @@
                                     aria-labelledby="pills-profile-tab">
                                     <div class="form-group row">
                                         <label for="pc_video_url"
-                                            class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
+                                            class="col-2 col-form-label">設定影片連結<br>(Youtube連結) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
                                                 name="pc_video_url"
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="mb_video_url"
-                                            class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
+                                            class="col-2 col-form-label">設定影片連結<br>(Youtube連結) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
                                                 name="mb_video_url"
@@ -117,7 +117,7 @@
 
                             <hr>
                             <div class="form-group row">
-                                <label for="sort" class="col-2 col-form-label">權重</label>
+                                <label for="sort" class="col-2 col-form-label">權重 <span class="text-danger fs-4" >*</span> </label>
                                 <div class="col-10">
                                     <input type="number" class="form-control" id="sort" name="sort" required
                                         value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
