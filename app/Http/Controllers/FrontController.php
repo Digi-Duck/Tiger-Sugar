@@ -64,7 +64,16 @@ class FrontController extends Controller
     }
     public function franchiseeFormStore(Request $request)
     {
-
+        $request->session()->put('user_name', $request->user_name);
+        $request->session()->put('birth_day', $request->birth_day);
+        $request->session()->put('email', $request->email);
+        $request->session()->put('phone', $request->phone);
+        $request->session()->put('address', $request->address);
+        $request->session()->put('franchisee_type', $request->franchisee_type);
+        $request->session()->put('country', $request->country);
+        $request->session()->put('capital', $request->capital);
+        $request->session()->put('store_address', $request->store_address);
+        $request->session()->put('other', $request->other);
         $request->validate([
             'user_name' => 'required|max:255',
             'birth_day' => 'required',
@@ -87,6 +96,7 @@ class FrontController extends Controller
             'address.max' => '通訊地址最多不能超過255個字',
             'country.required' => '預定加盟城市必填',
             'country.max' => '預定加盟城市最多不能超過255個字',
+            'store_address' => '預計加盟城市地址不能超過255個字',
             'other' => '其他最多不能超過255個字',
         ]);
 
@@ -103,6 +113,47 @@ class FrontController extends Controller
             'other' => $request->other,
         ]);
 
-        return view('frontend.franchisee-form');
+        return view('frontend.franchisee-form',compact('user_names', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+    }
+
+public function franchiseeFormStore_en(Request $request)
+    {
+        $request->session()->put('user_name', $request->user_name);
+        $request->session()->put('birth_day', $request->birth_day);
+        $request->session()->put('email', $request->email);
+        $request->session()->put('phone', $request->phone);
+        $request->session()->put('address', $request->address);
+        $request->session()->put('franchisee_type', $request->franchisee_type);
+        $request->session()->put('country', $request->country);
+        $request->session()->put('capital', $request->capital);
+        $request->session()->put('store_address', $request->store_address);
+        $request->session()->put('other', $request->other);
+        $request->validate([
+            'user_name' => 'required|max:255',
+            'birth_day' => 'required',
+            'email' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'address' => 'required|max:255',
+            'franchisee_type' => 'required',
+            'country' => 'required|max:255',
+            'capital' => 'required',
+            'store_address' => 'required|max:255',
+            'other' => 'max:255',
+        ]);
+
+        Contact::create([
+            'user_name' => $request->user_name,
+            'birth_day' => $request->birth_day,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'franchisee_type' => $request->franchisee_type,
+            'country' => $request->country,
+            'capital' => $request->capital,
+            'store_address' => $request->store_address,
+            'other' => $request->other,
+        ]);
+
+        return view('frontend.franchisee-form',compact('user_names', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
     }
 }
