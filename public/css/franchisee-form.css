@@ -13,7 +13,9 @@ body{
 a {
     text-decoration: none;
 }
-
+#franchisee-form span{
+    color: red;
+}
 #franchisee-form {
     /* height: calc(100vh - 109px); */
     width: 100%;
