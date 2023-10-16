@@ -145,7 +145,10 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     });
 
     // distribution 經銷來信
-    Route::get('distribution/index', [DistributionController::class, 'index'])->name('back.distribution.index');
+    Route::prefix('/distribution')->group(function(){
+        Route::get('/index', [DistributionController::class, 'index'])->name('back.distribution.index');
+        Route::get('/show/{id}', [DistributionController::class, 'show'])->name('back.distribution.show');
+    });
 
     // 媒體報導
     Route::prefix('/blog_news')->group(function () {
