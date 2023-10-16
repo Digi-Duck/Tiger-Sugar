@@ -1,7 +1,6 @@
 @extends('layouts.backend-template')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 @endsection
 
 @section('main')
@@ -12,7 +11,7 @@
                     <h4 class="card-header">
                         全球據點管理-城市列表
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{route('back.city.create')}}">新增</a>
                         <hr>
 

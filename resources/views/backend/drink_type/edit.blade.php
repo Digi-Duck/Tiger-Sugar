@@ -11,7 +11,7 @@
                     <h4 class="card-header">
                         飲品類型管理(中)-編輯
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{route('back.drink_type.update',['id'=> $info->id])}}" enctype="multipart/form-data">
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">

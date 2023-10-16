@@ -1,5 +1,8 @@
 @extends('layouts.backend-template')
 
+@section('css')
+@endsection
+
 @section('main')
     <div class="container">
         <div class="row">
@@ -8,7 +11,7 @@
                     <h4 class="card-header">
                         最新消息-編輯
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.news.update',['id' => $list->id]) }}" enctype="multipart/form-data">
                             @csrf
                             @foreach ($errors->all() as $error)

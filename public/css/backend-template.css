@@ -4,6 +4,15 @@ body,html{
     box-sizing: border-box;
 }
 
+.max-height-for-container {
+    max-height: calc(85vh - 76px)
+}
+
+textarea{
+    resize: none;
+    width: 100%;
+}
+
 #backend{
     width: 100%;
     height: 100vh;

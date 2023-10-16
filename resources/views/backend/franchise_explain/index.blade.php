@@ -1,12 +1,7 @@
 @extends('layouts.backend-template')
+
 @section('css')
-    <style>
-        .max-height-for-container {
-            max-height: 700px
-        }
-    </style>
 @endsection
-{{-- <link rel="stylesheet" href="{{ asset('css/franchiseeExplain.css') }}"> --}}
 
 @section('main')
     <div class="container" style="padding:0px;">

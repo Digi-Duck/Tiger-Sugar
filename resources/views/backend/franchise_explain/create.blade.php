@@ -1,7 +1,5 @@
 @extends('layouts.backend-template')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/franchiseeExplain.css') }}">
 @endsection
 
 
@@ -13,7 +11,7 @@
                     <h4 class="card-header">
                         常見問題管理
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.franchise_explain.store') }}"
                             enctype="multipart/form-data">
                             @foreach ($errors->all() as $error)

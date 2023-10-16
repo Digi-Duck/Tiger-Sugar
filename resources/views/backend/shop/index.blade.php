@@ -11,7 +11,7 @@
                     <h4 class="card-header">
                         店舖管理
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <a class="btn btn-success" href="{{ route('back.shop.create') }}">新增店舖</a>
                         <hr>
 

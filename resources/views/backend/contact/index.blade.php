@@ -9,7 +9,7 @@
                         加盟來信管理
                     </h4>
 
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
 
                         <form action="{{ route('back.contact.index') }}" method="GET" id="page-numbers" role="search"
                             class="d-flex justify-content-between align-items-center mb-3">

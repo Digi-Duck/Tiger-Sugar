@@ -15,7 +15,7 @@
                     <h4 class="card-header">
                         廣告橫幅管理-新增
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.banner.store') }}" enctype="multipart/form-data">
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">

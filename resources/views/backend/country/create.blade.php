@@ -1,11 +1,6 @@
 @extends('layouts.backend-template')
 
 @section('css')
-    <style>
-        .max-height-for-container {
-            max-height: calc(90vh - 76px)
-        }
-    </style>
 @endsection
 
 @section('main')

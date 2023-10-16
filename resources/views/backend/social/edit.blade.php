@@ -2,10 +2,6 @@
 
 @section('css')
     <style>
-        .max-height-for-container {
-            max-height: 700px
-        }
-
         .cursor-p {
             cursor: pointer;
         }

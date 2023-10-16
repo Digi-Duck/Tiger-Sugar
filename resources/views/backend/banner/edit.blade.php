@@ -2,10 +2,6 @@
 
 @section('css')
     <style>
-        .max-height-for-container {
-            max-height: 500px;
-        }
-
         .cursor-p {
             cursor: pointer;
         }
@@ -20,7 +16,7 @@
                     <h4 class="card-header">
                         廣告橫幅管理-編輯
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.banner.update', ['id' => $info->id]) }}"
                             enctype="multipart/form-data">
                             @foreach ($errors->all() as $error)
@@ -46,7 +42,7 @@
 
                             <hr>
 
-                            <div class="tab-content container overflow-y-auto max-height-for-container"
+                            <div class="tab-content"
                                 id="pills-tabContent">
                                 <div class="tab-pane fade @if ($info->type == '圖片') show active @endif"
                                     id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">

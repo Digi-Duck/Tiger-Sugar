@@ -12,7 +12,7 @@
                     <h4 class="card-header">
                         {{$seo->name}}
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form action="/admin/seo/{{$seo->id}}" method="post">
                             @csrf
                             <div class="form-group">

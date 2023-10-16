@@ -11,7 +11,7 @@
                     <h4 class="card-header">
                         最新消息管理-新增
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form method="POST" action="{{ route('back.news.store') }}" enctype="multipart/form-data">
                             @csrf
                             @foreach ($errors->all() as $error)

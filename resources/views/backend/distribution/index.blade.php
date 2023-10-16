@@ -10,7 +10,7 @@
                     <h4 class="card-header">
                         商品經銷來信管理
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <table id="table" class="table table-bordered table-striped table-hover">
                             <thead>
                             <tr>

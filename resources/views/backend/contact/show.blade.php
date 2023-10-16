@@ -8,7 +8,7 @@
                     <h4 class="card-header">
                         加盟來信管理-查看更多
                     </h4>
-                    <div class="card-body">
+                    <div class="card-body container overflow-y-auto max-height-for-container">
                         <form>
                             @csrf
                             <div class="form-group row">
