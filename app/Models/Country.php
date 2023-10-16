@@ -33,4 +33,8 @@ class Country extends Model
     {
         return $this->hasMany(Shop::class, 'country_id')->orderBy('sort','asc');
     }
+    public function Contact()
+    {
+        return $this->hasMany(Shop::class, 'country_id')->orderBy('sort','asc');
+    }
 }

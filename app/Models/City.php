@@ -29,4 +29,9 @@ class City extends Model
     {
         return $this->hasMany(Shop::class, 'city_id')->orderBy('sort','asc');
     }
+
+    public function Contact()
+    {
+        return $this->hasMany(Shop::class, 'city_id')->orderBy('sort','asc');
+    }
 }
