@@ -8,28 +8,28 @@ let dropFranchisee = document.querySelector('header #drop-franchisee');
 
 
 navToggler.addEventListener('click', function () {
-  menuShow.classList.toggle('show');
+    menuShow.classList.toggle('show');
 })
-dropAbout.addEventListener('click', function() {
-  menuShow.classList.remove('show');
+dropAbout.addEventListener('click', function () {
+    menuShow.classList.remove('show');
 })
-dropDistribution.addEventListener('click', function() {
-  menuShow.classList.remove('show');
+dropDistribution.addEventListener('click', function () {
+    menuShow.classList.remove('show');
 })
-dropClassic.addEventListener('click', function() {
-  menuShow.classList.remove('show');
+dropClassic.addEventListener('click', function () {
+    menuShow.classList.remove('show');
 })
-dropMedia.addEventListener('click', function() {
-  menuShow.classList.remove('show');
+dropMedia.addEventListener('click', function () {
+    menuShow.classList.remove('show');
 })
-dropFranchisee.addEventListener('click', function() {
-  menuShow.classList.remove('show');
+dropFranchisee.addEventListener('click', function () {
+    menuShow.classList.remove('show');
 })
 
 
 var swiper = new Swiper(".header-swiper-container", {
-  navigation: {
-    nextEl: ".header-button-next",
-    prevEl: ".header-button-prev",
-  },
+    navigation: {
+        nextEl: ".header-button-next",
+        prevEl: ".header-button-prev",
+    },
 });
