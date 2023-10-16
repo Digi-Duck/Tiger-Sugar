@@ -36,11 +36,11 @@
                 </div>
                 <div class="form-phone">
                     <label for="phone">聯絡電話｜Phone <span>*</span> </label>
-                    <input id="phone" type="text" class="form-phone-input" required name="phone">
+                    <input id="phone" type="text" class="form-phone-input" placeholder="請輸入電話號碼" required name="phone">
                 </div>
                 <div class="form-address">
                     <label for="address">通訊地址｜Address <span>*</span> </label>
-                    <input id="address" type="text" class="form-address-input" required name="address">
+                    <input id="address" type="text" class="form-address-input" placeholder="請輸入通訊地址" required name="address">
                 </div>
                 <div class="form-franchisee-type">
                     <label for="franchisee_type">加盟方式｜franchisee type <span>*</span> </label>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="form-country-city">
-                    <input id="store_address" type="text" class="form-country-city-input" placeholder="Address"
+                    <input id="store_address" type="text" class="form-country-city-input" placeholder="請輸入完整地址"
                         required name="store_address">
                 </div>
                 <div class="form-other">
