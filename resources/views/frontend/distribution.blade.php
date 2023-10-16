@@ -205,7 +205,7 @@
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
                                         alt="產品圖片1" />
                                 </div> --}}
-                                <div class="swiper-slide swiper-pop-top-slide">
+                                {{-- <div class="swiper-slide swiper-pop-top-slide">
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun2.jpeg') }}"
                                         alt="產品圖片2" />
                                 </div>
@@ -216,13 +216,13 @@
                                 <div class="swiper-slide swiper-pop-top-slide">
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun4.jpeg') }}"
                                         alt="產品圖片4" />
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
-                        <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
-                            <div class="swiper-wrapper">
 
-                                <div class="swiper-slide swiper-pop-top-slide">
+                        <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
+                            <div class="swiper-wrapper poping-swiper-sub">
+                                {{-- <div class="swiper-slide swiper-pop-top-slide ">
                                     <div class="pop-sub-border-img">
                                         <img class="sub-img"
                                             src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
@@ -249,7 +249,7 @@
                                             src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun4.jpeg') }}"
                                             alt="產品圖片4" />
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="swiper-button-next">
                                 <img class="next-prev-img"

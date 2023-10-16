@@ -1,15 +1,17 @@
-var swiper = new Swiper(".my-pop-swiper", {
+var PopSwiper = new Swiper(".my-pop-swiper", {
     loop: true,
     spaceBetween: 4,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
     direction: 'horizontal',
-    breakpoints: {  
+    breakpoints: {
         768: {
             direction: 'vertical',
         },
     },
+    observer:true,
+    observeParents:true,
 });
 
 // sub swiper

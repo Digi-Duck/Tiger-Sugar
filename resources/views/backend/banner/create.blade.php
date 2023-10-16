@@ -66,11 +66,11 @@
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
-                                                required>
+                                                required placeholder="當圖片失效時，用文字來描述圖片內容">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="link_url" class="col-2 col-form-label">圖片連結 <span class="text-danger fs-4" >*</span> </label>
+                                        <label for="link_url" class="col-2 col-form-label">圖片連結 </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="link_url" name="link_url">
                                         </div>
