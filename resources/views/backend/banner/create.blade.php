@@ -66,20 +66,20 @@
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
-                                                required placeholder="當圖片失效時，用文字來描述圖片內容">
+                                                required placeholder="當圖片失效時，用文字來描述圖片內容" value="{{ old('image_alt',$image_alt ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="link_url" class="col-2 col-form-label">圖片連結 </label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" id="link_url" name="link_url">
+                                            <input type="text" class="form-control" id="link_url" name="link_url" value="{{ old('link_url',$link_url ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="link_url" class="col-2 col-form-label">另開視窗 </label>
                                         <div class="col-10" style="padding-left: 35px">
                                             <input class="form-check-input" type="checkbox" value="link_target"
-                                                name="link_target" id="link_target">
+                                                name="link_target" id="link_target" value="{{ old('link_target',$link_target ?? '') }}">
                                             <label class="form-check-label" for="link_target">
                                                 另開新視窗
                                             </label>
@@ -120,7 +120,7 @@
                                 <label for="sort" class="col-2 col-form-label">權重 <span class="text-danger fs-4" >*</span> </label>
                                 <div class="col-10">
                                     <input type="number" class="form-control" id="sort" name="sort" required
-                                        value="{{ old('sort', $sort ?? '1') }}" min="0" max="999">
+                                        value="{{ old('sort', $sort ?? '') }}" min="0" max="999">
                                 </div>
                             </div>
                             <hr>

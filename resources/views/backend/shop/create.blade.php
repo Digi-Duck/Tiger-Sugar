@@ -36,20 +36,20 @@
                             <div class="form-group row">
                                 <label for="shop_name" class="col-2 col-form-label">店名</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="shop_name" name="shop_name" required>
+                                    <input type="text" class="form-control" id="shop_name" name="shop_name" required value="{{ old('shop_name',$shop_name ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="address" class="col-2 col-form-label">地址</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="address" name="address" required>
+                                    <input type="text" class="form-control" id="address" name="address" required value="{{ old('address',$address ?? '') }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="phone" class="col-2 col-form-label">電話</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="phone" name="phone" required>
+                                    <input type="text" class="form-control" id="phone" name="phone" required value="{{ old('phone',$phone ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">

@@ -22,7 +22,7 @@
                                     <div class="form-group row">
                                         <label for="name" class="col-2 col-form-label" style="text-align: center">影片名字</label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" id="pc_video_url" name="name" required>
+                                            <input type="text" class="form-control" id="pc_video_url" name="name" required value="{{ old('name', $name ?? '') }}">
                                         </div>
                                     </div>
 

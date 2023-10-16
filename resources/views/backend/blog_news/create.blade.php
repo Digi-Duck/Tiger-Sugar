@@ -19,25 +19,25 @@
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="author" name="author" required>
+                                    <input class="form-control" id="author" name="author" required value="{{ old('author',$author ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="link" class="col-2 col-form-label">文章連結</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="link" name="link" required>
+                                    <input class="form-control" id="link" name="link" required value="{{ old('link',$link ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="title" class="col-2 col-form-label">文章標題</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="title" name="title" required>
+                                    <input class="form-control" id="title" name="title" required value="{{ old('title',$title ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="info" class="col-2 col-form-label">文章簡述</label>
                                 <div class="col-10">
-                                    <textarea  class="form-control" id="info" name="info" required></textarea>
+                                    <textarea  class="form-control" id="info" name="info" required value="{{ old('info',$info ?? '') }}"></textarea>
                                 </div>
                             </div>
 

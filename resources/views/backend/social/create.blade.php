@@ -52,14 +52,14 @@
                                     <div class="form-group row">
                                         <label for="embed_name" class="col-2 col-form-label">社群回饋代稱</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="embed_name" name="embed_name" required>
+                                            <input class="form-control" id="embed_name" name="embed_name" required value="{{ old('embed_name',$embed_name ?? '') }}">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="embed_link" class="col-2 col-form-label">嵌入碼</label>
                                         <div class="col-10">
-                                            <textarea class="form-control" rows="3" id="embed_link" name="embed_link" required></textarea>
+                                            <textarea class="form-control" rows="3" id="embed_link" name="embed_link" required value="{{ old('embed_link',$embed_link ?? '') }}"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -90,13 +90,13 @@
                                     <div class="form-group row">
                                         <label for="user_name" class="col-2 col-form-label">使用者名稱</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="user_name" name="user_name">
+                                            <input class="form-control" id="user_name" name="user_name" value="{{ old('user_name',$user_name ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="user_account" class="col-2 col-form-label">使用者帳號</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="user_account" name="user_account">
+                                            <input class="form-control" id="user_account" name="user_account" value="{{ old('user_account',$user_account ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -105,7 +105,7 @@
                                                     class="fas fa-info-circle"></i></a></label>
                                         <div class="col-10">
                                             <input class="form-control" id="social_icon" name="social_icon"
-                                                placeholder='<i class="fab fa-weibo"></i>'>
+                                                placeholder='<i class="fab fa-weibo"></i>' value="{{ old('social_icon',$social_icon ?? '') }}">
                                             <small class="text-danger">* We are using font awesome icon in this
                                                 field,please click left info button goto font awesome website, and copy
                                                 icons html code.</small>
@@ -115,19 +115,19 @@
                                         <label for="social_icon_color" class="col-2 col-form-label">社群Icon顏色</label>
                                         <div class="col-10">
                                             <input type="color" class="form-control" id="social_icon_color"
-                                                name="social_icon_color">
+                                                name="social_icon_color" value="{{ old('social_icon_color',$social_icon_color ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="link_title" class="col-2 col-form-label">連結名稱</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="link_title" name="link_title">
+                                            <input class="form-control" id="link_title" name="link_title" value="{{ old('link_title',$link_title ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="link_href" class="col-2 col-form-label">超連結網址</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="link_href" name="link_href">
+                                            <input class="form-control" id="link_href" name="link_href" value="{{ old('link_href',$link_href ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -143,13 +143,13 @@
                                     <div class="form-group row">
                                         <label for="social_info" class="col-2 col-form-label">內容</label>
                                         <div class="col-10">
-                                            <input class="form-control" id="social_info" name="social_info">
+                                            <input class="form-control" id="social_info" name="social_info" value="{{ old('social_info',$social_info ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="post_date" class="col-2 col-form-label">發布日期</label>
                                         <div class="col-10">
-                                            <input type="date" class="form-control" id="post_date" name="post_date">
+                                            <input type="date" class="form-control" id="post_date" name="post_date" value="{{ old('post_date',$post_date ?? '') }}">
                                         </div>
                                     </div>
                                 </div>

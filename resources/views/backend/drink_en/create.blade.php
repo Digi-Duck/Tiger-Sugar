@@ -32,7 +32,7 @@
                             <div class="form-group row">
                                 <label for="drink_name" class="col-2 col-form-label">飲品名稱</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="drink_name" name="drink_name" required>
+                                    <input class="form-control" id="drink_name" name="drink_name" required value="{{ old('drink_name', $drink_name ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">

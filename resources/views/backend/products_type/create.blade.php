@@ -20,19 +20,19 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" min="1" value="1" required>
+                                    <input type="number" class="form-control" id="sort" name="sort" min="1" value="{{ old('sort',$sort ?? '1') }}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="tw_name" class="col-2 col-form-label">商品種類 (中)</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="tw_name" name="tw_name" required>
+                                    <input class="form-control" id="tw_name" name="tw_name" required value="{{ old('tw_name',$tw_name ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="en_name" class="col-2 col-form-label">商品種類 (英)</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="en_name" name="en_name" required>
+                                    <input class="form-control" id="en_name" name="en_name" required value="{{ old('en_name',$en_name ?? '') }}">
                                 </div>
                             </div>
 

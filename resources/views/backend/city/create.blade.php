@@ -32,13 +32,13 @@
                             <div class="form-group row">
                                 <label for="city_name" class="col-2 col-form-label">城市名稱(中)</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="city_name" name="city_name" required>
+                                    <input class="form-control" id="city_name" name="city_name" required value="{{ old('city_name', $city_name ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="city_name_en" class="col-2 col-form-label">城市名稱(英)</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="city_name_en" name="city_name_en" required>
+                                    <input class="form-control" id="city_name_en" name="city_name_en" required value="{{ old('city_name_en', $city_name_en ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -57,28 +57,28 @@
                             <div class="form-group row">
                                 <label for="fb_link" class="col-2 col-form-label">FB連結</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="fb_link" name="fb_link">
+                                    <input class="form-control" id="fb_link" name="fb_link" value="{{ old('fb_link', $fb_link ?? '') }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="ig_link" class="col-2 col-form-label">IG連結</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="ig_link" name="ig_link">
+                                    <input class="form-control" id="ig_link" name="ig_link" value="{{ old('ig_link', $ig_link ?? '') }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="link" class="col-2 col-form-label">官方網站連結</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="link" name="link">
+                                    <input class="form-control" id="link" name="link" value="{{ old('link', $link ?? '') }}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="weibo_link" class="col-2 col-form-label">微博連結</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="weibo_link" name="weibo_link">
+                                    <input class="form-control" id="weibo_link" name="weibo_link" value="{{ old('weibo_link', $weibo_link ?? '') }}">
                                 </div>
                             </div>
 

@@ -22,13 +22,13 @@
                             <div class="form-group row">
                                 <label for="type_name" class="col-2 col-form-label">類型名稱</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="type_name" name="type_name" required>
+                                    <input class="form-control" id="type_name" name="type_name" required value="{{ old('type_name', $type_name ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="type_info" class="col-2 col-form-label">副標題</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="type_info" name="type_info">
+                                    <input class="form-control" id="type_info" name="type_info" value="{{ old('type_info', $type_info ?? '') }}">
                                 </div>
                             </div>
 

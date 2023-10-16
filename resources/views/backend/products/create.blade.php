@@ -39,13 +39,13 @@
                                 <div class="form-group row">
                                     <label for="title_zh" class="col-2 col-form-label">商品名稱(中)</label>
                                     <div class="col-10">
-                                        <input class="form-control" id="title_zh" name="title_zh" required>
+                                        <input class="form-control" id="title_zh" name="title_zh" required value="{{ old('title_zh',$title_zh ?? '') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="title_en" class="col-2 col-form-label">商品名稱(英)</label>
                                     <div class="col-10">
-                                        <input class="form-control" id="title_en" name="title_en" required>
+                                        <input class="form-control" id="title_en" name="title_en" required value="{{ old('title_en',$title_en ?? '') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -62,51 +62,51 @@
                                 <div class="form-group row">
                                     <label for="info" class="col-2 col-form-label">商品簡介</label>
                                     <div class="col-10">
-                                        <textarea name="info" id="info" rows="10" style="width: 100%"></textarea>
+                                        <textarea name="info" id="info" rows="10" style="width: 100%" value="{{ old('info',$info ?? '') }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="launch_date" class="col-2 col-form-label">上市日期</label>
                                     <div class="col-10">
                                         <input type="date" class="form-control" id="launch_date" name="launch_date"
-                                            required>
+                                            required value="{{ old('launch_date',$launch_date ?? '') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="weight" class="col-2 col-form-label">淨重(克)</label>
                                     <div class="col-10">
-                                        <input type="number" class="form-control" id="weight" name="weight" required>
+                                        <input type="number" class="form-control" id="weight" name="weight" required value="{{ old('weight',$weight ?? '') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="shelf_life" class="col-2 col-form-label">保存期限(月)</label>
                                     <div class="col-10">
                                         <input type="number" class="form-control" id="shelf_life" name="shelf_life"
-                                            required>
+                                            required value="{{ old('shelf_life',$shelf_life ?? '') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="preserve" class="col-2 col-form-label">保存方式</label>
                                     <div class="col-10">
-                                        <textarea name="preserve" id="preserve" rows="10" style="width: 100%"></textarea>
+                                        <textarea name="preserve" id="preserve" rows="10" style="width: 100%" value="{{ old('preserve',$preserve ?? '') }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="content" class="col-2 col-form-label">內容</label>
                                     <div class="col-10">
-                                        <textarea class="summernote" name="content" id="content" cols="30" rows="10"></textarea>
+                                        <textarea class="summernote" name="content" id="content" cols="30" rows="10" value="{{ old('content',$content ?? '') }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="notes" class="col-2 col-form-label">注意事項</label>
                                     <div class="col-10">
-                                        <textarea class="summernote" name="notes" id="notes" cols="30" rows="10"></textarea>
+                                        <textarea class="summernote" name="notes" id="notes" cols="30" rows="10" value="{{ old('notes',$notes ?? '') }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="video" class="col-2 col-form-label">影片連結</label>
                                     <div class="col-10">
-                                        <input type="text" class="form-control" id="video" name="video" required>
+                                        <input type="text" class="form-control" id="video" name="video" required value="{{ old('video',$video ?? '') }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
