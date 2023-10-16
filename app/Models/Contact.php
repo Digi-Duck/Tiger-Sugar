@@ -25,4 +25,14 @@ class Contact extends Model
         'store_address',
         'other',
     ];
+
+    public function Country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
+    }
+
+    public function City()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }
