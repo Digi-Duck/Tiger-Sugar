@@ -27,7 +27,7 @@ function closePopup(event) {
 //   btn.addEventListener('click', function (event) {
 //       document.querySelector('.im-pop-window').style.display ='block';
 //       document.querySelector('.window-overlay').style.display = 'block';
-//       console.log('123888');
+//       console.log('123');
 //   });
 // });
 
@@ -36,7 +36,7 @@ function getDate(date) {
     const year = objectDate.getFullYear();
     const month = objectDate.getMonth() + 1;
     const day = objectDate.getDate();
-    return [year,month,day];
+    return [year, month, day];
 };
 
 const openPopWindows = document.querySelectorAll('.open-pop-window');
@@ -45,13 +45,6 @@ openPopWindows.forEach(function (btn) {
         const data = JSON.parse(btn.children[1].value);
         document.querySelector('.im-pop-window').style.display = 'block';
         document.querySelector('.window-overlay').style.display = 'block';
-
-        // let popSwiper = document.querySelector('.poping-swiper');
-        // popSwiper.innerHTML = '';
-        // data.products_imgs.forEach(item => {
-        //     popSwiper.innerHTML += `<div class="swiper-slide swiper-pop-top-slide">
-        //     <img src="${item.img_url}" alt="產品圖片" /> </div>`;
-        // });
 
         let popSwiper = document.querySelector('.poping-swiper');
         let popSwiperSub = document.querySelector('.poping-swiper-sub');
@@ -63,15 +56,6 @@ openPopWindows.forEach(function (btn) {
             popSwiperSub.innerHTML += `<div class="swiper-slide swiper-pop-top-slide poping-swiper-sub">
             <div class="pop-sub-border-img"> <img class="sub-img" src="${item.img_url}" alt="產品圖片" /> </div> </div>`
         });
-        PopSwiper.update();
-
-        // PopSwiper.init(PopSwiperOpts);
-        // let popSwiperSub = document.querySelector('.poping-swiper-sub');
-        // popSwiperSub.innerHTML = '';
-        // data.products_imgs.forEach(itemSub => {
-        //     popSwiperSub.innerHTML += `<img class="sub-img" src="${itemSub.img_url}" alt="產品圖片" />`;
-        // console.log(itemSub);
-        // });
 
         let contentTitle = document.querySelector('.content-text-title');
         contentTitle.innerHTML = `<div class="content-text-title">${data.title_zh}</div>`
@@ -83,7 +67,7 @@ openPopWindows.forEach(function (btn) {
         infomation.innerHTML = `<div class="content-text-product-describe">${data.info} </div>`;
 
         let date = document.querySelector('.listed-date');
-        const [year,month,day] = getDate(data.launch_date);
+        const [year, month, day] = getDate(data.launch_date);
         date.innerHTML = `<div class="listed-date">${year}
             <div class="unit">年</div>${month}
             <div class="unit">月</div>${day}
@@ -100,7 +84,31 @@ openPopWindows.forEach(function (btn) {
         let preserve = document.querySelector('.commodity-preservation-method');
         preserve.innerHTML = `<div class="method-title">保存方式</div>
         <div class="method-text">${data.preserve}</div>`;
-        console.log(data);
+        let contentLeft = document.querySelector('.content-left');
+        contentLeft.innerHTML = '';
+        data.content.split('\r\n').forEach(item => {
+            contentLeft.innerHTML += `<p>${item}</p>`;
+        });
+        let contentMiddle = document.querySelector('.content-middle');
+        contentMiddle.innerHTML = '';
+        data.notes.split('\r\n').forEach(item => {
+            contentMiddle.innerHTML += `<p>${item}</p>`;
+        });
+        // let video = document.querySelector('.content-right');
+        // video.innerHTML = `${data.video}`;
+        // element.addEventListener('touchstart', function(event) {
+            let video = document.querySelector('.content-right');
+            const youtubeUrl = data.video;
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://www.youtube.com/embed/VIDEO_ID";
+            iframe.width = "560";
+            iframe.height = "315";
+            iframe.allowFullscreen = true;
+            video.appendChild(iframe);
+        // }, { passive: true });
+
+
+        console.log(data.video);
     });
     // console.log(btn.children[1].value);
 });

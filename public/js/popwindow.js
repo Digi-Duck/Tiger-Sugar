@@ -1,4 +1,4 @@
-var PopSwiper = new Swiper(".my-pop-swiper", {
+var swiper = new Swiper(".my-pop-swiper", {
     loop: true,
     spaceBetween: 4,
     slidesPerView: 4,
@@ -10,8 +10,8 @@ var PopSwiper = new Swiper(".my-pop-swiper", {
             direction: 'vertical',
         },
     },
-    observer:true,
-    observeParents:true,
+    // observer:true,
+    // observeParents:true,
 });
 
 // sub swiper
@@ -52,6 +52,7 @@ var swiperCommidity = new Swiper(".pop-window-bottom-swiper", {
 });
 
 //  table選單
+
 document.addEventListener('DOMContentLoaded', function () {
     const navDropDownLeft = document.querySelector('.drop-down-content');
     const navDropDownMiddle = document.querySelector('.drop-down-warn');
@@ -67,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (navDropDownRight.checked) {
         contentRight.style.display = 'block';
     }
-
     navDropDownLeft.addEventListener('click', () => {
         contentLeft.style.display = 'block';
         contentMiddle.style.display = 'none';

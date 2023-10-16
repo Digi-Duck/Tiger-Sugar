@@ -569,7 +569,7 @@
         });
     </script>
 
-    <script src="{{ asset('./js/distribution.js') }}"></script>
-    <script src="{{ asset('./js/popwindow.js') }}"></script>
-    <script src="{{ asset('./js/header.js') }}"></script>
+<script src="{{ asset('./js/popwindow.js') }}"></script>
+<script src="{{ asset('./js/distribution.js') }}"></script>
+<script src="{{ asset('./js/header.js') }}"></script>
 @endsection

@@ -387,7 +387,7 @@ body {
     #pop-window .method-text {
         align-items:center;
     }
-    
+
 }
 @media screen and (max-width:1100px) {
     #pop-window .add-for-ask-button {
@@ -868,7 +868,7 @@ a {
     }
     #pop-window .method-title {
         margin-right: 44px;
-    }   
+    }
 }
 
 @media (max-width:559px) {
@@ -881,7 +881,7 @@ a {
         height: 304px;
         margin: 5px;
     }
-    
+
     /* #pop-window .sub-img {
         width: 267px;
         height: 291px;
