@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\BlogNews;
 use App\Models\DrinkType;
+use App\Models\FranchiseExplain;
 use App\Models\Media;
 use App\Models\Products;
 use App\Models\Social;
@@ -25,9 +26,9 @@ class FrontController extends Controller
 
     public function distribution()
     {
-        $products = Products::with('ProductsType','ProductsImgs')->orderBy('sort','asc')->get();
+        $products = Products::with('ProductsType', 'ProductsImgs')->orderBy('sort', 'asc')->get();
         // dd($products);
-        return view('frontend.distribution',compact('products'));
+        return view('frontend.distribution', compact('products'));
     }
 
     public function distributionConfirm()
@@ -37,7 +38,23 @@ class FrontController extends Controller
 
     public function franchisee()
     {
-        return view('frontend.franchisee');
+        $franchise_explains = FranchiseExplain::orderBy('id')->get();
+        $item = 1;
+        foreach ($franchise_explains as $value) {
+            $value->sequence = $item;
+            $item++;
+        };
+        $oddItems = [];
+        $evenItems = [];
+
+        foreach ($franchise_explains as $item) {
+            if ($item->sequence % 2 == 1) {
+                $oddItems[] = $item;
+            } else {
+                $evenItems[] = $item;
+            }
+        }
+        return view('frontend.franchisee', compact('franchise_explains', 'oddItems', 'evenItems'));
     }
 
     public function franchiseeForm()
