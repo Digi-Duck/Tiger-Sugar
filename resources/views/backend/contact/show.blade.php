@@ -53,9 +53,16 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="now_image_mb" class="col-2 col-form-label">預定加盟城市</label>
+                                <label for="now_image_mb" class="col-2 col-form-label">加盟方式</label>
                                 <div class="col-10">
-                                    <input class="form-control" type="text" readonly value="{{$contact_info->store_address}}">
+                                    <input class="form-control" type="text" readonly value="{{$contact_info->franchisee_type}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="now_image_mb" class="col-2 col-form-label pe-0">預定加盟城市/地址</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" readonly value="{{ $contact_info->capital }} | {{$contact_info->store_address}}">
                                 </div>
                             </div>
 

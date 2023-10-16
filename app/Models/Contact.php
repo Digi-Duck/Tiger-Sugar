@@ -15,11 +15,13 @@ class Contact extends Model
 
     protected $fillable = [
         'user_name',
-        'country',
         'birth_day',
         'email',
         'phone',
         'address',
+        'franchisee_type',
+        'country',
+        'capital',
         'store_address',
         'other',
     ];
