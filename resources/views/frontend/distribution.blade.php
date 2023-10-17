@@ -93,13 +93,14 @@
                                         <img src="{{ $product->img }}" alt="產品1" />
                                     </div>
                                     <div class="yellow-box">
-                                        <img src="{{ asset('./frontend-img/distribution-img/pop-window/delete.svg') }}"
-                                            alt="黃色刪除框" />
+                                        <img class="ask-icon" data-product="{{ $product->id }}"
+                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
+                                                alt="黃色加入以詢問">
                                     </div>
                                     <div class="product-background-hover open-pop-window">
-                                        <a href="" class="yellow-box-hover" title="更多商品"><img
-                                                src="{{ asset('./frontend-img/distribution-img/pop-window/delete_hover.svg') }}"
-                                                alt="黃色刪除框hover" /></a>
+                                        <a href="" class="yellow-box-hover" title="更多商品"><img class="ask-icon-hover" data-product="{{ $product->id }}"
+                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                            alt="黃色加入以詢問"></a>
                                         <input type="text" class="inputall" name="inputall{{ $product->id }}"
                                             value="{{ $product }}">
                                         <button class="product-background-hover-more">MORE</button>
