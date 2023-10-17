@@ -24,7 +24,9 @@ class FrontEnController extends Controller
     }
 
     public function distribution() {
-        return view('frontend_en.distribution_en');
+
+        $products = Products::with('ProductsType', 'ProductsImgs')->orderBy('sort', 'asc')->get();
+        return view('frontend_en.distribution_en',compact('products'));
     }
 
     public function distributionConfirm() {

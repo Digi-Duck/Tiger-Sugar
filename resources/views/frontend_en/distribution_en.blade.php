@@ -1,14 +1,15 @@
-@extends('layouts.frontend-en-template')
+@extends('layouts.frontend-template')
 
 @section('css')
     <!-- 各分頁css -->
-    <link rel="stylesheet" href="{{ asset('css/distribution_en.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/distribution.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/popwindow.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
 @endsection
 
 @section('main')
+    <main></main>
     <div class="window-overlay"></div>
     <!-- 內容頁 -->
     <section id="distribution">
@@ -27,7 +28,7 @@
                         </div>
                     </div>
                     <div class="select-all">
-                        <button class="select-all-btn" type="button">Seclet all</button>
+                        <button class="select-all-btn" type="button">全部選取</button>
                     </div>
                 </div>
                 <!-- 各品項與頁面數swiper -->
@@ -70,13 +71,13 @@
                     <div class="page-up-and-page-down-group">
                         <a href="" class="page-up" title="上一個頁面">
                             <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
-                                alt="上一頁小圖標" />prev</a>
+                                alt="上一頁小圖標" />上一頁</a>
                         <a href="" class="page-1" title="第一頁">1</a>
                         <a href="" class="page-2" title="第二頁">2</a>
                         <a href="" class="page-3" title="第三頁">3</a>
                         <a href="" class="page-4" title="第四頁">4</a>
                         <a href="" class="page-5" title="第五頁">5</a>
-                        <a href="" class="page-down" title="下一個頁面">next
+                        <a href="" class="page-down" title="下一個頁面">下一頁
                             <img src="{{ asset('./frontend-img/distribution-img/distribution/next.png') }}"
                                 alt="下一頁小圖標" />
                         </a>
@@ -84,250 +85,39 @@
                 </div>
                 <!-- 產品方格 -->
                 <div class="prduct-grid-columns">
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover open-pop-window" id="">
-                                    <a href="" class="yellow-box-hover" title="更多商品"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
+                    @foreach ($products as $product)
+                        <div class="product-group">
+                            <div class="product-img-group">
+                                <div class="product-background">
+                                    <div class="product">
+                                        <img src="{{ $product->img }}" alt="產品1" />
+                                    </div>
+                                    <div class="yellow-box">
+                                        <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
+                                            alt="黃色詢問框" />
+                                    </div>
+                                    <div class="product-background-hover open-pop-window">
+                                        <a href="" class="yellow-box-hover" title="更多商品"><img
+                                                src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
+                                                alt="黃色詢問框hover" /></a>
+                                        <input type="text" class="inputall" name="inputall{{ $product->id }}"
+                                            value="{{ $product }}">
+                                        <button class="product-background-hover-more">MORE</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
+                            <div class="product-info">
+                                <div class="product-title">{{ $product->title_zh }}</div>
+                                <div class="product-title-en">
+                                    {{ $product->title_en }}
                                 </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
+                                <div class="product-id">
+                                    {{ $product->ProductsType->tw_name }}|{{ $product->ProductsType->en_name }}</div>
                             </div>
                         </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
-                    <div class="product-group">
-                        <div class="product-img-group">
-                            <div class="product-background">
-                                <div class="product">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                        alt="產品1" />
-                                </div>
-                                <div class="yellow-box">
-                                    <img src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask.svg') }}"
-                                        alt="黃色詢問框" />
-                                </div>
-                                <div class="product-background-hover">
-                                    <a href="" class="yellow-box-hover" title="詢問加入購物車框"><img
-                                            src="{{ asset('./frontend-img/distribution-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色詢問框hover" /></a>
-                                    <button class="product-background-hover-more">MORE</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-title">老虎芝士流心雪糕</div>
-                            <div class="product-title-en">
-                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                            </div>
-                            <div class="product-id">冰品 | Ice</div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
 
                 <!-- 下方分隔線 -->
@@ -338,13 +128,13 @@
                 <div class="page-up-and-page-down-group-buttom">
                     <a href="" class="page-up" title="上一個頁面">
                         <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
-                            alt="上一頁小圖標" />prev</a>
+                            alt="上一頁小圖標" />上一頁</a>
                     <a href="" class="page-1" title="第一頁">1</a>
                     <a href="" class="page-2" title="第二頁">2</a>
                     <a href="" class="page-3" title="第三頁">3</a>
                     <a href="" class="page-4" title="第四頁">4</a>
                     <a href="" class="page-5" title="第五頁">5</a>
-                    <a href="" class="page-down" title="下一個頁面">next
+                    <a href="" class="page-down" title="下一個頁面">下一頁
                         <img src="{{ asset('./frontend-img/distribution-img/distribution/next.png') }}" alt="下一頁小圖標" />
                     </a>
                 </div>
@@ -382,6 +172,9 @@
     </section>
 
     <!-- 彈跳視窗初代 -->
+    @foreach ($products as $product)
+        {{-- @dump($product) --}}
+    @endforeach
     <div id="pop-window" class="im-pop-window">
         <div class="container">
             <div class="pop-window-content">
@@ -402,7 +195,8 @@
                     <!-- 彈跳視窗上半部swiper -->
                     <div class="product-information-swiper">
                         <div thumbsSlider="" class="swiper-pop-top swiper my-pop-swiper">
-                            <div class="swiper-wrapper display-vertical">
+                            <div class="swiper-wrapper display-vertical poping-swiper">
+
                                 <div class="swiper-pop-top-slide swiper-slide">
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
                                         alt="產品圖片1" />
@@ -421,10 +215,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
-                            <div class="swiper-wrapper">
 
-                                <div class="swiper-slide swiper-pop-top-slide">
+                        <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
+                            <div class="swiper-wrapper poping-swiper-sub">
+                                <div class="swiper-slide swiper-pop-top-slide ">
                                     <div class="pop-sub-border-img">
                                         <img class="sub-img"
                                             src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
@@ -771,7 +565,7 @@
         });
     </script>
 
-    <script src="{{ asset('./js/distribution.js') }}"></script>
     <script src="{{ asset('./js/popwindow.js') }}"></script>
+    <script src="{{ asset('./js/distribution.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
 @endsection
