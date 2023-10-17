@@ -9,6 +9,7 @@
 @endsection
 
 @section('main')
+    <main></main>
     <div class="window-overlay"></div>
     <!-- 內容頁 -->
     <section id="distribution">
@@ -101,7 +102,7 @@
                                                 alt="黃色詢問框hover" /></a>
                                         <input type="text" class="inputall" name="inputall{{ $product->id }}"
                                             value="{{ $product }}">
-                                        <button class="product-background-hover-more" >MORE</button>
+                                        <button class="product-background-hover-more">MORE</button>
                                     </div>
                                 </div>
                             </div>
@@ -196,16 +197,11 @@
                         <div thumbsSlider="" class="swiper-pop-top swiper my-pop-swiper">
                             <div class="swiper-wrapper display-vertical poping-swiper">
 
-                                        {{-- <div class="swiper-pop-top-slide swiper-slide">
+                                <div class="swiper-pop-top-slide swiper-slide">
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
                                         alt="產品圖片1" />
-                                </div> --}}
-
-                                    {{-- <div class="swiper-pop-top-slide swiper-slide">
-                                    <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
-                                        alt="產品圖片1" />
-                                </div> --}}
-                                {{-- <div class="swiper-slide swiper-pop-top-slide">
+                                </div>
+                                <div class="swiper-slide swiper-pop-top-slide">
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun2.jpeg') }}"
                                         alt="產品圖片2" />
                                 </div>
@@ -216,13 +212,13 @@
                                 <div class="swiper-slide swiper-pop-top-slide">
                                     <img src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun4.jpeg') }}"
                                         alt="產品圖片4" />
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
 
                         <div class="swiper swiper-pop-top my-pop-swiper-sub swiper-style">
                             <div class="swiper-wrapper poping-swiper-sub">
-                                {{-- <div class="swiper-slide swiper-pop-top-slide ">
+                                <div class="swiper-slide swiper-pop-top-slide ">
                                     <div class="pop-sub-border-img">
                                         <img class="sub-img"
                                             src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun1.jpeg') }}"
@@ -249,7 +245,7 @@
                                             src="{{ asset('./frontend-img/distribution-img/pop-window/sesamebun4.jpeg') }}"
                                             alt="產品圖片4" />
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                             <div class="swiper-button-next">
                                 <img class="next-prev-img"
@@ -569,7 +565,7 @@
         });
     </script>
 
-<script src="{{ asset('./js/popwindow.js') }}"></script>
-<script src="{{ asset('./js/distribution.js') }}"></script>
-<script src="{{ asset('./js/header.js') }}"></script>
+    <script src="{{ asset('./js/popwindow.js') }}"></script>
+    <script src="{{ asset('./js/distribution.js') }}"></script>
+    <script src="{{ asset('./js/header.js') }}"></script>
 @endsection

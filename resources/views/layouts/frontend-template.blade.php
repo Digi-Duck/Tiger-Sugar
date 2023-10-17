@@ -353,7 +353,6 @@
                     src="{{ asset('./frontend-img/header-img/go_to_top.svg') }}" alt="go_to_top"></a>
         </div>
     </header>
-
     @yield('main')
 
     <!-- 秋 footer -->
