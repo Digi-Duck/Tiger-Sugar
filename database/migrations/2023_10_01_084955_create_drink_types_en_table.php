@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('type_name')->comment('飲品種類英文名稱');
-            $table->string('type_info')->comment('飲品種類介紹');
+            $table->string('type_info')->nullable()->comment('飲品種類介紹');
             $table->integer('sort')->default(1)->comment('權重');
         });
     }

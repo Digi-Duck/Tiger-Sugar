@@ -28,17 +28,26 @@
                             <div class="trans-cover"></div>
                         </div>
                     </div>
-                    {{-- for each 用 --}}
-                    <div class="swiper-slide">
-                        {{-- <img src="{{ asset('frontend-img/distribution-img/pop-window/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}" alt=""> --}}
-                    </div>
-                    <div class="swiper-slide">
-                        {{-- <iframe src="{{ asset('frontend-img/index-img/media/phpEGFGi8.mp4') }}" frameborder="0"></iframe> --}}
-                    </div>
-                    <div class="swiper-slide">
-                        {{-- <iframe src="https://www.youtube.com/embed/eHAyE76wog0?si=i8xewDu9a9DXQu2J" title="YouTube video player" frameborder="0"></iframe> --}}
-                    </div>
-
+                    @foreach ($banners as $banner)
+                        <div class="swiper-slide">
+                            @if ($banner->type == '圖片')
+                                @if ($banner->link_url != '')
+                                    <a href="{{ $banner->link_url }}">
+                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}" alt="{{ $banner->image_alt }}">
+                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}" alt="{{ $banner->image_alt }}">
+                                    </a>
+                                @else
+                                    <div>
+                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}" alt="{{ $banner->image_alt }}">
+                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}" alt="{{ $banner->image_alt }}">
+                                    </div>
+                                @endif
+                            @elseif ($banner->type == '影片')
+                            <iframe class="banner-pc-vedio" src="https://youtube.com/embed/{{ $banner->pc_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1"> alt="{{ $banner->pc_video_url }}" frameborder="0"></iframe>
+                            <iframe class="banner-mb-vedio" src="https://youtube.com/embed/{{ $banner->mb_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1"> alt="{{ $banner->mb_video_url }}" frameborder="0"></iframe>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -129,86 +138,51 @@
             </div>
             <div class="container">
                 <!-- Swiper -->
-                {{-- <div class="swiper mySwiper-social">
+                <div class="swiper mySwiper-social">
                     <div class="swiper-wrapper">
                         @foreach ($social as $single_social)
-                            @if ($single_social->type == 'embed')
-                                <div class="swiper-slide"><iframe class="card-body" src="{{ $single_social->embed_link }}"
-                                        allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                        data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe></div>
-                            @else
-                                <div class="swiper-slide">
-                                    <div class="card-background">
-                                        <div class="post-userinfo">
-                                            <div class="float-left">
-                                                <span class="post-division"
-                                                    style="background-image: url('{{ $single_social->user_photo }}')"></span>
-                                            </div>
-                                            <div class="float-left">
-                                                <span class="user-name">{{ $single_social->user_name }}</span>
-                                                <span class="user-name2">{{ $single_social->user_account }}</span>
-                                            </div>
-                                            <div class="float-right"
-                                                style="color:{{ $single_social->social_icon_color }}">
-                                                {!! $single_social->social_icon !!}
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="card-img"
-                                            style="background-image:url('{{ $single_social->main_photo }}');"></div>
-                                        <div class="px-3">
-                                            <div class="post-link">
-                                                <a href="{{ $single_social->link_href }}">{{ $single_social->link_title }}</a>
+                        @if ($single_social->type == 'embed')
+                            <div class="swiper-slide"><iframe class="card-body"
+                                    src="{{ $single_social->embed_link }}" allowtransparency="true"
+                                    allowfullscreen="true" frameborder="0"
+                                    data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe></div>
+                        @else
+                            <div class="swiper-slide">
+                                <div class="iframe-card">
+                                    <div class="iframe-header">
+                                        <div class="iframe-left-user-info">
+                                            <img class="iframe-user-icon" src="{{ $single_social->user_photo }}"
+                                                alt="">
+                                            <div class="iframe-user-names">
+                                                <div class="iframe-user-name-top">{{ $single_social->user_name }}
+                                                </div>
+                                                <div class="iframe-user-name-down">{{ $single_social->user_account }}
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="px-3">
-                                            <div class="post-text">
-                                                {{ $single_social->social_info }}
-                                            </div>
+                                        <div class="iframe-social-icon">{{ $single_social->social_icon }}</div>
+                                    </div>
+                                    <img class="iframe-main-photo" src="{{ $single_social->main_photo }}">
+                                    <div class="iframe-down-content">
+                                        <div class="iframe-link-name">
+                                            <a href=""
+                                                class="iframe-link-detail">{{ $single_social->link_title }}</a>
                                         </div>
-                                        <div class="px-3">
-                                            <div class="post-date">{{ $single_social->post_date }}</div>
-                                        </div>
+                                        <div class="iframe-content">{{ $single_social->social_info }}</div>
+                                        <div class="iframe-update">{{ $single_social->post_date }}</div>
                                     </div>
                                 </div>
-                            @endif
-                        @endforeach
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/Ck3jKhFAVqQ/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A1%2C%22os%22%3A717.3000000119209%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-1" scrolling="no"></iframe></div>
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/CklcJ6FJJf5/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A2%2C%22os%22%3A718.3999999761581%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-2" scrolling="no"></iframe></div>
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/CfWV82HPtL0/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A3%2C%22os%22%3A1361.300000011921%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-3" scrolling="no"></iframe></div>
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/CjpcRW4vGyi/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A4%2C%22os%22%3A1376.5%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-4" scrolling="no"></iframe></div>
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/CgOU1bMMl2F/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A5%2C%22os%22%3A1381.699999988079%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-5" scrolling="no"></iframe></div>
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/CekdlemMFRL/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A6%2C%22os%22%3A1809.3999999761581%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-6" scrolling="no"></iframe></div>
-                        <div class="swiper-slide"><iframe class="card-body"
-                                src="https://www.instagram.com/p/CaBGWBAPCir/embed/?cr=1&amp;v=14&amp;wp=696&amp;rd=https%3A%2F%2Ftigersugar.com&amp;rp=%2F#%7B%22ci%22%3A7%2C%22os%22%3A1824.699999988079%2C%22ls%22%3A418.89999997615814%2C%22le%22%3A430%7D"
-                                allowtransparency="true" allowfullscreen="true" frameborder="0"
-                                data-instgrm-payload-id="instagram-media-payload-7" scrolling="no"></iframe></div>
-                    </div>
-                </div> --}}
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
             </div>
-            <div class="swiper-button-social">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
+        </div>
+        <div class="swiper-button-social">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
 
         <!-- 佑 產品經銷 -->
         <section id="distribution">
@@ -226,7 +200,7 @@
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
-                            {{-- @foreach ($products as $product)
+                            @foreach ($products as $product)
                                 <div class="swiper-slide">
                                     <div class="direction-body">
                                         <div class="img-w-h-border-img">
@@ -257,167 +231,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach --}}
-                            <div class="swiper-slide">
-                                <div class="direction-body">
-                                    <div class="img-w-h-border-img">
-                                        <img class="product-img"
-                                            src="{{ asset('./frontend-img/index-img/distribution/165899031442a0e188f5033bc65bf8d78622277c4e.jpg') }}"
-                                            alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                            alt="黃色加入以詢問">
-                                        <div class="product-img-hover">
-                                            <img class="ask-icon-hover"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
-                                                title="更多商品">
-                                                MORE
-                                                <button type="button" class="blade-button">
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="commodity-title">
-                                        經典黑糖麻糬包
-                                    </div>
-                                    <div class="commodity-title-english">
-                                        Black Sugar Mochi Bun
-                                    </div>
-                                    <div class="commodity-sort">
-                                        食品｜Food
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="direction-body">
-                                    <div class="img-w-h-border-img">
-                                        <img class="product-img"
-                                            src="{{ asset('./frontend-img/index-img/distribution/165899100742a0e188f5033bc65bf8d78622277c4e.jpg') }}"
-                                            alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                            alt="黃色加入以詢問">
-                                        <div class="product-img-hover">
-                                            <img class="ask-icon-hover"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
-                                                title="更多商品">
-                                                MORE
-                                                <button type="button" class="blade-button">
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="commodity-title">
-                                        爆漿起司流心包
-                                    </div>
-                                    <div class="commodity-title-english">
-                                        Bursting Cheese Filling Bun
-                                    </div>
-                                    <div class="commodity-sort">
-                                        食品｜Food
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="direction-body">
-                                    <div class="img-w-h-border-img">
-                                        <img class="product-img"
-                                            src="{{ asset('./frontend-img/index-img/distribution/1658908734cfecdb276f634854f3ef915e2e980c31.jpg') }}"
-                                            alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                            alt="黃色加入以詢問">
-                                        <div class="product-img-hover">
-                                            <img class="ask-icon-hover"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
-                                                title="更多商品">
-                                                MORE
-                                                <button type="button" class="blade-button">
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="commodity-title">
-                                        黑糖奶霜樹幹年輪
-                                    </div>
-                                    <div class="commodity-title-english">
-                                        Black Suga Cream Trunk Baumkuchen
-                                    </div>
-                                    <div class="commodity-sort">
-                                        甜點｜dessert
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="direction-body">
-                                    <div class="img-w-h-border-img">
-                                        <img class="product-img"
-                                            src="{{ asset('./frontend-img/index-img/distribution/16589912415878a7ab84fb43402106c575658472fa.jpg') }}"
-                                            alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                            alt="黃色加入以詢問">
-                                        <div class="product-img-hover">
-                                            <img class="ask-icon-hover"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
-                                                title="更多商品">
-                                                MORE
-                                                <button type="button" class="blade-button">
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="commodity-title">
-                                        特濃黑糖厚奶蓋蛋糕
-                                    </div>
-                                    <div class="commodity-title-english">
-                                        Black Sugar Cheese Foam Cake
-                                    </div>
-                                    <div class="commodity-sort">
-                                        甜點｜dessert
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="direction-body">
-                                    <div class="img-w-h-border-img">
-                                        <img class="product-img"
-                                            src="{{ asset('./frontend-img/index-img/distribution/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                            alt="產品圖片">
-                                        <img class="ask-icon"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                            alt="黃色加入以詢問">
-                                        <div class="product-img-hover">
-                                            <img class="ask-icon-hover"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                alt="黃色加入以詢問">
-                                            <a href={{ route('front.distribution.en') }} class="commodity-more-button btn"
-                                                title="更多商品">
-                                                MORE
-                                                <button type="button" class="blade-button">
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="commodity-title">
-                                        老虎芝士流心雪糕
-                                    </div>
-                                    <div class="commodity-title-english">
-                                        Tiger Cheese Filling Black Sugar Ice Cream Bar
-                                    </div>
-                                    <div class="commodity-sort">
-                                        冰品｜Ice
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="swiper-button-product">
@@ -478,7 +292,7 @@
                             </div>
                         </div>
                         <div class="menu-up">
-                            {{-- @foreach ($drink_types as $drink_type)
+                            @foreach ($drink_types as $drink_type)
                                 <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 300 }}">
                                     <div class="menu-type">
                                         <div class="up">
@@ -489,7 +303,7 @@
                                         </div>
                                         <div class="ul-group">
                                             <ul class="gold-border">
-                                                @foreach ($drink_type->drink as $drink)
+                                                @foreach ($drink_type->drinkEn as $drink)
                                                     <li>
                                                         <div class="menu-type-title">
                                                             <div class="menu-text">{{ $drink->drink_name }}</div>
@@ -508,7 +322,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                         </div>
                         <div class="menu-mid">
 
