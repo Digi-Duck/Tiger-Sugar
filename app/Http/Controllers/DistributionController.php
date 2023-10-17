@@ -33,7 +33,7 @@ class DistributionController extends Controller
         // 經銷國家
         $country = Country::find($contact_info->city)->country_name;
 
-        return view('admin.distribution.show',compact('contact_info', 'products', 'country'));
+        return view('backend.distribution.show',compact('contact_info', 'products', 'country'));
     }
 
     public function delete($id)

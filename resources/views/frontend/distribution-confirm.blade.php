@@ -33,12 +33,9 @@
                         <div class="title-bottom">
                             <div #swiperRef="" class="swiper mySwiper-distribution-container">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">全部｜All</div>
-                                    <div class="swiper-slide">零食｜Snack</div>
-                                    <div class="swiper-slide">冰品｜Ice</div>
-                                    <div class="swiper-slide">飲品｜Drink</div>
-                                    <div class="swiper-slide">食品｜Food</div>
-                                    <div class="swiper-slide">甜點｜dessert</div>
+                                    @foreach ($productsType as $list)
+                                        <div class="swiper-slide">{{ $list->tw_name }} | {{ $list->en_name }}</div>
+                                    @endforeach
                                 </div>
                                 <div class="swiper-button-distribution-container">
                                     <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
@@ -85,14 +82,16 @@
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/1668998205a2557a7b2e94197ff767970b67041697.jpg')}}"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/1668998205a2557a7b2e94197ff767970b67041697.jpg') }}"
                                         alt="商品圖片">
-                                    <img class="ask-icon" src="{{asset('./frontend-img/distribution-confirm-img/delete.svg')}}"
+                                    <img class="ask-icon"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
                                         alt="移除已加商品">
                                     <div class="product-img-hover">
                                         <a href="" class="cursor-p">
                                             <img class="ask-icon-hover"
-                                                src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                                src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
+                                                alt="移除已加商品">
                                         </a>
                                         <a href="" class="commodity-more-button btn-more" title="獲取獲取商品規格資訊">
                                             MORE
@@ -112,13 +111,15 @@
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/165899031442a0e188f5033bc65bf8d78622277c4e.jpg')}}"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/165899031442a0e188f5033bc65bf8d78622277c4e.jpg') }}"
                                         alt="商品圖片">
-                                    <img class="ask-icon" src="{{asset('./frontend-img/distribution-confirm-img/delete.svg')}}"
+                                    <img class="ask-icon"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
                                         alt="移除已加商品">
                                     <div class="product-img-hover open-pop-window">
                                         <img class="ask-icon-hover"
-                                            src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
+                                            alt="移除已加商品">
                                         <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
                                             MORE
                                         </a>
@@ -137,13 +138,15 @@
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/165899100742a0e188f5033bc65bf8d78622277c4e.jpg')}}"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/165899100742a0e188f5033bc65bf8d78622277c4e.jpg') }}"
                                         alt="商品圖片">
-                                    <img class="ask-icon" src="{{asset('./frontend-img/distribution-confirm-img/delete.svg')}}"
+                                    <img class="ask-icon"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
                                         alt="移除已加商品">
                                     <div class="product-img-hover">
                                         <img class="ask-icon-hover"
-                                            src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
+                                            alt="移除已加商品">
                                         <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
                                             MORE
                                         </a>
@@ -162,13 +165,15 @@
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/1658908734cfecdb276f634854f3ef915e2e980c31.jpg')}}"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/1658908734cfecdb276f634854f3ef915e2e980c31.jpg') }}"
                                         alt="商品圖片">
-                                    <img class="ask-icon" src="{{asset('./frontend-img/distribution-confirm-img/delete.svg')}}"
+                                    <img class="ask-icon"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
                                         alt="移除已加商品">
                                     <div class="product-img-hover">
                                         <img class="ask-icon-hover"
-                                            src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
+                                            alt="移除已加商品">
                                         <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
                                             MORE
                                         </a>
@@ -187,13 +192,15 @@
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/16589912415878a7ab84fb43402106c575658472fa.jpg')}}"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/16589912415878a7ab84fb43402106c575658472fa.jpg') }}"
                                         alt="商品圖片">
-                                    <img class="ask-icon" src="{{asset('./frontend-img/distribution-confirm-img/delete.svg')}}"
+                                    <img class="ask-icon"
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
                                         alt="移除已加商品">
                                     <div class="product-img-hover">
                                         <img class="ask-icon-hover"
-                                            src="{{asset('./frontend-img/distribution-confirm-img/delete_hover.svg')}}" alt="移除已加商品">
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
+                                            alt="移除已加商品">
                                         <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
                                             MORE
                                         </a>
@@ -215,7 +222,8 @@
                     <ul class="pagination-down">
                         <li class="page-item-prev">
                             <a class="page-link" href="" title="前往上一頁購物車列表">
-                                <img src="{{asset('./frontend-img/distribution-confirm-img/previous.png')}}" alt="上一頁按鈕">
+                                <img src="{{ asset('./frontend-img/distribution-confirm-img/previous.png') }}"
+                                    alt="上一頁按鈕">
                                 上一頁
                             </a>
                         </li>
@@ -225,7 +233,8 @@
                         <li class="page-item-next">
                             <a class="page-link" href="" title="前往下一頁購物車列表">
                                 下一頁
-                                <img src="{{asset('./frontend-img/distribution-confirm-img/next.png')}}" alt="下一頁按鈕">
+                                <img src="{{ asset('./frontend-img/distribution-confirm-img/next.png') }}"
+                                    alt="下一頁按鈕">
                             </a>
                         </li>
                     </ul>
@@ -244,35 +253,45 @@
                     </div>
                 </div>
                 <div class="container">
-                    <form action="">
+                    <form action="{{ route('front.distribution_confirm.store') }}" method="POST">
+                        @csrf
+                        @foreach ($errors->all() as $error)
+                            <div class="alert" role="alert">
+                                {{ $error }}
+                            </div>
+                        @endforeach
                         <div class="basic-fillout">
                             <div class="fill-title">經銷商基本資料填寫</div>
                             <div class="basic-inside-fillout">
                                 <div class="fill-input">
                                     <div class="fill-name-birthday">
                                         <div class="fill-name">
-                                            <div class="fill-name-text">姓名｜Name</div>
-                                            <input type="text" placeholder="姓名" class="fill-name-input">
+                                            <div class="fill-name-text">姓名｜Name<span>*</span></div>
+                                            <input type="text" placeholder="姓名" class="fill-name-input"
+                                                name="name" required>
                                         </div>
                                         <div class="fill-birthday">
-                                            <div class="fill-birthday-text">出生年月日｜Birthday</div>
-                                            <input type="date" class="fill-birthday-input">
+                                            <div class="fill-birthday-text">出生年月日｜Birthday<span>*</span></div>
+                                            <input type="date" class="fill-birthday-input" name="birthday" required>
                                         </div>
                                     </div>
 
                                     <div class="fill-email">
-                                        <div class="fill-email-text">電子信箱｜Email</div>
-                                        <input type="email" placeholder="電子信箱" class="fill-email-input">
+                                        <div class="fill-email-text">電子信箱｜Email<span>*</span></div>
+                                        <input type="email" placeholder="電子信箱" class="fill-email-input" name="email"
+                                            required>
                                     </div>
 
                                     <div class="fill-phone">
-                                        <div class="fill-phone-text">聯絡電話｜Phone</div>
-                                        <input type="number" placeholder="聯絡電話" class="fill-phone-input">
+                                        <div class="fill-phone-text">聯絡電話｜Phone<span>*</span></div>
+                                        <input type="number" placeholder="聯絡電話" class="fill-phone-input" name="phone"
+                                            required>
                                     </div>
 
                                     <div class="fill-address">
-                                        <div class="fill-address-text">聯絡地址｜Address</div>
-                                        <input type="text" placeholder="聯絡地址" class="fill-address-input">
+                                        <div class="fill-address-text">聯絡地址｜Address<span>*</span></div>
+                                        <input type="text" placeholder="聯絡地址" class="fill-address-input"
+                                            name="address" required>
                                     </div>
 
                                 </div>
@@ -284,8 +303,9 @@
                                 <div class="sales-white-line">
 
                                     <div class="fill-channel">
-                                        <label for="channel" class="fill-channel-text">經銷通路｜Sales Channel</label>
-                                        <select id="channel" class="fill-channel-input">
+                                        <label for="channel" class="fill-channel-text">經銷通路｜Sales
+                                            Channel<span>*</span></label>
+                                        <select id="channel" class="fill-channel-input" name="channel" required>
                                             <option disabled selected>----請選擇</option>
                                             <option value="commerce">網路電商 E-Commerce</option>
                                             <option value="convenience">便利商店 Concenience Store</option>
@@ -295,8 +315,8 @@
                                     </div>
                                     <div class="fill-country">
                                         <label for="country" class="fill-country-text">預定經銷國家｜Distirbution
-                                            Area</label>
-                                        <select id="country" class="fill-country-input">
+                                            Area<span>*</span></label>
+                                        <select id="country" class="fill-country-input" name="country" required>
                                             <option value="america">America</option>
                                             <option value="california">California</option>
                                             <option value="canada">Canada</option>
@@ -370,16 +390,20 @@
                         <div thumbsSlider="" class="swiper-pop-top swiper my-pop-swiper">
                             <div class="swiper-wrapper display-vertical">
                                 <div class="swiper-pop-top-slide swiper-slide">
-                                    <img src="{{asset('./frontend-img/distribution-confirm-img/sesamebun1.jpeg')}}" alt="產品圖片1" />
+                                    <img src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun1.jpeg') }}"
+                                        alt="產品圖片1" />
                                 </div>
                                 <div class="swiper-slide swiper-pop-top-slide">
-                                    <img src="{{asset('./frontend-img/distribution-confirm-img/sesamebun2.jpeg')}}" alt="產品圖片2" />
+                                    <img src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun2.jpeg') }}"
+                                        alt="產品圖片2" />
                                 </div>
                                 <div class="swiper-slide swiper-pop-top-slide">
-                                    <img src="{{asset('./frontend-img/distribution-confirm-img/sesamebun3.jpeg')}}" alt="產品圖片3" />
+                                    <img src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun3.jpeg') }}"
+                                        alt="產品圖片3" />
                                 </div>
                                 <div class="swiper-slide swiper-pop-top-slide">
-                                    <img src="{{asset('./frontend-img/distribution-confirm-img/sesamebun4.jpeg')}}" alt="產品圖片4" />
+                                    <img src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun4.jpeg') }}"
+                                        alt="產品圖片4" />
                                 </div>
                             </div>
                         </div>
@@ -388,36 +412,42 @@
 
                                 <div class="swiper-slide swiper-pop-top-slide">
                                     <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="{{asset('./frontend-img/distribution-confirm-img/sesamebun1.jpeg')}}"
+                                        <img class="sub-img"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun1.jpeg') }}"
                                             alt="產品圖片1" />
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-pop-top-slide">
                                     <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="{{asset('./frontend-img/distribution-confirm-img/sesamebun2.jpeg')}}"
+                                        <img class="sub-img"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun2.jpeg') }}"
                                             alt="產品圖片2" />
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-pop-top-slide">
                                     <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="{{asset('./frontend-img/distribution-confirm-img/sesamebun3.jpeg')}}"
+                                        <img class="sub-img"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun3.jpeg') }}"
                                             alt="產品圖片3" />
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-pop-top-slide">
                                     <div class="pop-sub-border-img">
-                                        <img class="sub-img" src="{{asset('./frontend-img/distribution-confirm-img/sesamebun4.jpeg')}}"
+                                        <img class="sub-img"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/sesamebun4.jpeg') }}"
                                             alt="產品圖片4" />
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-button-next">
                                 <img class="next-prev-img"
-                                    src="{{asset('./frontend-img/distribution-confirm-img/commodity-next.svg')}}" alt="下一張圖片">
+                                    src="{{ asset('./frontend-img/distribution-confirm-img/commodity-next.svg') }}"
+                                    alt="下一張圖片">
                             </div>
                             <div class="swiper-button-prev">
                                 <img class="next-prev-img"
-                                    src="{{asset('./frontend-img/distribution-confirm-img/commodity-prev.svg')}}" alt="上一張圖片">
+                                    src="{{ asset('./frontend-img/distribution-confirm-img/commodity-prev.svg') }}"
+                                    alt="上一張圖片">
                             </div>
                             <div class="swiper-pagination swiper-page-dec"></div>
                         </div>
@@ -503,14 +533,14 @@
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
                                                 <img class="product-img"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/1668998205a2557a7b2e94197ff767970b67041697.jpg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/1668998205a2557a7b2e94197ff767970b67041697.jpg') }}"
                                                     alt="商品圖片">
                                                 <img class="ask-icon"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask.svg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask.svg') }}"
                                                     alt="加入購物車">
                                                 <div class="product-img-hover">
                                                     <img class="ask-icon-hover"
-                                                        src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg')}}"
+                                                        src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg') }}"
                                                         alt="加入購物車">
                                                     <a href="" class="commodity-more-button btn" title="更多商品">
                                                         MORE
@@ -532,14 +562,14 @@
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
                                                 <img class="product-img"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/165899031442a0e188f5033bc65bf8d78622277c4e.jpg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/165899031442a0e188f5033bc65bf8d78622277c4e.jpg') }}"
                                                     alt="商品圖片">
                                                 <img class="ask-icon"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask.svg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask.svg') }}"
                                                     alt="加入購物車">
                                                 <div class="product-img-hover">
                                                     <img class="ask-icon-hover"
-                                                        src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg')}}"
+                                                        src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg') }}"
                                                         alt="加入購物車">
                                                     <a href="" class="commodity-more-button btn" title="更多商品">
                                                         MORE
@@ -561,14 +591,14 @@
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
                                                 <img class="product-img"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/165899100742a0e188f5033bc65bf8d78622277c4e.jpg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/165899100742a0e188f5033bc65bf8d78622277c4e.jpg') }}"
                                                     alt="商品圖片">
                                                 <img class="ask-icon"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask.svg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask.svg') }}"
                                                     alt="加入購物車">
                                                 <div class="product-img-hover">
                                                     <img class="ask-icon-hover"
-                                                        src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg')}}"
+                                                        src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg') }}"
                                                         alt="加入購物車">
                                                     <a href="" class="commodity-more-button btn" title="更多商品">
                                                         MORE
@@ -590,14 +620,14 @@
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
                                                 <img class="product-img"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/1658908734cfecdb276f634854f3ef915e2e980c31.jpg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/1658908734cfecdb276f634854f3ef915e2e980c31.jpg') }}"
                                                     alt="商品圖片">
                                                 <img class="ask-icon"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask.svg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask.svg') }}"
                                                     alt="加入購物車">
                                                 <div class="product-img-hover">
                                                     <img class="ask-icon-hover"
-                                                        src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg')}}"
+                                                        src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg') }}"
                                                         alt="加入購物車">
                                                     <a href="" class="commodity-more-button btn" title="更多商品">
                                                         MORE
@@ -619,14 +649,14 @@
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
                                                 <img class="product-img"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/16589912415878a7ab84fb43402106c575658472fa.jpg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/16589912415878a7ab84fb43402106c575658472fa.jpg') }}"
                                                     alt="商品圖片">
                                                 <img class="ask-icon"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask.svg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask.svg') }}"
                                                     alt="加入購物車">
                                                 <div class="product-img-hover">
                                                     <img class="ask-icon-hover"
-                                                        src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg')}}"
+                                                        src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg') }}"
                                                         alt="加入購物車">
                                                     <a href="" class="commodity-more-button btn" title="更多商品">
                                                         MORE
@@ -648,14 +678,14 @@
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
                                                 <img class="product-img"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
                                                     alt="商品圖片">
                                                 <img class="ask-icon"
-                                                    src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask.svg')}}"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask.svg') }}"
                                                     alt="加入購物車">
                                                 <div class="product-img-hover">
                                                     <img class="ask-icon-hover"
-                                                        src="{{asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg')}}"
+                                                        src="{{ asset('./frontend-img/distribution-confirm-img/add_for_ask_hover.svg') }}"
                                                         alt="加入購物車">
                                                     <a href="" class="commodity-more-button btn" title="更多商品">
                                                         MORE
@@ -678,11 +708,13 @@
                             <div class="swiper-button-product">
                                 <div class="swiper-button-next">
                                     <img class="next-prev-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/commodity-next.svg')}}" alt="下一張圖片">
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/commodity-next.svg') }}"
+                                        alt="下一張圖片">
                                 </div>
                                 <div class="swiper-button-prev">
                                     <img class="next-prev-img"
-                                        src="{{asset('./frontend-img/distribution-confirm-img/commodity-prev.svg')}}" alt="上一張圖片">
+                                        src="{{ asset('./frontend-img/distribution-confirm-img/commodity-prev.svg') }}"
+                                        alt="上一張圖片">
                                 </div>
                             </div>
                         </div>

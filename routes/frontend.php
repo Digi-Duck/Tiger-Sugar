@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class, 'index'])->name('front.index'); //首頁
 Route::get('/distribution', [FrontController::class, 'distribution'])->name('front.distribution'); //產品經銷頁
 Route::get('/distribution-confirm', [FrontController::class, 'distributionConfirm'])->name('front.distribution_confirm'); //經銷確認頁
+Route::post('/distribution-confirm/store', [FrontController::class, 'distributionConfirmStore'])->name('front.distribution_confirm.store');
 Route::get('/franchisee', [FrontController::class, 'franchisee'])->name('front.franchisee'); //加盟說明頁
 Route::get('/franchisee-form', [FrontController::class, 'franchiseeForm'])->name('front.franchisee_form'); //加盟表單頁
 Route::post('/franchisee-form',[FrontController::class,'franchiseeFormStore'])->name('front.franchisee_form.store');
@@ -26,7 +27,7 @@ Route::prefix('/en')->group(function () {
     Route::get('/distribution-confirm', [FrontEnController::class, 'distributionConfirm'])->name('front.distribution_confirm.en'); //經銷確認頁
     Route::get('/franchisee', [FrontEnController::class, 'franchisee'])->name('front.franchisee.en'); //加盟說明頁
     Route::get('/franchisee-form', [FrontEnController::class, 'franchiseeForm'])->name('front.franchisee_form.en'); //加盟表單頁
-    Route::post('/franchisee-form',[FrontController::class,'franchiseeFormStore_en'])->name('front.franchisee_form_en.store');
+    Route::post('/franchisee-form/store',[FrontController::class,'franchiseeFormStore_en'])->name('front.franchisee_form_en.store');
     //header跳轉到首頁各section的路由
     Route::get('#link-about')->name('front.index.about.en'); //首頁的關於我們section
     Route::get('#link-distribution')->name('front.index.distribution.en'); //首頁的產品經銷section

@@ -22,6 +22,15 @@ ul li {
     list-style-type: none;
 }
 
+#distribution-container span{
+    color: red;
+    font-size: 25px;
+}
+
+#distribution-container .alert {
+    color: red;
+}
+
 #distribution-container {
     background-image: url('../frontend-img/distribution-confirm-img/bg_extra.png');
     background-size: cover;

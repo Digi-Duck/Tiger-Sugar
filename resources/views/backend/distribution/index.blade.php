@@ -41,7 +41,7 @@
                                     <td>{{$list->other}}</td>
                                     <td>{{$list->created_at}}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="/admin/distribution/{{$list->id}}">查看更多</a>
+                                        <a class="btn btn-sm btn-success" href="{{ route('back.distribution.show',['id'=> $list->id]) }}">查看更多</a>
                                         <button class="btn btn-sm btn-danger" data-listid="{{$list->id}}">刪除</button>
                                         <form class="delete-form" action="/admin/distribution/delete/{{$list->id}}" method="POST" style="display: none;" data-listid="{{$list->id}}">
                                             @csrf

@@ -9,8 +9,11 @@ use App\Models\DrinkType;
 use App\Models\FranchiseExplain;
 use App\Models\Media;
 use App\Models\Products;
+use App\Models\ProductsType;
+use App\Models\Rfq;
 use App\Models\Social;
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 
 class FrontController extends Controller
 {
@@ -34,7 +37,42 @@ class FrontController extends Controller
 
     public function distributionConfirm()
     {
-        return view('frontend.distribution-confirm');
+        $productsType = ProductsType::orderBy('sort', 'asc')->get();
+        return view('frontend.distribution-confirm', compact('productsType'));
+    }
+
+    public function distributionConfirmStore(Request $request) {
+        $request->validate([
+            'name' => 'required|max:255',
+            'birthday' => 'required',
+            'email' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'address' => 'required|max:255',
+            'channel' => 'required',
+            'country' => 'required',
+        ],[
+            'name.required' => '名字必填',
+            'name.max' => '名字字數不可超過255個字',
+            'birthday' => '出生年月日必填',
+            'email.required' => '電子信箱必填',
+            'email.max' =>'電子信箱字數不可超過255個字',
+            'phone.required' => '聯絡電話必填',
+            'phone.max' => '聯絡電話字數不可超過255個字',
+            'channel.required' => '經銷通路必填',
+            'country.required' => '國家必填',
+        ]);
+        Rfq::create([
+            'name' => $request->name,
+            'birthday' => $request->birthday,
+            'email' => $request->email,
+            'phone' =>$request->phone,
+            'address' => $request->address,
+            'channel' => $request->channel,
+            'city' => $request->country,
+            'other' => $request->other,
+            'products_id' => 1,
+        ]);
+        return redirect(route('front.franchisee_form'));
     }
 
     public function franchisee()
