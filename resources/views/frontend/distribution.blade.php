@@ -339,185 +339,39 @@
                             <div class="swiper swiper-pop-bottom pop-window-bottom-swiper">
                                 <div class="swiper-wrapper">
 
-                                    @foreach ($products as $product)
+                                    @foreach ($random_products as $product)
                                     <div class="swiper-pop-bottom-slide swiper-slide">
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/1668998205a2557a7b2e94197ff767970b67041697.jpg') }}"
-                                                    alt="商品圖片">
-                                                <img class="ask-icon"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask.svg') }}"
-                                                    alt="加入購物車">
+                                                <img class="product-img" src="{{ $product->img }}" alt="產品圖片">
+                                                <img class="ask-icon" data-product="{{ $product->id }}"
+                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
+                                                alt="黃色加入以詢問">
                                                 <div class="product-img-hover">
-                                                    <img class="ask-icon-hover"
-                                                        src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask_hover.svg') }}"
-                                                        alt="加入購物車">
-                                                    <a href="" class="commodity-more-button btn" title="更多商品">
+                                                    <form action="" method="post">
+                                                        <button type="button" class="cursor-p">
+                                                            <img class="ask-icon-hover" data-product="{{ $product->id }}"
+                                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                                alt="黃色加入以詢問">
+                                                        </button>
+                                                    </form>
+                                                    <a href="{{ route('front.distribution') }}" class="commodity-more-button btn" title="更多商品">
                                                         MORE
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="commodity-title">
-                                                老虎堂地瓜條
+                                                {{ $product->title_zh }}
                                             </div>
                                             <div class="commodity-title-english">
-                                                Tiger Sugar Sweet Potato Fries
+                                                {{ $product->title_en }}
                                             </div>
                                             <div class="commodity-sort">
-                                                零食｜Snack
+                                                {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
                                             </div>
                                         </div>
                                     </div>
                                     @endforeach
-
-
-
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/165899031442a0e188f5033bc65bf8d78622277c4e.jpg') }}"
-                                                    alt="商品圖片">
-                                                <img class="ask-icon"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask.svg') }}"
-                                                    alt="加入購物車">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover"
-                                                        src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask_hover.svg') }}"
-                                                        alt="加入購物車">
-                                                    <a href="" class="commodity-more-button btn" title="更多商品">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                經典黑糖麻糬包
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Black Sugar Mochi Bun
-                                            </div>
-                                            <div class="commodity-sort">
-                                                食品｜Food
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/165899100742a0e188f5033bc65bf8d78622277c4e.jpg') }}"
-                                                    alt="商品圖片">
-                                                <img class="ask-icon"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask.svg') }}"
-                                                    alt="加入購物車">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover"
-                                                        src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask_hover.svg') }}"
-                                                        alt="加入購物車">
-                                                    <a href="" class="commodity-more-button btn" title="更多商品">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                爆漿起司流心包
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Bursting Cheese Filling Bun
-                                            </div>
-                                            <div class="commodity-sort">
-                                                食品｜Food
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/1658908734cfecdb276f634854f3ef915e2e980c31.jpg') }}"
-                                                    alt="商品圖片">
-                                                <img class="ask-icon"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask.svg') }}"
-                                                    alt="加入購物車">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover"
-                                                        src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask_hover.svg') }}"
-                                                        alt="加入購物車">
-                                                    <a href="" class="commodity-more-button btn" title="更多商品">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                黑糖奶霜樹幹年輪
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Black Suga Cream Trunk Baumkuchen
-                                            </div>
-                                            <div class="commodity-sort">
-                                                甜點｜dessert
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/16589912415878a7ab84fb43402106c575658472fa.jpg') }}"
-                                                    alt="商品圖片">
-                                                <img class="ask-icon"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask.svg') }}"
-                                                    alt="加入購物車">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover"
-                                                        src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask_hover.svg') }}"
-                                                        alt="加入購物車">
-                                                    <a href="" class="commodity-more-button btn" title="更多商品">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                特濃黑糖厚奶蓋蛋糕
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Black Sugar Cheese Foam Cake
-                                            </div>
-                                            <div class="commodity-sort">
-                                                甜點｜dessert
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide swiper-pop-bottom-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/16508571967e7757b1e12abcb736ab9a754ffb617a.jpg') }}"
-                                                    alt="商品圖片">
-                                                <img class="ask-icon"
-                                                    src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask.svg') }}"
-                                                    alt="加入購物車">
-                                                <div class="product-img-hover">
-                                                    <img class="ask-icon-hover"
-                                                        src="{{ asset('./frontend-img/distribution-img/pop-window/add_for_ask_hover.svg') }}"
-                                                        alt="加入購物車">
-                                                    <a href="" class="commodity-more-button btn" title="更多商品">
-                                                        MORE
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="commodity-title">
-                                                老虎芝士流心雪糕
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                Tiger Cheese Filling Black Sugar Ice Cream Bar
-                                            </div>
-                                            <div class="commodity-sort">
-                                                冰品｜Ice
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="swiper-button-product">
