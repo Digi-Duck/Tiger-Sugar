@@ -68,8 +68,6 @@ class ProductsController extends Controller
             'shelf_life' => 'required|max:6',
             'preserve' => 'required',
             'content' => 'required',
-            'notes' => 'required',
-            'video' => 'required',
         ], [
             'sort.required' => '權重必填',
             'sort.max' => '權重最多只能輸入11個數字',
@@ -90,8 +88,6 @@ class ProductsController extends Controller
             'shelf_life.max' => '保存期限最多只能輸入6個字',
             'preserve.required' => '保存方式必填',
             'content.required' => '內容必填',
-            'notes.required' => '注意事項必填',
-            'video.required' => '影片必填',
         ]);
         $products = Products::create([
             'sort' => $request->sort,

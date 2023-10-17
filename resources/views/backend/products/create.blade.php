@@ -107,7 +107,7 @@
                             <div class="form-group row">
                                 <label for="video" class="col-2 col-form-label">影片連結</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="video" name="video" required
+                                    <input type="text" class="form-control" id="video" name="video"
                                         value="{{ old('video', $video ?? '') }}">
                                 </div>
                             </div>
