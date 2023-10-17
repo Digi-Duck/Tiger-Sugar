@@ -159,7 +159,6 @@ toggleButtons.forEach(element => {
 var swiperNews = new Swiper("#news .mySwiper-news", {
   slidesPerView: 1,
   spaceBetween: 48,
-  loop: true,
   navigation: {
     nextEl: ".swiper-button-news .swiper-button-next",
     prevEl: ".swiper-button-news .swiper-button-prev",

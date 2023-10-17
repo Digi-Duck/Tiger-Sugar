@@ -150,6 +150,8 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::prefix('/distribution')->group(function(){
         Route::get('/index', [DistributionController::class, 'index'])->name('back.distribution.index');
         Route::get('/show/{id}', [DistributionController::class, 'show'])->name('back.distribution.show');
+        Route::get('/excel', [DistributionController::class, 'excel'])->name('back.distribution.excel');
+        Route::delete('/delete', [DistributionController::class, 'delete'])->name('back.distribution.delete');
     });
 
     // 媒體報導

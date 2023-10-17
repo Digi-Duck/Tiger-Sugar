@@ -10,10 +10,35 @@ use Illuminate\Http\Request;
 
 class DistributionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $lists = Rfq::all();
-        return view('backend.distribution.index',compact('lists'));
+        $lists = Rfq::query();
+        $keyword = $request->keyword ?? '';
+        $page_numbers = $request->page_numbers;
+        $page = $request->page;
+        $count = $lists->count();
+
+        if ($request->filled('keyword')) {
+            $lists->where('name', 'like', "%{$keyword}%")
+                ->orwhere('email', 'like', "%{$keyword}%")
+                ->orwhere('channel', 'like', "%{$keyword}%")
+                ->orwhere('city', 'like', "%{$keyword}%")
+                ->orwhere('city', 'like', "%{$keyword}%")
+                ->orwhere('store_address', 'like', "%{$keyword}%")
+                ->orwhere('other', 'like', "%{$keyword}%");
+        }
+
+        if ($page_numbers == null) {
+            $page_numbers = 10;
+        }
+
+        if ($page == null) {
+            $page = 1;
+        }
+        $lists->orderBy('id');
+        $lists = $lists->paginate($page_numbers);
+        $lists->appends(compact('lists', 'keyword', 'page_numbers'));
+        return view('backend.distribution.index', compact('lists', 'keyword', 'page_numbers', 'count'));
     }
 
     public function show($id)
@@ -36,12 +61,12 @@ class DistributionController extends Controller
         return view('backend.distribution.show',compact('contact_info', 'products', 'country'));
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $Contact = Rfq::find($id);
         $Contact->delete();
-
-        return redirect('/admin/distribution')->with('message','刪除成功!');
+        return 'success';
     }
 
     public function delete_all(Request $request)
@@ -52,5 +77,13 @@ class DistributionController extends Controller
             $item->delete();
         });
         return redirect('/admin/distribution')->with('message','刪除所有來信資料成功! 若為誤刪，請聯絡製作網頁廠商，可再進行資料復原。');
+    }
+
+    public function excel(Request $request)
+    {
+        $lists = Rfq::query();
+        $lists->orderBy('id');
+        $lists = $lists->get();
+        return $lists;
     }
 }
