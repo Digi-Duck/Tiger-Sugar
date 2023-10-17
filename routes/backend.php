@@ -143,6 +143,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
         Route::get('index', [ContactController::class, 'index'])->name('back.contact.index');
         Route::get('show/{id}', [ContactController::class, 'show'])->name('back.contact.show');
         Route::get('excel', [ContactController::class, 'excel'])->name('back.contact.excel');
+        Route::delete('delete', [ContactController::class, 'delete'])->name('back.contact.delete');
     });
 
     // distribution 經銷來信

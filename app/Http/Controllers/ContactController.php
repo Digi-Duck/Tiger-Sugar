@@ -44,12 +44,12 @@ class ContactController extends Controller
         return view('backend.contact.show',compact('contact_info'));
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
+        $id = $request->id;
         $Contact = Contact::find($id);
         $Contact->delete();
-
-        return redirect(route('back.contact.index'))->with('message','刪除成功!');
+        return 'success';
     }
 
     public function delete_all(Request $request)

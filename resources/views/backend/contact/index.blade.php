@@ -14,7 +14,7 @@
                         <hr>
                         <form action="{{ route('back.contact.index') }}" method="GET" id="page-numbers" role="search"
                             class="d-flex justify-content-between align-items-center mb-3">
-
+                            @csrf
                             <div>
                                 <span>請選擇顯示幾筆資料：</span>
                                 <select id="page-select" onchange="changePages()" name="page_numbers">
@@ -81,12 +81,8 @@
                                         <td>
                                             <a class="btn btn-sm btn-success"
                                                 href="{{ route('back.contact.show', ['id' => $list->id]) }}">查看更多</a>
-                                            <button class="btn btn-sm btn-danger"
-                                                data-listid="{{ $list->id }}">刪除</button>
-                                            <form class="delete-form" action="/admin/contact/delete/{{ $list->id }}"
-                                                method="POST" style="display: none;" data-listid="{{ $list->id }}">
-                                                @csrf
-                                            </form>
+                                                <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteData('{{ $list->id }}')">刪除</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -126,30 +122,23 @@
 @section('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // 建立工作表
-
-        // 設定工作表屬性
-
-        // 建立活頁簿1
-
         let excelBtn = document.querySelector('#excel-btn');
         excelBtn.addEventListener('click', function() {
-
-            const workbook = new ExcelJS.Workbook();
-            workbook.creator = 'Ruyut';
-            workbook.lastModifiedBy = 'Ruyut';
-            workbook.created = new Date(2023, 4, 8);
-            workbook.modified = new Date(2023, 4, 8);
-            workbook.lastPrinted = new Date(2023, 4, 8);
-            const worksheet = workbook.addWorksheet('活頁簿1');
-
             fetch('{{ route('back.contact.excel') }}', {
                 method: 'get',
             }).then((res) => {
                 console.log(res);
                 return res.json();
             }).then((data) => {
+                const workbook = new ExcelJS.Workbook();
+                workbook.creator = 'Ruyut';
+                workbook.lastModifiedBy = 'Ruyut';
+                workbook.created = new Date(2023, 4, 8);
+                workbook.modified = new Date(2023, 4, 8);
+                workbook.lastPrinted = new Date(2023, 4, 8);
+                const worksheet = workbook.addWorksheet('活頁簿1');
                 worksheet.getCell(1, 1).value = 'No';
                 worksheet.getCell(1, 2).value = '姓名';
                 worksheet.getCell(1, 3).value = '出生年月日';
@@ -160,12 +149,10 @@
                 worksheet.getCell(1, 8).value = '預定城市';
                 worksheet.getCell(1, 9).value = '其他';
                 worksheet.getCell(1, 10).value = '寄件日期';
-
                 i = 1;
                 data.forEach(function(item) {
                     console.log(item);
                     i++;
-
                     // worksheet.getCell(y, x).value = item;
                     worksheet.getCell(i, 1).value = item.id;
                     worksheet.getCell(i, 2).value = item.user_name;
@@ -190,12 +177,48 @@
             });
         });
 
+        function deleteData(id) {
+            console.log(id);
+
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'delete');
+            formData.append('id', id);
 
 
-
-
-
-
+            Swal.fire({
+                title: `確認要刪除資料嗎?`,
+                showDenyButton: true,
+                confirmButtonText: '取消',
+                denyButtonText: '刪除',
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isDenied) {
+                    fetch('{{ route('back.contact.delete') }}', {
+                        method: 'post',
+                        body: formData,
+                    }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '刪除成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '刪除失敗',
+                                text: '查無資料',
+                            });
+                        }
+                    });
+                }
+            });
+        }
 
         function changePages() {
             let pageSelect = document.querySelector('#page-select');
