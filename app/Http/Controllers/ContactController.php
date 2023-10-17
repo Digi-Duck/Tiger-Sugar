@@ -22,11 +22,7 @@ class ContactController extends Controller
                 ->orwhere('phone', 'like', "%{$keyword}%")
                 ->orwhere('address', 'like', "%{$keyword}%")
                 ->orwhere('store_address', 'like', "%{$keyword}%")
-                ->orwhere('other', 'like', "%{$keyword}%")
-                ->orWhereHas('Country', function ($query) use ($keyword) {
-                    $query->where('country_name', 'like', "%{$keyword}%")
-                        ->orwhere('country_en_name', 'like', "%{$keyword}%");
-                });
+                ->orwhere('other', 'like', "%{$keyword}%");
         }
 
         if ($page_numbers == null) {
@@ -39,13 +35,8 @@ class ContactController extends Controller
         $lists->orderBy('id');
         $lists = $lists->paginate($page_numbers);
         $lists->appends(compact('lists', 'keyword', 'page_numbers'));
-        return view('backend.contact.index', compact('lists', 'keyword', 'page_numbers', 'page', 'count'));
+        return view('backend.contact.index', compact('lists', 'keyword', 'page_numbers', 'count'));
     }
-    // public function index()
-    // {
-    //     $lists = Contact::all();
-    //     return view('backend.contact.index',compact('lists'));
-    // }
 
     public function show($id)
     {
@@ -69,5 +60,13 @@ class ContactController extends Controller
             $item->delete();
         });
         return redirect('/admin/contact')->with('message','刪除所有加盟來信資料成功! 若為誤刪，請聯絡製作網頁廠商，可再進行資料復原。');
+    }
+
+    public function excel(Request $request)
+    {
+        $lists = Contact::query();
+        $lists->orderBy('id');
+        $lists = $lists->get();
+        return $lists;
     }
 }

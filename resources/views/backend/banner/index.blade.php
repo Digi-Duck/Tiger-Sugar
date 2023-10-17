@@ -126,6 +126,7 @@
             formData.append('_method', 'delete');
             formData.append('id', id);
 
+
             Swal.fire({
                 title: `確認要刪除資料嗎?`,
                 showDenyButton: true,

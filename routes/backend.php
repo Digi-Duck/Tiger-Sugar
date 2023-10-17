@@ -142,6 +142,7 @@ Route::middleware('auth')->prefix('/back')->group(function () {
     Route::prefix('/contact')->group(function () {
         Route::get('index', [ContactController::class, 'index'])->name('back.contact.index');
         Route::get('show/{id}', [ContactController::class, 'show'])->name('back.contact.show');
+        Route::get('excel', [ContactController::class, 'excel'])->name('back.contact.excel');
     });
 
     // distribution 經銷來信
