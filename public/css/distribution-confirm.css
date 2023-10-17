@@ -823,3 +823,8 @@ ul li {
     background: aliceblue;
     color: #000000;
 }
+
+#distribution-confirm .title-checked{
+    background-color: white;
+    color: black;
+}
