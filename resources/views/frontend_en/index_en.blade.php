@@ -405,14 +405,14 @@
             </div>
             <div class="swiper mySwiper media-swiper">
                 <div class="swiper-wrapper">
-                    {{-- @foreach ($medias as $media)
+                    @foreach ($medias as $media)
                         <div class="swiper-slide">
                             <video class="video swiper-slide" autoplay loop muted id="video-real-case">
                                 <source src="{{ $media->link }}" type="video/mp4">
                             </video>
                             <i class="fa-solid fa-volume-xmark volumn"></i>
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
                 <div class="swiper-button-next media-button-next"></div>
                 <div class="swiper-button-prev media-button-prev"></div>
@@ -437,7 +437,7 @@
             <div class="content">
                 <div class="swiper mySwiper-news">
                     <div class="swiper-wrapper">
-                        {{-- @foreach ($blognews as $blognew)
+                        @foreach ($blognews as $blognew)
                             <div class="swiper-slide">
                                 <a target="_blank" href="{{ $blognew->link }}" title="波波黛莉夏季新推連結">
                                     <div class="outer-card">
@@ -452,7 +452,7 @@
                                     </div>
                                 </a>
                             </div>
-                        @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
             </div>
