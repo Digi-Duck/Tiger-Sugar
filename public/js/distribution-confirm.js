@@ -58,3 +58,14 @@ overlayClose.addEventListener('click',function(event) {
 AOS.init({
   duration: 800,
 });
+
+const titleElements = document.querySelectorAll('.title-class');
+titleElements.forEach((element) => {
+    element.addEventListener('click', () => {
+        titleElements.forEach((el) => {
+            el.classList.remove('title-checked');
+        });
+
+        element.classList.add('title-checked');
+    });
+});

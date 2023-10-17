@@ -33,8 +33,9 @@
                         <div class="title-bottom">
                             <div #swiperRef="" class="swiper mySwiper-distribution-container">
                                 <div class="swiper-wrapper">
+                                    <div class="swiper-slide title-class title-checked">全部 | All</div>
                                     @foreach ($productsType as $list)
-                                        <div class="swiper-slide">{{ $list->tw_name }} | {{ $list->en_name }}</div>
+                                        <div class="swiper-slide title-class">{{ $list->tw_name }} | {{ $list->en_name }}</div>
                                     @endforeach
                                 </div>
                                 <div class="swiper-button-distribution-container">
