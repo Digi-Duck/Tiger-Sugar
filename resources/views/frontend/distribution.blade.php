@@ -338,6 +338,8 @@
                         <div class="card-container">
                             <div class="swiper swiper-pop-bottom pop-window-bottom-swiper">
                                 <div class="swiper-wrapper">
+
+                                    @foreach ($products as $product)
                                     <div class="swiper-pop-bottom-slide swiper-slide">
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
@@ -367,6 +369,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
+
+
+
                                     <div class="swiper-slide swiper-pop-bottom-slide">
                                         <div class="direction-body">
                                             <div class="img-box-border-img">
