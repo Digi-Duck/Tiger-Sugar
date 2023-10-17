@@ -27,7 +27,6 @@ function closePopup(event) {
 //   btn.addEventListener('click', function (event) {
 //       document.querySelector('.im-pop-window').style.display ='block';
 //       document.querySelector('.window-overlay').style.display = 'block';
-//       console.log('123');
 //   });
 // });
 
@@ -37,8 +36,7 @@ function getDate(date) {
     const month = objectDate.getMonth() + 1;
     const day = objectDate.getDate();
     return [year, month, day];
-};
-
+}
 const openPopWindows = document.querySelectorAll('.open-pop-window');
 openPopWindows.forEach(function (btn) {
     btn.addEventListener('click', function (event) {
@@ -50,12 +48,14 @@ openPopWindows.forEach(function (btn) {
         let popSwiperSub = document.querySelector('.poping-swiper-sub');
         popSwiper.innerHTML = '';
         popSwiperSub.innerHTML = '';
-        data.products_imgs.forEach(item => {
+        data.products_imgs.forEach((item, index) => {
             popSwiper.innerHTML += `<div class="swiper-slide swiper-pop-top-slide">
-            <img src="${item.img_url}" alt="產品圖片" /> </div>`;
+            <img src="${item.img_url}" alt="產品圖片" /></div>`;
+
             popSwiperSub.innerHTML += `<div class="swiper-slide swiper-pop-top-slide poping-swiper-sub">
             <div class="pop-sub-border-img"> <img class="sub-img" src="${item.img_url}" alt="產品圖片" /> </div> </div>`
         });
+        destroySwiper();
 
         let contentTitle = document.querySelector('.content-text-title');
         contentTitle.innerHTML = `<div class="content-text-title">${data.title_zh}</div>`
@@ -94,23 +94,22 @@ openPopWindows.forEach(function (btn) {
         data.notes.split('\r\n').forEach(item => {
             contentMiddle.innerHTML += `<p>${item}</p>`;
         });
-        // let video = document.querySelector('.content-right');
-        // video.innerHTML = `${data.video}`;
-        // element.addEventListener('touchstart', function(event) {
+
             let video = document.querySelector('.content-right');
             const youtubeUrl = data.video;
+            const videoId = youtubeUrl.split('v=')[1];
+            const ampersandPosition = videoId.indexOf('&');
+            if (ampersandPosition !== -1) {
+                videoId = videoId.substring(0, ampersandPosition);
+            }
+
             const iframe = document.createElement('iframe');
-            iframe.src = "https://www.youtube.com/embed/VIDEO_ID";
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
             iframe.width = "560";
             iframe.height = "315";
             iframe.allowFullscreen = true;
             video.appendChild(iframe);
-        // }, { passive: true });
-
-
-        console.log(data.video);
     });
-    // console.log(btn.children[1].value);
 });
 
 // closeBtn

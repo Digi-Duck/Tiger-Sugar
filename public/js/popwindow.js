@@ -10,9 +10,40 @@ var swiper = new Swiper(".my-pop-swiper", {
             direction: 'vertical',
         },
     },
-    // observer:true,
-    // observeParents:true,
 });
+function destroySwiper() {
+    swiper.destroy();
+    swiperSub.destroy();
+    swiper = new Swiper(".my-pop-swiper", {
+        loop: true,
+        spaceBetween: 4,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        direction: 'horizontal',
+        breakpoints: {
+            768: {
+                direction: 'vertical',
+            },
+        },
+    });
+
+    swiperSub = new Swiper(".my-pop-swiper-sub", {
+        loop: true,
+        spaceBetween: 4,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+}
 
 // sub swiper
 var swiperSub = new Swiper(".my-pop-swiper-sub", {
