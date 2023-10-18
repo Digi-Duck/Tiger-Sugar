@@ -112,6 +112,17 @@ class FrontController extends Controller
         $request->session()->put('capital', $request->capital);
         $request->session()->put('store_address', $request->store_address);
         $request->session()->put('other', $request->other);
+        $user_name = $request->session()->get('user_name', '');
+        $birth_day = $request->session()->get('birth_day', '');
+        $email = $request->session()->get('email', '');
+        $phone = $request->session()->get('phone', '');
+        $address = $request->session()->get('address', '');
+        $franchisee_type = $request->session()->get('franchisee_type', '');
+        $birth_day = $request->session()->get('country', '');
+        $country = $request->session()->get('email', '');
+        $capital = $request->session()->get('capital', '');
+        $store_address = $request->session()->get('store_address', '');
+        $other = $request->session()->get('other', '');
         $request->validate([
             'user_name' => 'required|max:255',
             'birth_day' => 'required',
@@ -151,7 +162,7 @@ class FrontController extends Controller
             'other' => $request->other,
         ]);
 
-        return view('frontend.franchisee-form',compact('user_names', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+        return view('frontend.franchisee-form',compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
     }
 
 public function franchiseeFormStore_en(Request $request)
@@ -166,6 +177,17 @@ public function franchiseeFormStore_en(Request $request)
         $request->session()->put('capital', $request->capital);
         $request->session()->put('store_address', $request->store_address);
         $request->session()->put('other', $request->other);
+        $user_name = $request->session()->get('user_name', '');
+        $birth_day = $request->session()->get('birth_day', '');
+        $email = $request->session()->get('email', '');
+        $phone = $request->session()->get('phone', '');
+        $address = $request->session()->get('address', '');
+        $franchisee_type = $request->session()->get('franchisee_type', '');
+        $birth_day = $request->session()->get('country', '');
+        $country = $request->session()->get('email', '');
+        $capital = $request->session()->get('capital', '');
+        $store_address = $request->session()->get('store_address', '');
+        $other = $request->session()->get('other', '');
         $request->validate([
             'user_name' => 'required|max:255',
             'birth_day' => 'required',
@@ -192,6 +214,6 @@ public function franchiseeFormStore_en(Request $request)
             'other' => $request->other,
         ]);
 
-        return view('frontend.franchisee-form',compact('user_names', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+        return view('frontend.franchisee-form',compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
     }
 }
