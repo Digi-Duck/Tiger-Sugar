@@ -56,7 +56,7 @@
                                         <label for="pc_image_url" class="col-2 col-form-label">更新圖片</label>
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="pc_image_url"
-                                                name="pc_image_url" accept="image/*">
+                                                placeholder="如需更新，請上傳圖檔" name="pc_image_url" accept="image/*">
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -76,7 +76,7 @@
                                         <label for="mb_image_url" class="col-2 col-form-label">更新圖片(手機版)</label>
                                         <div class="col-10">
                                             <input type="file" class="form-control-file" id="mb_image_url"
-                                                name="mb_image_url" accept="image/*">
+                                                placeholder="如需更新，請上傳圖檔（手機版）" name="mb_image_url" accept="image/*">
                                         </div>
                                         <div class="col-12">
                                             <p class="text-danger">
@@ -90,14 +90,14 @@
                                         <label for="image_alt" class="col-2 col-form-label">圖片替代文字(alt)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="image_alt" name="image_alt"
-                                                value="{{ $info->image_alt }}"
+                                            placeholder="當圖片失效時，用文字來描述圖片內容" value="{{ $info->image_alt }}"
                                                 @if ($info->type == '圖片') required @endif>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="link_url" class="col-2 col-form-label">圖片連結</label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" id="link_url" name="link_url"
+                                            <input type="text" class="form-control" id="link_url" placeholder="點擊圖片後會導向的網頁連結" name="link_url"
                                                 value="{{ $info->link_url }}">
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
-                                                name="pc_video_url"
+                                                name="pc_video_url" placeholder="請上傳youtube影片連結"
                                                 value="https://www.youtube.com/watch?v={{ $info->pc_video_url }}"
                                                 @if ($info->type == '影片') required @endif>
                                         </div>
@@ -133,7 +133,7 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結)</label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
-                                                name="mb_video_url"
+                                                name="mb_video_url" placeholder="請上傳youtube影片連結（使用於手機版畫面）"
                                                 value="https://www.youtube.com/watch?v={{ $info->mb_video_url }}"
                                                 @if ($info->type == '影片') required @endif>
                                         </div>

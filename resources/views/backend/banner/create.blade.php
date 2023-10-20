@@ -45,7 +45,7 @@
                                     <div class="form-group row">
                                         <label for="pc_image_url" class="col-2 col-form-label">上傳圖片 <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10 d-flex flex-row">
-                                            <input type="file" class="form-control-file" id="pc_image_url"
+                                            <input type="file" class="form-control-file" id="pc_image_url" placeholder="請上傳圖檔"
                                                 name="pc_image_url" accept="image/*" required>
                                         </div>
                                         <div class="col-12">
@@ -55,7 +55,7 @@
                                     <div class="form-group row">
                                         <label for="mb_image_url" class="col-2 col-form-label">上傳圖片(手機版) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10 d-flex flex-row">
-                                            <input type="file" class="form-control-file" id="mb_image_url"
+                                            <input type="file" class="form-control-file" id="mb_image_url" placeholder="請上傳圖檔"
                                                 name="mb_image_url" accept="image/*" required>
                                         </div>
                                         <div class="col-12">
@@ -72,7 +72,7 @@
                                     <div class="form-group row">
                                         <label for="link_url" class="col-2 col-form-label">圖片連結 </label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" id="link_url" name="link_url" value="{{ old('link_url',$link_url ?? '') }}">
+                                            <input type="text" class="form-control" id="link_url" placeholder="點擊圖片後會導向的網頁連結" name="link_url" value="{{ old('link_url',$link_url ?? '') }}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -93,7 +93,7 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="pc_video_url"
-                                                name="pc_video_url"
+                                                name="pc_video_url" placeholder="請上傳youtube影片連結"
                                                 value="{{ old('pc_video_url', $pc_video_url ?? '') }}">
                                         </div>
                                         <div class="col-12">
@@ -105,7 +105,7 @@
                                             class="col-2 col-form-label">設定影片連結<br>(Youtube連結) <span class="text-danger fs-4" >*</span> </label>
                                         <div class="col-10">
                                             <input type="text" class="form-control" id="mb_video_url"
-                                                name="mb_video_url"
+                                                name="mb_video_url" placeholder="請上傳youtube影片連結（使用於手機版畫面）"
                                                 value="{{ old('mb_video_url', $mb_video_url ?? '') }}">
                                         </div>
                                         <div class="col-12">
@@ -119,7 +119,7 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重 <span class="text-danger fs-4" >*</span> </label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                    <input type="number" class="form-control" id="sort" name="sort" placeholder="僅能輸入數字，前台顯示會依權重顯示" required
                                         value="{{ old('sort', $sort ?? '') }}" min="0" max="999">
                                 </div>
                             </div>
