@@ -204,13 +204,14 @@
                                     <div class="direction-body">
                                         <div class="img-w-h-border-img">
                                             <img class="product-img" src="{{ $product->img }}" alt="產品圖片">
-                                            <img class="ask-icon" data-product="{{ $product->id }}"
+                                            <img class="ask-icon"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                                 alt="黃色加入以詢問">
                                             <div class="product-img-hover">
-                                                <form action="" method="post">
-                                                    <button type="button" class="cursor-p">
-                                                        <img class="ask-icon-hover" data-product="{{ $product->id }}"
+                                                <form action="{{ route('front.add') }}" method="post">
+                                                    <input type="hidden" name="add" value="{{ $product->id }}">
+                                                    <button type="submit" class="cursor-p">
+                                                        <img class="ask-icon-hover"
                                                             src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                             alt="黃色加入以詢問">
                                                     </button>

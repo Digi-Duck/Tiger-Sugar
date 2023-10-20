@@ -14,6 +14,7 @@ use App\Models\Rfq;
 use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Composer;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontController extends Controller
 {
@@ -41,7 +42,8 @@ class FrontController extends Controller
         return view('frontend.distribution-confirm', compact('productsType'));
     }
 
-    public function distributionConfirmStore(Request $request) {
+    public function distributionConfirmStore(Request $request)
+    {
         $request->validate([
             'name' => 'required|max:255',
             'birthday' => 'required',
@@ -50,12 +52,12 @@ class FrontController extends Controller
             'address' => 'required|max:255',
             'channel' => 'required',
             'country' => 'required',
-        ],[
+        ], [
             'name.required' => '名字必填',
             'name.max' => '名字字數不可超過255個字',
             'birthday' => '出生年月日必填',
             'email.required' => '電子信箱必填',
-            'email.max' =>'電子信箱字數不可超過255個字',
+            'email.max' => '電子信箱字數不可超過255個字',
             'phone.required' => '聯絡電話必填',
             'phone.max' => '聯絡電話字數不可超過255個字',
             'channel.required' => '經銷通路必填',
@@ -65,7 +67,7 @@ class FrontController extends Controller
             'name' => $request->name,
             'birthday' => $request->birthday,
             'email' => $request->email,
-            'phone' =>$request->phone,
+            'phone' => $request->phone,
             'address' => $request->address,
             'channel' => $request->channel,
             'city' => $request->country,
@@ -162,10 +164,10 @@ class FrontController extends Controller
             'other' => $request->other,
         ]);
 
-        return view('frontend.franchisee-form',compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+        return view('frontend.franchisee-form', compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
     }
 
-public function franchiseeFormStore_en(Request $request)
+    public function franchiseeFormStore_en(Request $request)
     {
         $request->session()->put('user_name', $request->user_name);
         $request->session()->put('birth_day', $request->birth_day);
@@ -214,6 +216,11 @@ public function franchiseeFormStore_en(Request $request)
             'other' => $request->other,
         ]);
 
-        return view('frontend.franchisee-form',compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+        return view('frontend.franchisee-form', compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+    }
+    public function add(Request $request)
+    {
+        dd($request->add);
+        return view('frontend.index');
     }
 }
