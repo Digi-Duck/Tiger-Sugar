@@ -149,7 +149,7 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required
+                                    <input type="number" class="form-control" id="sort" placeholder="僅能輸入數字，前台顯示會依權重顯示" name="sort" required
                                         value="{{ $info->sort }}" min="0" max="999">
                                 </div>
                             </div>

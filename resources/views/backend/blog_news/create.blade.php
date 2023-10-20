@@ -22,13 +22,13 @@
                             <div class="form-group row">
                                 <label for="author" class="col-2 col-form-label">來源出處</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="author" name="author" required value="{{ old('author',$author ?? '') }}">
+                                    <input class="form-control" id="author" placeholder="此引用文章的來源" name="author" required value="{{ old('author',$author ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="link" class="col-2 col-form-label">文章連結</label>
                                 <div class="col-10">
-                                    <input class="form-control" id="link" name="link" required value="{{ old('link',$link ?? '') }}">
+                                    <input class="form-control" id="link" placeholder="文章的網址" name="link" required value="{{ old('link',$link ?? '') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -47,7 +47,7 @@
                             <div class="form-group row">
                                 <label for="main_photo" class="col-2 col-form-label">上傳代表圖片</label>
                                 <div class="col-10">
-                                    <input type="file" class="form-control-file" id="main_photo" name="main_photo" accept="image/*" required>
+                                    <input type="file" class="form-control-file" id="main_photo" placeholder="上傳圖檔" name="main_photo" accept="image/*" required>
                                 </div>
                                 <div class="col-12">
                                     {{--<p class="text-danger">*注意：建議尺寸：525 * 200 (px)</p>--}}
@@ -57,7 +57,7 @@
                             <div class="form-group row">
                                 <label for="sort" class="col-2 col-form-label">權重</label>
                                 <div class="col-10">
-                                    <input type="number" class="form-control" id="sort" name="sort" required value="{{ old('sort',$sort ?? '1') }}" min="0" max="999">
+                                    <input type="number" class="form-control" id="sort" placeholder="僅能輸入數字，前台顯示會依權重顯示" name="sort" required value="{{ old('sort',$sort ?? '1') }}" min="0" max="999">
                                 </div>
                             </div>
 
