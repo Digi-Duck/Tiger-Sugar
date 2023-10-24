@@ -11,6 +11,7 @@ class UserSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+    // seeder密碼用hash加密
     public function run(): void
     {
         User::create([

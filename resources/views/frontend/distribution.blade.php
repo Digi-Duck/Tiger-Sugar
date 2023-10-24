@@ -94,13 +94,14 @@
                                     </div>
                                     <div class="yellow-box">
                                         <img class="ask-icon" data-product="{{ $product->id }}"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                                alt="黃色加入以詢問">
+                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
+                                            alt="黃色加入以詢問">
                                     </div>
                                     <div class="product-background-hover open-pop-window">
-                                        <a href="" class="yellow-box-hover" title="更多商品"><img class="ask-icon-hover" data-product="{{ $product->id }}"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                            alt="黃色加入以詢問"></a>
+                                        <a href="" class="yellow-box-hover" title="更多商品"><img
+                                                class="ask-icon-hover" data-product="{{ $product->id }}"
+                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                alt="黃色加入以詢問"></a>
                                         <input type="text" class="inputall" name="inputall{{ $product->id }}"
                                             value="{{ $product }}">
                                         <button class="product-background-hover-more">MORE</button>
@@ -130,11 +131,10 @@
                     <a href="" class="page-up" title="上一個頁面">
                         <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
                             alt="上一頁小圖標" />上一頁</a>
-                    <a href="" class="page-1" title="第一頁">1</a>
-                    <a href="" class="page-2" title="第二頁">2</a>
-                    <a href="" class="page-3" title="第三頁">3</a>
-                    <a href="" class="page-4" title="第四頁">4</a>
-                    <a href="" class="page-5" title="第五頁">5</a>
+                    @for ($i = 1; $i <= $products->lastPage(); $i++)
+                        <a href="{{ $products->url($i) }}" class="page-{{ $i }}"
+                            title="第{{ $i }}頁">{{ $i }}</a>
+                    @endfor
                     <a href="" class="page-down" title="下一個頁面">下一頁
                         <img src="{{ asset('./frontend-img/distribution-img/distribution/next.png') }}" alt="下一頁小圖標" />
                     </a>
@@ -340,37 +340,39 @@
                                 <div class="swiper-wrapper">
 
                                     @foreach ($random_products as $product)
-                                    <div class="swiper-pop-bottom-slide swiper-slide">
-                                        <div class="direction-body">
-                                            <div class="img-box-border-img">
-                                                <img class="product-img" src="{{ $product->img }}" alt="產品圖片">
-                                                <img class="ask-icon" data-product="{{ $product->id }}"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                                alt="黃色加入以詢問">
-                                                <div class="product-img-hover">
-                                                    <form action="" method="post">
-                                                        <button type="button" class="cursor-p">
-                                                            <img class="ask-icon-hover" data-product="{{ $product->id }}"
-                                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                                alt="黃色加入以詢問">
-                                                        </button>
-                                                    </form>
-                                                    <a href="{{ route('front.distribution') }}" class="commodity-more-button btn" title="更多商品">
-                                                        MORE
-                                                    </a>
+                                        <div class="swiper-pop-bottom-slide swiper-slide">
+                                            <div class="direction-body">
+                                                <div class="img-box-border-img">
+                                                    <img class="product-img" src="{{ $product->img }}" alt="產品圖片">
+                                                    <img class="ask-icon" data-product="{{ $product->id }}"
+                                                        src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
+                                                        alt="黃色加入以詢問">
+                                                    <div class="product-img-hover">
+                                                        <form action="" method="post">
+                                                            <button type="button" class="cursor-p">
+                                                                <img class="ask-icon-hover"
+                                                                    data-product="{{ $product->id }}"
+                                                                    src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                                    alt="黃色加入以詢問">
+                                                            </button>
+                                                        </form>
+                                                        <a href="{{ route('front.distribution') }}"
+                                                            class="commodity-more-button btn" title="更多商品">
+                                                            MORE
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="commodity-title">
+                                                    {{ $product->title_zh }}
+                                                </div>
+                                                <div class="commodity-title-english">
+                                                    {{ $product->title_en }}
+                                                </div>
+                                                <div class="commodity-sort">
+                                                    {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
                                                 </div>
                                             </div>
-                                            <div class="commodity-title">
-                                                {{ $product->title_zh }}
-                                            </div>
-                                            <div class="commodity-title-english">
-                                                {{ $product->title_en }}
-                                            </div>
-                                            <div class="commodity-sort">
-                                                {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
-                                            </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>

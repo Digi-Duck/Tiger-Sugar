@@ -142,7 +142,6 @@ class ProductsController extends Controller
             'preserve' => 'required',
             'content' => 'required',
             'notes' => 'required',
-            'video' => 'required',
         ], [
             'sort.required' => '權重必填',
             'sort.max' => '權重最多只能輸入11個數字',
@@ -163,7 +162,6 @@ class ProductsController extends Controller
             'preserve.required' => '保存方式必填',
             'content.required' => '內容必填',
             'notes.required' => '注意事項必填',
-            'video.required' => '影片必填',
         ]);
 
         $product = Products::find($id);
