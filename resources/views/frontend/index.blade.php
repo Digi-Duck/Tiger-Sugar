@@ -33,18 +33,26 @@
                             @if ($banner->type == '圖片')
                                 @if ($banner->link_url != '')
                                     <a href="{{ $banner->link_url }}">
-                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}" alt="{{ $banner->image_alt }}">
-                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}" alt="{{ $banner->image_alt }}">
+                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}"
+                                            alt="{{ $banner->image_alt }}">
+                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}"
+                                            alt="{{ $banner->image_alt }}">
                                     </a>
                                 @else
                                     <div>
-                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}" alt="{{ $banner->image_alt }}">
-                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}" alt="{{ $banner->image_alt }}">
+                                        <img class="banner-pc-img" src="{{ $banner->pc_image_url }}"
+                                            alt="{{ $banner->image_alt }}">
+                                        <img class="banner-mb-img" src="{{ $banner->mb_image_url }}"
+                                            alt="{{ $banner->image_alt }}">
                                     </div>
                                 @endif
                             @elseif ($banner->type == '影片')
-                            <iframe class="banner-pc-vedio" src="https://youtube.com/embed/{{ $banner->pc_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1"> alt="{{ $banner->pc_video_url }}" frameborder="0"></iframe>
-                            <iframe class="banner-mb-vedio" src="https://youtube.com/embed/{{ $banner->mb_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1"> alt="{{ $banner->mb_video_url }}" frameborder="0"></iframe>
+                                <iframe class="banner-pc-vedio"
+                                    src="https://youtube.com/embed/{{ $banner->pc_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1">
+                                    alt="{{ $banner->pc_video_url }}" frameborder="0"></iframe>
+                                <iframe class="banner-mb-vedio"
+                                    src="https://youtube.com/embed/{{ $banner->mb_video_url }}?autoplay=1&controls=0&showinfo=0&autohide=1">
+                                    alt="{{ $banner->mb_video_url }}" frameborder="0"></iframe>
                             @endif
                         </div>
                     @endforeach
@@ -200,6 +208,7 @@
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
                             @foreach ($products as $product)
+                                @csrf
                                 <div class="swiper-slide">
                                     <div class="direction-body">
                                         <div class="img-w-h-border-img">
