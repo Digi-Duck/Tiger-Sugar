@@ -220,7 +220,6 @@ class FrontController extends Controller
     }
     public function add(Request $request)
     {
-        dd($request->add);
-        return view('frontend.index');
+        return redirect(route('front.index'));
     }
 }

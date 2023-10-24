@@ -208,7 +208,6 @@
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
                             @foreach ($products as $product)
-                                @csrf
                                 <div class="swiper-slide">
                                     <div class="direction-body">
                                         <div class="img-w-h-border-img">
@@ -218,6 +217,7 @@
                                                 alt="黃色加入以詢問">
                                             <div class="product-img-hover">
                                                 <form action="{{ route('front.add') }}" method="post">
+                                                    @csrf
                                                     <input type="hidden" name="add" value="{{ $product->id }}">
                                                     <button type="submit" class="cursor-p">
                                                         <img class="ask-icon-hover"
