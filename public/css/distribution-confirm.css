@@ -10,7 +10,7 @@ body {
     padding: 0;
 }
 
-.cursor-p{
+.cursor-p {
     cursor: pointer;
 }
 
@@ -22,7 +22,7 @@ ul li {
     list-style-type: none;
 }
 
-#distribution-container span{
+#distribution-container span {
     color: red;
     font-size: 25px;
 }
@@ -801,22 +801,23 @@ ul li {
     }
 }
 
-@media (max-width:576px){
-    #franchisee .join-us-img{
+@media (max-width:576px) {
+    #franchisee .join-us-img {
         width: 269px;
     }
-    #franchisee .join-us-info{
+
+    #franchisee .join-us-info {
         width: 141px;
     }
 }
 
- /* 產品方塊more btn */
- #distribution-confirm .product-img-hover button {
+/* 產品方塊more btn */
+#distribution-confirm .product-img-hover button {
     background: none;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-	outline: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
 }
 
 #distribution-confirm .product-img-hover button:active {
@@ -824,7 +825,7 @@ ul li {
     color: #000000;
 }
 
-#distribution-confirm .title-checked{
+#distribution-confirm .title-checked {
     background-color: white;
     color: black;
 }
