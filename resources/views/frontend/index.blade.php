@@ -204,6 +204,7 @@
                     </div>
                 </div>
                 <!-- Swiper -->
+                @dump($product_id)
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">

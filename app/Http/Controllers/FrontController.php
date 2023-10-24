@@ -26,7 +26,9 @@ class FrontController extends Controller
         $medias = Media::orderBy('sort', 'asc')->get();
         $drink_types = DrinkType::orderBy('sort', 'asc')->get();
         $products = Products::orderBy('sort', 'asc')->take(6)->get();
-        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners'));
+        $product_id = session()->get('product_id', '');
+        
+        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners','product_id'));
     }
 
     public function distribution()
@@ -220,6 +222,7 @@ class FrontController extends Controller
     }
     public function add(Request $request)
     {
+        $request->session()->put('product_id', $request->add);
         return redirect(route('front.index'));
     }
 }
