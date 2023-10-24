@@ -29,12 +29,17 @@ class FrontController extends Controller
         return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners'));
     }
 
-    public function distribution()
+    public function distribution(Request $request)
     {
-        $products = Products::with('ProductsType', 'ProductsImgs')->orderBy('sort', 'asc')->get();
+        $products = Products::with('ProductsType', 'ProductsImgs')
+            ->orderBy('sort', 'asc')
+            ->paginate(9);
+
         $random_products = Products::inRandomOrder()->take(6)->get();
         return view('frontend.distribution', compact('products', 'random_products'));
     }
+
+
 
     public function distributionConfirm()
     {
