@@ -204,28 +204,26 @@
                     </div>
                 </div>
                 <!-- Swiper -->
-                @dump($product_id)
+                {{-- @dump($product_id)
+                @dump($product_all) --}}
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
                             @foreach ($products as $product)
-                                <div class="swiper-slide">
-                                    <div class="direction-body">
-                                        <div class="img-w-h-border-img">
+                            <div class="swiper-slide">
+                                <div class="direction-body">
+                                    <div class="img-w-h-border-img">
                                             <img class="product-img" src="{{ $product->img }}" alt="產品圖片">
                                             <img class="ask-icon"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                                 alt="黃色加入以詢問">
                                             <div class="product-img-hover">
-                                                <form action="{{ route('front.add') }}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="add" value="{{ $product->id }}">
-                                                    <button type="submit" class="cursor-p">
-                                                        <img class="ask-icon-hover"
-                                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                            alt="黃色加入以詢問">
-                                                    </button>
-                                                </form>
+                                                <input type="hidden" name="add" value="{{ $product->id }}">
+                                                <button type="button" id="add-button" class="cursor-p" data-id="{{$product->id}}">
+                                                    <img class="ask-icon-hover"
+                                                        src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                        alt="黃色加入以詢問">
+                                                </button>
                                                 <a href={{ route('front.distribution') }}
                                                     class="commodity-more-button btn" title="更多商品">
                                                     MORE
@@ -520,6 +518,7 @@
 @endsection
 
 @section('js')
+    <script src="{{ asset('./js/backend.addProduct.js') }}"></script>
     <script src="{{ asset('./js/index.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
 @endsection

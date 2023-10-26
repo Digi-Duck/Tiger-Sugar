@@ -15,6 +15,7 @@ use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Composer;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Arr;
 
 class FrontController extends Controller
 {
@@ -27,8 +28,9 @@ class FrontController extends Controller
         $drink_types = DrinkType::orderBy('sort', 'asc')->get();
         $products = Products::orderBy('sort', 'asc')->take(6)->get();
         $product_id = session()->get('product_id', '');
-        
-        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners','product_id'));
+        $product_all = [];
+        $product_all = Arr::prepend($product_all, $product_id);
+        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners', 'product_id', 'product_all'));
     }
 
     public function distribution(Request $request)

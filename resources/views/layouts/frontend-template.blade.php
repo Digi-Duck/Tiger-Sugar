@@ -360,6 +360,9 @@
         <p class="footer-text">Copyright © 201811 Tigersugar International Enterprise Co., Ltd.</p>
     </footer>
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
