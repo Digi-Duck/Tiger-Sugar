@@ -27,7 +27,7 @@ class FrontController extends Controller
         $medias = Media::orderBy('sort', 'asc')->get();
         $drink_types = DrinkType::orderBy('sort', 'asc')->get();
         $products = Products::orderBy('sort', 'asc')->take(6)->get();
-        $product_id = session()->get('product_id', '');
+        $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
         return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners', 'product_id','product_count'));
     }
@@ -39,7 +39,7 @@ class FrontController extends Controller
             ->paginate(9);
         $currentPage = $products->currentPage();
         $lastPage = $products->lastPage();
-        $product_id = session()->get('product_id', '');
+        $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
 
         $random_products = Products::inRandomOrder()->take(6)->get();
@@ -51,7 +51,7 @@ class FrontController extends Controller
     public function distributionConfirm()
     {
         $productsType = ProductsType::orderBy('sort', 'asc')->get();
-        $product_id = session()->get('product_id', '');
+        $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
         // $products = Products::where('id', '=', $product_id)->get();
         $products = Products::orderBy('sort', 'asc')->get();
@@ -237,7 +237,7 @@ class FrontController extends Controller
 
     public function addToCart(Request $request)
     {
-        $cart = session()->get('product_id', '');
+        $cart = session()->get('product_id', []);
         if(!in_array($request->id,$cart)){
             array_push($cart, $request->id);
             $request->session()->put('product_id', $cart);
