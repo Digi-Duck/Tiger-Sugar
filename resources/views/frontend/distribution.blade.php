@@ -126,19 +126,20 @@
                 <div class="div-line"></div>
 
                 <!-- 頁面數 -->
-
                 <div class="page-up-and-page-down-group-buttom">
-                    <a href="" class="page-up" title="上一個頁面">
-                        <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
-                            alt="上一頁小圖標" />上一頁</a>
-                    @for ($i = 1; $i <= $products->lastPage(); $i++)
-                        <a href="{{ $products->url($i) }}" class="page-{{ $i }}"
-                            title="第{{ $i }}頁">{{ $i }}</a>
-                    @endfor
-                    <a href="" class="page-down" title="下一個頁面">下一頁
+                    <a href="{{ $products->url($products->currentPage() - 1) }}" class="page-up" title="上一個頁面">
+                        <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}" alt="上一頁小圖標" />上一頁
+                    </a>
+
+                    @foreach(range(1, $products->lastPage()) as $i)
+                        <a href="{{ $products->url($i) }}" class="page-{{ $i }} @if ($i === $products->currentPage()) active @endif current-page" title="第{{ $i }}頁">{{ $i }}</a>
+                    @endforeach
+
+                    <a href="{{ $products->url($products->currentPage() + 1) }}" class="page-down" title="下一個頁面">下一頁
                         <img src="{{ asset('./frontend-img/distribution-img/distribution/next.png') }}" alt="下一頁小圖標" />
                     </a>
                 </div>
+
             </div>
         </div>
     </section>

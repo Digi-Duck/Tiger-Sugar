@@ -309,11 +309,12 @@ header .dropdown-content-en {
     top: 45px;
 }
 
-header .dropdown-content-ch a,
-header .dropdown-content-en a {
+header .dropdown-content-ch,
+header .dropdown-content-en  {
     color: white;
     text-align: center;
     text-decoration: none;
+    position: absolute;
 }
 
 header .dropdown-content-ch:hover {

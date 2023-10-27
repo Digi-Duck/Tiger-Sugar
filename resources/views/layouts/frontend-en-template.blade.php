@@ -161,12 +161,12 @@
                                 <a href="#" title="語言切換">LANGUAGE &dtrif;</a>
                             </div>
                             <div class="drop-down-menu-sub">
-                                <div class="dropdown-content-ch">
-                                    <a href="{{ route('front.index') }}" title="選擇中文">繁體中文</a>
-                                </div>
-                                <div class="dropdown-content-en">
-                                    <a href="{{ route('front.index.en') }}" title="select on English">English</a>
-                                </div>
+                                <a class="dropdown-content-ch" href="{{ route('front.index') }}" >
+                                    <div title="選擇中文">繁體中文</div>
+                                </a>
+                                <a class="dropdown-content-en" href="{{ route('front.index.en') }}">
+                                    <div  title="select on English">English</div>
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -298,14 +298,14 @@
                                     <div class="swiper mySwiper header-swiper-container">
                                         <div class="swiper-wrapper header-swiper-language">
                                             <div class="swiper-slide">
-                                                <a href="" title="繁體中文" title="選擇中文">
+                                                <a href="{{ route('front.index') }}" title="繁體中文" title="選擇中文">
                                                     <div class="header-slide-ch">
                                                         繁體中文
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="swiper-slide">
-                                                <a href="" title="english" title="select on English">
+                                                <a href="{{ route('front.index.en') }}" title="english" title="select on English">
                                                     <div class="header-slide-en">
                                                         ENGLISH
                                                     </div>
