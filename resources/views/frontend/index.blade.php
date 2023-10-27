@@ -219,7 +219,6 @@
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                                 alt="黃色加入以詢問">
                                             <div class="product-img-hover">
-                                                <input type="hidden" name="add" value="{{ $product->id }}">
                                                 {{-- <button type="button" id="add-button" class="cursor-p" data-id="{{$product->id}}">
                                                     <img class="ask-icon-hover"
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
@@ -524,7 +523,6 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('./js/backend.addProduct.js') }}"></script>
     <script src="{{ asset('./js/index.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

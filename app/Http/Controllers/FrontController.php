@@ -29,9 +29,7 @@ class FrontController extends Controller
         $products = Products::orderBy('sort', 'asc')->take(6)->get();
         $product_id = session()->get('product_id', '');
         $product_count = count($product_id);
-        $product_all = [];
-        $product_all = Arr::prepend($product_all, $product_id);
-        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners', 'product_id', 'product_all','product_count'));
+        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners', 'product_id','product_count'));
     }
 
     public function distribution(Request $request)
@@ -55,8 +53,9 @@ class FrontController extends Controller
         $productsType = ProductsType::orderBy('sort', 'asc')->get();
         $product_id = session()->get('product_id', '');
         $product_count = count($product_id);
-        $products = Products::where('id', '=', $product_id)->get();
-        return view('frontend.distribution-confirm', compact('productsType', 'product_count', 'products'));
+        // $products = Products::where('id', '=', $product_id)->get();
+        $products = Products::orderBy('sort', 'asc')->get();
+        return view('frontend.distribution-confirm', compact('productsType', 'product_count', 'products' ,'product_id'));
     }
 
     public function distributionConfirmStore(Request $request)
@@ -234,11 +233,6 @@ class FrontController extends Controller
         ]);
 
         return view('frontend.franchisee-form', compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
-    }
-    public function add(Request $request)
-    {
-        $request->session()->put('product_id', $request->add);
-        return redirect(route('front.index'));
     }
 
     public function addToCart(Request $request)

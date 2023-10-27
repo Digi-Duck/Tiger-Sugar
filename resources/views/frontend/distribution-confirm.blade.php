@@ -81,12 +81,11 @@
                     <hr class="distribution-line">
                     <div class="content-area">
                         <div class="card-container">
-                            @dd($products->all())
                             @foreach ($products as $product)
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/1668998205a2557a7b2e94197ff767970b67041697.jpg') }}"
+                                        src="{{ $product->img }}"
                                         alt="商品圖片">
                                     <img class="ask-icon"
                                         src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
@@ -103,13 +102,13 @@
                                     </div>
                                 </div>
                                 <div class="commodity-title">
-                                    老虎堂地瓜條
+                                    {{ $product->title_zh }}
                                 </div>
                                 <div class="commodity-title-english">
-                                    Tiger Sugar Sweet Potato Fries
+                                    {{ $product->title_en }}
                                 </div>
                                 <div class="commodity-sort">
-                                    零食｜Snack
+                                    {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
                                 </div>
                             </div>
                             @endforeach
