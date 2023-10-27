@@ -38,6 +38,8 @@ class FrontController extends Controller
         $products = Products::with('ProductsType', 'ProductsImgs')
             ->orderBy('sort', 'asc')
             ->paginate(9);
+        $currentPage = $products->currentPage();
+        $lastPage = $products->lastPage();
 
         $random_products = Products::inRandomOrder()->take(6)->get();
         return view('frontend.distribution', compact('products', 'random_products'));

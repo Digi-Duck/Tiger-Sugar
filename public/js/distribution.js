@@ -95,20 +95,20 @@ openPopWindows.forEach(function (btn) {
             contentMiddle.innerHTML += `<p>${item}</p>`;
         });
 
-            let video = document.querySelector('.content-right');
-            const youtubeUrl = data.video;
-            const videoId = youtubeUrl.split('v=')[1];
-            const ampersandPosition = videoId.indexOf('&');
-            if (ampersandPosition !== -1) {
-                videoId = videoId.substring(0, ampersandPosition);
-            }
+        let video = document.querySelector('.content-right');
+        const youtubeUrl = data.video;
+        const videoId = youtubeUrl.split('v=')[1];
+        const ampersandPosition = videoId.indexOf('&');
+        if (ampersandPosition !== -1) {
+            videoId = videoId.substring(0, ampersandPosition);
+        }
 
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}`;
-            iframe.width = "560";
-            iframe.height = "315";
-            iframe.allowFullscreen = true;
-            video.appendChild(iframe);
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.allowFullscreen = true;
+        video.appendChild(iframe);
     });
 });
 
@@ -132,6 +132,25 @@ overlayClose.addEventListener('click', function (event) {
     console.log(overlayClose);
 });
 
+
+//paginator active
+
+let pageLinks = document.querySelectorAll(`.page-${i}`);
+pageLinks.forEach(pageLink => {
+    console.log('.page-{{ $i }}');
+    currentPage.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        pageLink.forEach(link => {
+            link.classList.remove('active');
+        });
+        this.classList.add('active');
+        console.log(`.page-${i}`);
+    });
+});
+
+
 AOS.init({
     duration: 800,
 });
+
