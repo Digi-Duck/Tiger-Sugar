@@ -341,7 +341,7 @@
                 <div class="shop-cart-amount-area">
                     <img class="shop-cart-amount" src="{{ asset('./frontend-img/header-img/amount.svg') }}"
                         alt="前往購物車">
-                    <div class="shop-cart-number">0</div>
+                    <div class="shop-cart-number">{{ $product_count }}</div>
                 </div>
             </button>
         </a>
