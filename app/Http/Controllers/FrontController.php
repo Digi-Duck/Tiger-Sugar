@@ -232,4 +232,16 @@ class FrontController extends Controller
         $request->session()->put('product_id', $request->add);
         return redirect(route('front.index'));
     }
+
+    public function addToCart(Request $request)
+    {
+        $cart = session()->get('product_id', '');
+        if(!in_array($request->id,$cart)){
+            array_push($cart, $request->id);
+            $request->session()->put('product_id', $cart);
+            return 'success';
+        }else{
+            return '';
+        }
+    }
 }

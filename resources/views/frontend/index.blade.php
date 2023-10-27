@@ -201,6 +201,7 @@
                     <div class="title-text">
                         <div class="title-text-1">產品經銷</div>
                         <div class="title-text-2">DISTRIBUTION</div>
+                        @dump($product_id)
                     </div>
                 </div>
                 <!-- Swiper -->
@@ -219,7 +220,12 @@
                                                 alt="黃色加入以詢問">
                                             <div class="product-img-hover">
                                                 <input type="hidden" name="add" value="{{ $product->id }}">
-                                                <button type="button" id="add-button" class="cursor-p" data-id="{{$product->id}}">
+                                                {{-- <button type="button" id="add-button" class="cursor-p" data-id="{{$product->id}}">
+                                                    <img class="ask-icon-hover"
+                                                        src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                        alt="黃色加入以詢問">
+                                                </button> --}}
+                                                <button type="button" id="add-button" class="cursor-p" onclick="add({{ $product->id }})">
                                                     <img class="ask-icon-hover"
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                         alt="黃色加入以詢問">
@@ -521,4 +527,35 @@
     <script src="{{ asset('./js/backend.addProduct.js') }}"></script>
     <script src="{{ asset('./js/index.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function add(id) {
+        console.log(id);
+        const formData = new FormData();
+        formData.append('_token', '{{ csrf_token() }}');
+        formData.append('_method', 'post');
+        formData.append('id', id);
+        fetch('{{ route("front.add_to_cart") }}', {
+            method: 'POST',
+            body: formData,
+        }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '新增成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '新增失敗',
+                            });
+                        }
+                    });
+    }
+    </script>
 @endsection
