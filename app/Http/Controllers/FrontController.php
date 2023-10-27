@@ -41,9 +41,11 @@ class FrontController extends Controller
             ->paginate(9);
         $currentPage = $products->currentPage();
         $lastPage = $products->lastPage();
+        $product_id = session()->get('product_id', '');
+        $product_count = count($product_id);
 
         $random_products = Products::inRandomOrder()->take(6)->get();
-        return view('frontend.distribution', compact('products', 'random_products'));
+        return view('frontend.distribution', compact('products', 'random_products', 'product_count'));
     }
 
 
@@ -51,7 +53,10 @@ class FrontController extends Controller
     public function distributionConfirm()
     {
         $productsType = ProductsType::orderBy('sort', 'asc')->get();
-        return view('frontend.distribution-confirm', compact('productsType'));
+        $product_id = session()->get('product_id', '');
+        $product_count = count($product_id);
+        $products = Products::where('id', '=', $product_id)->get();
+        return view('frontend.distribution-confirm', compact('productsType', 'product_count', 'products'));
     }
 
     public function distributionConfirmStore(Request $request)

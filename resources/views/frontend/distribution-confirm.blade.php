@@ -81,6 +81,8 @@
                     <hr class="distribution-line">
                     <div class="content-area">
                         <div class="card-container">
+                            @dd($products->all())
+                            @foreach ($products as $product)
                             <div class="direction-body">
                                 <div class="img-hover">
                                     <img class="product-img"
@@ -110,114 +112,8 @@
                                     零食｜Snack
                                 </div>
                             </div>
-                            <div class="direction-body">
-                                <div class="img-hover">
-                                    <img class="product-img"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/165899031442a0e188f5033bc65bf8d78622277c4e.jpg') }}"
-                                        alt="商品圖片">
-                                    <img class="ask-icon"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
-                                        alt="移除已加商品">
-                                    <div class="product-img-hover open-pop-window">
-                                        <img class="ask-icon-hover"
-                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
-                                            alt="移除已加商品">
-                                        <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
-                                            MORE
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="commodity-title">
-                                    經典黑糖麻糬包
-                                </div>
-                                <div class="commodity-title-english">
-                                    Black Sugar Mochi Bun
-                                </div>
-                                <div class="commodity-sort">
-                                    食品 | Food
-                                </div>
-                            </div>
-                            <div class="direction-body">
-                                <div class="img-hover">
-                                    <img class="product-img"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/165899100742a0e188f5033bc65bf8d78622277c4e.jpg') }}"
-                                        alt="商品圖片">
-                                    <img class="ask-icon"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
-                                        alt="移除已加商品">
-                                    <div class="product-img-hover">
-                                        <img class="ask-icon-hover"
-                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
-                                            alt="移除已加商品">
-                                        <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
-                                            MORE
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="commodity-title">
-                                    爆漿起司流心包
-                                </div>
-                                <div class="commodity-title-english">
-                                    Bursting Cheese Filling Bun
-                                </div>
-                                <div class="commodity-sort">
-                                    食品 | Food
-                                </div>
-                            </div>
-                            <div class="direction-body">
-                                <div class="img-hover">
-                                    <img class="product-img"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/1658908734cfecdb276f634854f3ef915e2e980c31.jpg') }}"
-                                        alt="商品圖片">
-                                    <img class="ask-icon"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
-                                        alt="移除已加商品">
-                                    <div class="product-img-hover">
-                                        <img class="ask-icon-hover"
-                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
-                                            alt="移除已加商品">
-                                        <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
-                                            MORE
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="commodity-title">
-                                    黑糖奶霜樹幹年輪
-                                </div>
-                                <div class="commodity-title-english">
-                                    Black Suga Cream Trunk Baumkuchen
-                                </div>
-                                <div class="commodity-sort">
-                                    甜點 | dessert
-                                </div>
-                            </div>
-                            <div class="direction-body">
-                                <div class="img-hover">
-                                    <img class="product-img"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/16589912415878a7ab84fb43402106c575658472fa.jpg') }}"
-                                        alt="商品圖片">
-                                    <img class="ask-icon"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
-                                        alt="移除已加商品">
-                                    <div class="product-img-hover">
-                                        <img class="ask-icon-hover"
-                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
-                                            alt="移除已加商品">
-                                        <a href="" class="commodity-more-button btn-more" title="獲取商品規格資訊">
-                                            MORE
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="commodity-title">
-                                    特濃黑糖厚奶蓋蛋糕
-                                </div>
-                                <div class="commodity-title-english">
-                                    Black Sugar Cheese Foam Cake
-                                </div>
-                                <div class="commodity-sort">
-                                    甜點 | dessert
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                     <hr class="distribution-line-down">
