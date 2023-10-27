@@ -53,7 +53,6 @@ class FrontController extends Controller
         $productsType = ProductsType::orderBy('sort', 'asc')->get();
         $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
-        // $products = Products::where('id', '=', $product_id)->get();
         $products = Products::where(function ($query) use ($product_id) {
             foreach ($product_id as $value) {
                 $query->orWhere('id', $value);
