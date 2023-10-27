@@ -29,7 +29,7 @@ class FrontController extends Controller
         $products = Products::orderBy('sort', 'asc')->take(6)->get();
         $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
-        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners', 'product_id','product_count'));
+        return view('frontend.index', compact('blognews', 'medias', 'drink_types', 'products', 'social', 'banners', 'product_id', 'product_count'));
     }
 
     public function distribution(Request $request)
@@ -54,8 +54,12 @@ class FrontController extends Controller
         $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
         // $products = Products::where('id', '=', $product_id)->get();
-        $products = Products::orderBy('sort', 'asc')->get();
-        return view('frontend.distribution-confirm', compact('productsType', 'product_count', 'products' ,'product_id'));
+        $products = Products::where(function ($query) use ($product_id) {
+            foreach ($product_id as $value) {
+                $query->orWhere('id', $value);
+            }
+        })->get();
+        return view('frontend.distribution-confirm', compact('productsType', 'product_count', 'products', 'product_id'));
     }
 
     public function distributionConfirmStore(Request $request)
@@ -238,11 +242,11 @@ class FrontController extends Controller
     public function addToCart(Request $request)
     {
         $cart = session()->get('product_id', []);
-        if(!in_array($request->id,$cart)){
+        if (!in_array($request->id, $cart)) {
             array_push($cart, $request->id);
             $request->session()->put('product_id', $cart);
             return 'success';
-        }else{
+        } else {
             return '';
         }
     }
