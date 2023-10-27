@@ -698,6 +698,13 @@ h2 {
 
 
 /* distribution CSS */
+
+.add-button {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
 #link-distribution {
     position: absolute;
     transform: translateY(-100%);

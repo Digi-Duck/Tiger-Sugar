@@ -225,7 +225,7 @@
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                         alt="黃色加入以詢問">
                                                 </button> --}}
-                                                <button type="button" id="add-button" class="cursor-p" onclick="add({{ $product->id }})">
+                                                <button type="button" id="add-button" class="add-button" onclick="add({{ $product->id }})">
                                                     <img class="ask-icon-hover"
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                         alt="黃色加入以詢問">
