@@ -99,6 +99,8 @@ class FrontController extends Controller
     public function franchisee()
     {
         $franchise_explains = FranchiseExplain::orderBy('id')->get();
+        $product_id = session()->get('product_id', []);
+        $product_count = count($product_id);
         $item = 1;
         foreach ($franchise_explains as $value) {
             $value->sequence = $item;
@@ -114,7 +116,7 @@ class FrontController extends Controller
                 $evenItems[] = $item;
             }
         }
-        return view('frontend.franchisee', compact('franchise_explains', 'oddItems', 'evenItems'));
+        return view('frontend.franchisee', compact('franchise_explains', 'oddItems', 'evenItems', 'product_countr'));
     }
 
     public function franchiseeForm()
