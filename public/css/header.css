@@ -303,28 +303,21 @@ header .dropdown-content-en {
     list-style: none;
     background-color: #0C1219;
     transition: 0.3s;
-}
-
-header .dropdown-content-en {
-    top: 45px;
-}
-
-header .dropdown-content-ch,
-header .dropdown-content-en  {
     color: white;
     text-align: center;
     text-decoration: none;
     position: absolute;
 }
 
-header .dropdown-content-ch:hover {
-    background-color: #ffe282;
-    text-decoration: none;
+header .dropdown-content-en {
+    top: 45px;
 }
 
-header .dropdown-content-en:hover {
-    background-color: #ffe282;
+
+header .dropdown-content-ch:active,
+header .dropdown-content-en:active{
     text-decoration: none;
+    background-color: #ffe282;
 }
 
 header .dropdown-content-ch:hover a,
