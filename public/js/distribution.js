@@ -22,14 +22,6 @@ function closePopup(event) {
     document.querySelector('.window-overlay').style.display = 'none';
 }
 
-// const openPopWindows = document.querySelectorAll('.open-pop-window');
-// openPopWindows.forEach(function(btn) {
-//   btn.addEventListener('click', function (event) {
-//       document.querySelector('.im-pop-window').style.display ='block';
-//       document.querySelector('.window-overlay').style.display = 'block';
-//   });
-// });
-
 function getDate(date) {
     const objectDate = new Date(date);
     const year = objectDate.getFullYear();
@@ -40,10 +32,10 @@ function getDate(date) {
 const openPopWindows = document.querySelectorAll('.open-pop-window');
 openPopWindows.forEach(function (btn) {
     btn.addEventListener('click', function (event) {
+        event.preventDefault();
         const data = JSON.parse(btn.children[1].value);
         document.querySelector('.im-pop-window').style.display = 'block';
         document.querySelector('.window-overlay').style.display = 'block';
-
         let popSwiper = document.querySelector('.poping-swiper');
         let popSwiperSub = document.querySelector('.poping-swiper-sub');
         popSwiper.innerHTML = '';

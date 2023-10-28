@@ -98,7 +98,7 @@
                                             alt="黃色加入以詢問">
                                     </div>
                                     <div class="product-background-hover open-pop-window">
-                                        <a href="" class="yellow-box-hover" title="更多商品"><img
+                                        <a href="{{route('front.distribution')}}" class="yellow-box-hover" title="更多商品"><img
                                                 class="ask-icon-hover" data-product="{{ $product->id }}"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問"></a>
