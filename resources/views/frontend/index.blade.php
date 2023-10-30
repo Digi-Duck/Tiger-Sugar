@@ -131,7 +131,7 @@
         </section>
 
         <!-- 佑 社群回饋 -->
-        <section id="social">
+        <section id="social" >
             <div class="header">
                 <div class="container">
                     <div class="title">
@@ -146,15 +146,18 @@
             <div class="container">
                 <!-- Swiper -->
                 <div class="swiper mySwiper-social">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" >
                         @foreach ($social as $single_social)
                             @if ($single_social->type == 'embed')
-                                <div class="swiper-slide"><iframe class="card-body"
-                                        src="{{ $single_social->embed_link }}" allowtransparency="true"
-                                        allowfullscreen="true" frameborder="0"
-                                        data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe></div>
-                            @else
                                 <div class="swiper-slide">
+                                    <iframe class="card-body" id="myIframe" name="myIframe"
+                                        src="{{ $single_social->embed_link }}"
+                                        marginwidth="0" marginheight="0"
+                                        allowtransparency="true" allowfullscreen="true" frameborder="0" width="100%"
+                                        data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe>
+                                </div>
+                            @else
+                                {{-- <div class="swiper-slide">
                                     <div class="iframe-card">
                                         <div class="iframe-header">
                                             <div class="iframe-left-user-info">
@@ -179,7 +182,7 @@
                                             <div class="iframe-update">{{ $single_social->post_date }}</div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             @endif
                         @endforeach
                     </div>
@@ -211,9 +214,9 @@
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">
                             @foreach ($products as $product)
-                            <div class="swiper-slide">
-                                <div class="direction-body">
-                                    <div class="img-w-h-border-img">
+                                <div class="swiper-slide">
+                                    <div class="direction-body">
+                                        <div class="img-w-h-border-img">
                                             <img class="product-img" src="{{ $product->img }}" alt="產品圖片">
                                             <img class="ask-icon"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
@@ -224,7 +227,8 @@
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                         alt="黃色加入以詢問">
                                                 </button> --}}
-                                                <button type="button" id="add-button" class="add-button" onclick="add({{ $product->id }})">
+                                                <button type="button" id="add-button" class="add-button"
+                                                    onclick="add({{ $product->id }})">
                                                     <img class="ask-icon-hover"
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                         alt="黃色加入以詢問">
@@ -525,35 +529,36 @@
 @section('js')
     <script src="{{ asset('./js/index.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('./js/iframe.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function add(id) {
-        console.log(id);
-        const formData = new FormData();
-        formData.append('_token', '{{ csrf_token() }}');
-        formData.append('_method', 'post');
-        formData.append('id', id);
-        fetch('{{ route("front.add_to_cart") }}', {
-            method: 'POST',
-            body: formData,
-        }).then((res) => {
-                        return res.text();
-                    }).then((data) => {
-                        console.log(data);
-                        if (data == 'success') {
-                            Swal.fire({
-                                icon: 'success',
-                                title: '新增成功',
-                            }).then((res) => {
-                                location.reload();
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: '新增失敗',
-                            });
-                        }
+            console.log(id);
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'post');
+            formData.append('id', id);
+            fetch('{{ route('front.add_to_cart') }}', {
+                method: 'POST',
+                body: formData,
+            }).then((res) => {
+                return res.text();
+            }).then((data) => {
+                console.log(data);
+                if (data == 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '新增成功',
+                    }).then((res) => {
+                        location.reload();
                     });
-    }
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '新增失敗',
+                    });
+                }
+            });
+        }
     </script>
 @endsection

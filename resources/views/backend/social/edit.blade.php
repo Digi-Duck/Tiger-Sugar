@@ -195,7 +195,7 @@
                                 <a href="{{ route('back.social.index') }}">
                                     <button type="button" class="btn btn-primary d-block">返回</button>
                                 </a>
-                                <button type="submit" class="btn btn-primary d-block">更新並上傳圖片</button>
+                                <button type="submit" class="btn btn-primary d-block">儲存修改</button>
                             </div>
                         </form>
                     </div>
