@@ -212,11 +212,9 @@
                                     <div class="fill-country">
                                         <label for="country" class="fill-country-text">預定經銷國家｜Distirbution
                                             Area<span>*</span></label>
-                                        <select id="country" class="fill-country-input" name="country" required>
-                                            <option value="america">America</option>
-                                            <option value="california">California</option>
-                                            <option value="canada">Canada</option>
-                                            <option value="taiwan" selected>Taiwan</option>
+                                        <select id="country" class="fill-country-input crs-country" name="country"
+                                            required value="{{ old('country', $country ?? '') }}"
+                                            data-default-value="Taiwan">
                                         </select>
                                     </div>
 
@@ -622,6 +620,7 @@
 @endsection
 
 @section('js')
+    <script src="{{ asset('./js/crs.min.js') }}"></script>
     <script src="{{ asset('./js/distribution-confirm.js') }}"></script>
     <script src="{{ asset('./js/popwindow.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
