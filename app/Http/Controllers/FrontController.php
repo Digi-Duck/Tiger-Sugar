@@ -125,7 +125,9 @@ class FrontController extends Controller
 
     public function franchiseeForm()
     {
-        return view('frontend.franchisee-form');
+        $product_id = session()->get('product_id', []);
+        $product_count = count($product_id);
+        return view('frontend.franchisee-form', compact('product_count'));
     }
     public function franchiseeFormStore(Request $request)
     {
