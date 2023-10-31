@@ -86,6 +86,7 @@ document.addEventListener("wheel", (event) => {
 var swiper = new Swiper("#social .mySwiper-social", {
   slidesPerView: 1,
   spaceBetween: 10,
+  loop: true,
   navigation: {
     nextEl: ".swiper-button-social .swiper-button-next",
     prevEl: ".swiper-button-social .swiper-button-prev",
@@ -98,9 +99,14 @@ var swiper = new Swiper("#social .mySwiper-social", {
     1200: {
       slidesPerView: 3,
       spaceBetween: 30,
-    }
+    },
+    // onImagesReady: function (swiper) {
+    //     resizeSwiper();
+    //     swiper.onResize();
+    // }
   }
 });
+
 
 
 // distribution

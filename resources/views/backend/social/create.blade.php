@@ -53,7 +53,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="embed_link" class="col-2 col-form-label">嵌入碼</label>
+                                        <label for="embed_link" class="col-2 col-form-label">嵌入碼(iframe)</label>
                                         <div class="col-10">
                                             <textarea class="form-control" rows="3" id="embed_link" name="embed_link" required value="{{ old('embed_link',$embed_link ?? '') }}"></textarea>
                                         </div>

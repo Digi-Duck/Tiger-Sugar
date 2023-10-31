@@ -469,7 +469,7 @@ h2 {
     }
 
     #social .card-body {
-        height: 400px !important;
+        /* height: 400px !important; */
     }
 
     #social .swiper-button-next,
@@ -484,7 +484,7 @@ h2 {
     }
 
     #social .card-body {
-        height: 450px !important;
+        /* height: 450px !important; */
     }
 
     #social .swiper-button-next,
@@ -499,7 +499,7 @@ h2 {
     }
 
     #social .card-body {
-        height: 540px !important;
+        /* height: 540px !important; */
     }
 }
 
@@ -509,7 +509,7 @@ h2 {
     }
 
     #social .card-body {
-        height: 656px !important;
+        /* height: 656px !important; */
     }
 }
 
@@ -519,7 +519,7 @@ h2 {
     }
 
     #social .card-body {
-        height: 550px !important;
+        /* height: 550px !important; */
     }
 }
 
@@ -606,16 +606,17 @@ h2 {
     background: white;
     max-width: 540px;
     width: calc(100% - 2px);
-    height: 556px;
+    /* height: 556px; */
+    /* max-height: 100%; */
     border-radius: 3px;
     border: 1px solid rgb(219, 219, 219);
     box-shadow: none;
-    display: block;
+    /* display: block; */
+    display: flex;
     padding: 0px;
-
 }
 
-#social .iframe-card{
+/* #social .iframe-card{
     width: 350px;
 }
 
@@ -690,7 +691,12 @@ h2 {
     font-size: 14.4px;
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
+} */
+
+/* iframe {
+    height: none !important;
+    min-height: 100%;
+} */
 /* social CSS結束 */
 
 
