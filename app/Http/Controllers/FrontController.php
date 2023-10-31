@@ -53,11 +53,15 @@ class FrontController extends Controller
         $productsType = ProductsType::orderBy('sort', 'asc')->get();
         $product_id = session()->get('product_id', []);
         $product_count = count($product_id);
-        $products = Products::where(function ($query) use ($product_id) {
-            foreach ($product_id as $value) {
-                $query->orWhere('id', $value);
-            }
-        })->get();
+        if (!empty($product_id)) {
+            $products = Products::where(function ($query) use ($product_id) {
+                foreach ($product_id as $value) {
+                    $query->orWhere('id', $value);
+                }
+            })->get();
+        } else {
+            $products = [];
+        }
         return view('frontend.distribution-confirm', compact('productsType', 'product_count', 'products', 'product_id'));
     }
 
@@ -250,5 +254,15 @@ class FrontController extends Controller
         } else {
             return '';
         }
+    }
+
+    public function removeToCart()
+    {
+
+    }
+
+    public function allRemoveToCart(){
+        session()->flush();
+        return 'success';
     }
 }

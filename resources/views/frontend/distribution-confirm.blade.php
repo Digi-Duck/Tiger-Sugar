@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="delete-all btn">全部刪除</button>
+                            <button type="button" class="delete-all btn" onclick="Allremove()">全部刪除</button>
 
                             <ul class="pagination-top">
                                 <li class="page-item-prev">
@@ -82,35 +82,34 @@
                     <div class="content-area">
                         <div class="card-container">
                             @foreach ($products as $product)
-                            <div class="direction-body">
-                                <div class="img-hover">
-                                    <img class="product-img"
-                                        src="{{ $product->img }}"
-                                        alt="商品圖片">
-                                    <img class="ask-icon"
-                                        src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
-                                        alt="移除已加商品">
-                                    <div class="product-img-hover">
-                                        <a href="" class="cursor-p">
-                                            <img class="ask-icon-hover"
-                                                src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
-                                                alt="移除已加商品">
-                                        </a>
-                                        <a href="" class="commodity-more-button btn-more" title="獲取獲取商品規格資訊">
-                                            MORE
-                                        </a>
+                                <div class="direction-body">
+                                    <div class="img-hover">
+                                        <img class="product-img" src="{{ $product->img }}" alt="商品圖片">
+                                        <img class="ask-icon"
+                                            src="{{ asset('./frontend-img/distribution-confirm-img/delete.svg') }}"
+                                            alt="移除已加商品">
+                                        <div class="product-img-hover">
+                                            <button type="button" id="add-button" class="add-button"
+                                                onclick="add({{ $product->id }})">
+                                                <img class="ask-icon-hover"
+                                                    src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
+                                                    alt="移除已加商品">
+                                            </button>
+                                            <a href="" class="commodity-more-button btn-more" title="獲取獲取商品規格資訊">
+                                                MORE
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="commodity-title">
+                                        {{ $product->title_zh }}
+                                    </div>
+                                    <div class="commodity-title-english">
+                                        {{ $product->title_en }}
+                                    </div>
+                                    <div class="commodity-sort">
+                                        {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
                                     </div>
                                 </div>
-                                <div class="commodity-title">
-                                    {{ $product->title_zh }}
-                                </div>
-                                <div class="commodity-title-english">
-                                    {{ $product->title_en }}
-                                </div>
-                                <div class="commodity-sort">
-                                    {{ $product->productsType->tw_name }}|{{ $product->productsType->en_name }}
-                                </div>
-                            </div>
                             @endforeach
 
                         </div>
@@ -626,4 +625,60 @@
     <script src="{{ asset('./js/distribution-confirm.js') }}"></script>
     <script src="{{ asset('./js/popwindow.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function remove(id) {
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'post');
+            formData.append('id', id);
+            fetch('{{ route('front.remove_to_cart') }}', {
+                method: 'POST',
+                body: formData,
+            }).then((res) => {
+                return res.text();
+            }).then((data) => {
+                console.log(data);
+                if (data == 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '刪除成功',
+                    }).then((res) => {
+                        location.reload();
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '刪除失敗',
+                    });
+                }
+            });
+        }
+
+        function Allremove() {
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'post');
+            fetch('{{ route('front.all_remove_to_cart') }}', {
+                method: 'POST',
+                body: formData,
+            }).then((res) => {
+                return res.text();
+            }).then((data) => {
+                if (data == 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '刪除成功',
+                    }).then((res) => {
+                        location.reload();
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '刪除失敗',
+                    });
+                }
+            });
+        }
+    </script>
 @endsection

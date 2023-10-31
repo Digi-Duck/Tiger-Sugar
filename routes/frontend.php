@@ -14,6 +14,8 @@ Route::get('/franchisee-form', [FrontController::class, 'franchiseeForm'])->name
 Route::post('/franchisee-form', [FrontController::class, 'franchiseeFormStore'])->name('front.franchisee_form.store');
 Route::post('/distribution/add', [FrontController::class, 'add'])->name('front.add'); //商品加入購物車
 Route::post('/distribution/add-to-cart',[FrontController::class, 'addToCart'])->name('front.add_to_cart'); //商品加入購物車 打fetch專用路由
+Route::post('/distribution/remove-to-cart',[FrontController::class, 'removeToCart'])->name('front.remove_to_cart'); //商品移除購物車 打fetch專用路由
+Route::post('/distribution/all-remove-to-cart',[FrontController::class, 'allRemoveToCart'])->name('front.all_remove_to_cart'); //商品移除購物車 打fetch專用路由
 
 //header跳轉到首頁各section的路由
 Route::get('#link-about')->name('front.index.about'); //首頁的關於我們section

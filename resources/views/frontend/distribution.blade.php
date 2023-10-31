@@ -349,14 +349,11 @@
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                                         alt="黃色加入以詢問">
                                                     <div class="product-img-hover">
-                                                        <form action="" method="post">
-                                                            <button type="button" class="cursor-p">
-                                                                <img class="ask-icon-hover"
-                                                                    data-product="{{ $product->id }}"
-                                                                    src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                                    alt="黃色加入以詢問">
-                                                            </button>
-                                                        </form>
+                                                        <button type="button" id="add-button" class="add-button" onclick="add({{ $product->id }})">
+                                                            <img class="ask-icon-hover"
+                                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                                alt="黃色加入以詢問">
+                                                        </button>
                                                         <a href="{{ route('front.distribution') }}"
                                                             class="commodity-more-button btn" title="更多商品">
                                                             MORE
@@ -432,4 +429,35 @@
     <script src="{{ asset('./js/popwindow.js') }}"></script>
     <script src="{{ asset('./js/distribution.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function add(id) {
+        console.log(id);
+        const formData = new FormData();
+        formData.append('_token', '{{ csrf_token() }}');
+        formData.append('_method', 'post');
+        formData.append('id', id);
+        fetch('{{ route("front.add_to_cart") }}', {
+            method: 'POST',
+            body: formData,
+        }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
+                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '新增成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '新增失敗',
+                            });
+                        }
+                    });
+    }
+    </script>
 @endsection
