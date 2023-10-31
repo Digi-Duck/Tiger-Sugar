@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 // 前端路由
 Route::get('/', [FrontController::class, 'index'])->name('front.index'); //首頁
-Route::get('/distribution', [FrontController::class, 'distribution'])->name('front.distribution'); //產品經銷頁
+Route::post('/distribution', [FrontController::class, 'distribution'])->name('front.distribution'); //產品經銷頁
 Route::get('/distribution-confirm', [FrontController::class, 'distributionConfirm'])->name('front.distribution_confirm'); //經銷確認頁
 Route::post('/distribution-confirm/store', [FrontController::class, 'distributionConfirmStore'])->name('front.distribution_confirm.store');
 Route::get('/franchisee', [FrontController::class, 'franchisee'])->name('front.franchisee'); //加盟說明頁

@@ -97,7 +97,7 @@ class FrontController extends Controller
             'other' => $request->other,
             'products_id' => 1,
         ]);
-        return redirect(route('front.franchisee_form'));
+        return redirect(route('front.distribution_confirm'));
     }
 
     public function franchisee()
