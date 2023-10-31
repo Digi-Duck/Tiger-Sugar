@@ -258,19 +258,19 @@ class FrontController extends Controller
 
     public function removeToCart(Request $request)
     {
-        $targetValue = $request->id; // 要查找的特定值
+        $targetValue = $request->id;
 
-        // 获取会话中的所有数据
         $sessionData = session()->all();
 
-        $matchingKey = array_search($targetValue, $sessionData);
-        session()->forget('
-
-        $matchingKey');
+        $matchingKey = array_search($targetValue, $sessionData['product_id']);
+        if ($matchingKey !== false) {
+            session()->forget('product_id.' . $matchingKey);
+        }
         return 'success';
     }
 
-    public function allRemoveToCart(){
+    public function allRemoveToCart()
+    {
         session()->flush();
         return 'success';
     }
