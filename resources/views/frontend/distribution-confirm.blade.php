@@ -90,7 +90,7 @@
                                             alt="移除已加商品">
                                         <div class="product-img-hover">
                                             <button type="button" id="add-button" class="add-button"
-                                                onclick="add({{ $product->id }})">
+                                                onclick="remove({{ $product->id }})">
                                                 <img class="ask-icon-hover"
                                                     src="{{ asset('./frontend-img/distribution-confirm-img/delete_hover.svg') }}"
                                                     alt="移除已加商品">

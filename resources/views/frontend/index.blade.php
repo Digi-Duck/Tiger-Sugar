@@ -207,9 +207,6 @@
                         @dump($product_id)
                     </div>
                 </div>
-                <!-- Swiper -->
-                {{-- @dump($product_id)
-                @dump($product_all) --}}
                 <div class="card-container">
                     <div class="swiper mySwiper-product">
                         <div class="swiper-wrapper">

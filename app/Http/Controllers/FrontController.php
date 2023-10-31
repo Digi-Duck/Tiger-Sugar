@@ -256,9 +256,18 @@ class FrontController extends Controller
         }
     }
 
-    public function removeToCart()
+    public function removeToCart(Request $request)
     {
+        $targetValue = $request->id; // 要查找的特定值
 
+        // 获取会话中的所有数据
+        $sessionData = session()->all();
+
+        $matchingKey = array_search($targetValue, $sessionData);
+        session()->forget('
+
+        $matchingKey');
+        return 'success';
     }
 
     public function allRemoveToCart(){
