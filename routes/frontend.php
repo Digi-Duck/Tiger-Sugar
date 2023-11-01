@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 // 前端路由
 Route::get('/', [FrontController::class, 'index'])->name('front.index'); //首頁
-Route::post('/distribution', [FrontController::class, 'distribution'])->name('front.distribution'); //產品經銷頁
+Route::get('/distribution', [FrontController::class, 'distribution'])->name('front.distribution'); //產品經銷頁
 Route::get('/distribution-confirm', [FrontController::class, 'distributionConfirm'])->name('front.distribution_confirm'); //經銷確認頁
 Route::post('/distribution-confirm/store', [FrontController::class, 'distributionConfirmStore'])->name('front.distribution_confirm.store');
 Route::get('/franchisee', [FrontController::class, 'franchisee'])->name('front.franchisee'); //加盟說明頁
@@ -25,7 +25,7 @@ Route::get('#link-media')->name('front.index.media'); //首頁的媒體露出sec
 Route::get('#link-franchisee')->name('front.index.franchisee'); //首頁的加盟專區section
 
 
-// 英文版前端路由
+// 英文版前端路由r
 Route::prefix('/en')->group(function () {
     Route::get('/', [FrontEnController::class, 'index'])->name('front.index.en'); //英文版首頁
     Route::get('/distribution', [FrontEnController::class, 'distribution'])->name('front.distribution.en'); //英文版產品經銷頁

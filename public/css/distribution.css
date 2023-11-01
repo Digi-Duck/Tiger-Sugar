@@ -70,10 +70,9 @@ a {
 
 #distribution .select-all-btn:hover {
     background-color: #ffe282;
-    border: 0px;
-    border-radius: 0;
     color: black;
     transition: color 1s, background-color 1s;
+    border-radius: 5px 5px 5px 5px;
 }
 
 #distribution .swiper-and-page-group {

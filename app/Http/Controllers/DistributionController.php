@@ -38,7 +38,7 @@ class DistributionController extends Controller
         $lists->orderBy('id');
         $lists = $lists->paginate($page_numbers);
         $lists->appends(compact('lists', 'keyword', 'page_numbers'));
-        return view('backend.distribution.index', compact('lists', 'keyword', 'page_numbers', 'count'));
+        return view('backend.distribution.index', compact('lists', 'keyword', 'page_numbers', 'count', 'page'));
     }
 
     public function show($id)
