@@ -102,7 +102,7 @@
                                                 class="ask-icon-hover" data-product="{{ $product->id }}"
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                 alt="黃色加入以詢問"></a>
-                                        <input type="text" class="inputall" name="inputall{{ $product->id }}"
+                                        <input type="hidden" class="inputall" name="inputall{{ $product->id }}"
                                             value="{{ $product }}">
                                         <button class="product-background-hover-more">MORE</button>
                                     </div>
