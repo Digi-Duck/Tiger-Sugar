@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="select-all">
-                        <button class="select-all-btn" type="button">全部選取</button>
+                        <button class="select-all-btn" type="button" onclick="allAdd()">全部選取</button>
                     </div>
                 </div>
                 <!-- 各品項與頁面數swiper -->
@@ -432,7 +432,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function add(id) {
-        console.log(id);
         const formData = new FormData();
         formData.append('_token', '{{ csrf_token() }}');
         formData.append('_method', 'post');
@@ -443,7 +442,32 @@
         }).then((res) => {
                         return res.text();
                     }).then((data) => {
-                        console.log(data);
+                        if (data == 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '新增成功',
+                            }).then((res) => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '新增失敗',
+                            });
+                        }
+                    });
+    }
+
+    function allAdd() {
+        const formData = new FormData();
+        formData.append('_token', '{{ csrf_token() }}');
+        formData.append('_method', 'post');
+        fetch('{{ route("front.all_add_to_cart") }}', {
+            method: 'POST',
+            body: formData,
+        }).then((res) => {
+                        return res.text();
+                    }).then((data) => {
                         if (data == 'success') {
                             Swal.fire({
                                 icon: 'success',

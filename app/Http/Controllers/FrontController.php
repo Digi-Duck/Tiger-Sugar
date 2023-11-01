@@ -258,6 +258,20 @@ class FrontController extends Controller
         }
     }
 
+    public function allAddToCart(Request $request)
+    {
+        $products = Products::all();
+        $productIds = $products->pluck('id')->toArray();
+        $cart = session()->get('product_id', []);
+        foreach ($productIds as $value) {
+            if (!in_array($value, $cart)) {
+                array_push($cart, $value);
+                $request->session()->put('product_id', $cart);
+            }
+        }
+        return 'success';
+    }
+
     public function removeToCart(Request $request)
     {
         $targetValue = $request->id;
