@@ -154,7 +154,8 @@
                                         src="{{ $single_social->embed_link }}"
                                         marginwidth="0" marginheight="0"
                                         allowtransparency="true" allowfullscreen="true" frameborder="0" width="100%"
-                                        data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe>
+                                        data-instgrm-payload-id="instagram-media-payload-0" scrolling="no">
+                                        <script async src="//www.instagram.com/embed.js"></script></iframe>
                                 </div>
                             @else
                                 {{-- <div class="swiper-slide">
@@ -520,6 +521,7 @@
 @section('js')
     <script src="{{ asset('./js/index.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
+    <script src="https://www.instagram.com/embed.js"></script>
     <script type="text/javascript" src="{{ asset('./js/iframe.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
