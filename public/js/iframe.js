@@ -1,13 +1,3 @@
-// function handleJSONPData(data) {
-//     console.log(data);
-// }
-// var script = document.createElement('script');
-// script.src = "http://example.com/data-endpoint?callback=handleJSONPData";
-// document.head.appendChild(script);
-// handleJSONPData({ "key": "value" });
-
-
-
 window.addEventListener('load', function () {
     var iframes = document.querySelectorAll('.card-body');
     iframes.forEach(function (iframe) {
