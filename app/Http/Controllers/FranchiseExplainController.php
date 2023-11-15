@@ -69,11 +69,7 @@ class FranchiseExplainController extends Controller
         ]);
         return redirect(route('back.franchise_explain.index'))->with('message', '新增成功!');
     }
-    // public function delete($id){
-    //     DB::table('franchise_explains')->where('id','=',$id)->delete();
-    //     return redirect('/admin/franchise_explain')->with('message','刪除成功!');
-    // }
-
+    
     public function delete(Request $request)
     {
         $id = $request->id;

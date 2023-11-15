@@ -103,6 +103,7 @@
                                     正在顯示{{ $count }}筆資料中，第{{ $page_numbers * ($page - 1) + 1 }}筆到第{{ $count }}筆資料
                                 </div>
                             @endif
+
                             <div>
                                 {{ $lists->links() }}
                             </div>

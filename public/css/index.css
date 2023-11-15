@@ -495,9 +495,6 @@ h2 {
     #social .container {
         max-width: 960px;
     }
-
-    #social .card-body {
-    }
 }
 
 @media(min-width:1200px) {
@@ -589,13 +586,9 @@ h2 {
     background: white;
     max-width: 540px;
     width: calc(100% - 2px);
-    /* height: 556px; */
-    /* max-height: 100%; */
     border-radius: 3px;
     border: 1px solid rgb(219, 219, 219);
     box-shadow: none;
-    /* display: block; */
-    display: flex;
     padding: 0px;
 }
 
@@ -676,6 +669,13 @@ h2 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.loading-placeholder {
+    display: none;
+}
+
+iframe {
+    overflow-clip-margin: content-box !important;
+}
 /* social CSS結束 */
 
 

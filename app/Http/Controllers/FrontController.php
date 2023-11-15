@@ -243,7 +243,7 @@ class FrontController extends Controller
             'other' => $request->other,
         ]);
 
-        return view('frontend.franchisee-form', compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other'));
+        return view('frontend.franchisee-form', compact('user_name', 'birth_day', 'email', 'phone', 'address', 'franchisee_type', 'country', 'capital', 'store_address', 'other','product_count'));
     }
 
     public function addToCart(Request $request)

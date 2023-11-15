@@ -76,7 +76,7 @@
                         <input id="other" type="text" class="form-other-input"name="other"  value="{{ old('other', $other ?? '') }}">
                     </div>
                     <div class="form-robot">
-                        <h2>窩是機器人</h2>
+                        <h2>機器人驗證</h2>
                     </div>
                     <div class="just-line"></div>
                     <div class="send-data">

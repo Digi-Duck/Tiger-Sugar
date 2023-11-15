@@ -83,7 +83,7 @@
                         value="{{ old('other', $other ?? '') }}">
                 </div>
                 <div class="form-robot">
-                    <h2>窩是機器人</h2>
+                    <h2>機器人驗證</h2>
                 </div>
                 <div class="just-line"></div>
                 <div class="send-data">
@@ -95,6 +95,8 @@
 @endsection
 
 @section('js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('./js/crs.min.js') }}"></script>
+    <script src="{{ asset('./js/franchisee-from.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
 @endsection

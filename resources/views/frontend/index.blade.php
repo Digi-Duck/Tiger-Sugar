@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{{ asset('./css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/header.css') }}">
     <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
 @endsection
 
 @section('main')
@@ -131,7 +135,7 @@
         </section>
 
         <!-- 佑 社群回饋 -->
-        <section id="social" >
+        <section id="social">
             <div class="header">
                 <div class="container">
                     <div class="title">
@@ -146,19 +150,18 @@
             <div class="container">
                 <!-- Swiper -->
                 <div class="swiper mySwiper-social">
-                    <div class="swiper-wrapper" >
+                    <div class="swiper-wrapper">
                         @foreach ($social as $single_social)
                             @if ($single_social->type == 'embed')
                                 <div class="swiper-slide">
                                     <iframe class="card-body" id="myIframe" name="myIframe"
-                                        src="{{ $single_social->embed_link }}"
-                                        marginwidth="0" marginheight="0"
+                                        src="{{ $single_social->embed_link }}" marginwidth="0" marginheight="0"
                                         allowtransparency="true" allowfullscreen="true" frameborder="0" width="100%"
                                         data-instgrm-payload-id="instagram-media-payload-0" scrolling="no">
-                                        <script async src="//www.instagram.com/embed.js"></script></iframe>
+                                    </iframe>
                                 </div>
                             @else
-                                {{-- <div class="swiper-slide">
+                                <div class="swiper-slide">
                                     <div class="iframe-card">
                                         <div class="iframe-header">
                                             <div class="iframe-left-user-info">
@@ -183,7 +186,7 @@
                                             <div class="iframe-update">{{ $single_social->post_date }}</div>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             @endif
                         @endforeach
                     </div>
@@ -220,7 +223,8 @@
                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                                 alt="黃色加入以詢問">
                                             <div class="product-img-hover">
-                                                <button type="button" id="add-button" class="add-button" onclick="add({{ $product->id }})">
+                                                <button type="button" id="add-button" class="add-button"
+                                                    onclick="add({{ $product->id }})">
                                                     <img class="ask-icon-hover"
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                         alt="黃色加入以詢問">
@@ -519,10 +523,10 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('./js/index.js') }}"></script>
-    <script src="{{ asset('./js/header.js') }}"></script>
-    <script src="https://www.instagram.com/embed.js"></script>
-    <script type="text/javascript" src="{{ asset('./js/iframe.js') }}"></script>
+<script src="{{ asset('./js/header.js') }}"></script>
+<script src="{{ asset('./js/index.js') }}"></script>
+<script src="https://www.instagram.com/embed.js"></script>
+<script type="text/javascript" src="{{ asset('./js/iframe.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function add(id) {
