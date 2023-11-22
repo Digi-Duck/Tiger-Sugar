@@ -84,42 +84,43 @@
                     </div>
                 </div>
                 <!-- 產品方格 -->
-                <div class="prduct-grid-columns">
-                    @foreach ($products as $product)
-                        <div class="product-group">
-                            <div class="product-img-group">
-                                <div class="product-background">
-                                    <div class="product">
-                                        <img src="{{ $product->img }}" alt="產品1" />
-                                    </div>
-                                    <div class="yellow-box">
-                                        <img class="ask-icon" data-product="{{ $product->id }}"
-                                            src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
-                                            alt="黃色加入以詢問">
-                                    </div>
-                                    <div class="product-background-hover open-pop-window">
-                                        <a href="{{route('front.distribution')}}" class="yellow-box-hover" title="更多商品"><img
-                                                class="ask-icon-hover" data-product="{{ $product->id }}"
-                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
-                                                alt="黃色加入以詢問"></a>
-                                        <input type="hidden" class="inputall" name="inputall{{ $product->id }}"
-                                            value="{{ $product }}">
-                                        <button class="product-background-hover-more">MORE</button>
+                <div class="prduct-grid-columns" id="product-list" data-products="{{ json_encode($products) }}">
+                        @foreach ($products as $product)
+                        {{-- @dump($product) --}}
+                            <div class="product-group">
+                                <div class="product-img-group">
+                                    <div class="product-background">
+                                        <div class="product">
+                                            <img src="{{ $product->img }}" alt="產品1" />
+                                        </div>
+                                        <div class="yellow-box">
+                                            <img class="ask-icon" data-product="{{ $product->id }}"
+                                                src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
+                                                alt="黃色加入以詢問">
+                                        </div>
+                                        <div class="product-background-hover open-pop-window">
+                                            <a href="{{ route('front.distribution') }}" class="yellow-box-hover"
+                                                title="更多商品"><img class="ask-icon-hover"
+                                                    data-product="{{ $product->id }}"
+                                                    src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
+                                                    alt="黃色加入以詢問"></a>
+                                            <input type="hidden" class="inputall" name="inputall{{ $product->id }}"
+                                                value="{{ $product }}">
+                                            <button class="product-background-hover-more">MORE</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="product-info">
-                                <div class="product-title">{{ $product->title_zh }}</div>
-                                <div class="product-title-en">
-                                    {{ $product->title_en }}
+                                <div class="product-info">
+                                    <div class="product-title">{{ $product->title_zh }}</div>
+                                    <div class="product-title-en">
+                                        {{ $product->title_en }}
+                                    </div>
+                                    <div class="product-id">
+                                        {{ $product->ProductsType->tw_name }}|{{ $product->ProductsType->en_name }}</div>
                                 </div>
-                                <div class="product-id">
-                                    {{ $product->ProductsType->tw_name }}|{{ $product->ProductsType->en_name }}</div>
                             </div>
-                        </div>
-                    @endforeach
-
+                        @endforeach
                 </div>
 
                 <!-- 下方分隔線 -->
@@ -128,11 +129,14 @@
                 <!-- 頁面數 -->
                 <div class="page-up-and-page-down-group-buttom">
                     <a href="{{ $products->url($products->currentPage() - 1) }}" class="page-up" title="上一個頁面">
-                        <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}" alt="上一頁小圖標" />上一頁
+                        <img src="{{ asset('./frontend-img/distribution-img/distribution/previous.png') }}"
+                            alt="上一頁小圖標" />上一頁
                     </a>
 
-                    @foreach(range(1, $products->lastPage()) as $i)
-                        <a href="{{ $products->url($i) }}" class="page-{{ $i }} @if ($i === $products->currentPage()) active @endif current-page" title="第{{ $i }}頁">{{ $i }}</a>
+                    @foreach (range(1, $products->lastPage()) as $i)
+                        <a href="{{ $products->url($i) }}"
+                            class="page-{{ $i }} @if ($i === $products->currentPage()) active @endif current-page"
+                            title="第{{ $i }}頁">{{ $i }}</a>
                     @endforeach
 
                     <a href="{{ $products->url($products->currentPage() + 1) }}" class="page-down" title="下一個頁面">下一頁
@@ -339,7 +343,6 @@
                         <div class="card-container">
                             <div class="swiper swiper-pop-bottom pop-window-bottom-swiper">
                                 <div class="swiper-wrapper">
-
                                     @foreach ($random_products as $product)
                                         <div class="swiper-pop-bottom-slide swiper-slide">
                                             <div class="direction-body">
@@ -349,7 +352,8 @@
                                                         src="{{ asset('./frontend-img/index-img/distribution/add_for_ask.svg') }}"
                                                         alt="黃色加入以詢問">
                                                     <div class="product-img-hover">
-                                                        <button type="button" id="add-button" class="add-button" onclick="add({{ $product->id }})">
+                                                        <button type="button" id="add-button" class="add-button"
+                                                            onclick="add({{ $product->id }})">
                                                             <img class="ask-icon-hover"
                                                                 src="{{ asset('./frontend-img/index-img/distribution/add_for_ask_hover.svg') }}"
                                                                 alt="黃色加入以詢問">
@@ -425,63 +429,63 @@
             },
         });
     </script>
-
+    <script src="{{ asset('./js/distribution-sort.js') }}"></script>
     <script src="{{ asset('./js/popwindow.js') }}"></script>
     <script src="{{ asset('./js/distribution.js') }}"></script>
     <script src="{{ asset('./js/header.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function add(id) {
-        const formData = new FormData();
-        formData.append('_token', '{{ csrf_token() }}');
-        formData.append('_method', 'post');
-        formData.append('id', id);
-        fetch('{{ route("front.add_to_cart") }}', {
-            method: 'POST',
-            body: formData,
-        }).then((res) => {
-                        return res.text();
-                    }).then((data) => {
-                        if (data == 'success') {
-                            Swal.fire({
-                                icon: 'success',
-                                title: '新增成功',
-                            }).then((res) => {
-                                location.reload();
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: '新增失敗',
-                            });
-                        }
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'post');
+            formData.append('id', id);
+            fetch('{{ route('front.add_to_cart') }}', {
+                method: 'POST',
+                body: formData,
+            }).then((res) => {
+                return res.text();
+            }).then((data) => {
+                if (data == 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '新增成功',
+                    }).then((res) => {
+                        location.reload();
                     });
-    }
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '新增失敗',
+                    });
+                }
+            });
+        }
 
-    function allAdd() {
-        const formData = new FormData();
-        formData.append('_token', '{{ csrf_token() }}');
-        formData.append('_method', 'post');
-        fetch('{{ route("front.all_add_to_cart") }}', {
-            method: 'POST',
-            body: formData,
-        }).then((res) => {
-                        return res.text();
-                    }).then((data) => {
-                        if (data == 'success') {
-                            Swal.fire({
-                                icon: 'success',
-                                title: '新增成功',
-                            }).then((res) => {
-                                location.reload();
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: '新增失敗',
-                            });
-                        }
+        function allAdd() {
+            const formData = new FormData();
+            formData.append('_token', '{{ csrf_token() }}');
+            formData.append('_method', 'post');
+            fetch('{{ route('front.all_add_to_cart') }}', {
+                method: 'POST',
+                body: formData,
+            }).then((res) => {
+                return res.text();
+            }).then((data) => {
+                if (data == 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '新增成功',
+                    }).then((res) => {
+                        location.reload();
                     });
-    }
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '新增失敗',
+                    });
+                }
+            });
+        }
     </script>
 @endsection

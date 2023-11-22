@@ -675,6 +675,7 @@ h2 {
 
 iframe {
     overflow-clip-margin: content-box !important;
+    min-height: 550px;
 }
 /* social CSS結束 */
 

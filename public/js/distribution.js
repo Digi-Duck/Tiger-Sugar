@@ -40,6 +40,7 @@ openPopWindows.forEach(function (btn) {
         let popSwiperSub = document.querySelector('.poping-swiper-sub');
         popSwiper.innerHTML = '';
         popSwiperSub.innerHTML = '';
+        console.log(data);
         data.products_imgs.forEach((item, index) => {
             popSwiper.innerHTML += `<div class="swiper-slide swiper-pop-top-slide">
             <img src="${item.img_url}" alt="產品圖片" /></div>`;
