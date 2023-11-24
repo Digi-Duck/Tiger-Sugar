@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
 @endsection
 
+<div class="window-overlay"></div>
 @section('main')
     <main></main>
-    <div class="window-overlay"></div>
     <!-- 內容頁 -->
     <section id="distribution">
         <div class="main">
@@ -117,7 +117,7 @@
                                         {{ $product->title_en }}
                                     </div>
                                     <div class="product-id">
-                                        {{ $product->ProductsType->tw_name }}|{{ $product->ProductsType->en_name }}</div>
+                                        Type:{{ $product->ProductsType->tw_name }}|{{ $product->ProductsType->en_name }}</div>
                                 </div>
                             </div>
                         @endforeach
