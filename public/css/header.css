@@ -307,6 +307,11 @@ header .dropdown-content-en {
     text-align: center;
     text-decoration: none;
     position: absolute;
+
+}
+header .dropdown-content-ch:hover,
+header .dropdown-content-en:hover {
+    background-color: #ffe282;
 }
 
 header .dropdown-content-en {

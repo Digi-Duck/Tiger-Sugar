@@ -25,7 +25,7 @@
 <body>
     <!-- 秋 header -->
     <header>
-        <nav>
+        <nav style="height: 76px">
             <section class="nav-logo">
                 <a href="{{ route('front.index.en') }}" title="前往首頁">
                     <img class="nav-logo-btn" src="{{ asset('./frontend-img/header-img/LOGO.png') }}" alt="tiger-logo">
